@@ -1,0 +1,12 @@
+{
+  "requested_shape_note": "User requested 254 x 1536d; available Step3 parquet contains 250 slide rows.",
+  "actual_shape": [
+    250,
+    1536
+  ],
+  "n_nan": 0,
+  "n_pos_inf": 0,
+  "n_neg_inf": 0,
+  "n_unique_patients": 250,
+  "n_source_parts": 5
+}

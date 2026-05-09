@@ -1,0 +1,15 @@
+{
+  "eval_mode": "cv5",
+  "feature_set": "baseline_plus_image",
+  "spearman": 0.22722673064241639,
+  "spearman_p": 3.980741461231133e-24,
+  "rmse": 2.6339607601232453,
+  "mae": 2.032518818716316,
+  "r2": 0.05125077472777417,
+  "n_train": 1939,
+  "n_test": 1939,
+  "n_features": 1539,
+  "n_image_features": 1536,
+  "n_patients": 225,
+  "n_holdout_rows": 1939
+}

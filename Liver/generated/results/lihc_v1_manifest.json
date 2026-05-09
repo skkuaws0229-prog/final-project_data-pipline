@@ -1,0 +1,22 @@
+{
+  "version": "v1",
+  "description": "Operational anchor-mix package with HCC approved anchors(min=3) and LIHC HCC rule outputs.",
+  "outputs": [
+    "results/lihc_top30_hcc_anchor3_v1.csv",
+    "external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded_v1.csv",
+    "results/lihc_final_top15_v1.csv",
+    "results/lihc_step7_final_top15_tier4_v1.csv",
+    "results/lihc_final_top15_summary_v1.json",
+    "results/lihc_step7_final_top15_tier4_summary_v1.json"
+  ],
+  "anchors": [
+    "Sorafenib",
+    "Lenvatinib",
+    "Regorafenib"
+  ],
+  "notes": [
+    "Anchors were injected as policy rows in Top30 v1.",
+    "External evidence for anchors remains pending in this package unless upstream source tables are expanded.",
+    "v2 will start from formal candidate-pool expansion before model scoring."
+  ]
+}

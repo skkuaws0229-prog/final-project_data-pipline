@@ -1,0 +1,22 @@
+{
+  "wrist_gt_rows": 800,
+  "patients": 207,
+  "joint_location_images_present": 800,
+  "bone_segmentation_images_present": 370,
+  "complete_svdh_crop_sets_present": 438,
+  "severity_wrist_counts": {
+    "none": 523,
+    "mild": 220,
+    "moderate": 54,
+    "severe": 3
+  },
+  "patient_severity_counts_by_max": {
+    "mild": 77,
+    "moderate": 34,
+    "none": 94,
+    "severe": 2
+  },
+  "total_svdh_min": 0.0,
+  "total_svdh_max": 12.0,
+  "total_svdh_mean": 0.8725
+}

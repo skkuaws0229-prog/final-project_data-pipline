@@ -1,0 +1,7 @@
+# HCC systemic therapy anchors to prepend before ensemble-ranked drugs (external validation panel).
+# canonical_drug_id must exist in Liver base_data/.../model_inputs/drug_features.parquet (GDSC drug id).
+# Many biologics (bevacizumab, atezolizumab, …) are often absent from GDSC — add only IDs present in your matrix.
+#
+# Columns: canonical_drug_id<TAB>note_ko
+canonical_drug_id	note_ko
+1085	소라페닙 등 역외 라벨은 지역·시점별로 확인 (Tier1 앵커)

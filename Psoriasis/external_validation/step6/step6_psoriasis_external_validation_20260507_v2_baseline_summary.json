@@ -1,0 +1,111 @@
+{
+  "step": 6,
+  "mode": "strict_external_validation_multicohort_no_rerank",
+  "direct_validation_cohorts": [
+    "GSE69967",
+    "GSE106992",
+    "GSE117239"
+  ],
+  "same_axis_validation_cohorts": [
+    {
+      "accession": "GSE136757",
+      "validation_kind": "same_axis_small_molecule",
+      "title": "PF-06700841 TYK2/JAK1 treated biopsies",
+      "axis_tags": [
+        "JAK1",
+        "TYK2"
+      ],
+      "treatment_alias": "PF-06700841"
+    }
+  ],
+  "direct_validation_treatments": [
+    "ETANERCEPT",
+    "TOFACITINIB",
+    "USTEKINUMAB"
+  ],
+  "validation_cohort_catalog_rows": 4,
+  "direct_validation_drugs_in_strict_label_space": 1,
+  "same_axis_supported_reference_drugs_in_strict_label_space": 0,
+  "reference_drugs_in_strict_label_space": 4,
+  "reference_drugs_total": 13,
+  "model_summary": [
+    {
+      "model": "RandomForest",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 4,
+      "reference_drugs_in_top15": 2,
+      "direct_drug_validation_possible_top30": 2,
+      "direct_drug_validation_possible_top15": 1,
+      "same_axis_validation_supported_top30": 5,
+      "same_axis_validation_supported_top15": 2,
+      "validated_or_axis_supported_top30": 7,
+      "validated_or_axis_supported_top15": 3
+    },
+    {
+      "model": "ExtraTrees",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 4,
+      "reference_drugs_in_top15": 2,
+      "direct_drug_validation_possible_top30": 2,
+      "direct_drug_validation_possible_top15": 1,
+      "same_axis_validation_supported_top30": 5,
+      "same_axis_validation_supported_top15": 2,
+      "validated_or_axis_supported_top30": 7,
+      "validated_or_axis_supported_top15": 3
+    },
+    {
+      "model": "LightGBM",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 4,
+      "reference_drugs_in_top15": 2,
+      "direct_drug_validation_possible_top30": 2,
+      "direct_drug_validation_possible_top15": 1,
+      "same_axis_validation_supported_top30": 5,
+      "same_axis_validation_supported_top15": 2,
+      "validated_or_axis_supported_top30": 7,
+      "validated_or_axis_supported_top15": 3
+    },
+    {
+      "model": "XGBoost",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 4,
+      "reference_drugs_in_top15": 2,
+      "direct_drug_validation_possible_top30": 2,
+      "direct_drug_validation_possible_top15": 1,
+      "same_axis_validation_supported_top30": 5,
+      "same_axis_validation_supported_top15": 2,
+      "validated_or_axis_supported_top30": 7,
+      "validated_or_axis_supported_top15": 3
+    },
+    {
+      "model": "CatBoost",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 3,
+      "reference_drugs_in_top15": 3,
+      "direct_drug_validation_possible_top30": 1,
+      "direct_drug_validation_possible_top15": 1,
+      "same_axis_validation_supported_top30": 5,
+      "same_axis_validation_supported_top15": 2,
+      "validated_or_axis_supported_top30": 6,
+      "validated_or_axis_supported_top15": 3
+    }
+  ],
+  "notes": [
+    "Model ranking is preserved; Step 6 only annotates validation feasibility and reference-drug recovery.",
+    "Direct validation is now available for Tofacitinib through GSE69967.",
+    "Same-axis validation is materially strengthened by GSE136757, a TYK2/JAK1 treated biopsy cohort.",
+    "Biologic cohorts remain useful context, but strict literal label-space mismatch still limits direct drug-level validation for biologics."
+  ],
+  "artifacts": {
+    "cohort_catalog": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline/reports/psoriasis_step6_validation_cohort_catalog_20260507_v2_baseline.csv",
+    "treatment_summary": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline/reports/psoriasis_step6_validation_treatment_summary_20260507_v2_baseline.csv",
+    "reference_space_report": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline/reports/psoriasis_step6_reference_drug_space_report_20260507_v2_baseline.csv",
+    "model_validation_summary": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline/reports/psoriasis_step6_model_validation_summary_20260507_v2_baseline.csv",
+    "annotated_top30": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline/reports/psoriasis_step6_model_top30_validation_report_20260507_v2_baseline.csv"
+  }
+}

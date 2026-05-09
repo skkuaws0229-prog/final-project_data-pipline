@@ -1,0 +1,59 @@
+{
+  "total_drugs": 30,
+  "validation_sources": 4,
+  "avg_confidence": 45.0,
+  "avg_validation_score": 0.45,
+  "high_confidence_drugs": 9,
+  "top_10_drugs": [
+    {
+      "drug_name": "Docetaxel",
+      "multi_objective_score": 0.625,
+      "confidence": 75
+    },
+    {
+      "drug_name": "Paclitaxel",
+      "multi_objective_score": 0.5583333333333333,
+      "confidence": 75
+    },
+    {
+      "drug_name": "Dactinomycin",
+      "multi_objective_score": 0.55,
+      "confidence": 50
+    },
+    {
+      "drug_name": "Entinostat",
+      "multi_objective_score": 0.3650122025985619,
+      "confidence": 100
+    },
+    {
+      "drug_name": "Venetoclax",
+      "multi_objective_score": 0.32969074377375684,
+      "confidence": 100
+    },
+    {
+      "drug_name": "Tanespimycin",
+      "multi_objective_score": 0.32699999999999996,
+      "confidence": 75
+    },
+    {
+      "drug_name": "Bortezomib",
+      "multi_objective_score": 0.29039130434782606,
+      "confidence": 75
+    },
+    {
+      "drug_name": "Savolitinib",
+      "multi_objective_score": 0.26979732049508226,
+      "confidence": 75
+    },
+    {
+      "drug_name": "EPZ004777",
+      "multi_objective_score": 0.26685576673237454,
+      "confidence": 50
+    },
+    {
+      "drug_name": "Methotrexate",
+      "multi_objective_score": 0.257,
+      "confidence": 75
+    }
+  ]
+}

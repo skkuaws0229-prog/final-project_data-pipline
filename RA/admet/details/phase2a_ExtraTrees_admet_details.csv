@@ -1,0 +1,661 @@
+model,canonical_drug_id,drug_name,pred_rank,assay,category,assay_name,assay_type,match_type,similarity,predicted_label,status
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.17346938775510204,-5,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.18421052631578946,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.17894736842105263,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.18421052631578946,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.26865671641791045,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,exact,1.0,83,measured
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.325,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.22784810126582278,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.22784810126582278,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.22784810126582278,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.18421052631578946,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.18421052631578946,1,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.18421052631578946,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.1956521739130435,3,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.1956521739130435,7,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,half_life_obach,Excretion,Half-Life,regression,no_match,0.18421052631578946,2,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.18421052631578946,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.18421052631578946,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.17647058823529413,0,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.19444444444444445,3,no_data
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,exact,1.0,2,measured
+ExtraTrees,CHEMBL1789941,RUXOLITINIB,1,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.18421052631578946,-3,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.23076923076923078,-7,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2261904761904762,1,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.22580645161290322,1,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.23076923076923078,1,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.21978021978021978,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,exact,1.0,96,measured
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,vdss_lombardo,Distribution,Volume of Distribution,regression,exact,1.0,9,measured
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.4722222222222222,1,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.32432432432432434,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.32432432432432434,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.21978021978021978,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.21978021978021978,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.21978021978021978,1,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.32941176470588235,150,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,clearance_microsome_az,Excretion,Microsome Clearance,regression,exact,1.0,150,measured
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,half_life_obach,Excretion,Half-Life,regression,no_match,0.23076923076923078,42,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.29411764705882354,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.20454545454545456,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21978021978021978,0,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.24691358024691357,3,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.32941176470588235,3,no_data
+ExtraTrees,CHEMBL1873475,IBRUTINIB,2,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24242424242424243,-7,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.25287356321839083,-4,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.25287356321839083,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.25287356321839083,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.25287356321839083,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.25287356321839083,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.24731182795698925,95,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.23863636363636365,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.23529411764705882,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2465753424657534,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2465753424657534,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.25287356321839083,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.25287356321839083,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.25287356321839083,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.23529411764705882,18,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.21212121212121213,26,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,half_life_obach,Excretion,Half-Life,regression,no_match,0.25287356321839083,5,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.25287356321839083,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.25287356321839083,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.23333333333333334,0,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.25287356321839083,1,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.2823529411764706,2,no_data
+ExtraTrees,CHEMBL4297674,BRANEBRUTINIB,3,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2804878048780488,-5,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.22988505747126436,-5,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2361111111111111,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.19318181818181818,0,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2361111111111111,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.225,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.25,96,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.2328767123287671,0,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.3246753246753247,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.28169014084507044,0,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.3246753246753247,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.20512820512820512,0,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.20512820512820512,0,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.20512820512820512,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2361111111111111,10,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2289156626506024,5,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,half_life_obach,Excretion,Half-Life,regression,no_match,0.2361111111111111,10,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2361111111111111,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2361111111111111,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.23684210526315788,4,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.2535211267605634,1,no_data
+ExtraTrees,CHEMBL4594420,LUXEPTINIB,4,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24390243902439024,-3,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.20833333333333334,-4,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.21875,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.21875,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.20833333333333334,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.2,48,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.5555555555555556,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.21839080459770116,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.23684210526315788,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.23684210526315788,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.20833333333333334,0,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.20833333333333334,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.20833333333333334,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.1978021978021978,3,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.1978021978021978,6,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,half_life_obach,Excretion,Half-Life,regression,analog,0.726027397260274,790,measured
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.24444444444444444,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.16666666666666666,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.1978021978021978,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21875,2,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.20833333333333334,1,no_data
+ExtraTrees,CHEMBL388978,STAUROSPORINE,5,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.25287356321839083,-5,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2087912087912088,-4,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.18181818181818182,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.18518518518518517,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.18518518518518517,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.2222222222222222,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.6551724137931034,87,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.18181818181818182,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.24615384615384617,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.24615384615384617,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.22580645161290322,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.18518518518518517,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.18518518518518517,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.18518518518518517,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.3698630136986301,6,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.4426229508196721,15,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,half_life_obach,Excretion,Half-Life,regression,no_match,0.18181818181818182,3,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2037037037037037,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.21951219512195122,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.16901408450704225,0,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.6551724137931034,2,no_data
+ExtraTrees,CHEMBL1231124,AZD-1480,6,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.1958762886597938,-5,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.24,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.20987654320987653,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.24,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.2625,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.352112676056338,78,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.24,35,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2054794520547945,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2054794520547945,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2054794520547945,0,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2558139534883721,3,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.352112676056338,34,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,half_life_obach,Excretion,Half-Life,regression,no_match,0.20481927710843373,5,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2125,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.20689655172413793,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.22580645161290322,1,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.22972972972972974,2,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.3048780487804878,2,no_data
+ExtraTrees,CHEMBL4303389,NS-018,7,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.22388059701492538,-3,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.20952380952380953,-5,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.23076923076923078,1,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.23076923076923078,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.23076923076923078,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.23376623376623376,1,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.4578313253012048,96,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.4578313253012048,9,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.23076923076923078,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.23076923076923078,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.23076923076923078,1,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2261904761904762,5,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.4578313253012048,150,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,half_life_obach,Excretion,Half-Life,regression,no_match,0.23076923076923078,4,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.3181818181818182,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.20689655172413793,0,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2,1,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2608695652173913,2,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.275,1,no_data
+ExtraTrees,CHEMBL3936761,ZANUBRUTINIB,8,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24615384615384617,-7,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.20952380952380953,-4,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.1956521739130435,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.205607476635514,0,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.1956521739130435,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.22115384615384615,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.2604166666666667,99,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.22641509433962265,0,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.24761904761904763,0,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.25274725274725274,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.24761904761904763,0,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.1919191919191919,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.1919191919191919,0,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.1919191919191919,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2604166666666667,6,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2604166666666667,131,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,half_life_obach,Excretion,Half-Life,regression,no_match,0.1978021978021978,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.19626168224299065,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.1956521739130435,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.22772277227722773,1,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21212121212121213,2,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.22935779816513763,2,no_data
+ExtraTrees,CHEMBL4209441,SOFNOBRUTINIB,9,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2268041237113402,-4,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21428571428571427,-5,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.22077922077922077,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.23958333333333334,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.22077922077922077,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.26436781609195403,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.27835051546391754,98,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.26,9,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.27906976744186046,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2696629213483146,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.27906976744186046,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.21153846153846154,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.21153846153846154,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.21153846153846154,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2571428571428571,15,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.27835051546391754,3,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,half_life_obach,Excretion,Half-Life,regression,no_match,0.20454545454545456,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.23943661971830985,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.23595505617977527,0,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.23655913978494625,1,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.26506024096385544,3,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.27835051546391754,3,no_data
+ExtraTrees,CHEMBL4756476,NEMTABRUTINIB,10,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.27941176470588236,-4,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.27586206896551724,-4,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.25274725274725274,1,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.25274725274725274,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.25274725274725274,1,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.2717391304347826,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.30851063829787234,75,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.22727272727272727,13,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.32222222222222224,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.32558139534883723,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.32558139534883723,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2717391304347826,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2717391304347826,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2717391304347826,0,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.4838709677419355,79,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.29591836734693877,33,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,half_life_obach,Excretion,Half-Life,regression,no_match,0.25274725274725274,11,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.25274725274725274,1,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.24074074074074073,1,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21153846153846154,1,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.25263157894736843,2,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.4838709677419355,3,no_data
+ExtraTrees,CHEMBL4297865,ABIVERTINIB,11,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2717391304347826,-3,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2127659574468085,-4,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2127659574468085,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.2127659574468085,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2127659574468085,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.21649484536082475,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.2549019607843137,92,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.2127659574468085,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.25842696629213485,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.25842696629213485,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.22535211267605634,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.20253164556962025,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.20253164556962025,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.20253164556962025,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.22093023255813954,14,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.22093023255813954,6,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,half_life_obach,Excretion,Half-Life,regression,no_match,0.2127659574468085,9,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.19230769230769232,0,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.18446601941747573,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2127659574468085,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2054794520547945,1,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.2604166666666667,2,no_data
+ExtraTrees,CHEMBL4066193,ATINVICITINIB,12,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2222222222222222,-6,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21428571428571427,-4,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.21359223300970873,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.21359223300970873,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.21649484536082475,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.22105263157894736,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.26744186046511625,71,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.24561403508771928,13,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.22641509433962265,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.22641509433962265,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.22641509433962265,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.21649484536082475,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.21649484536082475,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.21649484536082475,0,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.21359223300970873,30,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.20192307692307693,3,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,half_life_obach,Excretion,Half-Life,regression,no_match,0.21649484536082475,24,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.22772277227722773,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.1926605504587156,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21739130434782608,1,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.23636363636363636,3,no_data
+ExtraTrees,CHEMBL3900554,BMS-986142,13,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.21428571428571427,-4,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.18518518518518517,-4,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.1935483870967742,91,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.1875,0,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.19047619047619047,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2032520325203252,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2032520325203252,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.18699186991869918,0,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2066115702479339,10,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.1935483870967742,3,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,half_life_obach,Excretion,Half-Life,regression,no_match,0.18699186991869918,3,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.17647058823529413,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.18699186991869918,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.184,1,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.18699186991869918,3,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.2066115702479339,2,no_data
+ExtraTrees,CHEMBL5077961,MILREBRUTINIB,14,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.17543859649122806,-4,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21428571428571427,-5,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.19753086419753085,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.20588235294117646,0,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.1978021978021978,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.2714285714285714,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.325,83,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,vdss_lombardo,Distribution,Volume of Distribution,regression,exact,1.0,1,measured
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.2564102564102564,0,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2564102564102564,0,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2564102564102564,0,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.1978021978021978,0,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.1978021978021978,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.1978021978021978,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.25961538461538464,21,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2391304347826087,7,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,half_life_obach,Excretion,Half-Life,regression,no_match,0.19753086419753085,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.18518518518518517,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.20588235294117646,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.24742268041237114,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2191780821917808,2,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.3409090909090909,1,no_data
+ExtraTrees,CHEMBL221959,TOFACITINIB,15,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2361111111111111,-1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.32051282051282054,-4,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.3188405797101449,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.32051282051282054,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.38372093023255816,80,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.32051282051282054,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.36904761904761907,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.36904761904761907,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.36904761904761907,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.26153846153846155,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.26153846153846155,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.26153846153846155,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.4166666666666667,15,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.4482758620689655,7,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,half_life_obach,Excretion,Half-Life,regression,no_match,0.26153846153846155,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2676056338028169,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.26153846153846155,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21686746987951808,0,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.3188405797101449,1,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.4166666666666667,3,no_data
+ExtraTrees,CHEMBL3301625,SPEBRUTINIB,16,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.29411764705882354,-1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.24324324324324326,-5,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.23684210526315788,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.22321428571428573,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.23684210526315788,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.20175438596491227,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.3063063063063063,96,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.2396694214876033,5,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.2696629213483146,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2696629213483146,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2696629213483146,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.23684210526315788,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.23684210526315788,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.23684210526315788,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2608695652173913,79,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2543859649122807,25,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,half_life_obach,Excretion,Half-Life,regression,no_match,0.23684210526315788,22,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.23711340206185566,0,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.23684210526315788,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.18333333333333332,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.20652173913043478,1,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.3076923076923077,2,no_data
+ExtraTrees,CHEMBL4447181,LONDAMOCITINIB,17,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.23232323232323232,-3,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.38095238095238093,-4,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.24096385542168675,1,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.25609756097560976,1,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.25,1,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.38095238095238093,1,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.2604166666666667,91,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.2777777777777778,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.27586206896551724,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2777777777777778,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.35135135135135137,54,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2604166666666667,3,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,half_life_obach,Excretion,Half-Life,regression,no_match,0.38095238095238093,4,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.25,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.38095238095238093,0,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.38095238095238093,3,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.27906976744186046,3,no_data
+ExtraTrees,CHEMBL3989927,IBERDOMIDE,18,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.38095238095238093,-2,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21052631578947367,-4,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.1797752808988764,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.2,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.1797752808988764,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.29411764705882354,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.4788732394366197,83,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.3132530120481928,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.2159090909090909,0,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.22784810126582278,0,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.22784810126582278,0,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.17857142857142858,0,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.17857142857142858,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.17857142857142858,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2247191011235955,150,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.2247191011235955,103,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,half_life_obach,Excretion,Half-Life,regression,no_match,0.1797752808988764,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.18181818181818182,0,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.1643835616438356,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.16494845360824742,1,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21333333333333335,2,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.4788732394366197,2,no_data
+ExtraTrees,CHEMBL2105759,BARICITINIB,19,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.189873417721519,-2,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21875,-5,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2261904761904762,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.24096385542168675,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2261904761904762,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.23809523809523808,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.525,96,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.525,9,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.30864197530864196,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2682926829268293,0,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.26595744680851063,0,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.21052631578947367,0,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.21052631578947367,0,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.22857142857142856,3,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.525,150,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,half_life_obach,Excretion,Half-Life,regression,no_match,0.2261904761904762,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.31343283582089554,0,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2361111111111111,1,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.28888888888888886,2,no_data
+ExtraTrees,CHEMBL4650323,TOLEBRUTINIB,20,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24242424242424243,-7,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.35443037974683544,-4,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2894736842105263,1,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.27450980392156865,1,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.27848101265822783,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,exact,1.0,80,measured
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.25,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.3170731707317073,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.3218390804597701,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.3218390804597701,1,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.26666666666666666,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.2903225806451613,150,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.3176470588235294,5,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,half_life_obach,Excretion,Half-Life,regression,no_match,0.2549019607843137,22,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.25274725274725274,0,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2549019607843137,1,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21951219512195122,1,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.32941176470588235,2,no_data
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,exact,1.0,2,measured
+ExtraTrees,CHEMBL1287853,FEDRATINIB,21,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.28735632183908044,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.19387755102040816,-4,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.1956521739130435,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.1956521739130435,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2247191011235955,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.2564102564102564,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.23157894736842105,88,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.24719101123595505,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.2564102564102564,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2375,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2375,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2247191011235955,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2247191011235955,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2247191011235955,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.21428571428571427,54,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.21428571428571427,12,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,half_life_obach,Excretion,Half-Life,regression,no_match,0.19318181818181818,12,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.1791044776119403,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.17708333333333334,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.1797752808988764,1,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2247191011235955,3,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.23157894736842105,0,no_data
+ExtraTrees,CHEMBL3622821,UPADACITINIB,22,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.2,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.19148936170212766,-4,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2235294117647059,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.22826086956521738,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.22826086956521738,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.22093023255813954,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.22093023255813954,36,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.40229885057471265,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.22093023255813954,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2222222222222222,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.21621621621621623,0,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.22093023255813954,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.22093023255813954,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.22093023255813954,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.22093023255813954,3,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.22093023255813954,6,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,half_life_obach,Excretion,Half-Life,regression,no_match,0.40229885057471265,790,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.27058823529411763,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.21176470588235294,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.22093023255813954,1,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2328767123287671,2,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.22093023255813954,3,no_data
+ExtraTrees,CHEMBL603469,LESTAURTINIB,23,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.23529411764705882,-5,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2916666666666667,-5,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.23333333333333334,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.28,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.24561403508771928,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.3,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,exact,1.0,81,measured
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.24615384615384617,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.41818181818181815,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.41818181818181815,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.41818181818181815,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2978723404255319,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2978723404255319,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2978723404255319,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.25757575757575757,18,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.39655172413793105,3,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,half_life_obach,Excretion,Half-Life,regression,no_match,0.24561403508771928,7,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.35294117647058826,0,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2978723404255319,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2537313432835821,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.3125,1,no_data
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,exact,1.0,1,measured
+ExtraTrees,CHEMBL191003,JNJ-7706621,24,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.38461538461538464,-1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.23863636363636365,-4,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.18627450980392157,1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.25,1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.22340425531914893,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.21428571428571427,1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.25252525252525254,98,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.21505376344086022,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.28,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.28,1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.28,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.22340425531914893,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.22340425531914893,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.22340425531914893,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.24761904761904763,5,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.23404255319148937,38,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,half_life_obach,Excretion,Half-Life,regression,no_match,0.20408163265306123,75,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.23863636363636365,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.22105263157894736,0,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.20408163265306123,1,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2894736842105263,2,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.25252525252525254,2,no_data
+ExtraTrees,CHEMBL2035187,PACRITINIB,25,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.24242424242424243,-1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2804878048780488,-4,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2549019607843137,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.2727272727272727,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2549019607843137,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.24175824175824176,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.3595505617977528,92,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.205607476635514,13,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.3333333333333333,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.3333333333333333,0,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.3333333333333333,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2549019607843137,0,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2549019607843137,0,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2549019607843137,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.5903614457831325,79,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.35051546391752575,27,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,half_life_obach,Excretion,Half-Life,regression,no_match,0.2549019607843137,22,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2676056338028169,0,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2549019607843137,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2111111111111111,1,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2647058823529412,2,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.5903614457831325,3,no_data
+ExtraTrees,CHEMBL3786343,OLMUTINIB,26,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.26666666666666666,-2,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2857142857142857,-4,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.2621359223300971,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.26666666666666666,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.2621359223300971,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.23655913978494625,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.35714285714285715,99,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.24731182795698925,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.3191489361702128,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.3191489361702128,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.3191489361702128,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2621359223300971,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2621359223300971,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2621359223300971,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.5764705882352941,79,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.35714285714285715,27,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,half_life_obach,Excretion,Half-Life,regression,no_match,0.2621359223300971,22,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.2777777777777778,0,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.2621359223300971,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.24731182795698925,1,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.2608695652173913,2,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.5764705882352941,3,no_data
+ExtraTrees,CHEMBL4163691,POSELTINIB,27,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.27472527472527475,-2,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.21238938053097345,-4,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.21238938053097345,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.22727272727272727,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.22105263157894736,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.22826086956521738,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.24,99,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.22549019607843138,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.25555555555555554,0,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.25555555555555554,0,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.25555555555555554,0,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.21238938053097345,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.21238938053097345,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.21238938053097345,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.22549019607843138,3,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.22549019607843138,6,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,half_life_obach,Excretion,Half-Life,regression,no_match,0.22105263157894736,8,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.20224719101123595,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.21495327102803738,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.22772277227722773,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.21505376344086022,2,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.26262626262626265,1,no_data
+ExtraTrees,CHEMBL4483575,REMIBRUTINIB,28,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.22826086956521738,-6,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.2692307692307692,-5,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.26582278481012656,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.28205128205128205,0,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.26582278481012656,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.34615384615384615,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,exact,1.0,66,measured
+ExtraTrees,CHEMBL495727,AT-9283,29,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.2641509433962264,5,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.3116883116883117,0,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2988505747126437,0,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.3116883116883117,0,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.275,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.275,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.275,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,exact,1.0,3,measured
+ExtraTrees,CHEMBL495727,AT-9283,29,clearance_microsome_az,Excretion,Microsome Clearance,regression,exact,1.0,8,measured
+ExtraTrees,CHEMBL495727,AT-9283,29,half_life_obach,Excretion,Half-Life,regression,no_match,0.26582278481012656,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.22972972972972974,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.275,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.2857142857142857,1,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.3,3,no_data
+ExtraTrees,CHEMBL495727,AT-9283,29,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,close_analog,0.875,2,measured
+ExtraTrees,CHEMBL495727,AT-9283,29,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.3,-1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,caco2_wang,Absorption,Caco-2 Permeability,regression,no_match,0.19540229885057472,-4,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,hia_hou,Absorption,HIA (Human Intestinal Absorption),binary,no_match,0.18681318681318682,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,pgp_broccatelli,Absorption,P-gp Inhibitor,binary,no_match,0.2,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,bioavailability_ma,Absorption,Oral Bioavailability (F>20%),binary,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,bbb_martins,Distribution,BBB Penetration,binary,no_match,0.20618556701030927,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,ppbr_az,Distribution,Plasma Protein Binding Rate,regression,no_match,0.24742268041237114,85,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,vdss_lombardo,Distribution,Volume of Distribution,regression,no_match,0.22,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp2c9_veith,Metabolism,CYP2C9 Inhibitor,binary,no_match,0.22826086956521738,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp2d6_veith,Metabolism,CYP2D6 Inhibitor,binary,no_match,0.2345679012345679,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp3a4_veith,Metabolism,CYP3A4 Inhibitor,binary,no_match,0.2345679012345679,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp2c9_substrate_carbonmangels,Metabolism,CYP2C9 Substrate,binary,no_match,0.2054794520547945,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp2d6_substrate_carbonmangels,Metabolism,CYP2D6 Substrate,binary,no_match,0.2054794520547945,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,cyp3a4_substrate_carbonmangels,Metabolism,CYP3A4 Substrate,binary,no_match,0.2054794520547945,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,clearance_hepatocyte_az,Excretion,Hepatocyte Clearance,regression,no_match,0.24742268041237114,26,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,clearance_microsome_az,Excretion,Microsome Clearance,regression,no_match,0.21176470588235294,131,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,half_life_obach,Excretion,Half-Life,regression,no_match,0.21052631578947367,10,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,ames,Toxicity,Ames Mutagenicity,binary,no_match,0.25,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,dili,Toxicity,DILI (Drug-Induced Liver Injury),binary,no_match,0.18681318681318682,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,herg,Toxicity,hERG Cardiotoxicity,binary,no_match,0.21052631578947367,1,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,ld50_zhu,Toxicity,Acute Toxicity (LD50),regression,no_match,0.25,2,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,lipophilicity_astrazeneca,Properties,Lipophilicity (logD),regression,no_match,0.25,0,no_data
+ExtraTrees,CHEMBL4298138,REPOTRECTINIB,30,solubility_aqsoldb,Properties,Aqueous Solubility,regression,no_match,0.21428571428571427,-3,no_data

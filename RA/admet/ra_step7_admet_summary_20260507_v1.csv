@@ -1,0 +1,6 @@
+model,input_top30,with_smiles,kept_after_gate,final15_count,mean_safety_score,median_safety_score,toxicity_flagged_count,reference_drugs_kept,top10_kept
+CatBoost,30,30,30,15,6.0,5.0,0,4,10
+ExtraTrees,30,30,30,15,6.166666666666667,5.0,0,5,10
+LightGBM,30,30,30,15,6.166666666666667,5.0,0,5,10
+RandomForest,30,30,30,15,6.166666666666667,5.0,0,5,10
+XGBoost,30,30,30,15,6.0,5.0,0,5,10

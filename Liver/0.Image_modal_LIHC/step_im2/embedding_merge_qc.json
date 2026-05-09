@@ -1,0 +1,12 @@
+{
+  "requested_shape_note": "LIHC Step3 parquet contains the available successfully embedded slide rows.",
+  "actual_shape": [
+    223,
+    1536
+  ],
+  "n_nan": 0,
+  "n_pos_inf": 0,
+  "n_neg_inf": 0,
+  "n_unique_patients": 223,
+  "n_source_parts": 5
+}

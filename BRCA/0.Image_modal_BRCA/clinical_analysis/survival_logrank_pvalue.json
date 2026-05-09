@@ -1,0 +1,18 @@
+{
+  "cancer_type": "BRCA",
+  "cluster_column": "majority_cluster",
+  "k": 4,
+  "n_cases_with_os": 279,
+  "n_events": 40,
+  "cluster_counts": {
+    "C0": 127,
+    "C1": 22,
+    "C2": 121,
+    "C3": 9
+  },
+  "logrank_p_value": 0.41319740182283426,
+  "test_statistic": 2.863225182045242,
+  "method": "Kaplan-Meier overall survival by WSI k=4 clusters; multivariate log-rank test",
+  "time_column": "os_time_months",
+  "event_column": "os_event_int"
+}

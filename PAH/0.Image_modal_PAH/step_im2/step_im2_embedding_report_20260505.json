@@ -1,0 +1,15 @@
+{
+  "date": "20260505",
+  "device": "xpu",
+  "torch_version": "2.11.0+xpu",
+  "xpu_device_name": "Intel(R) Arc(TM) 140T GPU (16GB)",
+  "n_patients": 176,
+  "embedding_dim": 512,
+  "total_seconds": 517.9577927589417,
+  "mean_inference_seconds": 1.6462502615018324,
+  "missing_weight_keys": [],
+  "unexpected_weight_keys": [
+    "text_transformer.embeddings.position_ids"
+  ],
+  "note": "CPU fallback was intentionally not used. IM-1 saved HU volumes clipped to [-1000, 400]."
+}

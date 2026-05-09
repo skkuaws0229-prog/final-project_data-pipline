@@ -1,0 +1,17 @@
+{
+  "raw_wsi_prefix": "s3://say2-4team/lihc_image_modal_20260501_v1/wsi_raw/",
+  "delete_command": "aws s3 rm s3://say2-4team/lihc_image_modal_20260501_v1/wsi_raw/ --recursive",
+  "status": "executed",
+  "executed_at": "2026-05-06T17:11:02.6025676+09:00",
+  "post_delete_verification": {
+    "raw_wsi_total_objects": 0,
+    "raw_wsi_total_size_bytes": 0,
+    "preserved_image_modal_prefix": "s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/0.Image_modal_LIHC/",
+    "preserved_image_modal_total_objects": 47,
+    "preserved_image_modal_total_size_bytes": 28336565,
+    "preserved_embeddings_prefix": "s3://say2-4team/lihc_image_modal_20260501_v1/output/embeddings_mid/",
+    "preserved_embeddings_total_objects": 456,
+    "preserved_embeddings_total_size_bytes": 12546233085
+  },
+  "reason": "executed after explicit user approval and post-delete verification"
+}

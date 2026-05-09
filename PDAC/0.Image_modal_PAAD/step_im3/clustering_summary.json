@@ -1,0 +1,13 @@
+{
+  "best_k": 2,
+  "best_silhouette": 0.29640647768974304,
+  "n_patients": 178,
+  "cluster_counts": {
+    "0": 168,
+    "1": 10
+  },
+  "pca_explained_variance_ratio": [
+    0.12152905017137527,
+    0.1173996552824974
+  ]
+}

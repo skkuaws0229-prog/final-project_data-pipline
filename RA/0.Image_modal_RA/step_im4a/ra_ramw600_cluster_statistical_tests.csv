@@ -1,0 +1,4 @@
+variable,test,p_value
+total_svdh_bone_erosion,one_way_anova,0.031040064062761562
+total_svdh_bone_erosion,kruskal_wallis,0.00045096190450947247
+severity_bin,chi_squared,1.479357820473372e-05

@@ -1,0 +1,6 @@
+{
+  "test": "multivariate_logrank",
+  "p_value": 0.1184927043763069,
+  "n": 177,
+  "events": 94
+}

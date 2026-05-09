@@ -1,0 +1,31 @@
+rank,canonical_drug_id,drug_name_display,drug_name_admet,admet_decision,admet_reason,admet_verdict,safety_score,n_total_matches,n_exact,n_close_analog,n_analog,pains_alert,mw,logp,hbd,hba,tpsa,rotatable_bonds
+1,1085,Sorafenib,,CAUTION,ADMET WARNING or limited assay support.,,,,,,,,,,,,,
+2,1378,Bleomycin (50 uM),Bleomycin (50 uM),CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,1.0,0.0,0.0,1.0,False,1415.58,-7.7,20.0,31.0,627.07,35.0
+3,1031,Elesclomol,Elesclomol,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,400.53,2.05,2.0,4.0,64.68,4.0
+4,1819,Docetaxel,Docetaxel,CAUTION,ADMET WARNING or limited assay support.,WARNING,4.25,12.0,2.0,3.0,7.0,False,861.94,0.79,5.0,14.0,318.95,8.0
+5,1016,Temsirolimus,Temsirolimus,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.5,7.0,3.0,0.0,4.0,False,1030.3,5.72,4.0,16.0,241.96,10.0
+6,1080,Paclitaxel,Paclitaxel,CAUTION,ADMET WARNING or limited assay support.,WARNING,4.25,12.0,11.0,0.0,1.0,False,853.92,3.74,4.0,14.0,221.29,10.0
+7,1191,Bortezomib,Bortezomib,EXCLUDE,ADMET FAIL.,FAIL,3.4,7.0,7.0,0.0,0.0,False,384.25,0.36,4.0,6.0,124.44,9.0
+8,1511,Epirubicin,Epirubicin,CAUTION,PAINS alert or assay-interference caution.,WARNING,4.0,15.0,13.0,2.0,0.0,True,543.53,0.0,6.0,12.0,206.07,5.0
+9,1808,Topotecan,Topotecan,CAUTION,PAINS alert or assay-interference caution.,PASS,7.5,10.0,6.0,3.0,1.0,True,421.45,1.85,2.0,7.0,104.89,3.0
+10,1911,Dactinomycin,Dactinomycin,CAUTION,ADMET WARNING or limited assay support.,WARNING,4.0,5.0,5.0,0.0,0.0,False,1255.44,0.73,5.0,18.0,359.98,8.0
+11,1024,Lestaurtinib,Lestaurtinib,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,439.47,3.47,3.0,4.0,88.65,1.0
+12,1170,CCT-018159,CCT-018159,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,352.39,3.8,3.0,5.0,87.6,3.0
+13,1862,MG-132,MG-132,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,3.0,0.0,0.0,3.0,False,475.63,3.59,3.0,5.0,113.6,14.0
+14,1004,Vinblastine,Vinblastine,KEEP,ADMET PASS.,PASS,7.0,12.0,9.0,2.0,1.0,False,810.99,3.99,3.0,12.0,154.1,7.0
+15,1003,Camptothecin,Camptothecin,KEEP,ADMET PASS.,PASS,6.25,5.0,3.0,0.0,2.0,False,348.36,2.08,1.0,5.0,81.42,1.0
+16,1037,BX795,BX795,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,1.0,0.0,0.0,1.0,False,591.48,4.75,4.0,7.0,111.28,9.0
+17,1088,Irinotecan,Irinotecan,KEEP,ADMET PASS.,PASS,6.4,9.0,8.0,0.0,1.0,False,586.69,4.09,1.0,8.0,114.2,4.0
+18,1809,Teniposide,Teniposide,EXCLUDE,ADMET FAIL.,FAIL,3.15,18.0,9.0,0.0,9.0,False,656.66,2.75,3.0,14.0,160.83,6.0
+19,1039,SL0101,SL0101,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,516.46,1.92,4.0,12.0,182.19,5.0
+20,1026,Tanespimycin,Tanespimycin,CAUTION,PAINS alert or assay-interference caution.,WARNING,5.0,2.0,1.0,0.0,1.0,True,585.7,2.54,4.0,9.0,166.28,6.0
+21,1810,Mitoxantrone,Mitoxantrone,EXCLUDE,ADMET FAIL.,FAIL,3.0,12.0,11.0,1.0,0.0,True,444.49,-0.14,8.0,10.0,163.18,12.0
+22,1034,Staurosporine,Staurosporine,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.25,1.0,0.0,0.0,1.0,False,466.54,4.35,2.0,4.0,69.45,2.0
+23,1096,Tozasertib,Tozasertib,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,2.0,1.0,0.0,1.0,False,464.6,3.5,3.0,8.0,102.07,7.0
+24,1084,Rapamycin,Rapamycin,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.5,7.0,2.0,4.0,1.0,False,914.19,6.18,3.0,13.0,195.43,6.0
+25,1086,BI-2536,BI-2536,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,2.0,1.0,0.0,1.0,False,521.67,3.56,2.0,8.0,102.93,7.0
+26,1617,AZD5582,AZD5582,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,1015.31,3.92,6.0,10.0,199.54,18.0
+27,1529,Pevonedistat,Pevonedistat,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.0,0.0,0.0,0.0,0.0,False,443.53,2.06,3.0,7.0,132.36,6.0
+28,2048,Vinorelbine,Vinorelbine,KEEP,ADMET PASS.,PASS,7.25,10.0,6.0,0.0,4.0,False,778.95,4.75,2.0,11.0,133.87,7.0
+29,1019,Bosutinib,Bosutinib,CAUTION,ADMET WARNING or limited assay support.,WARNING,5.25,2.0,2.0,0.0,0.0,False,530.46,5.19,1.0,8.0,82.88,9.0
+30,1149,TW 37,TW 37,CAUTION,PAINS alert or assay-interference caution.,WARNING,5.0,2.0,2.0,0.0,0.0,True,573.71,6.9,4.0,6.0,123.93,7.0

@@ -1,0 +1,17 @@
+{
+  "branch": "ra_v3_named_drug_baseline",
+  "phases": [
+    "phase2a",
+    "phase2b"
+  ],
+  "models": [
+    "RandomForest",
+    "ExtraTrees",
+    "LightGBM",
+    "XGBoost",
+    "CatBoost"
+  ],
+  "summary_csv": "/opt/ml/processing/output/export/summary/ra_v3_named_drug_baseline_ml_summary_20260507_v1.csv",
+  "known_rank_csv": "/opt/ml/processing/output/export/known_ranks/ra_v3_named_drug_baseline_ml_known_drug_ranks_20260507_v1.csv",
+  "note": "RA named-drug baseline ML SageMaker run with holdout + drug-groupcv + scaffoldcv."
+}

@@ -1,0 +1,12 @@
+{
+  "eval_mode": "cv5",
+  "spearman": 0.48639974153695886,
+  "spearman_p": 3.1211715402479836e-201,
+  "rmse": 2.2323628748445157,
+  "mae": 1.6801705485691742,
+  "r2": 0.2736156008735616,
+  "n_train": 3396,
+  "n_test": 3396,
+  "n_features": 1539,
+  "image_embedding": "patient_level_zero_for_unmapped_gdsc"
+}

@@ -1,0 +1,31 @@
+rank,drug_name,validation_evidence_tier,admet_category,admet_coverage
+1,Dactinomycin,VT2,Caution,0.2273
+2,Temsirolimus,VT2,Caution,0.3182
+3,Docetaxel,VT1,Candidate,0.5455
+4,Teniposide,VT2,Candidate,0.8182
+5,Topotecan,VT1,Candidate,0.4545
+6,AZD2014,VT3,Caution,0.0909
+7,Lestaurtinib,VT3,Caution,0.0000
+8,Mitoxantrone,VT2,Candidate,0.5455
+9,Paclitaxel,VT1,Candidate,0.5455
+10,Bleomycin,VT3,Caution,0.0455
+11,glutathione,VT4,Caution,0.0455
+12,SN-38,VT3,Caution,0.2273
+13,Epirubicin,VT2,Candidate,0.6818
+14,Camptothecin,VT3,Caution,0.2273
+15,Bleomycin (50 uM),VT3,Caution,0.0455
+16,SL0101,VT3,Caution,0.0000
+17,Romidepsin,VT2,Caution,0.0909
+18,Dasatinib,VT2,Caution,0.1364
+19,Sabutoclax,VT3,Caution,0.0909
+20,Bortezomib,VT2,Caution,0.3182
+21,Vinorelbine,VT3,Candidate,0.4545
+22,Refametinib,VT3,Caution,0.0000
+23,AZD5582,VT3,Caution,0.0000
+24,Sepantronium bromide,VT3,Caution,0.0455
+25,Tanespimycin,VT3,Caution,0.0909
+26,MG-132,VT3,Caution,0.1364
+27,Staurosporine,VT3,Caution,0.0455
+28,Vinblastine,VT2,Candidate,0.5455
+29,Rapamycin,VT3,Caution,0.3182
+30,Irinotecan,VT1,Caution,0.4091

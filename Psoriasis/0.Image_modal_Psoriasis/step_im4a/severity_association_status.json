@@ -1,0 +1,4 @@
+{
+  "severity_label_available": false,
+  "analysis_note": "Kaggle Skin Diseases Dataset provides disease-category labels only for this selected psoriasis class. PASI none/mild/moderate/severe labels were not present, so severity association is marked not_applicable."
+}

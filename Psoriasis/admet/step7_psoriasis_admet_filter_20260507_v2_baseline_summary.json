@@ -1,0 +1,77 @@
+{
+  "step": 7,
+  "mode": "strict_admet_gate_no_rerank",
+  "source_admet_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/source_staging/admet",
+  "admet_assay_count": 22,
+  "model_summary": [
+    {
+      "model": "RandomForest",
+      "input_top30": 30,
+      "with_smiles": 30,
+      "kept_after_gate": 30,
+      "final15_count": 15,
+      "mean_safety_score": 6.5,
+      "median_safety_score": 5.0,
+      "toxicity_flagged_count": 0,
+      "reference_drugs_kept": 4,
+      "top10_kept": 10
+    },
+    {
+      "model": "ExtraTrees",
+      "input_top30": 30,
+      "with_smiles": 30,
+      "kept_after_gate": 30,
+      "final15_count": 15,
+      "mean_safety_score": 6.5,
+      "median_safety_score": 5.0,
+      "toxicity_flagged_count": 0,
+      "reference_drugs_kept": 4,
+      "top10_kept": 10
+    },
+    {
+      "model": "LightGBM",
+      "input_top30": 30,
+      "with_smiles": 30,
+      "kept_after_gate": 30,
+      "final15_count": 15,
+      "mean_safety_score": 6.5,
+      "median_safety_score": 5.0,
+      "toxicity_flagged_count": 0,
+      "reference_drugs_kept": 4,
+      "top10_kept": 10
+    },
+    {
+      "model": "XGBoost",
+      "input_top30": 30,
+      "with_smiles": 30,
+      "kept_after_gate": 30,
+      "final15_count": 15,
+      "mean_safety_score": 6.333333333333333,
+      "median_safety_score": 5.0,
+      "toxicity_flagged_count": 0,
+      "reference_drugs_kept": 4,
+      "top10_kept": 10
+    },
+    {
+      "model": "CatBoost",
+      "input_top30": 30,
+      "with_smiles": 30,
+      "kept_after_gate": 30,
+      "final15_count": 15,
+      "mean_safety_score": 6.166666666666667,
+      "median_safety_score": 5.0,
+      "toxicity_flagged_count": 0,
+      "reference_drugs_kept": 3,
+      "top10_kept": 10
+    }
+  ],
+  "notes": [
+    "Step 7 preserves the Step 5/6 model order and uses ADMET as a gate rather than a rescue reranker.",
+    "Toxicity positives (hERG, Ames, DILI) are treated as hard filters for the final kept set."
+  ],
+  "artifacts": {
+    "summary_csv": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step7_psoriasis_admet_filter_20260507_v2_baseline/reports/psoriasis_step7_admet_summary_20260507_v2_baseline.csv",
+    "model_outputs_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step7_psoriasis_admet_filter_20260507_v2_baseline/model_outputs",
+    "details_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step7_psoriasis_admet_filter_20260507_v2_baseline/details"
+  }
+}

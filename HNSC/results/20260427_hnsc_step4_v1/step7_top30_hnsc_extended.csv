@@ -1,0 +1,31 @@
+rank,drug_name,tier,definition_basis,prism_status,clinical_trial_has_evidence,patient_context_has_evidence,opentargets_has_evidence,cosmic_has_evidence,external_any_support,external_data_status,step7_extended_decision
+1,Dactinomycin,Tier2,타암종 승인/적응증확장 연구축,LIBRARY_ONLY,True,False,False,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+2,Docetaxel,Tier1,두경부암 승인/표준치료 축,NO_MATCH,True,False,False,True,True,HAS_SOURCE_ROWS,PRIORITY_1
+3,Vinorelbine,Tier2,타암종 승인/적응증확장 연구축,OK,True,False,False,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+4,Paclitaxel,Tier1,두경부암 승인/표준치료 축,OK,True,False,False,True,True,HAS_SOURCE_ROWS,PRIORITY_1
+5,Temsirolimus,Tier2,타암종 승인/적응증확장 연구축,OK,True,True,True,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+6,Topotecan,Tier2,타암종 승인/적응증확장 연구축,OK,True,True,True,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+7,Vinblastine,Tier2,타암종 승인/적응증확장 연구축,OK,False,False,False,False,False,HAS_SOURCE_ROWS,REVIEW
+8,SN-38,Tier2,타암종 승인/적응증확장 연구축,OK,False,True,True,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+9,Lestaurtinib,Tier3,두경부암 미사용 치료제/신규탐색,OK,False,True,True,False,True,HAS_SOURCE_ROWS,EXPLORE
+10,SL0101,Tier3,두경부암 미사용 치료제/신규탐색,NO_MATCH,False,True,True,False,True,HAS_SOURCE_ROWS,EXPLORE
+11,Teniposide,Tier2,타암종 승인/적응증확장 연구축,OK,False,False,False,False,False,HAS_SOURCE_ROWS,REVIEW
+12,Irinotecan,Tier2,타암종 승인/적응증확장 연구축,OK,True,True,True,False,True,HAS_SOURCE_ROWS,PRIORITY_2
+13,Camptothecin,Tier4,화합물/검증추가필요,OK,True,True,True,False,True,HAS_SOURCE_ROWS,REVIEW
+14,Pyridostatin,Tier4,화합물/검증추가필요,NO_MATCH,False,False,False,False,False,HAS_SOURCE_ROWS,REVIEW
+15,Schweinfurthin A,Tier4,화합물/검증추가필요,NO_MATCH,False,False,False,False,False,HAS_SOURCE_ROWS,REVIEW
+16,GSK1904529A,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+17,Staurosporine,Tier4,화합물/검증추가필요,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+18,Epirubicin,Tier2,타암종 승인/적응증확장 연구축,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+19,Tozasertib,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+20,Mitoxantrone,Tier2,타암종 승인/적응증확장 연구축,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+21,MG-132,Tier4,화합물/검증추가필요,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+22,Sabutoclax,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+23,AZD5582,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+24,Rapamycin,Tier2,타암종 승인/적응증확장 연구축,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+25,AZD2014,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+26,Refametinib,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+27,LMP744,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+28,ZM447439,Tier3,두경부암 미사용 치료제/신규탐색,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+29,Tanespimycin,Tier2,타암종 승인/적응증확장 연구축,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW
+30,Bleomycin,Tier1,두경부암 승인/표준치료 축,,,,,,False,PARTIAL_OR_UNKNOWN,REVIEW

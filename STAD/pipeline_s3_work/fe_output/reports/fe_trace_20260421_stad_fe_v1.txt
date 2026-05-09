@@ -1,0 +1,5 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	3a/aeb472	6afd71b5-076a-4853-aa7c-ec307fe2bda8	prepare_fe_inputs (prepare_inputs_20260421_stad_fe_v1)	COMPLETED	0	2026-04-21 19:33:59.700	3m 39s	7.8s	90.0%	239.9 MB	2.5 GB	15.9 MB	13.4 MB
+2	e6/7a4698	f5004197-b65a-457e-b97b-82cf477d43d5	build_features (build_features_20260421_stad_fe_v1)	COMPLETED	0	2026-04-21 19:37:38.963	2m 20s	27.7s	112.2%	3.7 GB	11.7 GB	28.2 MB	31.4 MB
+3	d1/9e571d	6ccf287e-081e-4d4a-a488-2812243229a8	build_pair_features (pair_features_20260421_stad_fe_v1)	COMPLETED	0	2026-04-21 19:39:59.048	29.6s	12.2s	145.4%	564.4 MB	9.9 GB	40.4 MB	4.4 MB
+4	d0/874eed	be3da9ad-a17a-4775-a33c-7fc372b7eb31	upload_results (upload_20260421_stad_fe_v1)	COMPLETED	0	2026-04-21 19:40:29.063	9.6s	1.1s	85.8%	82.4 MB	1.1 GB	54 MB	20.7 MB

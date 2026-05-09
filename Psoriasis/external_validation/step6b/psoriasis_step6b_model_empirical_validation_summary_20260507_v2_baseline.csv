@@ -1,0 +1,6 @@
+model,top30_count,top15_positive_empirical_support,top30_positive_empirical_support,top15_direct_drug_count,top15_same_axis_count
+CatBoost,30,3,6,1,2
+ExtraTrees,30,3,7,1,2
+LightGBM,30,3,7,1,2
+RandomForest,30,3,7,1,2
+XGBoost,30,3,7,1,2

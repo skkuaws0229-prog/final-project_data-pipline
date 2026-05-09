@@ -1,0 +1,3 @@
+parent_key_norm	tier	rationale_ko
+# Blank tier column falls back to built-in rules. Tier: 1=HCC 승인 2=타암 승인+HCC확장연구 3=간암 표준외 사용 4=화합물/확인필요
+# Edit tier/rationale as needed after clinician review.

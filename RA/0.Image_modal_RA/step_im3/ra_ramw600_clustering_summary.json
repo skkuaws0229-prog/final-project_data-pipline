@@ -1,0 +1,8 @@
+{
+  "selected_k": 2,
+  "selected_silhouette": 0.13258033990859985,
+  "n_patients_clustered": 207,
+  "svdh_anova_p_value": 0.031040064062761562,
+  "svdh_kruskal_p_value": 0.00045096190450947247,
+  "severity_chi_squared_p_value": 1.479357820473372e-05
+}

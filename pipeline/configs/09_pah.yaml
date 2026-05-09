@@ -1,0 +1,15 @@
+disease: {name: PAH}
+model: {foundation_model: CT-CLIP}
+execution: {step3_env: local, steps: [im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/IPF/final_data_pah/0.Image_modal_PAH"
+  merged_npy: "C:/Users/biso8/20260503_final_project/IPF/final_data_pah/0.Image_modal_PAH/step_im2/ct_clip_embeddings_176.npy"
+  clinical_csv: "C:/Users/biso8/20260503_final_project/report_fill/ipf/step_im1/osic_clinical_baseline.csv"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: []
+  clinical_vars: [Sex, SmokingStatus, progression_label]
+  continuous_vars: [FVC, Percent, FVC_slope, Age]
+  clinical_id_column: Patient
+drug: {}
+

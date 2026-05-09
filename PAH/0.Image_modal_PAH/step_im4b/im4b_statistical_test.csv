@@ -1,0 +1,7 @@
+model,comparison,wilcoxon_statistic,p_value,mean_auc_delta
+LogisticRegression,image_only_vs_clinical_only,7.0,1.0,-0.027469135802469125
+LogisticRegression,image_clinical_vs_clinical_only,5.0,0.625,-0.03176638176638177
+RandomForest,image_only_vs_clinical_only,1.0,0.125,-0.11055318138651468
+RandomForest,image_clinical_vs_clinical_only,2.0,0.1875,-0.08641183918961697
+GradientBoosting,image_only_vs_clinical_only,7.0,1.0,0.0034188034188033954
+GradientBoosting,image_clinical_vs_clinical_only,7.0,1.0,-0.007446976891421353

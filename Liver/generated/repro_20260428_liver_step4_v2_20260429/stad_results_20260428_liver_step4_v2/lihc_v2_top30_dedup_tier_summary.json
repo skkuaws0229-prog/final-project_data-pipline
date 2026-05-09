@@ -1,0 +1,17 @@
+{
+  "result_tag": "20260428_liver_step4_v2",
+  "ensemble": "LIHC v2 directive weighted + parent-drug dedup",
+  "n_hcc_approved_anchors": 1,
+  "n_unique_parents": 30,
+  "tier_counts": {
+    "1": 1,
+    "2": 8,
+    "3": 11,
+    "4": 10
+  },
+  "outputs": {
+    "tiered_csv": "results/20260428_liver_step4_v2/lihc_v2_top30_dedup_tiered.csv",
+    "step6_top30_csv": "results/20260428_liver_step4_v2/lihc_top30_directive_ensemble_with_names.csv"
+  },
+  "step6_command_hint": "python3 scripts/../Liver cancer/scripts/step6_ext_lihc_independent_cptac_excluded.py --project-root \"<Liver cancer bundle>\" --result-tag 20260428_liver_step4_v2"
+}

@@ -1,0 +1,3 @@
+model,n_features,total_importance,image_importance,image_importance_fraction,top_features
+baseline_no_image,3,5958.0,0.0,0.0,"[[""ensemble_pred"", 5958], [""component_pred_std"", 0], [""ensemble_member_std"", 0]]"
+baseline_plus_image,1539,5958.0,0.0,0.0,"[[""ensemble_pred"", 5958], [""component_pred_std"", 0], [""ensemble_member_std"", 0], [""emb_0"", 0], [""emb_1"", 0], [""emb_2"", 0], [""emb_3"", 0], [""emb_4"", 0], [""emb_5"", 0], [""emb_6"", 0], [""emb_7"", 0], [""emb_8"", 0], [""emb_9"", 0], [""emb_10"", 0], [""emb_11"", 0], [""emb_12"", 0], [""emb_13"", 0], [""emb_14"", 0], [""emb_15"", 0], [""emb_16"", 0]]"

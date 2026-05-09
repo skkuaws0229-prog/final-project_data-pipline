@@ -1,0 +1,35 @@
+{
+  "basis": "groupcv Spearman proportional",
+  "weights": [
+    {
+      "model": "CatBoost",
+      "phase": "2A",
+      "weight": 0.1634894882623439
+    },
+    {
+      "model": "LightGBM",
+      "phase": "2A",
+      "weight": 0.16875712141165303
+    },
+    {
+      "model": "XGBoost",
+      "phase": "2A",
+      "weight": 0.1654965532390029
+    },
+    {
+      "model": "CatBoost",
+      "phase": "2B",
+      "weight": 0.1639667988830835
+    },
+    {
+      "model": "LightGBM",
+      "phase": "2B",
+      "weight": 0.17082604478934435
+    },
+    {
+      "model": "XGBoost",
+      "phase": "2B",
+      "weight": 0.16746399341457224
+    }
+  ]
+}

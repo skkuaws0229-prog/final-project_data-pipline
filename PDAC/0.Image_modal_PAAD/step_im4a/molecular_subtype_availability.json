@@ -1,0 +1,8 @@
+{
+  "requested_subtype": "Basal-like vs Classical",
+  "status": "not_available_in_downloaded_cbio_clinical_tables",
+  "available_subtype_columns": [
+    "SUBTYPE"
+  ],
+  "interpretation": "The PanCancer Atlas clinical tables used here do not contain basal-like/classical labels. Add expression-derived subtype labels to enable cluster-level subtype testing."
+}

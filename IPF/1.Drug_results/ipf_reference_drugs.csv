@@ -1,0 +1,7 @@
+Drug_Name,ChEMBL_ID,MoA,max_phase,IPF_Status,In_Pipeline,reason
+Pirfenidone,CHEMBL1256391,TGF-beta pathway,4,FDA 승인,No,해당 타겟이 13개에 미포함 또는 직접 IC50 타겟 아님
+Nerandomilast,CHEMBL5314532,PDE4B,4,FDA 승인 2025,No,해당 타겟이 13개에 미포함 또는 직접 IC50 타겟 아님
+Admilparant,CHEMBL5087506,LPA1,3,Phase III 진행중,No,Step 3에서 해당 타겟 IC50 데이터 없음
+Galunisertib,CHEMBL3545110,TGF-betaR1,2,Phase II,No,Step 3에서 해당 타겟 IC50 데이터 없음
+Vactosertib,CHEMBL4296386,TGF-betaR1,2,Phase II,No,Step 3에서 해당 타겟 IC50 데이터 없음
+Baricitinib,CHEMBL3707348,JAK1/2,4,"COVID 승인, IPF 미적용",No,Step 3에서 해당 타겟 IC50 데이터 없음

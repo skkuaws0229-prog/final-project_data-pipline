@@ -1,0 +1,61 @@
+cluster,drug_rank,drug_name,canonical_drug_id,targets,pathway,admet_filter,pdac_4tier,fit_score,rationale
+0,21,Paclitaxel,1080,BCL2;NR1I2;TUBB1,Mitosis,KEEP,Tier 1,0.6,Cluster drivers: KRAS(61%); TP53(55%) | current PDAC therapy benchmark
+0,4,Topotecan,1808,TOP1;TOP1MT,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,5,Vinblastine,1004,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,Mitosis,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,13,Vinorelbine,2048,BCL2;MAP4;MAPK1;TUBB,Mitosis,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,15,Staurosporine,1034,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,RTK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,16,Selumetinib,1736,MAP2K1;MAP2K2,ERK MAPK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,17,SN-38,1494,TOP1,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,19,Temsirolimus,1016,MTOR,PI3K/MTOR signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,22,Camptothecin,1003,TOP1,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,25,MK-1775,1179,PLK1;WEE1,Cell cycle,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,26,Dabrafenib,1373,BRAF;LIMK1;NEK11;RAF1;SIK1,ERK MAPK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,27,Dactolisib,1057,MTOR;PIK3CG,PI3K/MTOR signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,29,Bosutinib,1019,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,Other kinases,KEEP,Tier 2,0.5,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence
+0,2,Docetaxel,1819,BCL2;NR1I2;TUBB1,Mitosis,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence | ADMET caution
+0,3,MG-132,1862,CAPN1;PROTEASOME,Protein stability and degradation,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,7,Epirubicin,1511,ANTHRACYCLINE;TOP2A;TOP2B,DNA replication,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence | ADMET caution
+0,8,Mitoxantrone,1810,TOP2;TOP2A;TOP2B,DNA replication,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence | ADMET caution
+0,9,Lestaurtinib,1024,FLT3;JAK2;NTRK1;NTRK2;NTRK3,Other kinases,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,10,OSI-027,1594,MTOR,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,11,Bortezomib,1191,PROTEASOME;PRSS1;PSMB1;PSMB5,Protein stability and degradation,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(61%); TP53(55%) | PDAC clinical/research evidence | ADMET caution
+0,12,BI-2536,1086,PLK1;PLK2;PLK3,Cell cycle,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,14,BMS-345541,1249,IKK-1;IKK-2,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,18,AZD5438,1401,CDK2,Cell cycle,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,20,AZD8055,1059,MTOR,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,23,Cytarabine,1006,ANTIMETABOLITE;POLB,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,24,BMS-536924,1091,IGF1R;IR,IGF1R signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,28,5-azacytidine,2156,nan,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,30,Pictilisib,1058,PIK3CG,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(61%); TP53(55%)
+0,1,Dactinomycin,1811,TOP1;TOP2A,Other,CAUTION,Tier 3,0.3,Cluster drivers: KRAS(61%); TP53(55%) | ADMET caution
+0,6,Teniposide,1809,TOP2A;TOP2B,DNA replication,CAUTION,Tier 4,0.3,Cluster drivers: KRAS(61%); TP53(55%) | ADMET caution
+1,21,Paclitaxel,1080,BCL2;NR1I2;TUBB1,Mitosis,KEEP,Tier 1,0.6,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | current PDAC therapy benchmark
+1,4,Topotecan,1808,TOP1;TOP1MT,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,5,Vinblastine,1004,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,Mitosis,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,13,Vinorelbine,2048,BCL2;MAP4;MAPK1;TUBB,Mitosis,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,15,Staurosporine,1034,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,RTK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,16,Selumetinib,1736,MAP2K1;MAP2K2,ERK MAPK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,17,SN-38,1494,TOP1,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,19,Temsirolimus,1016,MTOR,PI3K/MTOR signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,22,Camptothecin,1003,TOP1,DNA replication,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,25,MK-1775,1179,PLK1;WEE1,Cell cycle,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,26,Dabrafenib,1373,BRAF;LIMK1;NEK11;RAF1;SIK1,ERK MAPK signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,27,Dactolisib,1057,MTOR;PIK3CG,PI3K/MTOR signaling,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,29,Bosutinib,1019,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,Other kinases,KEEP,Tier 2,0.5,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence
+1,2,Docetaxel,1819,BCL2;NR1I2;TUBB1,Mitosis,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence | ADMET caution
+1,3,MG-132,1862,CAPN1;PROTEASOME,Protein stability and degradation,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,7,Epirubicin,1511,ANTHRACYCLINE;TOP2A;TOP2B,DNA replication,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence | ADMET caution
+1,8,Mitoxantrone,1810,TOP2;TOP2A;TOP2B,DNA replication,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence | ADMET caution
+1,9,Lestaurtinib,1024,FLT3;JAK2;NTRK1;NTRK2;NTRK3,Other kinases,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,10,OSI-027,1594,MTOR,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,11,Bortezomib,1191,PROTEASOME;PRSS1;PSMB1;PSMB5,Protein stability and degradation,CAUTION,Tier 2,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | PDAC clinical/research evidence | ADMET caution
+1,12,BI-2536,1086,PLK1;PLK2;PLK3,Cell cycle,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,14,BMS-345541,1249,IKK-1;IKK-2,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,18,AZD5438,1401,CDK2,Cell cycle,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,20,AZD8055,1059,MTOR,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,23,Cytarabine,1006,ANTIMETABOLITE;POLB,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,24,BMS-536924,1091,IGF1R;IR,IGF1R signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,28,5-azacytidine,2156,nan,Other,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,30,Pictilisib,1058,PIK3CG,PI3K/MTOR signaling,KEEP,Tier 3,0.4,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%)
+1,1,Dactinomycin,1811,TOP1;TOP2A,Other,CAUTION,Tier 3,0.3,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | ADMET caution
+1,6,Teniposide,1809,TOP2A;TOP2B,DNA replication,CAUTION,Tier 4,0.3,Cluster drivers: KRAS(80%); TP53(80%); SMAD4(30%) | ADMET caution

@@ -1,0 +1,859 @@
+{
+  "bundle_stamp": "20260429",
+  "result_tag": "20260428_liver_step4_v2",
+  "run_id": "step4_lihc_v2_manual",
+  "stad_root": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD",
+  "liver_package": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/Liver cancer",
+  "notes": "Copied artifacts only; sources were not modified.",
+  "files": [
+    {
+      "path": "liver_cancer_external_validation_20260428_liver_step4_v2/external_validation_lihc_cptac_excluded_summary.json",
+      "bytes": 587
+    },
+    {
+      "path": "liver_cancer_external_validation_20260428_liver_step4_v2/reports/external_validation_run_lihc_cptac_excluded.md",
+      "bytes": 687
+    },
+    {
+      "path": "liver_cancer_external_validation_20260428_liver_step4_v2/top30_external_validation_lihc_cptac_excluded.csv",
+      "bytes": 5814
+    },
+    {
+      "path": "liver_cancer_reports_snapshot/LIHC_STAD_execution_report_20260428_v2.md",
+      "bytes": 1786
+    },
+    {
+      "path": "liver_cancer_reports_snapshot/LIHC_STAD_operational_protocol_20260428_v2.md",
+      "bytes": 4249
+    },
+    {
+      "path": "liver_cancer_reports_snapshot/LIHC_V2_READINESS_CHECKLIST.md",
+      "bytes": 1262
+    },
+    {
+      "path": "liver_cancer_reports_snapshot/LIHC_V2_S3_REPRO_HANDOFF.md",
+      "bytes": 3311
+    },
+    {
+      "path": "liver_cancer_reports_snapshot/LIVER_ONECLICK_RUNBOOK_v2.md",
+      "bytes": 1805
+    },
+    {
+      "path": "liver_cancer_results_20260428_liver_step4_v2/lihc_top30_directive_ensemble_with_names.csv",
+      "bytes": 5817
+    },
+    {
+      "path": "liver_cancer_results_20260428_liver_step4_v2/lihc_v2_top30_dedup_tiered.csv",
+      "bytes": 13153
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/drug_features.parquet",
+      "bytes": 2312025
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/labels_y.parquet",
+      "bytes": 132245
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/model_input_summary.json",
+      "bytes": 6345
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/pair_features.parquet",
+      "bytes": 55218
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/sample_features.parquet",
+      "bytes": 2746090
+    },
+    {
+      "path": "liver_processed_snapshot/model_inputs/train_table.parquet",
+      "bytes": 6050421
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/X.npy",
+      "bytes": 67892960
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/context_smiles_bundle_summary.json",
+      "bytes": 5096
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/feature_names.json",
+      "bytes": 123725
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/keys.parquet",
+      "bytes": 27676
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/slim_input_summary.json",
+      "bytes": 6345
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/train_table.parquet",
+      "bytes": 4978997
+    },
+    {
+      "path": "liver_processed_snapshot/slim_inputs/y.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "protocol_used_files/docs/LIHC_v2_ensemble_directive.md",
+      "bytes": 10846
+    },
+    {
+      "path": "stad_configs/lihc_v2_clinical_tier_overrides.tsv",
+      "bytes": 242
+    },
+    {
+      "path": "stad_configs/lihc_v2_hcc_approved_anchors.tsv",
+      "bytes": 474
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/X_numeric.npy",
+      "bytes": 67906544
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/X_numeric_context_smiles.npy",
+      "bytes": 69645296
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/X_numeric_smiles.npy",
+      "bytes": 68775920
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/context_codes.npy",
+      "bytes": 869504
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/context_vocab.json",
+      "bytes": 106
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/drug_features.parquet",
+      "bytes": 2312025
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/smiles_token_ids.npy",
+      "bytes": 3477632
+    },
+    {
+      "path": "stad_data_step4_lihc_v2_manual/y_train.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_reports/step4_metrics_review_20260428_liver_step4_v2.csv",
+      "bytes": 7297
+    },
+    {
+      "path": "stad_reports/step4_metrics_review_20260428_liver_step4_v2.md",
+      "bytes": 8252
+    },
+    {
+      "path": "stad_reports/step4_metrics_review_20260428_liver_step4_v2_by_phase.csv",
+      "bytes": 7266
+    },
+    {
+      "path": "stad_reports/step4_metrics_review_20260428_liver_step4_v2_long.csv",
+      "bytes": 28934
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/run_meta_dl_stad.json",
+      "bytes": 211
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5.json",
+      "bytes": 29561
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_cv5_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv.json",
+      "bytes": 20373
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv.json",
+      "bytes": 20723
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_scaffoldcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5.json",
+      "bytes": 29582
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_cv5_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv.json",
+      "bytes": 20351
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv.json",
+      "bytes": 20737
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_dl_v1_scaffoldcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5.json",
+      "bytes": 29594
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_cv5_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv.json",
+      "bytes": 20383
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv.json",
+      "bytes": 20752
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_1024_512_256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_2x1024.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_2x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_3x512.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_ResidualStyle.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_SELU_3x256.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_scaffoldcv_oof/DL_MLP_WideNarrow.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/run_meta_graph_stad.json",
+      "bytes": 211
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_cv5.json",
+      "bytes": 8623
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_cv5_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_cv5_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_groupcv.json",
+      "bytes": 5777
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_groupcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_groupcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_scaffoldcv.json",
+      "bytes": 5887
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_scaffoldcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_context_smiles_graph_v1_scaffoldcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_cv5.json",
+      "bytes": 8608
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_cv5_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_cv5_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_groupcv.json",
+      "bytes": 5848
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_groupcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_groupcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_scaffoldcv.json",
+      "bytes": 5893
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_scaffoldcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_graph_v1_scaffoldcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_cv5.json",
+      "bytes": 8642
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_cv5_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_cv5_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_groupcv.json",
+      "bytes": 5786
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_groupcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_groupcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_scaffoldcv.json",
+      "bytes": 5917
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_scaffoldcv_oof/GAT.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/graph/stad_numeric_smiles_graph_v1_scaffoldcv_oof/GraphSAGE.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_top30_directive_ensemble_with_names.csv",
+      "bytes": 5817
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_v2_directive_weighted_ensemble_all_drugs.csv",
+      "bytes": 47554
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_v2_directive_weighted_ensemble_summary.json",
+      "bytes": 4187
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_v2_directive_weighted_ensemble_top30.csv",
+      "bytes": 6260
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_v2_top30_dedup_tier_summary.json",
+      "bytes": 635
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/lihc_v2_top30_dedup_tiered.csv",
+      "bytes": 13153
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/run_meta_ml_stad.json",
+      "bytes": 192
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5.json",
+      "bytes": 24960
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_cv5_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv.json",
+      "bytes": 17037
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_groupcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv.json",
+      "bytes": 17371
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_context_smiles_ml_v1_scaffoldcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5.json",
+      "bytes": 24941
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_cv5_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv.json",
+      "bytes": 17125
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv.json",
+      "bytes": 17362
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_ml_v1_scaffoldcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5.json",
+      "bytes": 24936
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_cv5_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv.json",
+      "bytes": 17154
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv.json",
+      "bytes": 17368
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/CatBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/ExtraTrees.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/LightGBM.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/RandomForest.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/SVR_RBF.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_results_20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_scaffoldcv_oof/XGBoost.npy",
+      "bytes": 13712
+    },
+    {
+      "path": "stad_scripts_snapshot/ensemble_lihc_v2_directive_weighted.py",
+      "bytes": 7700
+    },
+    {
+      "path": "stad_scripts_snapshot/prepare_lihc_v2_top30_dedup_tiered.py",
+      "bytes": 14386
+    },
+    {
+      "path": "stad_scripts_snapshot/summarize_step4_metrics_stad.py",
+      "bytes": 8497
+    }
+  ],
+  "file_count": 212
+}

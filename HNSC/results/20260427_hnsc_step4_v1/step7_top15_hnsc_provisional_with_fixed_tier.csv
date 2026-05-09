@@ -1,0 +1,16 @@
+rank,drug_name,step6_external_match,validation_evidence_tier,step7_decision,notes,fixed_tier
+1,Dactinomycin,matched,VT3,KEEP_TOP15,,Tier2
+2,Docetaxel,matched,VT3,KEEP_TOP15,,Tier1
+3,Vinorelbine,matched,VT3,KEEP_TOP15,,Tier2
+4,Paclitaxel,matched,VT3,KEEP_TOP15,,Tier1
+5,Temsirolimus,matched,VT3,KEEP_TOP15,,Tier2
+6,Topotecan,matched,VT3,KEEP_TOP15,,Tier2
+7,Vinblastine,unmatched,VT3,REVIEW,,Tier2
+8,SN-38,matched,VT3,KEEP_TOP15,,Tier2
+9,Lestaurtinib,matched,VT3,KEEP_TOP15,,Tier3
+10,SL0101,matched,VT3,KEEP_TOP15,,Tier3
+11,Teniposide,unmatched,VT3,REVIEW,,Tier2
+12,Irinotecan,matched,VT3,KEEP_TOP15,,Tier2
+13,Camptothecin,matched,VT3,KEEP_TOP15,,Tier4
+14,Pyridostatin,unmatched,VT3,REVIEW,,Tier4
+15,Schweinfurthin A,unmatched,VT3,REVIEW,,Tier4

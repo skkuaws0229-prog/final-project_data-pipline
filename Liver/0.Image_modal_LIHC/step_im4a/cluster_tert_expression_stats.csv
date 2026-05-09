@@ -1,0 +1,4 @@
+cluster,n_patients,TERT_mrna_available_n,TERT_mrna_zscore_median,TERT_mrna_zscore_mean,TERT_mrna_zscore_q1,TERT_mrna_zscore_q3,TERT_mrna_rsem_median
+0,108,106,-0.2774,0.12344528301886791,-0.29395,-0.158,9.2881
+1,21,20,-0.20545,0.03716000000000001,-0.287325,-0.04575,40.48025
+2,94,92,-0.2701,0.032705434782608706,-0.2893,-0.205875,12.45415

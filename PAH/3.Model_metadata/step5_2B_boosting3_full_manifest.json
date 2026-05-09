@@ -1,0 +1,23 @@
+{
+  "date": "20260505",
+  "phase": "2B",
+  "models": [
+    "LightGBM",
+    "XGBoost",
+    "CatBoost"
+  ],
+  "rows": 1009748,
+  "feature_dim": 1338,
+  "cv": [
+    "cv5",
+    "groupcv",
+    "scaffoldcv"
+  ],
+  "full_cv_no_sampling": true,
+  "fullfit_no_row_cap": true,
+  "ensemble_weights_groupcv_spearman": {
+    "CatBoost": 0.3333248476952939,
+    "LightGBM": 0.33333652041044276,
+    "XGBoost": 0.3333386318942634
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "cancer_type": "LIHC",
+  "analysis_date": "2026-05-06",
+  "local_patient_count": 223,
+  "local_sample_count": 223,
+  "cbioportal_study_id": "lihc_tcga_pan_can_atlas_2018",
+  "profiles_fetched": {
+    "TERT_mrna_rsem": "lihc_tcga_pan_can_atlas_2018_rna_seq_v2_mrna",
+    "TERT_mrna_zscore_diploid": "lihc_tcga_pan_can_atlas_2018_rna_seq_v2_mrna_median_Zscores",
+    "TERT_mrna_zscore_all": "lihc_tcga_pan_can_atlas_2018_rna_seq_v2_mrna_median_all_sample_Zscores",
+    "TERT_gistic_cna": "lihc_tcga_pan_can_atlas_2018_gistic",
+    "TERT_log2_cna": "lihc_tcga_pan_can_atlas_2018_log2CNA"
+  },
+  "matched_counts": {
+    "TERT_mrna_rsem": 218,
+    "TERT_mrna_zscore_diploid": 218,
+    "TERT_mrna_zscore_all": 218,
+    "TERT_gistic_cna": 219,
+    "TERT_log2_cna": 219
+  },
+  "highest_tert_expression_cluster": 1,
+  "highest_cluster_median_zscore": -0.20545,
+  "test_results": [
+    {
+      "variable": "TERT_mrna_zscore_diploid",
+      "test": "Kruskal-Wallis",
+      "statistic": 3.210556481759355,
+      "p_value": 0.2008336669992672,
+      "status": "tested",
+      "note": "TERT mRNA expression z-score across image clusters."
+    },
+    {
+      "variable": "TERT_log2_cna",
+      "test": "Kruskal-Wallis",
+      "statistic": 0.7365072719614385,
+      "p_value": 0.6919416581290663,
+      "status": "tested",
+      "note": "TERT log2 copy-number values across image clusters."
+    },
+    {
+      "variable": "TERT_cna_amplified",
+      "test": "Chi-squared",
+      "statistic": 2.9324696497634437,
+      "p_value": 0.23079282672433665,
+      "dof": 2,
+      "status": "tested",
+      "note": "GISTIC >= 1 amplification frequency across image clusters."
+    }
+  ]
+}

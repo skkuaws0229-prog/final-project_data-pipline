@@ -1,0 +1,15 @@
+{
+  "eval_mode": "holdout",
+  "feature_set": "baseline",
+  "spearman": 0.24711083897377256,
+  "spearman_p": 8.288285545821733e-07,
+  "rmse": 2.4301294249929977,
+  "mae": 1.9066075086593628,
+  "r2": 0.0714079737663269,
+  "n_train": 1551,
+  "n_test": 388,
+  "n_features": 3,
+  "n_image_features": 0,
+  "n_patients": 225,
+  "n_holdout_rows": 1939
+}

@@ -1,0 +1,13 @@
+disease: {name: LUAD}
+model: {foundation_model: UNI2}
+execution: {step3_env: aws, steps: [im2, im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/luad_image_modal_20260501_v1/0.Image_modal_LUAD"
+  embedding_root: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/luad_image_modal_20260501_v1/output/embeddings_mid"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [EGFR, KRAS, ALK, STK11, KEAP1, TP53]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, SUBTYPE]
+  continuous_vars: [AGE, OS_MONTHS]
+drug: {}
+

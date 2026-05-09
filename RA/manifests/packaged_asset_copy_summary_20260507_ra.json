@@ -1,0 +1,343 @@
+{
+  "disease": "ra",
+  "package_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507",
+  "copied_file_count": 84,
+  "copied_files": [
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/README.md",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/reports/README.md"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/FINAL_HANDOFF_20260507.md",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/reports/FINAL_HANDOFF_20260507.md"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/ra_v3_named_drug_baseline_lineage_manifest_20260507_v1.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/reports/ra_v3_named_drug_baseline_lineage_manifest_20260507_v1.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step0_ra_source_inventory_20260507_v1/ra_step0_source_inventory_20260507_v1.md",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/raw_source/ra_step0_source_inventory_20260507_v1.md"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/reports/psoriasis_ra_baseline_handoff_20260507.md",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/reports/psoriasis_ra_baseline_handoff_20260507.md"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_spec_20260507_v1/ra_step6_external_validation_spec_20260507_v1.md",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/reports/ra_step6_external_validation_spec_20260507_v1.md"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step1_ra_label_cleanup_normalization_20260506_v2/step1_ra_label_cleanup_normalization_20260506_v2_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/raw_source/step1_ra_label_cleanup_normalization_20260506_v2_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step2_ra_disease_signature_20260506_v2/step2_ra_disease_signature_20260506_v2_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/raw_source/step2_ra_disease_signature_20260506_v2_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step3_ra_chembl_target_ic50_20260507_v1/step3_ra_chembl_target_ic50_20260506_v2_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/raw_source/step3_ra_chembl_target_ic50_20260506_v2_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step3_ra_chembl_target_ic50_20260507_v1/reports/ra_compound_name_coverage_report_20260506_v2.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/raw_source/ra_compound_name_coverage_report_20260506_v2.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/patient/ra_x_patient_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/ra_x_patient_all_20260506_v2.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/drug/ra_x_drug_phase2a_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/ra_x_drug_phase2a_all_20260506_v2.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/drug/ra_x_drug_phase2b_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/ra_x_drug_phase2b_all_20260506_v2.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/labels/ra_drug_labels_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/ra_drug_labels_20260506_v2.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/pairs/ra_patient_drug_pair_index_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/ra_patient_drug_pair_index_all_20260506_v2.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/step4_ra_feature_engineering_20260507_v1_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/step4_ra_feature_engineering_20260507_v1_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/patient/ra_x_patient_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/sample_features.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/drug/ra_x_drug_phase2a_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/drug_features_phase2a.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/drug/ra_x_drug_phase2b_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/drug_features_phase2b.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/labels/ra_drug_labels_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/labels_y.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/pairs/ra_patient_drug_pair_index_all_20260506_v2.parquet",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/pair_features.parquet"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1/step4_ra_feature_engineering_20260507_v1_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_inputs/model_input_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/summary/ra_v3_named_drug_baseline_ml_summary_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/ra_v3_named_drug_baseline_ml_summary_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/summary/ra_v3_named_drug_baseline_ml_summary_20260507_v1.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/ra_v3_named_drug_baseline_ml_summary_20260507_v1.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/summary/ra_v3_named_drug_baseline_ml_summary_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/metrics_summary.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/summary/ra_v3_named_drug_baseline_ml_summary_20260507_v1.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/metrics_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/folds/ra_v3_named_drug_baseline_ml_fold_metrics_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/ra_v3_named_drug_baseline_ml_fold_metrics_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/known_ranks/ra_v3_named_drug_baseline_ml_known_drug_ranks_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/ra_v3_named_drug_baseline_ml_known_drug_ranks_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_CatBoost_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_CatBoost_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_CatBoost_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_CatBoost_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_ExtraTrees_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_ExtraTrees_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_ExtraTrees_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_ExtraTrees_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_LightGBM_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_LightGBM_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_LightGBM_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_LightGBM_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_RandomForest_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_RandomForest_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_RandomForest_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_RandomForest_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_XGBoost_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_XGBoost_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2a_XGBoost_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2a_XGBoost_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_CatBoost_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_CatBoost_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_CatBoost_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_CatBoost_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_ExtraTrees_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_ExtraTrees_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_ExtraTrees_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_ExtraTrees_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_LightGBM_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_LightGBM_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_LightGBM_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_LightGBM_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_RandomForest_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_RandomForest_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_RandomForest_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_RandomForest_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_XGBoost_drug_rankings.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_XGBoost_drug_rankings.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1/ra-v3-named-drug-baseline-ml-20260507-155014/toplists/phase2b_XGBoost_top30.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/model_results/ml/toplists/phase2b_XGBoost_top30.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/step6_ra_external_validation_20260507_v1_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/step6_ra_external_validation_20260507_v1_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_model_validation_summary_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/ra_step6_model_validation_summary_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_model_top30_validation_report_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/ra_step6_model_top30_validation_report_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_reference_drug_space_report_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/ra_step6_reference_drug_space_report_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_reference_drug_space_report_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/positive_controls.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/validation_cohort/GSE55235_validation_samples_parsed_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/validation_inputs/GSE55235_validation_samples_parsed_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/validation_cohort/GSE55457_validation_samples_parsed_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/validation_inputs/GSE55457_validation_samples_parsed_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/validation_cohort/GSE89408_validation_samples_parsed_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/validation_inputs/GSE89408_validation_samples_parsed_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/validation_cohort/GSE93272_validation_samples_parsed_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/validation_inputs/GSE93272_validation_samples_parsed_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_CatBoost_top15_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_CatBoost_top15_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_CatBoost_top30_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_CatBoost_top30_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_ExtraTrees_top15_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_ExtraTrees_top15_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_ExtraTrees_top30_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_ExtraTrees_top30_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_LightGBM_top15_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_LightGBM_top15_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_LightGBM_top30_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_LightGBM_top30_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_RandomForest_top15_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_RandomForest_top15_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_RandomForest_top30_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_RandomForest_top30_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_XGBoost_top15_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_XGBoost_top15_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/model_outputs/phase2a_XGBoost_top30_validated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/external_validation/step6/model_outputs/phase2a_XGBoost_top30_validated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/step7_ra_admet_filter_20260507_v1_summary.json",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/step7_ra_admet_filter_20260507_v1_summary.json"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/reports/ra_step7_admet_summary_20260507_v1.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/ra_step7_admet_summary_20260507_v1.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_CatBoost_final15_filtered.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_CatBoost_final15_filtered.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_CatBoost_top30_admet_annotated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_CatBoost_top30_admet_annotated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_ExtraTrees_final15_filtered.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_ExtraTrees_final15_filtered.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_ExtraTrees_top30_admet_annotated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_ExtraTrees_top30_admet_annotated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_LightGBM_final15_filtered.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_LightGBM_final15_filtered.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_LightGBM_top30_admet_annotated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_LightGBM_top30_admet_annotated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_RandomForest_final15_filtered.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_RandomForest_final15_filtered.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_RandomForest_top30_admet_annotated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_RandomForest_top30_admet_annotated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_XGBoost_final15_filtered.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_XGBoost_final15_filtered.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/model_outputs/phase2a_XGBoost_top30_admet_annotated.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/model_outputs/phase2a_XGBoost_top30_admet_annotated.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/details/phase2a_CatBoost_admet_details.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/details/phase2a_CatBoost_admet_details.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/details/phase2a_ExtraTrees_admet_details.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/details/phase2a_ExtraTrees_admet_details.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/details/phase2a_LightGBM_admet_details.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/details/phase2a_LightGBM_admet_details.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/details/phase2a_RandomForest_admet_details.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/details/phase2a_RandomForest_admet_details.csv"
+    },
+    {
+      "src": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1/details/phase2a_XGBoost_admet_details.csv",
+      "dst": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/share_bundle_20260507/202604_Final_data/RA_canonical_20260507/admet/details/phase2a_XGBoost_admet_details.csv"
+    }
+  ]
+}

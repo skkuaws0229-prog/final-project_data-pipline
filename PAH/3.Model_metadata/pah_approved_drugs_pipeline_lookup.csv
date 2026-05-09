@@ -1,0 +1,11 @@
+drug_name,chembl_id,in_pipeline,pref_name,max_phase,has_smiles
+Bosentan,CHEMBL957,True,BOSENTAN,4.0,True
+Ambrisentan,CHEMBL1111,True,AMBRISENTAN,4.0,True
+Macitentan,CHEMBL2103873,True,MACITENTAN,4.0,True
+Sildenafil,CHEMBL192,True,SILDENAFIL,4.0,True
+Tadalafil,CHEMBL779,True,TADALAFIL,4.0,True
+Riociguat,CHEMBL2107834,False,RIOCIGUAT,4.0,True
+Selexipag,CHEMBL238804,True,SELEXIPAG,4.0,True
+Treprostinil,CHEMBL1237119,False,TREPROSTINIL,4.0,True
+Iloprost,CHEMBL494,True,ILOPROST,4.0,True
+Epoprostenol,CHEMBL910,True,,,True

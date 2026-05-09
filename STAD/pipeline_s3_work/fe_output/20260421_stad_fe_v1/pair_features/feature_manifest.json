@@ -1,0 +1,210 @@
+{
+  "run_id": "20260421_stad_fe_v1",
+  "purpose": "new FE baseline (pathway + Morgan/descriptor + LINCS) + target interaction extension",
+  "keys": {
+    "sample_id_col": "sample_id",
+    "drug_id_col": "canonical_drug_id"
+  },
+  "feature_groups": {
+    "sample_pathway": {
+      "enabled": true,
+      "pathway_count": 0,
+      "gmt_provided": false
+    },
+    "drug_chem": {
+      "enabled": true,
+      "morgan_radius": 2,
+      "morgan_nbits": 2048,
+      "invalid_smiles_policy": "all-zero fingerprint + NaN descriptors then numeric fillna(0.0) at final merge",
+      "invalid_smiles_qc": {
+        "drug_rows": 295,
+        "invalid_smiles_count": 52,
+        "invalid_smiles_ratio": 0.17627118644067796
+      }
+    },
+    "pair_lincs": {
+      "enabled": true,
+      "metrics": [
+        "lincs_cosine",
+        "lincs_pearson",
+        "lincs_spearman",
+        "lincs_reverse_score_top50",
+        "lincs_reverse_score_top100"
+      ]
+    },
+    "pair_target": {
+      "enabled": true,
+      "columns": [
+        "target_overlap_count",
+        "target_overlap_ratio",
+        "target_overlap_down_count",
+        "target_overlap_down_ratio",
+        "target_expr_mean",
+        "target_expr_std",
+        "target_pathway_score_mean",
+        "target_pathway_hit_count",
+        "target_gene_coverage_ratio",
+        "target_gene_count"
+      ],
+      "definition": {
+        "high_gene_rule": "zscore >= 1.0",
+        "low_gene_rule": "zscore <= -1.0",
+        "missing_target_policy": "if no target mapping for drug -> all target_* features set to 0.0",
+        "overlap_ratio_rule": "overlap_count / target_gene_count (0 if target_gene_count=0)"
+      },
+      "qc": {
+        "target_missing_drug_count": 0,
+        "target_missing_drug_ratio": 0.0,
+        "target_overlap_count_summary": {
+          "count": 5118.0,
+          "mean": 0.03223915592028136,
+          "std": 0.20242835875588538,
+          "min": 0.0,
+          "25%": 0.0,
+          "50%": 0.0,
+          "75%": 0.0,
+          "max": 3.0
+        },
+        "target_expr_mean_summary": {
+          "count": 5118.0,
+          "mean": 0.1624882719132917,
+          "std": 0.3036611974825288,
+          "min": 0.0,
+          "25%": 0.0,
+          "50%": 0.005353682674467564,
+          "75%": 0.12430725246667862,
+          "max": 1.0
+        },
+        "target_feature_null_ratio": {
+          "target_overlap_count": 0.0,
+          "target_overlap_ratio": 0.0,
+          "target_overlap_down_count": 0.0,
+          "target_overlap_down_ratio": 0.0,
+          "target_expr_mean": 0.0,
+          "target_expr_std": 0.0,
+          "target_pathway_score_mean": 0.0,
+          "target_pathway_hit_count": 0.0,
+          "target_gene_coverage_ratio": 0.0,
+          "target_gene_count": 0.0
+        }
+      }
+    }
+  },
+  "row_counts": {
+    "pairs": 5118,
+    "pair_features_newfe_rows": 5118,
+    "pair_features_newfe_v2_rows": 5118
+  },
+  "outputs": {
+    "sample_pathway_features": "pair_features/sample_pathway_features.parquet",
+    "drug_chem_features": "pair_features/drug_chem_features.parquet",
+    "pair_lincs_features": "pair_features/pair_lincs_features.parquet",
+    "pair_target_features": "pair_features/pair_target_features.parquet",
+    "pair_features_newfe": "pair_features/pair_features_newfe.parquet",
+    "pair_features_newfe_v2": "pair_features/pair_features_newfe_v2.parquet"
+  },
+  "distribution_summary": {
+    "pair_target": {
+      "target_overlap_count": {
+        "count": 5118.0,
+        "mean": 0.03223915592028136,
+        "std": 0.20242835875588538,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 3.0
+      },
+      "target_overlap_ratio": {
+        "count": 5118.0,
+        "mean": 0.017389605314576007,
+        "std": 0.11488381812534808,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 1.0
+      },
+      "target_overlap_down_count": {
+        "count": 5118.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 0.0
+      },
+      "target_overlap_down_ratio": {
+        "count": 5118.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 0.0
+      },
+      "target_expr_mean": {
+        "count": 5118.0,
+        "mean": 0.1624882719132917,
+        "std": 0.3036611974825288,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.005353682674467564,
+        "75%": 0.12430725246667862,
+        "max": 1.0
+      },
+      "target_expr_std": {
+        "count": 5118.0,
+        "mean": 0.0324893805950863,
+        "std": 0.09992500013389502,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 0.49970361590385437
+      },
+      "target_pathway_score_mean": {
+        "count": 5118.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 0.0
+      },
+      "target_pathway_hit_count": {
+        "count": 5118.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 0.0
+      },
+      "target_gene_coverage_ratio": {
+        "count": 5118.0,
+        "mean": 0.4746965270411929,
+        "std": 0.47485908459033344,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.5,
+        "75%": 1.0,
+        "max": 1.0
+      },
+      "target_gene_count": {
+        "count": 5118.0,
+        "mean": 1.6393122313403674,
+        "std": 1.089700783404696,
+        "min": 1.0,
+        "25%": 1.0,
+        "50%": 1.0,
+        "75%": 2.0,
+        "max": 9.0
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+majority_cluster,n_cases,TP53_mut_pct,TP53_mut_n,PIK3CA_mut_pct,PIK3CA_mut_n,BRCA1_mut_pct,BRCA1_mut_n,BRCA2_mut_pct,BRCA2_mut_n
+C0,129,25.58,33,39.53,51,1.55,2,1.55,2
+C1,22,31.82,7,31.82,7,0.0,0,4.55,1
+C2,121,39.67,48,28.1,34,2.48,3,1.65,2
+C3,9,44.44,4,33.33,3,11.11,1,0.0,0

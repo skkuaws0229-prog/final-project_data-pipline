@@ -1,0 +1,5 @@
+pair,status,n_tert_coding_mut,n_partner_mut,odds_ratio,p_value,note,n_tert_promoter_available
+TERT_coding_not_promoter__CTNNB1,exploratory_not_promoter,2.0,57,2.9464285714285716,0.44673372924494004,Coding TERT only; not interpretable as TERT promoter co-occurrence.,
+TERT_promoter__CTNNB1,not_tested,,57,,,Patient-level TERT promoter mutation status is unavailable in the current local data.,0.0
+TERT_coding_not_promoter__TP53,exploratory_not_promoter,2.0,61,2.683333333333333,0.4731547691188947,Coding TERT only; not interpretable as TERT promoter co-occurrence.,
+TERT_promoter__TP53,not_tested,,61,,,Patient-level TERT promoter mutation status is unavailable in the current local data.,0.0

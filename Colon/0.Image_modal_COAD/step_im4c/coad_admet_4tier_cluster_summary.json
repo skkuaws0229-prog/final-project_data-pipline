@@ -1,0 +1,38 @@
+{
+  "cancer_type": "COAD",
+  "n_top30": 30,
+  "tier_counts": {
+    "Tier2": 17,
+    "Tier3": 12,
+    "Tier1": 1
+  },
+  "admet_verdict_counts": {
+    "WARNING": 23,
+    "PASS": 5,
+    "FAIL": 2
+  },
+  "n_cluster_drug_links": 72,
+  "cluster_labels": [
+    {
+      "cluster": 0,
+      "cluster_label": "MSI/MMR-enriched CRC-like cluster",
+      "dominant_drivers": "TP53;APC;KRAS"
+    },
+    {
+      "cluster": 1,
+      "cluster_label": "MSI/MMR-enriched CRC-like cluster",
+      "dominant_drivers": "APC;TP53;KRAS;PIK3CA"
+    },
+    {
+      "cluster": 2,
+      "cluster_label": "MSI/MMR-enriched CRC-like cluster",
+      "dominant_drivers": "APC;TP53;KRAS"
+    },
+    {
+      "cluster": 3,
+      "cluster_label": "MSI/MMR-enriched CRC-like cluster",
+      "dominant_drivers": "TP53;APC;KRAS;PIK3CA"
+    }
+  ],
+  "note": "Drug-cluster links are hypothesis-generating and based on COAD WSI clusters, driver/MMR/MSI profile, target/MoA/pathway, ADMET verdict, and CRC 4-tier context."
+}

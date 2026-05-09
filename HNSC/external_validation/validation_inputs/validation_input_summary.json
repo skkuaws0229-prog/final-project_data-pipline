@@ -1,0 +1,18 @@
+{
+  "tcga_hnsc_signature_genes": 20530,
+  "prism_upper_aerodigestive_rows": 33325,
+  "prism_upper_aerodigestive_cell_lines": 28,
+  "prism_upper_aerodigestive_drugs": 1488,
+  "prism_gdsc_drug_overlap": 121,
+  "cptac_hnscc_shape": [
+    11561,
+    109
+  ],
+  "clinicaltrials_hnsc_records": 3247,
+  "geo_external_files": 10,
+  "geo_external_cohorts": [
+    "GSE41613",
+    "GSE42743",
+    "GSE65858"
+  ]
+}

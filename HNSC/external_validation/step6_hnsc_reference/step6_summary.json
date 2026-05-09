@@ -1,0 +1,62 @@
+{
+  "weights": {
+    "model": 0.3,
+    "prism": 0.2,
+    "target": 0.15,
+    "patient_context": 0.15,
+    "clinical": 0.1,
+    "control_tanimoto": 0.1
+  },
+  "n_drugs": 234,
+  "n_positive_controls_present": 5,
+  "n_repurposing_pool": 229,
+  "top15_roles": {
+    "repurposing_candidate": 13,
+    "positive_control": 2
+  },
+  "validation": {
+    "positive_controls_present": 5,
+    "positive_control_names": [
+      "Paclitaxel",
+      "Methotrexate",
+      "Docetaxel",
+      "5-Fluorouracil",
+      "Cisplatin"
+    ],
+    "median_positive_control_rank": 56.0,
+    "best_positive_control_rank": 11,
+    "prism_overlap_drugs": 113,
+    "top_metrics": {
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "positive_controls_at_5": 0,
+      "precision_at_10": 0.0,
+      "recall_at_10": 0.0,
+      "positive_controls_at_10": 0,
+      "precision_at_15": 0.06666666666666667,
+      "recall_at_15": 0.2,
+      "positive_controls_at_15": 1,
+      "precision_at_20": 0.05,
+      "recall_at_20": 0.2,
+      "positive_controls_at_20": 1,
+      "precision_at_30": 0.06666666666666667,
+      "recall_at_30": 0.4,
+      "positive_controls_at_30": 2
+    },
+    "component_means_top30": {
+      "model": 0.7398243801652893,
+      "prism": 0.7514980158730158,
+      "target": 0.44444444444444453,
+      "patient_context": 0.619583714653999,
+      "clinical": 0.7208154506437768,
+      "control_tanimoto": 0.47477394428293684
+    }
+  },
+  "outputs": {
+    "step6_top50_full_csv": "/Users/skku_aws2_18/team4_project/lung/hnsc_pipline/outputs/final_selection/step6_hnsc/step6_top50_full.csv",
+    "step6_all_drugs_csv": "/Users/skku_aws2_18/team4_project/lung/hnsc_pipline/outputs/final_selection/step6_hnsc/step6_all_drugs.csv",
+    "repurposing_top15_csv": "/Users/skku_aws2_18/team4_project/lung/hnsc_pipline/outputs/final_selection/step6_hnsc/repurposing_top15.csv",
+    "positive_controls_csv": "/Users/skku_aws2_18/team4_project/lung/hnsc_pipline/outputs/final_selection/step6_hnsc/positive_controls.csv",
+    "step6a_validation_json": "/Users/skku_aws2_18/team4_project/lung/hnsc_pipline/outputs/final_selection/step6_hnsc/step6a_validation.json"
+  }
+}

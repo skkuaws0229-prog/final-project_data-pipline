@@ -1,0 +1,5 @@
+{
+  "context_dim": 64,
+  "description": "Drug context embeddings (hash-based, STAD)",
+  "num_drugs": 295
+}

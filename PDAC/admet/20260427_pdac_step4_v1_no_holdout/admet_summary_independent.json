@@ -1,0 +1,11 @@
+{
+  "step": "step7_admet_independent_recalc",
+  "result_tag": "20260427_pdac_step4_v1_no_holdout",
+  "candidate_count": 30,
+  "assay_count": 22,
+  "resolved_smiles_count": 30,
+  "category_counts": {
+    "Caution": 22,
+    "Candidate": 8
+  }
+}

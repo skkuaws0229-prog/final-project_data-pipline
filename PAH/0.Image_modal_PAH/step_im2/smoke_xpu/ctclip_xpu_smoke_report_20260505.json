@@ -1,0 +1,36 @@
+{
+  "date": "20260505",
+  "patient_id": "ID00007637202177411956430",
+  "device": "xpu",
+  "torch_version": "2.11.0+xpu",
+  "xpu_device_name": "Intel(R) Arc(TM) 140T GPU (16GB)",
+  "input_volume_path": "C:\\Users\\biso8\\20260503_final_project\\IPF\\windows_transfer_v1_5_20260503\\results\\v1_0_lnic50_20260504\\image_modal\\step_im1\\volumes\\ID00007637202177411956430.npy",
+  "weight_path": "C:\\Users\\biso8\\20260503_final_project\\IPF\\CT-CLIP\\weights\\CT-CLIP_v2.pt",
+  "input_tensor_shape": [
+    1,
+    1,
+    240,
+    480,
+    480
+  ],
+  "encoded_tokens_shape": [
+    1,
+    24,
+    24,
+    24,
+    512
+  ],
+  "image_embedding_shape": [
+    1,
+    512
+  ],
+  "preprocess_seconds": 0.13651132583618164,
+  "model_load_seconds": 7.143444061279297,
+  "inference_seconds": 16.847148656845093,
+  "total_seconds": 24.324429750442505,
+  "embedding_file": "ctclip_smoke_embedding_ID00007637202177411956430.npy",
+  "missing_weight_keys": [],
+  "unexpected_weight_keys": [
+    "text_transformer.embeddings.position_ids"
+  ]
+}

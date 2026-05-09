@@ -1,0 +1,12 @@
+{
+  "result_tag": "20260427_pdac_step4_v1_no_holdout",
+  "top30_rows": 30,
+  "prism_evidence_rows": 24,
+  "clinical_trial_supported_rows": 19,
+  "opentargets_supported_rows": 13,
+  "cosmic_supported_rows": 2,
+  "geo_supported_rows": 0,
+  "geo_status": "PENDING_DATA",
+  "cptac_supported_rows": 0,
+  "cptac_status": "PENDING_DATA"
+}

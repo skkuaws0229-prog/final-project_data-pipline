@@ -1,0 +1,38 @@
+{
+  "cancer_type": "COAD",
+  "source_study": "coadread_tcga_pan_can_atlas_2018",
+  "best_k": 4,
+  "best_silhouette": 0.22260786592960358,
+  "embedding_qc": {
+    "n_patients": 225,
+    "embedding_dim": 1536,
+    "nan_count": 0,
+    "inf_count": 0
+  },
+  "driver_genes": [
+    "APC",
+    "TP53",
+    "KRAS",
+    "PIK3CA",
+    "SMAD4",
+    "BRAF"
+  ],
+  "mmr_genes": [
+    "MLH1",
+    "MSH2",
+    "MSH6",
+    "PMS2",
+    "EPCAM"
+  ],
+  "msi_fields": [
+    "MSI_SCORE_MANTIS",
+    "MSI_SENSOR_SCORE",
+    "MSI_class"
+  ],
+  "cms_subtype_field": "SUBTYPE",
+  "survival": {
+    "n": 209,
+    "logrank_p_value": 0.8632501390785303,
+    "test_statistic": 0.7421403963818987
+  }
+}

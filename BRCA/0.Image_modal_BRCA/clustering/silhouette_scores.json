@@ -1,0 +1,7 @@
+{
+  "method": "kmeans",
+  "k": 4,
+  "silhouette": 0.13090397417545319,
+  "calinski_harabasz": 27.541388712799005,
+  "davies_bouldin": 2.04192426254264
+}

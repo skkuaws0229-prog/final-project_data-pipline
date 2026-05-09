@@ -1,0 +1,8 @@
+target_label,gene,target_chembl_id,notes,resolved_pref_name
+ETA,EDNRA,CHEMBL252,Endothelin-A receptor,Endothelin-1 receptor
+ETB,EDNRB,CHEMBL1785,Endothelin-B receptor,Endothelin receptor type B
+PDE5,PDE5A,CHEMBL1827,Phosphodiesterase 5,"cGMP-specific 3',5'-cyclic phosphodiesterase"
+TGFBR1,TGFBR1,CHEMBL4439,TGF-beta receptor type 1,TGF-beta receptor type-1
+BMPR2,BMPR2,CHEMBL5467,Bone morphogenetic protein receptor type 2,Bone morphogenetic protein receptor type-2
+sGC,GUCY1A1,CHEMBL2111348,Soluble guanylate cyclase; resolve from riociguat/search,Soluble guanylate cyclase
+IP_receptor,PTGIR,CHEMBL1995,Prostacyclin IP receptor; resolve from selexipag/search,Prostacyclin receptor

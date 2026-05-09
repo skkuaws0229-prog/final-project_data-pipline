@@ -1,0 +1,6 @@
+repo_id,case_prefix,file_path,size_bytes,size_mib
+histai/HISTAI-skin-b2,case_01140,case_01140/slide_H&E_0.tiff,197756835,188.60
+histai/HISTAI-skin-b2,case_03153,case_03153/slide_H&E_0.tiff,67761667,64.62
+histai/HISTAI-skin-b2,case_10700,case_10700/slide_H&E_0.tiff,67861727,64.72
+histai/HISTAI-skin-b2,case_11625,case_11625/slide_H&E_0.tiff,79485507,75.80
+histai/HISTAI-skin-b2,case_19268,case_19268/slide_H&E_0.tiff,67761667,64.62

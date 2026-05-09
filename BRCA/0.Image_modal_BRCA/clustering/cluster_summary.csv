@@ -1,0 +1,5 @@
+best_cluster,n_slides,n_cases,parts,pc1_mean,pc2_mean,pc3_mean
+C0,131,129,"part00,part01,part02,part03,part04,part05",-11.6992445,1.7949748,1.1685566
+C1,22,22,"part00,part01",3.6090012,-26.208672,4.191646
+C2,122,121,"part00,part01,part02,part03,part04,part05",9.981703,1.9339572,-2.7952933
+C3,9,9,"part01,part04,part05",26.159492,11.722935,10.636517

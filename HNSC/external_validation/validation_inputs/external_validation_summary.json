@@ -1,0 +1,5 @@
+{
+  "prism_overlap_drugs": 116,
+  "spearman_model_score_vs_prism_sensitivity_auc": 0.7000296007032877,
+  "spearman_model_score_vs_prism_sensitivity_ic50": 0.6465738837499303
+}

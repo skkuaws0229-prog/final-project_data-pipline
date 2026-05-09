@@ -1,0 +1,204 @@
+{
+  "disease_axis": "gastric cancer / STAD",
+  "definitions": {
+    "1": {
+      "label_ko": "1\ub2e8\uacc4 \u2014 \uc804\ud658\u00b7\ud45c\uc900 \uada4\uc801",
+      "rule": "verdict==PASS AND (usage_category==FDA_APPROVED_GASTRIC OR n_clinical_trials>=3)"
+    },
+    "2": {
+      "label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "rule": "verdict==PASS AND NOT 1\ub2e8\uacc4"
+    },
+    "3": {
+      "label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "rule": "verdict==WARNING"
+    }
+  },
+  "counts_by_stage": {
+    "1": 1,
+    "2": 4,
+    "3": 10
+  },
+  "drugs": [
+    {
+      "recommendation_rank": 1,
+      "usage_priority_rank": 1,
+      "recommendation_stage": 1,
+      "recommendation_stage_label_ko": "1\ub2e8\uacc4 \u2014 \uc804\ud658\u00b7\ud45c\uc900 \uada4\uc801",
+      "drug_name": "Irinotecan",
+      "usage_category": "FDA_APPROVED_GASTRIC",
+      "verdict": "PASS",
+      "safety_score": 6.4,
+      "n_clinical_trials": 1,
+      "target": "TOP1"
+    },
+    {
+      "recommendation_rank": 2,
+      "usage_priority_rank": 4,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Topotecan",
+      "usage_category": "CLINICAL_TRIAL",
+      "verdict": "PASS",
+      "safety_score": 7.5,
+      "n_clinical_trials": 1,
+      "target": "TOP1"
+    },
+    {
+      "recommendation_rank": 3,
+      "usage_priority_rank": 5,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Vinorelbine",
+      "usage_category": "CLINICAL_TRIAL",
+      "verdict": "PASS",
+      "safety_score": 7.25,
+      "n_clinical_trials": 2,
+      "target": "Microtubule destabiliser"
+    },
+    {
+      "recommendation_rank": 4,
+      "usage_priority_rank": 7,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Vinblastine",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "PASS",
+      "safety_score": 7.0,
+      "n_clinical_trials": 0,
+      "target": "Microtubule destabiliser"
+    },
+    {
+      "recommendation_rank": 5,
+      "usage_priority_rank": 2,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Camptothecin",
+      "usage_category": "RESEARCH_PHASE_GASTRIC",
+      "verdict": "PASS",
+      "safety_score": 6.25,
+      "n_clinical_trials": 1,
+      "target": "TOP1"
+    },
+    {
+      "recommendation_rank": 6,
+      "usage_priority_rank": 3,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Temsirolimus",
+      "usage_category": "RESEARCH_PHASE_GASTRIC",
+      "verdict": "WARNING",
+      "safety_score": 5.5,
+      "n_clinical_trials": 1,
+      "target": "MTOR"
+    },
+    {
+      "recommendation_rank": 7,
+      "usage_priority_rank": 6,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Rapamycin",
+      "usage_category": "CLINICAL_TRIAL",
+      "verdict": "WARNING",
+      "safety_score": 5.5,
+      "n_clinical_trials": 1,
+      "target": "MTORC1"
+    },
+    {
+      "recommendation_rank": 8,
+      "usage_priority_rank": 8,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Staurosporine",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.25,
+      "n_clinical_trials": 0,
+      "target": "Broad spectrum kinase inhibitor"
+    },
+    {
+      "recommendation_rank": 9,
+      "usage_priority_rank": 9,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Bosutinib",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.25,
+      "n_clinical_trials": 0,
+      "target": "SRC, ABL, TEC"
+    },
+    {
+      "recommendation_rank": 10,
+      "usage_priority_rank": 10,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Bleomycin (50 uM)",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "dsDNA break induction"
+    },
+    {
+      "recommendation_rank": 11,
+      "usage_priority_rank": 11,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Bleomycin",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "dsDNA break induction"
+    },
+    {
+      "recommendation_rank": 12,
+      "usage_priority_rank": 12,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Elesclomol",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "HSP90"
+    },
+    {
+      "recommendation_rank": 13,
+      "usage_priority_rank": 13,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "MG-132",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "Proteasome, CAPN1"
+    },
+    {
+      "recommendation_rank": 14,
+      "usage_priority_rank": 14,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "Lestaurtinib",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "FLT3, JAK2, NTRK1, NTRK2, NTRK3"
+    },
+    {
+      "recommendation_rank": 15,
+      "usage_priority_rank": 15,
+      "recommendation_stage": 3,
+      "recommendation_stage_label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "drug_name": "CCT-018159",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "verdict": "WARNING",
+      "safety_score": 5.0,
+      "n_clinical_trials": 0,
+      "target": "HSP90"
+    }
+  ]
+}

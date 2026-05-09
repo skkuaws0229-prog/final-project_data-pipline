@@ -1,0 +1,8 @@
+target_label,gene,target_chembl_id,target_pref_name,raw_ic50_rows,clean_ic50_rows,unique_drugs,include_for_model
+ETA,EDNRA,CHEMBL252,Endothelin-1 receptor,2571,1699,1427,True
+ETB,EDNRB,CHEMBL1785,Endothelin receptor type B,1278,1228,1097,True
+PDE5,PDE5A,CHEMBL1827,"cGMP-specific 3',5'-cyclic phosphodiesterase",3574,2636,2271,True
+TGFBR1,TGFBR1,CHEMBL4439,TGF-beta receptor type-1,4073,4010,2693,True
+BMPR2,BMPR2,CHEMBL5467,Bone morphogenetic protein receptor type-2,41,38,33,True
+sGC,GUCY1A1,CHEMBL2111348,Soluble guanylate cyclase,9,9,8,False
+IP_receptor,PTGIR,CHEMBL1995,Prostacyclin receptor,246,217,189,True

@@ -1,0 +1,15 @@
+{
+  "run_id": "20260421_stad_fe_v1",
+  "purpose": "bridge preprocessing for Nextflow FE input contract",
+  "output_files": {
+    "sample_features": "fe_inputs/sample_features.parquet",
+    "drug_features": "fe_inputs/drug_features.parquet",
+    "labels": "fe_inputs/labels.parquet",
+    "mapping_table": "fe_inputs/mapping_table.parquet",
+    "join_qc_report": "fe_inputs/join_qc_report.json"
+  },
+  "notes": {
+    "labels_mapping": "cell_line_name->sample_id, DRUG_ID->canonical_drug_id, ln_IC50->ic50",
+    "smiles_policy": "smiles is included; has_smiles indicates availability for downstream ADMET/descriptor steps"
+  }
+}

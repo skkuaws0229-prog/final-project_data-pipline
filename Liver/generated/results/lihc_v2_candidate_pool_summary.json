@@ -1,0 +1,16 @@
+{
+  "version": "v2",
+  "stage": "formal_candidate_pool_expansion_start",
+  "input_train_table": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260427_Liver/base_data/20260421_liver/data/processed/slim_inputs/train_table.parquet",
+  "input_drug_master": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260427_Liver/base_data/20260421_liver/data/processed/standardized/drug_master.parquet",
+  "candidate_pool_size": 243,
+  "hcc_approved_in_pool": 1,
+  "hcc_approved_in_top50_proxy": 0,
+  "sorafenib_in_pool": true,
+  "sorafenib_proxy_rank": 84,
+  "outputs": {
+    "candidate_pool_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/Liver cancer/results/lihc_candidate_pool_v2.csv",
+    "top50_proxy_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/Liver cancer/results/lihc_top50_candidate_pre_step4_v2.csv"
+  },
+  "note": "This v2 artifact is pre-Step4 proxy ranking; run Step4/5 after wiring this pool into protocol scripts for final model ranking."
+}

@@ -1,0 +1,20 @@
+{
+  "top30_count": 30,
+  "admet_decision_counts": {
+    "CAUTION": 23,
+    "KEEP": 4,
+    "EXCLUDE": 3
+  },
+  "tier_counts": {
+    "Tier3": 18,
+    "Tier2": 8,
+    "Tier4": 3,
+    "Tier1": 1
+  },
+  "cluster_drug_links": 10,
+  "outputs": {
+    "admet": "C:\\Users\\biso8\\20260503_final_project\\luad_lihc_wsi_homepc_package_20260502_v1\\local_data\\lihc_image_modal_20260501_v1\\0.Image_modal_LIHC\\step_im4c\\lihc_top30_admet_filtering.csv",
+    "tier": "C:\\Users\\biso8\\20260503_final_project\\luad_lihc_wsi_homepc_package_20260502_v1\\local_data\\lihc_image_modal_20260501_v1\\0.Image_modal_LIHC\\step_im4c\\lihc_top30_4tier_classification.csv",
+    "mapping": "C:\\Users\\biso8\\20260503_final_project\\luad_lihc_wsi_homepc_package_20260502_v1\\local_data\\lihc_image_modal_20260501_v1\\0.Image_modal_LIHC\\step_im4c\\lihc_top30_cluster_drug_hypotheses.csv"
+  }
+}

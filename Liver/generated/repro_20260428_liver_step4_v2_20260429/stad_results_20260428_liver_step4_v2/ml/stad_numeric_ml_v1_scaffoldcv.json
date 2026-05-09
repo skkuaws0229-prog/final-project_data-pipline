@@ -1,0 +1,626 @@
+{
+  "RandomForest": {
+    "model_name": "RandomForest",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9831742179932144,
+          "pearson": 0.9861712887256122,
+          "r2": 0.9691939275455987,
+          "rmse": 0.43055951004211285,
+          "mae": 0.3243496254938856,
+          "kendall_tau": 0.8919146015934534
+        },
+        "val": {
+          "spearman": 0.48267543964326604,
+          "pearson": 0.48735475490278973,
+          "r2": 0.22191137960046903,
+          "rmse": 2.546717722679298,
+          "mae": 1.9283722276442712,
+          "kendall_tau": 0.33371137209324114
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9834620463622198,
+          "pearson": 0.9880765663864736,
+          "r2": 0.9740092074528193,
+          "rmse": 0.4256697236351203,
+          "mae": 0.32437976162111415,
+          "kendall_tau": 0.8948977130158552
+        },
+        "val": {
+          "spearman": 0.4990292190394558,
+          "pearson": 0.5243584152059108,
+          "r2": 0.2701233329763665,
+          "rmse": 2.200165334481502,
+          "mae": 1.6203770610220734,
+          "kendall_tau": 0.3522227646585673
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9842185492987146,
+          "pearson": 0.9881866378903574,
+          "r2": 0.9743061690762883,
+          "rmse": 0.4399327594932427,
+          "mae": 0.3336146216462005,
+          "kendall_tau": 0.8962356641369511
+        },
+        "val": {
+          "spearman": 0.28146787644667887,
+          "pearson": 0.24839028728318172,
+          "r2": -0.24651197619431953,
+          "rmse": 2.5881392923906974,
+          "mae": 1.8192308461201958,
+          "kendall_tau": 0.1987438793212462
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 0.9836182712180497,
+      "val_spearman_mean": 0.42105751170980027,
+      "train_spearman_std": 0.000440425266529377,
+      "val_spearman_std": 0.09893031631676662,
+      "gap_spearman_mean": 0.5625607595082494
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        0.5004987783499484,
+        0.484432827322764,
+        0.7027506728520356
+      ],
+      "mean_gap": 0.5625607595082494,
+      "max_gap": 0.7027506728520356,
+      "overfitting_flags": [
+        true,
+        true,
+        true
+      ],
+      "n_overfitting_folds": 3,
+      "warning": "Overfitting detected in 3 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.09893031631676662,
+      "val_spearman_scores": [
+        0.48267543964326604,
+        0.4990292190394558,
+        0.28146787644667887
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.0989)"
+    }
+  },
+  "ExtraTrees": {
+    "model_name": "ExtraTrees",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9999999999999998,
+          "pearson": 0.9999999999999993,
+          "r2": 1.0,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "kendall_tau": 1.0
+        },
+        "val": {
+          "spearman": 0.5478432436925127,
+          "pearson": 0.5311810529370324,
+          "r2": 0.2688609237840929,
+          "rmse": 2.468688400968025,
+          "mae": 1.849287871894276,
+          "kendall_tau": 0.38416548724822147
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 1.0,
+          "pearson": 0.9999999999999987,
+          "r2": 1.0,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "kendall_tau": 1.0
+        },
+        "val": {
+          "spearman": 0.40099688620159285,
+          "pearson": 0.36954591707000506,
+          "r2": 0.014428380688223053,
+          "rmse": 2.556669980326512,
+          "mae": 1.8466402854805128,
+          "kendall_tau": 0.27976020778228466
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 1.0,
+          "pearson": 0.9999999999999989,
+          "r2": 1.0,
+          "rmse": 0.0,
+          "mae": 0.0,
+          "kendall_tau": 1.0
+        },
+        "val": {
+          "spearman": 0.33580161610763615,
+          "pearson": 0.3572346441526587,
+          "r2": -0.01601741515375754,
+          "rmse": 2.3366302483120274,
+          "mae": 1.7914169128119242,
+          "kendall_tau": 0.23507624438513727
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 1.0,
+      "val_spearman_mean": 0.42821391533391395,
+      "train_spearman_std": 1.2819751242557092e-16,
+      "val_spearman_std": 0.08867915186522357,
+      "gap_spearman_mean": 0.571786084666086
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        0.4521567563074871,
+        0.5990031137984071,
+        0.6641983838923639
+      ],
+      "mean_gap": 0.571786084666086,
+      "max_gap": 0.6641983838923639,
+      "overfitting_flags": [
+        true,
+        true,
+        true
+      ],
+      "n_overfitting_folds": 3,
+      "warning": "Overfitting detected in 3 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.08867915186522357,
+      "val_spearman_scores": [
+        0.5478432436925127,
+        0.40099688620159285,
+        0.33580161610763615
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.0887)"
+    }
+  },
+  "SVR_RBF": {
+    "model_name": "SVR_RBF",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.3564135342870118,
+          "pearson": 0.37123534755314697,
+          "r2": 0.10551055627519845,
+          "rmse": 2.3200782341940966,
+          "mae": 1.7085549363327943,
+          "kendall_tau": 0.24496483892362012
+        },
+        "val": {
+          "spearman": 0.4306650157965812,
+          "pearson": 0.4895829867281163,
+          "r2": 0.12772045549103417,
+          "rmse": 2.69646087246916,
+          "mae": 2.01531843672055,
+          "kendall_tau": 0.3015530832028943
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.3898490330967501,
+          "pearson": 0.4369460304775118,
+          "r2": 0.1617641639985613,
+          "rmse": 2.417386608399275,
+          "mae": 1.8038335612716498,
+          "kendall_tau": 0.2706711209761165
+        },
+        "val": {
+          "spearman": 0.36603536691827726,
+          "pearson": 0.34366482805838705,
+          "r2": 0.10764091309611334,
+          "rmse": 2.4327663657670113,
+          "mae": 1.7891803357851772,
+          "kendall_tau": 0.24773449765317776
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.4637045628278173,
+          "pearson": 0.4975911795440965,
+          "r2": 0.22226975979962438,
+          "rmse": 2.4203956556139676,
+          "mae": 1.7954110265400238,
+          "kendall_tau": 0.3210362907485133
+        },
+        "val": {
+          "spearman": 0.19260012930371667,
+          "pearson": 0.19188994416966976,
+          "r2": -0.036733945608064866,
+          "rmse": 2.36033191019125,
+          "mae": 1.7908286474652113,
+          "kendall_tau": 0.1352520637886643
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 0.4033223767371931,
+      "val_spearman_mean": 0.32976683733952505,
+      "train_spearman_std": 0.04482550942618934,
+      "val_spearman_std": 0.10051625813293004,
+      "gap_spearman_mean": 0.07355553939766803
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        -0.0742514815095694,
+        0.02381366617847286,
+        0.27110443352410063
+      ],
+      "mean_gap": 0.07355553939766803,
+      "max_gap": 0.27110443352410063,
+      "overfitting_flags": [
+        false,
+        false,
+        true
+      ],
+      "n_overfitting_folds": 1,
+      "warning": "Overfitting detected in 1 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.10051625813293004,
+      "val_spearman_scores": [
+        0.4306650157965812,
+        0.36603536691827726,
+        0.19260012930371667
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.1005)"
+    }
+  },
+  "LightGBM": {
+    "model_name": "LightGBM",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9973233383236426,
+          "pearson": 0.9970981050768145,
+          "r2": 0.9939309539312688,
+          "rmse": 0.1911064024396639,
+          "mae": 0.10481465833909619,
+          "kendall_tau": 0.9631342027156022
+        },
+        "val": {
+          "spearman": 0.4200078402789562,
+          "pearson": 0.47207261783166776,
+          "r2": 0.20756766804625648,
+          "rmse": 2.5700843205750283,
+          "mae": 1.9506426185387868,
+          "kendall_tau": 0.29081178356187487
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9979663941923352,
+          "pearson": 0.998096985016617,
+          "r2": 0.9960429037970553,
+          "rmse": 0.1660929904239602,
+          "mae": 0.09432535131961825,
+          "kendall_tau": 0.9685234183053831
+        },
+        "val": {
+          "spearman": 0.49993361751043425,
+          "pearson": 0.5156023349172377,
+          "r2": 0.2513219397173302,
+          "rmse": 2.228322938020981,
+          "mae": 1.6021845062972877,
+          "kendall_tau": 0.35289449534146294
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9977123731357358,
+          "pearson": 0.997581290705531,
+          "r2": 0.9950075381436952,
+          "rmse": 0.19392296805666634,
+          "mae": 0.10411246414580658,
+          "kendall_tau": 0.9659327633637322
+        },
+        "val": {
+          "spearman": 0.2801723119990515,
+          "pearson": 0.31600792219648827,
+          "r2": -0.1225380428507592,
+          "rmse": 2.456065544237601,
+          "mae": 1.8348315461061075,
+          "kendall_tau": 0.1951446975727207
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 0.9976673685505713,
+      "val_spearman_mean": 0.400037923262814,
+      "train_spearman_std": 0.0002644481954049254,
+      "val_spearman_std": 0.09082164220507698,
+      "gap_spearman_mean": 0.5976294452877572
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        0.5773154980446864,
+        0.498032776681901,
+        0.7175400611366842
+      ],
+      "mean_gap": 0.5976294452877572,
+      "max_gap": 0.7175400611366842,
+      "overfitting_flags": [
+        true,
+        true,
+        true
+      ],
+      "n_overfitting_folds": 3,
+      "warning": "Overfitting detected in 3 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.09082164220507698,
+      "val_spearman_scores": [
+        0.4200078402789562,
+        0.49993361751043425,
+        0.2801723119990515
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.0908)"
+    }
+  },
+  "XGBoost": {
+    "model_name": "XGBoost",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9951540468690288,
+          "pearson": 0.9968105554580688,
+          "r2": 0.9930856823921204,
+          "rmse": 0.20398080712379132,
+          "mae": 0.15282364189624786,
+          "kendall_tau": 0.9435433863450109
+        },
+        "val": {
+          "spearman": 0.5103743806414153,
+          "pearson": 0.5362517237663269,
+          "r2": 0.2774180769920349,
+          "rmse": 2.454199197377616,
+          "mae": 1.8608336448669434,
+          "kendall_tau": 0.3585682016290033
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9965040083453416,
+          "pearson": 0.9978593587875366,
+          "r2": 0.9954156279563904,
+          "rmse": 0.1787739001815204,
+          "mae": 0.1336035132408142,
+          "kendall_tau": 0.9525481767288401
+        },
+        "val": {
+          "spearman": 0.5184591002223999,
+          "pearson": 0.5587054491043091,
+          "r2": 0.3016906976699829,
+          "rmse": 2.1520605991439217,
+          "mae": 1.552099585533142,
+          "kendall_tau": 0.3660854113562806
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9963855488409507,
+          "pearson": 0.9976716637611389,
+          "r2": 0.9950173497200012,
+          "rmse": 0.19373184511280533,
+          "mae": 0.1463528871536255,
+          "kendall_tau": 0.9510669323486644
+        },
+        "val": {
+          "spearman": 0.316331601022892,
+          "pearson": 0.2793824374675751,
+          "r2": -0.13825905323028564,
+          "rmse": 2.473204155793478,
+          "mae": 1.779305100440979,
+          "kendall_tau": 0.22403812883171675
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 0.996014534685107,
+      "val_spearman_mean": 0.44838836062890236,
+      "train_spearman_std": 0.0006103756355772327,
+      "val_spearman_std": 0.09343654349666232,
+      "gap_spearman_mean": 0.5476261740562046
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        0.4847796662276135,
+        0.47804490812294165,
+        0.6800539478180587
+      ],
+      "mean_gap": 0.5476261740562046,
+      "max_gap": 0.6800539478180587,
+      "overfitting_flags": [
+        true,
+        true,
+        true
+      ],
+      "n_overfitting_folds": 3,
+      "warning": "Overfitting detected in 3 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.09343654349666232,
+      "val_spearman_scores": [
+        0.5103743806414153,
+        0.5184591002223999,
+        0.316331601022892
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.0934)"
+    }
+  },
+  "CatBoost": {
+    "model_name": "CatBoost",
+    "n_folds": 3,
+    "fold_results": [
+      {
+        "fold": 1,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9636606311172037,
+          "pearson": 0.9758262134867373,
+          "r2": 0.9480195060298922,
+          "rmse": 0.5592876391821721,
+          "mae": 0.44602293205675353,
+          "kendall_tau": 0.8398345558582667
+        },
+        "val": {
+          "spearman": 0.5255234567531316,
+          "pearson": 0.5628743078523872,
+          "r2": 0.27187201826603347,
+          "rmse": 2.4635996815467665,
+          "mae": 1.8563092374781072,
+          "kendall_tau": 0.3693376198554704
+        }
+      },
+      {
+        "fold": 2,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9714244028947364,
+          "pearson": 0.9823952608201674,
+          "r2": 0.9625001344723704,
+          "rmse": 0.5113024282328439,
+          "mae": 0.4035621795062772,
+          "kendall_tau": 0.8601350502049298
+        },
+        "val": {
+          "spearman": 0.4823485232401123,
+          "pearson": 0.5129506315866991,
+          "r2": 0.2540391927763277,
+          "rmse": 2.22427552327434,
+          "mae": 1.6240537162204063,
+          "kendall_tau": 0.33857882097388975
+        }
+      },
+      {
+        "fold": 3,
+        "n_train": 2264,
+        "n_val": 1132,
+        "train": {
+          "spearman": 0.9661378471783766,
+          "pearson": 0.9781382386250927,
+          "r2": 0.9537222703717574,
+          "rmse": 0.5904156953565516,
+          "mae": 0.47111069892600504,
+          "kendall_tau": 0.8456804400652267
+        },
+        "val": {
+          "spearman": 0.37108140723245886,
+          "pearson": 0.3725066158387661,
+          "r2": 0.09438450146948008,
+          "rmse": 2.20602963137001,
+          "mae": 1.6670714197855014,
+          "kendall_tau": 0.2537844911821602
+        }
+      }
+    ],
+    "summary": {
+      "train_spearman_mean": 0.9670742937301057,
+      "val_spearman_mean": 0.45965112907523425,
+      "train_spearman_std": 0.003237976442326006,
+      "val_spearman_std": 0.06506133230239174,
+      "gap_spearman_mean": 0.5074231646548714
+    },
+    "overfitting_check": {
+      "threshold": 0.15,
+      "gaps": [
+        0.43813717436407207,
+        0.4890758796546241,
+        0.5950564399459177
+      ],
+      "mean_gap": 0.5074231646548714,
+      "max_gap": 0.5950564399459177,
+      "overfitting_flags": [
+        true,
+        true,
+        true
+      ],
+      "n_overfitting_folds": 3,
+      "warning": "Overfitting detected in 3 fold(s)"
+    },
+    "stability_check": {
+      "threshold": 0.05,
+      "val_spearman_std": 0.06506133230239174,
+      "val_spearman_scores": [
+        0.5255234567531316,
+        0.4823485232401123,
+        0.37108140723245886
+      ],
+      "unstable": true,
+      "warning": "Unstable across folds (std=0.0651)"
+    }
+  }
+}

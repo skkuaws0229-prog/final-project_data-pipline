@@ -1,0 +1,12 @@
+disease: {name: PAAD}
+model: {foundation_model: UNI2}
+execution: {step3_env: aws, steps: [im2, im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/pdac_step4/0.Image_modal_PAAD"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [KRAS, TP53, CDKN2A, SMAD4]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, Grade, molecular_subtype]
+  continuous_vars: [AGE, OS_MONTHS]
+drug: {}
+

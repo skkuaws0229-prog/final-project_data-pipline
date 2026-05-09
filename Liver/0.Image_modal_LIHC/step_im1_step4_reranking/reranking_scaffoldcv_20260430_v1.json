@@ -1,0 +1,12 @@
+{
+  "eval_mode": "scaffoldcv",
+  "spearman": 0.4654024904657574,
+  "spearman_p": 3.621317937949272e-182,
+  "rmse": 2.3205710407636055,
+  "mae": 1.733325127790538,
+  "r2": 0.2150777108995332,
+  "n_train": 3396,
+  "n_test": 3396,
+  "n_features": 1539,
+  "image_embedding": "patient_level_zero_for_unmapped_gdsc"
+}

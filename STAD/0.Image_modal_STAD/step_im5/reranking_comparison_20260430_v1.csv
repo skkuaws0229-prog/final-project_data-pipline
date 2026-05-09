@@ -1,0 +1,2 @@
+comparison,baseline_spearman,reranked_spearman,delta_spearman,image_feature_importance,interpretation
+baseline_vs_baseline_plus_image,,,0.0,0.0,Post-hoc WSI image branch is used for subtype interpretation; no validated IC50 reranking gain expected from GDSC cell-line to TCGA patient mismatch.

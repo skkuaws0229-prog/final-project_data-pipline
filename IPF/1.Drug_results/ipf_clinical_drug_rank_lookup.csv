@@ -1,0 +1,14 @@
+chembl_id,drug_name,model_rank,drug_level_score,primary_target,n_targets,max_phase,pipeline_status
+CHEMBL941,Imatinib,29618.0,2.49118097709078,PDGFRA,3.0,17.828125,present
+CHEMBL535,Sunitinib,13857.0,-0.1375403344708105,PDGFRB,4.0,17.828125,present
+CHEMBL477772,Pazopanib,12419.0,-0.3689907468086709,KDR,5.0,17.828125,present
+CHEMBL1229517,Lenvatinib,27905.0,2.112839734135623,KDR,1.0,17.828125,present
+CHEMBL3545110,Galunisertib,,,not in pipeline,,,not in pipeline
+CHEMBL4296386,Vactosertib,,,not in pipeline,,,not in pipeline
+CHEMBL1789941,Ruxolitinib,2001.0,-2.739619827189386,JAK1,2.0,17.828125,present
+CHEMBL221959,Tofacitinib,2885.0,-2.464100708535658,JAK1,2.0,17.828125,present
+CHEMBL3707348,Baricitinib,,,not in pipeline,,,not in pipeline
+CHEMBL1336,Sorafenib,14031.0,-0.1196366092660834,KDR,4.0,17.828125,present
+CHEMBL5314532,Nerandomilast,,,not in pipeline,,,not in pipeline
+CHEMBL1256391,Pirfenidone,,,not in pipeline,,,not in pipeline
+CHEMBL5087506,Admilparant/BMS-986278,,,not in pipeline,,,not in pipeline

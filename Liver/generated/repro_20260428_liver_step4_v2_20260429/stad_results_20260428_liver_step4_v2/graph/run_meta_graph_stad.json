@@ -1,0 +1,11 @@
+{
+  "run_id": "step4_lihc_v2_manual",
+  "result_tag": "20260428_liver_step4_v2",
+  "eval_modes": [
+    "cv5",
+    "groupcv",
+    "scaffoldcv"
+  ],
+  "device": "cpu",
+  "timestamp": "2026-04-28T21:55:45.641975"
+}

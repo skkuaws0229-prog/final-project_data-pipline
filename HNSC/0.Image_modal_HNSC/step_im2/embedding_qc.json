@@ -1,0 +1,15 @@
+{
+  "n_slides": 225,
+  "embedding_dim": 1536,
+  "expected_slides": 225,
+  "duplicate_slide_ids_removed": 0,
+  "nan_count": 0,
+  "inf_count": 0,
+  "source_counts": {
+    "step3-hnsc-part00-20260504": 50,
+    "step3-hnsc-part01-20260504": 50,
+    "step3-hnsc-part02-20260504": 50,
+    "step3-hnsc-part03-20260504": 50,
+    "step3-hnsc-part04-20260504": 25
+  }
+}

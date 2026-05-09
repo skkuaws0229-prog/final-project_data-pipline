@@ -1,0 +1,3 @@
+cluster,n_patients,stage_mode,high_frequency_drivers
+0,168,STAGE IIB,KRAS(61%); TP53(55%)
+1,10,STAGE IIB,KRAS(80%); TP53(80%); SMAD4(30%)

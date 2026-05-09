@@ -1,0 +1,83 @@
+{
+  "disease_axis": "gastric cancer / STAD",
+  "total_candidates": 30,
+  "admet_pass_warning": 27,
+  "top_15_selected": 15,
+  "category_distribution": {
+    "REPURPOSING_CANDIDATE": 9,
+    "CLINICAL_TRIAL": 3,
+    "RESEARCH_PHASE_GASTRIC": 2,
+    "FDA_APPROVED_GASTRIC": 1
+  },
+  "three_stage_definitions": {
+    "1": {
+      "label_ko": "1\ub2e8\uacc4 \u2014 \uc804\ud658\u00b7\ud45c\uc900 \uada4\uc801",
+      "rule": "verdict==PASS AND (usage_category==FDA_APPROVED_GASTRIC OR n_clinical_trials>=3)"
+    },
+    "2": {
+      "label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "rule": "verdict==PASS AND NOT 1\ub2e8\uacc4"
+    },
+    "3": {
+      "label_ko": "3\ub2e8\uacc4 \u2014 \ud0d0\uc0c9\u00b7\ubcf4\uc870",
+      "rule": "verdict==WARNING"
+    }
+  },
+  "three_stage_counts": {
+    "1": 1,
+    "2": 4,
+    "3": 10
+  },
+  "top_5_recommendations": [
+    {
+      "recommendation_rank": 1,
+      "recommendation_stage": 1,
+      "recommendation_stage_label_ko": "1\ub2e8\uacc4 \u2014 \uc804\ud658\u00b7\ud45c\uc900 \uada4\uc801",
+      "drug_name": "Irinotecan",
+      "usage_category": "FDA_APPROVED_GASTRIC",
+      "safety_score": 6.4,
+      "n_clinical_trials": 1,
+      "verdict": "PASS"
+    },
+    {
+      "recommendation_rank": 2,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Topotecan",
+      "usage_category": "CLINICAL_TRIAL",
+      "safety_score": 7.5,
+      "n_clinical_trials": 1,
+      "verdict": "PASS"
+    },
+    {
+      "recommendation_rank": 3,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Vinorelbine",
+      "usage_category": "CLINICAL_TRIAL",
+      "safety_score": 7.25,
+      "n_clinical_trials": 2,
+      "verdict": "PASS"
+    },
+    {
+      "recommendation_rank": 4,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Vinblastine",
+      "usage_category": "REPURPOSING_CANDIDATE",
+      "safety_score": 7.0,
+      "n_clinical_trials": 0,
+      "verdict": "PASS"
+    },
+    {
+      "recommendation_rank": 5,
+      "recommendation_stage": 2,
+      "recommendation_stage_label_ko": "2\ub2e8\uacc4 \u2014 \uadfc\uac70\u00b7\uac80\ud1a0",
+      "drug_name": "Camptothecin",
+      "usage_category": "RESEARCH_PHASE_GASTRIC",
+      "safety_score": 6.25,
+      "n_clinical_trials": 1,
+      "verdict": "PASS"
+    }
+  ]
+}

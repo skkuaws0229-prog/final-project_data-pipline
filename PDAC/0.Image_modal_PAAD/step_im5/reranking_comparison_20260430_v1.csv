@@ -1,0 +1,2 @@
+cancer_type,baseline_spearman,reranked_spearman,delta_spearman,image_feature_importance,interpretation
+PAAD,,,0.0,0.0,No image-driven reranking gain expected/observed in the TCGA patient vs GDSC cell-line mismatch setting.

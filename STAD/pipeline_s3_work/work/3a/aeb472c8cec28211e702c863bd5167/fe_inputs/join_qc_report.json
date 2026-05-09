@@ -1,0 +1,32 @@
+{
+  "run_id": "20260421_stad_fe_v1",
+  "input_uris": {
+    "label_uri": "s3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/GDSC2-dataset.parquet",
+    "sample_uri": "s3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/depmap/depmap_crispr_long_stad.parquet",
+    "drug_uri": "s3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/drug_features.parquet"
+  },
+  "label_to_feature_join_qc": {
+    "label_pair_rows": 6060,
+    "unmatched_samples": 942,
+    "unmatched_drugs": 0,
+    "join_rate_samples": 0.8445544554455445,
+    "join_rate_drugs": 1.0
+  },
+  "labels_qc": {
+    "labels_pair_rows_before_groupby": 6060,
+    "labels_pair_rows_after_groupby": 6060,
+    "labels_unique_samples": 24,
+    "labels_unique_drugs": 295,
+    "labels_ic50_missing_rows": 0
+  },
+  "sample_qc": {
+    "sample_features_rows": 20,
+    "sample_features_cols": 17932
+  },
+  "drug_qc": {
+    "drug_features_rows": 295,
+    "drug_features_cols": 5,
+    "missing_smiles_rows": 52,
+    "missing_smiles_rate": 0.17627118644067796
+  }
+}

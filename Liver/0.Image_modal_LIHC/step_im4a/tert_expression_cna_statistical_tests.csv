@@ -1,0 +1,4 @@
+variable,test,statistic,p_value,status,note,dof
+TERT_mrna_zscore_diploid,Kruskal-Wallis,3.210556481759355,0.2008336669992672,tested,TERT mRNA expression z-score across image clusters.,
+TERT_log2_cna,Kruskal-Wallis,0.7365072719614385,0.6919416581290663,tested,TERT log2 copy-number values across image clusters.,
+TERT_cna_amplified,Chi-squared,2.9324696497634437,0.23079282672433665,tested,GISTIC >= 1 amplification frequency across image clusters.,2.0

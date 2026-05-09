@@ -1,0 +1,6 @@
+model,top30_count,top15_count,reference_drugs_in_top30,reference_drugs_in_top15,core_axis_supported_top30,core_axis_supported_top15,blood_treatment_anchor_top30,blood_treatment_anchor_top15,validated_or_axis_supported_top30,validated_or_axis_supported_top15
+RandomForest,30,15,5,2,6,3,0,0,11,5
+ExtraTrees,30,15,5,2,6,3,0,0,11,5
+LightGBM,30,15,5,2,6,3,0,0,11,5
+XGBoost,30,15,5,2,5,3,0,0,10,5
+CatBoost,30,15,4,2,4,4,0,0,8,6

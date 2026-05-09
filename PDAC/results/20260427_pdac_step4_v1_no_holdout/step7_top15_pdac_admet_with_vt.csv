@@ -1,0 +1,16 @@
+rank,drug_name,validation_evidence_tier,admet_category,admet_coverage
+13,Epirubicin,VT2,Candidate,0.6818
+9,Paclitaxel,VT1,Candidate,0.5455
+28,Vinblastine,VT2,Candidate,0.5455
+21,Vinorelbine,VT3,Candidate,0.4545
+4,Teniposide,VT2,Candidate,0.8182
+3,Docetaxel,VT1,Candidate,0.5455
+8,Mitoxantrone,VT2,Candidate,0.5455
+5,Topotecan,VT1,Candidate,0.4545
+2,Temsirolimus,VT2,Caution,0.3182
+29,Rapamycin,VT3,Caution,0.3182
+17,Romidepsin,VT2,Caution,0.0909
+10,Bleomycin,VT3,Caution,0.0455
+15,Bleomycin (50 uM),VT3,Caution,0.0455
+30,Irinotecan,VT1,Caution,0.4091
+12,SN-38,VT3,Caution,0.2273

@@ -1,0 +1,14 @@
+{
+  "top30_candidate_count": 30,
+  "unique_drug_name_count": 30,
+  "canonical_smiles_coverage": 30,
+  "gdsc_target_coverage": 28,
+  "tier_coverage": 30,
+  "ct_evidence_drug_count": 4,
+  "prism_evidence_drug_count": 7,
+  "cosmic_evidence_drug_count": 6,
+  "cptac_evidence_drug_count": 2,
+  "ready_to_start_step6_external_validation": true,
+  "ready_to_enter_step7_now": false,
+  "step7_blocker": "Current Top30 has been deduped and tiered, but Step6 external validation has not yet been rerun on this exact package."
+}

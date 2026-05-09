@@ -1,0 +1,91 @@
+{
+  "step": 6,
+  "mode": "named_drug_baseline_external_validation_no_rerank",
+  "phase_used_for_validation": "phase2a",
+  "cohort_catalog_rows": 4,
+  "synovium_validation_mean_same_direction_fraction": 0.852503403192269,
+  "synovium_validation_mean_signed_spearman": 0.7893781112131854,
+  "blood_support_same_direction_fraction": 0.5667515060516727,
+  "reference_drugs_in_strict_label_space": 7,
+  "core_axis_supported_reference_drugs": 0,
+  "blood_treatment_anchors_in_strict_label_space": 3,
+  "model_summary": [
+    {
+      "model": "RandomForest",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 5,
+      "reference_drugs_in_top15": 2,
+      "core_axis_supported_top30": 6,
+      "core_axis_supported_top15": 3,
+      "blood_treatment_anchor_top30": 0,
+      "blood_treatment_anchor_top15": 0,
+      "validated_or_axis_supported_top30": 11,
+      "validated_or_axis_supported_top15": 5
+    },
+    {
+      "model": "ExtraTrees",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 5,
+      "reference_drugs_in_top15": 2,
+      "core_axis_supported_top30": 6,
+      "core_axis_supported_top15": 3,
+      "blood_treatment_anchor_top30": 0,
+      "blood_treatment_anchor_top15": 0,
+      "validated_or_axis_supported_top30": 11,
+      "validated_or_axis_supported_top15": 5
+    },
+    {
+      "model": "LightGBM",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 5,
+      "reference_drugs_in_top15": 2,
+      "core_axis_supported_top30": 6,
+      "core_axis_supported_top15": 3,
+      "blood_treatment_anchor_top30": 0,
+      "blood_treatment_anchor_top15": 0,
+      "validated_or_axis_supported_top30": 11,
+      "validated_or_axis_supported_top15": 5
+    },
+    {
+      "model": "XGBoost",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 5,
+      "reference_drugs_in_top15": 2,
+      "core_axis_supported_top30": 5,
+      "core_axis_supported_top15": 3,
+      "blood_treatment_anchor_top30": 0,
+      "blood_treatment_anchor_top15": 0,
+      "validated_or_axis_supported_top30": 10,
+      "validated_or_axis_supported_top15": 5
+    },
+    {
+      "model": "CatBoost",
+      "top30_count": 30,
+      "top15_count": 15,
+      "reference_drugs_in_top30": 4,
+      "reference_drugs_in_top15": 2,
+      "core_axis_supported_top30": 4,
+      "core_axis_supported_top15": 4,
+      "blood_treatment_anchor_top30": 0,
+      "blood_treatment_anchor_top15": 0,
+      "validated_or_axis_supported_top30": 8,
+      "validated_or_axis_supported_top15": 6
+    }
+  ],
+  "notes": [
+    "RA Step6 uses synovium-first validation and keeps blood support separate from the main synovial interpretation.",
+    "The named-drug baseline branch inherits the disease-side lineage from the shared RA Step1/Step2 preprocessing and diverges at the Step3 drug universe.",
+    "This stage preserves Step5 model order and only annotates external validation support rather than reranking candidates."
+  ],
+  "artifacts": {
+    "cohort_catalog": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_validation_cohort_catalog_20260507_v1.csv",
+    "tissue_breakdown": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_validation_tissue_breakdown_20260507_v1.csv",
+    "reference_space_report": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_reference_drug_space_report_20260507_v1.csv",
+    "model_validation_summary": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_model_validation_summary_20260507_v1.csv",
+    "annotated_top30": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1/reports/ra_step6_model_top30_validation_report_20260507_v1.csv"
+  }
+}

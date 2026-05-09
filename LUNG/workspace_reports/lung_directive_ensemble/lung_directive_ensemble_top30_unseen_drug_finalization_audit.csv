@@ -1,0 +1,32 @@
+canonical_drug_id,drug_name_display,rank,action,reason
+1811,Dactinomycin,1,selected,unique name and canonical_smiles available
+1819,Docetaxel,2,selected,unique name and canonical_smiles available
+1080,Paclitaxel,3,selected,unique name and canonical_smiles available
+1026,Tanespimycin,4,selected,unique name and canonical_smiles available
+1809,Teniposide,5,selected,unique name and canonical_smiles available
+1037,BX795,6,selected,unique name and canonical_smiles available
+1058,Pictilisib,7,selected,unique name and canonical_smiles available
+1838,Sinularin,8,selected,unique name and canonical_smiles available
+1086,BI-2536,9,selected,unique name and canonical_smiles available
+1237,EPZ004777,10,selected,unique name and canonical_smiles available
+1378,Bleomycin (50 uM),11,selected,unique name and canonical_smiles available
+1593,Entinostat,12,selected,unique name and canonical_smiles available
+1563,EPZ5676,13,selected,unique name and canonical_smiles available
+2159,UNC0379,14,selected,unique name and canonical_smiles available
+1582,SGC-CBP30,15,selected,unique name and canonical_smiles available
+1732,TAF1_5496,16,skipped_missing_smiles,canonical_smiles unavailable
+1059,AZD8055,17,selected,unique name and canonical_smiles available
+1873,Buparlisib,18,selected,unique name and canonical_smiles available
+1031,Elesclomol,19,selected,unique name and canonical_smiles available
+1909,Venetoclax,20,selected,unique name and canonical_smiles available
+1008,Methotrexate,21,selected,unique name and canonical_smiles available
+1853,OF-1,22,selected,unique name and canonical_smiles available
+2037,GSK343,23,selected,unique name and canonical_smiles available
+1191,Bortezomib,24,selected,unique name and canonical_smiles available
+1936,Savolitinib,25,selected,unique name and canonical_smiles available
+1620,PFI3,26,selected,unique name and canonical_smiles available
+2174,IOX2,27,selected,unique name and canonical_smiles available
+1932,NVP-ADW742,28,selected,unique name and canonical_smiles available
+1030,KU-55933,29,selected,unique name and canonical_smiles available
+1243,Piperlongumine,30,selected,unique name and canonical_smiles available
+1042,Doramapimod,31,selected,unique name and canonical_smiles available

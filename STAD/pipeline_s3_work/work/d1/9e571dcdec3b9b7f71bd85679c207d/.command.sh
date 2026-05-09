@@ -1,0 +1,3 @@
+#!/bin/bash -ue
+mkdir -p pair_features
+python3 /workspace/nextflow/scripts/build_pair_features_newfe_v2.py         --pairs-uri 'features/labels.parquet'         --sample-expression-uri 'fe_inputs/sample_features.parquet'         --drug-uri 'fe_inputs/drug_features.parquet'         --lincs-drug-signature-uri 's3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/lincs_stad_drug_level_with_crispr_prefix.parquet'         --drug-target-uri 's3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/drug_target_mapping.parquet'         --smiles-col smiles         --out-dir pair_features         --run-id '20260421_stad_fe_v1'

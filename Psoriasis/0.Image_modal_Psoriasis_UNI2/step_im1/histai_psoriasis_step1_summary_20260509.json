@@ -1,0 +1,53 @@
+{
+  "metadata_json": "histai_psoriasis\\metadata.json",
+  "broad_psoriasis_candidate_cases": 32,
+  "broad_planned_he_slides": 75,
+  "broad_planned_he_size_gib": 16.505,
+  "repo_counts": {
+    "histai/HISTAI-skin-b2": 32
+  },
+  "icd10_counts": {
+    "C44.5": 2,
+    "C44.3": 1,
+    "C44": 2,
+    "C44.4": 1,
+    "L57.0": 1,
+    "L82": 8,
+    "C43-C44": 1,
+    "D22": 1,
+    "D22.5": 8,
+    "D22.7, D22.5": 1,
+    "D22.3": 2,
+    "D22.4": 3,
+    "D22.7": 1
+  },
+  "gender_counts": {
+    "f": 18,
+    "m": 14
+  },
+  "age_summary": {
+    "n": 32,
+    "min": 20.0,
+    "median": 48.0,
+    "max": 92.0
+  },
+  "quality_case_counts": {
+    "ambiguous_differential": 10,
+    "negative_or_ruled_out": 17,
+    "strong_positive": 5
+  },
+  "quality_slide_counts": {
+    "strong_positive": 5,
+    "ambiguous_differential": 21,
+    "negative_or_ruled_out": 49
+  },
+  "strong_positive_he_slides": 5,
+  "strong_positive_he_size_gib": 0.448,
+  "decision": "Do not proceed to UNI2 WSI image-modal analysis from HISTAI psoriasis alone: strong-positive H&E WSI count is below 50.",
+  "files": {
+    "candidate_cases": "histai_psoriasis\\histai_psoriasis_candidate_cases.csv",
+    "planned_he_slides": "histai_psoriasis\\histai_psoriasis_planned_he_slides.csv",
+    "quality_cases": "histai_psoriasis\\histai_psoriasis_candidate_cases_quality_20260509.csv",
+    "strong_positive_slides": "histai_psoriasis\\histai_psoriasis_strong_positive_he_slides_20260509.csv"
+  }
+}

@@ -1,0 +1,5 @@
+cluster,n_patients,cluster_label,dominant_drivers,biology_hypothesis,candidate_keywords,MSI_H_proxy_rate,MMR_any_mut_rate
+0,9,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,"MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1111111111111111,0.1111111111111111
+1,121,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,"MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1322314049586777,0.0991735537190082
+2,88,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,"MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0568181818181818,0.1022727272727272
+3,7,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS;PIK3CA,"MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0,0.1428571428571428

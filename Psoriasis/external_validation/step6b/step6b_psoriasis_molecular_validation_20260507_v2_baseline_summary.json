@@ -1,0 +1,78 @@
+{
+  "step": "6b",
+  "mode": "strict_molecular_recovery_validation_no_rerank",
+  "cohorts": {
+    "GSE69967": {
+      "title": "Tofacitinib treated biopsy time-course",
+      "route": "direct_drug",
+      "n_subject_followup_rows": 71
+    },
+    "GSE136757": {
+      "title": "PF-06700841 TYK2/JAK1 treated biopsies",
+      "route": "same_axis",
+      "n_subject_followup_rows": 45
+    }
+  },
+  "empirical_support": {
+    "tofacitinib_direct_delta_vs_placebo": 0.5121235846472667,
+    "tofacitinib_direct_mean_recovery": 0.8889447513178894,
+    "placebo_week12_mean_recovery": 0.37682116667062265,
+    "same_axis_day28_delta_vs_placebo": 0.8565259494314519,
+    "pf100_day28_mean_recovery": 1.272433290977924,
+    "pf_day28_mean_recovery": 0.9753017944724843,
+    "pf_placebo_day28_mean_recovery": 0.11877584504103247
+  },
+  "model_summary": [
+    {
+      "model": "CatBoost",
+      "top30_count": 30,
+      "top15_positive_empirical_support": 3,
+      "top30_positive_empirical_support": 6,
+      "top15_direct_drug_count": 1,
+      "top15_same_axis_count": 2
+    },
+    {
+      "model": "ExtraTrees",
+      "top30_count": 30,
+      "top15_positive_empirical_support": 3,
+      "top30_positive_empirical_support": 7,
+      "top15_direct_drug_count": 1,
+      "top15_same_axis_count": 2
+    },
+    {
+      "model": "LightGBM",
+      "top30_count": 30,
+      "top15_positive_empirical_support": 3,
+      "top30_positive_empirical_support": 7,
+      "top15_direct_drug_count": 1,
+      "top15_same_axis_count": 2
+    },
+    {
+      "model": "RandomForest",
+      "top30_count": 30,
+      "top15_positive_empirical_support": 3,
+      "top30_positive_empirical_support": 7,
+      "top15_direct_drug_count": 1,
+      "top15_same_axis_count": 2
+    },
+    {
+      "model": "XGBoost",
+      "top30_count": 30,
+      "top15_positive_empirical_support": 3,
+      "top30_positive_empirical_support": 7,
+      "top15_direct_drug_count": 1,
+      "top15_same_axis_count": 2
+    }
+  ],
+  "notes": [
+    "Direct drug validation is computed from GSE69967 as Tofacitinib week12 molecular recovery relative to placebo.",
+    "Same-axis validation is computed from GSE136757 as PF-06700841 day28 molecular recovery relative to placebo.",
+    "Model ranking is preserved; this stage only adds empirical recovery support annotations."
+  ],
+  "artifacts": {
+    "gse69967_subject_recovery": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6b_psoriasis_molecular_validation_20260507_v2_baseline/cohorts/GSE69967_subject_recovery_20260507_v2_baseline.csv",
+    "gse136757_subject_recovery": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6b_psoriasis_molecular_validation_20260507_v2_baseline/cohorts/GSE136757_subject_recovery_20260507_v2_baseline.csv",
+    "empirical_top30_report": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6b_psoriasis_molecular_validation_20260507_v2_baseline/reports/psoriasis_step6b_model_empirical_validation_report_20260507_v2_baseline.csv",
+    "empirical_model_summary": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6b_psoriasis_molecular_validation_20260507_v2_baseline/reports/psoriasis_step6b_model_empirical_validation_summary_20260507_v2_baseline.csv"
+  }
+}

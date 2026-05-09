@@ -1,0 +1,18 @@
+{
+  "branch": "psoriasis_v2_maxdata_138_drug_baseline",
+  "phases_run": [
+    "phase2a",
+    "phase2b"
+  ],
+  "models_run": [
+    "CatBoost",
+    "ExtraTrees",
+    "LightGBM",
+    "RandomForest",
+    "XGBoost"
+  ],
+  "evaluation_count": 30,
+  "summary_csv": "/opt/ml/processing/output/export/summary/psoriasis_v2_baseline_ml_summary_20260507_v1.csv",
+  "known_rank_csv": "/opt/ml/processing/output/export/known_ranks/psoriasis_v2_baseline_ml_known_drug_ranks_20260507_v1.csv",
+  "note": "Baseline psoriasis ML SageMaker run using the 138-drug v2 branch with five non-SVR models across phase2a and phase2b."
+}

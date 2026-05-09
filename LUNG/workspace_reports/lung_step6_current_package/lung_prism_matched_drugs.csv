@@ -1,0 +1,23 @@
+canonical_drug_id,DRUG_NAME,prism_broad_id,prism_name,prism_target,prism_moa,prism_phase,match_type
+1811,Dactinomycin,BRD-K70578146-001-06-7,dactinomycin,POLR2A,RNA polymerase inhibitor,Launched,exact_name_or_synonym
+1819,Docetaxel,BRD-K30577245-001-04-3,docetaxel,"BCL2, MAP2, MAP4, MAPT, NR1I2, TUBB, TUBB1",tubulin polymerization inhibitor,Launched,exact_name_or_synonym
+1819,Docetaxel,BRD-K30577245-341-01-9,docetaxel,"BCL2, MAP2, MAP4, MAPT, NR1I2, TUBB, TUBB1",tubulin polymerization inhibitor,Launched,exact_name_or_synonym
+1080,Paclitaxel,BRD-K62008436-001-22-1,paclitaxel,"BCL2, MAP2, MAP4, MAPT, NR1I2, TLR4, TUBB, TUBB1",tubulin polymerization inhibitor,Launched,exact_name_or_synonym
+1026,Tanespimycin,BRD-K81473043-001-14-6,tanespimycin,HSP90AA1,HSP inhibitor,Phase 3,exact_name_or_synonym
+1809,Teniposide,BRD-A35588707-001-05-5,teniposide,"TOP2A, TOP2B",topoisomerase inhibitor,Launched,exact_name_or_synonym
+1809,Teniposide,BRD-K10362825-001-03-4,teniposide,"TOP2A, TOP2B",topoisomerase inhibitor,Launched,exact_name_or_synonym
+1086,BI-2536,BRD-K64890080-001-13-8,BI-2536,"BRD4, PLK1, PLK2, PLK3",PLK inhibitor,Phase 2,exact_name_or_synonym
+1237,EPZ004777,BRD-K69070623-003-01-7,EPZ004777,DOT1L,histone lysine methyltransferase inhibitor,Preclinical,exact_name_or_synonym
+1593,Entinostat,BRD-K77908580-001-09-6,entinostat,"HDAC1, HDAC2, HDAC3, HDAC9",HDAC inhibitor,Phase 3,exact_name_or_synonym
+1582,SGC-CBP30,BRD-K24821794-001-01-4,SGC-CBP30,"CREBBP, EP300",bromodomain inhibitor,Preclinical,exact_name_or_synonym
+1059,AZD8055,BRD-K69932463-001-10-6,AZD8055,MTOR,mTOR inhibitor,Phase 1,exact_name_or_synonym
+1873,Buparlisib,BRD-K42191735-001-05-3,buparlisib,"PIK3CA, PIK3CG",PI3K inhibitor,Phase 3,exact_name_or_synonym
+1031,Elesclomol,BRD-K82135108-001-04-3,elesclomol,HSPA1A,oxidative stress inducer,Phase 3,exact_name_or_synonym
+1909,Venetoclax,BRD-K62391742-001-03-0,venetoclax,BCL2,BCL inhibitor,Launched,exact_name_or_synonym
+1008,Methotrexate,BRD-A55424491-001-19-9,methotrexate,DHFR,dihydrofolate reductase inhibitor,Launched,exact_name_or_synonym
+1008,Methotrexate,BRD-K59456551-001-22-6,methotrexate,DHFR,dihydrofolate reductase inhibitor,Launched,exact_name_or_synonym
+1191,Bortezomib,BRD-K88510285-001-11-1,bortezomib,"PSMA1, PSMA2, PSMA3, PSMA4, PSMA5, PSMA6, PSMA7, PSMA8, PSMB1, PSMB10, PSMB11, PSMB2, PSMB3, PSMB4, PSMB5, PSMB6, PSMB7, PSMB8, PSMB9, PSMD1, PSMD2, RELA","NFkB pathway inhibitor, proteasome inhibitor",Launched,exact_name_or_synonym
+2174,IOX2,BRD-K98251413-001-04-0,IOX2,"EGLN1, KDM2A, KDM5C",hypoxia inducible factor inhibitor,Preclinical,exact_name_or_synonym
+1932,NVP-ADW742,BRD-K15179513-001-03-4,NVP-ADW742,IGF1R,insulin growth factor receptor inhibitor,Preclinical,exact_name_or_synonym
+1030,KU-55933,BRD-K25311561-001-10-7,KU-55933,"ATM, PRKDC",ATM kinase inhibitor,Preclinical,exact_name_or_synonym
+1042,Doramapimod,BRD-K74065929-001-07-2,doramapimod,"MAPK11, MAPK12, MAPK13, MAPK14",p38 MAPK inhibitor,Phase 2,exact_name_or_synonym

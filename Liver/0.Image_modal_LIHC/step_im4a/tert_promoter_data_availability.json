@@ -1,0 +1,31 @@
+{
+  "cancer_type": "LIHC",
+  "analysis_date": "2026-05-06",
+  "driver_gene_list_requested": [
+    "TERT",
+    "TP53",
+    "CTNNB1",
+    "AXIN1",
+    "ARID1A"
+  ],
+  "tert_promoter_status": "not_available_in_current_local_cbioportal_pan_can_atlas_export",
+  "cbioportal_study_id_checked": "lihc_tcga_pan_can_atlas_2018",
+  "cbioportal_profiles_checked": [
+    "lihc_tcga_pan_can_atlas_2018_mutations",
+    "clinical_attributes",
+    "generic_assay_profiles"
+  ],
+  "local_patient_count": 223,
+  "local_slide_count": 223,
+  "coding_tert_mutation_count_not_promoter": 2,
+  "tcga_lihc_paper_context": {
+    "reported_tert_promoter_frequency": "87/196 HCCs analyzed, 44%",
+    "source": "Comprehensive and Integrative Genomic Characterization of Hepatocellular Carcinoma, Cell 2017"
+  },
+  "action_taken": [
+    "Added explicit TERT_promoter_mut placeholder to clinical/mutation table.",
+    "Removed coding-only TERT_mut from driver frequency/statistical interpretation.",
+    "Updated driver frequency and statistical test files with requested driver list.",
+    "Added co-occurrence status file documenting that promoter-level CTNNB1/TP53 tests were not possible."
+  ]
+}

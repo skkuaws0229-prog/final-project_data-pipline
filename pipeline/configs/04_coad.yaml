@@ -1,0 +1,17 @@
+disease: {name: COAD}
+model: {foundation_model: UNI2}
+execution: {step3_env: aws, steps: [im2, im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/coad_image_modal_20260501_v1/0.Image_modal_COAD"
+  embedding_root: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/coad_image_modal_20260501_v1/output/embeddings_mid"
+  merged_npy: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/coad_image_modal_20260501_v1/0.Image_modal_COAD/step_im2/all_slide_embeddings_coad_merged.npy"
+  embedding_metadata_csv: "C:/Users/biso8/20260503_final_project/luad_lihc_wsi_homepc_package_20260502_v1/local_data/coad_image_modal_20260501_v1/0.Image_modal_COAD/step_im2/all_slide_embeddings_coad_merged_metadata.csv"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [APC, TP53, KRAS, PIK3CA, SMAD4, BRAF]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, MSI_class, CMS_or_SUBTYPE]
+  continuous_vars: [AGE, OS_MONTHS]
+  clinical_id_column: patient_id
+  survival: {time_col: OS_MONTHS, event_col: os_event}
+drug: {}
+

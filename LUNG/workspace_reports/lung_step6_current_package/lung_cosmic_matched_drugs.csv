@@ -1,0 +1,1325 @@
+canonical_drug_id,DRUG_NAME,cosmic_drug_field,cosmic_drug_value,GENOMIC_MUTATION_ID,TRIAL_ID
+1811,Dactinomycin,DRUG_COMBINATION,"Carmustine,Cyclophosphamide,Cytarabine,Dactinomycin,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Pegaspargase,Prednisone,Sargramostim,Vincristine sulphate",,NCT00002766
+1811,Dactinomycin,DRUG_COMBINATION,"Cyclophosphamide,Dactinomycin,Vincristine sulphate",,NCT05304585
+1811,Dactinomycin,DRUG_COMBINATION,Dactinomycin,,EudraCT201400069318
+1811,Dactinomycin,DRUG_COMBINATION,"Cyclophosphamide,Dactinomycin,Irinotecan,Radiotherapy,Temsirolimus,Vincristine sulphate,Vinorelbine",,NCT02567435
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Nab-paclitaxel,Pyrotinib",,NCT04872985
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Letrozole,Radiotherapy",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Goserelin,Radiotherapy,Tamoxifen",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Everolimus",,NCT01313390
+1819,Docetaxel,DRUG_COMBINATION,"Alectinib,Carboplatin,Docetaxel,Pemetrexed",,NCT05081674
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Sintilimab",,NCT03798743
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Prednisone",,NCT02208583
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Enzalutamide",,NCT03700099
+1819,Docetaxel,DRUG_COMBINATION,Docetaxel,,NCT03700099
+1819,Docetaxel,DRUG_COMBINATION,"Dexamethasone,Docetaxel,Seviteronel",,NCT04947189
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Lutetium Lu 177 vipivotide tetraxetan",,NCT04343885
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Olaparib",,NCT03434158
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Radiotherapy",,NCT00378404
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Navitoclax",,NCT00888108
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nogapendekin alfa,Tislelizumab",,NCT06745908
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride",,NCT04664972
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Epirubicin",,NCT04499118
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride",,NCT04499118
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Rucaparib",,NCT03442556
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nintedanib",,NCT00876460
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Erlotinib,Pegfilgrastim",,NCT01557959
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Fluorouracil,Radiotherapy,Surgery",,NCT02290145
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Pertuzumab,Trastuzumab",,NCT03792633
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin or Cisplatin,Docetaxel or Paclitaxel,Tislelizumab",,NCT05013268
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fluorouracil,Oxaliplatin,Pembrolizumab",,NCT04522336
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fluorouracil,Leucovorin calcium,Oxaliplatin,Toripalimab",,NCT05466019
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fluorouracil,Leucovorin calcium,Nivolumab,Oxaliplatin",,NCT03647969
+1819,Docetaxel,DRUG_COMBINATION,"Abequolixron,Docetaxel",,NCT02922764
+1819,Docetaxel,DRUG_COMBINATION,"BNT327,Docetaxel",,NCT06841055
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cadonilimab,Docetaxel",,NCT06793813
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Gemcitabine,Nab-paclitaxel,Sintilimab,Tafolecimab",,NCT06421298
+1819,Docetaxel,DRUG_COMBINATION,"Anlotinib,Benmelstobart,Docetaxel",,NCT06141226
+1819,Docetaxel,DRUG_COMBINATION,"Cadonilimab,Docetaxel,Ivonescimab",,NCT05904379
+1819,Docetaxel,DRUG_COMBINATION,"Bintrafusp alfa,Docetaxel",,NCT04396535
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pembrolizumab,Ramucirumab",,NCT04340882
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Nivolumab,Pemetrexed",,NCT05081674
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pembrolizumab,Pemetrexed",,NCT05081674
+1819,Docetaxel,DRUG_COMBINATION,"Cemiplimab,Docetaxel,Ramucirumab",,NCT06616584
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Docetaxel,Paclitaxel,Pemetrexed,Toripalimab",,NCT04158440
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Finotonlimab",,NCT04171284
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Durvalumab,Fluorouracil,Leucovorin calcium,Oxaliplatin,Radiotherapy",,NCT05713838
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Enlonstobart,Radiotherapy",,NCT06136988
+1819,Docetaxel,DRUG_COMBINATION,"Camrelizumab,Docetaxel,Tegafur-gimeracil-oteracil potassium",,NCT04152889
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Fluorouracil,Leucovorin calcium,Oxaliplatin,PD-1 inhibitor ,Radiotherapy",,NCT07007182
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Serplulimab,Tegafur-gimeracil-oteracil potassium",,NCT05769725
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Toripalimab",,NCT06940180
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,SCT-200",,NCT05552807
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Pembrolizumab,Radiotherapy",,NCT06137378
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nivolumab",,NCT05027204
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin or Cisplatin,Docetaxel",,NCT05063552
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pembrolizumab",,NCT02437370
+1819,Docetaxel,DRUG_COMBINATION,"Camrelizumab,Carboplatin,Docetaxel",,NCT05475678
+1819,Docetaxel,DRUG_COMBINATION,"CD105/CDH3/MDM2/SOX2/Yb-1-polyepitope plasmid DNA vaccine,Carboplatin,Cisplatin,Docetaxel,Doxorubicin hydrochloride,Eribulin,Paclitaxel,Sargramostim",,NCT07078604
+1819,Docetaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pertuzumab,Trastuzumab",,NCT03894007
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Oxaliplatin,Tegafur-gimeracil-oteracil potassium,Tislelizumab,Trastuzumab",,NCT04819971
+1819,Docetaxel,DRUG_COMBINATION,"Anlotinib,Cadonilimab,Docetaxel",,NCT05816499
+1819,Docetaxel,DRUG_COMBINATION,"Apatinib,Docetaxel,Gemcitabine",,NCT03742193
+1819,Docetaxel,DRUG_COMBINATION,Docetaxel,,
+1819,Docetaxel,DRUG_COMBINATION,"Anti-HER2 CAR T-cells FT825,Bendamustine,Cetuximab,Cisplatin,Cyclophosphamide,Docetaxel,Fludarabine",,NCT06241456
+1819,Docetaxel,DRUG_COMBINATION,"Afatinib,Docetaxel",,NCT02171741
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Ramucirumab",,NCT01168973
+1819,Docetaxel,DRUG_COMBINATION,"Anti-EGFR/CD3 bispecific antibody SMET12,Docetaxel,Toripalimab",,NCT06208033
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pimurutamab",,NCT05215925
+1819,Docetaxel,DRUG_COMBINATION,"Anlotinib,Docetaxel",,NCT04619563
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Vandetanib",,NCT00687297
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Vandetanib",,NCT00312377
+1819,Docetaxel,DRUG_COMBINATION,"Afatinib,Docetaxel",,NCT02171676
+1819,Docetaxel,DRUG_COMBINATION,Sudocetaxel zendusortide,,NCT04706962
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Docetaxel",,NCT00911716
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Docetaxel,Doxorubicin hydrochloride,Doxorubicin hydrochloride liposome,Eribulin,Paclitaxel,Sargramostim",,NCT07078604
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pembrolizumab",,NCT05929768
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin",,NCT00129935
+1819,Docetaxel,DRUG_COMBINATION,"Anti-HER2 CAR T-cells FT825,Bendamustine,Cisplatin,Cyclophosphamide,Docetaxel,Fludarabine",,NCT06241456
+1819,Docetaxel,DRUG_COMBINATION,"Anti-ERBB2/ERBB3 bispecific monoclonal antibody MM-111,Docetaxel,Trastuzumab",,NCT01304784
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Trastuzumab",,NCT01880385
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Docetaxel,Trastuzumab",,NCT00949247
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Sunitinib,Trastuzumab",,NCT00372424
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT05319873
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib,Trastuzumab",,NCT04367090
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib,Trastuzumab",,NCT06770296
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Zanidatamab",,NCT07102381
+1819,Docetaxel,DRUG_COMBINATION,"BL-M07D1,Docetaxel,Pertuzumab",,NCT06445400
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nab-paclitaxel,Paclitaxel,Pertuzumab,Trastuzumab",,NCT06441890
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nab-paclitaxel,Paclitaxel,Pertuzumab,Trastuzumab,Trastuzumab Deruxtecan,Trastuzumab-emtansine,Tucatinib",,NCT06439693
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Goserelin,Letrozole,Pertuzumab,Tamoxifen,Trastuzumab-emtansine",,NCT06348134
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab-emtansine",,NCT06348134
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab,Trilaciclib",,NCT05978648
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab,Trilaciclib",,NCT05978648
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab",,NCT00545688
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Zanidatamab",,NCT04276493
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab,Trastuzumab-emtansine",,NCT04419181
+1819,Docetaxel,DRUG_COMBINATION,"Anbenitamab,Docetaxel",,NCT04165993
+1819,Docetaxel,DRUG_COMBINATION,"Anbenitamab,Docetaxel",,NCT04881929
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride liposome,Trastuzumab",,NCT04172259
+1819,Docetaxel,DRUG_COMBINATION,"Atezolizumab,Docetaxel,Pertuzumab,Trastuzumab",,NCT03881878
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Envafolimab,Trastuzumab",,NCT04034823
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pyrotinib,Trastuzumab",,NCT03735966
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pyrotinib,Trastuzumab",,NCT03847818
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Metformin,Pertuzumab,Trastuzumab",,NCT03238495
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pertuzumab,Tocotrienol,Trastuzumab",,NCT02909751
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome,Metformin,Trastuzumab",,NCT02488564
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib",,NCT03876587
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Docetaxel,Epirubicin",,NCT01690325
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Capecitabine,Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT01641406
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Trastuzumab,Zoledronic acid",,NCT01472146
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pegfilgrastim,Trastuzumab",,NCT01367028
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Docetaxel,Pegfilgrastim,Trastuzumab",,NCT01367028
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Lapatinib",,NCT01044485
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Capecitabine,Docetaxel,Trastuzumab",,NCT00964704
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Pertuzumab,Trastuzumab",,NCT00976989
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Lapatinib,Trastuzumab",,NCT01485926
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Lapatinib",,NCT00841828
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Lapatinib",,NCT00450892
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Lapatinib,Trastuzumab",,NCT00450892
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Lapatinib,Nab-paclitaxel",,NCT00479856
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Trastuzumab",,NCT00535509
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Trastuzumab",,NCT00493649
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Gefitinib",,NCT00319618
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Docetaxel,Trastuzumab",,NCT00365365
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Docetaxel,Trastuzumab",,NCT00446030
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Dexamethasone,Docetaxel,Doxorubicin hydrochloride,Filgrastim,Lapatinib,Pegfilgrastim,Trastuzumab",,NCT00404066
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Docetaxel,Trastuzumab",,NCT00364611
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Lapatinib,Trastuzumab",,NCT00251433
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab,Vinorelbine",,NCT00193089
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Trastuzumab",,NCT02748213
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00379015
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00398489
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00270894
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Liposome-encapsulated doxorubicin citrate,Trastuzumab",,NCT00129896
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Liposome-encapsulated doxorubicin citrate,Trastuzumab",,NCT00712881
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Gefitinib,Trastuzumab",,NCT00086957
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome",,NCT00004888
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome,Trastuzumab",,NCT00377780
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome,Trastuzumab",,NCT00250874
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome,Trastuzumab",,NCT00004888
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Filgrastim,Trastuzumab,Vinorelbine",,NCT00041067
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00068341
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00232479
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT03140553
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT02510781
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00453635
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00148668
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT07102381
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT04419181
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT01959490
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT04094896
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT07220135
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT00545688
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT03367676
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT03879577
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT00006104
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT00545688
+1819,Docetaxel,DRUG_COMBINATION,"BL-M07D1,Docetaxel,Pertuzumab",,NCT06891833
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Pertuzumab,Stereotactic body radiation therapy,Trastuzumab",,NCT06135714
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride liposome,Pertuzumab,Trastuzumab",,NCT05159193
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Pyrotinib,Trastuzumab",,NCT04717531
+1819,Docetaxel,DRUG_COMBINATION,"Anti-ERBB2 MOAb QL1209,Docetaxel,Trastuzumab",,NCT04629846
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pyrotinib,Trastuzumab",,NCT04290793
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,TQ-B211",,NCT04385563
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Pertuzumab,Trastuzumab",,NCT05474690
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel",,NCT03349177
+1819,Docetaxel,DRUG_COMBINATION,"Atezolizumab,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT03199885
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Endocrine therapy,Pertuzumab,Trastuzumab",,NCT03161353
+1819,Docetaxel,DRUG_COMBINATION,"Anthracycline,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT01966471
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Trastuzumab",,NCT02472964
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,Paclitaxel,Pertuzumab,Trastuzumab",,NCT01358877
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Pertuzumab,Trastuzumab",,NCT02586025
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin",,NCT03349177
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin",,NCT00798070
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Lapatinib,Trastuzumab",,NCT00769470
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Gemcitabine",,NCT00670878
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Trastuzumab",,NCT00625898
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Lapatinib,Paclitaxel",,NCT00667251
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Lapatinib",,NCT03085368
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Trastuzumab",,NCT00593697
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Lapatinib,Paclitaxel",,NCT00486668
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Trastuzumab",,NCT03705429
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00464646
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00288002
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Docetaxel,Trastuzumab",,NCT00625898
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Epirubicin,Trastuzumab",,NCT00309556
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Docetaxel,Trastuzumab",,NCT00391092
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00288002
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Trastuzumab",,NCT00567554
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00769470
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT00047255
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride",,NCT00121992
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT03161353
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT05871918
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT05883852
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT06884254
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pertuzumab,Trastuzumab",,NCT04858529
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT02402712
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT02896855
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT00567190
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT02625441
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT00430001
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Trastuzumab",,NCT00146549
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib,Trastuzumab",,NCT03588091
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib,Trastuzumab",,NCT03863223
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel or Nab-paclitaxel,Lobaplatin,Pertuzumab,Trastuzumab",,NCT07093931
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Patuximab,Pyrotinib,Trastuzumab",,NCT04929548
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Doxorubicin hydrochloride,Trastuzumab",,NCT02419742
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Trastuzumab",,NCT01301729
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Trastuzumab",,NCT00127933
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Trastuzumab",,NCT02419742
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT02445586
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Inetetamab,Pyrotinib",,NCT06234137
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride liposome,Pertuzumab,Trastuzumab",,NCT05656079
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pyrotinib,Trastuzumab",,NCT03756064
+1819,Docetaxel,DRUG_COMBINATION,"Anbenitamab,Docetaxel or Irinotecan or Paclitaxel",,NCT05427383
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pyrotinib",,NCT02378389
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fluorouracil,Leucovorin calcium,Oxaliplatin,Pertuzumab,Trastuzumab",,NCT02581462
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Trastuzumab",,NCT02004769
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fluorouracil,Leucovorin calcium,Oxaliplatin,Trastuzumab",,NCT01472029
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT03845270
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Oxaliplatin,Trastuzumab",,NCT01295086
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Oxaliplatin,Serplulimab,Trastuzumab",,NCT05311189
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Capecitabine,Docetaxel,Oxaliplatin",,NCT01359397
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Epirubicin",,NCT01624025
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Oxaliplatin,Tegafur-gimeracil-oteracil potassium,Trastuzumab",,NCT03691454
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Pyrotinib",,NCT05165225
+1819,Docetaxel,DRUG_COMBINATION,"Aromatase inhibitors,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT01491737
+1819,Docetaxel,DRUG_COMBINATION,"Aromatase inhibitors,Carboplatin,Docetaxel,Goserelin,Pertuzumab,Radiotherapy,Trastuzumab",,NCT02003209
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pertuzumab,Trastuzumab",,NCT02344472
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fulvestrant,Pertuzumab,Trastuzumab",,NCT02345772
+1819,Docetaxel,DRUG_COMBINATION,"Abemaciclib,Capecitabine,Cyclophosphamide,Docetaxel,Fulvestrant,Ribociclib,Sacituzumab govitecan,Trastuzumab Deruxtecan",,NCT06409390
+1819,Docetaxel,DRUG_COMBINATION,"Adebrelimab,Cyclophosphamide,Docetaxel,Epirubicin,High Intensity Focused Ultrasound",,NCT06470633
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil,Pertuzumab,Trastuzumab",,NCT02339532
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Goserelin,Pertuzumab,Radiotherapy,Tamoxifen,Trastuzumab",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Letrozole,Pertuzumab,Radiotherapy,Trastuzumab",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,GSK2302024A,Paclitaxel,Trastuzumab",,NCT01220128
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Doxorubicin hydrochloride,P10s-PADRE",,NCT02229084
+1819,Docetaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Docetaxel,Epirubicin,Fluorouracil",,NCT01093235
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel",,NCT05901428
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride,Gemcitabine",,NCT00282087
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Fuzuloparib",,NCT07162051
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Dexamethasone,Docetaxel",,NCT00832338
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Letrozole",,NCT00617968
+1819,Docetaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Tamoxifen",,NCT00005908
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fulvestrant",,NCT02137083
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Letrozole,Pertuzumab,Radiotherapy,Trastuzumab",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Goserelin,Pertuzumab,Radiotherapy,Tamoxifen,Trastuzumab",,NCT02624973
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Letrozole",,NCT03497702
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Pertuzumab,Trastuzumab",,NCT04024462
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Doxorubicin hydrochloride liposome",,NCT05302336
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nintedanib",,NCT02668393
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Fexagratinib",,NCT01824901
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nintedanib",,NCT02231164
+1819,Docetaxel,DRUG_COMBINATION,"Bemarituzumab,Docetaxel,Fluorouracil,Leucovorin calcium,Oxaliplatin",,NCT06967987
+1819,Docetaxel,DRUG_COMBINATION,"Bemarituzumab,Docetaxel",,NCT05267470
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Vofatamab",,NCT02401542
+1819,Docetaxel,DRUG_COMBINATION,Docetaxel or Paclitaxel or Vinflunine,,NCT03410693
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Etarfolatide,Vintafolide",,NCT01577654
+1819,Docetaxel,DRUG_COMBINATION,"Dexamethasone,Docetaxel,Sapanisertib",,NCT04267913
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Erlotinib,Pemetrexed",,NCT05081674
+1819,Docetaxel,DRUG_COMBINATION,"Carboplatin,Docetaxel,Pemetrexed,Sotorasib","COSV55497469,COSV55544089,COSV55952092,COSV105058461",NCT04185883
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Sotorasib","COSV55497469,COSV55544089,COSV55952092,COSV105058461",NCT04303780
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,KRAS_G12D inhibitor QLC1101","COSV55497369,COSV55865099",NCT06949761
+1819,Docetaxel,DRUG_COMBINATION,"Binimetinib,Docetaxel",,NCT02451865
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pelareorep",,NCT01708993
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Pelareorep,Prednisone",,NCT01619813
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Telisotuzumab",,NCT01472016
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Gumarontinib",,NCT06947291
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT05777278
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT02447380
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT02447406
+1819,Docetaxel,DRUG_COMBINATION,"AG-270,Docetaxel",,NCT03435250
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,GTI-2040",,NCT00074022
+1819,Docetaxel,DRUG_COMBINATION,"Docetaxel,Nezutatug",,NCT05919537
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Everolimus",COSV55878227,
+1819,Docetaxel,DRUG_COMBINATION,"AZD8186,Docetaxel",,NCT03218826
+1819,Docetaxel,DRUG_COMBINATION,Docetaxel,,NCT02362620
+1819,Docetaxel,DRUG_COMBINATION,"Androgen Deprivation Therapy,Apalutamide,Docetaxel",,NCT06931340
+1819,Docetaxel,DRUG_COMBINATION,"Cisplatin,Docetaxel,Fluorouracil,Tazemetostat hydrobromide",,NCT05151588
+1819,Docetaxel,DRUG_COMBINATION,"Abiraterone acetate,Darolutamide,Docetaxel",,NCT03903835
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Sulanemadlin",,NCT05622058
+1819,Docetaxel,DRUG_COMBINATION,"Ad5CMV-p53 gene,Docetaxel,Doxorubicin hydrochloride",,NCT00044993
+1819,Docetaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,GSK2302024A,Paclitaxel",,NCT01220128
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Veliparib",,NCT01540565
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Epirubicin,Nab-paclitaxel,Pyrotinib",,NCT04872985
+1080,Paclitaxel,DRUG_COMBINATION,"Aromatase inhibitors,Cisplatin,Paclitaxel",,
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Miransertib,Paclitaxel",,NCT02476955
+1080,Paclitaxel,DRUG_COMBINATION,"Miransertib,Paclitaxel",,NCT02476955
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel",,NCT05564377
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel",,NCT05554380
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Placebo",,NCT04177108
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel,Placebo",,NCT04177108
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Ipatasertib,Paclitaxel",,NCT04177108
+1080,Paclitaxel,DRUG_COMBINATION,"Afuresertib,Paclitaxel",,NCT04374630
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel",,NCT04632992
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Vevorisertib",,NCT02761694
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel",,NCT03337724
+1080,Paclitaxel,DRUG_COMBINATION,"Ipatasertib,Paclitaxel",,NCT02162719
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Cyclophosphamide,Doxorubicin hydrochloride,Ipatasertib,Paclitaxel",,NCT05498896
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT03991403
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel or Pemetrexed",,NCT04194203
+1080,Paclitaxel,DRUG_COMBINATION,"Ceritinib,Gemcitabine,Nab-paclitaxel",,NCT02227940
+1080,Paclitaxel,DRUG_COMBINATION,"Erfonrilimab,Gemcitabine,Nab-paclitaxel,Sulfatinib",,NCT05832892
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Enzalutamide,Paclitaxel",,NCT02684227
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Darolutamide,Doxorubicin hydrochloride,Epirubicin,Paclitaxel,Pembrolizumab,Surgery",,NCT07016399
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Darolutamide,Doxorubicin or Epirubicin,Paclitaxel,Pembrolizumab",,NCT07016399
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin or Epirubicin,Paclitaxel,Pembrolizumab,Standard of care",,NCT07016399
+1080,Paclitaxel,DRUG_COMBINATION,"Enzalutamide,Paclitaxel",,NCT02689427
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Epirubicin,Nab-paclitaxel",,NCT04213898
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Epirubicin,Nab-paclitaxel",,NCT05582499
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Epirubicin,Nab-paclitaxel,Pyrotinib",,NCT05582499
+1080,Paclitaxel,DRUG_COMBINATION,"Olaparib,Paclitaxel",,NCT01063517
+1080,Paclitaxel,DRUG_COMBINATION,"Olaparib,Paclitaxel,Pembrolizumab",,NCT04592211
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-CD73/AXL HypoSti CAR-T cells,Cyclophosphamide,Fludarabine,Paclitaxel",,NCT06939270
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Paclitaxel,Radiotherapy",,NCT00176241
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Oblimersen sodium,Temozolomide",,NCT00409383
+1080,Paclitaxel,DRUG_COMBINATION,"Interferon alpha-2B,Isotretinoin,Paclitaxel",,NCT00062010
+1080,Paclitaxel,DRUG_COMBINATION,"Oblimersen sodium,Paclitaxel",,NCT00005032
+1080,Paclitaxel,DRUG_COMBINATION,"BMX-001,Paclitaxel",,NCT06620029
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Radiotherapy,Surgery",,NCT04269083
+1080,Paclitaxel,DRUG_COMBINATION,"Nimotuzumab,Paclitaxel",,NCT05978050
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Pemetrexed,Toripalimab",,NCT05800340
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Veliparib",,NCT01149083
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Veliparib",,NCT01251874
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel",,NCT04499118
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Veliparib",,NCT01506609
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Veliparib",,NCT02032277
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Veliparib",,NCT02163694
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Cisplatin,Olaparib,Paclitaxel",,NCT02121990
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Rucaparib",,NCT03462212
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Rucaparib",,NCT03462212
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT03394885
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Veliparib",,NCT00989651
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Olaparib,Paclitaxel",,NCT04261465
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel",,NCT06476184
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT03038100
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Olaparib,Paclitaxel,Pembrolizumab",,NCT05485766
+1080,Paclitaxel,DRUG_COMBINATION,"Fuzuloparib,Paclitaxel",,NCT05834582
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Gemcitabine,Nab-paclitaxel",,NCT06115499
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Gemcitabine,Nab-paclitaxel",,NCT06783140
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Quisinostat",,NCT02948075
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Sorafenib",,NCT00494182
+1080,Paclitaxel,DRUG_COMBINATION,"Abemaciclib,Paclitaxel",,NCT04594005
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin or Nedaplatin,Nab-paclitaxel,Toripalimab",,NCT05860335
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Danvatirsen,Durvalumab,Nab-paclitaxel",,NCT03421353
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Pembrolizumab and Vibostolimab",,NCT05007106
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab and Vibostolimab",,NCT05007106
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab",,NCT04251169
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab",,NCT03841747
+1080,Paclitaxel,DRUG_COMBINATION,"Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT07186868
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT07186868
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin or Cisplatin,Docetaxel or Paclitaxel,Tislelizumab",,NCT05013268
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Cisplatin,Paclitaxel,Radiotherapy",,NCT06511726
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Cisplatin,Paclitaxel",,NCT06288360
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-PD-1 MOAb QL1604,Cisplatin,Paclitaxel",,NCT04864782
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Cisplatin,Paclitaxel,Pembrolizumab,Sacituzumab tirumotecan",,NCT07216703
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Cisplatin,Nab-paclitaxel,Surgery",,NCT06288373
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-PD-1 monoclonal antibody BAT1308,Bevacizumab,Carboplatin,Cisplatin,Paclitaxel",,NCT06123884
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Cisplatin,Nab-paclitaxel",,NCT06289062
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab",,NCT03914612
+1080,Paclitaxel,DRUG_COMBINATION,"Adebrelimab,Apatinib,Paclitaxel",,NCT06415669
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Oxaliplatin,Paclitaxel,Ramucirumab,Serplulimab",,NCT05942573
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Oxaliplatin,Paclitaxel,Serplulimab",,NCT05942573
+1080,Paclitaxel,DRUG_COMBINATION,"Apatinib,Capecitabine,Oxaliplatin,Paclitaxel,Serplulimab",,NCT05942573
+1080,Paclitaxel,DRUG_COMBINATION,"Avelumab,Paclitaxel,Ramucirumab",,NCT03966118
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Nab-paclitaxel,Oxaliplatin,Radiotherapy,Sintilimab",,NCT05002686
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel or Nab-paclitaxel,Pembrolizumab",,NCT02775435
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Paclitaxel",,NCT02366143
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Nab-paclitaxel",,NCT02367781
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT02366143
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Golidocitinib,Paclitaxel,Pemetrexed,Tislelizumab",,NCT06969612
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Durvalumab,Paclitaxel,Papaverine,Radiotherapy",,NCT05136846
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cemiplimab,Paclitaxel,Pemetrexed or Gemcitabine",,NCT07020065
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cemiplimab,Paclitaxel",,NCT06917573
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Nab-paclitaxel,Paclitaxel,Pembrolizumab,Pemetrexed",,NCT06745882
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Carboplatin,Paclitaxel",,NCT06532591
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel,Gemcitabine,Nab-paclitaxel,Sintilimab,Tafolecimab",,NCT06421298
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Golidocitinib,Nab-paclitaxel or Pemetrexed,Sintilimab",,NCT06198907
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Carboplatin,Ivonescimab,Paclitaxel",,NCT05904379
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab",,NCT06731413
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Nivolumab",,NCT04015778
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin or Cisplatin,Nab-paclitaxel,Pemetrexed",,NCT04153734
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Nab-paclitaxel",,NCT04167774
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Pembrolizumab",,NCT02382406
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Paclitaxel",,NCT03102242
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel or Nab-paclitaxel,Rilvegostomig",,NCT06692738
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel or Pemetrexed,Volrustomig",,NCT05984277
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Ivonescimab,Paclitaxel",,NCT05840016
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pemetrexed,Sugemalimab",,NCT03789604
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Serplulimab",,NCT04033354
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Docetaxel,Paclitaxel,Pemetrexed,Toripalimab",,NCT04158440
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Penpulimab",,NCT03866993
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pemetrexed",,NCT04736173
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Cisplatin,Paclitaxel",,NCT05522894
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel,Radiotherapy,Tislelizumab",,NCT05520619
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab",,NCT02998268
+1080,Paclitaxel,DRUG_COMBINATION,"Adebrelimab,Carboplatin,Nab-paclitaxel",,NCT06178211
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Cisplatin,Intensity modulated radiation therapy,Paclitaxel",,NCT06143748
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel,Pembrolizumab",,NCT05281003
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Carboplatin,Paclitaxel,Radiotherapy",,NCT05043688
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Carboplatin,Paclitaxel",,NCT05043688
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel or Fluorouracil,Sintilimab",,NCT03748134
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Cisplatin,Paclitaxel",,NCT06048926
+1080,Paclitaxel,DRUG_COMBINATION,"Doxorubicin hydrochloride liposome,Gemcitabine,Paclitaxel,Pembrolizumab",,NCT03539328
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Doxorubicin hydrochloride liposome or paclitaxel",,NCT03353831
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Dostarlimab,Niraparib,Paclitaxel",,NCT03602859
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Niraparib,Paclitaxel",,NCT03602859
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Paclitaxel,Pembrolizumab",,NCT05116189
+1080,Paclitaxel,DRUG_COMBINATION,"Durvalumab,Gemcitabine,Nab-paclitaxel,Oleclumab",,NCT04940286
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Sintilimab",,NCT05562297
+1080,Paclitaxel,DRUG_COMBINATION,"Nivolumab,Paclitaxel",,NCT05535569
+1080,Paclitaxel,DRUG_COMBINATION,"Cadonilimab,Paclitaxel",,NCT06118645
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,SCT-200",,NCT05552807
+1080,Paclitaxel,DRUG_COMBINATION,"Adebrelimab,Carboplatin,Nimotuzumab,Paclitaxel",,NCT07105592
+1080,Paclitaxel,DRUG_COMBINATION,"Amivantamab,Carboplatin,Paclitaxel",,NCT07062354
+1080,Paclitaxel,DRUG_COMBINATION,"Avelumab,Cetuximab,Cisplatin,Paclitaxel",,NCT06869473
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Paclitaxel,Tiragolumab",,NCT05459129
+1080,Paclitaxel,DRUG_COMBINATION,"Nivolumab,Paclitaxel",,NCT04282109
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Durvalumab,Paclitaxel",,NCT03723967
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cetuximab,Paclitaxel",,NCT06998069
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Paclitaxel",,NCT03125902
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab",,NCT06998069
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Nab-paclitaxel,Nivolumab,Radiotherapy",,NCT05203913
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Nab-paclitaxel,Toripalimab",,NCT04211012
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Toripalimab",,NCT04211012
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT03698383
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Toripalimab",,NCT05962021
+1080,Paclitaxel,DRUG_COMBINATION,"Epirubicin,Paclitaxel,Serplulimab",,NCT06860529
+1080,Paclitaxel,DRUG_COMBINATION,"Epirubicin,Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT06967103
+1080,Paclitaxel,DRUG_COMBINATION,"Anlotinib,Benmelstobart,Cyclophosphamide,Epirubicin,Nab-paclitaxel",,NCT06874933
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Paclitaxel,Stereotactic body radiation therapy,Toripalimab",,NCT06671262
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Paclitaxel",,NCT05093387
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Cyclophosphamide,Doxorubicin hydrochloride,Ipatasertib,Paclitaxel",,NCT03800836
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Ipatasertib,Nab-paclitaxel",,NCT03800836
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Ipatasertib,Paclitaxel",,NCT03800836
+1080,Paclitaxel,DRUG_COMBINATION,"CD105/CDH3/MDM2/SOX2/Yb-1-polyepitope plasmid DNA vaccine,Carboplatin,Cisplatin,Docetaxel,Doxorubicin hydrochloride,Eribulin,Paclitaxel,Sargramostim",,NCT07078604
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Doxorubicin hydrochloride,Paclitaxel,Pembrolizumab,Radiotherapy,Surgery",,NCT07011823
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Nab-paclitaxel",,NCT06793553
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT06786026
+1080,Paclitaxel,DRUG_COMBINATION,"Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT06786026
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Gemcitabine,Nab-paclitaxel,Paclitaxel,Pembrolizumab,Radiotherapy",,NCT06492759
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Tobemstomig",,NCT05852691
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Cyclophosphamide,Epirubicin,Paclitaxel",,NCT04770272
+1080,Paclitaxel,DRUG_COMBINATION,"Apatinib,Carboplatin,Nab-paclitaxel,Sintilimab",,NCT04722718
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab",,NCT06604858
+1080,Paclitaxel,DRUG_COMBINATION,"Durvalumab,Paclitaxel",,NCT02628132
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Paclitaxel,Pembrolizumab",,NCT06976944
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pembrolizumab,Radiotherapy",,NCT05233696
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Pembrolizumab,Trilaciclib",,NCT05112536
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Durvalumab,Oleclumab,Paclitaxel",,NCT03616886
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Nab-paclitaxel",,NCT03805399
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel,Tocilizumab",,NCT03424005
+1080,Paclitaxel,DRUG_COMBINATION,"Enlonstobart,Nab-paclitaxel",,NCT05068141
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel",,NCT02530489
+1080,Paclitaxel,DRUG_COMBINATION,"Anlotinib,Anthracycline,Nab-paclitaxel,Tislelizumab",,NCT04914390
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Nab-paclitaxel,Olaparib,Pembrolizumab",,NCT05174832
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Nab-paclitaxel",,NCT05266937
+1080,Paclitaxel,DRUG_COMBINATION,"BNT327,Carboplatin,Eribulin,Gemcitabine,Nab-paclitaxel",,NCT07173751
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel,Stereotactic body radiation therapy",,NCT06135714
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim or Pegfilgrastim,Nab-paclitaxel",,NCT03197935
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Toripalimab",,NCT03777579
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Toripalimab",,NCT04085276
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Nab-paclitaxel",,NCT04335006
+1080,Paclitaxel,DRUG_COMBINATION,"Apatinib,Camrelizumab,Nab-paclitaxel",,NCT04335006
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel",,NCT04148911
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel",,NCT02425891
+1080,Paclitaxel,DRUG_COMBINATION,"Chemotherapy,Gemcitabine,Nab-paclitaxel,Pyrotinib,Sintilimab",,NCT07053150
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pertuzumab,Trastuzumab",,NCT03894007
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Pertuzumab,Trastuzumab,Trastuzumab-emtansine",,NCT03726879
+1080,Paclitaxel,DRUG_COMBINATION,"Nivolumab,Paclitaxel,Ramucirumab",,NCT06203600
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03125928
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Tinengotinib",,NCT05253053
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Paclitaxel,Radiotherapy",,NCT06323460
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Nimotuzumab",,NCT06722911
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel",,NCT01280058
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT01280058
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin or Carboplatin,Osimertinib,Pemetrexed or Paclitaxel,Radiotherapy",,NCT06194448
+1080,Paclitaxel,DRUG_COMBINATION,"Almonertinib,Carboplatin,Nab-paclitaxel",,NCT06300424
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Toripalimab","COSV51765161,COSV51767322,COSV51801258,COSV51804843",NCT05962021
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT00111787
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel,Trastuzumab",,NCT01688609
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-PD-1/VEGF bispecific antibody RC148,Carboplatin,Paclitaxel or Pemetrexed",,NCT06883630
+1080,Paclitaxel,DRUG_COMBINATION,"Afatinib,Carboplatin,Nab-paclitaxel or Pemetrexed",,NCT06709859
+1080,Paclitaxel,DRUG_COMBINATION,"NRC-2694-A,Paclitaxel",,NCT05283226
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Sintilimab",,NCT05244213
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Osimertinib,Paclitaxel",,NCT04410796
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT04245085
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Erlotinib,Paclitaxel",,NCT00126581
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel",,NCT01364012
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Erlotinib,Paclitaxel",,
+1080,Paclitaxel,DRUG_COMBINATION,"E-EDV-D682,EDV-GC,Gemcitabine,Nab-paclitaxel",,NCT07049055
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Nimotuzumab",,NCT06405685
+1080,Paclitaxel,DRUG_COMBINATION,"GC1118,Paclitaxel",,NCT04077255
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Nedaplatin,Nimotuzumab",,NCT05351762
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT02226757
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Varlitinib",,NCT05400915
+1080,Paclitaxel,DRUG_COMBINATION,"Neratinib,Paclitaxel,Pembrolizumab",,NCT05512182
+1080,Paclitaxel,DRUG_COMBINATION,"Iparomlimab and Tuvonralimab,Olaparib,Paclitaxel",,NCT07187674
+1080,Paclitaxel,DRUG_COMBINATION,"Cedazuridine and Decitabine,Paclitaxel,Pembrolizumab",,NCT05673200
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,RO4929097",,NCT01238133
+1080,Paclitaxel,DRUG_COMBINATION,"Galunisertib,Paclitaxel",,NCT02672475
+1080,Paclitaxel,DRUG_COMBINATION,"Celecoxib,Cyclophosphamide,Doxorubicin hydrochloride,Interferon alpha,Paclitaxel,Rintatolimod",,NCT04081389
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab",,NCT02734290
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,Docetaxel,Doxorubicin hydrochloride,Doxorubicin hydrochloride liposome,Eribulin,Paclitaxel,Sargramostim",,NCT07078604
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-CD274/VEGF bispecific antibody IMM2510,Nab-paclitaxel",,NCT06746870
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin or Epirubicin,Paclitaxel,Pembrolizumab",,NCT06371807
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Iparomlimab and Tuvonralimab,Nab-paclitaxel",,NCT06404736
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin or Epirubicin,INT230-6,Paclitaxel,Pembrolizumab,Standard of care",,NCT06358573
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Nab-paclitaxel,Tiragolumab",,NCT06175390
+1080,Paclitaxel,DRUG_COMBINATION,"PI3K-alpha inhibitor JS105,Paclitaxel",,NCT06208410
+1080,Paclitaxel,DRUG_COMBINATION,"Apatinib,Bevacizumab,Etoposide,Famitinib,Nab-paclitaxel",,NCT03805399
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Toripalimab,Tucidinostat",,NCT05749575
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Radium Ra 223 dichloride ",,NCT04090398
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel",,NCT00546156
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Nab-paclitaxel",,NCT00675259
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Nab-paclitaxel",,NCT00479674
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,ORIN1001",,NCT03950570
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Erlotinib,Nab-paclitaxel",,NCT00733408
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Nab-paclitaxel",,NCT00472693
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Tigatuzumab",,NCT01307891
+1080,Paclitaxel,DRUG_COMBINATION,"Alisertib,Paclitaxel",,NCT02187991
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Doxorubicin hydrochloride liposome,Paclitaxel",,NCT02315196
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Talimogene laherparepvec",,NCT02779855
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Panitumumab",,NCT02876107
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Decitabine,Doxorubicin hydrochloride,Paclitaxel,Pembrolizumab",,NCT02957968
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,WT1/Cyclin B1/CEF antigen-loaded DC vaccine",,NCT02018458
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel",,NCT01525966
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel",,NCT04138719
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel",,NCT04159142
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Veliparib",,NCT01818063
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pembrolizumab,Sacituzumab tirumotecan",,NCT06966700
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-CD274/VEGFA bispecific antibody PM8002,Nab-paclitaxel",,NCT06419621
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Cyclophosphamide,Epirubicin,Paclitaxel",,NCT03201861
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Nab-paclitaxel",,NCT00785291
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel",,NCT02488967
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel",,NCT01881230
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel",,NCT01881230
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Carboplatin,Goserelin,Nab-paclitaxel",,NCT06636591
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-HER2 bispecific antibody KM257,Carboplatin,Paclitaxel",,NCT05320874
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab duocarmazine",,NCT04602117
+1080,Paclitaxel,DRUG_COMBINATION,"Neratinib,Paclitaxel,Pertuzumab,Trastuzumab",,NCT02593708
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Sapanisertib,Trastuzumab",,NCT01351350
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-ERBB2/ERBB3 bispecific monoclonal antibody MM-111,Lapatinib,Paclitaxel,Trastuzumab",,NCT01304784
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-ERBB2/ERBB3 bispecific monoclonal antibody MM-111,Paclitaxel,Trastuzumab",,NCT01304784
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Seribantumab",,NCT01209195
+1080,Paclitaxel,DRUG_COMBINATION,"MK2206,Paclitaxel,Trastuzumab",,NCT01235897
+1080,Paclitaxel,DRUG_COMBINATION,"Interleukin-12,Paclitaxel,Trastuzumab",,NCT00028535
+1080,Paclitaxel,DRUG_COMBINATION,"Erlotinib,Paclitaxel,Trastuzumab",,NCT00042809
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,HypoSti HER2 CAR T-cells,Nab-paclitaxel",,NCT05681650
+1080,Paclitaxel,DRUG_COMBINATION,"DF1001,Nab-paclitaxel",,NCT04143711
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-HER2 CAR T-cells,Cyclophosphamide,Fludarabine,Nab-paclitaxel",,NCT06658951
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pertuzumab,Trastuzumab",,NCT06722599
+1080,Paclitaxel,DRUG_COMBINATION,"ELVN-002,Paclitaxel,Trastuzumab",,NCT06328738
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Zanidatamab",,NCT02892123
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Taselisib,Trastuzumab",,NCT02390427
+1080,Paclitaxel,DRUG_COMBINATION,"Ganetespib,Paclitaxel,Pertuzumab,Trastuzumab",,NCT02060253
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Nab-paclitaxel,Trastuzumab-emtansine",,NCT02073916
+1080,Paclitaxel,DRUG_COMBINATION,"Dactolisib,Paclitaxel,Trastuzumab",,NCT01285466
+1080,Paclitaxel,DRUG_COMBINATION,"Neratinib,Paclitaxel,Trastuzumab",,NCT01423123
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT03716180
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Lapatinib,Paclitaxel",,NCT01133912
+1080,Paclitaxel,DRUG_COMBINATION,"Alvespimycin,Paclitaxel,Trastuzumab",,NCT00803556
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab,Trebananib",,NCT00807859
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Panobinostat,Trastuzumab",,NCT00788931
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Nab-paclitaxel",,NCT00331630
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Lapatinib,Paclitaxel,Trastuzumab",,NCT00367471
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Tamoxifen,Trastuzumab",,NCT00009997
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Tamoxifen,Trastuzumab",,NCT00003992
+1080,Paclitaxel,DRUG_COMBINATION,"Lonafarnib,Paclitaxel,Trastuzumab",,NCT00068757
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00003992
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT00005635
+1080,Paclitaxel,DRUG_COMBINATION,"Buparlisib,Paclitaxel,Trastuzumab",,NCT01285466
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT06832904
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel,Nab-paclitaxel,Paclitaxel,Pertuzumab,Trastuzumab",,NCT06441890
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel,Nab-paclitaxel,Paclitaxel,Pertuzumab,Trastuzumab,Trastuzumab Deruxtecan,Trastuzumab-emtansine,Tucatinib",,NCT06439693
+1080,Paclitaxel,DRUG_COMBINATION,"Afatinib,Cyclophosphamide,Epirubicin,Paclitaxel,Trastuzumab",,NCT01594177
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Inetetamab,Paclitaxel,Pertuzumab",,NCT05749016
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Trastuzumab rezetecan",,NCT05353361
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome,Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT05346107
+1080,Paclitaxel,DRUG_COMBINATION,"HER2-pulsed DC1 vaccine,Paclitaxel,Pertuzumab,Trastuzumab",,NCT05325632
+1080,Paclitaxel,DRUG_COMBINATION,"Chemotherapy,Nab-paclitaxel,Pertuzumab,Pyrotinib,Trastuzumab",,NCT04398914
+1080,Paclitaxel,DRUG_COMBINATION,"Margetuximab,Paclitaxel,Pertuzumab",,NCT04425018
+1080,Paclitaxel,DRUG_COMBINATION,"Durvalumab,Paclitaxel,Trastuzumab Deruxtecan",,NCT04538742
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab duocarmazine",,NCT04538742
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab,WOKVAC vaccine",,NCT04329065
+1080,Paclitaxel,DRUG_COMBINATION,"Doxorubicin hydrochloride liposome,Nab-paclitaxel,Trastuzumab",,NCT03994107
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel,Pyrotinib,Trastuzumab",,NCT04126525
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT05659056
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT04639271
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT04917900
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT04152057
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT04900311
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab",,NCT05918328
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib",,NCT04659499
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib",,NCT03919253
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Nivolumab,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03742986
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab,Trastuzumab",,NCT03747120
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pembrolizumab,Pertuzumab,Trastuzumab",,NCT03747120
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pegfilgrastim,Trastuzumab",,NCT03571633
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Neratinib,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03101748
+1080,Paclitaxel,DRUG_COMBINATION,"Denifanstat,Paclitaxel,Trastuzumab",,NCT03179904
+1080,Paclitaxel,DRUG_COMBINATION,"Interferon gamma-1b,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03112590
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pertuzumab,Tocotrienol,Trastuzumab",,NCT02909751
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Paclitaxel,Trastuzumab",,NCT02654119
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Zanidatamab",,NCT07102381
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Varlitinib",,NCT02396108
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel,Trastuzumab",,NCT02199418
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Nab-paclitaxel,Trastuzumab-emtansine",,NCT02073487
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Nab-paclitaxel,Trastuzumab",,NCT01830244
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Paclitaxel,Pertuzumab,Trastuzumab",,NCT01855828
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pertuzumab,Trastuzumab",,NCT02436993
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Paclitaxel,Radiotherapy,Trastuzumab",,NCT01750073
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Patritumab,Trastuzumab",,NCT01512199
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT01730833
+1080,Paclitaxel,DRUG_COMBINATION,"Liposome-encapsulated doxorubicin citrate,Paclitaxel,Pertuzumab,Trastuzumab",,NCT01669239
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Cyclophosphamide,Liposome-encapsulated doxorubicin citrate,Paclitaxel,Trastuzumab",,NCT01321775
+1080,Paclitaxel,DRUG_COMBINATION,"Anthracycline,Nab-paclitaxel,Trastuzumab",,NCT01432223
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Lapatinib,Paclitaxel",,NCT01309607
+1080,Paclitaxel,DRUG_COMBINATION,"Dasatinib,Paclitaxel,Trastuzumab",,NCT01306942
+1080,Paclitaxel,DRUG_COMBINATION,"Afatinib,Paclitaxel or Vinorelbine",,NCT01271725
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT01276041
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT01796197
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT01817452
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03329378
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Pertuzumab,Trastuzumab",,NCT02132949
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Dostarlimab,Doxorubicin hydrochloride,Encequidar,Paclitaxel,Trastuzumab",,NCT01042379
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Dostarlimab,Doxorubicin hydrochloride,Encequidar,Paclitaxel,Trastuzumab",,NCT01042379
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,HER2Bi-armed activated T-cells,Paclitaxel",,NCT01147016
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Liposome-encapsulated doxorubicin citrate,Paclitaxel",,NCT01172223
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Sapitinib",,NCT00900627
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Nab-paclitaxel,Trastuzumab",,NCT00944047
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Neratinib,Paclitaxel,Trastuzumab",,NCT01008150
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Neratinib,Paclitaxel",,NCT01008150
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab-emtansine",,NCT00951665
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Nab-paclitaxel,Trastuzumab",,NCT00629499
+1080,Paclitaxel,DRUG_COMBINATION,"Neratinib,Paclitaxel",,NCT00915018
+1080,Paclitaxel,DRUG_COMBINATION,"Neratinib,Paclitaxel",,NCT00445458
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Docetaxel,Lapatinib,Nab-paclitaxel",,NCT00479856
+1080,Paclitaxel,DRUG_COMBINATION,"Doxorubicin hydrochloride liposome,Paclitaxel,Trastuzumab",,NCT00518583
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Lapatinib,Paclitaxel",,NCT00756470
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Lapatinib,Paclitaxel",,NCT00429299
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Lapatinib,Paclitaxel",,NCT00524303
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Lapatinib,Paclitaxel,Trastuzumab",,NCT00429299
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Lapatinib,Paclitaxel,Trastuzumab",,NCT00524303
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome,Paclitaxel,Trastuzumab,Vorinostat",,NCT00574587
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Paclitaxel,Trastuzumab",,NCT00532857
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Trastuzumab",,NCT02598310
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Trastuzumab",,NCT00503750
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome,Paclitaxel,Trastuzumab",,NCT01008150
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome,Paclitaxel,Trastuzumab",,NCT00550771
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Lapatinib,Paclitaxel,Trastuzumab",,NCT00436566
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Lapatinib,Paclitaxel,Trastuzumab",,NCT00482391
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Nab-paclitaxel",,NCT00709761
+1080,Paclitaxel,DRUG_COMBINATION,"Liposome-encapsulated doxorubicin citrate,Paclitaxel,Trastuzumab",,NCT02015676
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim,Nab-paclitaxel,Trastuzumab",,NCT00407888
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Nab-paclitaxel,Trastuzumab",,NCT00392392
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Radiotherapy,Trastuzumab",,NCT02297230
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Nab-paclitaxel,Sargramostim,Trastuzumab",,NCT00254592
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab,Vinorelbine",,NCT00148681
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim,Letrozole,Methotrexate,Paclitaxel,Tamoxifen,Trastuzumab,Vinorelbine",,NCT00194779
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT01138046
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT00356811
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Trastuzumab",,NCT03907800
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Trastuzumab",,NCT00093145
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Trastuzumab",,NCT00617942
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Nab-paclitaxel,Trastuzumab",,NCT00618657
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim,Paclitaxel,Radiotherapy,Tamoxifen",,NCT00007904
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT00003612
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT00768859
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT01428414
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT01170143
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT02934828
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT01329640
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00591851
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00550771
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00136539
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT01423695
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT00003539
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT00542451
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT00019812
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT02307227
+1080,Paclitaxel,DRUG_COMBINATION,"Filgrastim,Paclitaxel,Trastuzumab,Vinorelbine",,NCT00041470
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Paclitaxel,Trastuzumab",,NCT01340430
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Lapatinib,Paclitaxel",,NCT03273595
+1080,Paclitaxel,DRUG_COMBINATION,"Everolimus,Nab-paclitaxel",,NCT03805399
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel,Trastuzumab",,NCT01827163
+1080,Paclitaxel,DRUG_COMBINATION,"Everolimus,Paclitaxel,Trastuzumab",,NCT00426556
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pilaralisib,Trastuzumab",,NCT01042925
+1080,Paclitaxel,DRUG_COMBINATION,"Buparlisib,Paclitaxel,Trastuzumab",,NCT01816594
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Pertuzumab,Stereotactic body radiation therapy,Trastuzumab",,NCT06135714
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pyrotinib,Trastuzumab",,NCT05841381
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Epirubicin,Pyrotinib,Trastuzumab",,NCT04290793
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03595592
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03595592
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT03199885
+1080,Paclitaxel,DRUG_COMBINATION,"Epirubicin,Lapatinib,Paclitaxel",,NCT03085368
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Ferric carboxymaltose,Liposome-encapsulated doxorubicin citrate,Paclitaxel,Pertuzumab,Trastuzumab",,NCT02125344
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Fluorouracil,Methotrexate,Paclitaxel,Trastuzumab",,NCT01998906
+1080,Paclitaxel,DRUG_COMBINATION,"Anthracycline,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT01966471
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pertuzumab,Trastuzumab",,NCT03595592
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Nab-paclitaxel",,NCT01690702
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT05429684
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT07057427
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT04547907
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Trastuzumab",,NCT02472964
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,Paclitaxel,Pertuzumab,Trastuzumab",,NCT01358877
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT01779206
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Lapatinib,Liposome-encapsulated doxorubicin citrate,Paclitaxel,Trastuzumab",,NCT01426880
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab,Trastuzumab Deruxtecan",,NCT05113251
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel,Lapatinib,Paclitaxel",,NCT00667251
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Trastuzumab",,NCT01583426
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Trastuzumab",,NCT00520975
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Lapatinib,Paclitaxel",,NCT00486668
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Lapatinib,Paclitaxel,Trastuzumab",,NCT00486668
+1080,Paclitaxel,DRUG_COMBINATION,"Liposome-encapsulated doxorubicin citrate,Paclitaxel,Trastuzumab",,NCT00294996
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT00281658
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT00075270
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Radiotherapy,Trastuzumab",,NCT00016276
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Dexrazoxane,Doxorubicin hydrochloride,Paclitaxel,Radiotherapy,Trastuzumab",,NCT00016276
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00629278
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Trastuzumab",,NCT00005970
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT00003440
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT05388500
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trastuzumab",,NCT05189067
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Fluorouracil,Paclitaxel,Trastuzumab",,NCT00038402
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel,Trastuzumab",,NCT00272987
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel,Trastuzumab",,NCT00770809
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel,Trastuzumab",,NCT01526369
+1080,Paclitaxel,DRUG_COMBINATION,"Everolimus,Paclitaxel,Trastuzumab",,NCT00876395
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel or Nab-paclitaxel,Lobaplatin,Pertuzumab,Trastuzumab",,NCT07093931
+1080,Paclitaxel,DRUG_COMBINATION,"Inetetamab,Paclitaxel,Pertuzumab",,NCT06578299
+1080,Paclitaxel,DRUG_COMBINATION,"Inetetamab,Paclitaxel",,NCT06578299
+1080,Paclitaxel,DRUG_COMBINATION,"Inetetamab,Nab-paclitaxel,Toripalimab",,NCT05291910
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Doxorubicin hydrochloride,Trastuzumab",,NCT02419742
+1080,Paclitaxel,DRUG_COMBINATION,"Docetaxel or Paclitaxel,Trastuzumab",,NCT01301729
+1080,Paclitaxel,DRUG_COMBINATION,"Mucoadhesive paclitaxel formulation,Pertuzumab trastuzumab and hyaluronidase-zzxf",,NCT07095023
+1080,Paclitaxel,DRUG_COMBINATION,"Encequidar,Paclitaxel",,NCT06835400
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Hyaluronidase,Paclitaxel,Trastuzumab",,NCT05256225
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Hyaluronidase,Paclitaxel,Pertuzumab,Trastuzumab",,NCT05256225
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT01367002
+1080,Paclitaxel,DRUG_COMBINATION,"Anbenitamab,Docetaxel or Irinotecan or Paclitaxel",,NCT05427383
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Ramucirumab,Zanidatamab",,NCT06043427
+1080,Paclitaxel,DRUG_COMBINATION,"Cinrebafusp alfa,Paclitaxel,Ramucirumab",,NCT05190445
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Fluorouracil,Leucovorin calcium,Nab-paclitaxel,Oxaliplatin",,NCT04510064
+1080,Paclitaxel,DRUG_COMBINATION,"Afatinib,Paclitaxel",,NCT01522768
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-ERBB2/ERBB3 bispecific monoclonal antibody MM-111,Paclitaxel,Trastuzumab",,NCT01774851
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Capecitabine,Oxaliplatin,Paclitaxel,Pyrotinib,Tegafur-gimeracil-oteracil potassium",,NCT05111444
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Sapitinib",,NCT01579578
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pertuzumab,Radiotherapy,Trastuzumab",,NCT05188313
+1080,Paclitaxel,DRUG_COMBINATION,"Evorpacept,Paclitaxel,Ramucirumab,Trastuzumab",,NCT05002127
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Placebo,Ramucirumab",,NCT04499924
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Ramucirumab,Trastuzumab,Tucatinib",,NCT04499924
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT00003881
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pyrotinib",,NCT04960943
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Trastuzumab",,NCT00189579
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,HLX22,Nab-paclitaxel,Trastuzumab",,NCT07176702
+1080,Paclitaxel,DRUG_COMBINATION,"Fluorouracil,Lenvatinib,Nab-paclitaxel,Oxaliplatin,Pembrolizumab,Sintilimab",,NCT06748508
+1080,Paclitaxel,DRUG_COMBINATION,"Fluorouracil,Nab-paclitaxel,Oxaliplatin,Pembrolizumab,Sintilimab",,NCT06748508
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Paclitaxel,Trastuzumab",,NCT05640830
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Nab-paclitaxel,Pyrotinib,Tegafur-gimeracil-oteracil potassium",,NCT05070598
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Ramucirumab,Trastuzumab",,NCT04888663
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Poziotinib,Trastuzumab",,NCT01746771
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Radiotherapy,Trastuzumab",,NCT01196390
+1080,Paclitaxel,DRUG_COMBINATION,"Lapatinib,Paclitaxel",,NCT00486954
+1080,Paclitaxel,DRUG_COMBINATION,"Oxaliplatin,Paclitaxel,Sintilimab,Tegafur-gimeracil-oteracil potassium",,NCT07178340
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Radiotherapy,Trastuzumab",,NCT00238420
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Gemcitabine,Paclitaxel,Trastuzumab",,NCT00151034
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Gemcitabine,Paclitaxel,Trastuzumab",,NCT00005831
+1080,Paclitaxel,DRUG_COMBINATION,"Durvalumab,Paclitaxel,Trastuzumab Deruxtecan",,NCT04556773
+1080,Paclitaxel,DRUG_COMBINATION,"Aromatase inhibitors,Docetaxel or Paclitaxel,Pertuzumab,Trastuzumab",,NCT01491737
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT03272477
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin or Epirubicin,Paclitaxel,Pyrotinib",,NCT06144944
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab",,NCT02344472
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pertuzumab,Trastuzumab",,NCT02344472
+1080,Paclitaxel,DRUG_COMBINATION,"Lumretuzumab,Paclitaxel,Pertuzumab",,NCT01918254
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxycycline,Epirubicin,Paclitaxel",,NCT06452394
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Epirubicin,Iparomlimab and Tuvonralimab,Paclitaxel",,NCT06404463
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pyrotinib,Trastuzumab",,NCT06000917
+1080,Paclitaxel,DRUG_COMBINATION,"Dalpiciclib,Endocrine therapy,Paclitaxel",,NCT06711094
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Paclitaxel,Toripalimab",,NCT06705127
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Doxorubicin hydrochloride,Ivonescimab,Paclitaxel,Radiotherapy",,NCT06402435
+1080,Paclitaxel,DRUG_COMBINATION,"Epirubicin,Paclitaxel,Serplulimab",,NCT06394661
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,GSK2302024A,Paclitaxel,Trastuzumab",,NCT01220128
+1080,Paclitaxel,DRUG_COMBINATION,"Afatinib,Paclitaxel",,NCT02501603
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab,Trastuzumab rezetecan",,NCT06975475
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pyrotinib,Trastuzumab,Trastuzumab Deruxtecan",,NCT06973525
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Pertuzumab,Trastuzumab rezetecan",,NCT06927180
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,High Intensity Focused Ultrasound,Nab-paclitaxel,Toripalimab",,NCT06964906
+1080,Paclitaxel,DRUG_COMBINATION,"Adebrelimab,Cyclophosphamide,Epirubicin,Nab-paclitaxel",,NCT06500208
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Endocrine therapy,Paclitaxel",,NCT01989780
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel or Paclitaxel,Doxorubicin hydrochloride,P10s-PADRE",,NCT02229084
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Sulanemadlin",,NCT03725436
+1080,Paclitaxel,DRUG_COMBINATION,"Capivasertib,Paclitaxel",,NCT01625286
+1080,Paclitaxel,DRUG_COMBINATION,"Anthracycline,Cyclophosphamide,Endocrine therapy,Nivolumab,Paclitaxel",,NCT04109066
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin or Epirubicin,Paclitaxel,Pembrolizumab",,NCT03725059
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Endocrine therapy,Epirubicin,Paclitaxel,Palbociclib",,NCT02603679
+1080,Paclitaxel,DRUG_COMBINATION,"Epirubicin,Nab-paclitaxel,Serplulimab",,NCT06781281
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin or Epirubicin,Fludarabine,Interleukin-2,Lymph node-derived lymphocytes,Nab-paclitaxel",,NCT06121570
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pelareorep",,NCT05519059
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Iparomlimab and Tuvonralimab,Paclitaxel",,NCT07197697
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome or Epirubicin,Nab-paclitaxel,Stereotactic body radiation therapy,Toripalimab",,NCT06914440
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Patritumab deruxtecan,Pembrolizumab",,NCT06797635
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Epirubicin,Paclitaxel,Toripalimab",,NCT06611813
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,TQB2930",,NCT06202261
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Nab-paclitaxel,Vinorelbine",,NCT06176534
+1080,Paclitaxel,DRUG_COMBINATION,"Anlotinib,Cyclophosphamide,Nab-paclitaxel,Pirarubicin",,NCT05558722
+1080,Paclitaxel,DRUG_COMBINATION,"Eftilagimod alpha,Paclitaxel",,NCT02614833
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Endocrine therapy,Nab-paclitaxel",,NCT00675259
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Endocrine therapy,Epirubicin,Paclitaxel,Palbociclib",,NCT02668666
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Endocrine therapy,Epirubicin,Paclitaxel,Palbociclib",,NCT02764541
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Decitabine,Doxorubicin hydrochloride,Paclitaxel,Pembrolizumab",,NCT02957968
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Neratinib,Paclitaxel",,NCT03101748
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel",,NCT04193059
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride liposome or Epirubicin,Paclitaxel,Toripalimab",,NCT06977893
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Paclitaxel",,NCT04732598
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pertuzumab,Trastuzumab",,NCT04193059
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Rogaratinib",,NCT04077255
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Tinengotinib",,NCT04742959
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pemigatinib",,NCT05529667
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Gemcitabine,Infigratinib,Nab-paclitaxel",,NCT05514912
+1080,Paclitaxel,DRUG_COMBINATION,Docetaxel or Paclitaxel or Vinflunine,,NCT03410693
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Vintafolide",,NCT01688791
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Vintafolide",,NCT01953536
+1080,Paclitaxel,DRUG_COMBINATION,Paclitaxel,,NCT03944304
+1080,Paclitaxel,DRUG_COMBINATION,"Anti-EphA2 mKRAS-loaded CAR-DC vaccine,Cyclophosphamide,Nab-paclitaxel,PD-1 blocking antibody",,NCT05631899
+1080,Paclitaxel,DRUG_COMBINATION,"FOLFIRINOX or Gemcitabine and Nab-paclitaxel,Sotorasib","COSV55497469,COSV55544089,COSV55952092,COSV105058461",NCT06892054
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Sotorasib","COSV55497469,COSV55544089,COSV55952092,COSV105058461",NCT05251038
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,KRAS_G12D inhibitor INCB186748,Nab-paclitaxel","COSV55497369,COSV55865099",NCT06818812
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,HRS-4642,Nab-paclitaxel,Nimotuzumab","COSV55497369,COSV55865099",NCT06770452
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT00984464
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pelareorep",,NCT01656538
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Cisplatin,PF-07985045,Paclitaxel,Pembrolizumab,Pemetrexed",,NCT06704724
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT00861627
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT00998192
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pelareorep",,NCT01199263
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,PF-07985045",,NCT06704724
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,PF-07934040",,NCT06447662
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Selinexor",,NCT02178436
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,IMM-1-104,Nab-paclitaxel",,NCT05585320
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT00753038
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pelareorep",,NCT01166542
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Ipatasertib,Paclitaxel",,NCT05276973
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Tepotinib ",,NCT05439993
+1080,Paclitaxel,DRUG_COMBINATION,"Onartuzumab,Paclitaxel,Platinum-based chemotherapy",,NCT01519804
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Onartuzumab,Paclitaxel,Platinum-based chemotherapy",,NCT01496742
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Dostarlimab,Paclitaxel",,NCT03981796
+1080,Paclitaxel,DRUG_COMBINATION,"AG-270,Gemcitabine,Nab-paclitaxel",,NCT03435250
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Trametinib",,
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Nezutatug",,NCT05919537
+1080,Paclitaxel,DRUG_COMBINATION,"Nab-paclitaxel,Tegafur-gimeracil-oteracil potassium",,NCT01336062
+1080,Paclitaxel,DRUG_COMBINATION,"LOXO-783,Paclitaxel",COSV55873195,NCT05307705
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Sapanisertib",,NCT02412722
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Pictilisib",,NCT01740336
+1080,Paclitaxel,DRUG_COMBINATION,"Alpelisib,Nab-paclitaxel,Tilarginine acetate",,NCT05660083
+1080,Paclitaxel,DRUG_COMBINATION,"Alpelisib,Nab-paclitaxel",,NCT02379247
+1080,Paclitaxel,DRUG_COMBINATION,"Alpelisib,Nab-paclitaxel",,NCT04216472
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Ipatasertib,Paclitaxel",,NCT03853707
+1080,Paclitaxel,DRUG_COMBINATION,"Capivasertib,Paclitaxel",,NCT02423603
+1080,Paclitaxel,DRUG_COMBINATION,"Buparlisib,Paclitaxel",,NCT01572727
+1080,Paclitaxel,DRUG_COMBINATION,"Alpelisib,Nab-paclitaxel",,NCT04251533
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Pictilisib",,NCT01493843
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pictilisib",,NCT01493843
+1080,Paclitaxel,DRUG_COMBINATION,"Alpelisib,Paclitaxel",,NCT04526470
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Metformin,Paclitaxel",,NCT02065687
+1080,Paclitaxel,DRUG_COMBINATION,"Everolimus,Nab-paclitaxel,Trastuzumab,Trastuzumab-emtansine",,NCT05429684
+1080,Paclitaxel,DRUG_COMBINATION,"AZD8186,Paclitaxel",,NCT04001569
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel,Tretinoin",,NCT01041833
+1080,Paclitaxel,DRUG_COMBINATION,"Paclitaxel,Palbociclib",,NCT01320592
+1080,Paclitaxel,DRUG_COMBINATION,"Capecitabine,Gemcitabine,Nab-paclitaxel,Radiotherapy",,NCT01921751
+1080,Paclitaxel,DRUG_COMBINATION,"Atezolizumab,Bevacizumab,Carboplatin,Paclitaxel",,NCT07093762
+1080,Paclitaxel,DRUG_COMBINATION,"Napabucasin,Paclitaxel",,NCT02826161
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel,Napabucasin",,NCT02993731
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Paclitaxel,Ruxolitinib",,NCT02876302
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Nab-paclitaxel,PD-1 blocking antibody,TP53/EPHA2 targetting CAR dendritic cells",,NCT05631886
+1080,Paclitaxel,DRUG_COMBINATION,"Camrelizumab,Carboplatin,Fuzuloparib,Paclitaxel,Radiotherapy",,NCT06413992
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel",,NCT07198074
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Pembrolizumab",,NCT07198074
+1080,Paclitaxel,DRUG_COMBINATION,"Carboplatin,Lunresertib,Paclitaxel",,NCT06107868
+1080,Paclitaxel,DRUG_COMBINATION,"Bevacizumab,Cisplatin,Olaparib,Paclitaxel",,NCT04318938
+1080,Paclitaxel,DRUG_COMBINATION,"Adavosertib,Carboplatin,Paclitaxel",,NCT01357161
+1080,Paclitaxel,DRUG_COMBINATION,"Gemcitabine,Nab-paclitaxel",,NCT02340117
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Everolimus,Paclitaxel",,NCT00930930
+1080,Paclitaxel,DRUG_COMBINATION,"Cyclophosphamide,Docetaxel,Doxorubicin hydrochloride,Epirubicin,Fluorouracil,GSK2302024A,Paclitaxel",,NCT01220128
+1080,Paclitaxel,DRUG_COMBINATION,"Cisplatin,Paclitaxel",,
+1026,Tanespimycin,DRUG_COMBINATION,"Imatinib,Tanespimycin",,NCT00066326
+1026,Tanespimycin,DRUG_COMBINATION,Tanespimycin,,NCT00100997
+1026,Tanespimycin,DRUG_COMBINATION,Tanespimycin,"COSV56056643,COSV56059110",
+1026,Tanespimycin,DRUG_COMBINATION,"Tanespimycin,Trastuzumab",,NCT00773344
+1026,Tanespimycin,DRUG_COMBINATION,Tanespimycin,,NCT00096109
+1026,Tanespimycin,DRUG_COMBINATION,Tanespimycin,COSV54736416,
+1026,Tanespimycin,DRUG_COMBINATION,"Fludeoxyglucose F 18,Tanespimycin",,NCT00088374
+1809,Teniposide,DRUG_COMBINATION,"Asparaginase,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Hematopoietic stem cell transplantation,Hydrocortisone,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Prednisone,Teniposide,Vincristine sulphate",,NCT00526305
+1809,Teniposide,DRUG_COMBINATION,Teniposide,,NCT06758700
+1058,Pictilisib,DRUG_COMBINATION,"Cisplatin,Pictilisib",,NCT01918306
+1058,Pictilisib,DRUG_COMBINATION,"Pictilisib,Trastuzumab",,NCT00928330
+1058,Pictilisib,DRUG_COMBINATION,"Pictilisib,Trastuzumab-emtansine",,NCT00928330
+1058,Pictilisib,DRUG_COMBINATION,"Fulvestrant,Pictilisib",,NCT01437566
+1058,Pictilisib,DRUG_COMBINATION,"Paclitaxel,Pictilisib",,NCT01740336
+1058,Pictilisib,DRUG_COMBINATION,"Bevacizumab,Carboplatin,Paclitaxel,Pictilisib",,NCT01493843
+1058,Pictilisib,DRUG_COMBINATION,"Carboplatin,Paclitaxel,Pictilisib",,NCT01493843
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Imatinib",,NCT01383447
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Nivolumab",,NCT03838042
+1593,Entinostat,DRUG_COMBINATION,"Anastrozole,Entinostat",,NCT01234532
+1593,Entinostat,DRUG_COMBINATION,"Azacitidine,Entinostat",,NCT01349959
+1593,Entinostat,DRUG_COMBINATION,"Bintrafusp alfa,Brachyury-TRICOM,Entinostat,Trastuzumab-emtansine",,NCT04296942
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Lapatinib",,NCT01434303
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Lapatinib,Trastuzumab",,NCT01434303
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Exemestane",,NCT00676663
+1593,Entinostat,DRUG_COMBINATION,"Aromatase inhibitors,Entinostat",,NCT00828854
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Exemestane",,NCT03291886
+1593,Entinostat,DRUG_COMBINATION,"Atezolizumab,Entinostat",,NCT03280563
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Exemestane",,NCT02115282
+1593,Entinostat,DRUG_COMBINATION,"Entinostat,Exemestane",,NCT03538171
+1593,Entinostat,DRUG_COMBINATION,"Azacitidine,Entinostat",,NCT00313586
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Letrozole",,NCT01923168
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Fulvestrant",,NCT01610284
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Fulvestrant",,NCT01633060
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,,NCT01695473
+1873,Buparlisib,DRUG_COMBINATION,"Binimetinib,Buparlisib,Encorafenib","COSV56056643,COSV56059110,COSV56057713,COSV56058419,COSV56115685,COSV56288520,COSV56059623,COSV56293156,COSV56065204,COSV56075762,COSV56076564,COSV56080151,COSV56124012,COSV56152883,COSV56228237",NCT02159066
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Vemurafenib","COSV56056643,COSV56059110,COSV56057713",NCT01512251
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Olaparib",,NCT01623349
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Gefitinib",,NCT01570296
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Erlotinib",,NCT01487265
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Sonidegib",,NCT01576666
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,,NCT01790932
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Paclitaxel,Trastuzumab",,NCT01285466
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Capecitabine,Trastuzumab",,NCT02000882
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Capecitabine,Trastuzumab",,NCT01132664
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Lapatinib",,NCT01589861
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Paclitaxel,Trastuzumab",,NCT01816594
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Fulvestrant",,NCT01339442
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Goserelin,Tamoxifen",,NCT02058381
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Fulvestrant,Ribociclib",,NCT02088684
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Letrozole",,NCT01248494
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Tamoxifen",,NCT02404844
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Sonidegib",,NCT02303041
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Capmatinib",,NCT01870726
+1873,Buparlisib,DRUG_COMBINATION,"Binimetinib,Buparlisib",,NCT01363232
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,COSV55873227,NCT01551030
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,COSV55873195,NCT01551030
+1873,Buparlisib,DRUG_COMBINATION,"AN0025,Atezolizumab,Buparlisib",,NCT04975958
+1873,Buparlisib,DRUG_COMBINATION,"Atezolizumab,Buparlisib",,NCT04975958
+1873,Buparlisib,DRUG_COMBINATION,"Buparlisib,Paclitaxel",,NCT01572727
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,,NCT01339052
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,,NCT01551030
+1873,Buparlisib,DRUG_COMBINATION,"Binimetinib,Buparlisib,Encorafenib",,NCT02159066
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,COSV53764144,NCT01551030
+1873,Buparlisib,DRUG_COMBINATION,Buparlisib,"COSV53765068,COSV53765773,COSV53775014",NCT01551030
+1909,Venetoclax,DRUG_COMBINATION,"RO6870810,Rituximab,Venetoclax",,NCT03255096
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Etoposide,Prednisone,Rituximab,Venetoclax,Vincristine",,NCT03984448
+1909,Venetoclax,DRUG_COMBINATION,"Gilteritinib,Olutasidenib,Venetoclax",,NCT07032727
+1909,Venetoclax,DRUG_COMBINATION,"Cladribine,Cytarabine,Olutasidenib,Venetoclax",,NCT07032727
+1909,Venetoclax,DRUG_COMBINATION,"Avapritinib,Azacitidine,Venetoclax",,NCT06783790
+1909,Venetoclax,DRUG_COMBINATION,"Avapritinib,Azacitidine,Venetoclax",,NCT07028073
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT01889186
+1909,Venetoclax,DRUG_COMBINATION,"Avapritinib,Cytarabine,Etoposide,Gilteritinib,Omacetaxine mepesuccinate,Sorafenib,Venetoclax",,NCT06221683
+1909,Venetoclax,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Azacitidine,Busulfan,Cedazuridine and Decitabine,Fludarabine,Venetoclax",,NCT03613532
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Mitoxantrone hydrochloride,Venetoclax",,NCT04330820
+1909,Venetoclax,DRUG_COMBINATION,"Venetoclax,Vincristine sulfate liposome",,NCT03504644
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Polatuzumab Vedotin,Prednisone,Rituximab,Venetoclax",,NCT04790903
+1909,Venetoclax,DRUG_COMBINATION,"Fimepinostat,Venetoclax",,NCT01742988
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT03552692
+1909,Venetoclax,DRUG_COMBINATION,"Romidepsin,Venetoclax",,NCT03534180
+1909,Venetoclax,DRUG_COMBINATION,"Carfilzomib,Dexamethasone,Venetoclax",,NCT02899052
+1909,Venetoclax,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Venetoclax",,NCT02755597
+1909,Venetoclax,DRUG_COMBINATION,"Letrozole,Palbociclib,Venetoclax",,NCT03900884
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Prednisone,Rituximab,Venetoclax,Vincristine",,NCT02055820
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Flumatinib,Venetoclax",,NCT05433532
+1909,Venetoclax,DRUG_COMBINATION,"Cladribine,Cytarabine,Gilteritinib,Idarubicin,Midostaurin,Venetoclax",,NCT02115295
+1909,Venetoclax,DRUG_COMBINATION,"Dexamethasone,Ponatinib,Venetoclax",,NCT03576547
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Olverembatinib,Ponatinib,Venetoclax",,NCT06390306
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Glasdebig,Venetoclax",,NCT04655391
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Ponatinib,Venetoclax",,NCT04188405
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Olverembatinib,Venetoclax",,NCT06757855
+1909,Venetoclax,DRUG_COMBINATION,"Dasatinib,Venetoclax",,NCT02689440
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT05701215
+1909,Venetoclax,DRUG_COMBINATION,"Olverembatinib,Prednisone,Venetoclax",,NCT06754267
+1909,Venetoclax,DRUG_COMBINATION,"Dasatinib,Methotrexate,Prednisone,Rituximab,Venetoclax",,NCT04872790
+1909,Venetoclax,DRUG_COMBINATION,"Asparaginase,Bortezomib,Dexamethasone,Itraconazole,Mitoxantrone hydrochloride,Venetoclax,Vincristine",,NCT07039877
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Orebatinib,Venetoclax",,NCT06578546
+1909,Venetoclax,DRUG_COMBINATION,"Olverembatinib,Prednisone,Venetoclax,Vincristine",,NCT05594784
+1909,Venetoclax,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Blinatumomab,Cyclophosphamide,Cytarabine,Dexamethasone,Idarubicin,Methotrexate,Prednisone,Venetoclax,Vindesine sulphate",,NCT07059156
+1909,Venetoclax,DRUG_COMBINATION,"Blinatumomab,Venetoclax",,NCT07199855
+1909,Venetoclax,DRUG_COMBINATION,"Anti-CD19-41BB-expressing murine CAR T-cells,Olverembatinib,Venetoclax",,NCT06481228
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Venetoclax","COSV58117136,COSV58117871,COSV58119120",NCT03943342
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Venetoclax",,NCT06917911
+1909,Venetoclax,DRUG_COMBINATION,"Bendamustine,Obinutuzumab,Venetoclax",,NCT03872180
+1909,Venetoclax,DRUG_COMBINATION,"Polatuzumab Vedotin,Rituximab,Rituximab and hyaluronidase human,Venetoclax",,NCT04659044
+1909,Venetoclax,DRUG_COMBINATION,"Acalabrutinib,Venetoclax",,NCT03946878
+1909,Venetoclax,DRUG_COMBINATION,"Asparaginase Erwinia chrysanthemi,Blinatumomab,Cyclophosphamide,Venetoclax,Vincristine",,NCT07133997
+1909,Venetoclax,DRUG_COMBINATION,"Blinatumomab,Cytarabine,Dexamethasone,Inotuzumab Ozogamicin,Methotrexate,Pegaspargase,Venetoclax",,NCT06554626
+1909,Venetoclax,DRUG_COMBINATION,"Blinatumomab,Venetoclax",,NCT05182385
+1909,Venetoclax,DRUG_COMBINATION,"Blinatumomab,Cytarabine,Dasatinib,Dexamethasone,Hydrocortisone,Methotrexate,Venetoclax",,NCT05192889
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Obinutuzumab,Venetoclax",,NCT03701282
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Obinutuzumab,Venetoclax",,NCT03737981
+1909,Venetoclax,DRUG_COMBINATION,"Magrolimab,Obinutuzumab,Venetoclax",,NCT04599634
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Pembrolizumab,Venetoclax",,NCT04284787
+1909,Venetoclax,DRUG_COMBINATION,"Pembrolizumab,Venetoclax",,NCT04274907
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Pembrolizumab,Venetoclax",,NCT03969446
+1909,Venetoclax,DRUG_COMBINATION,"Cedazuridine,Decitabine,Lintuzumab-Ac225,Venetoclax",,NCT06802523
+1909,Venetoclax,DRUG_COMBINATION,"Gemtuzumab Ozogamicin,Venetoclax",,NCT04070768
+1909,Venetoclax,DRUG_COMBINATION,"Lintuzumab-Ac225,Spironolactone,Venetoclax",,NCT03867682
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Lintuzumab-Ac225,Venetoclax",,NCT03932318
+1909,Venetoclax,DRUG_COMBINATION,"Avelumab,Azacitidine,Venetoclax",,NCT03390296
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Gemtuzumab Ozogamicin,Ivuxolimab,Venetoclax",,NCT03390296
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Cytarabine,Fludarabine,Gemtuzumab Ozogamicin,Venetoclax",,NCT05183035
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Ruxolitinib,Venetoclax",,NCT05745714
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT06200220
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT02677324
+1909,Venetoclax,DRUG_COMBINATION,"Rituximab,Venetoclax",,NCT05099471
+1909,Venetoclax,DRUG_COMBINATION,"Trastuzumab-emtansine,Venetoclax",,NCT04298918
+1909,Venetoclax,DRUG_COMBINATION,"Fulvestrant,Venetoclax",,NCT03584009
+1909,Venetoclax,DRUG_COMBINATION,"Capecitabine,Venetoclax",,NCT04274933
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Pevonedistat,Venetoclax",,NCT03862157
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Quizartinib,Venetoclax",,NCT04687761
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Quizartinib,Venetoclax",,NCT04687761
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Quizartinib,Venetoclax",,NCT03661307
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Sorafenib,Venetoclax",,NCT06285136
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Sorafenib,Venetoclax",,NCT06073730
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Cytarabine,Gilteritinib,Venetoclax",,NCT06561880
+1909,Venetoclax,DRUG_COMBINATION,"Gilteritinib,Ivosidenib,Selinexor,Venetoclax",,NCT06265545
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Idarubicin,Mitoxantrone hydrochloride liposome,Venetoclax",,NCT07108530
+1909,Venetoclax,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-IL2RA monoclonal antibody,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Cyclosporine,Cytarabine,Fludarabine,Methotrexate,Mycophenolate mofetil,Venetoclax",,NCT07108530
+1909,Venetoclax,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-IL2RA monoclonal antibody,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Cyclosporine,Cytarabine,Fludarabine,Idarubicin,Methotrexate,Mitoxantrone hydrochloride liposome,Mycophenolate mofetil,Venetoclax",,NCT07108530
+1909,Venetoclax,DRUG_COMBINATION,"Cladribine,Cytarabine,Idarubicin,Venetoclax",,NCT02115295
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Venetoclax",,NCT03069352
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Venetoclax",,NCT02287233
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Venetoclax",,NCT02203773
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,NCT02287233
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,NCT02203773
+1909,Venetoclax,DRUG_COMBINATION,"Gilteritinib,Venetoclax",,NCT03625505
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Sorafenib,Venetoclax",,NCT04752527
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Gilteritinib,Venetoclax",,NCT04140487
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Gilteritinib,Venetoclax",,NCT06696183
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Gilteritinib,Venetoclax",,NCT05520567
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Gilteritinib,Venetoclax",,NCT06317649
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,NCT04062266
+1909,Venetoclax,DRUG_COMBINATION,"Quizartinib,Venetoclax",,NCT03735875
+1909,Venetoclax,DRUG_COMBINATION,"Gilteritinib,Venetoclax",,NCT07131059
+1909,Venetoclax,DRUG_COMBINATION,"Cedazuridine and Decitabine,Gilteritinib,Venetoclax",,NCT05010122
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Ivosidenib,Venetoclax","COSV61615239,COSV61633011,COSV61615256,COSV61615420,COSV61615456,COSV61615649,COSV61617985",NCT07007949
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Ivosidenib,Venetoclax",,NCT03471260
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Ivosidenib,Venetoclax",,NCT07075016
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Olutasidenib,Venetoclax",,NCT06782542
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Cytarabine,Ivosidenib,Venetoclax",,NCT06611839
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Ivosidenib,Venetoclax",,NCT05401097
+1909,Venetoclax,DRUG_COMBINATION,"Cedazuridine,Decitabine,Enasidenib,Venetoclax",,NCT04774393
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Ivosidenib,Venetoclax",,NCT07131059
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Olutasidenib,Venetoclax",,NCT06445959
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine or Cedazuridine,Ivosidenib or Enasidenib,Venetoclax",,NCT04774393
+1909,Venetoclax,DRUG_COMBINATION,"Enasidenib,Venetoclax","COSV57468751,COSV57469541,COSV57469615,COSV57472768",NCT04092179
+1909,Venetoclax,DRUG_COMBINATION,"Enasidenib,Venetoclax","COSV100343166,COSV107355199,COSV57468734,COSV57478534,COSV57468772,COSV57468910,COSV57468942,COSV57468971,COSV57468989,COSV57472976",NCT04092179
+1909,Venetoclax,DRUG_COMBINATION,"Cedazuridine and Decitabine,Olutasidenib,Venetoclax","COSV100343166,COSV107355199,COSV57468734,COSV57478534,COSV57468772,COSV57468910,COSV57468942,COSV57468971,COSV57468989,COSV57472976",NCT07153497
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Enasidenib,Venetoclax",,NCT05401097
+1909,Venetoclax,DRUG_COMBINATION,"Enasidenib,Venetoclax",,NCT06756308
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT07131059
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax,Ziftomenib",,NCT05735184
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,DS-1594b,Venetoclax",,NCT04752163
+1909,Venetoclax,DRUG_COMBINATION,"Cytarabine,Etoposide,Omacetaxine mepesuccinate,Venetoclax",,NCT06328179
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Bleximenib,Venetoclax",,NCT06852222
+1909,Venetoclax,DRUG_COMBINATION,"Bleximenib,Venetoclax",,NCT05453903
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Bleximenib,Venetoclax",,NCT05453903
+1909,Venetoclax,DRUG_COMBINATION,"Lenalidomide,Obinutuzumab,Venetoclax",,NCT02992522
+1909,Venetoclax,DRUG_COMBINATION,"Atezolizumab,Obinutuzumab,Venetoclax",,NCT03276468
+1909,Venetoclax,DRUG_COMBINATION,"Asparaginase,Bortezomib,Dexamethasone,Itraconazole,Mitoxantrone hydrochloride,Rituximab,Venetoclax,Vincristine",,NCT07039877
+1909,Venetoclax,DRUG_COMBINATION,"Acalabrutinib,Rituximab,Venetoclax",,NCT02296918
+1909,Venetoclax,DRUG_COMBINATION,"Acalabrutinib,Obinutuzumab,Venetoclax",,NCT02296918
+1909,Venetoclax,DRUG_COMBINATION,"Epcoritamab,Obinutuzumab,Venetoclax",,NCT07218510
+1909,Venetoclax,DRUG_COMBINATION,"Epcoritamab,Venetoclax",,NCT04623541
+1909,Venetoclax,DRUG_COMBINATION,"Obinutuzumab,Venetoclax",,NCT02877550
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Rituximab,Venetoclax",,NCT03710772
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Ibrutinib,Methotrexate,Rituximab,Venetoclax,Vincristine sulphate",,NCT03710772
+1909,Venetoclax,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Obinutuzumab,Prednisone,Venetoclax,Vincristine",,NCT02055820
+1909,Venetoclax,DRUG_COMBINATION,"Enitociclib,Prednisone,Venetoclax",,NCT05371054
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Venetoclax",,NCT04273139
+1909,Venetoclax,DRUG_COMBINATION,"Venetoclax,Ziftomenib",,NCT05735184
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,NCT04867928
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,NCT05904106
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax,Ziftomenib",,NCT07007312
+1909,Venetoclax,DRUG_COMBINATION,"Tucidinostat,Venetoclax",,NCT05881265
+1909,Venetoclax,DRUG_COMBINATION,"Arsenic trioxide,Interferon alpha-2B,Venetoclax",,NCT06450145
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Tamibarotene,Venetoclax",,NCT04905407
+1909,Venetoclax,DRUG_COMBINATION,"Omacetaxine mepesuccinate,Venetoclax",,NCT04874194
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Navitoclax,Rituximab,Venetoclax",,NCT05864742
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Hematopoietic stem cell transplantation,Venetoclax",,NCT05528354
+1909,Venetoclax,DRUG_COMBINATION,"Arsenic trioxide,Ascorbic acid,Azacitidine or Decitabine,Venetoclax",,NCT06778187
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Nivolumab,Venetoclax",,NCT04277442
+1909,Venetoclax,DRUG_COMBINATION,"Decitabine,Venetoclax",,NCT03404193
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Eprenetapopt,Venetoclax",,NCT04214860
+1909,Venetoclax,DRUG_COMBINATION,"Magrolimab,Venetoclax",,NCT04778397
+1909,Venetoclax,DRUG_COMBINATION,"Azacitidine,Venetoclax",,
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,
+1909,Venetoclax,DRUG_COMBINATION,"Venetoclax,Zanubrutinib",,NCT05168930
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Obinutuzumab,Venetoclax",,NCT02758665
+1909,Venetoclax,DRUG_COMBINATION,"Rituximab,Venetoclax",,NCT03455517
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Venetoclax",,NCT03226301
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Venetoclax",,NCT03128879
+1909,Venetoclax,DRUG_COMBINATION,"Acalabrutinib,Obinutuzumab,Venetoclax",,NCT05197192
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT02756611
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT02980731
+1909,Venetoclax,DRUG_COMBINATION,Venetoclax,,NCT06311227
+1909,Venetoclax,DRUG_COMBINATION,"Acalabrutinib,Obinutuzumab,Venetoclax",,NCT04855695
+1909,Venetoclax,DRUG_COMBINATION,"Bendamustine,Cytarabine,Rituximab,Venetoclax",,NCT03567876
+1909,Venetoclax,DRUG_COMBINATION,"Ibrutinib,Venetoclax",,NCT03112174
+1909,Venetoclax,DRUG_COMBINATION,"Glofitamab,Lenalidomide,Obinutuzumab,Venetoclax",,NCT05861050
+1909,Venetoclax,DRUG_COMBINATION,"Lenalidomide,Tafasitamab,Venetoclax",,NCT05910801
+1909,Venetoclax,DRUG_COMBINATION,"Anti-CD20 antibody,Ibrutinib,Venetoclax",,NCT04802590
+1008,Methotrexate,DRUG_COMBINATION,"Carboplatin,Cyclophosphamide,Etoposide,Lorlatinib,Methotrexate,Vincristine",,NCT06333899
+1008,Methotrexate,DRUG_COMBINATION,"Crizotinib,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Etoposide,Ifosfamide,Methotrexate",,NCT01979536
+1008,Methotrexate,DRUG_COMBINATION,"Brentuximab vedotin,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Etoposide,Ifosfamide,Methotrexate",,NCT01979536
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Cyclophosphamide,Cytarabine,Inotuzumab Ozogamicin,Mercaptopurine,Methotrexate,Prednisone,Rituximab,Vincristine sulphate",,NCT01371630
+1008,Methotrexate,DRUG_COMBINATION,"Leucovorin calcium,Methotrexate,Thiotepa",,NCT00045539
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,CD34-enriched PBSCT,CD45RA-depleted PBSCT,Cyclophosphamide,Fludarabine,Methotrexate,Radiotherapy,Tacrolimus,Thiotepa",,NCT02220985
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Fludarabine,Methotrexate,Tacrolimus",,NCT00787761
+1008,Methotrexate,DRUG_COMBINATION,"Hematopoietic stem cell transplantation,Methotrexate,Tacrolimus,Vorinostat",,NCT01789255
+1008,Methotrexate,DRUG_COMBINATION,"Busulfan,Cyclophosphamide,Methotrexate,Peripheral blood stem cell transplantation,Tacrolimus",,NCT03602898
+1008,Methotrexate,DRUG_COMBINATION,"Busulfan,Cyclophosphamide,Cyclosporine,Methotrexate,Peripheral blood stem cell transplantation",,NCT03602898
+1008,Methotrexate,DRUG_COMBINATION,"Anti-thymocyte globulin,Cyclophosphamide,Cyclosporine,Methotrexate,Peripheral blood stem cell transplantation,Radiotherapy,Tacrolimus",,NCT03602898
+1008,Methotrexate,DRUG_COMBINATION,"Anti-thymocyte globulin,Cyclophosphamide,Methotrexate,Peripheral blood stem cell transplantation,Radiotherapy,Tacrolimus",,NCT03602898
+1008,Methotrexate,DRUG_COMBINATION,"Fludarabine,Hematopoietic stem cell transplantation,Methotrexate,Peripheral blood stem cell transplantation,Radiotherapy,T cell depleted hematopoietic stem cell transplantation,Tacrolimus,Thiotepa",,NCT01858740
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Fludarabine,Hematopoietic stem cell transplantation,Methotrexate,Mycophenolate mofetil,Peripheral blood stem cell transplantation,Radiotherapy,Tacrolimus,Thiotepa",,NCT02220985
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Leucovorin calcium,Mesna,Methotrexate,Nilotinib,Prednisone,Rituximab,Vincristine",,NCT01670084
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Etoposide,Mercaptopurine,Methotrexate,Pegaspargase,Rituximab,Vincristine sulphate,Vindesine sulphate",,NCT02881086
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic lymphocytes,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Filgrastim,Fludarabine,Methotrexate,Mycophenolate mofetil,Peripheral blood stem cell transplantation,Tacrolimus",,NCT00295997
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Anti-thymocyte globulin,Busulfan,Filgrastim,Fludarabine,Interleukin-2,Methotrexate,Natural killer cell immunotherapy,Tacrolimus",,NCT01390402
+1008,Methotrexate,DRUG_COMBINATION,"Anti-thymocyte globulin,Busulfan,Donor lymphocyte infusion,Fludarabine,Hematopoietic stem cell transplantation,Imatinib,Methotrexate,Tacrolimus",,NCT00499889
+1008,Methotrexate,DRUG_COMBINATION,"Busulfan,Cyclosporine,Fludarabine,Methotrexate,Peripheral blood stem cell transplantation",,NCT00027924
+1008,Methotrexate,DRUG_COMBINATION,"Dexamethasone,Mercaptopurine,Methotrexate,Vincristine sulphate",,NCT01190930
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Calaspargase pegol-mknl or Pegaspargase,Cytarabine,Dasatinib,Daunorubicin,Dexamethasone,Doxorubicin hydrochloride,Leucovorin calcium,Mercaptopurine,Methotrexate,Prednisone or Prednisolone,Thioguanine,Vincristine",,NCT06124157
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Etoposide,Fludarabine,Imatinib,Melphalan,Mercaptopurine,Methotrexate,Pegaspargase,Rituximab,Vincristine sulphate",,NCT01085617
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Etoposide,Fludarabine,Melphalan,Mercaptopurine,Methotrexate,Nelarabine,Pegaspargase,Vincristine sulphate",,NCT01085617
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Dexamethasone,Imatinib,Methotrexate,Prednisone,Vincristine",,NCT03589326
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Dexamethasone,Imatinib,Mercaptopurine,Methotrexate,Vincristine sulphate",,NCT06175702
+1008,Methotrexate,DRUG_COMBINATION,"Dasatinib,Methotrexate,Prednisone,Rituximab,Venetoclax",,NCT04872790
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Bortezomib,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Hydrocortisone,Methotrexate,Palbociclib,Pembrolizumab,Ruxolitinib",,NCT03515200
+1008,Methotrexate,DRUG_COMBINATION,"Bortezomib,Cytarabine,Dasatinib,Dexamethasone,Doxorubicin hydrochloride,Hydrocortisone,Methotrexate,Palbociclib",,NCT03515200
+1008,Methotrexate,DRUG_COMBINATION,"Allopurinol sodium,Cyclophosphamide,Cytarabine,Dasatinib,Dexamethasone,Etoposide,Methotrexate,Mitoxantrone hydrochloride,Pegaspargase,Sulphamethoxazole,Trimethoprim",,NCT00940524
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cyclophosphamide,Cytarabine,Filgrastim,Fludarabine,Methotrexate,Sargramostim",,NCT00013533
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dasatinib or Imatinib,Dexamethasone,Doxorubicin hydrochloride,Filgrastim,Levoleucovorin calcium,Mesna,Methotrexate,Vincristine sulfate liposome",,NCT01319981
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Dasatinib,Dexamethasone,Inotuzumab Ozogamicin,Methotrexate,Ponatinib,Vincristine sulphate",,NCT04747912
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Blinatumomab,Dexamethasone,Methotrexate,Tyrosine kinase inhibitor",,NCT04329325
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Etoposide,Hematopoietic stem cell transplantation,Hydrocortisone,Mercaptopurine,Methotrexate,Ponatinib,Prednisone,Vincristine sulphate",,NCT02776605
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Cyclophosphamide,Cytarabine,Dasatinib,Daunorubicin,Dexamethasone,Etoposide,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Prednisone,Vincristine sulphate",,NCT02523976
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Cytarabine liposome,Dasatinib,Daunorubicin,Etoposide,Hydrocortisone,Leucovorin calcium,Methotrexate,Pegaspargase,Prednisone,Rituximab,Vincristine sulphate",,NCT02043587
+1008,Methotrexate,DRUG_COMBINATION,"Bortezomib,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Methotrexate,Pegaspargase,Vincristine sulphate",,NCT01769209
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dasatinib,Dexamethasone,Etoposide,Mercaptopurine,Methotrexate,Vincristine sulphate,Vindesine sulphate",,NCT01724879
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Dexamethasone,Methotrexate,Ponatinib",,NCT01641107
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Etoposide,Leucovorin calcium,Methotrexate,Nilotinib,Prednisolone,Vincristine sulphate",,NCT00844298
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Cytarabine,Daunorubicin,Etoposide,Leucovorin calcium,Methotrexate,Prednisolone,Vincristine sulphate",,NCT00618501
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Hematopoietic stem cell transplantation,Imatinib,Methotrexate,Mitoxantrone hydrochloride,Prednisone",,NCT00458848
+1008,Methotrexate,DRUG_COMBINATION,"Dasatinib,Methotrexate,Prednisone",,NCT00391989
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Idarubicin,Imatinib,Methotrexate,Vincristine sulphate",,NCT00199186
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Imatinib,Methotrexate,Prednisolone,Vincristine sulphate",,NCT00130195
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Etoposide,Filgrastim,Hematopoietic stem cell transplantation,Imatinib,Leucovorin calcium,Methotrexate,Tacrolimus,Vincristine sulphate",,NCT00039377
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Imatinib,Mesna,Methotrexate,Sargramostim,Vincristine sulphate",,NCT00038610
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cyclophosphamide,Cytarabine,Dasatinib,Dexamethasone,Doxorubicin hydrochloride,Etoposide,Filgrastim,Leucovorin calcium,Methotrexate,Methylprednisolone acetate,Peripheral blood stem cell transplantation,Prednisone,Radiotherapy,Sirolimus,Tacrolimus,Vincristine sulphate",,NCT00792948
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Cytarabine,Methotrexate,Ponatinib",,NCT03263572
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dasatinib,Dexamethasone,Doxorubicin hydrochloride,Methotrexate,Prednisone,Vincristine",,NCT00390793
+1008,Methotrexate,DRUG_COMBINATION,"Carmustine,Cyclophosphamide,Cytarabine,Dactinomycin,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Pegaspargase,Prednisone,Sargramostim,Vincristine sulphate",,NCT00002766
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Blinatumomab,Cyclophosphamide,Cytarabine,Dexamethasone,Idarubicin,Methotrexate,Prednisone,Venetoclax,Vindesine sulphate",,NCT07059156
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Dexamethasone,Methotrexate,Ponatinib",,NCT04530565
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Dexrazoxane,Filgrastim,Hydrocortisone,Ifosfamide,Imatinib,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Prednisolone,Vincristine sulphate",,NCT03007147
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Cyclophosphamide,Cytarabine,Dasatinib,Daunorubicin,Dexamethasone,Etoposide,Filgrastim,Hydrocortisone sodium succinate,Ifosfamide,Leucovorin calcium,Mercaptopurine,Methotrexate,Methylprednisolone acetate,Pegaspargase,Prednisone,Radiotherapy,Vincristine sulphate",,NCT00720109
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Dexrazoxane,Etoposide,Filgrastim,Hydrocortisone,Ifosfamide,Imatinib,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Prednisone,Vincristine sulphate",,NCT03007147
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Dexrazoxane,Doxorubicin hydrochloride,Imatinib,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Prednisone,Thioguanine,Vincristine sulphate",,NCT03007147
+1008,Methotrexate,DRUG_COMBINATION,"Chemotherapy,Cyclophosphamide,Cytarabine,Dasatinib,Daunorubicin,Mercaptopurine,Methotrexate,Pegaspargase,Prednisone,Vincristine",,NCT03117751
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Dexrazoxane,Doxorubicin hydrochloride,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Vincristine",,NCT03020030
+1008,Methotrexate,DRUG_COMBINATION,"Dasatinib,Dexamethasone,Methotrexate,Prednisone",,NCT02690922
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Etoposide,Filgrastim,Imatinib,Mercaptopurine,Methotrexate,Prednisone,Vincristine sulphate",,NCT01491763
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Hematopoietic stem cell transplantation,Hydrocortisone,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Prednisone,Teniposide,Vincristine sulphate",,NCT00526305
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Dexamethasone,Imatinib,Mercaptopurine,Methotrexate,Vincristine sulphate",,NCT01376427
+1008,Methotrexate,DRUG_COMBINATION,"Asciminib,Blinatumomab,Dasatinib,Dexamethasone,Methotrexate,Prednisone",,NCT06773936
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cyclophosphamide,Cytarabine,Dexamethasone,Fludarabine,Imatinib,Mercaptopurine,Methotrexate,Ponatinib,Radiotherapy,Vincristine",,NCT06175702
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Etoposide,Imatinib,Leucovorin calcium,Methotrexate,Prednisone,Rituximab,Vincristine",,NCT01429610
+1008,Methotrexate,DRUG_COMBINATION,"Mercaptopurine,Methotrexate",,NCT01432145
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Blinatumomab,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Etoposide,Mercaptopurine,Methotrexate,Pegaspargase,Prednisone,Rituximab,Vincristine sulphate",,NCT02003222
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Cytarabine,Dexamethasone,Inotuzumab Ozogamicin,Methotrexate,Pegaspargase,Venetoclax",,NCT06554626
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Bortezomib,Dexamethasone,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Pegaspargase,Vorinostat,Ziftomenib",,NCT05848687
+1008,Methotrexate,DRUG_COMBINATION,"Blinatumomab,Cytarabine,Dasatinib,Dexamethasone,Hydrocortisone,Methotrexate,Venetoclax",,NCT05192889
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase Erwinia chrysanthemi,Blinatumomab,Calaspargase pegol-mknl,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Hydrocortisone,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Vincristine",,NCT06317662
+1008,Methotrexate,DRUG_COMBINATION,"Bendamustine,Fludarabine,Inotuzumab Ozogamicin,Methotrexate,Rituximab,Stem cell transplantation,Tacrolimus",,NCT01664910
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Inotuzumab Ozogamicin,Methotrexate,Methylprednisolone acetate,Rituximab,Vincristine",,NCT05303792
+1008,Methotrexate,DRUG_COMBINATION,"Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Gemtuzumab Ozogamicin,Methotrexate,Mycophenolate mofetil,Tacrolimus",,NCT00669890
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Hematopoietic stem cell transplantation,Methotrexate,Ofatumumab,Vincristine sulphate",,NCT01527149
+1008,Methotrexate,DRUG_COMBINATION,"Capecitabine,Cyclophosphamide,Methotrexate",,NCT03518242
+1008,Methotrexate,DRUG_COMBINATION,"Cisplatin,Doxorubicin hydrochloride,Etoposide,Filgrastim,Ifosfamide,Leucovorin calcium,Methotrexate,Radiotherapy,Trastuzumab",,NCT00023998
+1008,Methotrexate,DRUG_COMBINATION,"Capecitabine,Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim,Letrozole,Methotrexate,Paclitaxel,Tamoxifen,Trastuzumab,Vinorelbine",,NCT00194779
+1008,Methotrexate,DRUG_COMBINATION,"Bone marrow transplantation,Cyclophosphamide,Doxorubicin hydrochloride,Filgrastim,Fluorouracil,Methotrexate,Radiotherapy,Tamoxifen",,NCT00003953
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Fluorouracil,Methotrexate,Trastuzumab",,NCT00036868
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Fluorouracil,Methotrexate,Paclitaxel,Trastuzumab",,NCT01998906
+1008,Methotrexate,DRUG_COMBINATION,"Aromatase inhibitors,Cyclophosphamide,Methotrexate,Prednisolone",,NCT00687648
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Fludarabine,Methotrexate,Mitoxantrone hydrochloride,Quizartinib",,NCT06262438
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-IL2RA monoclonal antibody,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Cyclosporine,Cytarabine,Fludarabine,Methotrexate,Mycophenolate mofetil,Venetoclax",,NCT07108530
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-IL2RA monoclonal antibody,Anti-thymocyte globulin,Busulfan,Cyclophosphamide,Cyclosporine,Cytarabine,Fludarabine,Idarubicin,Methotrexate,Mitoxantrone hydrochloride liposome,Mycophenolate mofetil,Venetoclax",,NCT07108530
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,CPX-351,Cytarabine,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Gilteritinib,Hydrocortisone,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,CPX-351,Cytarabine,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,CPX-351,Cytarabine,Etoposide,Gemtuzumab Ozogamicin,Gilteritinib,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,CPX-351,Cytarabine,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,CPX-351,Cytarabine,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,CPX-351,Cytarabine,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Gilteritinib,Hydrocortisone,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Gilteritinib,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Gilteritinib,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate,Mitoxantrone hydrochloride",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Cytarabine,Daunorubicin,Dexrazoxane,Etoposide,Gemtuzumab Ozogamicin,Hydrocortisone,Methotrexate",,NCT04293562
+1008,Methotrexate,DRUG_COMBINATION,IGF-methotrexate conjugate,,NCT02045368
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Dexrazoxane,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Pegaspargase,Vincristine sulphate",,NCT03020030
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Leucovorin calcium,Methotrexate,Methylprednisolone sodium succinate,Rituximab,Ruxolitinib",,NCT02779283
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Pegaspargase,Rituximab,Ruxolitinib,Thioguanine,Vincristine",,NCT03571321
+1008,Methotrexate,DRUG_COMBINATION,"Calaspargase pegol-mknl,Cytarabine,Fludarabine,Hydrocortisone sodium succinate,Methotrexate,Pegaspargase,Prednisolone,Prednisone,Revumenib,Vincristine sulphate",,NCT05761171
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Asparaginase,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Etoposide,Mercaptopurine,Methotrexate,Prednisolone,Vincristine",,NCT06516679
+1008,Methotrexate,DRUG_COMBINATION,"Azacitidine,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Hydrocortisone,Leucovorin calcium,Mercaptopurine,Methotrexate,Pegaspargase,Prednisolone,Thioguanine,Vincristine sulphate",,NCT02828358
+1008,Methotrexate,DRUG_COMBINATION,"Erlotinib,Methotrexate",,NCT03520842
+1008,Methotrexate,DRUG_COMBINATION,"Bevacizumab,Capecitabine,Hydroxychloroquine,Methotrexate",,NCT06949982
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase Erwinia chrysanthemi,Cyclophosphamide,Cytarabine,Daunorubicin,Dexamethasone,Mercaptopurine,Methotrexate,Rituximab,Vincristine",,NCT06918431
+1008,Methotrexate,DRUG_COMBINATION,"Carboplatin,Mannitol,Methotrexate,Rituximab,Sodium Thiosulfate",,NCT00293475
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Lenalidomide,Leucovorin calcium,Methotrexate,Rituximab",,NCT01788189
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Methotrexate,Prednisone,Rituximab and hyaluronidase human,Vincristine",,NCT03864419
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic stem cell transplantation,Anti-thymocyte globulin,Bendamustine,Filgrastim,Fludarabine,Methotrexate,Rituximab,Tacrolimus",,NCT00880815
+1008,Methotrexate,DRUG_COMBINATION,"Carfilzomib,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Leucovorin calcium,Methotrexate,Methylprednisolone acetate,Rituximab,Vincristine sulphate",,NCT02293109
+1008,Methotrexate,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-thymocyte globulin,Bortezomib,Carmustine,Cytarabine,Etoposide,Filgrastim,Melphalan,Methotrexate,Rituximab,Tacrolimus",,NCT00439556
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Methotrexate,Ofatumumab,Vincristine sulphate",,NCT01363128
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Asparaginase Erwinia chrysanthemi,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Prednisolone,Rituximab,Thioguanine,Vincristine",,NCT06336395
+1008,Methotrexate,DRUG_COMBINATION,"Calaspargase pegol-mknl,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Mesna,Methotrexate,Rituximab,Vincristine",,NCT05581030
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Methotrexate,Obinutuzumab,Pegaspargase,Vincristine",,NCT04920968
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Cytarabine,Daunorubicin,Etoposide,Leucovorin calcium,Mercaptopurine,Methotrexate,Prednisone,Rituximab,Vincristine",,NCT01429610
+1008,Methotrexate,DRUG_COMBINATION,"Asparaginase,Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Mercaptopurine,Methotrexate,Prednisone,Rituximab,Vincristine",,NCT01358253
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Doxorubicin hydrochloride,Methotrexate,Prednisone,Radiotherapy,Rituximab,Vincristine sulphate",,NCT00210379
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Ibrutinib,Methotrexate,Rituximab,Vincristine sulphate",,NCT02427620
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Ibrutinib,Methotrexate,Rituximab,Venetoclax,Vincristine sulphate",,NCT03710772
+1008,Methotrexate,DRUG_COMBINATION,Methotrexate,,NCT00952016
+1008,Methotrexate,DRUG_COMBINATION,"Arsenic trioxide,Gemtuzumab Ozogamicin,Mercaptopurine,Methotrexate,Tretinoin",,NCT00551460
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Daunorubicin,Idarubicin,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Tretinoin",,NCT01226303
+1008,Methotrexate,DRUG_COMBINATION,"Arsenic trioxide,Mercaptopurine,Methotrexate,Tretinoin",,NCT00482833
+1008,Methotrexate,DRUG_COMBINATION,"Anthracycline,Cytarabine,Mercaptopurine,Merestinib,Methotrexate,Tretinoin",,NCT00866918
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Idarubicin,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Tretinoin",,NCT00482833
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Idarubicin,Mercaptopurine,Merestinib,Methotrexate",,NCT00378365
+1008,Methotrexate,DRUG_COMBINATION,"Idarubicin,Mercaptopurine,Merestinib,Methotrexate",,NCT00378365
+1008,Methotrexate,DRUG_COMBINATION,"Idarubicin,Mercaptopurine,Methotrexate,Tretinoin",,NCT00378365
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Idarubicin,Mercaptopurine,Methotrexate",,NCT00378365
+1008,Methotrexate,DRUG_COMBINATION,"Idarubicin,Mercaptopurine,Methotrexate,Tretinoin",,NCT00465933
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Dexamethasone,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Realgar-Indigo naturalis formulation,Tretinoin",,NCT02200978
+1008,Methotrexate,DRUG_COMBINATION,"Arsenic trioxide,Idarubicin,Methotrexate,Tretinoin",,NCT01987297
+1008,Methotrexate,DRUG_COMBINATION,"Daunorubicin,Idarubicin,Mercaptopurine,Merestinib,Methotrexate,Tretinoin",,NCT01191541
+1008,Methotrexate,DRUG_COMBINATION,"Etoposide,Idarubicin,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Thioguanine,Tretinoin",,NCT01064557
+1008,Methotrexate,DRUG_COMBINATION,"Bone marrow transplantation,Cyclophosphamide,Iodine-131 apamistamab,Methotrexate,Radiotherapy,Stem cell transplantation",,NCT00003868
+1008,Methotrexate,DRUG_COMBINATION,"Anti-thymocyte globulin,Azacitidine,Busulfan,Fludarabine,Hematopoietic stem cell transplantation,Methotrexate,Tacrolimus",,NCT01168219
+1008,Methotrexate,DRUG_COMBINATION,"Cyclophosphamide,Cytarabine,Dasatinib,Daunorubicin,Dexamethasone,Mercaptopurine,Methotrexate,Pegaspargase,Prednisone,Vincristine",,NCT03117751
+1008,Methotrexate,DRUG_COMBINATION,"Methotrexate or Temozolomide or Thiotepa,Orelabrutinib,Selinexor",,NCT07191431
+1008,Methotrexate,DRUG_COMBINATION,"Cytarabine,Idarubicin,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Tretinoin",,NCT00408278
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Doxorubicin hydrochloride",,NCT00872521
+1191,Bortezomib,DRUG_COMBINATION,"Alisertib,Bortezomib,Rituximab",,NCT01695941
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cyclophosphamide,Doxorubicin hydrochloride,Prednisone,Rituximab,Vincristine sulphate",,NCT01848132
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Venetoclax",,NCT02755597
+1191,Bortezomib,DRUG_COMBINATION,"Anti-thymocyte globulin,Bortezomib,Tacrolimus",,NCT02877082
+1191,Bortezomib,DRUG_COMBINATION,Bortezomib,,NCT00511069
+1191,Bortezomib,DRUG_COMBINATION,Bortezomib,,NCT00023881
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Doxorubicin hydrochloride,Palbociclib",,NCT04996160
+1191,Bortezomib,DRUG_COMBINATION,"Blinatumomab,Bortezomib,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Hydrocortisone,Methotrexate,Palbociclib,Pembrolizumab,Ruxolitinib",,NCT03515200
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cytarabine,Dasatinib,Dexamethasone,Doxorubicin hydrochloride,Hydrocortisone,Methotrexate,Palbociclib",,NCT03515200
+1191,Bortezomib,DRUG_COMBINATION,"Asparaginase,Bortezomib,Dexamethasone,Itraconazole,Mitoxantrone hydrochloride,Venetoclax,Vincristine",,NCT07039877
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cytarabine,Dexamethasone,Doxorubicin hydrochloride,Methotrexate,Pegaspargase,Vincristine sulphate",,NCT01769209
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Vorinostat",,NCT01312818
+1191,Bortezomib,DRUG_COMBINATION,"Blinatumomab,Bortezomib,Dexamethasone,Mercaptopurine,Methotrexate,Mitoxantrone hydrochloride,Pegaspargase,Vorinostat,Ziftomenib",,NCT05848687
+1191,Bortezomib,DRUG_COMBINATION,"Afuresertib,Bortezomib,Dexamethasone",,NCT01428492
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cytarabine,Etoposide,Mitoxantrone hydrochloride",,NCT01127009
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Gemcitabine",,NCT00305734
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Erlotinib",,NCT00903734
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cetuximab,Cisplatin",,NCT00629226
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Trastuzumab",,NCT00199212
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Fulvestrant",,NCT01142401
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Dovitinib",,NCT01680796
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Sorafenib,Vorinostat",,NCT01534260
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cytarabine,Etoposide,Midostaurin,Mitoxantrone hydrochloride",,NCT01174888
+1191,Bortezomib,DRUG_COMBINATION,Bortezomib,,NCT01371981
+1191,Bortezomib,DRUG_COMBINATION,Bortezomib,,
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Pelareorep",,NCT02514382
+1191,Bortezomib,DRUG_COMBINATION,"Afuresertib,Bortezomib",,NCT01445587
+1191,Bortezomib,DRUG_COMBINATION,"Allogeneic hematopoietic stem cell transplantation,Anti-thymocyte globulin,Bortezomib,Carmustine,Cytarabine,Etoposide,Filgrastim,Melphalan,Methotrexate,Rituximab,Tacrolimus",,NCT00439556
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Dexamethasone,Rituximab,Temsirolimus",,NCT01381692
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Ofatumumab",,NCT01397591
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Rituximab",,NCT04224571
+1191,Bortezomib,DRUG_COMBINATION,"Asparaginase,Bortezomib,Dexamethasone,Itraconazole,Mitoxantrone hydrochloride,Rituximab,Venetoclax,Vincristine",,NCT07039877
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Cyclophosphamide,Doxorubicin hydrochloride,Ibrutinib,Prednisone,Rituximab,Vincristine sulphate",,NCT03129828
+1191,Bortezomib,DRUG_COMBINATION,"Arsenic trioxide,Bortezomib",,NCT01950611
+1191,Bortezomib,DRUG_COMBINATION,Bortezomib,,NCT06029998
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,Tipifarnib",,NCT00383474
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,E7107",COSV59205318,NCT00459823
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,E7107",COSV59205318,NCT00499499
+1191,Bortezomib,DRUG_COMBINATION,"Bortezomib,CPX-351",,NCT07008638
+1191,Bortezomib,DRUG_COMBINATION,"Anti-BCMA CAR T-cells,Bortezomib,Dexamethasone,Lenalidomide,Selinexor",,NCT05850286
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT05261399
+1936,Savolitinib,DRUG_COMBINATION,"Durvalumab,Savolitinib",,NCT02819596
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT02819596
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT02143466
+1936,Savolitinib,DRUG_COMBINATION,"Gefitinib,Savolitinib",,NCT02374645
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",COSV51765492,NCT02143466
+1936,Savolitinib,DRUG_COMBINATION,"Gefitinib,Savolitinib",COSV51765492,NCT02374645
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT03944772
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT05163249
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT03778229
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT04606771
+1936,Savolitinib,DRUG_COMBINATION,"Osimertinib,Savolitinib",,NCT05015608
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT04923945
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT06563999
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT02897479
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,COSV59260365,NCT03592641
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT06692491
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT03598244
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT02127710
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT02761057
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT03091192
+1936,Savolitinib,DRUG_COMBINATION,"Durvalumab,Savolitinib",,NCT05043090
+1936,Savolitinib,DRUG_COMBINATION,"Durvalumab,Savolitinib",,NCT05374603
+1936,Savolitinib,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT05777278
+1936,Savolitinib,DRUG_COMBINATION,"Durvalumab,Savolitinib",,NCT05620628
+1936,Savolitinib,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT02447380
+1936,Savolitinib,DRUG_COMBINATION,"Docetaxel,Savolitinib",,NCT02447406
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT02449551
+1936,Savolitinib,DRUG_COMBINATION,Savolitinib,,NCT04923932

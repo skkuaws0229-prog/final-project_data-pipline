@@ -1,0 +1,6 @@
+model,top30_count,top15_count,reference_drugs_in_top30,reference_drugs_in_top15,direct_drug_validation_possible_top30,direct_drug_validation_possible_top15,same_axis_validation_supported_top30,same_axis_validation_supported_top15,validated_or_axis_supported_top30,validated_or_axis_supported_top15
+RandomForest,30,15,4,2,2,1,5,2,7,3
+ExtraTrees,30,15,4,2,2,1,5,2,7,3
+LightGBM,30,15,4,2,2,1,5,2,7,3
+XGBoost,30,15,4,2,2,1,5,2,7,3
+CatBoost,30,15,3,3,1,1,5,2,6,3

@@ -1,0 +1,1506 @@
+{
+  "step": "Step 7-1 ADMET Gate (STAD / Choi protocol)",
+  "disease_axis": "TCGA-STAD / gastric cancer repurposing",
+  "thresholds": {
+    "exact": 1.0,
+    "close_analog": 0.85,
+    "analog": 0.7
+  },
+  "total_drugs": 30,
+  "verdict_counts": {
+    "WARNING": 22,
+    "PASS": 5,
+    "FAIL": 3
+  },
+  "avg_safety_score": 5.065,
+  "avg_matches": 5.27,
+  "assays_loaded": 22,
+  "pains_alerts": 5,
+  "rdkit_available": true,
+  "status_detail": [
+    {
+      "rank": 6,
+      "drug": "Topotecan",
+      "safety_score": 7.5,
+      "verdict": "PASS",
+      "matches": 10,
+      "mw": 421.45,
+      "logp": 1.85,
+      "tpsa": 104.89
+    },
+    {
+      "rank": 23,
+      "drug": "Vinorelbine",
+      "safety_score": 7.25,
+      "verdict": "PASS",
+      "matches": 10,
+      "mw": 778.95,
+      "logp": 4.75,
+      "tpsa": 133.87
+    },
+    {
+      "rank": 15,
+      "drug": "Vinblastine",
+      "safety_score": 7.0,
+      "verdict": "PASS",
+      "matches": 12,
+      "mw": 810.99,
+      "logp": 3.99,
+      "tpsa": 154.1
+    },
+    {
+      "rank": 19,
+      "drug": "Irinotecan",
+      "safety_score": 6.4,
+      "verdict": "PASS",
+      "matches": 9,
+      "mw": 586.69,
+      "logp": 4.09,
+      "tpsa": 114.2
+    },
+    {
+      "rank": 12,
+      "drug": "Camptothecin",
+      "safety_score": 6.25,
+      "verdict": "PASS",
+      "matches": 5,
+      "mw": 348.36,
+      "logp": 2.08,
+      "tpsa": 81.42
+    },
+    {
+      "rank": 5,
+      "drug": "Temsirolimus",
+      "safety_score": 5.5,
+      "verdict": "WARNING",
+      "matches": 7,
+      "mw": 1030.3,
+      "logp": 5.72,
+      "tpsa": 241.96
+    },
+    {
+      "rank": 24,
+      "drug": "Rapamycin",
+      "safety_score": 5.5,
+      "verdict": "WARNING",
+      "matches": 7,
+      "mw": 914.19,
+      "logp": 6.18,
+      "tpsa": 195.43
+    },
+    {
+      "rank": 17,
+      "drug": "Staurosporine",
+      "safety_score": 5.25,
+      "verdict": "WARNING",
+      "matches": 1,
+      "mw": 466.54,
+      "logp": 4.35,
+      "tpsa": 69.45
+    },
+    {
+      "rank": 29,
+      "drug": "Bosutinib",
+      "safety_score": 5.25,
+      "verdict": "WARNING",
+      "matches": 2,
+      "mw": 530.46,
+      "logp": 5.19,
+      "tpsa": 82.88
+    },
+    {
+      "rank": 20,
+      "drug": "BX795",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 1,
+      "mw": 591.48,
+      "logp": 4.75,
+      "tpsa": 111.28
+    },
+    {
+      "rank": 21,
+      "drug": "SL0101",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 516.46,
+      "logp": 1.92,
+      "tpsa": 182.19
+    },
+    {
+      "rank": 1,
+      "drug": "Bleomycin (50 uM)",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 1,
+      "mw": 1415.58,
+      "logp": -7.7,
+      "tpsa": 627.07
+    },
+    {
+      "rank": 18,
+      "drug": "Tanespimycin",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 2,
+      "mw": 585.7,
+      "logp": 2.54,
+      "tpsa": 166.28
+    },
+    {
+      "rank": 26,
+      "drug": "BI-2536",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 2,
+      "mw": 521.67,
+      "logp": 3.56,
+      "tpsa": 102.93
+    },
+    {
+      "rank": 27,
+      "drug": "AZD5582",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 1015.31,
+      "logp": 3.92,
+      "tpsa": 199.54
+    },
+    {
+      "rank": 28,
+      "drug": "Tozasertib",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 2,
+      "mw": 464.6,
+      "logp": 3.5,
+      "tpsa": 102.07
+    },
+    {
+      "rank": 25,
+      "drug": "Pevonedistat",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 443.53,
+      "logp": 2.06,
+      "tpsa": 132.36
+    },
+    {
+      "rank": 30,
+      "drug": "TW 37",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 2,
+      "mw": 573.71,
+      "logp": 6.9,
+      "tpsa": 123.93
+    },
+    {
+      "rank": 2,
+      "drug": "Bleomycin",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 1,
+      "mw": 1415.58,
+      "logp": -7.7,
+      "tpsa": 627.07
+    },
+    {
+      "rank": 14,
+      "drug": "CCT-018159",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 352.39,
+      "logp": 3.8,
+      "tpsa": 87.6
+    },
+    {
+      "rank": 13,
+      "drug": "Lestaurtinib",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 439.47,
+      "logp": 3.47,
+      "tpsa": 88.65
+    },
+    {
+      "rank": 11,
+      "drug": "MG-132",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 3,
+      "mw": 475.63,
+      "logp": 3.59,
+      "tpsa": 113.6
+    },
+    {
+      "rank": 4,
+      "drug": "Elesclomol",
+      "safety_score": 5.0,
+      "verdict": "WARNING",
+      "matches": 0,
+      "mw": 400.53,
+      "logp": 2.05,
+      "tpsa": 64.68
+    },
+    {
+      "rank": 7,
+      "drug": "Paclitaxel",
+      "safety_score": 4.25,
+      "verdict": "WARNING",
+      "matches": 12,
+      "mw": 853.92,
+      "logp": 3.74,
+      "tpsa": 221.29
+    },
+    {
+      "rank": 3,
+      "drug": "Docetaxel",
+      "safety_score": 4.25,
+      "verdict": "WARNING",
+      "matches": 12,
+      "mw": 861.94,
+      "logp": 0.79,
+      "tpsa": 318.95
+    },
+    {
+      "rank": 10,
+      "drug": "Dactinomycin",
+      "safety_score": 4.0,
+      "verdict": "WARNING",
+      "matches": 5,
+      "mw": 1255.44,
+      "logp": 0.73,
+      "tpsa": 359.98
+    },
+    {
+      "rank": 8,
+      "drug": "Epirubicin",
+      "safety_score": 4.0,
+      "verdict": "WARNING",
+      "matches": 15,
+      "mw": 543.53,
+      "logp": 0.0,
+      "tpsa": 206.07
+    },
+    {
+      "rank": 9,
+      "drug": "Bortezomib",
+      "safety_score": 3.4,
+      "verdict": "FAIL",
+      "matches": 7,
+      "mw": 384.25,
+      "logp": 0.36,
+      "tpsa": 124.44
+    },
+    {
+      "rank": 16,
+      "drug": "Teniposide",
+      "safety_score": 3.15,
+      "verdict": "FAIL",
+      "matches": 18,
+      "mw": 656.66,
+      "logp": 2.75,
+      "tpsa": 160.83
+    },
+    {
+      "rank": 22,
+      "drug": "Mitoxantrone",
+      "safety_score": 3.0,
+      "verdict": "FAIL",
+      "matches": 12,
+      "mw": 444.49,
+      "logp": -0.14,
+      "tpsa": 163.18
+    }
+  ],
+  "match_details": {
+    "Bleomycin (50 uM)": {
+      "n_total_matches": 1,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "vdss_lombardo": {
+          "similarity": 0.8,
+          "value": 9.43,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        }
+      }
+    },
+    "Bleomycin": {
+      "n_total_matches": 1,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "vdss_lombardo": {
+          "similarity": 0.8,
+          "value": 9.43,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        }
+      }
+    },
+    "Docetaxel": {
+      "n_total_matches": 12,
+      "n_exact": 2,
+      "n_close_analog": 3,
+      "n_analog": 7,
+      "assays": {
+        "dili": {
+          "similarity": 0.9889,
+          "value": 1.0,
+          "match_type": "close_analog",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "bbb_martins": {
+          "similarity": 0.9889,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "BBB Penetration"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.9889,
+          "value": 2.1,
+          "match_type": "close_analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 0.76,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 0.76,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 0.76,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 0.76,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 0.76,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 0.76,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 11.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 3.4,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        },
+        "solubility_aqsoldb": {
+          "similarity": 0.76,
+          "value": -6.33,
+          "match_type": "analog",
+          "assay_name": "Aqueous Solubility"
+        }
+      }
+    },
+    "Elesclomol": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "Temsirolimus": {
+      "n_total_matches": 7,
+      "n_exact": 3,
+      "n_close_analog": 0,
+      "n_analog": 4,
+      "assays": {
+        "caco2_wang": {
+          "similarity": 0.8421,
+          "value": -4.96,
+          "match_type": "analog",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 3.0,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 0.8462,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 0.8462,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 0.8462,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "clearance_hepatocyte_az": {
+          "similarity": 1.0,
+          "value": 150.0,
+          "match_type": "exact",
+          "assay_name": "Hepatocyte Clearance"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 18.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Topotecan": {
+      "n_total_matches": 10,
+      "n_exact": 6,
+      "n_close_analog": 3,
+      "n_analog": 1,
+      "assays": {
+        "dili": {
+          "similarity": 1.0,
+          "value": 0.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "bioavailability_ma": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Oral Bioavailability"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.8,
+          "value": 1.8,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 0.9844,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 0.9844,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 0.9844,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "clearance_hepatocyte_az": {
+          "similarity": 1.0,
+          "value": 3.24,
+          "match_type": "exact",
+          "assay_name": "Hepatocyte Clearance"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 2.3,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 0.31,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        }
+      }
+    },
+    "Paclitaxel": {
+      "n_total_matches": 12,
+      "n_exact": 11,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "dili": {
+          "similarity": 1.0,
+          "value": 1.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 3.0,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 11.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 0.76,
+          "value": 3.4,
+          "match_type": "analog",
+          "assay_name": "Lipophilicity (logD)"
+        },
+        "solubility_aqsoldb": {
+          "similarity": 1.0,
+          "value": -6.33,
+          "match_type": "exact",
+          "assay_name": "Aqueous Solubility"
+        }
+      }
+    },
+    "Epirubicin": {
+      "n_total_matches": 15,
+      "n_exact": 13,
+      "n_close_analog": 2,
+      "n_analog": 0,
+      "assays": {
+        "ames": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Ames Mutagenicity"
+        },
+        "dili": {
+          "similarity": 1.0,
+          "value": 1.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "ld50_zhu": {
+          "similarity": 0.8533,
+          "value": 3.196,
+          "match_type": "close_analog",
+          "assay_name": "Acute Toxicity (LD50)"
+        },
+        "bioavailability_ma": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "Oral Bioavailability"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "caco2_wang": {
+          "similarity": 1.0,
+          "value": -6.5900002,
+          "match_type": "exact",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "pgp_broccatelli": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "P-gp Inhibitor"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.8961,
+          "value": 15.45,
+          "match_type": "close_analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 32.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Bortezomib": {
+      "n_total_matches": 7,
+      "n_exact": 7,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {
+        "dili": {
+          "similarity": 1.0,
+          "value": 1.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "ppbr_az": {
+          "similarity": 1.0,
+          "value": 86.85,
+          "match_type": "exact",
+          "assay_name": "Plasma Protein Binding"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 10.0,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 18.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Dactinomycin": {
+      "n_total_matches": 5,
+      "n_exact": 5,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {
+        "dili": {
+          "similarity": 1.0,
+          "value": 1.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "ld50_zhu": {
+          "similarity": 1.0,
+          "value": 5.2410000000000005,
+          "match_type": "exact",
+          "assay_name": "Acute Toxicity (LD50)"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "cyp2c9_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Inhibitor"
+        }
+      }
+    },
+    "MG-132": {
+      "n_total_matches": 3,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 3,
+      "assays": {
+        "cyp2c9_veith": {
+          "similarity": 0.7843,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 0.7843,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 0.7843,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "CYP3A4 Inhibitor"
+        }
+      }
+    },
+    "Camptothecin": {
+      "n_total_matches": 5,
+      "n_exact": 3,
+      "n_close_analog": 0,
+      "n_analog": 2,
+      "assays": {
+        "ld50_zhu": {
+          "similarity": 1.0,
+          "value": 3.357,
+          "match_type": "exact",
+          "assay_name": "Acute Toxicity (LD50)"
+        },
+        "caco2_wang": {
+          "similarity": 1.0,
+          "value": -4.1100001000000015,
+          "match_type": "exact",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "pgp_broccatelli": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "P-gp Inhibitor"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.7619,
+          "value": 2.2,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "half_life_obach": {
+          "similarity": 0.7619,
+          "value": 7.0,
+          "match_type": "analog",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Lestaurtinib": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "CCT-018159": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "Vinblastine": {
+      "n_total_matches": 12,
+      "n_exact": 9,
+      "n_close_analog": 2,
+      "n_analog": 1,
+      "assays": {
+        "dili": {
+          "similarity": 1.0,
+          "value": 0.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "bioavailability_ma": {
+          "similarity": 0.7387,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "Oral Bioavailability"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "caco2_wang": {
+          "similarity": 1.0,
+          "value": -5.48,
+          "match_type": "exact",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 28.0,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 0.8835,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 0.8835,
+          "value": 1,
+          "match_type": "close_analog",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 67.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Teniposide": {
+      "n_total_matches": 18,
+      "n_exact": 9,
+      "n_close_analog": 0,
+      "n_analog": 9,
+      "assays": {
+        "ames": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Ames Mutagenicity"
+        },
+        "dili": {
+          "similarity": 0.7531,
+          "value": 1.0,
+          "match_type": "analog",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "ld50_zhu": {
+          "similarity": 0.8148,
+          "value": 2.898,
+          "match_type": "analog",
+          "assay_name": "Acute Toxicity (LD50)"
+        },
+        "bioavailability_ma": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Oral Bioavailability"
+        },
+        "bbb_martins": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "BBB Penetration"
+        },
+        "caco2_wang": {
+          "similarity": 1.0,
+          "value": -6.0500002,
+          "match_type": "exact",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "pgp_broccatelli": {
+          "similarity": 0.7531,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "P-gp Inhibitor"
+        },
+        "ppbr_az": {
+          "similarity": 0.7531,
+          "value": 98.17,
+          "match_type": "analog",
+          "assay_name": "Plasma Protein Binding"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 0.41,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_veith": {
+          "similarity": 0.7531,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 0.7531,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 0.7531,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 16.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 0.7531,
+          "value": 0.91,
+          "match_type": "analog",
+          "assay_name": "Lipophilicity (logD)"
+        },
+        "solubility_aqsoldb": {
+          "similarity": 0.7531,
+          "value": -3.47,
+          "match_type": "analog",
+          "assay_name": "Aqueous Solubility"
+        }
+      }
+    },
+    "Staurosporine": {
+      "n_total_matches": 1,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "half_life_obach": {
+          "similarity": 0.726,
+          "value": 790.0,
+          "match_type": "analog",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Tanespimycin": {
+      "n_total_matches": 2,
+      "n_exact": 1,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "ld50_zhu": {
+          "similarity": 0.75,
+          "value": 2.351,
+          "match_type": "analog",
+          "assay_name": "Acute Toxicity (LD50)"
+        },
+        "pgp_broccatelli": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "P-gp Inhibitor"
+        }
+      }
+    },
+    "Irinotecan": {
+      "n_total_matches": 9,
+      "n_exact": 8,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "bioavailability_ma": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "Oral Bioavailability"
+        },
+        "ppbr_az": {
+          "similarity": 1.0,
+          "value": 57.99,
+          "match_type": "exact",
+          "assay_name": "Plasma Protein Binding"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.8353,
+          "value": 3.5,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "clearance_hepatocyte_az": {
+          "similarity": 1.0,
+          "value": 3.0,
+          "match_type": "exact",
+          "assay_name": "Hepatocyte Clearance"
+        },
+        "clearance_microsome_az": {
+          "similarity": 1.0,
+          "value": 13.49,
+          "match_type": "exact",
+          "assay_name": "Microsome Clearance"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 9.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "BX795": {
+      "n_total_matches": 1,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "lipophilicity_astrazeneca": {
+          "similarity": 0.831,
+          "value": 4.13,
+          "match_type": "analog",
+          "assay_name": "Lipophilicity (logD)"
+        }
+      }
+    },
+    "SL0101": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "Mitoxantrone": {
+      "n_total_matches": 12,
+      "n_exact": 11,
+      "n_close_analog": 1,
+      "n_analog": 0,
+      "assays": {
+        "ames": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Ames Mutagenicity"
+        },
+        "dili": {
+          "similarity": 1.0,
+          "value": 1.0,
+          "match_type": "exact",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "hia_hou": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "HIA (Intestinal Absorption)"
+        },
+        "pgp_broccatelli": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "P-gp Inhibitor"
+        },
+        "cyp2c9_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Inhibitor"
+        },
+        "cyp2d6_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp3a4_veith": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 53.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        },
+        "solubility_aqsoldb": {
+          "similarity": 0.9394,
+          "value": -1.8388,
+          "match_type": "close_analog",
+          "assay_name": "Aqueous Solubility"
+        }
+      }
+    },
+    "Vinorelbine": {
+      "n_total_matches": 10,
+      "n_exact": 6,
+      "n_close_analog": 0,
+      "n_analog": 4,
+      "assays": {
+        "dili": {
+          "similarity": 0.7387,
+          "value": 0.0,
+          "match_type": "analog",
+          "assay_name": "DILI (Liver Injury)"
+        },
+        "bioavailability_ma": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "Oral Bioavailability"
+        },
+        "bbb_martins": {
+          "similarity": 0.7387,
+          "value": 1,
+          "match_type": "analog",
+          "assay_name": "BBB Penetration"
+        },
+        "caco2_wang": {
+          "similarity": 0.7387,
+          "value": -5.48,
+          "match_type": "analog",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "vdss_lombardo": {
+          "similarity": 1.0,
+          "value": 23.0,
+          "match_type": "exact",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2d6_veith": {
+          "similarity": 0.7387,
+          "value": 0,
+          "match_type": "analog",
+          "assay_name": "CYP2D6 Inhibitor"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 0,
+          "match_type": "exact",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 1.0,
+          "value": 1,
+          "match_type": "exact",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "half_life_obach": {
+          "similarity": 1.0,
+          "value": 18.0,
+          "match_type": "exact",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Rapamycin": {
+      "n_total_matches": 7,
+      "n_exact": 2,
+      "n_close_analog": 4,
+      "n_analog": 1,
+      "assays": {
+        "caco2_wang": {
+          "similarity": 1.0,
+          "value": -4.96,
+          "match_type": "exact",
+          "assay_name": "Caco-2 Permeability"
+        },
+        "vdss_lombardo": {
+          "similarity": 0.8727,
+          "value": 3.2,
+          "match_type": "close_analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "cyp2c9_substrate_carbonmangels": {
+          "similarity": 0.8727,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP2C9 Substrate"
+        },
+        "cyp2d6_substrate_carbonmangels": {
+          "similarity": 0.8727,
+          "value": 0,
+          "match_type": "close_analog",
+          "assay_name": "CYP2D6 Substrate"
+        },
+        "cyp3a4_substrate_carbonmangels": {
+          "similarity": 0.8727,
+          "value": 1,
+          "match_type": "close_analog",
+          "assay_name": "CYP3A4 Substrate"
+        },
+        "clearance_hepatocyte_az": {
+          "similarity": 1.0,
+          "value": 50.12,
+          "match_type": "exact",
+          "assay_name": "Hepatocyte Clearance"
+        },
+        "half_life_obach": {
+          "similarity": 0.8421,
+          "value": 18.0,
+          "match_type": "analog",
+          "assay_name": "Half-Life"
+        }
+      }
+    },
+    "Pevonedistat": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "BI-2536": {
+      "n_total_matches": 2,
+      "n_exact": 1,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "vdss_lombardo": {
+          "similarity": 0.8442,
+          "value": 31.2,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 3.14,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        }
+      }
+    },
+    "AZD5582": {
+      "n_total_matches": 0,
+      "n_exact": 0,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {}
+    },
+    "Tozasertib": {
+      "n_total_matches": 2,
+      "n_exact": 1,
+      "n_close_analog": 0,
+      "n_analog": 1,
+      "assays": {
+        "vdss_lombardo": {
+          "similarity": 0.8209,
+          "value": 5.1,
+          "match_type": "analog",
+          "assay_name": "Volume of Distribution"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 3.47,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        }
+      }
+    },
+    "Bosutinib": {
+      "n_total_matches": 2,
+      "n_exact": 2,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 3.5,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        },
+        "solubility_aqsoldb": {
+          "similarity": 1.0,
+          "value": -4.8795513261000005,
+          "match_type": "exact",
+          "assay_name": "Aqueous Solubility"
+        }
+      }
+    },
+    "TW 37": {
+      "n_total_matches": 2,
+      "n_exact": 2,
+      "n_close_analog": 0,
+      "n_analog": 0,
+      "assays": {
+        "clearance_hepatocyte_az": {
+          "similarity": 1.0,
+          "value": 3.0,
+          "match_type": "exact",
+          "assay_name": "Hepatocyte Clearance"
+        },
+        "lipophilicity_astrazeneca": {
+          "similarity": 1.0,
+          "value": 3.44,
+          "match_type": "exact",
+          "assay_name": "Lipophilicity (logD)"
+        }
+      }
+    }
+  }
+}

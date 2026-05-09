@@ -1,0 +1,31 @@
+rank,drug_name,tier,definition_basis
+1,Dactinomycin,Tier2,타암종 승인/적응증확장 연구축
+2,Docetaxel,Tier1,두경부암 승인/표준치료 축
+3,Vinorelbine,Tier2,타암종 승인/적응증확장 연구축
+4,Paclitaxel,Tier1,두경부암 승인/표준치료 축
+5,Temsirolimus,Tier2,타암종 승인/적응증확장 연구축
+6,Topotecan,Tier2,타암종 승인/적응증확장 연구축
+7,Vinblastine,Tier2,타암종 승인/적응증확장 연구축
+8,SN-38,Tier2,타암종 승인/적응증확장 연구축
+9,Lestaurtinib,Tier3,두경부암 미사용 치료제/신규탐색
+10,SL0101,Tier3,두경부암 미사용 치료제/신규탐색
+11,Teniposide,Tier2,타암종 승인/적응증확장 연구축
+12,Irinotecan,Tier2,타암종 승인/적응증확장 연구축
+13,Camptothecin,Tier4,화합물/검증추가필요
+14,Pyridostatin,Tier4,화합물/검증추가필요
+15,Schweinfurthin A,Tier4,화합물/검증추가필요
+16,GSK1904529A,Tier3,두경부암 미사용 치료제/신규탐색
+17,Staurosporine,Tier4,화합물/검증추가필요
+18,Epirubicin,Tier2,타암종 승인/적응증확장 연구축
+19,Tozasertib,Tier3,두경부암 미사용 치료제/신규탐색
+20,Mitoxantrone,Tier2,타암종 승인/적응증확장 연구축
+21,MG-132,Tier4,화합물/검증추가필요
+22,Sabutoclax,Tier3,두경부암 미사용 치료제/신규탐색
+23,AZD5582,Tier3,두경부암 미사용 치료제/신규탐색
+24,Rapamycin,Tier2,타암종 승인/적응증확장 연구축
+25,AZD2014,Tier3,두경부암 미사용 치료제/신규탐색
+26,Refametinib,Tier3,두경부암 미사용 치료제/신규탐색
+27,LMP744,Tier3,두경부암 미사용 치료제/신규탐색
+28,ZM447439,Tier3,두경부암 미사용 치료제/신규탐색
+29,Tanespimycin,Tier2,타암종 승인/적응증확장 연구축
+30,Bleomycin,Tier1,두경부암 승인/표준치료 축

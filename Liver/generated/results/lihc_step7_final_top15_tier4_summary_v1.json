@@ -1,0 +1,14 @@
+{
+  "disease_axis": "LIHC / HCC",
+  "rule_basis": "HCC approval list + ADMET + external support",
+  "hcc_approved_in_top15": 0,
+  "tier_counts": {
+    "tier3": 8,
+    "tier2": 5,
+    "tier4": 2
+  },
+  "output_top15_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/Liver cancer/results/lihc_final_top15.csv",
+  "output_tier_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/Liver cancer/results/lihc_step7_final_top15_tier4.csv",
+  "version": "v1",
+  "variant": "operational_anchor_mix_phase"
+}

@@ -1,0 +1,15 @@
+{
+  "eval_mode": "groupcv",
+  "feature_set": "baseline",
+  "spearman": 0.22857861201522603,
+  "spearman_p": 2.1089052739264445e-24,
+  "rmse": 2.6426996009086947,
+  "mae": 2.0312959495455556,
+  "r2": 0.04494489328986628,
+  "n_train": 1939,
+  "n_test": 1939,
+  "n_features": 3,
+  "n_image_features": 0,
+  "n_patients": 225,
+  "n_holdout_rows": 1939
+}

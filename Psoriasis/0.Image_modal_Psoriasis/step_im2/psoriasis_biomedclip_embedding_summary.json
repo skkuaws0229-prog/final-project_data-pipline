@@ -1,0 +1,11 @@
+{
+  "model": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+  "n_images": 100,
+  "embedding_dim": 512,
+  "nan_or_inf": false,
+  "device": "cpu",
+  "label_type": [
+    "disease_category"
+  ],
+  "severity_available": false
+}

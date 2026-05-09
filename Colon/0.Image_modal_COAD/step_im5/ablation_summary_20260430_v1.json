@@ -1,0 +1,24 @@
+{
+  "cancer_type": "COAD",
+  "model_used": "LightGBM",
+  "experiments": [
+    "baseline_no_image",
+    "with_image_mean_pool",
+    "with_image_abmil",
+    "image_only"
+  ],
+  "eval_modes": [
+    "holdout",
+    "cv5",
+    "groupcv",
+    "scaffoldcv"
+  ],
+  "n_rows": 1939,
+  "n_patients": 225,
+  "embedding_dim": 1536,
+  "cv5_baseline_spearman": 0.22722673064241639,
+  "cv5_with_image_spearman": 0.22722673064241639,
+  "cv5_image_only_spearman": -0.030980840445389908,
+  "cv5_delta_with_image_minus_baseline": 0.0,
+  "interpretation": "Image embeddings do not improve GDSC cell-line drug-response reranking for COAD in this Step 5 ablation."
+}

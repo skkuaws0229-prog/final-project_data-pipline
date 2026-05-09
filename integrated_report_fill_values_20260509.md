@@ -1,0 +1,39 @@
+# Integrated Report Fill Values (2026-05-09)
+
+- **LUAD ADMET PASS/KEEP**: 28
+  - source: `LUNG/project_root/results/lung_admet_summary.json`
+  - note: LUAD/LUNG ?? ????? ADMET; status=PASS
+- **LUAD ADMET EXCLUDE/FAIL**: 2
+  - source: `LUNG/project_root/results/lung_admet_summary.json`
+  - note: status=FAIL; warning=0, unknown=0
+- **LUAD Cluster-Drug links**: 18
+  - source: `LUNG/0.Image_modal_LUAD/step_im4c/luad_top30_cluster_drug_hypotheses.csv`
+- **STAD Holdout Spearman**: N/A
+  - source: `STAD/0.Image_modal_STAD/step_im5/reranking_comparison_20260430_v1.csv; STAD/workspace_git_snapshot/reports/step5_ensemble_summary_20260423.md`
+  - note: holdout ? ??. groupcv GridOpt Spearman fallback=0.5153
+- **HNSC Holdout Spearman**: N/A
+  - source: `HNSC model/image-modal summaries`
+  - note: holdout ? ??. groupcv weighted top3 ensemble Spearman fallback=0.5787
+- **PAAD Holdout Spearman**: N/A
+  - source: `PDAC/PAAD step5/external validation summaries`
+  - note: no_holdout ??. groupcv4 top4 weighted Spearman fallback=0.737436
+- **BRCA PATH_T_STAGE p-value**: 0.0004737979
+  - source: `BRCA/0.Image_modal_BRCA/clinical_analysis/brca_path_t_stage_test.json`
+  - note: chi-square, n=281
+- **BRCA Cluster-Drug links**: 32
+  - source: `BRCA/0.Image_modal_BRCA/drug_interpretation/cluster_drug_pathway_hypothesis.csv`
+- **COAD PATH_T_STAGE p-value**: 0.1497826
+  - source: `Colon/0.Image_modal_COAD/step_im4a/cluster_statistical_tests.csv`
+  - note: AJCC overall stage p=0.003728141
+- **IPF FVC vs cluster ANOVA p-value**: 0.333549
+  - source: `IPF/0.Image_modal_IPF/step_im4a/im4a_quantitative_statistical_tests.csv`
+  - note: Welch t-test p=0.332566
+- **IPF Progression vs cluster chi-square p-value**: 0.792411
+  - source: `IPF/0.Image_modal_IPF/step_im4a/im4a_quantitative_statistical_tests.csv`
+  - note: rapid/slow contingency
+- **PAH FVC vs cluster ANOVA p-value**: 0.333549
+  - source: `PAH/0.Image_modal_PAH/step_im4a/im4a_quantitative_statistical_tests.csv`
+  - note: PAH prefix has same 176 OSIC patient IDs; Welch t-test p=0.332566
+- **PAH Progression vs cluster chi-square p-value**: 0.792411
+  - source: `PAH/0.Image_modal_PAH/step_im4a/im4a_quantitative_statistical_tests.csv`
+  - note: rapid/slow contingency

@@ -1,0 +1,14 @@
+{
+  "top30_count": 30,
+  "admet_counts": {
+    "KEEP": 24,
+    "CAUTION": 6
+  },
+  "tier_counts": {
+    "Tier 1": 1,
+    "Tier 2": 16,
+    "Tier 3": 12,
+    "Tier 4": 1
+  },
+  "cluster_drug_links": 60
+}

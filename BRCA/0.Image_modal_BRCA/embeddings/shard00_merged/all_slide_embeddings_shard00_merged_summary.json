@@ -1,0 +1,29 @@
+{
+  "input_root": "_tmp_merge_shard00",
+  "output_file": "output/embeddings_mid/shard00_merged/all_slide_embeddings_shard00_merged.npy",
+  "manifest_file": "output/embeddings_mid/shard00_merged/all_slide_embeddings_shard00_merged_manifest.csv",
+  "n_files": 284,
+  "shape": [
+    284,
+    1536
+  ],
+  "dtype": "float32",
+  "expected_shape": [
+    284,
+    1536
+  ],
+  "finite": true,
+  "nan_count": 0,
+  "inf_count": 0,
+  "part_counts": {
+    "part00": 50,
+    "part01": 50,
+    "part02": 50,
+    "part03": 50,
+    "part04": 50,
+    "part05": 34
+  },
+  "input_shape_counts": {
+    "(1536,)": 284
+  }
+}

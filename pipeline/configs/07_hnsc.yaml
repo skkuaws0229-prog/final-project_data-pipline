@@ -1,0 +1,12 @@
+disease: {name: HNSC}
+model: {foundation_model: UNI2}
+execution: {step3_env: aws, steps: [im2, im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/hnsc_step4/0.Image_modal_HNSC"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [TP53, CDKN2A, PIK3CA, NOTCH1, FAT1, CASP8]
+  clinical_vars: [clinical_stage, pathologic_T, clinical_T, HPV_status, molecular_subtype]
+  continuous_vars: [age, OS_MONTHS]
+drug: {}
+

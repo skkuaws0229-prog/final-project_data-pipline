@@ -1,0 +1,19 @@
+{
+  "metadata_path": "histai_psoriasis\\metadata.json",
+  "candidate_cases": 32,
+  "candidate_cases_by_repo": {
+    "histai/HISTAI-skin-b2": 32
+  },
+  "candidate_case_csv": "histai_psoriasis\\histai_psoriasis_candidate_cases.csv",
+  "planned_he_slides": 75,
+  "planned_he_size_bytes": 17722599527,
+  "planned_he_size_gib": 16.505,
+  "planned_slide_manifest": "histai_psoriasis\\histai_psoriasis_planned_he_slides.csv",
+  "downloaded_he_slides": 0,
+  "selected_slide_manifest": null,
+  "filters": {
+    "icd10": "L40 or L40.*",
+    "text": "psoriasis in diagnosis/conclusion/diff_diagnosis/micro/additional_info",
+    "repository": "HISTAI skin subsets preferred"
+  }
+}

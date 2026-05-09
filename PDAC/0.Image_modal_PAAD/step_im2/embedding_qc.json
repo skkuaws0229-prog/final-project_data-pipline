@@ -1,0 +1,13 @@
+{
+  "n_slides": 178,
+  "embedding_dim": 1536,
+  "expected_slides": 178,
+  "duplicate_slide_ids_removed": 0,
+  "nan_count": 0,
+  "inf_count": 0,
+  "source_counts": {
+    "embeddings_done": 77,
+    "part01": 51,
+    "part00": 50
+  }
+}

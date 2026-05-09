@@ -1,0 +1,17 @@
+{
+  "raw_wsi_prefix": "s3://say2-4team/luad_image_modal_20260501_v1/wsi_raw/",
+  "delete_command": "aws s3 rm s3://say2-4team/luad_image_modal_20260501_v1/wsi_raw/ --recursive",
+  "status": "executed",
+  "executed_at": "2026-05-06T16:39:33.8612876+09:00",
+  "post_delete_verification": {
+    "raw_wsi_total_objects": 0,
+    "raw_wsi_total_size_bytes": 0,
+    "preserved_image_modal_prefix": "s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/0.Image_modal_LUAD/",
+    "preserved_image_modal_total_objects": 30,
+    "preserved_image_modal_total_size_bytes": 34251387,
+    "preserved_embeddings_prefix": "s3://say2-4team/luad_image_modal_20260501_v1/output/embeddings_mid/",
+    "preserved_embeddings_total_objects": 510,
+    "preserved_embeddings_total_size_bytes": 13013844251
+  },
+  "reason": "executed after explicit user approval and post-delete verification"
+}

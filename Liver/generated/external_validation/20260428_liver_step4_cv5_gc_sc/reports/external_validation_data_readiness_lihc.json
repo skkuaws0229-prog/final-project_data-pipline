@@ -1,0 +1,26 @@
+{
+  "result_tag": "20260428_liver_step4_cv5_gc_sc",
+  "external_validation_dir": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/external_validation/20260428_liver_step4_cv5_gc_sc",
+  "admet_skipped_by_request": true,
+  "checks": {
+    "clinicaltrials_pages_001_006_present": true,
+    "clinicaltrials_summary_present": true,
+    "opentargets_full_direct_table_present": true,
+    "opentargets_direct_part_count": 200,
+    "cosmic_actionability_tar_present": true,
+    "cosmic_cgc_tar_present": true,
+    "cosmic_classification_tar_present": true,
+    "cosmic_mutant_census_tar_present": true,
+    "cptac_manifest_file_count": 0,
+    "cptac_actual_files_ready": false
+  },
+  "remaining_gaps": {
+    "cptac_actual_files": "PDC CPTAC liver intersection currently 0 files; metadata only."
+  },
+  "execution_mode": {
+    "external_validation_run": "COMPLETED",
+    "cptac_mode": "EXCLUDED_BY_REQUEST",
+    "run_summary_json": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/external_validation/20260428_liver_step4_cv5_gc_sc/external_validation_lihc_cptac_excluded_summary.json"
+  },
+  "note": "COSMIC files were not found in PDAC folder as tar payloads; staged from Liver_raw S3."
+}

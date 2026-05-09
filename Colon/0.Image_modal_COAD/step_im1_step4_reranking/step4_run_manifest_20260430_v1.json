@@ -1,0 +1,9 @@
+{
+  "cancer_type": "COAD",
+  "top30_rows": 30,
+  "holdout_rows": 1939,
+  "patients_with_embeddings": 225,
+  "embedding_dim": 1536,
+  "comparison_file": "reranking_comparison_20260430_v1.csv",
+  "feature_importance_file": "feature_importance_summary_20260430_v1.csv"
+}

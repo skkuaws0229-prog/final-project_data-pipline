@@ -1,0 +1,3 @@
+variable,test,p_value,note
+label,not_applicable,,Only one observed category; statistical association cannot be tested.
+severity_label,not_applicable,,Only one observed category; statistical association cannot be tested.

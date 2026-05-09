@@ -1,0 +1,38 @@
+{
+  "positive_controls_present": 5,
+  "positive_control_names": [
+    "Paclitaxel",
+    "Methotrexate",
+    "Docetaxel",
+    "5-Fluorouracil",
+    "Cisplatin"
+  ],
+  "median_positive_control_rank": 56.0,
+  "best_positive_control_rank": 11,
+  "prism_overlap_drugs": 113,
+  "top_metrics": {
+    "precision_at_5": 0.0,
+    "recall_at_5": 0.0,
+    "positive_controls_at_5": 0,
+    "precision_at_10": 0.0,
+    "recall_at_10": 0.0,
+    "positive_controls_at_10": 0,
+    "precision_at_15": 0.06666666666666667,
+    "recall_at_15": 0.2,
+    "positive_controls_at_15": 1,
+    "precision_at_20": 0.05,
+    "recall_at_20": 0.2,
+    "positive_controls_at_20": 1,
+    "precision_at_30": 0.06666666666666667,
+    "recall_at_30": 0.4,
+    "positive_controls_at_30": 2
+  },
+  "component_means_top30": {
+    "model": 0.7398243801652893,
+    "prism": 0.7514980158730158,
+    "target": 0.44444444444444453,
+    "patient_context": 0.619583714653999,
+    "clinical": 0.7208154506437768,
+    "control_tanimoto": 0.47477394428293684
+  }
+}

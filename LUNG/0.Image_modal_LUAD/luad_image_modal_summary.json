@@ -1,0 +1,11 @@
+{
+  "actual_embedding_shape": [
+    250,
+    1536
+  ],
+  "best_k": 3,
+  "best_silhouette": 0.11629563570022583,
+  "survival_logrank_p_value": 0.44125538906000183,
+  "output_root": "C:\\Users\\biso8\\20260503_final_project\\luad_lihc_wsi_homepc_package_20260502_v1\\local_data\\luad_image_modal_20260501_v1\\0.Image_modal_LUAD",
+  "zip": "C:\\Users\\biso8\\20260503_final_project\\luad_lihc_wsi_homepc_package_20260502_v1\\local_data\\luad_image_modal_20260501_v1\\0.Image_modal_LUAD\\step_im5\\luad_image_modal_downstream_results.zip"
+}

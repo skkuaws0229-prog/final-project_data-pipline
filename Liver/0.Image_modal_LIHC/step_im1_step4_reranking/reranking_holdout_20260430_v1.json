@@ -1,0 +1,12 @@
+{
+  "eval_mode": "holdout",
+  "spearman": 0.492076192049355,
+  "spearman_p": 9.397680584315723e-43,
+  "rmse": 2.278526561703619,
+  "mae": 1.7286244630813599,
+  "r2": 0.2747591733932495,
+  "n_train": 2716,
+  "n_test": 680,
+  "n_features": 1539,
+  "image_embedding": "patient_level_zero_for_unmapped_gdsc"
+}

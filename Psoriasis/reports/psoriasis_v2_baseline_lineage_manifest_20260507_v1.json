@@ -1,0 +1,57 @@
+{
+  "branch_name": "psoriasis_team_protocol_reproduction_v2_maxdata",
+  "status": "canonical_138_drug_baseline",
+  "lineage": {
+    "step0_inventory": {
+      "local_inventory_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step0_psoriasis_source_inventory_20260507_v1",
+      "raw_source_root": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_source_staging/geo"
+    },
+    "step0": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step0_psoriasis_geo_omics_download_20260504_v2"
+    },
+    "step1": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step1_psoriasis_label_cleanup_normalization_20260504_v2"
+    },
+    "step1b": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step1b_psoriasis_expression_matrix_extraction_20260504_v2"
+    },
+    "step2": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step2_psoriasis_disease_signature_20260504_v2"
+    },
+    "step3": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step3_psoriasis_chembl_target_ic50_20260504_v2",
+      "rule": "canonical named-drug 138-row baseline universe"
+    },
+    "step4": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step4_psoriasis_feature_engineering_20260504_v2"
+    },
+    "step5": {
+      "mode": "branch_native_canonical_rerun",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step5b_psoriasis_ml_sagemaker_20260507_v1",
+      "note": "older step5_ml_all/dl/graph directories are archival, not canonical downstream inputs"
+    },
+    "step6": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6_psoriasis_external_validation_20260507_v2_baseline"
+    },
+    "step6b": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step6b_psoriasis_molecular_validation_20260507_v2_baseline"
+    },
+    "step7": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/psoriasis_team_protocol_reproduction_v2_maxdata/step7_psoriasis_admet_filter_20260507_v2_baseline"
+    }
+  },
+  "guardrails": [
+    "The baseline branch keeps the 138-drug universe as the canonical recommendation surface.",
+    "Step6, Step6b, and Step7 were rerun specifically for the baseline branch and are not borrowed from the middle-universe branch.",
+    "Older step5 artifacts remain for history but are not canonical downstream inputs."
+  ]
+}

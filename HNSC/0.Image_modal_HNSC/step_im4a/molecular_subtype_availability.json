@@ -1,0 +1,11 @@
+{
+  "requested_molecular_subtypes": [
+    "Atypical",
+    "Basal",
+    "Classical",
+    "Mesenchymal"
+  ],
+  "status": "not_available_in_TCGA_Xena_clinical_matrix_or_cbio_sample_clinical_api_payload",
+  "surrogate_available": "pancan_rna_subtype from _PANCAN_UNC_RNAseq_PANCAN_K16",
+  "recommendation": "Add a published TCGA-HNSC expression-subtype annotation table to test the requested four HNSC subtypes directly."
+}

@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+
+# Keep large biomedical assets in S3, not GitHub.
+*.svs
+*.ndpi
+*.tif
+*.tiff
+*.dcm
+*.dicom
+*.npy
+*.npz
+*.parquet
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.tar.gz
+*.gz
+
+# Local raw/intermediate folders.
+raw/
+raw_source/
+raw_source_snapshot/
+Stad_raw/
+_raw_downloads/
+supporting_inputs/step4_models/

@@ -1,0 +1,16 @@
+tier_order_rank,drug_name,canonical_drug_id,verdict,safety_score,pred_ic50_mean,usage_category,hcc_approved,clinical_trial_mention_count,external_support_count,tier,tier_note,version,policy
+1,Topotecan,1808,PASS,7.5,-0.1583007,CLINICAL_TRIAL_EVIDENCE,False,14,5,tier2,ADMET PASS but not HCC-approved,v1,lihc_hcc_rule_current
+2,Vinorelbine,2048,PASS,7.25,1.4928697,CLINICAL_TRIAL_EVIDENCE,False,63,2,tier2,ADMET PASS but not HCC-approved,v1,lihc_hcc_rule_current
+3,Vinblastine,1004,PASS,7.0,1.0201981,CLINICAL_TRIAL_EVIDENCE,False,10,2,tier2,ADMET PASS but not HCC-approved,v1,lihc_hcc_rule_current
+4,Irinotecan,1088,PASS,6.4,1.238154,CLINICAL_TRIAL_EVIDENCE,False,1540,5,tier2,ADMET PASS but not HCC-approved,v1,lihc_hcc_rule_current
+5,Camptothecin,1003,PASS,6.25,0.6874082,CLINICAL_TRIAL_EVIDENCE,False,118,5,tier2,ADMET PASS but not HCC-approved,v1,lihc_hcc_rule_current
+6,Temsirolimus,1016,WARNING,5.5,-0.30921328,CLINICAL_TRIAL_EVIDENCE,False,292,4,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+7,Rapamycin,1084,WARNING,5.5,1.5069047,CLINICAL_TRIAL_EVIDENCE,False,103,2,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+8,Staurosporine,1034,WARNING,5.25,1.1406467,CLINICAL_TRIAL_EVIDENCE,False,22,2,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+9,Bosutinib,1019,WARNING,5.25,1.900915,CLINICAL_TRIAL_EVIDENCE,False,7,4,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+10,Bleomycin,1812,WARNING,5.0,-1.1402773,CLINICAL_TRIAL_EVIDENCE,False,71,2,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+11,Elesclomol,1031,WARNING,5.0,-0.58910453,CLINICAL_TRIAL_EVIDENCE,False,1,2,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+12,MG-132,1862,WARNING,5.0,0.5785534,REPURPOSING_CANDIDATE,False,0,3,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+13,Lestaurtinib,1024,WARNING,5.0,0.85031027,REPURPOSING_CANDIDATE,False,0,3,tier3,ADMET WARNING with multi-source support,v1,lihc_hcc_rule_current
+14,Bleomycin (50 uM),1378,WARNING,5.0,-1.2004384,REPURPOSING_CANDIDATE,False,0,1,tier4,ADMET WARNING with limited support,v1,lihc_hcc_rule_current
+15,CCT-018159,1170,WARNING,5.0,0.95840305,REPURPOSING_CANDIDATE,False,0,1,tier4,ADMET WARNING with limited support,v1,lihc_hcc_rule_current

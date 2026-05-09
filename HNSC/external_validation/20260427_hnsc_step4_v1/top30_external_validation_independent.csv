@@ -1,0 +1,16 @@
+rank,DRUG_NAME,prism_status,clinical_trial_has_evidence,patient_context_has_evidence,opentargets_has_evidence,cosmic_has_evidence
+1,Dactinomycin,LIBRARY_ONLY,True,False,False,False
+2,Docetaxel,NO_MATCH,True,False,False,True
+3,Vinorelbine,OK,True,False,False,False
+4,Paclitaxel,OK,True,False,False,True
+5,Temsirolimus,OK,True,True,True,False
+6,Topotecan,OK,True,True,True,False
+7,Vinblastine,OK,False,False,False,False
+8,SN-38,OK,False,True,True,False
+9,Lestaurtinib,OK,False,True,True,False
+10,SL0101,NO_MATCH,False,True,True,False
+11,Teniposide,OK,False,False,False,False
+12,Irinotecan,OK,True,True,True,False
+13,Camptothecin,OK,True,True,True,False
+14,Pyridostatin,NO_MATCH,False,False,False,False
+15,Schweinfurthin A,NO_MATCH,False,False,False,False

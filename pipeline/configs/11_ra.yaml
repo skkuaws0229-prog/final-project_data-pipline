@@ -1,0 +1,18 @@
+disease: {name: RA}
+model: {foundation_model: BiomedCLIP}
+execution: {step3_env: local, steps: [im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/ra_xray/0.Image_modal_RA"
+  merged_npy: "C:/Users/biso8/20260503_final_project/ra_xray/0.Image_modal_RA/step_im2/ra_ramw600_biomedclip_patient_embeddings.npy"
+  embedding_metadata_csv: "C:/Users/biso8/20260503_final_project/ra_xray/0.Image_modal_RA/step_im2/ra_ramw600_biomedclip_patient_embedding_index.csv"
+  clinical_csv: "C:/Users/biso8/20260503_final_project/ra_xray/0.Image_modal_RA/step_im1/ramw600_patient_manifest_with_svdh.csv"
+  cluster_id_column: patient_id
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: []
+  clinical_id_column: patient_id
+  clinical_vars: [severity_bin_by_max]
+  continuous_vars: [mean_svdh_bone_erosion, max_svdh_bone_erosion, n_wrist_images]
+drug:
+  top30_csv: "C:/Users/biso8/20260503_final_project/ra_xray/0.Image_modal_RA/step_im4c/ra_ramw600_cluster_drug_linkage.csv"
+

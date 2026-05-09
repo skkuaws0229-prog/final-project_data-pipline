@@ -1,0 +1,24 @@
+{
+  "result_tag": "20260428_liver_step4_v2",
+  "mode": "CPTAC_EXCLUDED",
+  "top30_rows": 30,
+  "source_status": {
+    "prism": "PENDING_DATA",
+    "clinical_trials": "PENDING_DATA",
+    "geo": "PENDING_DATA",
+    "opentargets": "PENDING_DATA",
+    "cosmic": "PENDING_DATA",
+    "cptac": "EXCLUDED_BY_REQUEST"
+  },
+  "supported_rows": {
+    "prism": 0,
+    "clinical_trials": 0,
+    "geo": 0,
+    "opentargets": 0,
+    "cosmic": 0,
+    "cptac": 0
+  },
+  "outputs": {
+    "external_csv": "external_validation/20260428_liver_step4_v2/top30_external_validation_lihc_cptac_excluded.csv"
+  }
+}

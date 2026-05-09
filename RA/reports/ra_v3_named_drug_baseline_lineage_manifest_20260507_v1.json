@@ -1,0 +1,51 @@
+{
+  "branch_name": "ra_team_protocol_reproduction_v3_named_drug_baseline",
+  "status": "canonical_named_drug_baseline",
+  "lineage": {
+    "step0": {
+      "local_inventory_dir": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step0_ra_source_inventory_20260507_v1",
+      "raw_source_root": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_source_staging/geo"
+    },
+    "step1": {
+      "mode": "copied_snapshot",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step1_ra_label_cleanup_normalization_20260506_v2",
+      "upstream_source": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v2_roleaware/step1_ra_label_cleanup_normalization_20260506_v2"
+    },
+    "step1b": {
+      "mode": "linked_snapshot",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step1b_ra_expression_matrix_extraction_20260506_v2",
+      "upstream_source": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v2_roleaware/step1b_ra_expression_matrix_extraction_20260506_v2"
+    },
+    "step2": {
+      "mode": "copied_snapshot",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step2_ra_disease_signature_20260506_v2",
+      "upstream_source": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v2_roleaware/step2_ra_disease_signature_20260506_v2"
+    },
+    "step3": {
+      "mode": "branch_divergence",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step3_ra_chembl_target_ic50_20260507_v1",
+      "rule": "keep only compounds with non-empty compound_pref_name before Step4"
+    },
+    "step4": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step4_ra_feature_engineering_20260507_v1"
+    },
+    "step5": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step5b_ra_ml_sagemaker_20260507_v1"
+    },
+    "step6": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step6_ra_external_validation_20260507_v1"
+    },
+    "step7": {
+      "mode": "branch_native",
+      "path": "/Users/skku_aws2_18/team4_project/pre_project/thyroid_pipline/data/ra_team_protocol_reproduction_v3_named_drug_baseline/step7_ra_admet_filter_20260507_v1"
+    }
+  },
+  "guardrails": [
+    "This branch does not use the old middle-universe step4b outputs as downstream inputs.",
+    "Step3 is the explicit divergence point for the named-drug universe.",
+    "Disease-side preprocessing is carried forward as frozen snapshots so the branch reads as one flow."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "n_patients": 225,
+  "embedding_dim": 1536,
+  "nan_count": 0,
+  "inf_count": 0
+}

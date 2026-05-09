@@ -1,0 +1,12 @@
+disease: {name: STAD}
+model: {foundation_model: UNI2}
+execution: {step3_env: aws, steps: [im2, im3, im4a, im4c, im5]}
+image_modal:
+  output_root: "C:/Users/biso8/20260503_final_project/stad_step4/0.Image_modal_STAD"
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [TP53, CDH1, ARID1A, PIK3CA, ERBB2, KRAS]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, molecular_subtype, lauren_classification]
+  continuous_vars: [AGE, OS_MONTHS]
+drug: {}
+

@@ -1,0 +1,68 @@
+{
+  "directive": "LIHC_v2_ensemble_directive.md (weighted average of 6 OOF models)",
+  "ensemble_name": "LIHC_directive_weighted_v2",
+  "run_id": "step4_lihc_v2_manual",
+  "result_tag": "20260428_liver_step4_v2",
+  "eval_mode": "groupcv",
+  "n_train_rows": 3396,
+  "n_unique_drugs": 243,
+  "weights_sum_check": 1.0,
+  "members": [
+    {
+      "role": "main1",
+      "family": "dl",
+      "stem": "stad_numeric_smiles_dl_v1",
+      "model": "DL_MLP_ResidualStyle",
+      "weight": 0.25,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_ResidualStyle.npy"
+    },
+    {
+      "role": "main2",
+      "family": "ml",
+      "stem": "stad_numeric_smiles_ml_v1",
+      "model": "CatBoost",
+      "weight": 0.25,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/ml/stad_numeric_smiles_ml_v1_groupcv_oof/CatBoost.npy"
+    },
+    {
+      "role": "aux1",
+      "family": "dl",
+      "stem": "stad_numeric_context_smiles_dl_v1",
+      "model": "DL_MLP_2x512",
+      "weight": 0.17,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/dl/stad_numeric_context_smiles_dl_v1_groupcv_oof/DL_MLP_2x512.npy"
+    },
+    {
+      "role": "aux2",
+      "family": "dl",
+      "stem": "stad_numeric_dl_v1",
+      "model": "DL_MLP_3x512",
+      "weight": 0.15,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/dl/stad_numeric_dl_v1_groupcv_oof/DL_MLP_3x512.npy"
+    },
+    {
+      "role": "ml_aux",
+      "family": "ml",
+      "stem": "stad_numeric_ml_v1",
+      "model": "XGBoost",
+      "weight": 0.12,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/ml/stad_numeric_ml_v1_groupcv_oof/XGBoost.npy"
+    },
+    {
+      "role": "stab",
+      "family": "dl",
+      "stem": "stad_numeric_smiles_dl_v1",
+      "model": "DL_MLP_1024_512_256",
+      "weight": 0.06,
+      "oof_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/dl/stad_numeric_smiles_dl_v1_groupcv_oof/DL_MLP_1024_512_256.npy"
+    }
+  ],
+  "outputs": {
+    "top30_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/lihc_v2_directive_weighted_ensemble_top30.csv",
+    "all_drugs_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/20260421_new_pre_project_biso_STAD/results/20260428_liver_step4_v2/lihc_v2_directive_weighted_ensemble_all_drugs.csv"
+  },
+  "quantiles_for_grade": {
+    "variance_low_q33": 0.4157265826014476,
+    "variance_mid_q66": 0.5377086055127159
+  }
+}

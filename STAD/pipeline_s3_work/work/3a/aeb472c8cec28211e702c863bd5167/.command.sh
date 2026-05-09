@@ -1,0 +1,3 @@
+#!/bin/bash -ue
+mkdir -p fe_inputs
+python3 /workspace/nextflow/scripts/prepare_fe_inputs.py         --label-uri 's3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/GDSC2-dataset.parquet'         --drug-uri 's3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/drug_features.parquet'         --sample-uri 's3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/data/depmap/depmap_crispr_long_stad.parquet'         --output-prefix fe_inputs         --run-id '20260421_stad_fe_v1'         --binary-quantile 0.3

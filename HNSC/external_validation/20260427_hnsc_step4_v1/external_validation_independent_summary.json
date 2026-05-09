@@ -1,0 +1,17 @@
+{
+  "result_tag": "20260427_hnsc_step4_v1",
+  "top30_rows": 30,
+  "support_counts": {
+    "prism_supported_rows": 19,
+    "prism_library_match_rows": 20,
+    "prism_any_match_rows": 21,
+    "clinical_trial_supported_rows": 17,
+    "patient_context_supported_rows": 14,
+    "geo_supported_rows": 0,
+    "opentargets_supported_rows": 14,
+    "cosmic_supported_rows": 3
+  },
+  "notes": {
+    "geo": "Current GEO bundle is cohort metadata only, so drug-level support is DATASET_ONLY."
+  }
+}
