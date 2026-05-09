@@ -44,6 +44,43 @@ S3 원본 위치:
 
 대용량 원본과 중간 산출물은 위 S3 경로를 기준으로 확인하면 됩니다.
 
+## 재현 가능 범위
+
+이 저장소만으로 가능한 재현:
+
+- 11개 질환별 폴더 구조와 최종 산출물 확인
+- 보고서에 들어간 주요 수치 검증
+- ADMET, 4-Tier, cluster-drug linkage 결과 확인
+- 이미지 모달 후단 분석의 CSV/JSON/Markdown 결과 확인
+- `pipeline/` 오케스트레이터와 11개 YAML config 구조 확인
+- 일부 후단 분석 로직 재사용 및 dry-run 실행
+
+S3 접근이 함께 있어야 가능한 재현:
+
+- 원본 WSI/DICOM/임상 이미지 기반 전처리
+- UNI2, BiomedCLIP, CT-CLIP 임베딩 재생성
+- `.npy`, `.parquet`, model checkpoint 기반 완전 재학습
+- Step 1부터 Step 5까지 end-to-end 재현
+- SageMaker 또는 로컬 XPU/GPU 기반 대용량 임베딩 작업
+
+따라서 이 GitHub 저장소는 **경량 재현 패키지 + 결과 검증 패키지**입니다. S3 데이터 접근 권한이 함께 있으면 **end-to-end 재현 패키지**로 사용할 수 있습니다.
+
+재현 흐름:
+
+1. GitHub 저장소를 clone합니다.
+2. `S3_DATA_INDEX.md`에서 질환별 S3 prefix를 확인합니다.
+3. 필요한 대용량 원본, 임베딩, parquet, 모델 산출물을 S3에서 내려받습니다.
+4. `pipeline/configs/`의 질환별 YAML을 기준으로 후단 분석 또는 전체 파이프라인을 실행합니다.
+
+예시:
+
+```powershell
+git clone https://github.com/skkuaws0215/final-project_data-pipline.git
+cd final-project_data-pipline
+
+python pipeline/run_disease_pipeline.py --config pipeline/configs/04_coad.yaml --dry-run
+```
+
 ## 민감정보 점검
 
 커밋 전 다음 유형의 문자열을 스캔했습니다.
