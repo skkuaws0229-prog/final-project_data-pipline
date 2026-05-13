@@ -4,7 +4,7 @@
 
 이 schema는 현재 PostgreSQL-first 정규화 데이터를 원본 CSV나 PostgreSQL table을 수정하지 않고 Neo4j graph로 변환하기 위한 기준입니다.
 
-React v1은 PostgreSQL/FastAPI 연결 검증용 화면으로 유지합니다. Neo4j v1은 관계 탐색과 이후 TxGNN 연동을 위한 다음 backend layer입니다.
+React v1은 PostgreSQL/FastAPI 연결 검증용 화면으로 유지합니다. Neo4j v1은 관계 탐색, path scoring, KG embedding baseline을 위한 backend layer입니다.
 
 ## Node Labels
 
@@ -122,7 +122,7 @@ raw_target
 raw_pathway
 ```
 
-현재 target field에는 gene/pathway/mechanism/free-text가 섞여 있으므로 전부 gene이라고 가정하면 안 됩니다. Gene/pathway/mechanism 정규화는 Neo4j/OpenSearch/TxGNN v2 검증 단계로 미룹니다.
+현재 target field에는 gene/pathway/mechanism/free-text가 섞여 있으므로 전부 gene이라고 가정하면 안 됩니다. Gene/pathway/mechanism 정규화는 Neo4j/OpenSearch/path scoring v2 검증 단계로 미룹니다.
 
 `nan`, `none`, `null`, `na`, `n/a` 같은 placeholder 값은 blank로 처리하고 `TargetConcept`로 import하지 않습니다.
 
@@ -174,26 +174,6 @@ evidence_text
 source_file
 match_status
 canonical_drug_id
-```
-
-### 향후 `TxGNNRun`
-
-TxGNN 단계에서 사용할 예정입니다.
-
-Key:
-
-```text
-run_id
-```
-
-예정 properties:
-
-```text
-run_id
-model_version
-created_at
-source_file
-notes
 ```
 
 ## Relationships
@@ -303,22 +283,37 @@ disease_id
 relation_kind = target | pathway
 ```
 
-### 향후 `(Drug)-[:TXGNN_PREDICTED_FOR]->(Disease)`
+### 향후 `(Drug)-[:PATH_SCORED_FOR]->(Disease)`
 
-TxGNN prediction을 위해 예약한 관계입니다.
+Neo4j path scoring 결과를 위해 추가할 관계입니다.
 
 예정 properties:
 
 ```text
-run_id
 score
 rank
-prediction_label
+score_components_json
+evidence_count
+target_overlap_count
+created_at
+```
+
+### 향후 `(Drug)-[:KG_EMBEDDING_PREDICTED_FOR]->(Disease)`
+
+DistMult/TransE KG embedding baseline 결과를 위해 추가할 관계입니다.
+
+예정 properties:
+
+```text
+model_name
 model_version
+score
+rank
+created_at
 source_file
 ```
 
-이 관계는 `CANDIDATE_FOR`와 분리합니다. `CANDIDATE_FOR`는 현재 pipeline output이고, `TXGNN_PREDICTED_FOR`는 model-derived graph prediction이기 때문입니다.
+이 관계들은 `CANDIDATE_FOR`와 분리합니다. `CANDIDATE_FOR`는 현재 pipeline output이고, path scoring / KG embedding은 별도 model-derived score이기 때문입니다.
 
 ## v1 설계 원칙
 
@@ -326,4 +321,4 @@ source_file
 - Graph import 산출물은 `06_graph/` 아래에 보관합니다.
 - Evidence-only 약물은 보존합니다.
 - v1에서는 target text를 raw concept으로 보존합니다.
-- TxGNN은 base graph 검증 이후 별도 relationship family로 추가합니다.
+- TxGNN은 v1/v2 구현 범위에서 제외합니다. 비용/환경 부담 대비 현재 후보 약물 coverage가 낮아, 우선 path scoring과 KG embedding을 추가합니다.

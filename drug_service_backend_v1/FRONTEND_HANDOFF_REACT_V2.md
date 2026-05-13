@@ -10,11 +10,11 @@ Neo4j: 연결 완료
 FastAPI: 구현 완료
 Graph API: /graph/relations 검증 완료
 OpenSearch: text search 연결 완료
-TxGNN: 아직 미연결
+TxGNN: v1/v2 구현 범위에서 제외
 RAG/LLM: 아직 미연결
 ```
 
-React v2는 PostgreSQL + Neo4j 기반 화면을 먼저 붙이고, 이후 OpenSearch/TxGNN/RAG를 단계적으로 추가하는 방향이 좋습니다.
+React v2는 PostgreSQL + Neo4j + OpenSearch 기반 화면을 먼저 붙이고, 이후 path scoring, KG embedding, RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
 
 ## 실행 방법
 
@@ -208,12 +208,11 @@ React v2 초기 구현에서 아래 항목은 제외해도 됩니다.
 
 ```text
 OpenSearch vector search
-TxGNN prediction score
 RAG explanation
 AlphaFold structure viewer
 ```
 
-이 항목들은 backend endpoint가 추가된 뒤 React v3 또는 v2 확장으로 붙이는 것이 안전합니다.
+TxGNN은 비용/환경 부담 대비 현재 후보 약물 coverage가 낮아 제외합니다. 나머지 항목들은 backend endpoint가 추가된 뒤 React v3 또는 v2 확장으로 붙이는 것이 안전합니다.
 
 ## 다음 논의 포인트
 

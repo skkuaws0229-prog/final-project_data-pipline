@@ -129,4 +129,4 @@ Neo4j import CSV 대비 edge count mismatch: 0
 - `evidence_only` 약물은 main candidate table에는 없고 image-modal evidence에만 있는 약물입니다.
 - `TargetConcept`는 아직 raw target/pathway text입니다.
 - target 값을 모두 gene으로 간주하면 안 됩니다. gene/pathway/mechanism/free-text 분류는 v2 보강 대상입니다.
-- TxGNN 예측 edge는 이 v1 DB 자료에 아직 포함하지 않았습니다. 이후 `TXGNN_PREDICTED_FOR` 관계로 분리해서 추가할 예정입니다.
+- TxGNN은 v1/v2 구현 범위에서 제외합니다. 비용/환경 부담 대비 현재 후보 약물 coverage가 낮아, 우선 path scoring과 KG embedding을 추가합니다.

@@ -1,6 +1,6 @@
 # PostgreSQL 우선 적재
 
-이 디렉터리는 PostgreSQL 적재 검증만 담당합니다. Neo4j, TxGNN, OpenSearch는 canonical relational load가 검증된 이후 단계에서 진행합니다.
+이 디렉터리는 PostgreSQL 적재 검증만 담당합니다. Neo4j와 OpenSearch는 canonical relational load가 검증된 이후 단계에서 진행합니다. TxGNN은 v1/v2 구현 범위에서 제외하고, path scoring과 KG embedding을 우선합니다.
 
 ## 로컬 검증
 

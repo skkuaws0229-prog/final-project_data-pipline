@@ -1,6 +1,6 @@
 # Drug Service FastAPI
 
-이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j, TxGNN, OpenSearch는 단계적으로 추가합니다.
+이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j와 OpenSearch text search까지 연결되어 있으며, 다음 단계는 Neo4j path scoring, KG embedding baseline, Bedrock RAG/LLM explanation입니다.
 
 ## 로컬 실행
 

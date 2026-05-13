@@ -19,9 +19,6 @@ FOR (n:ImageCluster) REQUIRE n.cluster_id IS UNIQUE;
 CREATE CONSTRAINT image_evidence_id_unique IF NOT EXISTS
 FOR (n:ImageEvidence) REQUIRE n.evidence_id IS UNIQUE;
 
-CREATE CONSTRAINT txgnn_run_id_unique IF NOT EXISTS
-FOR (n:TxGNNRun) REQUIRE n.run_id IS UNIQUE;
-
 CREATE INDEX disease_display_name IF NOT EXISTS
 FOR (n:Disease) ON (n.display_name);
 

@@ -397,7 +397,7 @@ ImageEvidence -> TargetConcept
 - 약물 근거가 없는 빈 cluster도 `Disease -> ImageCluster`로 포함됩니다.
 - evidence-only 약물도 `Drug` node로 포함됩니다.
 - `TargetConcept`는 raw text입니다.
-- TxGNN 예측 edge는 아직 포함되지 않았습니다.
+- TxGNN 예측 edge는 v1/v2 구현 범위에서 제외합니다. 다음 graph score layer는 path scoring과 KG embedding입니다.
 
 ## 9. Text search
 

@@ -10,7 +10,7 @@
 3. Docker Compose에 Neo4j 추가
 4. CSV를 Neo4j에 적재
 5. FastAPI graph endpoint 추가
-6. Base graph 검증 후 TxGNN prediction edge 추가
+6. Base graph 검증 후 path scoring / KG embedding edge 추가
 ```
 
 ## Import CSV 생성
@@ -37,7 +37,16 @@ python3 06_graph/build_neo4j_import_csv.py
 
 ## v1 주의사항
 
-`TargetConcept` 노드는 raw target/pathway text를 그대로 보존합니다. 모든 target을 gene으로 간주하면 안 됩니다. Gene/pathway/mechanism 정규화는 이후 Neo4j/OpenSearch/TxGNN v2 검증 단계에서 진행합니다.
+`TargetConcept` 노드는 raw target/pathway text를 그대로 보존합니다. 모든 target을 gene으로 간주하면 안 됩니다. Gene/pathway/mechanism 정규화는 이후 Neo4j/OpenSearch/path scoring 검증 단계에서 진행합니다.
+
+## TxGNN 제외 결정
+
+TxGNN은 외부 biomedical KG 기반 확장 후보로 검토했지만, 현재 후보 약물과의 매칭 coverage가 제한적이고 실행환경/비용 부담이 커 v1/v2 구현 범위에서는 제외합니다. 대신 아래 관계 레이어를 우선 추가합니다.
+
+```text
+(:Drug)-[:PATH_SCORED_FOR]->(:Disease)
+(:Drug)-[:KG_EMBEDDING_PREDICTED_FOR]->(:Disease)
+```
 
 ## 로컬 Neo4j 실행
 
