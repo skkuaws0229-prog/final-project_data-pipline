@@ -54,6 +54,7 @@ API_CONTRACT_REACT_V2.md
 FRONTEND_HANDOFF_REACT_V2.md
 MODEL_ROADMAP_v2.md
 docs/pipeline_backend_integration_plan.md
+docs/pipeline_run_frontend_handoff_v1.md
 docs/pipeline_run_api_openapi.yaml
 ```
 

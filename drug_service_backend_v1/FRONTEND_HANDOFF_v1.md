@@ -116,6 +116,12 @@ React v2에서 함께 논의할 graph/API 항목:
 
 이 API는 React v1 화면용 핵심 기능이 아니라, 이후 챗봇/Bedrock/RAG가 파이프라인 실행 상태를 백엔드로 조회할 수 있게 준비한 연결 지점입니다.
 
+프론트엔드 전용 상세 인수인계는 아래 문서를 기준으로 합니다.
+
+```text
+docs/pipeline_run_frontend_handoff_v1.md
+```
+
 예시 요청:
 
 ```json
