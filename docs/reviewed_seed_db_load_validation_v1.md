@@ -24,7 +24,7 @@
 ## 실행 모드
 
 ```text
-applied_to_db: false
+applied_to_db: true
 ```
 
 ## 검증 결과
