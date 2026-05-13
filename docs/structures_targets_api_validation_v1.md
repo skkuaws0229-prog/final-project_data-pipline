@@ -49,7 +49,7 @@ limit: optional, 기본 100, 최대 200
 }
 ```
 
-현재 `alphafold_structures`가 0건이므로 `structure_status`는 모두 `not_loaded`다.
+AlphaFold DB metadata 적재 후에는 `alphafold_structures`가 27건이며, 구조 파일 다운로드 전 상태이므로 `structure_status`는 `pending`이다.
 
 ## 검증 결과
 
@@ -101,8 +101,17 @@ status: 404
 ```text
 protein_targets: 27
 target_protein_links: 28
-alphafold_structures: 0
+alphafold_structures: 27
 candidate_protein_structure_links: 0
+```
+
+## Metadata 적재 후 상태
+
+```text
+alphafold_structures.status=to_fetch: 27
+/api/structures/targets?disease_id=RA
+  JAK1 structure_status=pending, structure_count=1
+  JAK2 structure_status=pending, structure_count=1
 ```
 
 ## 판정
