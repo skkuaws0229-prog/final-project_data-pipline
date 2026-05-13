@@ -39,10 +39,12 @@ GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 POST /api/pipeline-runs
+GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
 GET /api/pipeline-runs/{run_id}/events
 GET /api/pipeline-runs/{run_id}/artifacts
 POST /api/pipeline-runs/{run_id}/cancel
+POST /api/pipeline-runs/{run_id}/complete
 ```
 
 React v2 API 계약과 인수인계 문서는 아래 파일을 기준으로 합니다.
@@ -196,6 +198,7 @@ Pipeline run control API v1 기준:
 
 ```text
 Mock run 생성/상태조회/이벤트조회/artifact조회/취소 완료
+Run 목록조회/완료처리/중복완료 guardrail 완료
 AWS Step Functions backend guardrail blocked 확인
 잘못된 질환명 400 Bad Request 확인
 실제 SageMaker/Step Functions job 미실행

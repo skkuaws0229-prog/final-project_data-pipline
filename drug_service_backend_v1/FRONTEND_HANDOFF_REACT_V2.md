@@ -95,10 +95,12 @@ GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 POST /api/pipeline-runs
+GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
 GET /api/pipeline-runs/{run_id}/events
 GET /api/pipeline-runs/{run_id}/artifacts
 POST /api/pipeline-runs/{run_id}/cancel
+POST /api/pipeline-runs/{run_id}/complete
 ```
 
 ## 데이터 매칭 규칙
@@ -282,6 +284,7 @@ run status: queued/running/completed/failed/cancelled/blocked
 current_step: 현재 단계 표시
 events: timeline/log panel
 artifacts: 결과 report/csv/json link 목록
+complete button: mock run의 완료 상태 UI 검증용
 ```
 
 주의:
@@ -362,6 +365,7 @@ Pipeline run control API v1 검증:
 
 ```text
 Mock run 생성/상태조회/이벤트조회/artifact조회/취소 완료
+Run 목록조회/완료처리/중복완료 guardrail 완료
 AWS Step Functions backend guardrail blocked 확인
 잘못된 질환명 400 Bad Request 확인
 실제 SageMaker/Step Functions job 미실행

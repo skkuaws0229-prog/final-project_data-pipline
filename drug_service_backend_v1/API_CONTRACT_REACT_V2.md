@@ -627,6 +627,43 @@ image_report: image-modal report 본문
 }
 ```
 
+### GET /api/pipeline-runs
+
+최근 run 목록을 조회합니다.
+
+Query:
+
+```text
+disease_slug       optional string
+status             optional string
+execution_backend  optional string: mock, local_agent, aws_stepfunctions
+limit              optional number, default 50, max 200
+```
+
+예시:
+
+```text
+GET /api/pipeline-runs?limit=20
+GET /api/pipeline-runs?status=completed&execution_backend=mock
+```
+
+응답 예시:
+
+```json
+{
+  "runs": [
+    {
+      "run_id": "run_6de4d9c29734474b",
+      "disease_name": "건선",
+      "disease_slug": "psoriasis",
+      "status": "completed",
+      "current_step": "completed",
+      "verdict": "mock_completed"
+    }
+  ]
+}
+```
+
 ### GET /api/pipeline-runs/{run_id}
 
 run 상태를 조회합니다.
@@ -643,10 +680,15 @@ run 결과 artifact 목록을 조회합니다.
 
 현재 단계에서는 mock run만 `cancelled`로 변경합니다.
 
+### POST /api/pipeline-runs/{run_id}/complete
+
+현재 단계에서는 mock run만 `completed`로 변경합니다. 이미 `completed`, `cancelled`, `blocked`인 run은 `409 Conflict`로 거부합니다.
+
 주의사항:
 
 - `execution_backend` 기본값은 `mock`입니다.
 - `local_agent`, `aws_stepfunctions`는 skeleton만 있으며 feature flag 없이는 `blocked` 처리됩니다.
+- `complete` endpoint는 프론트 완료 상태 UI 검증용입니다.
 - 비용 발생 AWS job, SageMaker job, WSI 다운로드, 대용량 embedding 생성은 실행하지 않습니다.
 - secret/API key는 DB에 저장하지 않습니다.
 - 이 API는 React v2의 일반 화면 기능이라기보다, 이후 챗봇/Bedrock/RAG 연결 전 단계의 backend 계약입니다.

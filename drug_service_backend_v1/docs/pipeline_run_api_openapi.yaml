@@ -5,6 +5,33 @@ info:
   description: Bedrock/RAG/LLM 연결 전 파이프라인 실행 제어 계층 mock API
 paths:
   /api/pipeline-runs:
+    get:
+      summary: List pipeline runs
+      parameters:
+        - name: disease_slug
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [queued, preflight, running, waiting_external_job, validating, completed, failed, cancelled, blocked]
+        - name: execution_backend
+          in: query
+          schema:
+            type: string
+            enum: [mock, local_agent, aws_stepfunctions]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 200
+      responses:
+        "200":
+          description: Pipeline run list
     post:
       summary: Create pipeline run
       requestBody:
@@ -85,4 +112,17 @@ paths:
       responses:
         "200":
           description: Cancelled run
-
+  /api/pipeline-runs/{run_id}/complete:
+    post:
+      summary: Mark mock pipeline run as completed
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Completed mock run
+        "409":
+          description: Run cannot be completed from current status

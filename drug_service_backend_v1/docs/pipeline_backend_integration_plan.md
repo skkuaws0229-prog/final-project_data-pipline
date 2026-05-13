@@ -120,6 +120,14 @@ POST /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
 ```
 
+### Run 목록 조회
+
+```http
+GET /api/pipeline-runs?status=completed&execution_backend=mock&limit=50
+```
+
+프론트엔드와 챗봇이 최근 실행 목록을 볼 수 있도록 `disease_slug`, `status`, `execution_backend`, `limit` 필터를 지원한다.
+
 ### Run 이벤트 조회
 
 ```http
@@ -139,6 +147,14 @@ POST /api/pipeline-runs/{run_id}/cancel
 ```
 
 이번 단계에서는 mock run 상태만 `cancelled`로 바꾼다. 실제 SageMaker stop은 다음 단계에서 구현한다.
+
+### Mock Run 완료 처리
+
+```http
+POST /api/pipeline-runs/{run_id}/complete
+```
+
+이번 단계에서는 mock run만 수동으로 `completed` 상태로 바꿀 수 있다. 이미 `completed`, `cancelled`, `blocked` 상태인 run은 `409 Conflict`로 거부한다.
 
 ## Disease Mapping
 
@@ -170,6 +186,9 @@ class PipelineOrchestrator:
         pass
 
     def cancel_run(self, run_id):
+        pass
+
+    def complete_run(self, run_id):
         pass
 ```
 
@@ -235,4 +254,3 @@ DB/API 안정화
 - 실제 SageMaker stop/cancel 연결
 - pipeline artifact S3 head/checksum 검증
 - pipeline 결과를 Neo4j/OpenSearch에 ingest하는 `/internal/ingest` 계약 설계
-

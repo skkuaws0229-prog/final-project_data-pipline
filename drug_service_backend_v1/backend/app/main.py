@@ -11,8 +11,11 @@ from app.pipeline_db import (
     insert_pipeline_run,
     list_pipeline_artifacts,
     list_pipeline_events,
+    list_pipeline_runs,
     make_config_yaml,
     normalize_pipeline_request,
+    VALID_EXECUTION_BACKENDS,
+    VALID_RUN_STATUSES,
 )
 from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
@@ -31,6 +34,7 @@ from app.schemas import (
     PipelineRunCreateRequest,
     PipelineRunEventsResponse,
     PipelineRunResponse,
+    PipelineRunsResponse,
     SearchResponse,
 )
 
@@ -138,6 +142,29 @@ def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
     return _serialize_pipeline_row(run)
 
 
+@app.get("/api/pipeline-runs", response_model=PipelineRunsResponse)
+def list_pipeline_run_statuses(
+    disease_slug: str | None = Query(None, description="Optional disease slug, e.g. ra, ov, pah"),
+    status: str | None = Query(None, description="Optional run status filter"),
+    execution_backend: str | None = Query(None, description="Optional backend: mock, local_agent, aws_stepfunctions"),
+    limit: int = Query(50, ge=1, le=200),
+) -> dict:
+    if status and status not in VALID_RUN_STATUSES:
+        raise HTTPException(status_code=400, detail=f"Unsupported status: {status}")
+    if execution_backend and execution_backend not in VALID_EXECUTION_BACKENDS:
+        raise HTTPException(status_code=400, detail=f"Unsupported execution_backend: {execution_backend}")
+    runs = [
+        _serialize_pipeline_row(row)
+        for row in list_pipeline_runs(
+            disease_slug=disease_slug,
+            status=status,
+            execution_backend=execution_backend,
+            limit=limit,
+        )
+    ]
+    return {"runs": runs}
+
+
 @app.get("/api/pipeline-runs/{run_id}", response_model=PipelineRunResponse)
 def get_pipeline_run_status(run_id: str) -> dict:
     run = get_pipeline_run(run_id)
@@ -168,6 +195,19 @@ def cancel_pipeline_run(run_id: str) -> dict:
     if not run:
         raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
     updated = get_orchestrator(run["execution_backend"]).cancel_run(run_id)
+    return _serialize_pipeline_row(updated)
+
+
+@app.post("/api/pipeline-runs/{run_id}/complete", response_model=PipelineRunResponse)
+def complete_pipeline_run(run_id: str) -> dict:
+    run = get_pipeline_run(run_id)
+    if not run:
+        raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
+    if run["execution_backend"] != "mock":
+        raise HTTPException(status_code=400, detail="Only mock backend can be manually completed in this phase")
+    if run["status"] not in {"running", "validating", "waiting_external_job"}:
+        raise HTTPException(status_code=409, detail=f"Run cannot be completed from status: {run['status']}")
+    updated = get_orchestrator(run["execution_backend"]).complete_run(run_id)
     return _serialize_pipeline_row(updated)
 
 

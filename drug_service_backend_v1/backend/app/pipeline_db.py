@@ -276,6 +276,39 @@ def get_pipeline_run(run_id: str) -> dict[str, Any] | None:
             return row_to_dict(cur.fetchone())
 
 
+def list_pipeline_runs(
+    disease_slug: str | None = None,
+    status: str | None = None,
+    execution_backend: str | None = None,
+    limit: int = 50,
+) -> list[dict[str, Any]]:
+    ensure_pipeline_schema()
+    filters = []
+    params: dict[str, Any] = {"limit": limit}
+    if disease_slug:
+        filters.append("disease_slug = %(disease_slug)s")
+        params["disease_slug"] = disease_slug
+    if status:
+        filters.append("status = %(status)s")
+        params["status"] = status
+    if execution_backend:
+        filters.append("execution_backend = %(execution_backend)s")
+        params["execution_backend"] = execution_backend
+
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ""
+    query = f"""
+        SELECT *
+        FROM pipeline_runs
+        {where_clause}
+        ORDER BY created_at DESC, run_id DESC
+        LIMIT %(limit)s
+    """
+    with psycopg.connect(settings.database_url, row_factory=dict_row) as conn:
+        with conn.cursor() as cur:
+            cur.execute(query, params)
+            return [dict(row) for row in cur.fetchall()]
+
+
 def list_pipeline_events(run_id: str) -> list[dict[str, Any]]:
     ensure_pipeline_schema()
     with psycopg.connect(settings.database_url, row_factory=dict_row) as conn:
@@ -290,4 +323,3 @@ def list_pipeline_artifacts(run_id: str) -> list[dict[str, Any]]:
         with conn.cursor() as cur:
             cur.execute("SELECT * FROM pipeline_artifacts WHERE run_id = %(run_id)s ORDER BY created_at, artifact_id", {"run_id": run_id})
             return [dict(row) for row in cur.fetchall()]
-

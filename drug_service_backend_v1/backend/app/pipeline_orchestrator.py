@@ -20,6 +20,10 @@ class PipelineOrchestrator(ABC):
     def cancel_run(self, run_id: str) -> dict:
         raise NotImplementedError
 
+    @abstractmethod
+    def complete_run(self, run_id: str) -> dict:
+        raise NotImplementedError
+
 
 class MockPipelineOrchestrator(PipelineOrchestrator):
     def submit_run(self, run: dict) -> dict:
@@ -50,6 +54,17 @@ class MockPipelineOrchestrator(PipelineOrchestrator):
         insert_pipeline_event(run_id, "warning", "cancel", "mock run cancelled by API request")
         return update_pipeline_run(run_id, status="cancelled", current_step="cancelled", ended_at=datetime.now(UTC)) or {}
 
+    def complete_run(self, run_id: str) -> dict:
+        insert_pipeline_event(run_id, "info", "validation", "mock validation completed")
+        insert_pipeline_event(run_id, "info", "completed", "mock run completed by API request")
+        return update_pipeline_run(
+            run_id,
+            status="completed",
+            current_step="completed",
+            verdict="mock_completed",
+            ended_at=datetime.now(UTC),
+        ) or {}
+
 
 class LocalAgentPipelineOrchestrator(PipelineOrchestrator):
     def submit_run(self, run: dict) -> dict:
@@ -63,6 +78,10 @@ class LocalAgentPipelineOrchestrator(PipelineOrchestrator):
 
     def cancel_run(self, run_id: str) -> dict:
         return update_pipeline_run(run_id, status="cancelled", current_step="cancelled", ended_at=datetime.now(UTC)) or {}
+
+    def complete_run(self, run_id: str) -> dict:
+        insert_pipeline_event(run_id, "warning", "guardrail", "local_agent manual complete is disabled")
+        return update_pipeline_run(run_id, status="blocked", current_step="guardrail", error_message="local_agent manual complete disabled") or {}
 
 
 class AwsStepFunctionsOrchestrator(PipelineOrchestrator):
@@ -78,6 +97,10 @@ class AwsStepFunctionsOrchestrator(PipelineOrchestrator):
     def cancel_run(self, run_id: str) -> dict:
         return update_pipeline_run(run_id, status="cancelled", current_step="cancelled", ended_at=datetime.now(UTC)) or {}
 
+    def complete_run(self, run_id: str) -> dict:
+        insert_pipeline_event(run_id, "warning", "guardrail", "aws_stepfunctions manual complete is disabled")
+        return update_pipeline_run(run_id, status="blocked", current_step="guardrail", error_message="aws_stepfunctions manual complete disabled") or {}
+
 
 def get_orchestrator(execution_backend: str) -> PipelineOrchestrator:
     if execution_backend == "mock":
@@ -87,4 +110,3 @@ def get_orchestrator(execution_backend: str) -> PipelineOrchestrator:
     if execution_backend == "aws_stepfunctions":
         return AwsStepFunctionsOrchestrator()
     raise ValueError(f"Unsupported execution_backend: {execution_backend}")
-

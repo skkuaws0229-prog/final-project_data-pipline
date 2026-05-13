@@ -181,6 +181,10 @@ class PipelineRunResponse(BaseModel):
     updated_at: str | None = None
 
 
+class PipelineRunsResponse(BaseModel):
+    runs: list[PipelineRunResponse]
+
+
 class PipelineRunEvent(BaseModel):
     event_id: str
     run_id: str

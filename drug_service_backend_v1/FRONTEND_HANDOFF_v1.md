@@ -48,10 +48,12 @@ GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 POST /api/pipeline-runs
+GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
 GET /api/pipeline-runs/{run_id}/events
 GET /api/pipeline-runs/{run_id}/artifacts
 POST /api/pipeline-runs/{run_id}/cancel
+POST /api/pipeline-runs/{run_id}/complete
 ```
 
 ## 프론트엔드 주의사항
@@ -128,6 +130,8 @@ React v2에서 함께 논의할 graph/API 항목:
 
 ```text
 - 기본 backend는 mock입니다.
+- `GET /api/pipeline-runs`로 최근 실행 목록을 조회할 수 있습니다.
+- `POST /api/pipeline-runs/{run_id}/complete`는 mock run의 완료 상태 UI 검증용입니다.
 - local_agent / aws_stepfunctions는 skeleton만 있으며 feature flag 없이는 blocked 처리됩니다.
 - SageMaker, Step Functions, WSI 다운로드, 대용량 embedding 생성은 이 단계에서 실행하지 않습니다.
 - secret/API key는 DB에 저장하지 않습니다.
