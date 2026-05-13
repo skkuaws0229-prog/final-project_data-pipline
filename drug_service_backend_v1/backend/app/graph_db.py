@@ -1,0 +1,36 @@
+from collections.abc import Mapping
+
+from neo4j import Driver, GraphDatabase
+
+from app.config import settings
+
+
+_driver: Driver | None = None
+
+
+def get_driver() -> Driver:
+    global _driver
+    if _driver is None:
+        _driver = GraphDatabase.driver(
+            settings.neo4j_uri,
+            auth=(settings.neo4j_user, settings.neo4j_password),
+        )
+    return _driver
+
+
+def close_driver() -> None:
+    global _driver
+    if _driver is not None:
+        _driver.close()
+        _driver = None
+
+
+def verify_connectivity() -> bool:
+    get_driver().verify_connectivity()
+    return True
+
+
+def run_read(query: str, params: Mapping[str, object] | None = None) -> list[dict]:
+    with get_driver().session() as session:
+        result = session.run(query, dict(params or {}))
+        return [record.data() for record in result]

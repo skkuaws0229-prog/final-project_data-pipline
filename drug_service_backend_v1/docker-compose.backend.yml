@@ -1,0 +1,93 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: drug-service-backend-v1-postgres
+    environment:
+      POSTGRES_DB: drug_service
+      POSTGRES_USER: drug_service
+      POSTGRES_PASSWORD: drug_service_local
+    ports:
+      - "5433:5432"
+    volumes:
+      - drug_service_backend_v1_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U drug_service -d drug_service"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  db-loader:
+    image: postgres:16
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: drug_service_local
+    volumes:
+      - ../drug_service_db_v1/03_normalized:/normalized:ro
+      - ../drug_service_db_v1/04_db_load/postgres_schema.sql:/schema/postgres_schema.sql:ro
+      - ../drug_service_db_v1/04_db_load/load_postgres_compose.sh:/load_postgres_compose.sh:ro
+    command: ["bash", "/load_postgres_compose.sh"]
+    restart: "no"
+
+  neo4j:
+    image: neo4j:5.26
+    container_name: drug-service-backend-v1-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/drug_service_neo4j
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - drug_service_backend_v1_neo4j_data:/data
+      - drug_service_backend_v1_neo4j_logs:/logs
+      - ../drug_service_db_v1/06_graph/import:/var/lib/neo4j/import
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p drug_service_neo4j 'RETURN 1'"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+    restart: unless-stopped
+
+  neo4j-loader:
+    image: neo4j:5.26
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      - ../drug_service_db_v1/06_graph/schema:/schema:ro
+    command:
+      - bash
+      - -lc
+      - |
+        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_constraints.cypher
+        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_load_csv_v1.cypher
+    restart: "no"
+
+  api:
+    build:
+      context: ./backend
+    container_name: drug-service-backend-v1-api
+    depends_on:
+      db-loader:
+        condition: service_completed_successfully
+      neo4j:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://drug_service:drug_service_local@postgres:5432/drug_service
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: drug_service_neo4j
+      APP_NAME: Drug Service API
+      CORS_ALLOW_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://172.16.0.64:5173
+    ports:
+      - "8010:8000"
+    restart: unless-stopped
+
+volumes:
+  drug_service_backend_v1_pgdata:
+  drug_service_backend_v1_neo4j_data:
+  drug_service_backend_v1_neo4j_logs:
