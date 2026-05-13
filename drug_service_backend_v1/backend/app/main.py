@@ -19,6 +19,7 @@ from app.pipeline_db import (
 )
 from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
+from app.structures_db import list_structure_targets
 from app.schemas import (
     Disease,
     DrugCandidate,
@@ -36,6 +37,7 @@ from app.schemas import (
     PipelineRunResponse,
     PipelineRunsResponse,
     SearchResponse,
+    StructureTargetsResponse,
 )
 
 
@@ -99,6 +101,19 @@ def graph_kg_embedding(
     if not scores:
         raise HTTPException(status_code=503, detail="KG embedding scores unavailable")
     return {"disease_id": disease_id, "model": model, "scoring_version": "kg_embedding_v1", "scores": scores}
+
+
+@app.get("/api/structures/targets", response_model=StructureTargetsResponse)
+def get_structure_targets(
+    disease_id: str | None = Query(None, description="Optional disease id, e.g. RA, PAH, HNSC"),
+    q: str | None = Query(None, min_length=1, description="Optional gene, UniProt, protein, or target text search"),
+    limit: int = Query(100, ge=1, le=200),
+) -> dict:
+    if disease_id:
+        disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+        if not disease:
+            raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+    return {"targets": list_structure_targets(disease_id=disease_id, q=q, limit=limit)}
 
 
 def _serialize_pipeline_row(row: dict) -> dict:

@@ -41,6 +41,9 @@ GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
+GET /api/structures/targets
+GET /api/structures/targets?disease_id=RA
+GET /api/structures/targets?q=JAK
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -69,6 +72,7 @@ docs/uniprot_auto_mapping_integrity_v1.md
 docs/uniprot_mapping_duplicate_check_v1.md
 docs/reviewed_seed_integrity_v1.md
 docs/reviewed_seed_db_load_validation_v1.md
+docs/structures_targets_api_validation_v1.md
 ```
 
 ## Docker Compose 실행

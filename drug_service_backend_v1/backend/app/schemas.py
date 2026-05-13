@@ -150,6 +150,24 @@ class KgEmbeddingResponse(BaseModel):
     scores: list[KgEmbeddingScore]
 
 
+class StructureTarget(BaseModel):
+    protein_id: str
+    gene_symbol: str | None = None
+    uniprot_id: str | None = None
+    protein_name: str | None = None
+    organism: str
+    source: str
+    target_texts: list[str] = Field(default_factory=list)
+    mapping_statuses: list[str] = Field(default_factory=list)
+    diseases: list[str] = Field(default_factory=list)
+    structure_status: str
+    structure_count: int
+
+
+class StructureTargetsResponse(BaseModel):
+    targets: list[StructureTarget]
+
+
 class PipelineRunCreateRequest(BaseModel):
     disease_name: str
     mode: str = "full"
