@@ -30,6 +30,8 @@ GET /image-modal/clusters?disease_id=BRCA
 GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
+GET /health/search
+GET /search?q=JAK&disease_id=RA
 ```
 
 React v2 API 계약과 인수인계 문서는 아래 파일을 기준으로 합니다.
@@ -54,6 +56,7 @@ FastAPI: http://localhost:8010
 Swagger: http://localhost:8010/docs
 Health: http://localhost:8010/health
 Graph Health: http://localhost:8010/health/graph
+Search Health: http://localhost:8010/health/search
 Neo4j Browser: http://localhost:7474
 ```
 
@@ -105,9 +108,20 @@ Broken edge endpoint: 0
 Neo4j import CSV 대비 edge count mismatch: 0
 ```
 
+OpenSearch text index 기준:
+
+```text
+Index: drug_service_text_v1
+Documents: 699
+drug_candidate: 255
+image_evidence: 430
+image_report: 14
+```
+
 ## 주의사항
 
 - `.venv`, `.env`, cache file은 GitHub에 포함하지 않습니다.
 - 현재 비밀번호는 로컬 Docker 검증용 개발 값입니다.
-- React v1은 연결 검증용이며, 본격 UI는 Neo4j/OpenSearch/TxGNN 연결 이후 React v2에서 진행합니다.
+- React v1은 연결 검증용이며, 본격 UI는 React v2에서 진행합니다.
+- OpenSearch v1은 text search만 포함합니다. vector search는 이후 embedding 정책 확정 뒤 추가합니다.
 - TxGNN endpoint는 아직 v1 backend에 포함하지 않았습니다. 이후 `TXGNN_PREDICTED_FOR` 관계와 별도 endpoint로 추가할 예정입니다.

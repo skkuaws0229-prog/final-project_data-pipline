@@ -100,3 +100,25 @@ class GraphRelationsResponse(BaseModel):
     disease_id: str
     nodes: list[GraphNode]
     edges: list[GraphEdge]
+
+
+class SearchHit(BaseModel):
+    id: str
+    score: float | None = None
+    doc_type: str
+    disease_id: str | None = None
+    title: str | None = None
+    drug_name: str | None = None
+    canonical_drug_id: str | None = None
+    cluster_id: str | None = None
+    match_status: str | None = None
+    source_file: str | None = None
+    snippet: str | None = None
+    highlights: dict[str, list[str]] = {}
+    source: dict[str, Any] = {}
+
+
+class SearchResponse(BaseModel):
+    query: str
+    total: int
+    hits: list[SearchHit]

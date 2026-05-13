@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.db import fetch_all, fetch_one
 from app.graph_db import close_driver, run_read, verify_connectivity
+from app.search_db import search_text, verify_search_connectivity
 from app.schemas import (
     Disease,
     DrugCandidate,
@@ -13,6 +14,7 @@ from app.schemas import (
     ImageModalCluster,
     ImageModalEvidence,
     ImageModalReport,
+    SearchResponse,
 )
 
 
@@ -44,6 +46,70 @@ def graph_health() -> dict[str, str]:
     except Exception as exc:
         raise HTTPException(status_code=503, detail=f"Neo4j unavailable: {exc}") from exc
     return {"status": "ok", "graph": "ok"}
+
+
+@app.get("/health/search")
+def search_health() -> dict[str, str]:
+    try:
+        verify_search_connectivity()
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"OpenSearch unavailable: {exc}") from exc
+    return {"status": "ok", "search": "ok"}
+
+
+@app.get("/search", response_model=SearchResponse)
+def search(
+    q: str = Query(..., min_length=1, description="Text query"),
+    disease_id: str | None = Query(None, description="Optional disease id filter, e.g. RA"),
+    doc_type: str | None = Query(None, description="Optional doc type: drug_candidate, image_evidence, image_report"),
+    limit: int = Query(20, ge=1, le=50),
+) -> dict:
+    if disease_id:
+        disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+        if not disease:
+            raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+
+    allowed_doc_types = {"drug_candidate", "image_evidence", "image_report"}
+    if doc_type and doc_type not in allowed_doc_types:
+        raise HTTPException(status_code=400, detail=f"Unknown doc_type: {doc_type}")
+
+    try:
+        result = search_text(q, disease_id=disease_id, doc_type=doc_type, limit=limit)
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"OpenSearch query failed: {exc}") from exc
+
+    hits = []
+    for hit in result.get("hits", {}).get("hits", []):
+        source = hit.get("_source", {})
+        highlights = hit.get("highlight", {})
+        snippet = None
+        for fragments in highlights.values():
+            if fragments:
+                snippet = fragments[0]
+                break
+        if snippet is None:
+            snippet = source.get("evidence_text") or source.get("report_text") or source.get("clinical_summary") or source.get("title")
+        hits.append(
+            {
+                "id": hit.get("_id"),
+                "score": hit.get("_score"),
+                "doc_type": source.get("doc_type"),
+                "disease_id": source.get("disease_id"),
+                "title": source.get("title"),
+                "drug_name": source.get("drug_name"),
+                "canonical_drug_id": source.get("canonical_drug_id"),
+                "cluster_id": source.get("cluster_id"),
+                "match_status": source.get("match_status"),
+                "source_file": source.get("source_file"),
+                "snippet": snippet,
+                "highlights": highlights,
+                "source": source,
+            }
+        )
+
+    total = result.get("hits", {}).get("total", {})
+    total_value = total.get("value", 0) if isinstance(total, dict) else total
+    return {"query": q, "total": total_value, "hits": hits}
 
 
 def _put_node(nodes: dict[str, dict], node_id: str | None, label: str, name: str | None, properties: dict | None = None) -> None:

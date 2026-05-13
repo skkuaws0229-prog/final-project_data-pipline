@@ -399,6 +399,77 @@ ImageEvidence -> TargetConcept
 - `TargetConcept`는 raw text입니다.
 - TxGNN 예측 edge는 아직 포함되지 않았습니다.
 
+## 9. Text search
+
+### GET /health/search
+
+OpenSearch 연결 상태를 확인합니다.
+
+응답 예시:
+
+```json
+{
+  "status": "ok",
+  "search": "ok"
+}
+```
+
+### GET /search
+
+OpenSearch text search 결과를 반환합니다.
+
+Query:
+
+```text
+q          required string
+disease_id optional string
+doc_type   optional string: drug_candidate, image_evidence, image_report
+limit      optional number, default 20, max 50
+```
+
+예시:
+
+```text
+GET /search?q=JAK&disease_id=RA
+GET /search?q=immune&doc_type=image_evidence
+```
+
+응답 필드:
+
+```text
+query
+total
+hits[]
+hits[].id
+hits[].score
+hits[].doc_type
+hits[].disease_id
+hits[].title
+hits[].drug_name
+hits[].canonical_drug_id
+hits[].cluster_id
+hits[].match_status
+hits[].source_file
+hits[].snippet
+hits[].highlights
+hits[].source
+```
+
+지원 document type:
+
+```text
+drug_candidate: PostgreSQL 후보 약물 + ADMET
+image_evidence: image-modal drug evidence + cluster summary
+image_report: image-modal report 본문
+```
+
+주의사항:
+
+- 이 endpoint는 text search입니다.
+- vector search는 아직 포함하지 않았습니다.
+- 검색 대상 문서는 총 699개입니다.
+- `snippet`에는 OpenSearch highlight 첫 fragment 또는 fallback text가 들어갑니다.
+
 ## 공통 에러 처리
 
 존재하지 않는 `disease_id`:
@@ -431,5 +502,6 @@ HTTP 503
 3. /drugs 후보 약물 테이블
 4. /image-modal/evidence 약물별 근거 panel
 5. /graph/relations graph viewer
-6. /image-modal/reports 상세 report 보기
+6. /search text search
+7. /image-modal/reports 상세 report 보기
 ```

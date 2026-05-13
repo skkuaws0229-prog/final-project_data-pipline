@@ -9,7 +9,7 @@ PostgreSQL: 연결 완료
 Neo4j: 연결 완료
 FastAPI: 구현 완료
 Graph API: /graph/relations 검증 완료
-OpenSearch: 아직 미연결
+OpenSearch: text search 연결 완료
 TxGNN: 아직 미연결
 RAG/LLM: 아직 미연결
 ```
@@ -86,6 +86,8 @@ GET /drugs?disease_id=RA
 GET /image-modal/evidence?disease_id=RA
 GET /image-modal/clusters?disease_id=RA
 GET /graph/relations?disease_id=RA&limit=50
+GET /health/search
+GET /search?q=JAK&disease_id=RA
 ```
 
 ## 데이터 매칭 규칙
@@ -189,12 +191,23 @@ Neo4j import CSV 대비 edge count mismatch: 0
 drug_service_db_v1/06_graph/validation/graph_api_validation_v1.md
 ```
 
+OpenSearch text search 검증:
+
+```text
+Index: drug_service_text_v1
+Documents: 699
+drug_candidate: 255
+image_evidence: 430
+image_report: 14
+GET /health/search -> {"status":"ok","search":"ok"}
+```
+
 ## 아직 구현하지 않는 것
 
 React v2 초기 구현에서 아래 항목은 제외해도 됩니다.
 
 ```text
-OpenSearch text/vector search
+OpenSearch vector search
 TxGNN prediction score
 RAG explanation
 AlphaFold structure viewer

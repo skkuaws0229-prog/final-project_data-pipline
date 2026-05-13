@@ -24,6 +24,8 @@ GET /image-modal/clusters?disease_id=BRCA
 GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
+GET /health/search
+GET /search?q=JAK&disease_id=RA
 ```
 
 ## 프론트엔드 인수인계
@@ -73,6 +75,36 @@ GET /graph/relations?disease_id=RA&limit=50
 
 `nodes[].label`은 `Disease`, `Drug`, `ImageCluster`, `ImageEvidence`, `TargetConcept` 중 하나입니다. `edges[].type`은 `CANDIDATE_FOR`, `HAS_IMAGE_CLUSTER`, `HAS_IMAGE_EVIDENCE`, `SUPPORTS_DRUG`, `HAS_TARGET`, `MENTIONS_TARGET` 중 하나입니다.
 
+## OpenSearch 연결
+
+FastAPI는 아래 환경변수로 OpenSearch에 연결합니다.
+
+```text
+OPENSEARCH_URL=http://opensearch:9200
+OPENSEARCH_INDEX=drug_service_text_v1
+```
+
+연결 확인:
+
+```text
+GET /health/search
+```
+
+Text search:
+
+```text
+GET /search?q=JAK&disease_id=RA
+GET /search?q=immune&doc_type=image_evidence
+```
+
+지원 `doc_type`:
+
+```text
+drug_candidate
+image_evidence
+image_report
+```
+
 검증 결과:
 
 ```text
@@ -81,6 +113,17 @@ Duplicate node id: 0
 Duplicate edge id: 0
 Broken edge endpoint: 0
 Neo4j import CSV 대비 candidate/support/cluster/target edge count mismatch: 0
+```
+
+OpenSearch text index 검증:
+
+```text
+Index: drug_service_text_v1
+Documents: 699
+drug_candidate: 255
+image_evidence: 430
+image_report: 14
+GET /health/search -> {"status":"ok","search":"ok"}
 ```
 
 ## Docker/AWS 메모
