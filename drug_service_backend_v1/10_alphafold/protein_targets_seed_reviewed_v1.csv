@@ -1,0 +1,28 @@
+protein_id,gene_symbol,uniprot_id,uniprot_entry_name,protein_name,organism,source,review_status,source_raw_texts,diseases,notes
+protein_o14965,AURKA,O14965,AURKA_HUMAN,Aurora kinase A,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,AURKA,HNSC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_q07817,BCL2L1,Q07817,B2CL1_HUMAN,Bcl-2-like protein 1,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,BCL-XL,Colon|HNSC|STAD,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p24941,CDK2,P24941,CDK2_HUMAN,Cyclin-dependent kinase 2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,CDK2,PDAC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_o15111,CHUK,O15111,IKKA_HUMAN,Inhibitor of nuclear factor kappa-B kinase subunit alpha,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,IKK-1,PDAC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_q8tek3,DOT1L,Q8TEK3,DOT1L_HUMAN,"Histone-lysine N-methyltransferase, H3 lysine-79 specific",Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,DOT1L,LUNG,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p25101,EDNRA,P25101,EDNRA_HUMAN,Endothelin-1 receptor,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,ETA,PAH,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p24530,EDNRB,P24530,EDNRB_HUMAN,Endothelin receptor type B,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,ETB,PAH,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p00533,EGFR,P00533,EGFR_HUMAN,Epidermal growth factor receptor,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,EGFR,HNSC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_q9gzt9,EGLN1,Q9GZT9,EGLN1_HUMAN,Egl nine homolog 1,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,EGLN1,LUNG,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p21802,FGFR2,P21802,FGFR2_HUMAN,Fibroblast growth factor receptor 2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,FGFR2,IPF,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_o14920,IKBKB,O14920,IKKB_HUMAN,Inhibitor of nuclear factor kappa-B kinase subunit beta,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,IKK-2,PDAC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p06213,INSR,P06213,INSR_HUMAN,Insulin receptor,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,IR,PDAC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p23458,JAK1,P23458,JAK1_HUMAN,Tyrosine-protein kinase JAK1,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,JAK1,IPF|Psoriasis|RA,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_o60674,JAK2,O60674,JAK2_HUMAN,Tyrosine-protein kinase JAK2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,JAK2,Psoriasis|RA,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p52333,JAK3,P52333,JAK3_HUMAN,Tyrosine-protein kinase JAK3,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,JAK3,Psoriasis,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p35968,KDR,P35968,VGFR2_HUMAN,Vascular endothelial growth factor receptor 2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,KDR,IPF,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_q02750,MAP2K1,Q02750,MP2K1_HUMAN,Dual specificity mitogen-activated protein kinase kinase 1,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,MEK1,Colon|HNSC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p36507,MAP2K2,P36507,MP2K2_HUMAN,Dual specificity mitogen-activated protein kinase kinase 2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,MEK2,Colon|HNSC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p42345,MTOR,P42345,MTOR_HUMAN,Serine/threonine-protein kinase mTOR,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,MTOR,Colon|HNSC|Liver|PDAC|STAD,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_o76074,PDE5A,O76074,PDE5A_HUMAN,"cGMP-specific 3',5'-cyclic phosphodiesterase",Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,PDE5,PAH,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p09619,PDGFRB,P09619,PGFRB_HUMAN,Platelet-derived growth factor receptor beta,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,PDGFRB,IPF,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p42338,PIK3CB,P42338,PK3CB_HUMAN,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform",Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,PI3Kbeta,Colon,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p48736,PIK3CG,P48736,PK3CG_HUMAN,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform",Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,PIK3CG|PI3Kgamma,PDAC,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_o15297,PPM1D,O15297,PPM1D_HUMAN,Protein phosphatase 1D,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,PPM1D,BRCA,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p11387,TOP1,P11387,TOP1_HUMAN,DNA topoisomerase 1,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,TOP1,Colon|HNSC|Liver|PDAC|STAD,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p04637,TP53,P04637,P53_HUMAN,Cellular tumor antigen p53,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,TP53,BRCA,AlphaFold DB 구조 다운로드 전 seed 후보
+protein_p29597,TYK2,P29597,TYK2_HUMAN,Non-receptor tyrosine-protein kinase TYK2,Homo sapiens,uniprot_auto_mapping_v1,auto_suggested_pending_final_review,TYK2,Psoriasis,AlphaFold DB 구조 다운로드 전 seed 후보

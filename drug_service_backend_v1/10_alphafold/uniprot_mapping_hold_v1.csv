@@ -1,0 +1,2 @@
+suggested_gene_symbol,raw_text,auto_uniprot_id,hit_count,auto_mapping_status,reason,mapping_notes
+MET,MET,P08581,2,needs_review_multi_hit,auto_suggested가 아니므로 reviewed seed v1에서 보류,reviewed human gene_exact query
