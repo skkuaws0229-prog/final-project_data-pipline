@@ -19,7 +19,7 @@ from app.pipeline_db import (
 )
 from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
-from app.structures_db import list_structure_targets
+from app.structures_db import get_structure_detail, list_structure_targets
 from app.schemas import (
     Disease,
     DrugCandidate,
@@ -37,6 +37,7 @@ from app.schemas import (
     PipelineRunResponse,
     PipelineRunsResponse,
     SearchResponse,
+    StructureDetailResponse,
     StructureTargetsResponse,
 )
 
@@ -114,6 +115,14 @@ def get_structure_targets(
         if not disease:
             raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
     return {"targets": list_structure_targets(disease_id=disease_id, q=q, limit=limit)}
+
+
+@app.get("/api/structures/{structure_id}", response_model=StructureDetailResponse)
+def get_structure(structure_id: str) -> dict:
+    detail = get_structure_detail(structure_id)
+    if not detail:
+        raise HTTPException(status_code=404, detail=f"Unknown structure_id: {structure_id}")
+    return detail
 
 
 def _serialize_pipeline_row(row: dict) -> dict:

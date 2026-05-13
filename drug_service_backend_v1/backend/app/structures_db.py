@@ -1,4 +1,4 @@
-from app.db import fetch_all
+from app.db import fetch_all, fetch_one
 
 
 def list_structure_targets(disease_id: str | None = None, q: str | None = None, limit: int = 100) -> list[dict]:
@@ -87,3 +87,65 @@ def list_structure_targets(disease_id: str | None = None, q: str | None = None, 
         params,
     )
     return [dict(row) for row in rows]
+
+
+def get_structure_detail(structure_id: str) -> dict | None:
+    row = fetch_one(
+        """
+        WITH target_context AS (
+          SELECT
+            tpl.protein_id,
+            array_remove(array_agg(DISTINCT tpl.target_text ORDER BY tpl.target_text), NULL) AS target_texts,
+            array_remove(array_agg(DISTINCT tpl.mapping_status ORDER BY tpl.mapping_status), NULL) AS mapping_statuses,
+            array_remove(array_agg(DISTINCT NULLIF(disease.value, '') ORDER BY NULLIF(disease.value, '')), NULL) AS diseases,
+            jsonb_agg(
+              DISTINCT jsonb_build_object(
+                'target_text', tpl.target_text,
+                'mapping_status', tpl.mapping_status,
+                'confidence', tpl.confidence,
+                'diseases', COALESCE(tpl.raw_json->>'diseases', ''),
+                'source', tpl.source,
+                'raw_json', tpl.raw_json
+              )
+            ) AS target_links
+          FROM target_protein_links tpl
+          LEFT JOIN LATERAL regexp_split_to_table(COALESCE(tpl.raw_json->>'diseases', ''), '\\|') AS disease(value) ON true
+          GROUP BY tpl.protein_id
+        )
+        SELECT
+          afs.structure_id,
+          afs.protein_id,
+          pt.gene_symbol,
+          pt.uniprot_id,
+          pt.protein_name,
+          pt.organism,
+          pt.source AS protein_source,
+          afs.provider,
+          afs.provider_accession,
+          afs.version,
+          afs.file_format,
+          afs.structure_uri,
+          afs.source_url,
+          afs.pae_uri,
+          afs.mean_plddt,
+          afs.confidence_summary,
+          afs.license,
+          afs.status,
+          CASE
+            WHEN afs.status = 'available' THEN 'available'
+            WHEN afs.status = 'to_fetch' THEN 'pending'
+            WHEN afs.status = 'missing' THEN 'missing'
+            ELSE 'failed'
+          END AS structure_status,
+          COALESCE(tc.target_texts, ARRAY[]::text[]) AS target_texts,
+          COALESCE(tc.mapping_statuses, ARRAY[]::text[]) AS mapping_statuses,
+          COALESCE(tc.diseases, ARRAY[]::text[]) AS diseases,
+          COALESCE(tc.target_links, '[]'::jsonb) AS target_links
+        FROM alphafold_structures afs
+        JOIN protein_targets pt ON pt.protein_id = afs.protein_id
+        LEFT JOIN target_context tc ON tc.protein_id = afs.protein_id
+        WHERE afs.structure_id = %(structure_id)s
+        """,
+        {"structure_id": structure_id},
+    )
+    return dict(row) if row else None

@@ -44,6 +44,7 @@ GET /search?q=JAK&disease_id=RA
 GET /api/structures/targets
 GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
+GET /api/structures/{structure_id}
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -76,6 +77,7 @@ docs/structures_targets_api_validation_v1.md
 docs/alphafold_metadata_lookup_policy_v1.md
 docs/alphafold_metadata_lookup_validation_v1.md
 docs/alphafold_metadata_db_load_validation_v1.md
+docs/structures_detail_api_validation_v1.md
 ```
 
 ## Docker Compose 실행

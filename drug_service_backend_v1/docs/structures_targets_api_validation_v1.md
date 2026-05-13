@@ -125,8 +125,7 @@ FastAPI에서 structure viewer 후보 protein 목록 조회가 가능하다.
 ## 다음 단계
 
 ```text
-1. /api/structures/targets를 React v2에 전달
-2. AlphaFold DB metadata 조회 설계
-3. alphafold_structures에는 구조 파일 URI와 metadata만 저장
-4. 실제 .cif/.pdb 파일은 S3에 저장
+1. /api/structures/{structure_id} 상세 endpoint 사용
+2. React v2 구조보기 버튼 연결
+3. 실제 .cif/.pdb 파일은 S3에 저장
 ```

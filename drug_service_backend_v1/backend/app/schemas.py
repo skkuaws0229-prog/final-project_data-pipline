@@ -168,6 +168,41 @@ class StructureTargetsResponse(BaseModel):
     targets: list[StructureTarget]
 
 
+class StructureTargetLink(BaseModel):
+    target_text: str
+    mapping_status: str
+    confidence: float | None = None
+    diseases: str | None = None
+    source: str
+    raw_json: dict[str, Any] = Field(default_factory=dict)
+
+
+class StructureDetailResponse(BaseModel):
+    structure_id: str
+    protein_id: str
+    gene_symbol: str | None = None
+    uniprot_id: str | None = None
+    protein_name: str | None = None
+    organism: str
+    protein_source: str
+    provider: str
+    provider_accession: str | None = None
+    version: str | None = None
+    file_format: str
+    structure_uri: str
+    source_url: str | None = None
+    pae_uri: str | None = None
+    mean_plddt: float | None = None
+    confidence_summary: str | None = None
+    license: str | None = None
+    status: str
+    structure_status: str
+    target_texts: list[str] = Field(default_factory=list)
+    mapping_statuses: list[str] = Field(default_factory=list)
+    diseases: list[str] = Field(default_factory=list)
+    target_links: list[StructureTargetLink] = Field(default_factory=list)
+
+
 class PipelineRunCreateRequest(BaseModel):
     disease_name: str
     mode: str = "full"
