@@ -68,6 +68,7 @@ docs/uniprot_auto_mapping_validation_v1.md
 docs/uniprot_auto_mapping_integrity_v1.md
 docs/uniprot_mapping_duplicate_check_v1.md
 docs/reviewed_seed_integrity_v1.md
+docs/reviewed_seed_db_load_validation_v1.md
 ```
 
 ## Docker Compose 실행
