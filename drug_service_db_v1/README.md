@@ -31,7 +31,11 @@ CT-CLIP/UNI2 embedding 원본
 Docker volume
 PostgreSQL/Neo4j 실제 volume dump
 FastAPI/React application 전체 코드
+.venv, node_modules
+__pycache__, *.pyc, frontend dist 같은 로컬 cache/build 산출물
 ```
+
+위 항목들은 누락이 아니라 의도적으로 제외했습니다. DB는 `03_normalized/`, `04_db_load/`, `06_graph/import/`, schema/load script를 기준으로 다시 적재해서 재현합니다.
 
 ## PostgreSQL 적재
 

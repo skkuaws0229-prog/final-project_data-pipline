@@ -42,8 +42,14 @@ S3 원본 위치:
 - 학습된 모델 바이너리/checkpoint
 - 대용량 raw API dump 및 중간 prediction matrix
 - 비밀번호, API key, HuggingFace token, AWS access key 같은 민감정보
+- Python 가상환경 (`.venv`)
+- Node.js 의존성 폴더 (`node_modules`)
+- Docker volume, PostgreSQL/Neo4j/OpenSearch 실제 데이터 디렉터리
+- `__pycache__`, `*.pyc`, frontend build output 같은 로컬 cache/build 산출물
 
 대용량 원본과 중간 산출물은 위 S3 경로를 기준으로 확인하면 됩니다.
+
+위 항목들은 누락이 아니라 의도적으로 제외한 항목입니다. GitHub에는 재현 가능한 코드, 설정, schema, 정규화 CSV, 검증 리포트만 올립니다. 실행 환경은 `requirements.txt`, `package.json`, Docker Compose 파일을 기준으로 각자 로컬 또는 EC2에서 다시 생성합니다.
 
 ## 재현 가능 범위
 

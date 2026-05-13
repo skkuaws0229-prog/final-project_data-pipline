@@ -121,6 +121,9 @@ image_report: 14
 ## 주의사항
 
 - `.venv`, `.env`, cache file은 GitHub에 포함하지 않습니다.
+- `node_modules`, Docker volume, PostgreSQL/Neo4j/OpenSearch 실제 데이터 디렉터리도 GitHub에 포함하지 않습니다.
+- 위 항목들은 누락이 아니라 의도적으로 제외한 실행환경/로컬 산출물입니다.
+- Python 의존성은 `backend/requirements.txt`, DB/Search/Graph 실행환경은 `docker-compose.backend.yml`로 다시 생성합니다.
 - 현재 비밀번호는 로컬 Docker 검증용 개발 값입니다.
 - React v1은 연결 검증용이며, 본격 UI는 React v2에서 진행합니다.
 - OpenSearch v1은 text search만 포함합니다. vector search는 이후 embedding 정책 확정 뒤 추가합니다.
