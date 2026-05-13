@@ -8,18 +8,18 @@ priority,P1,TYK2,TYK2,10,Psoriasis,exact_gene_symbol_candidate,P29597,TYK2_HUMAN
 priority,P2,AURKA,AURKA,1,HNSC,exact_gene_symbol_candidate,O14965,AURKA_HUMAN,AURKA,AURKA|AIK|AIRK1|ARK1|AURA|AYK1|BTAK|IAK1|STK15|STK6,Aurora kinase A,1,auto_suggested,reviewed human gene_exact query
 priority,P2,CDK2,CDK2,3,PDAC,exact_gene_symbol_candidate,P24941,CDK2_HUMAN,CDK2,CDK2|CDKN2,Cyclin-dependent kinase 2,1,auto_suggested,reviewed human gene_exact query
 priority,P2,DOT1L,DOT1L,2,LUNG,exact_gene_symbol_candidate,Q8TEK3,DOT1L_HUMAN,DOT1L,DOT1L|KIAA1814|KMT4,"Histone-lysine N-methyltransferase, H3 lysine-79 specific",1,auto_suggested,reviewed human gene_exact query
-priority|alias_review,P2,ETA|ETA,EDNRA,11,PAH,alias_or_family_review,P25101,EDNRA_HUMAN,EDNRA,EDNRA|ETA|ETRA,Endothelin-1 receptor,1,auto_suggested,reviewed human gene_exact query
+priority|alias_review,P2,ETA,EDNRA,11,PAH,alias_or_family_review,P25101,EDNRA_HUMAN,EDNRA,EDNRA|ETA|ETRA,Endothelin-1 receptor,1,auto_suggested,reviewed human gene_exact query
 priority,P2,EGFR,EGFR,1,HNSC,exact_gene_symbol_candidate,P00533,EGFR_HUMAN,EGFR,EGFR|ERBB|ERBB1|HER1,Epidermal growth factor receptor,1,auto_suggested,reviewed human gene_exact query
 priority,P2,EGLN1,EGLN1,1,LUNG,exact_gene_symbol_candidate,Q9GZT9,EGLN1_HUMAN,EGLN1,EGLN1|C1orf12,Egl nine homolog 1,1,auto_suggested,reviewed human gene_exact query
 priority,P2,FGFR2,FGFR2,1,IPF,exact_gene_symbol_candidate,P21802,FGFR2_HUMAN,FGFR2,FGFR2|BEK|KGFR|KSAM,Fibroblast growth factor receptor 2,1,auto_suggested,reviewed human gene_exact query
 priority,P2,KDR,KDR,2,IPF,exact_gene_symbol_candidate,P35968,VGFR2_HUMAN,KDR,KDR|FLK1|VEGFR2,Vascular endothelial growth factor receptor 2,1,auto_suggested,reviewed human gene_exact query
 priority,P2,MET,MET,1,LUNG,exact_gene_symbol_candidate,P08581,MET_HUMAN,MET,MET,Hepatocyte growth factor receptor,2,needs_review_multi_hit,reviewed human gene_exact query
-priority|alias_review,P2,PDE5|PDE5,PDE5A,14,PAH,alias_or_family_review,O76074,PDE5A_HUMAN,PDE5A,PDE5A|PDE5,"cGMP-specific 3',5'-cyclic phosphodiesterase",1,auto_suggested,reviewed human gene_exact query
+priority|alias_review,P2,PDE5,PDE5A,14,PAH,alias_or_family_review,O76074,PDE5A_HUMAN,PDE5A,PDE5A|PDE5,"cGMP-specific 3',5'-cyclic phosphodiesterase",1,auto_suggested,reviewed human gene_exact query
 priority,P2,PDGFRB,PDGFRB,3,IPF,exact_gene_symbol_candidate,P09619,PGFRB_HUMAN,PDGFRB,PDGFRB|PDGFR|PDGFR1,Platelet-derived growth factor receptor beta,1,auto_suggested,reviewed human gene_exact query
 priority|alias_review,P2,PIK3CG|PI3Kgamma,PIK3CG,3,PDAC,exact_gene_symbol_candidate,P48736,PK3CG_HUMAN,PIK3CG,PIK3CG,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform",1,auto_suggested,reviewed human gene_exact query
 priority,P2,PPM1D,PPM1D,1,BRCA,exact_gene_symbol_candidate,O15297,PPM1D_HUMAN,PPM1D,PPM1D|WIP1,Protein phosphatase 1D,1,auto_suggested,reviewed human gene_exact query
 priority,P2,TP53,TP53,3,BRCA,exact_gene_symbol_candidate,P04637,P53_HUMAN,TP53,TP53|P53,Cellular tumor antigen p53,1,auto_suggested,reviewed human gene_exact query
-alias_review|alias_review|alias_review|alias_review,P2_alias,BCL-XL|BCL-XL|BCL-XL|BCL-XL,BCL2L1,3,Colon|HNSC|STAD,parsed_token_review,Q07817,B2CL1_HUMAN,BCL2L1,BCL2L1|BCL2L|BCLX,Bcl-2-like protein 1,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,BCL-XL,BCL2L1,3,Colon|HNSC|STAD,parsed_token_review,Q07817,B2CL1_HUMAN,BCL2L1,BCL2L1|BCL2L|BCLX,Bcl-2-like protein 1,1,auto_suggested,reviewed human gene_exact query
 alias_review,P2_alias,IKK-1,CHUK,3,PDAC,parsed_token_review,O15111,IKKA_HUMAN,CHUK,CHUK|IKKA|TCF16,Inhibitor of nuclear factor kappa-B kinase subunit alpha,1,auto_suggested,reviewed human gene_exact query
 alias_review,P2_alias,ETB,EDNRB,3,PAH,alias_or_family_review,P24530,EDNRB_HUMAN,EDNRB,EDNRB|ETRB,Endothelin receptor type B,1,auto_suggested,reviewed human gene_exact query
 alias_review,P2_alias,IKK-2,IKBKB,3,PDAC,parsed_token_review,O14920,IKKB_HUMAN,IKBKB,IKBKB|IKKB,Inhibitor of nuclear factor kappa-B kinase subunit beta,1,auto_suggested,reviewed human gene_exact query

@@ -98,8 +98,8 @@ def collect_mapping_targets() -> list[dict[str, str]]:
         key = gene.upper()
         existing = targets.get(key)
         if existing:
-            existing["source"] = f"{existing['source']}|alias_review"
-            existing["raw_text"] = f"{existing['raw_text']}|{row['raw_text']}"
+            existing["source"] = "|".join(dict.fromkeys([*existing["source"].split("|"), "alias_review"]))
+            existing["raw_text"] = "|".join(dict.fromkeys([*existing["raw_text"].split("|"), row["raw_text"]]))
             continue
         targets[key] = {
             "source": "alias_review",
