@@ -1,0 +1,12 @@
+manual_mappings:
+  - drug_name: "Rapamycin"
+    drugbank_id: "DB00877"
+    drugbank_alias: "Sirolimus"
+    gene_targets: ["MTOR"]
+    source: "DrugBank (Sirolimus alias)"
+
+  - drug_name: "Luminespib"
+    drugbank_id: null
+    drugbank_alias: null
+    gene_targets: ["HSP90AA1"]
+    source: "GDSC putative target (HSP90)"
