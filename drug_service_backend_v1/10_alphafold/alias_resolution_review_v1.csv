@@ -1,0 +1,31 @@
+review_item_type,raw_text,suggested_gene_symbol,candidate_class,mentions,diseases,source_breakdown,review_decision,final_gene_symbol,uniprot_id,mapping_status,confidence,review_notes
+raw_alias_or_family,PDE5,PDE5A,alias_or_family_review,14,PAH,candidate_target:14,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+raw_alias_or_family,ETA,EDNRA,alias_or_family_review,11,PAH,candidate_target:11,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+raw_alias_or_family,HSP90,,alias_or_family_review,9,Colon|HNSC|LUNG|Liver|STAD,candidate_target:9,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+parsed_token_alias,MEK1,MAP2K1,parsed_token_review,8,Colon|HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=MEK1, MEK2"
+parsed_token_alias,MEK2,MAP2K2,parsed_token_review,8,Colon|HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=MEK1, MEK2"
+raw_alias_or_family,MTORC1,,alias_or_family_review,8,Colon|Liver|STAD,candidate_target:3;evidence_target:5,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+raw_alias_or_family,Proteasome,,alias_or_family_review,5,Colon|HNSC|LUNG|STAD,candidate_target:3;evidence_target:2,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+raw_alias_or_family,PI3Kgamma,PIK3CG,alias_or_family_review,4,BRCA,evidence_target:4,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+parsed_token_alias,BCL-XL,BCL2L1,parsed_token_review,3,Colon|HNSC|STAD,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=BCL2, BCL-XL, MCL1"
+raw_alias_or_family,ETB,EDNRB,alias_or_family_review,3,PAH,candidate_target:3,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+parsed_token_alias,IKK-1,CHUK,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=IKK-1;IKK-2
+parsed_token_alias,IKK-2,IKBKB,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=IKK-1;IKK-2
+parsed_token_alias,IR,INSR,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=IGF1R;IR
+parsed_token_alias,mTORC1,,parsed_token_review,3,Colon,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=mTORC1, mTORC2"
+parsed_token_alias,mTORC2,,parsed_token_review,3,Colon,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=mTORC1, mTORC2"
+raw_alias_or_family,PI3Kbeta,PIK3CB,alias_or_family_review,3,Colon,candidate_target:1;evidence_target:2,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+parsed_token_alias,PROTEASOME,,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=CAPN1;PROTEASOME
+parsed_token_alias,Proteasome,,parsed_token_review,3,HNSC|Liver|STAD,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=Proteasome, CAPN1"
+parsed_token_alias,PROTEASOME,,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=PROTEASOME;PRSS1;PSMB1;PSMB5
+parsed_token_alias,TOP2,,parsed_token_review,3,PDAC,parsed_from_multi_target,needs_review,,,unresolved,,source_target_text=TOP2;TOP2A;TOP2B
+parsed_token_alias,BCL-XL,BCL2L1,parsed_token_review,2,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1"
+parsed_token_alias,EPHRINS,,parsed_token_review,2,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC"
+parsed_token_alias,PDGFR,,parsed_token_review,2,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC"
+parsed_token_alias,BCL-XL,BCL2L1,parsed_token_review,1,Colon,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=BCL2, BCL-XL, BCL-W"
+parsed_token_alias,BCL-XL,BCL2L1,parsed_token_review,1,Colon,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=BCL2, BCL-XL, BFL1, MCL1"
+parsed_token_alias,Ephrins,,parsed_token_review,1,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=ABL, SRC, Ephrins, PDGFR, KIT"
+raw_alias_or_family,NAE,,alias_or_family_review,1,STAD,candidate_target:1,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping
+parsed_token_alias,PDGFR,,parsed_token_review,1,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=ABL, SRC, Ephrins, PDGFR, KIT"
+parsed_token_alias,PDGFR,,parsed_token_review,1,HNSC,parsed_from_multi_target,needs_review,,,unresolved,,"source_target_text=MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR"
+raw_alias_or_family,TOP2,,alias_or_family_review,1,STAD,candidate_target:1,needs_review,,,unresolved,,alias/family/complex term; requires manual UniProt mapping

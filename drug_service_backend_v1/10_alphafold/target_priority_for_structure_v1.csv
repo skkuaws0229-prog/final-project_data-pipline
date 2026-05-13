@@ -1,0 +1,81 @@
+priority,target_text,suggested_gene_symbol,candidate_class,mentions,diseases,source_breakdown,review_status,uniprot_id,structure_priority_reason,recommended_next_action
+P1,TOP1,TOP1,exact_gene_symbol_candidate,40,Colon|HNSC|Liver|PDAC|STAD,candidate_target:15;evidence_target:25,not_started,,frequent exact gene-like target,map_uniprot
+P1,JAK1,JAK1,exact_gene_symbol_candidate,25,IPF|Psoriasis|RA,candidate_target:13;evidence_target:12,not_started,,frequent exact gene-like target,map_uniprot
+P1,JAK2,JAK2,exact_gene_symbol_candidate,22,Psoriasis|RA,candidate_target:6;evidence_target:16,not_started,,frequent exact gene-like target,map_uniprot
+P1,MTOR,MTOR,exact_gene_symbol_candidate,19,Colon|HNSC|Liver|PDAC|STAD,candidate_target:7;evidence_target:12,not_started,,frequent exact gene-like target,map_uniprot
+P1,JAK3,JAK3,exact_gene_symbol_candidate,10,Psoriasis,candidate_target:2;evidence_target:8,not_started,,frequent exact gene-like target,map_uniprot
+P1,TYK2,TYK2,exact_gene_symbol_candidate,10,Psoriasis,candidate_target:2;evidence_target:8,not_started,,frequent exact gene-like target,map_uniprot
+P2,PDE5,PDE5A,alias_or_family_review,14,PAH,candidate_target:14,not_started,,frequent alias/family target; review before mapping,map_uniprot
+P2,ETA,EDNRA,alias_or_family_review,11,PAH,candidate_target:11,not_started,,frequent alias/family target; review before mapping,map_uniprot
+P2,HSP90,,alias_or_family_review,9,Colon|HNSC|LUNG|Liver|STAD,candidate_target:9,not_started,,frequent alias/family target; review before mapping,map_uniprot
+P2,MTORC1,,alias_or_family_review,8,Colon|Liver|STAD,candidate_target:3;evidence_target:5,not_started,,frequent alias/family target; review before mapping,map_uniprot
+P2,Proteasome,,alias_or_family_review,5,Colon|HNSC|LUNG|STAD,candidate_target:3;evidence_target:2,not_started,,frequent alias/family target; review before mapping,map_uniprot
+P2,CDK2,CDK2,exact_gene_symbol_candidate,3,PDAC,candidate_target:1;evidence_target:2,not_started,,exact gene-like target,map_uniprot
+P2,PDGFRB,PDGFRB,exact_gene_symbol_candidate,3,IPF,candidate_target:3,not_started,,exact gene-like target,map_uniprot
+P2,PIK3CG,PIK3CG,exact_gene_symbol_candidate,3,PDAC,candidate_target:1;evidence_target:2,not_started,,exact gene-like target,map_uniprot
+P2,TP53,TP53,exact_gene_symbol_candidate,3,BRCA,evidence_target:3,not_started,,exact gene-like target,map_uniprot
+P2,DOT1L,DOT1L,exact_gene_symbol_candidate,2,LUNG,candidate_target:2,not_started,,exact gene-like target,map_uniprot
+P2,KDR,KDR,exact_gene_symbol_candidate,2,IPF,candidate_target:2,not_started,,exact gene-like target,map_uniprot
+P2,AURKA,AURKA,exact_gene_symbol_candidate,1,HNSC,candidate_target:1,not_started,,exact gene-like target,map_uniprot
+P2,EGFR,EGFR,exact_gene_symbol_candidate,1,HNSC,candidate_target:1,not_started,,exact gene-like target,map_uniprot
+P2,EGLN1,EGLN1,exact_gene_symbol_candidate,1,LUNG,candidate_target:1,not_started,,exact gene-like target,map_uniprot
+P2,FGFR2,FGFR2,exact_gene_symbol_candidate,1,IPF,candidate_target:1,not_started,,exact gene-like target,map_uniprot
+P2,MET,MET,exact_gene_symbol_candidate,1,LUNG,candidate_target:1,not_started,,exact gene-like target,map_uniprot
+P2,PPM1D,PPM1D,exact_gene_symbol_candidate,1,BRCA,evidence_target:1,not_started,,exact gene-like target,map_uniprot
+P3,"MEK1, MEK2",,multi_target_parse_review,8,Colon|HNSC,candidate_target:2;evidence_target:6,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,BCL2;NR1I2;TUBB1,,multi_target_parse_review,6,PDAC,candidate_target:2;evidence_target:4,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"PARP1, PARP2",,multi_target_parse_review,5,BRCA|HNSC,candidate_target:1;evidence_target:4,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"AURKA, AURKB, AURKC, others",,multi_target_parse_review,4,STAD,candidate_target:1;evidence_target:3,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,ANTHRACYCLINE;TOP2A;TOP2B,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,ANTIMETABOLITE;POLB,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"BCL2, BCL-XL, MCL1",,multi_target_parse_review,3,Colon|HNSC|STAD,candidate_target:3,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,BCL2;MAP4;MAPK1;TUBB,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,BRAF;LIMK1;NEK11;RAF1;SIK1,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,CAPN1;PROTEASOME,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,ETB,EDNRB,alias_or_family_review,3,PAH,candidate_target:3,not_started,,candidate target source present,review_or_defer
+P3,FLT3;JAK2;NTRK1;NTRK2;NTRK3,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,IGF1R;IR,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,IKK-1;IKK-2,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,MAP2K1;MAP2K2,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,MTOR;PIK3CG,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"mTORC1, mTORC2",,multi_target_parse_review,3,Colon,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,PI3Kbeta,PIK3CB,alias_or_family_review,3,Colon,candidate_target:1;evidence_target:2,not_started,,candidate target source present,review_or_defer
+P3,"PLK1, PLK2, PLK3",,multi_target_parse_review,3,HNSC|LUNG|STAD,candidate_target:3,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,PLK1;PLK2;PLK3,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,PLK1;WEE1,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"Proteasome, CAPN1",,multi_target_parse_review,3,HNSC|Liver|STAD,candidate_target:3,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,PROTEASOME;PRSS1;PSMB1;PSMB5,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,TOP1;TOP1MT,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,TOP1;TOP2A,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,TOP2;TOP2A;TOP2B,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,TOP2A;TOP2B,,multi_target_parse_review,3,PDAC,candidate_target:1;evidence_target:2,not_started,,multi-target raw text; use parsed token review first,review_or_defer
+P3,"CDK4, CDK6",,multi_target_parse_review,2,HNSC,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"EGFR, ERBB2",,multi_target_parse_review,2,HNSC,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"FLT3, JAK2, NTRK1, NTRK2, NTRK3",,multi_target_parse_review,2,Liver|STAD,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"HDAC1, HDAC3",,multi_target_parse_review,2,HNSC|LUNG,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",,multi_target_parse_review,2,HNSC|LUNG,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"SRC, ABL, TEC",,multi_target_parse_review,2,Liver|STAD,candidate_target:2,not_started,,candidate target source present,review_or_defer
+P3,"ABL, SRC, Ephrins, PDGFR, KIT",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"AKT1, AKT2",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"AKT1, AKT2, AKT3",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"BCL2, BCL-XL, BCL-W",,multi_target_parse_review,1,Colon,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"BCL2, BCL-XL, BFL1, MCL1",,multi_target_parse_review,1,Colon,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"HDAC1, HDAC2, HDAC3, HDAC8",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,NAE,,alias_or_family_review,1,STAD,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"RSK, AURKB, PIM1, PIM3",,multi_target_parse_review,1,STAD,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",,multi_target_parse_review,1,STAD,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,TOP2,,alias_or_family_review,1,STAD,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"WEE1, PLK1",,multi_target_parse_review,1,HNSC,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P3,"XIAP, cIAP",,multi_target_parse_review,1,STAD,candidate_target:1,not_started,,candidate target source present,review_or_defer
+P4,PI3Kgamma,PIK3CG,alias_or_family_review,4,BRCA,evidence_target:4,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",,multi_target_parse_review,2,HNSC,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",,multi_target_parse_review,2,HNSC,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,broad kinase; research-only signal,,multi_target_parse_review,2,RA,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",,multi_target_parse_review,2,HNSC,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3",,multi_target_parse_review,2,HNSC,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2",,multi_target_parse_review,2,HNSC,evidence_target:2,not_started,,lower frequency or evidence-only target,review_or_defer
+P4,AURKA|AURKB|AURKC|OTHERS,,multi_target_parse_review,1,Liver,evidence_target:1,not_started,,lower frequency or evidence-only target,review_or_defer
