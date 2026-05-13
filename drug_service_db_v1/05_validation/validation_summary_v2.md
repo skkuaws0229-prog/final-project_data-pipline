@@ -1,14 +1,14 @@
-# Drug Service 검증 리포트 v2
+# Drug Service Validation Report v2
 
-생성 시각: 2026-05-13T01:56:26.839380+00:00
+Generated at: 2026-05-13T08:44:39.592487+00:00
 
-## 요약
+## Summary
 
-- Colon/IPF/PAH의 Markdown image-modal linkage를 structured evidence row로 parsing했습니다.
-- 기존에 unmatched였던 image-modal drug는 `evidence_only` canonical drug로 보존했습니다.
-- Target normalization은 Neo4j/OpenSearch 단계로 명시적으로 defer했습니다.
+- Markdown image-modal linkage for Colon/IPF/PAH was parsed into structured evidence rows.
+- Previously unmatched image-modal drugs are now preserved as `evidence_only` canonical drugs.
+- Target normalization is explicitly deferred to the Neo4j/OpenSearch phase.
 
-## 주요 Count
+## Key Counts
 
 - image_modal_drug_evidence: 430
 - image_modal_evidence_drug_matches: 430
@@ -16,7 +16,7 @@
 - matched evidence rows: 403
 - evidence_only rows: 27
 
-## 질병별 Evidence 수
+## Evidence By Disease
 
 - BRCA: 32
 - Colon: 40
@@ -30,13 +30,13 @@
 - RA: 32
 - STAD: 39
 
-## 이후 단계로 미룬 항목
+## Deferred To Later Phase
 
-- `target_raw`, `target_type`, extracted canonical gene/pathway/mechanism token 구조로 target canonicalization을 구축합니다.
-- Neo4j에서 Drug-Gene/Protein-Pathway-Disease graph relationship을 구성합니다.
-- OpenSearch/RAG에서 free-text mechanism과 report retrieval을 처리합니다.
+- Build target canonicalization as `target_raw`, `target_type`, and extracted canonical gene/pathway/mechanism tokens.
+- Use Neo4j for Drug-Gene/Protein-Pathway-Disease graph relationships.
+- Use OpenSearch/RAG for free-text mechanism and report retrieval.
 
-## 산출물
+## Artifacts
 
 - validation_counts_v2.csv
 - image_modal_evidence_by_disease_v2.csv
