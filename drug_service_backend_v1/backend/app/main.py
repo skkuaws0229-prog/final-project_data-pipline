@@ -5,6 +5,16 @@ from app.config import settings
 from app.db import fetch_all, fetch_one
 from app.graph_db import close_driver, run_read, verify_connectivity
 from app.kg_embedding_db import get_kg_scores, load_kg_scores
+from app.pipeline_db import (
+    get_pipeline_run,
+    insert_pipeline_config,
+    insert_pipeline_run,
+    list_pipeline_artifacts,
+    list_pipeline_events,
+    make_config_yaml,
+    normalize_pipeline_request,
+)
+from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
 from app.schemas import (
     Disease,
@@ -17,6 +27,10 @@ from app.schemas import (
     ImageModalReport,
     KgEmbeddingResponse,
     PathScoreResponse,
+    PipelineArtifactsResponse,
+    PipelineRunCreateRequest,
+    PipelineRunEventsResponse,
+    PipelineRunResponse,
     SearchResponse,
 )
 
@@ -81,6 +95,80 @@ def graph_kg_embedding(
     if not scores:
         raise HTTPException(status_code=503, detail="KG embedding scores unavailable")
     return {"disease_id": disease_id, "model": model, "scoring_version": "kg_embedding_v1", "scores": scores}
+
+
+def _serialize_pipeline_row(row: dict) -> dict:
+    serialized = dict(row)
+    for key in ("created_at", "started_at", "ended_at", "updated_at", "timestamp"):
+        if serialized.get(key) is not None:
+            serialized[key] = serialized[key].isoformat()
+    if serialized.get("config_snapshot") is None:
+        serialized["config_snapshot"] = {}
+    return serialized
+
+
+@app.post("/api/pipeline-runs", response_model=PipelineRunResponse)
+def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
+    try:
+        disease_name, disease_slug, mode = normalize_pipeline_request(request.disease_name, request.mode, request.execution_backend)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    config_snapshot = {
+        "disease_name": disease_name,
+        "disease_slug": disease_slug,
+        "mode": mode,
+        "execution_backend": request.execution_backend,
+        "random_seed": request.random_seed,
+        "user_config": request.config_snapshot,
+        "secret_policy": "store_secret_ids_only",
+    }
+    run = insert_pipeline_run(
+        disease_name=disease_name,
+        disease_slug=disease_slug,
+        mode=mode,
+        execution_backend=request.execution_backend,
+        requested_by=request.requested_by,
+        config_snapshot=config_snapshot,
+        random_seed=request.random_seed,
+    )
+    config_yaml = make_config_yaml(disease_name, disease_slug, mode, request.execution_backend, request.random_seed)
+    insert_pipeline_config(run["run_id"], disease_name, disease_slug, config_yaml)
+    run = get_orchestrator(request.execution_backend).submit_run(run)
+    return _serialize_pipeline_row(run)
+
+
+@app.get("/api/pipeline-runs/{run_id}", response_model=PipelineRunResponse)
+def get_pipeline_run_status(run_id: str) -> dict:
+    run = get_pipeline_run(run_id)
+    if not run:
+        raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
+    return _serialize_pipeline_row(run)
+
+
+@app.get("/api/pipeline-runs/{run_id}/events", response_model=PipelineRunEventsResponse)
+def get_pipeline_run_events(run_id: str) -> dict:
+    if not get_pipeline_run(run_id):
+        raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
+    events = [_serialize_pipeline_row(row) for row in list_pipeline_events(run_id)]
+    return {"run_id": run_id, "events": events}
+
+
+@app.get("/api/pipeline-runs/{run_id}/artifacts", response_model=PipelineArtifactsResponse)
+def get_pipeline_run_artifacts(run_id: str) -> dict:
+    if not get_pipeline_run(run_id):
+        raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
+    artifacts = [_serialize_pipeline_row(row) for row in list_pipeline_artifacts(run_id)]
+    return {"run_id": run_id, "artifacts": artifacts}
+
+
+@app.post("/api/pipeline-runs/{run_id}/cancel", response_model=PipelineRunResponse)
+def cancel_pipeline_run(run_id: str) -> dict:
+    run = get_pipeline_run(run_id)
+    if not run:
+        raise HTTPException(status_code=404, detail=f"Unknown run_id: {run_id}")
+    updated = get_orchestrator(run["execution_backend"]).cancel_run(run_id)
+    return _serialize_pipeline_row(updated)
 
 
 @app.get("/search", response_model=SearchResponse)

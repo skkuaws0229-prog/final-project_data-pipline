@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Pipeline Run Control API
+  version: 0.1.0
+  description: Bedrock/RAG/LLM 연결 전 파이프라인 실행 제어 계층 mock API
+paths:
+  /api/pipeline-runs:
+    post:
+      summary: Create pipeline run
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [disease_name]
+              properties:
+                disease_name:
+                  type: string
+                  example: 난소암
+                mode:
+                  type: string
+                  enum: [basic, image_modal, full]
+                  default: full
+                execution_backend:
+                  type: string
+                  enum: [mock, local_agent, aws_stepfunctions]
+                  default: mock
+                requested_by:
+                  type: string
+                  nullable: true
+                random_seed:
+                  type: integer
+                  default: 42
+                config_snapshot:
+                  type: object
+      responses:
+        "200":
+          description: Created pipeline run
+  /api/pipeline-runs/{run_id}:
+    get:
+      summary: Get pipeline run status
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Pipeline run status
+  /api/pipeline-runs/{run_id}/events:
+    get:
+      summary: List pipeline run events
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Pipeline run events
+  /api/pipeline-runs/{run_id}/artifacts:
+    get:
+      summary: List pipeline run artifacts
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Pipeline run artifacts
+  /api/pipeline-runs/{run_id}/cancel:
+    post:
+      summary: Cancel mock pipeline run
+      parameters:
+        - name: run_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cancelled run
+

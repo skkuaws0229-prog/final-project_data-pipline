@@ -1,6 +1,6 @@
 from typing import Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class HealthResponse(BaseModel):
@@ -150,6 +150,69 @@ class KgEmbeddingResponse(BaseModel):
     scores: list[KgEmbeddingScore]
 
 
+class PipelineRunCreateRequest(BaseModel):
+    disease_name: str
+    mode: str = "full"
+    execution_backend: str = "mock"
+    requested_by: str | None = None
+    random_seed: int = 42
+    config_snapshot: dict[str, Any] = Field(default_factory=dict)
+
+
+class PipelineRunResponse(BaseModel):
+    run_id: str
+    disease_name: str
+    disease_slug: str
+    mode: str
+    execution_backend: str
+    status: str
+    current_step: str | None = None
+    requested_by: str | None = None
+    s3_output_prefix: str | None = None
+    config_snapshot: dict[str, Any] = Field(default_factory=dict)
+    random_seed: int | None = None
+    verdict: str | None = None
+    error_message: str | None = None
+    estimated_cost_usd: float | None = None
+    estimated_time_minutes: int | None = None
+    created_at: str | None = None
+    started_at: str | None = None
+    ended_at: str | None = None
+    updated_at: str | None = None
+
+
+class PipelineRunEvent(BaseModel):
+    event_id: str
+    run_id: str
+    timestamp: str
+    level: str
+    step: str | None = None
+    message: str
+    payload_json: dict[str, Any] = Field(default_factory=dict)
+
+
+class PipelineRunEventsResponse(BaseModel):
+    run_id: str
+    events: list[PipelineRunEvent]
+
+
+class PipelineArtifact(BaseModel):
+    artifact_id: str
+    run_id: str
+    artifact_type: str
+    step: str | None = None
+    name: str
+    uri: str
+    size_bytes: int | None = None
+    checksum: str | None = None
+    created_at: str | None = None
+
+
+class PipelineArtifactsResponse(BaseModel):
+    run_id: str
+    artifacts: list[PipelineArtifact]
+
+
 class SearchHit(BaseModel):
     id: str
     score: float | None = None
@@ -162,8 +225,8 @@ class SearchHit(BaseModel):
     match_status: str | None = None
     source_file: str | None = None
     snippet: str | None = None
-    highlights: dict[str, list[str]] = {}
-    source: dict[str, Any] = {}
+    highlights: dict[str, list[str]] = Field(default_factory=dict)
+    source: dict[str, Any] = Field(default_factory=dict)
 
 
 class SearchResponse(BaseModel):

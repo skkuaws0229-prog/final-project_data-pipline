@@ -12,11 +12,12 @@ Graph API: /graph/relations 검증 완료
 OpenSearch: text search 연결 완료
 Path scoring: /graph/path-score 검증 완료
 KG embedding: /graph/kg-embedding 검증 완료
+Pipeline run control API: mock backend 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
 RAG/LLM: 아직 미연결
 ```
 
-React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring + KG embedding 기반 화면을 먼저 붙이고, 이후 RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
+React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring + KG embedding 기반 화면을 먼저 붙이고, pipeline run control API는 이후 챗봇/Bedrock/RAG 연결 전 상태조회 패널로 붙이는 방향이 좋습니다.
 
 ## 실행 방법
 
@@ -93,6 +94,11 @@ GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
+POST /api/pipeline-runs
+GET /api/pipeline-runs/{run_id}
+GET /api/pipeline-runs/{run_id}/events
+GET /api/pipeline-runs/{run_id}/artifacts
+POST /api/pipeline-runs/{run_id}/cancel
 ```
 
 ## 데이터 매칭 규칙
@@ -255,6 +261,38 @@ is_known_candidate=false 항목은 신규 후보/확장 후보로 구분
 KG score만으로 추천 문구를 만들지 말고 path_score/evidence/risk와 함께 표시
 ```
 
+## Pipeline run control API 참고
+
+`/api/pipeline-runs`는 Bedrock/RAG/LLM 챗봇이 나중에 파이프라인을 직접 실행하지 않고 backend API만 호출하게 하기 위한 제어 계층입니다.
+
+현재는 mock backend만 실제 동작합니다.
+
+```json
+{
+  "disease_name": "난소암",
+  "mode": "full",
+  "execution_backend": "mock"
+}
+```
+
+프론트 표시 제안:
+
+```text
+run status: queued/running/completed/failed/cancelled/blocked
+current_step: 현재 단계 표시
+events: timeline/log panel
+artifacts: 결과 report/csv/json link 목록
+```
+
+주의:
+
+```text
+local_agent와 aws_stepfunctions는 skeleton만 있습니다.
+feature flag 없이는 실제 실행되지 않고 blocked 처리됩니다.
+SageMaker, Step Functions, WSI 다운로드, 대용량 embedding 생성은 이 단계에서 실행하지 않습니다.
+secret/API key는 DB에 저장하지 않습니다.
+```
+
 ## 검증 완료 사항
 
 Graph API 검증 결과:
@@ -318,6 +356,16 @@ Score rows: 1870
 Known candidate score rows: 247
 질병 내 duplicate canonical_drug_id: 0
 상세 리포트: drug_service_backend_v1/09_kg_embedding/kg_embedding_api_validation_v1.md
+```
+
+Pipeline run control API v1 검증:
+
+```text
+Mock run 생성/상태조회/이벤트조회/artifact조회/취소 완료
+AWS Step Functions backend guardrail blocked 확인
+잘못된 질환명 400 Bad Request 확인
+실제 SageMaker/Step Functions job 미실행
+상세 리포트: drug_service_backend_v1/docs/pipeline_run_validation_v1.md
 ```
 
 ## 아직 구현하지 않는 것

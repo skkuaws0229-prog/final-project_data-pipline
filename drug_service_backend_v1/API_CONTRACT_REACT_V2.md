@@ -593,6 +593,64 @@ image_report: image-modal report 본문
 - 검색 대상 문서는 총 699개입니다.
 - `snippet`에는 OpenSearch highlight 첫 fragment 또는 fallback text가 들어갑니다.
 
+## 13. Pipeline run control API
+
+이 API는 Bedrock/RAG/LLM 챗봇이 나중에 호출할 파이프라인 제어 계층입니다. 현재 단계에서는 실제 SageMaker, Step Functions, Local Agent 실행을 붙이지 않고 mock backend만 동작합니다.
+
+### POST /api/pipeline-runs
+
+파이프라인 run을 생성합니다.
+
+요청 예시:
+
+```json
+{
+  "disease_name": "난소암",
+  "mode": "full",
+  "execution_backend": "mock",
+  "requested_by": "frontend"
+}
+```
+
+응답 예시:
+
+```json
+{
+  "run_id": "run_24171fce856a4172",
+  "disease_name": "난소암",
+  "disease_slug": "ov",
+  "mode": "full",
+  "execution_backend": "mock",
+  "status": "running",
+  "current_step": "mock_pipeline",
+  "s3_output_prefix": "s3://say2-4team/pipeline_results/ov/"
+}
+```
+
+### GET /api/pipeline-runs/{run_id}
+
+run 상태를 조회합니다.
+
+### GET /api/pipeline-runs/{run_id}/events
+
+run 이벤트 로그를 조회합니다.
+
+### GET /api/pipeline-runs/{run_id}/artifacts
+
+run 결과 artifact 목록을 조회합니다.
+
+### POST /api/pipeline-runs/{run_id}/cancel
+
+현재 단계에서는 mock run만 `cancelled`로 변경합니다.
+
+주의사항:
+
+- `execution_backend` 기본값은 `mock`입니다.
+- `local_agent`, `aws_stepfunctions`는 skeleton만 있으며 feature flag 없이는 `blocked` 처리됩니다.
+- 비용 발생 AWS job, SageMaker job, WSI 다운로드, 대용량 embedding 생성은 실행하지 않습니다.
+- secret/API key는 DB에 저장하지 않습니다.
+- 이 API는 React v2의 일반 화면 기능이라기보다, 이후 챗봇/Bedrock/RAG 연결 전 단계의 backend 계약입니다.
+
 ## 공통 에러 처리
 
 존재하지 않는 `disease_id`:
@@ -627,4 +685,5 @@ HTTP 503
 5. /graph/relations graph viewer
 6. /search text search
 7. /image-modal/reports 상세 report 보기
+8. /api/pipeline-runs mock run 상태/이벤트/artifact panel
 ```

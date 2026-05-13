@@ -161,3 +161,69 @@ CREATE INDEX IF NOT EXISTS idx_disease_aliases_normalized
 
 CREATE INDEX IF NOT EXISTS idx_image_modal_matches_canonical
   ON image_modal_evidence_drug_matches(canonical_drug_id);
+
+CREATE TABLE IF NOT EXISTS pipeline_runs (
+  run_id TEXT PRIMARY KEY,
+  disease_name TEXT NOT NULL,
+  disease_slug TEXT NOT NULL,
+  mode TEXT NOT NULL CHECK (mode IN ('basic', 'image_modal', 'full')),
+  execution_backend TEXT NOT NULL CHECK (execution_backend IN ('local_agent', 'aws_stepfunctions', 'mock')),
+  status TEXT NOT NULL CHECK (status IN ('queued', 'preflight', 'running', 'waiting_external_job', 'validating', 'completed', 'failed', 'cancelled', 'blocked')),
+  current_step TEXT,
+  requested_by TEXT,
+  s3_output_prefix TEXT,
+  config_snapshot JSONB NOT NULL DEFAULT '{}'::jsonb,
+  random_seed INTEGER,
+  verdict TEXT,
+  error_message TEXT,
+  estimated_cost_usd NUMERIC,
+  estimated_time_minutes INTEGER,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  started_at TIMESTAMPTZ,
+  ended_at TIMESTAMPTZ,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_pipeline_runs_disease_status
+  ON pipeline_runs(disease_slug, status);
+
+CREATE TABLE IF NOT EXISTS pipeline_run_events (
+  event_id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES pipeline_runs(run_id) ON DELETE CASCADE,
+  timestamp TIMESTAMPTZ NOT NULL DEFAULT now(),
+  level TEXT NOT NULL CHECK (level IN ('info', 'warning', 'error', 'debug')),
+  step TEXT,
+  message TEXT NOT NULL,
+  payload_json JSONB NOT NULL DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX IF NOT EXISTS idx_pipeline_run_events_run_time
+  ON pipeline_run_events(run_id, timestamp);
+
+CREATE TABLE IF NOT EXISTS pipeline_artifacts (
+  artifact_id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES pipeline_runs(run_id) ON DELETE CASCADE,
+  artifact_type TEXT NOT NULL CHECK (artifact_type IN ('report', 'csv', 'json', 'plot', 'model_summary', 's3_prefix', 'log', 'validation')),
+  step TEXT,
+  name TEXT NOT NULL,
+  uri TEXT NOT NULL,
+  size_bytes BIGINT,
+  checksum TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_pipeline_artifacts_run
+  ON pipeline_artifacts(run_id);
+
+CREATE TABLE IF NOT EXISTS pipeline_configs (
+  config_id TEXT PRIMARY KEY,
+  run_id TEXT NOT NULL REFERENCES pipeline_runs(run_id) ON DELETE CASCADE,
+  disease_name TEXT NOT NULL,
+  disease_slug TEXT NOT NULL,
+  config_yaml TEXT NOT NULL,
+  config_hash TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_pipeline_configs_run
+  ON pipeline_configs(run_id);
