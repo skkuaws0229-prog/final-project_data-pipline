@@ -19,6 +19,7 @@ backend/requirements.txt
 backend/.env.example  로컬 실행용 환경변수 예시
 08_path_scoring/      Neo4j path scoring v1 설계/검증 리포트
 09_kg_embedding/      DistMult/TransE KG embedding baseline 산출물
+10_alphafold/         AlphaFold target mapping 후보 CSV
 docs/                 Pipeline run control API 설계/검증 문서
 docker-compose.backend.yml
 ```
@@ -60,6 +61,7 @@ docs/pipeline_run_frontend_handoff_v1.md
 docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md
+docs/alphafold_target_mapping_plan_v1.md
 ```
 
 ## Docker Compose 실행

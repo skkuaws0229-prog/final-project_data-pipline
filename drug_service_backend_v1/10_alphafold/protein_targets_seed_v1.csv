@@ -1,0 +1,81 @@
+protein_id,gene_symbol,uniprot_id,protein_name,organism,source_target_text,mapping_status,notes
+,TOP1,,,Homo sapiens,TOP1,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,JAK1,,,Homo sapiens,JAK1,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,JAK2,,,Homo sapiens,JAK2,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,MTOR,,,Homo sapiens,MTOR,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,PDE5A,,,Homo sapiens,PDE5,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,EDNRA,,,Homo sapiens,ETA,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,JAK3,,,Homo sapiens,JAK3,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,TYK2,,,Homo sapiens,TYK2,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,HSP90,,,Homo sapiens,HSP90,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,"MEK1, MEK2",,,Homo sapiens,"MEK1, MEK2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,MTORC1,,,Homo sapiens,MTORC1,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,BCL2;NR1I2;TUBB1,,,Homo sapiens,BCL2;NR1I2;TUBB1,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"PARP1, PARP2",,,Homo sapiens,"PARP1, PARP2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,Proteasome,,,Homo sapiens,Proteasome,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,"AURKA, AURKB, AURKC, others",,,Homo sapiens,"AURKA, AURKB, AURKC, others",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,PIK3CG,,,Homo sapiens,PI3Kgamma,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,,,Homo sapiens,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,ANTHRACYCLINE;TOP2A;TOP2B,,,Homo sapiens,ANTHRACYCLINE;TOP2A;TOP2B,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,ANTIMETABOLITE;POLB,,,Homo sapiens,ANTIMETABOLITE;POLB,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"BCL2, BCL-XL, MCL1",,,Homo sapiens,"BCL2, BCL-XL, MCL1",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,BCL2;MAP4;MAPK1;TUBB,,,Homo sapiens,BCL2;MAP4;MAPK1;TUBB,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,BRAF;LIMK1;NEK11;RAF1;SIK1,,,Homo sapiens,BRAF;LIMK1;NEK11;RAF1;SIK1,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,CAPN1;PROTEASOME,,,Homo sapiens,CAPN1;PROTEASOME,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,CDK2,,,Homo sapiens,CDK2,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,,,Homo sapiens,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,EDNRB,,,Homo sapiens,ETB,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,FLT3;JAK2;NTRK1;NTRK2;NTRK3,,,Homo sapiens,FLT3;JAK2;NTRK1;NTRK2;NTRK3,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,IGF1R;IR,,,Homo sapiens,IGF1R;IR,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,IKK-1;IKK-2,,,Homo sapiens,IKK-1;IKK-2,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,,,Homo sapiens,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,MAP2K1;MAP2K2,,,Homo sapiens,MAP2K1;MAP2K2,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,MTOR;PIK3CG,,,Homo sapiens,MTOR;PIK3CG,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"mTORC1, mTORC2",,,Homo sapiens,"mTORC1, mTORC2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,PDGFRB,,,Homo sapiens,PDGFRB,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,PIK3CB,,,Homo sapiens,PI3Kbeta,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,PIK3CG,,,Homo sapiens,PIK3CG,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"PLK1, PLK2, PLK3",,,Homo sapiens,"PLK1, PLK2, PLK3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,PLK1;PLK2;PLK3,,,Homo sapiens,PLK1;PLK2;PLK3,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,PLK1;WEE1,,,Homo sapiens,PLK1;WEE1,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"Proteasome, CAPN1",,,Homo sapiens,"Proteasome, CAPN1",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,PROTEASOME;PRSS1;PSMB1;PSMB5,,,Homo sapiens,PROTEASOME;PRSS1;PSMB1;PSMB5,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TOP1;TOP1MT,,,Homo sapiens,TOP1;TOP1MT,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TOP1;TOP2A,,,Homo sapiens,TOP1;TOP2A,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TOP2;TOP2A;TOP2B,,,Homo sapiens,TOP2;TOP2A;TOP2B,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TOP2A;TOP2B,,,Homo sapiens,TOP2A;TOP2B,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TP53,,,Homo sapiens,TP53,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",,,Homo sapiens,"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",,,Homo sapiens,"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,broad kinase; research-only signal,,,Homo sapiens,broad kinase; research-only signal,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"CDK4, CDK6",,,Homo sapiens,"CDK4, CDK6",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,DOT1L,,,Homo sapiens,DOT1L,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"EGFR, ERBB2",,,Homo sapiens,"EGFR, ERBB2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"FLT3, JAK2, NTRK1, NTRK2, NTRK3",,,Homo sapiens,"FLT3, JAK2, NTRK1, NTRK2, NTRK3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"HDAC1, HDAC3",,,Homo sapiens,"HDAC1, HDAC3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",,,Homo sapiens,"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3",,,Homo sapiens,"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,KDR,,,Homo sapiens,KDR,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2",,,Homo sapiens,"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",,,Homo sapiens,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"SRC, ABL, TEC",,,Homo sapiens,"SRC, ABL, TEC",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"ABL, SRC, Ephrins, PDGFR, KIT",,,Homo sapiens,"ABL, SRC, Ephrins, PDGFR, KIT",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"AKT1, AKT2",,,Homo sapiens,"AKT1, AKT2",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"AKT1, AKT2, AKT3",,,Homo sapiens,"AKT1, AKT2, AKT3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,AURKA,,,Homo sapiens,AURKA,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,AURKA|AURKB|AURKC|OTHERS,,,Homo sapiens,AURKA|AURKB|AURKC|OTHERS,needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"BCL2, BCL-XL, BCL-W",,,Homo sapiens,"BCL2, BCL-XL, BCL-W",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"BCL2, BCL-XL, BFL1, MCL1",,,Homo sapiens,"BCL2, BCL-XL, BFL1, MCL1",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,EGFR,,,Homo sapiens,EGFR,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,EGLN1,,,Homo sapiens,EGLN1,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,FGFR2,,,Homo sapiens,FGFR2,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"HDAC1, HDAC2, HDAC3, HDAC8",,,Homo sapiens,"HDAC1, HDAC2, HDAC3, HDAC8",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,MET,,,Homo sapiens,MET,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",,,Homo sapiens,"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,NAE,,,Homo sapiens,NAE,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,PPM1D,,,Homo sapiens,PPM1D,needs_uniprot_mapping,clean gene-like symbol; still requires UniProt confirmation
+,"RSK, AURKB, PIM1, PIM3",,,Homo sapiens,"RSK, AURKB, PIM1, PIM3",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",,,Homo sapiens,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,TOP2,,,Homo sapiens,TOP2,needs_uniprot_mapping,alias/family/complex term; requires manual UniProt mapping
+,"WEE1, PLK1",,,Homo sapiens,"WEE1, PLK1",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
+,"XIAP, cIAP",,,Homo sapiens,"XIAP, cIAP",needs_uniprot_mapping,contains multiple target tokens; parse before UniProt mapping
