@@ -64,6 +64,7 @@ docs/alphafold_integrity_validation_v1.md
 docs/alphafold_target_mapping_plan_v1.md
 docs/alphafold_target_mapping_integrity_v1.md
 docs/target_mapping_policy_and_review_v1.md
+docs/uniprot_auto_mapping_validation_v1.md
 ```
 
 ## Docker Compose 실행

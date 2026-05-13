@@ -1,0 +1,29 @@
+source,priority,raw_text,suggested_gene_symbol,mentions,diseases,candidate_class,auto_uniprot_id,uniprot_entry_name,uniprot_primary_gene,uniprot_gene_names,protein_name,hit_count,auto_mapping_status,mapping_notes
+priority,P1,JAK1,JAK1,25,IPF|Psoriasis|RA,exact_gene_symbol_candidate,P23458,JAK1_HUMAN,JAK1,JAK1|JAK1A|JAK1B,Tyrosine-protein kinase JAK1,1,auto_suggested,reviewed human gene_exact query
+priority,P1,JAK2,JAK2,22,Psoriasis|RA,exact_gene_symbol_candidate,O60674,JAK2_HUMAN,JAK2,JAK2,Tyrosine-protein kinase JAK2,1,auto_suggested,reviewed human gene_exact query
+priority,P1,JAK3,JAK3,10,Psoriasis,exact_gene_symbol_candidate,P52333,JAK3_HUMAN,JAK3,JAK3,Tyrosine-protein kinase JAK3,1,auto_suggested,reviewed human gene_exact query
+priority,P1,MTOR,MTOR,19,Colon|HNSC|Liver|PDAC|STAD,exact_gene_symbol_candidate,P42345,MTOR_HUMAN,MTOR,MTOR|FRAP|FRAP1|FRAP2|RAFT1|RAPT1,Serine/threonine-protein kinase mTOR,1,auto_suggested,reviewed human gene_exact query
+priority,P1,TOP1,TOP1,40,Colon|HNSC|Liver|PDAC|STAD,exact_gene_symbol_candidate,P11387,TOP1_HUMAN,TOP1,TOP1,DNA topoisomerase 1,1,auto_suggested,reviewed human gene_exact query
+priority,P1,TYK2,TYK2,10,Psoriasis,exact_gene_symbol_candidate,P29597,TYK2_HUMAN,TYK2,TYK2,Non-receptor tyrosine-protein kinase TYK2,1,auto_suggested,reviewed human gene_exact query
+priority,P2,AURKA,AURKA,1,HNSC,exact_gene_symbol_candidate,O14965,AURKA_HUMAN,AURKA,AURKA|AIK|AIRK1|ARK1|AURA|AYK1|BTAK|IAK1|STK15|STK6,Aurora kinase A,1,auto_suggested,reviewed human gene_exact query
+priority,P2,CDK2,CDK2,3,PDAC,exact_gene_symbol_candidate,P24941,CDK2_HUMAN,CDK2,CDK2|CDKN2,Cyclin-dependent kinase 2,1,auto_suggested,reviewed human gene_exact query
+priority,P2,DOT1L,DOT1L,2,LUNG,exact_gene_symbol_candidate,Q8TEK3,DOT1L_HUMAN,DOT1L,DOT1L|KIAA1814|KMT4,"Histone-lysine N-methyltransferase, H3 lysine-79 specific",1,auto_suggested,reviewed human gene_exact query
+priority|alias_review,P2,ETA|ETA,EDNRA,11,PAH,alias_or_family_review,P25101,EDNRA_HUMAN,EDNRA,EDNRA|ETA|ETRA,Endothelin-1 receptor,1,auto_suggested,reviewed human gene_exact query
+priority,P2,EGFR,EGFR,1,HNSC,exact_gene_symbol_candidate,P00533,EGFR_HUMAN,EGFR,EGFR|ERBB|ERBB1|HER1,Epidermal growth factor receptor,1,auto_suggested,reviewed human gene_exact query
+priority,P2,EGLN1,EGLN1,1,LUNG,exact_gene_symbol_candidate,Q9GZT9,EGLN1_HUMAN,EGLN1,EGLN1|C1orf12,Egl nine homolog 1,1,auto_suggested,reviewed human gene_exact query
+priority,P2,FGFR2,FGFR2,1,IPF,exact_gene_symbol_candidate,P21802,FGFR2_HUMAN,FGFR2,FGFR2|BEK|KGFR|KSAM,Fibroblast growth factor receptor 2,1,auto_suggested,reviewed human gene_exact query
+priority,P2,KDR,KDR,2,IPF,exact_gene_symbol_candidate,P35968,VGFR2_HUMAN,KDR,KDR|FLK1|VEGFR2,Vascular endothelial growth factor receptor 2,1,auto_suggested,reviewed human gene_exact query
+priority,P2,MET,MET,1,LUNG,exact_gene_symbol_candidate,P08581,MET_HUMAN,MET,MET,Hepatocyte growth factor receptor,2,needs_review_multi_hit,reviewed human gene_exact query
+priority|alias_review,P2,PDE5|PDE5,PDE5A,14,PAH,alias_or_family_review,O76074,PDE5A_HUMAN,PDE5A,PDE5A|PDE5,"cGMP-specific 3',5'-cyclic phosphodiesterase",1,auto_suggested,reviewed human gene_exact query
+priority,P2,PDGFRB,PDGFRB,3,IPF,exact_gene_symbol_candidate,P09619,PGFRB_HUMAN,PDGFRB,PDGFRB|PDGFR|PDGFR1,Platelet-derived growth factor receptor beta,1,auto_suggested,reviewed human gene_exact query
+priority|alias_review,P2,PIK3CG|PI3Kgamma,PIK3CG,3,PDAC,exact_gene_symbol_candidate,P48736,PK3CG_HUMAN,PIK3CG,PIK3CG,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit gamma isoform",1,auto_suggested,reviewed human gene_exact query
+priority,P2,PPM1D,PPM1D,1,BRCA,exact_gene_symbol_candidate,O15297,PPM1D_HUMAN,PPM1D,PPM1D|WIP1,Protein phosphatase 1D,1,auto_suggested,reviewed human gene_exact query
+priority,P2,TP53,TP53,3,BRCA,exact_gene_symbol_candidate,P04637,P53_HUMAN,TP53,TP53|P53,Cellular tumor antigen p53,1,auto_suggested,reviewed human gene_exact query
+alias_review|alias_review|alias_review|alias_review,P2_alias,BCL-XL|BCL-XL|BCL-XL|BCL-XL,BCL2L1,3,Colon|HNSC|STAD,parsed_token_review,Q07817,B2CL1_HUMAN,BCL2L1,BCL2L1|BCL2L|BCLX,Bcl-2-like protein 1,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,IKK-1,CHUK,3,PDAC,parsed_token_review,O15111,IKKA_HUMAN,CHUK,CHUK|IKKA|TCF16,Inhibitor of nuclear factor kappa-B kinase subunit alpha,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,ETB,EDNRB,3,PAH,alias_or_family_review,P24530,EDNRB_HUMAN,EDNRB,EDNRB|ETRB,Endothelin receptor type B,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,IKK-2,IKBKB,3,PDAC,parsed_token_review,O14920,IKKB_HUMAN,IKBKB,IKBKB|IKKB,Inhibitor of nuclear factor kappa-B kinase subunit beta,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,IR,INSR,3,PDAC,parsed_token_review,P06213,INSR_HUMAN,INSR,INSR,Insulin receptor,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,MEK1,MAP2K1,8,Colon|HNSC,parsed_token_review,Q02750,MP2K1_HUMAN,MAP2K1,MAP2K1|MEK1|PRKMK1,Dual specificity mitogen-activated protein kinase kinase 1,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,MEK2,MAP2K2,8,Colon|HNSC,parsed_token_review,P36507,MP2K2_HUMAN,MAP2K2,MAP2K2|MEK2|MKK2|PRKMK2,Dual specificity mitogen-activated protein kinase kinase 2,1,auto_suggested,reviewed human gene_exact query
+alias_review,P2_alias,PI3Kbeta,PIK3CB,3,Colon,alias_or_family_review,P42338,PK3CB_HUMAN,PIK3CB,PIK3CB|PIK3C1,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit beta isoform",1,auto_suggested,reviewed human gene_exact query
