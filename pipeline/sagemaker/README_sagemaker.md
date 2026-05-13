@@ -6,6 +6,8 @@
 
 Claude/Agentic AI config 생성 로직은 기존처럼 `run_disease_pipeline.py` 안에 둔다. 이 AWS 계층은 실행 위치, 권한, 저장소, 검증, 알림만 감싼다.
 
+로컬 에이전트 4개 기반 실행 프로토콜은 `pipeline/README_local_agent.md`를 따른다. 이 문서는 AWS 이관/배포/운영 기준만 다룬다.
+
 ## 파일 구성
 
 - `Dockerfile.basic`: `run_disease_pipeline.py`와 IM3~5 CPU 후처리를 실행하는 CPU 이미지

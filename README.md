@@ -26,6 +26,14 @@ S3 원본 위치:
 | `RA/` | 류마티스 관절염 | X-ray 이미지 모달 결과, 약물 결과, 외부 검증 요약 |
 | `pipeline/` | 자동 워크플로우 파이프라인 | 오케스트레이터, 11개 config, step 모듈, 공통 유틸 |
 
+## 파이프라인 실행 문서
+
+`pipeline/`에는 실행 방식별 README가 분리되어 있습니다.
+
+- `pipeline/README_local_agent.md`: 로컬 에이전트 4개 기반 실행 프로토콜. 기본 파이프라인, 이미지 모달, 임베딩, 약물 추천, 검증을 에이전트가 확인하며 이어서 진행합니다.
+- `pipeline/sagemaker/README_sagemaker.md`: AWS 이관 실행 문서. Lambda, Step Functions, SageMaker, Secrets Manager, S3 preflight 기반으로 질환명 하나를 받아 자동 실행합니다.
+- `pipeline/sagemaker/automation_protocol.md`: 로컬/AWS 공통 운영 원칙. 권한 사전검사, 데이터 재사용, 1-slide smoke, 4-way 병렬, seed 고정, 중복 job 방지 기준을 정리합니다.
+
 ## 포함된 자료
 
 - 재현 가능한 워크플로우 코드와 YAML config
