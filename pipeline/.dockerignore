@@ -1,0 +1,26 @@
+# keep SageMaker image small and code-only
+.git
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+.DS_Store
+
+# local pipeline data/results
+*_pipeline/
+catboost_info/
+*.npy
+*.parquet
+*.h5
+*.svs
+*.SVS
+*.png
+*.jpg
+*.jpeg
+*.zip
+
+# local temp/cache
+.venv/
+venv/
+.cache/
+.pytest_cache/

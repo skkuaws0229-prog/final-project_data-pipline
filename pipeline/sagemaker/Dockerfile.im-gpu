@@ -1,0 +1,38 @@
+# Optional GPU image for IM1~2 if an existing production image is not reused.
+# The current workflow can keep using the existing IM1~2 SageMaker image.
+FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/opt/ml \
+    MPLCONFIGDIR=/tmp/matplotlib
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    openslide-tools \
+    libopenslide0 \
+    libgl1 \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir \
+    boto3 \
+    sagemaker \
+    pandas \
+    numpy \
+    scikit-learn \
+    scipy \
+    pyarrow \
+    matplotlib \
+    pyyaml \
+    timm \
+    h5py \
+    openslide-python \
+    pillow \
+    tqdm
+
+COPY . /opt/ml/pipeline/
+WORKDIR /opt/ml/pipeline
+
+ENTRYPOINT ["python3"]

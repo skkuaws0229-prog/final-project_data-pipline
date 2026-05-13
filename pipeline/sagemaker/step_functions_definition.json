@@ -1,0 +1,170 @@
+{
+  "Comment": "Drug Repurposing Full Pipeline",
+  "StartAt": "GenerateConfig",
+  "States": {
+    "GenerateConfig": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:{region}:{account}:function:drug-repurposing-config",
+      "Parameters": {
+        "disease_name.$": "$.disease_name"
+      },
+      "ResultPath": "$.config",
+      "Next": "BasicPipeline"
+    },
+    "BasicPipeline": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sagemaker:createProcessingJob.sync",
+      "Parameters": {
+        "ProcessingJobName.$": "States.Format('basic-{}-{}', $.config.disease_slug, States.UUID())",
+        "AppSpecification": {
+          "ImageUri.$": "$.config.pipeline_image_uri",
+          "ContainerEntrypoint": ["python3", "run_disease_pipeline.py"],
+          "ContainerArguments.$": "States.Array('--disease', $.disease_name, '--mode', 'full')"
+        },
+        "Environment": {
+          "DISEASE_NAME.$": "$.disease_name",
+          "PIPELINE_MODE": "full",
+          "ANTHROPIC_SECRET_ID.$": "$.config.anthropic_secret_id",
+          "SM_PROCESSING_INPUT": "true",
+          "S3_OUTPUT.$": "$.config.s3_output_path",
+          "RANDOM_SEED": "42",
+          "WSI_DEFAULT_LIMIT.$": "States.JsonToString($.config.image_modal_policy.wsi_default_limit)",
+          "WSI_MAX_LIMIT.$": "States.JsonToString($.config.image_modal_policy.wsi_max_limit)",
+          "WSI_SMOKE_COUNT.$": "States.JsonToString($.config.image_modal_policy.wsi_smoke_count)",
+          "WSI_PARALLEL_DOWNLOADS.$": "States.JsonToString($.config.image_modal_policy.wsi_parallel_downloads)",
+          "EMBEDDING_PARALLEL_PARTS.$": "States.JsonToString($.config.image_modal_policy.embedding_parallel_parts)"
+        },
+        "ProcessingResources": {
+          "ClusterConfig": {
+            "InstanceCount": 1,
+            "InstanceType": "ml.m5.4xlarge",
+            "VolumeSizeInGB": 50
+          }
+        },
+        "ProcessingOutputConfig": {
+          "Outputs": [
+            {
+              "OutputName": "basic-output",
+              "S3Output": {
+                "S3Uri.$": "States.Format('{}/{}/basic_pipeline/', $.config.s3_output_path, $.config.disease_slug)",
+                "LocalPath": "/opt/ml/processing/output",
+                "S3UploadMode": "EndOfJob"
+              }
+            }
+          ]
+        },
+        "RoleArn.$": "$.config.sagemaker_role"
+      },
+      "ResultPath": "$.basic_result",
+      "Next": "ImageModalGPU"
+    },
+    "ImageModalGPU": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sagemaker:createTrainingJob.sync",
+      "Comment": "IM1~2: existing WSI download/tile/UNI2 GPU job image",
+      "Parameters": {
+        "TrainingJobName.$": "States.Format('im-gpu-{}-{}', $.config.disease_slug, States.UUID())",
+        "AlgorithmSpecification": {
+          "TrainingImage.$": "$.config.im_gpu_image_uri",
+          "TrainingInputMode": "File"
+        },
+        "ResourceConfig": {
+          "InstanceCount": 1,
+          "InstanceType": "ml.g5.2xlarge",
+          "VolumeSizeInGB": 200
+        },
+        "OutputDataConfig": {
+          "S3OutputPath.$": "States.Format('{}/{}/image_modal_gpu/', $.config.s3_output_path, $.config.disease_slug)"
+        },
+        "StoppingCondition": {
+          "MaxRuntimeInSeconds": 86400
+        },
+        "RoleArn.$": "$.config.sagemaker_role"
+      },
+      "ResultPath": "$.im_gpu_result",
+      "Next": "ImageModalCPU"
+    },
+    "ImageModalCPU": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sagemaker:createProcessingJob.sync",
+      "Comment": "IM3~5: clustering + cluster-drug + report CPU postprocessing",
+      "Parameters": {
+        "ProcessingJobName.$": "States.Format('im-cpu-{}-{}', $.config.disease_slug, States.UUID())",
+        "AppSpecification": {
+          "ImageUri.$": "$.config.pipeline_image_uri",
+          "ContainerEntrypoint": ["python3", "sagemaker/run_image_modal_cpu.py"]
+        },
+        "Environment": {
+          "DISEASE_NAME.$": "$.disease_name",
+          "DISEASE_SLUG.$": "$.config.disease_slug",
+          "SM_PROCESSING_INPUT": "true",
+          "RANDOM_SEED": "42",
+          "EMBEDDING_PARALLEL_PARTS.$": "States.JsonToString($.config.image_modal_policy.embedding_parallel_parts)"
+        },
+        "ProcessingInputs": [
+          {
+            "InputName": "embeddings",
+            "S3Input": {
+              "S3Uri.$": "States.Format('{}/{}/image_modal_gpu/', $.config.s3_output_path, $.config.disease_slug)",
+              "LocalPath": "/opt/ml/processing/input/embeddings",
+              "S3DataType": "S3Prefix",
+              "S3InputMode": "File"
+            }
+          },
+          {
+            "InputName": "basic-results",
+            "S3Input": {
+              "S3Uri.$": "States.Format('{}/{}/basic_pipeline/', $.config.s3_output_path, $.config.disease_slug)",
+              "LocalPath": "/opt/ml/processing/input/basic_results",
+              "S3DataType": "S3Prefix",
+              "S3InputMode": "File"
+            }
+          }
+        ],
+        "ProcessingResources": {
+          "ClusterConfig": {
+            "InstanceCount": 1,
+            "InstanceType": "ml.m5.xlarge",
+            "VolumeSizeInGB": 30
+          }
+        },
+        "ProcessingOutputConfig": {
+          "Outputs": [
+            {
+              "OutputName": "image-modal-output",
+              "S3Output": {
+                "S3Uri.$": "States.Format('{}/{}/image_modal/', $.config.s3_output_path, $.config.disease_slug)",
+                "LocalPath": "/opt/ml/processing/output",
+                "S3UploadMode": "EndOfJob"
+              }
+            }
+          ]
+        },
+        "RoleArn.$": "$.config.sagemaker_role"
+      },
+      "ResultPath": "$.im_cpu_result",
+      "Next": "ValidationAndReport"
+    },
+    "ValidationAndReport": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:{region}:{account}:function:drug-repurposing-validate",
+      "Parameters": {
+        "disease_name.$": "$.disease_name",
+        "disease_slug.$": "$.config.disease_slug",
+        "s3_output.$": "$.config.s3_output_path"
+      },
+      "ResultPath": "$.validation",
+      "Next": "Notify"
+    },
+    "Notify": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "arn:aws:sns:{region}:{account}:drug-repurposing-alerts",
+        "Message.$": "States.Format('파이프라인 완료: {} - 판정: {}', $.disease_name, $.validation.verdict)",
+        "Subject.$": "States.Format('[Drug Repurposing] {} 완료', $.disease_name)"
+      },
+      "End": true
+    }
+  }
+}

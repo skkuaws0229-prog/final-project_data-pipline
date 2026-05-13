@@ -12,7 +12,7 @@ def run(config: dict, dry_run: bool = False) -> dict:
     disease = config["disease"]["name"]
     image = config.get("image_modal", {})
     analysis_cfg = config.get("analysis", {})
-    out_root = Path(image.get("output_root", f"outputs/{disease}/0.Image_modal_{disease}"))
+    out_root = Path(image.get("output_root", f"./{disease}_pipeline/outputs/image_modal"))
     out_dir = out_root / "step_im4a"
     clusters_csv = Path(image.get("clusters_csv", out_root / "step_im3" / "patient_clusters.csv"))
     clinical_csv = image.get("clinical_csv") or analysis_cfg.get("clinical_csv")
@@ -20,8 +20,18 @@ def run(config: dict, dry_run: bool = False) -> dict:
     if dry_run:
         return {"status": "dry_run", "clusters": str(clusters_csv), "clinical": str(clinical_csv)}
     if not clusters_csv.exists():
+        if image.get("skip_if_missing", True):
+            out_dir.mkdir(parents=True, exist_ok=True)
+            summary = {"status": "pending", "reason": f"Missing clusters csv: {clusters_csv}"}
+            (out_dir / "clinical_pending.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+            return summary
         raise FileNotFoundError(f"Missing clusters csv: {clusters_csv}")
     if not clinical_csv or not Path(clinical_csv).exists():
+        if image.get("skip_if_missing", True):
+            out_dir.mkdir(parents=True, exist_ok=True)
+            summary = {"status": "pending", "reason": f"Missing clinical csv: {clinical_csv}"}
+            (out_dir / "clinical_pending.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+            return summary
         raise FileNotFoundError(f"Missing clinical csv: {clinical_csv}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -56,4 +66,3 @@ def run(config: dict, dry_run: bool = False) -> dict:
     summary = {"n_merged": int(len(merged)), "n_tests": int(len(tests)), "survival": survival}
     (out_dir / "clinical_analysis_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     return {"status": "completed", **summary}
-

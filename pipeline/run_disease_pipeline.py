@@ -3,19 +3,70 @@ from __future__ import annotations
 
 import argparse
 import importlib
+import inspect
 import csv
 import json
 import os
+import random
 import sys
+import traceback
 from pathlib import Path
 from typing import Any
 
 import yaml
 
+try:
+    import numpy as np
+except Exception:  # pragma: no cover - optional at import time
+    np = None
+
+try:
+    import torch
+except Exception:  # pragma: no cover - optional at import time
+    torch = None
+
 PIPELINE_ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = PIPELINE_ROOT.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+if not (PROJECT_ROOT / "pipeline").exists() and (PIPELINE_ROOT / "steps").exists():
+    import types
+
+    package = types.ModuleType("pipeline")
+    package.__path__ = [str(PIPELINE_ROOT)]
+    sys.modules.setdefault("pipeline", package)
+
+SM_INPUT_DIR = Path(os.environ.get("SM_INPUT_DIR", "/opt/ml/processing/input/data"))
+SM_OUTPUT_DIR = Path(os.environ.get("SM_OUTPUT_DIR", "/opt/ml/processing/output"))
+
+
+def is_sagemaker_processing() -> bool:
+    return bool(
+        os.environ.get("SM_PROCESSING_INPUT")
+        or os.environ.get("SM_PROCESSING_JOB_NAME")
+        or os.environ.get("SM_CURRENT_HOST")
+    )
+
+
+def apply_runtime_paths(config: dict[str, Any]) -> dict[str, Any]:
+    if not is_sagemaker_processing():
+        return config
+    disease_code = disease_code_from_config(config)
+    output_root = SM_OUTPUT_DIR / f"{disease_code}_pipeline"
+    config["project_root"] = str(output_root)
+    config.setdefault("runtime", {})["environment"] = "sagemaker_processing"
+    config["runtime"]["input_dir"] = str(SM_INPUT_DIR)
+    config["runtime"]["output_dir"] = str(SM_OUTPUT_DIR)
+    if os.environ.get("S3_OUTPUT"):
+        config.setdefault("output", {})["s3_output_path"] = os.environ["S3_OUTPUT"]
+    if os.environ.get("RANDOM_SEED"):
+        config["random_seed"] = int(os.environ["RANDOM_SEED"])
+    image = config.setdefault("image_modal", {})
+    image["output_root"] = str(output_root / "outputs" / "image_modal")
+    image.setdefault("merged_npy", str(output_root / "outputs" / "image_modal" / "step_im2" / f"all_patient_embeddings_{disease_code.lower()}_merged.npy"))
+    image.setdefault("embedding_metadata_csv", str(output_root / "outputs" / "image_modal" / "step_im2" / f"all_patient_embeddings_{disease_code.lower()}_metadata.csv"))
+    config.setdefault("drug", {})["top30_csv"] = str(output_root / "outputs" / "final_selection" / "admet_filtered_top15.csv")
+    return config
 
 
 STEP_MODULES = {
@@ -31,8 +82,31 @@ STEP_MODULES = {
 }
 DEFAULT_ORDER = ["step1", "step2", "step3", "im1", "im2", "im3", "im4a", "im4c", "im5"]
 MAX_AGENT_RETRIES = 3
+DEFAULT_RANDOM_SEED = 42
+
+
+def set_global_random_seed(config: dict[str, Any] | None = None) -> int:
+    seed = DEFAULT_RANDOM_SEED
+    if config is not None:
+        seed = int(config.get("random_seed", config.get("seed", DEFAULT_RANDOM_SEED)) or DEFAULT_RANDOM_SEED)
+    random.seed(seed)
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    if np is not None:
+        np.random.seed(seed)
+    if torch is not None:
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+        try:
+            torch.backends.cudnn.deterministic = True
+            torch.backends.cudnn.benchmark = False
+        except Exception:
+            pass
+    return seed
+
 
 DEFAULT_CONFIG: dict[str, Any] = {
+    "random_seed": DEFAULT_RANDOM_SEED,
     "disease": {
         "name": "AUTO",
         "label": "",
@@ -58,8 +132,8 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "subtype_column": "",
         "clinical_vars": [],
         "continuous_vars": [],
-        "k_values": [2, 3, 4, 5],
-        "clustering_k_range": [2, 3, 4, 5],
+        "k_values": list(range(2, 9)),
+        "clustering_k_range": list(range(2, 9)),
     },
     "tier_classification": {
         "tier1_drugs": [],
@@ -68,6 +142,17 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "execution": {
         "step3_env": "aws",
         "local_gpu": "xpu",
+        "mode": "light",
+        "model_count": 3,
+        "wsi_limit": 100,
+        "wsi_max_limit": 200,
+        "wsi_smoke_count": 1,
+        "wsi_parallel_downloads": 4,
+        "embedding_parallel_parts": 4,
+        "wsi_shard_size": 25,
+        "self_heal": True,
+        "supervisor": True,
+        "max_step_retries": 2,
         "steps": DEFAULT_ORDER,
     },
     "output": {
@@ -112,12 +197,27 @@ JSON으로만 응답해. 마크다운 백틱 없이 순수 JSON만:
     "tier1_drugs": [],
     "tier4_exclude": []
   }},
-  "execution": {{
+    "execution": {{
     "step3_env": "aws",
-    "local_gpu": "xpu"
+    "local_gpu": "xpu",
+    "mode": "light",
+    "model_count": 3,
+    "wsi_limit": 100,
+    "wsi_max_limit": 200,
+    "wsi_smoke_count": 1,
+    "wsi_parallel_downloads": 4,
+    "embedding_parallel_parts": 4,
+    "wsi_shard_size": 25,
+    "self_heal": true,
+    "supervisor": true
   }},
   "output": {{
     "s3_disease_folder": "LAML/"
+  }},
+  "image_modal": {{
+    "enabled": true,
+    "auto_launch": false,
+    "skip_if_missing": true
   }}
 }}"""
 
@@ -175,13 +275,35 @@ def extract_json(text: str) -> dict[str, Any]:
     return parsed
 
 
+def ensure_anthropic_api_key() -> None:
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return
+    secret_id = os.environ.get("ANTHROPIC_SECRET_ID")
+    if not secret_id:
+        return
+    try:
+        import boto3
+    except ImportError as exc:
+        raise RuntimeError("boto3 패키지가 필요합니다. Secrets Manager에서 Anthropic key를 읽을 수 없습니다.") from exc
+    secret_string = boto3.client("secretsmanager").get_secret_value(SecretId=secret_id)["SecretString"]
+    try:
+        payload = json.loads(secret_string)
+        api_key = payload.get("ANTHROPIC_API_KEY") or payload.get("api_key")
+    except json.JSONDecodeError:
+        api_key = secret_string
+    if not api_key:
+        raise RuntimeError(f"Secret {secret_id} does not contain ANTHROPIC_API_KEY")
+    os.environ["ANTHROPIC_API_KEY"] = api_key
+
+
 def anthropic_client() -> Any:
     try:
         import anthropic
     except ImportError as exc:
         raise RuntimeError("anthropic 패키지가 필요합니다. `python -m pip install anthropic` 후 다시 실행하세요.") from exc
+    ensure_anthropic_api_key()
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise RuntimeError("ANTHROPIC_API_KEY 환경변수가 필요합니다.")
+        raise RuntimeError("ANTHROPIC_API_KEY 환경변수 또는 ANTHROPIC_SECRET_ID 환경변수가 필요합니다.")
     return anthropic.Anthropic()
 
 
@@ -202,6 +324,13 @@ def claude_text_response(prompt: str, max_tokens: int) -> str:
 
 def normalize_agent_config(config: dict[str, Any]) -> dict[str, Any]:
     normalized = deep_merge(DEFAULT_CONFIG, config)
+    normalized["random_seed"] = int(normalized.get("random_seed", DEFAULT_RANDOM_SEED) or DEFAULT_RANDOM_SEED)
+    disease_code = disease_code_from_config(normalized)
+    normalized.setdefault("project_root", f"./{disease_code}_pipeline")
+    normalized.setdefault("s3_raw_root", f"s3://say2-4team/{disease_code}_raw")
+    normalized.setdefault("raw_template_root", "s3://say2-4team/HNSC_raw")
+    normalized.setdefault("auto_provision_raw", True)
+
     analysis = normalized.setdefault("analysis", {})
     if "clustering_k_range" in config.get("analysis", {}):
         analysis["k_values"] = analysis["clustering_k_range"]
@@ -209,7 +338,64 @@ def normalize_agent_config(config: dict[str, Any]) -> dict[str, Any]:
         analysis["clustering_k_range"] = analysis["k_values"]
     execution = normalized.setdefault("execution", {})
     execution.setdefault("steps", DEFAULT_ORDER)
+    if os.environ.get("WSI_DEFAULT_LIMIT"):
+        execution["wsi_limit"] = int(os.environ["WSI_DEFAULT_LIMIT"])
+    if os.environ.get("WSI_MAX_LIMIT"):
+        execution["wsi_max_limit"] = int(os.environ["WSI_MAX_LIMIT"])
+    if os.environ.get("WSI_SMOKE_COUNT"):
+        execution["wsi_smoke_count"] = int(os.environ["WSI_SMOKE_COUNT"])
+    if os.environ.get("WSI_PARALLEL_DOWNLOADS"):
+        execution["wsi_parallel_downloads"] = int(os.environ["WSI_PARALLEL_DOWNLOADS"])
+    if os.environ.get("EMBEDDING_PARALLEL_PARTS"):
+        execution["embedding_parallel_parts"] = int(os.environ["EMBEDDING_PARALLEL_PARTS"])
+    apply_execution_mode(normalized)
+    image = normalized.setdefault("image_modal", {})
+    image.setdefault("enabled", True)
+    image.setdefault("skip_if_missing", True)
+    requested_wsi = int(execution.get("wsi_limit", image.get("wsi_limit", 100)) or 100)
+    max_wsi = int(execution.get("wsi_max_limit", image.get("wsi_max_limit", 200)) or 200)
+    image["wsi_limit"] = max(1, min(requested_wsi, max_wsi))
+    image.setdefault("wsi_max_limit", max_wsi)
+    image.setdefault("wsi_smoke_count", int(execution.get("wsi_smoke_count", 1) or 1))
+    image.setdefault("wsi_parallel_downloads", int(execution.get("wsi_parallel_downloads", 4) or 4))
+    image.setdefault("embedding_parallel_parts", int(execution.get("embedding_parallel_parts", 4) or 4))
+    image.setdefault("wsi_shard_size", max(1, (int(image["wsi_limit"]) + int(image["embedding_parallel_parts"]) - 1) // int(image["embedding_parallel_parts"])))
+    image.setdefault("embedding_instance_count", int(image["embedding_parallel_parts"]))
+    image.setdefault("output_root", f"./{disease_code}_pipeline/outputs/image_modal")
+    image.setdefault("s3_prefix", f"{disease_code.lower()}_image_modal_20260511_v1")
+    image.setdefault("s3_raw_wsi_root", f"s3://say2-4team/{image['s3_prefix']}/wsi_raw/")
+    image.setdefault("s3_tiles_root", f"s3://say2-4team/{image['s3_prefix']}/output/wsi_tiles/")
+    image.setdefault(
+        "s3_embedding_root",
+        f"s3://say2-4team/{image['s3_prefix']}/output/embeddings_mid/",
+    )
+    image.setdefault("s3_logs_root", f"s3://say2-4team/{image['s3_prefix']}/output/logs/")
+    if str(execution.get("mode", "light")).lower() == "full" and image.get("disable_auto_launch") is not True:
+        image["auto_launch"] = True
+    else:
+        image.setdefault("auto_launch", False)
+    drug = normalized.setdefault("drug", {})
+    drug.setdefault("top30_csv", f"./{disease_code}_pipeline/outputs/final_selection/admet_filtered_top15.csv")
     return normalized
+
+
+def disease_code_from_config(config: dict[str, Any]) -> str:
+    raw = config.get("tcga_code", config.get("disease", "UNKNOWN"))
+    if isinstance(raw, dict):
+        raw = raw.get("code", raw.get("name", "UNKNOWN"))
+    return str(raw).upper()
+
+
+def apply_execution_mode(config: dict[str, Any]) -> None:
+    execution = config.setdefault("execution", {})
+    mode = str(execution.get("mode", config.get("mode", "light"))).lower()
+    default_models = ["lightgbm", "xgboost", "catboost", "residual_mlp", "mlp"]
+    model_count = int(execution.get("model_count", config.get("model_count", 3)) or 3)
+    config.setdefault("models", default_models[: max(1, min(model_count, len(default_models)))])
+    config.setdefault("n_splits", int(execution.get("n_splits", config.get("n_splits", 2)) or 2))
+    config.setdefault("candidate_limit", int(execution.get("candidate_limit", config.get("candidate_limit", 30)) or 30))
+    config.setdefault("max_crispr_features", int(execution.get("max_crispr_features", config.get("max_crispr_features", 3000)) or 3000))
+    config.setdefault("max_lincs_features", int(execution.get("max_lincs_features", config.get("max_lincs_features", 768)) or 768))
 
 
 def agent_plan(disease_name: str) -> Path:
@@ -308,6 +494,17 @@ def collect_result_metrics(config: dict[str, Any], step_results: list[dict[str, 
 
 def agent_evaluate(config: dict[str, Any], results: dict[str, Any]) -> dict[str, Any]:
     """Agent 2: 결과 평가 -> ok/retry 판단."""
+    pending_steps = {
+        row.get("step")
+        for row in results.get("step_results", [])
+        if str(row.get("status", row.get("step_status", ""))).lower() == "pending"
+    }
+    if pending_steps & {"im1", "im2"}:
+        return {
+            "verdict": "ok",
+            "reason": "Image-modal upstream jobs are pending; wait for WSI/embedding outputs before retrying downstream IM steps.",
+            "retry_action": {},
+        }
     text = claude_text_response(
         EVAL_PROMPT.format(
             disease=config.get("disease", {}).get("name", ""),
@@ -340,6 +537,123 @@ def apply_retry_action(config: dict[str, Any], retry_action: dict[str, Any]) -> 
     return step
 
 
+def persist_config(config: dict[str, Any]) -> None:
+    config_path = config.get("_config_path")
+    if not config_path:
+        return
+    clean_config = {k: v for k, v in config.items() if not k.startswith("_")}
+    with Path(config_path).open("w", encoding="utf-8") as f:
+        yaml.safe_dump(clean_config, f, allow_unicode=True, sort_keys=False)
+
+
+def agent0_preflight(config: dict[str, Any]) -> dict[str, Any]:
+    """Agent 0: normalize orchestration settings and catch obvious deadlocks."""
+    config.update(normalize_agent_config(config))
+    steps = config.get("execution", {}).get("steps", DEFAULT_ORDER)
+    unknown = [step for step in steps if step not in STEP_MODULES]
+    if unknown:
+        raise KeyError(f"Agent 0 found unknown steps: {unknown}")
+    report = {
+        "agent": "agent0_supervisor",
+        "phase": "preflight",
+        "disease": disease_code_from_config(config),
+        "mode": config.get("execution", {}).get("mode", "light"),
+        "steps": steps,
+        "models": config.get("models", []),
+        "image_enabled": config.get("image_modal", {}).get("enabled", True),
+        "image_auto_launch": config.get("image_modal", {}).get("auto_launch", False),
+        "s3_raw_wsi_root": config.get("image_modal", {}).get("s3_raw_wsi_root", ""),
+        "s3_tiles_root": config.get("image_modal", {}).get("s3_tiles_root", ""),
+        "s3_embedding_root": config.get("image_modal", {}).get("s3_embedding_root", ""),
+        "self_heal": config.get("execution", {}).get("self_heal", True),
+    }
+    write_agent_report(config, "agent0_preflight.json", report)
+    print(json.dumps({"agent0_preflight": report}, ensure_ascii=False, indent=2))
+    return report
+
+
+def agent0_postflight(config: dict[str, Any], metrics: dict[str, Any]) -> dict[str, Any]:
+    statuses = [
+        {"step": row.get("step"), "status": row.get("status", row.get("step_status", "unknown"))}
+        for row in metrics.get("step_results", [])
+    ]
+    blocking_failures = [row for row in statuses if str(row.get("status")).lower() in {"failed", "error"}]
+    pending = [row for row in statuses if str(row.get("status")).lower() == "pending"]
+    report = {
+        "agent": "agent0_supervisor",
+        "phase": "postflight",
+        "disease": disease_code_from_config(config),
+        "blocking_failures": blocking_failures,
+        "pending_steps": pending,
+        "silhouette": metrics.get("silhouette"),
+        "tier1_count": metrics.get("tier1_count", 0),
+        "drug_links": metrics.get("drug_links", 0),
+        "verdict": "blocked" if blocking_failures else "ok_with_pending" if pending else "ok",
+    }
+    write_agent_report(config, "agent0_postflight.json", report)
+    print(json.dumps({"agent0_postflight": report}, ensure_ascii=False, indent=2))
+    return report
+
+
+def write_agent_report(config: dict[str, Any], filename: str, payload: dict[str, Any]) -> None:
+    project_root = Path(config.get("project_root", f"./{disease_code_from_config(config)}_pipeline"))
+    out_dir = project_root / "outputs" / "agent_reports"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / filename).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def agent3_self_heal(config: dict[str, Any], step: str, exc: BaseException) -> dict[str, Any]:
+    """Agent 3: apply deterministic repairs from traceback/config context."""
+    message = f"{type(exc).__name__}: {exc}"
+    repairs: list[str] = []
+    disease = disease_code_from_config(config)
+    project_root = Path(config.get("project_root", f"./{disease}_pipeline"))
+
+    if step == "im4c" and "top30" in message.lower():
+        candidates = [
+            project_root / "outputs/final_selection/admet_filtered_top15.csv",
+            project_root / "outputs/final_selection/selected_drugs_top_n.csv",
+        ]
+        for candidate in candidates:
+            if candidate.exists():
+                config.setdefault("drug", {})["top30_csv"] = str(candidate)
+                repairs.append(f"set drug.top30_csv={candidate}")
+                break
+
+    if step in {"im2", "im3", "im4a", "im4c", "im5"} and any(
+        token in message.lower() for token in ["missing", "required", "not found", "no embedding"]
+    ):
+        config.setdefault("image_modal", {})["skip_if_missing"] = True
+        repairs.append("set image_modal.skip_if_missing=true")
+
+    if step == "step2" and "catboost" in message.lower():
+        models = [m for m in config.get("models", []) if str(m).lower() != "catboost"]
+        if models:
+            config["models"] = models
+            repairs.append("removed catboost from models")
+
+    if step == "step2" and "drug__target_list" in message:
+        config.setdefault("step2_runtime_hints", {})["optional_drug_meta_columns"] = True
+        repairs.append("marked drug metadata columns as optional")
+
+    if step == "step3" and "canonical_drug_id" in message and "merge on int64 and object" in message:
+        config.setdefault("step3_runtime_hints", {})["canonical_drug_id_as_string"] = True
+        repairs.append("marked canonical_drug_id merge key as string-normalized")
+
+    persist_config(config)
+    payload = {
+        "agent": "agent3_self_healing",
+        "step": step,
+        "error": message,
+        "traceback": traceback.format_exc(limit=8),
+        "repairs": repairs,
+        "retriable": bool(repairs),
+    }
+    write_agent_report(config, f"agent3_{step}_repair.json", payload)
+    print(json.dumps({"agent3_self_heal": payload}, ensure_ascii=False, indent=2))
+    return payload
+
+
 class DiseasePipeline:
     def __init__(self, config: dict[str, Any], dry_run: bool = False) -> None:
         self.config = config
@@ -355,26 +669,51 @@ class DiseasePipeline:
     def run_step(self, step: str) -> dict[str, Any]:
         if step not in STEP_MODULES:
             raise KeyError(f"Unknown step '{step}'. Valid steps: {', '.join(STEP_MODULES)}")
-        module = importlib.import_module(STEP_MODULES[step])
-        result = module.run(self.config, dry_run=self.dry_run)
-        payload = {"step": step, **result}
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
-        return payload
+        max_retries = int(self.config.get("execution", {}).get("max_step_retries", 2) or 0)
+        self_heal = bool(self.config.get("execution", {}).get("self_heal", True))
+        last_error: BaseException | None = None
+        for attempt in range(max_retries + 1):
+            try:
+                module = importlib.import_module(STEP_MODULES[step])
+                signature = inspect.signature(module.run)
+                if "dry_run" in signature.parameters:
+                    result = module.run(self.config, dry_run=self.dry_run)
+                else:
+                    result = module.run(self.config)
+                payload = {"step": step, **result, "attempt": attempt + 1}
+                print(json.dumps(payload, ensure_ascii=False, indent=2))
+                return payload
+            except Exception as exc:
+                last_error = exc
+                if not self_heal or attempt >= max_retries:
+                    raise
+                repair = agent3_self_heal(self.config, step, exc)
+                if not repair.get("retriable"):
+                    raise
+                print(f"Agent 3: {step} 자동 복구 후 재시도 attempt={attempt + 2}")
+        raise RuntimeError(f"{step} failed after retries: {last_error}")
 
 
 def run_pipeline(config: dict[str, Any], step: str | None = None, dry_run: bool = False) -> list[dict[str, Any]]:
+    set_global_random_seed(config)
     pipeline = DiseasePipeline(config, dry_run=dry_run)
     return pipeline.run(step)
 
 
-def run_agent_pipeline(disease_name: str, dry_run: bool = False) -> dict[str, Any]:
+def run_agent_pipeline(disease_name: str, dry_run: bool = False, mode: str | None = None) -> dict[str, Any]:
     config_path = agent_plan(disease_name)
     config = load_config(config_path)
+    if mode:
+        config.setdefault("execution", {})["mode"] = mode
+    apply_runtime_paths(config)
+    set_global_random_seed(config)
+    agent0_preflight(config)
     last_metrics: dict[str, Any] = {}
     for attempt in range(1, MAX_AGENT_RETRIES + 1):
         print(f"Agent: 파이프라인 실행 attempt={attempt}")
         step_results = run_pipeline(config, dry_run=dry_run)
         last_metrics = collect_result_metrics(config, step_results)
+        agent0_postflight(config, last_metrics)
         evaluation = agent_evaluate(config, last_metrics)
         print(json.dumps({"agent_evaluation": evaluation}, ensure_ascii=False, indent=2))
         if evaluation.get("verdict") == "ok":
@@ -392,10 +731,13 @@ def run_agent_pipeline(disease_name: str, dry_run: bool = False) -> dict[str, An
 
 
 def main(argv: list[str] | None = None) -> int:
+    if argv is None and os.environ.get("DISEASE_NAME") and len(sys.argv) == 1:
+        argv = ["--disease", os.environ["DISEASE_NAME"], "--mode", os.environ.get("PIPELINE_MODE", "full")]
     parser = argparse.ArgumentParser(description="Run a disease image-modal pipeline")
     parser.add_argument("--config", help="YAML config path")
     parser.add_argument("--disease", help="Disease name for Agent 1 config planning")
     parser.add_argument("--step", choices=sorted(STEP_MODULES), help="Run one step only")
+    parser.add_argument("--mode", choices=["light", "full"], help="Override execution.mode")
     parser.add_argument("--dry-run", action="store_true", help="Print planned actions without writing outputs")
     args = parser.parse_args(argv)
 
@@ -403,11 +745,16 @@ def main(argv: list[str] | None = None) -> int:
         if args.step:
             parser.error("--disease mode does not accept --step; Agent 2 decides retry steps.")
         try:
-            run_agent_pipeline(args.disease, dry_run=args.dry_run)
+            run_agent_pipeline(args.disease, dry_run=args.dry_run, mode=args.mode)
         except RuntimeError as exc:
             parser.exit(2, f"Agent error: {exc}\n")
     elif args.config:
         config = load_config(args.config)
+        if args.mode:
+            config.setdefault("execution", {})["mode"] = args.mode
+        apply_runtime_paths(config)
+        set_global_random_seed(config)
+        agent0_preflight(config)
         run_pipeline(config, step=args.step, dry_run=args.dry_run)
     else:
         parser.error("one of --config or --disease is required")

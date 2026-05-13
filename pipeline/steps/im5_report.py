@@ -9,7 +9,7 @@ import pandas as pd
 def run(config: dict, dry_run: bool = False) -> dict:
     disease = config["disease"]["name"]
     image = config.get("image_modal", {})
-    out_root = Path(image.get("output_root", f"outputs/{disease}/0.Image_modal_{disease}"))
+    out_root = Path(image.get("output_root", f"./{disease}_pipeline/outputs/image_modal"))
     out_dir = out_root / "step_im5"
     if dry_run:
         return {"status": "dry_run", "output": str(out_dir / "image_modal_summary.md")}
@@ -38,4 +38,3 @@ def run(config: dict, dry_run: bool = False) -> dict:
     report = out_dir / "image_modal_summary.md"
     report.write_text("\n".join(lines), encoding="utf-8")
     return {"status": "completed", "report": str(report)}
-

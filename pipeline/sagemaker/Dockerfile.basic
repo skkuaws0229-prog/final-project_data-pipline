@@ -1,0 +1,38 @@
+FROM python:3.10-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/opt/ml \
+    MPLCONFIGDIR=/tmp/matplotlib
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    curl \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu \
+    torch==2.3.1+cpu
+
+RUN pip install --no-cache-dir \
+    anthropic \
+    boto3 \
+    pandas==2.2.3 \
+    numpy==1.26.4 \
+    scikit-learn==1.5.2 \
+    scipy==1.14.1 \
+    pyarrow==18.1.0 \
+    xgboost==2.0.3 \
+    lightgbm==4.6.0 \
+    catboost==1.2.10 \
+    rdkit-pypi \
+    networkx \
+    matplotlib \
+    pyyaml \
+    tabulate
+
+COPY . /opt/ml/pipeline/
+WORKDIR /opt/ml/pipeline
+
+ENTRYPOINT ["python3"]

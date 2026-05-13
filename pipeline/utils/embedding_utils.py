@@ -50,12 +50,13 @@ def merge_embedding_parquets(
     id_col = id_column or ("slide_id" if "slide_id" in df.columns else df.columns[0])
     if patient_level:
         df["patient_id"] = df[id_col].map(tcga_patient_barcode).fillna(df[id_col].astype(str))
-        meta = df.groupby("patient_id", as_index=False)[emb_cols].mean()
+        df = df.sort_values(["patient_id", id_col, "source_part"], kind="mergesort")
+        meta = df.groupby("patient_id", as_index=False, sort=True)[emb_cols].mean()
         if "slide_id" in df.columns:
             meta["n_slides"] = meta["patient_id"].map(df.groupby("patient_id")["slide_id"].nunique())
         matrix = meta[emb_cols].to_numpy(dtype=np.float32)
     else:
-        meta = df.copy()
+        meta = df.sort_values([id_col, "source_part"], kind="mergesort").copy()
         matrix = df[emb_cols].to_numpy(dtype=np.float32)
 
     output_npy = Path(output_npy)
