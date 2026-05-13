@@ -11,11 +11,12 @@ FastAPI: 구현 완료
 Graph API: /graph/relations 검증 완료
 OpenSearch: text search 연결 완료
 Path scoring: /graph/path-score 검증 완료
+KG embedding: /graph/kg-embedding 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
 RAG/LLM: 아직 미연결
 ```
 
-React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring 기반 화면을 먼저 붙이고, 이후 KG embedding, RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
+React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring + KG embedding 기반 화면을 먼저 붙이고, 이후 RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
 
 ## 실행 방법
 
@@ -88,6 +89,8 @@ GET /image-modal/evidence?disease_id=RA
 GET /image-modal/clusters?disease_id=RA
 GET /graph/relations?disease_id=RA&limit=50
 GET /graph/path-score?disease_id=RA&limit=100
+GET /health/kg-embedding
+GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 ```
@@ -219,6 +222,39 @@ risk_sources: 주의/감점 근거 영역
 
 주의: `path_score`는 최종 임상 판단 점수가 아니라 설명 가능한 내부 기준 점수입니다. 점수만 단독 표시하지 말고 source와 risk를 같이 보여주는 것이 좋습니다.
 
+## KG embedding 참고
+
+`/graph/kg-embedding`은 DistMult/TransE baseline 점수를 반환합니다.
+
+```json
+{
+  "disease_id": "RA",
+  "model": "ensemble",
+  "scoring_version": "kg_embedding_v1",
+  "scores": [
+    {
+      "canonical_drug_id": "cdrug_xxx",
+      "drug_name": "BRANEBRUTINIB",
+      "kg_score": 0.987658,
+      "distmult_score": 1.0,
+      "transe_score": 0.975316,
+      "ensemble_score": 0.987658,
+      "is_known_candidate": true,
+      "candidate_rank": 3,
+      "candidate_tier": "pass_admet_gate"
+    }
+  ]
+}
+```
+
+프론트 표시 제안:
+
+```text
+KG score는 별도 보조 점수 컬럼 또는 모델 tab으로 표시
+is_known_candidate=false 항목은 신규 후보/확장 후보로 구분
+KG score만으로 추천 문구를 만들지 말고 path_score/evidence/risk와 함께 표시
+```
+
 ## 검증 완료 사항
 
 Graph API 검증 결과:
@@ -271,6 +307,18 @@ Source candidate duplicate disease count: 3
 ```
 
 Source candidate duplicate 3건은 API에서는 중복 노출되지 않지만, 원천 candidate 정규화 단계에서 보강할 대상입니다.
+
+KG embedding 검증:
+
+```text
+Triples: 1875
+Entities: 775
+Relations: 6
+Score rows: 1870
+Known candidate score rows: 247
+질병 내 duplicate canonical_drug_id: 0
+상세 리포트: drug_service_backend_v1/09_kg_embedding/kg_embedding_api_validation_v1.md
+```
 
 ## 아직 구현하지 않는 것
 

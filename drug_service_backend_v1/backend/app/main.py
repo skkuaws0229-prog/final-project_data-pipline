@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.db import fetch_all, fetch_one
 from app.graph_db import close_driver, run_read, verify_connectivity
+from app.kg_embedding_db import get_kg_scores, load_kg_scores
 from app.search_db import search_text, verify_search_connectivity
 from app.schemas import (
     Disease,
@@ -14,6 +15,7 @@ from app.schemas import (
     ImageModalCluster,
     ImageModalEvidence,
     ImageModalReport,
+    KgEmbeddingResponse,
     PathScoreResponse,
     SearchResponse,
 )
@@ -56,6 +58,29 @@ def search_health() -> dict[str, str]:
     except Exception as exc:
         raise HTTPException(status_code=503, detail=f"OpenSearch unavailable: {exc}") from exc
     return {"status": "ok", "search": "ok"}
+
+
+@app.get("/health/kg-embedding")
+def kg_embedding_health() -> dict[str, str | int]:
+    rows = load_kg_scores()
+    if not rows:
+        raise HTTPException(status_code=503, detail="KG embedding scores unavailable")
+    return {"status": "ok", "kg_embedding": "ok", "score_rows": len(rows)}
+
+
+@app.get("/graph/kg-embedding", response_model=KgEmbeddingResponse)
+def graph_kg_embedding(
+    disease_id: str = Query(..., description="Disease id, e.g. BRCA, RA, STAD"),
+    model: str = Query("ensemble", pattern="^(distmult|transe|ensemble)$"),
+    limit: int = Query(50, ge=1, le=200),
+) -> dict:
+    disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+    if not disease:
+        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+    scores = get_kg_scores(disease_id=disease_id, model=model, limit=limit)
+    if not scores:
+        raise HTTPException(status_code=503, detail="KG embedding scores unavailable")
+    return {"disease_id": disease_id, "model": model, "scoring_version": "kg_embedding_v1", "scores": scores}
 
 
 @app.get("/search", response_model=SearchResponse)

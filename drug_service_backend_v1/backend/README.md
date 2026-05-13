@@ -1,6 +1,6 @@
 # Drug Service FastAPI
 
-이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j, Neo4j path scoring, OpenSearch text search까지 연결되어 있으며, 다음 단계는 KG embedding baseline, Bedrock RAG/LLM explanation입니다.
+이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j, Neo4j path scoring, KG embedding baseline, OpenSearch text search까지 연결되어 있으며, 다음 단계는 Bedrock RAG/LLM explanation입니다.
 
 ## 로컬 실행
 
@@ -25,6 +25,8 @@ GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
 GET /graph/path-score?disease_id=RA&limit=100
+GET /health/kg-embedding
+GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 ```
@@ -71,6 +73,15 @@ GET /graph/path-score?disease_id=RA&limit=100
 ```
 
 `/graph/path-score`는 candidate rank, ADMET, image-modal evidence, target overlap을 기반으로 `path_score`를 계산합니다. 응답에는 `evidence_sources`와 `risk_sources`가 포함되어 있으므로, 프론트엔드와 RAG/LLM 설명은 점수만 표시하지 말고 근거와 risk를 함께 보여주는 방향이 좋습니다.
+
+KG embedding baseline 조회:
+
+```text
+GET /health/kg-embedding
+GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
+```
+
+지원 model은 `distmult`, `transe`, `ensemble`입니다. KG embedding score는 source/risk를 설명하는 점수가 아니라 graph 구조 학습 기반 보조 점수입니다.
 
 응답 형태:
 
@@ -142,6 +153,17 @@ Path scoring v1 검증:
 Score row마다 evidence_sources 반환
 path_score / positive_score / risk_penalty 0~1 범위 확인
 Risk penalty는 ADMET hard_fail/verdict/soft_flags 기준으로 분리 반환
+```
+
+KG embedding v1 검증:
+
+```text
+Triples: 1875
+Entities: 775
+Relations: 6
+Score rows: 1870
+Known candidate score rows: 247
+GET /health/kg-embedding -> score_rows=1870
 ```
 
 Drug uniqueness 기준:

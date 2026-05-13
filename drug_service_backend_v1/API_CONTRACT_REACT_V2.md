@@ -61,6 +61,20 @@ Neo4j 연결 상태를 확인합니다.
 }
 ```
 
+### GET /health/kg-embedding
+
+KG embedding score CSV 연결 상태를 확인합니다.
+
+응답 예시:
+
+```json
+{
+  "status": "ok",
+  "kg_embedding": "ok",
+  "score_rows": 1870
+}
+```
+
 ## 2. Disease 목록
 
 ### GET /diseases
@@ -447,7 +461,50 @@ limit      optional number, default 100, max 200
 - `evidence_sources`는 지원 근거, `risk_sources`는 ADMET 기반 감점/주의 근거입니다.
 - RAG/LLM 설명과 프론트엔드 상세 패널은 점수만 사용하지 말고 source/risk를 함께 사용해야 합니다.
 
-## 10. Drug uniqueness rule
+## 10. KG embedding baseline
+
+### GET /graph/kg-embedding
+
+DistMult/TransE KG embedding baseline 점수를 반환합니다.
+
+Query:
+
+```text
+disease_id required string
+model      optional string: distmult, transe, ensemble
+limit      optional number, default 50, max 200
+```
+
+응답 예시:
+
+```json
+{
+  "disease_id": "RA",
+  "model": "ensemble",
+  "scoring_version": "kg_embedding_v1",
+  "scores": [
+    {
+      "canonical_drug_id": "cdrug_xxx",
+      "drug_name": "BRANEBRUTINIB",
+      "kg_score": 0.987658,
+      "distmult_score": 1.0,
+      "transe_score": 0.975316,
+      "ensemble_score": 0.987658,
+      "is_known_candidate": true,
+      "candidate_rank": 3,
+      "candidate_tier": "pass_admet_gate"
+    }
+  ]
+}
+```
+
+주의사항:
+
+- KG embedding score는 graph 구조 학습 기반 보조 점수입니다.
+- Path scoring처럼 source/risk를 설명하는 점수가 아니므로 단독 추천 근거로 사용하지 않습니다.
+- `is_known_candidate=false`는 현재 candidate table에는 없지만 graph embedding이 drug-disease 유사성을 높게 본 약물입니다.
+
+## 11. Drug uniqueness rule
 
 아래 규칙은 모든 후보/score/result API에 적용합니다.
 
@@ -465,7 +522,7 @@ drug_service_db_v1/05_validation/cross_disease_drug_relations_v1.csv
 drug_service_db_v1/05_validation/drug_uniqueness_validation_v1.md
 ```
 
-## 11. Text search
+## 12. Text search
 
 ### GET /health/search
 

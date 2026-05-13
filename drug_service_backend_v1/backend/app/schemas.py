@@ -130,6 +130,26 @@ class PathScoreResponse(BaseModel):
     scores: list[PathScoreItem]
 
 
+class KgEmbeddingScore(BaseModel):
+    disease_id: str
+    canonical_drug_id: str
+    drug_name: str
+    kg_score: float
+    distmult_score: float
+    transe_score: float
+    ensemble_score: float
+    is_known_candidate: bool
+    candidate_rank: int | None = None
+    candidate_tier: str | None = None
+
+
+class KgEmbeddingResponse(BaseModel):
+    disease_id: str
+    model: str
+    scoring_version: str
+    scores: list[KgEmbeddingScore]
+
+
 class SearchHit(BaseModel):
     id: str
     score: float | None = None

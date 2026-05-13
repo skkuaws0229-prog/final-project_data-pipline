@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     neo4j_password: str = "drug_service_neo4j"
     opensearch_url: str = "http://localhost:9200"
     opensearch_index: str = "drug_service_text_v1"
+    kg_embedding_scores_path: str = "../09_kg_embedding/kg_embedding_scores_v1.csv"
     cors_allow_origins: str = "http://localhost:5173,http://127.0.0.1:5173,http://172.16.0.64:5173"
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")

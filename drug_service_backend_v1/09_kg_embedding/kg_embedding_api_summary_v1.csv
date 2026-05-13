@@ -1,0 +1,12 @@
+disease_id,score_rows,known_candidate_rows,duplicate_canonical_drug_ids,out_of_range_scores,top_drug,top_kg_score
+BRCA,170,15,0,0,N-acetyl cysteine,0.96736
+Colon,170,15,0,0,Rapamycin,0.967881
+HNSC,170,30,0,0,Dasatinib,0.965702
+IPF,170,9,0,0,Nintedanib,0.986229
+LUNG,170,15,0,0,Savolitinib,0.942672
+Liver,170,14,0,0,Topotecan,0.975416
+PAH,170,30,0,0,CHEMBL3775234,0.963219
+PDAC,170,30,0,0,Mitoxantrone,0.976415
+Psoriasis,170,30,0,0,FEDRATINIB,0.989984
+RA,170,30,0,0,BRANEBRUTINIB,0.987658
+STAD,170,29,0,0,Temsirolimus,0.981588

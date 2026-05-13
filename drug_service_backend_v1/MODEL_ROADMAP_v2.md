@@ -45,7 +45,16 @@ v1에서는 score를 Neo4j 관계로 저장하지 않고 API에서 계산해 반
 
 우리 Neo4j graph를 export해서 가벼운 KG embedding baseline을 학습합니다.
 
-예정 관계:
+구현 endpoint:
+
+```text
+GET /health/kg-embedding
+GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
+```
+
+v1에서는 Neo4j 관계로 저장하지 않고 CSV 산출물을 API가 읽어 반환합니다.
+
+향후 저장형 관계 후보:
 
 ```text
 (:Drug)-[:KG_EMBEDDING_PREDICTED_FOR]->(:Disease)

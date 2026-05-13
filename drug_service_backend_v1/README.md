@@ -16,6 +16,7 @@ backend/Dockerfile    API container build file
 backend/requirements.txt
 backend/.env.example  로컬 실행용 환경변수 예시
 08_path_scoring/      Neo4j path scoring v1 설계/검증 리포트
+09_kg_embedding/      DistMult/TransE KG embedding baseline 산출물
 docker-compose.backend.yml
 ```
 
@@ -32,6 +33,8 @@ GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
 GET /graph/path-score?disease_id=RA&limit=100
+GET /health/kg-embedding
+GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 ```
@@ -60,6 +63,7 @@ Swagger: http://localhost:8010/docs
 Health: http://localhost:8010/health
 Graph Health: http://localhost:8010/health/graph
 Search Health: http://localhost:8010/health/search
+KG Embedding Health: http://localhost:8010/health/kg-embedding
 Neo4j Browser: http://localhost:7474
 ```
 
@@ -132,6 +136,17 @@ Missing evidence_sources: 0
 상세: 08_path_scoring/path_score_validation_v1.md
 ```
 
+KG embedding v1 기준:
+
+```text
+Triples: 1875
+Entities: 775
+Relations: 6
+Score rows: 1870
+Known candidate score rows: 247
+상세: 09_kg_embedding/kg_embedding_api_validation_v1.md
+```
+
 ## 주의사항
 
 - `.venv`, `.env`, cache file은 GitHub에 포함하지 않습니다.
@@ -141,4 +156,4 @@ Missing evidence_sources: 0
 - 현재 비밀번호는 로컬 Docker 검증용 개발 값입니다.
 - React v1은 연결 검증용이며, 본격 UI는 React v2에서 진행합니다.
 - OpenSearch v1은 text search만 포함합니다. vector search는 이후 embedding 정책 확정 뒤 추가합니다.
-- TxGNN은 v1/v2 구현 범위에서 제외합니다. 비용/환경 부담 대비 현재 후보 약물 coverage가 낮아, 다음 단계는 DistMult/TransE KG embedding baseline, Bedrock RAG/LLM explanation입니다.
+- TxGNN은 v1/v2 구현 범위에서 제외합니다. 비용/환경 부담 대비 현재 후보 약물 coverage가 낮아, 다음 단계는 Bedrock RAG/LLM explanation입니다.

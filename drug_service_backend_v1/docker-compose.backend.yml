@@ -85,10 +85,13 @@ services:
       NEO4J_PASSWORD: drug_service_neo4j
       OPENSEARCH_URL: http://opensearch:9200
       OPENSEARCH_INDEX: drug_service_text_v1
+      KG_EMBEDDING_SCORES_PATH: /kg_embedding/kg_embedding_scores_v1.csv
       APP_NAME: Drug Service API
       CORS_ALLOW_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://172.16.0.64:5173
     ports:
       - "8010:8000"
+    volumes:
+      - ./09_kg_embedding:/kg_embedding:ro
     restart: unless-stopped
 
   opensearch:
