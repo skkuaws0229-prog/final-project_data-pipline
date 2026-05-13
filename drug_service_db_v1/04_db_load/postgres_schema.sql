@@ -162,6 +162,83 @@ CREATE INDEX IF NOT EXISTS idx_disease_aliases_normalized
 CREATE INDEX IF NOT EXISTS idx_image_modal_matches_canonical
   ON image_modal_evidence_drug_matches(canonical_drug_id);
 
+CREATE TABLE IF NOT EXISTS protein_targets (
+  protein_id TEXT PRIMARY KEY,
+  gene_symbol TEXT,
+  uniprot_id TEXT UNIQUE,
+  protein_name TEXT,
+  organism TEXT NOT NULL DEFAULT 'Homo sapiens',
+  source TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_protein_targets_gene_symbol
+  ON protein_targets(gene_symbol);
+
+CREATE TABLE IF NOT EXISTS target_protein_links (
+  link_id TEXT PRIMARY KEY,
+  target_text TEXT NOT NULL,
+  normalized_target_text TEXT NOT NULL,
+  protein_id TEXT REFERENCES protein_targets(protein_id),
+  mapping_status TEXT NOT NULL CHECK (mapping_status IN ('exact', 'alias', 'manual', 'unresolved', 'rejected')),
+  confidence NUMERIC,
+  source TEXT NOT NULL,
+  raw_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_target_protein_links_normalized
+  ON target_protein_links(normalized_target_text);
+
+CREATE INDEX IF NOT EXISTS idx_target_protein_links_protein
+  ON target_protein_links(protein_id);
+
+CREATE TABLE IF NOT EXISTS alphafold_structures (
+  structure_id TEXT PRIMARY KEY,
+  protein_id TEXT NOT NULL REFERENCES protein_targets(protein_id),
+  provider TEXT NOT NULL CHECK (provider IN ('alphafold_db', 'pdb', 'local', 'predicted')),
+  provider_accession TEXT,
+  version TEXT,
+  file_format TEXT NOT NULL CHECK (file_format IN ('pdb', 'mmcif', 'cif')),
+  structure_uri TEXT NOT NULL,
+  source_url TEXT,
+  pae_uri TEXT,
+  mean_plddt NUMERIC,
+  confidence_summary TEXT,
+  license TEXT,
+  status TEXT NOT NULL CHECK (status IN ('available', 'to_fetch', 'missing', 'failed')),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_alphafold_structures_protein
+  ON alphafold_structures(protein_id);
+
+CREATE TABLE IF NOT EXISTS candidate_protein_structure_links (
+  context_id TEXT PRIMARY KEY,
+  disease_id TEXT NOT NULL REFERENCES diseases(disease_id),
+  candidate_id TEXT REFERENCES drug_candidates(candidate_id),
+  canonical_drug_id TEXT REFERENCES canonical_drugs(canonical_drug_id),
+  evidence_id TEXT REFERENCES image_modal_drug_evidence(evidence_id),
+  protein_id TEXT NOT NULL REFERENCES protein_targets(protein_id),
+  structure_id TEXT REFERENCES alphafold_structures(structure_id),
+  target_source TEXT NOT NULL CHECK (target_source IN ('candidate_target', 'image_evidence', 'kg_target', 'manual')),
+  relation_note TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_candidate_structure_links_disease
+  ON candidate_protein_structure_links(disease_id);
+
+CREATE INDEX IF NOT EXISTS idx_candidate_structure_links_candidate
+  ON candidate_protein_structure_links(candidate_id);
+
+CREATE INDEX IF NOT EXISTS idx_candidate_structure_links_canonical
+  ON candidate_protein_structure_links(canonical_drug_id);
+
+CREATE INDEX IF NOT EXISTS idx_candidate_structure_links_protein
+  ON candidate_protein_structure_links(protein_id);
+
 CREATE TABLE IF NOT EXISTS pipeline_runs (
   run_id TEXT PRIMARY KEY,
   disease_name TEXT NOT NULL,
