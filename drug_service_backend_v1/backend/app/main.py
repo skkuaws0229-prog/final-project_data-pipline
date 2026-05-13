@@ -233,11 +233,10 @@ def graph_path_score(
             concept_type: evidence_target.concept_type,
             relation_kind: evidence_target_rel.relation_kind,
             source_id: evidence_target_rel.source_id
-          }) AS evidence_targets
+        }) AS evidence_targets
         ORDER BY candidate.rank IS NULL, candidate.rank, drug.primary_drug_name
-        LIMIT $limit
         """,
-        {"disease_id": disease_id, "limit": limit},
+        {"disease_id": disease_id},
     )
 
     max_rank_rows = run_read(
@@ -402,7 +401,7 @@ def graph_path_score(
             continue
         seen_drug_ids.add(item["canonical_drug_id"])
         deduped_score_items.append(item)
-    return {"disease_id": disease_id, "scoring_version": "path_scoring_v1", "scores": deduped_score_items}
+    return {"disease_id": disease_id, "scoring_version": "path_scoring_v1", "scores": deduped_score_items[:limit]}
 
 
 @app.get("/graph/relations", response_model=GraphRelationsResponse)
@@ -443,12 +442,15 @@ def graph_relations(
           r.admet_status AS admet_status,
           r.hard_fail AS hard_fail
         ORDER BY r.rank IS NULL, r.rank, drug.primary_drug_name
-        LIMIT $limit
         """,
-        {"disease_id": disease_id, "limit": limit},
+        {"disease_id": disease_id},
     )
 
+    seen_candidate_drug_ids = set()
     for row in candidate_rows:
+        if row["drug_id"] in seen_candidate_drug_ids:
+            continue
+        seen_candidate_drug_ids.add(row["drug_id"])
         _put_node(
             nodes,
             row["drug_id"],
@@ -479,6 +481,8 @@ def graph_relations(
                 "hard_fail": row["hard_fail"],
             },
         )
+        if len(seen_candidate_drug_ids) >= limit:
+            break
 
     if include_evidence:
         cluster_rows = run_read(
@@ -667,9 +671,11 @@ def list_diseases() -> list[dict]:
         SELECT
           d.disease_id,
           d.display_name,
-          COUNT(c.candidate_id)::int AS candidate_count
+          COUNT(DISTINCT COALESCE(da.canonical_drug_id, c.drug_id))::int AS candidate_count
         FROM diseases d
         LEFT JOIN drug_candidates c ON c.disease_id = d.disease_id
+        LEFT JOIN drugs drug ON drug.drug_id = c.drug_id
+        LEFT JOIN drug_aliases da ON da.source_drug_id = drug.drug_id
         GROUP BY d.disease_id, d.display_name
         ORDER BY d.disease_id
         """
@@ -688,31 +694,58 @@ def list_drugs(
 
     return fetch_all(
         """
+        WITH ranked AS (
+          SELECT
+            c.candidate_id,
+            c.disease_id,
+            c.drug_id,
+            da.canonical_drug_id,
+            d.drug_name,
+            c.rank,
+            c.tier,
+            c.score,
+            c.target,
+            c.target_pathway,
+            c.evidence_summary,
+            d.canonical_smiles,
+            a.safety_score,
+            a.verdict,
+            a.admet_status,
+            a.hard_fail,
+            a.hard_fail_reasons,
+            a.soft_flags,
+            ROW_NUMBER() OVER (
+              PARTITION BY c.disease_id, COALESCE(da.canonical_drug_id, c.drug_id)
+              ORDER BY c.rank NULLS LAST, c.candidate_id
+            ) AS row_number
+          FROM drug_candidates c
+          JOIN drugs d ON d.drug_id = c.drug_id
+          LEFT JOIN drug_aliases da ON da.source_drug_id = d.drug_id
+          LEFT JOIN admet_results a ON a.candidate_id = c.candidate_id
+          WHERE c.disease_id = %(disease_id)s
+        )
         SELECT
-          c.candidate_id,
-          c.disease_id,
-          c.drug_id,
-          da.canonical_drug_id,
-          d.drug_name,
-          c.rank,
-          c.tier,
-          c.score,
-          c.target,
-          c.target_pathway,
-          c.evidence_summary,
-          d.canonical_smiles,
-          a.safety_score,
-          a.verdict,
-          a.admet_status,
-          a.hard_fail,
-          a.hard_fail_reasons,
-          a.soft_flags
-        FROM drug_candidates c
-        JOIN drugs d ON d.drug_id = c.drug_id
-        LEFT JOIN drug_aliases da ON da.source_drug_id = d.drug_id
-        LEFT JOIN admet_results a ON a.candidate_id = c.candidate_id
-        WHERE c.disease_id = %(disease_id)s
-        ORDER BY c.rank NULLS LAST, d.drug_name
+          candidate_id,
+          disease_id,
+          drug_id,
+          canonical_drug_id,
+          drug_name,
+          rank,
+          tier,
+          score,
+          target,
+          target_pathway,
+          evidence_summary,
+          canonical_smiles,
+          safety_score,
+          verdict,
+          admet_status,
+          hard_fail,
+          hard_fail_reasons,
+          soft_flags
+        FROM ranked
+        WHERE row_number = 1
+        ORDER BY rank NULLS LAST, drug_name
         LIMIT %(limit)s OFFSET %(offset)s
         """,
         {"disease_id": disease_id, "limit": limit, "offset": offset},

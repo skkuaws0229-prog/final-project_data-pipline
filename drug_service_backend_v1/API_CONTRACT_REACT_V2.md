@@ -447,7 +447,25 @@ limit      optional number, default 100, max 200
 - `evidence_sources`는 지원 근거, `risk_sources`는 ADMET 기반 감점/주의 근거입니다.
 - RAG/LLM 설명과 프론트엔드 상세 패널은 점수만 사용하지 말고 source/risk를 함께 사용해야 합니다.
 
-## 10. Text search
+## 10. Drug uniqueness rule
+
+아래 규칙은 모든 후보/score/result API에 적용합니다.
+
+```text
+같은 질병 안에서는 같은 canonical_drug_id를 중복 노출하지 않습니다.
+같은 약물이 여러 질병에 등장하는 것은 cross-disease 관계성 분석 대상으로 유지합니다.
+image-modal evidence의 다중 cluster 근거 row는 삭제하지 않고 evidence source로 보존합니다.
+```
+
+검증 산출물:
+
+```text
+drug_service_db_v1/05_validation/drug_uniqueness_api_summary_v1.csv
+drug_service_db_v1/05_validation/cross_disease_drug_relations_v1.csv
+drug_service_db_v1/05_validation/drug_uniqueness_validation_v1.md
+```
+
+## 11. Text search
 
 ### GET /health/search
 

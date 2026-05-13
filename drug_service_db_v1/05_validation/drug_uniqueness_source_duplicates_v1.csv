@@ -1,0 +1,4 @@
+disease_id,canonical_drug_id,example_drug_name,candidate_rows,candidate_ids,ranks
+IPF,cdrug_764c019441dcdbc1,Unnamed JAK1 preclinical compound,7,cand_760b4e46c015dc49|cand_b64c65ff2b71e6ba|cand_49cd86cf14628e1e|cand_8f0dfa8192b88dfd|cand_be4080382658e0e3|cand_49c0d4ee7b8b87d4|cand_a22e1eb9e5fd1faf,9|10|11|12|13|14|15
+Liver,cdrug_c8c9b4017be1244b,Bleomycin,2,cand_640d1b8fa71981b5|cand_7c1e4962d281f9ab,1|2
+STAD,cdrug_c8c9b4017be1244b,Bleomycin,2,cand_d3a411bdee007c87|cand_f1af7a1f0d64b693,1|2

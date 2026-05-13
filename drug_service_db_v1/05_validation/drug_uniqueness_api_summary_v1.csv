@@ -1,0 +1,12 @@
+disease_id,drugs_api_rows,drugs_api_duplicate_drugs,graph_candidate_edges,graph_candidate_duplicate_drugs,path_score_rows,path_score_duplicate_drugs
+BRCA,15,0,15,0,15,0
+Colon,15,0,15,0,15,0
+HNSC,30,0,30,0,30,0
+IPF,9,0,9,0,9,0
+LUNG,15,0,15,0,15,0
+Liver,14,0,14,0,14,0
+PAH,30,0,30,0,30,0
+PDAC,30,0,30,0,30,0
+Psoriasis,30,0,30,0,30,0
+RA,30,0,30,0,30,0
+STAD,29,0,29,0,29,0

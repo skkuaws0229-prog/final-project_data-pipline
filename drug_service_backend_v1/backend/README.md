@@ -144,6 +144,14 @@ path_score / positive_score / risk_penalty 0~1 범위 확인
 Risk penalty는 ADMET hard_fail/verdict/soft_flags 기준으로 분리 반환
 ```
 
+Drug uniqueness 기준:
+
+```text
+같은 질병 안의 후보/score/result 목록에서는 같은 canonical_drug_id를 중복 노출하지 않음
+같은 약물이 서로 다른 질병에 등장하는 것은 cross-disease 관계성 분석 대상으로 보존
+image-modal evidence의 다중 cluster 근거 row는 삭제하지 않고 provenance로 보존
+```
+
 ## Docker/AWS 메모
 
 Backend에는 Dockerfile이 있으므로 같은 FastAPI app을 로컬 또는 EC2에서 실행할 수 있습니다. EC2에서 실행할 때는 `DATABASE_URL`이 Docker Compose의 PostgreSQL service name을 가리키도록 설정합니다.

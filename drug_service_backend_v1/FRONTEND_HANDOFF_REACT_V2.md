@@ -100,6 +100,14 @@ GET /search?q=JAK&disease_id=RA
 canonical_drug_id
 ```
 
+중복 기준:
+
+```text
+같은 질병 안의 후보/score/result 목록에서는 같은 canonical_drug_id를 중복 표시하지 않음
+같은 약물이 여러 질병에 등장하는 것은 오류가 아니라 cross-disease 관계성 분석 대상
+image-modal evidence는 같은 약물이 여러 cluster 근거로 여러 번 나올 수 있으므로 근거 row는 보존
+```
+
 주의할 값:
 
 ```text
@@ -250,6 +258,19 @@ Out-of-range score: 0
 Missing evidence_sources: 0
 상세 리포트: drug_service_backend_v1/08_path_scoring/path_score_validation_v1.md
 ```
+
+Drug uniqueness 검증:
+
+```text
+/drugs duplicate canonical_drug_id: 0
+/graph/relations CANDIDATE_FOR duplicate drug: 0
+/graph/path-score duplicate canonical_drug_id: 0
+Cross-disease related drugs: 43
+Source candidate duplicate disease count: 3
+상세 리포트: drug_service_db_v1/05_validation/drug_uniqueness_validation_v1.md
+```
+
+Source candidate duplicate 3건은 API에서는 중복 노출되지 않지만, 원천 candidate 정규화 단계에서 보강할 대상입니다.
 
 ## 아직 구현하지 않는 것
 
