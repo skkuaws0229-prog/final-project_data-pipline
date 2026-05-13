@@ -62,6 +62,7 @@ docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md
 docs/alphafold_target_mapping_plan_v1.md
+docs/alphafold_target_mapping_integrity_v1.md
 ```
 
 ## Docker Compose 실행

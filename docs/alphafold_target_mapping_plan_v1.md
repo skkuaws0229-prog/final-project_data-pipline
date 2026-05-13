@@ -27,6 +27,7 @@ source_file
 ```text
 10_alphafold/target_mapping_candidates_v1.csv
 10_alphafold/target_mapping_exclusions_v1.csv
+10_alphafold/target_mapping_parsed_tokens_v1.csv
 10_alphafold/protein_targets_seed_v1.csv
 10_alphafold/target_mapping_summary_v1.md
 10_alphafold/build_target_mapping_candidates_v1.py
@@ -47,6 +48,7 @@ CSV line count:
 protein_targets_seed_v1.csv: 81 lines including header
 target_mapping_candidates_v1.csv: 81 lines including header
 target_mapping_exclusions_v1.csv: 59 lines including header
+target_mapping_parsed_tokens_v1.csv: 182 lines including header
 ```
 
 ## Mapping Candidate 기준
@@ -137,8 +139,8 @@ PI3Kbeta
 ```text
 1. target_mapping_candidates_v1.csv 검토
 2. exact_gene_symbol_candidate부터 UniProt ID 매핑
-3. alias_or_family_review는 수동 검토
-4. multi_target_parse_review는 여러 gene으로 분해
+3. target_mapping_parsed_tokens_v1.csv에서 다중 target 분해 후보 검토
+4. alias_or_family_review는 수동 검토
 5. 검토 완료된 row만 protein_targets_seed_v1.csv에 uniprot_id 입력
 6. protein_targets / target_protein_links에 seed data 적재
 7. 그 다음 AlphaFold DB API metadata 조회

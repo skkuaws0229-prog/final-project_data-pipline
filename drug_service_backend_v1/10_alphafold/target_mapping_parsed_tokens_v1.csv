@@ -1,0 +1,182 @@
+source_target_text,parsed_token,suggested_gene_symbol,parse_status,uniprot_id,mentions,diseases,notes
+"MEK1, MEK2",MEK1,MAP2K1,needs_review,,8,Colon|HNSC,parsed from multi-target raw text; verify before seed insertion
+"MEK1, MEK2",MEK2,MAP2K2,needs_review,,8,Colon|HNSC,parsed from multi-target raw text; verify before seed insertion
+BCL2;NR1I2;TUBB1,BCL2,BCL2,needs_review,,6,PDAC,parsed from multi-target raw text; verify before seed insertion
+BCL2;NR1I2;TUBB1,NR1I2,NR1I2,needs_review,,6,PDAC,parsed from multi-target raw text; verify before seed insertion
+BCL2;NR1I2;TUBB1,TUBB1,TUBB1,needs_review,,6,PDAC,parsed from multi-target raw text; verify before seed insertion
+"PARP1, PARP2",PARP1,PARP1,needs_review,,5,BRCA|HNSC,parsed from multi-target raw text; verify before seed insertion
+"PARP1, PARP2",PARP2,PARP2,needs_review,,5,BRCA|HNSC,parsed from multi-target raw text; verify before seed insertion
+"AURKA, AURKB, AURKC, others",AURKA,AURKA,needs_review,,4,STAD,parsed from multi-target raw text; verify before seed insertion
+"AURKA, AURKB, AURKC, others",AURKB,AURKB,needs_review,,4,STAD,parsed from multi-target raw text; verify before seed insertion
+"AURKA, AURKB, AURKC, others",AURKC,AURKC,needs_review,,4,STAD,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,ABL,ABL,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,ABL1,ABL1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,CAMK2G,CAMK2G,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,FGR,FGR,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,HCK,HCK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,LYN,LYN,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,MAP2K1,MAP2K1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,MAP2K2,MAP2K2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,MAP3K2,MAP3K2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,SLK,SLK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,SRC,SRC,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,TEC,TEC,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ANTHRACYCLINE;TOP2A;TOP2B,TOP2A,TOP2A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ANTHRACYCLINE;TOP2A;TOP2B,TOP2B,TOP2B,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+ANTIMETABOLITE;POLB,POLB,POLB,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, MCL1",BCL2,BCL2,needs_review,,3,Colon|HNSC|STAD,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, MCL1",BCL-XL,BCL2L1,needs_review,,3,Colon|HNSC|STAD,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, MCL1",MCL1,MCL1,needs_review,,3,Colon|HNSC|STAD,parsed from multi-target raw text; verify before seed insertion
+BCL2;MAP4;MAPK1;TUBB,BCL2,BCL2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BCL2;MAP4;MAPK1;TUBB,MAP4,MAP4,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BCL2;MAP4;MAPK1;TUBB,MAPK1,MAPK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BCL2;MAP4;MAPK1;TUBB,TUBB,TUBB,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BRAF;LIMK1;NEK11;RAF1;SIK1,BRAF,BRAF,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BRAF;LIMK1;NEK11;RAF1;SIK1,LIMK1,LIMK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BRAF;LIMK1;NEK11;RAF1;SIK1,NEK11,NEK11,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BRAF;LIMK1;NEK11;RAF1;SIK1,RAF1,RAF1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+BRAF;LIMK1;NEK11;RAF1;SIK1,SIK1,SIK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CAPN1;PROTEASOME,CAPN1,CAPN1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CAPN1;PROTEASOME,PROTEASOME,,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,CDK2,CDK2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,CHRM1,CHRM1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,CSK,CSK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,GSK3B,GSK3B,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,IKBKB,IKBKB,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,ITK,ITK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,LCK,LCK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,MAPKAPK2,MAPKAPK2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,PDPK1,PDPK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,PIK3CG,PIK3CG,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,PIM1,PIM1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,PRKCA,PRKCA,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,PRKCQ,PRKCQ,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,SYK,SYK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,ZAP70,ZAP70,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+FLT3;JAK2;NTRK1;NTRK2;NTRK3,FLT3,FLT3,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+FLT3;JAK2;NTRK1;NTRK2;NTRK3,JAK2,JAK2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+FLT3;JAK2;NTRK1;NTRK2;NTRK3,NTRK1,NTRK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+FLT3;JAK2;NTRK1;NTRK2;NTRK3,NTRK2,NTRK2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+FLT3;JAK2;NTRK1;NTRK2;NTRK3,NTRK3,NTRK3,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+IGF1R;IR,IGF1R,IGF1R,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+IGF1R;IR,IR,INSR,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+IKK-1;IKK-2,IKK-1,CHUK,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+IKK-1;IKK-2,IKK-2,IKBKB,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,JUN,JUN,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBA1A,TUBA1A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBB,TUBB,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBB2A,TUBB2A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBD1,TUBD1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBE1,TUBE1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,TUBG1,TUBG1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+MAP2K1;MAP2K2,MAP2K1,MAP2K1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+MAP2K1;MAP2K2,MAP2K2,MAP2K2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+MTOR;PIK3CG,MTOR,MTOR,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+MTOR;PIK3CG,PIK3CG,PIK3CG,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+"mTORC1, mTORC2",mTORC1,,needs_review,,3,Colon,parsed from multi-target raw text; verify before seed insertion
+"mTORC1, mTORC2",mTORC2,,needs_review,,3,Colon,parsed from multi-target raw text; verify before seed insertion
+"PLK1, PLK2, PLK3",PLK1,PLK1,needs_review,,3,HNSC|LUNG|STAD,parsed from multi-target raw text; verify before seed insertion
+"PLK1, PLK2, PLK3",PLK2,PLK2,needs_review,,3,HNSC|LUNG|STAD,parsed from multi-target raw text; verify before seed insertion
+"PLK1, PLK2, PLK3",PLK3,PLK3,needs_review,,3,HNSC|LUNG|STAD,parsed from multi-target raw text; verify before seed insertion
+PLK1;PLK2;PLK3,PLK1,PLK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PLK1;PLK2;PLK3,PLK2,PLK2,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PLK1;PLK2;PLK3,PLK3,PLK3,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PLK1;WEE1,PLK1,PLK1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PLK1;WEE1,WEE1,WEE1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+"Proteasome, CAPN1",Proteasome,,needs_review,,3,HNSC|Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"Proteasome, CAPN1",CAPN1,CAPN1,needs_review,,3,HNSC|Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+PROTEASOME;PRSS1;PSMB1;PSMB5,PROTEASOME,,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PROTEASOME;PRSS1;PSMB1;PSMB5,PRSS1,PRSS1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PROTEASOME;PRSS1;PSMB1;PSMB5,PSMB1,PSMB1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+PROTEASOME;PRSS1;PSMB1;PSMB5,PSMB5,PSMB5,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP1;TOP1MT,TOP1,TOP1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP1;TOP1MT,TOP1MT,TOP1MT,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP1;TOP2A,TOP1,TOP1,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP1;TOP2A,TOP2A,TOP2A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP2;TOP2A;TOP2B,TOP2,,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP2;TOP2A;TOP2B,TOP2A,TOP2A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP2;TOP2A;TOP2B,TOP2B,TOP2B,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP2A;TOP2B,TOP2A,TOP2A,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+TOP2A;TOP2B,TOP2B,TOP2B,needs_review,,3,PDAC,parsed from multi-target raw text; verify before seed insertion
+"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",ABL,ABL,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",EPHRINS,,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",KIT,KIT,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",PDGFR,,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC",SRC,SRC,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",BCL-XL,BCL2L1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",BCL2,BCL2,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",MCL1,MCL1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1",BCL2L1,BCL2L1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"CDK4, CDK6",CDK4,CDK4,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"CDK4, CDK6",CDK6,CDK6,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"EGFR, ERBB2",EGFR,EGFR,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"EGFR, ERBB2",ERBB2,ERBB2,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"FLT3, JAK2, NTRK1, NTRK2, NTRK3",FLT3,FLT3,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"FLT3, JAK2, NTRK1, NTRK2, NTRK3",JAK2,JAK2,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"FLT3, JAK2, NTRK1, NTRK2, NTRK3",NTRK1,NTRK1,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"FLT3, JAK2, NTRK1, NTRK2, NTRK3",NTRK2,NTRK2,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"FLT3, JAK2, NTRK1, NTRK2, NTRK3",NTRK3,NTRK3,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC3",HDAC1,HDAC1,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC3",HDAC3,HDAC3,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",HDAC1,HDAC1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",HDAC2,HDAC2,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",HDAC3,HDAC3,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8",HDAC8,HDAC8,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3",HDAC1,HDAC1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3",HDAC3,HDAC3,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2",PARP1,PARP1,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2",PARP2,PARP2,needs_review,,2,HNSC,parsed from multi-target raw text; verify before seed insertion
+"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3Kalpha,PI3KALPHA,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3Kdelta,PI3KDELTA,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3Kbeta,PI3KBETA,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3Kgamma,PI3KGAMMA,needs_review,,2,HNSC|LUNG,parsed from multi-target raw text; verify before seed insertion
+"SRC, ABL, TEC",SRC,SRC,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"SRC, ABL, TEC",ABL,ABL,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"SRC, ABL, TEC",TEC,TEC,needs_review,,2,Liver|STAD,parsed from multi-target raw text; verify before seed insertion
+"ABL, SRC, Ephrins, PDGFR, KIT",ABL,ABL,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL, SRC, Ephrins, PDGFR, KIT",SRC,SRC,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL, SRC, Ephrins, PDGFR, KIT",Ephrins,,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL, SRC, Ephrins, PDGFR, KIT",PDGFR,,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"ABL, SRC, Ephrins, PDGFR, KIT",KIT,KIT,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"AKT1, AKT2",AKT1,AKT1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"AKT1, AKT2",AKT2,AKT2,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"AKT1, AKT2, AKT3",AKT1,AKT1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"AKT1, AKT2, AKT3",AKT2,AKT2,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"AKT1, AKT2, AKT3",AKT3,AKT3,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+AURKA|AURKB|AURKC|OTHERS,AURKA,AURKA,needs_review,,1,Liver,parsed from multi-target raw text; verify before seed insertion
+AURKA|AURKB|AURKC|OTHERS,AURKB,AURKB,needs_review,,1,Liver,parsed from multi-target raw text; verify before seed insertion
+AURKA|AURKB|AURKC|OTHERS,AURKC,AURKC,needs_review,,1,Liver,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BCL-W",BCL2,BCL2,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BCL-W",BCL-XL,BCL2L1,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BCL-W",BCL-W,BCL-W,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BFL1, MCL1",BCL2,BCL2,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BFL1, MCL1",BCL-XL,BCL2L1,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BFL1, MCL1",BFL1,BFL1,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"BCL2, BCL-XL, BFL1, MCL1",MCL1,MCL1,needs_review,,1,Colon,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC2, HDAC3, HDAC8",HDAC1,HDAC1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC2, HDAC3, HDAC8",HDAC2,HDAC2,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC2, HDAC3, HDAC8",HDAC3,HDAC3,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"HDAC1, HDAC2, HDAC3, HDAC8",HDAC8,HDAC8,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",MET,MET,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",KDR,KDR,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",TIE2,TIE2,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",VEGFR3,VEGFR3,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",FLT4,FLT4,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",RON,RON,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",PDGFR,,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",FGFR1,FGFR1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR",EGFR,EGFR,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"RSK, AURKB, PIM1, PIM3",RSK,RSK,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"RSK, AURKB, PIM1, PIM3",AURKB,AURKB,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"RSK, AURKB, PIM1, PIM3",PIM1,PIM1,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"RSK, AURKB, PIM1, PIM3",PIM3,PIM3,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",TBK1,TBK1,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",PDK1,PDK1,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",PDPK1,PDPK1,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",IKK,IKK,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",AURKB,AURKB,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC",AURKC,AURKC,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"WEE1, PLK1",WEE1,WEE1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"WEE1, PLK1",PLK1,PLK1,needs_review,,1,HNSC,parsed from multi-target raw text; verify before seed insertion
+"XIAP, cIAP",XIAP,XIAP,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion
+"XIAP, cIAP",cIAP,CIAP,needs_review,,1,STAD,parsed from multi-target raw text; verify before seed insertion

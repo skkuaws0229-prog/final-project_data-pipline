@@ -17,7 +17,7 @@ INPUTS = [
     ("evidence_pathway", NORMALIZED / "image_modal_drug_evidence.csv", "target_pathway"),
 ]
 
-PLACEHOLDERS = {"", "nan", "na", "n/a", "none", "null", "other", "other, kinases", "unknown"}
+PLACEHOLDERS = {"", "nan", "na", "n/a", "none", "null", "other", "others", "other, kinases", "unknown"}
 GENERIC_NON_PROTEIN = {
     "cell cycle",
     "dna replication",
@@ -28,6 +28,8 @@ GENERIC_NON_PROTEIN = {
     "dsdna break induction",
     "microtubule stabiliser",
     "microtubule destabiliser",
+    "anthracycline",
+    "antimetabolite",
 }
 PATHWAY_KEYWORDS = {
     "pathway",
@@ -55,6 +57,20 @@ ALIAS_REVIEW = {
     "PI3Kbeta": "PIK3CB",
     "TOP2": "",
     "NAE": "",
+}
+TOKEN_ALIAS_SUGGESTIONS = {
+    "MEK1": "MAP2K1",
+    "MEK2": "MAP2K2",
+    "BCL-XL": "BCL2L1",
+    "IR": "INSR",
+    "IKK-1": "CHUK",
+    "IKK-2": "IKBKB",
+    "MTORC1": "",
+    "MTORC2": "",
+    "PROTEASOME": "",
+    "EPHRINS": "",
+    "PDGFR": "",
+    "TOP2": "",
 }
 
 
@@ -116,12 +132,47 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> 
         writer.writerows(rows)
 
 
+def split_target_tokens(text: str) -> list[str]:
+    raw_tokens = re.split(r"[;,|+]", text)
+    tokens: list[str] = []
+    for raw in raw_tokens:
+        token = normalize_text(raw)
+        if not token:
+            continue
+        if token.lower() in PLACEHOLDERS or token.lower() in GENERIC_NON_PROTEIN:
+            continue
+        words = re.findall(r"[A-Za-z][A-Za-z0-9-]{1,15}", token)
+        if len(words) == 1 and words[0].lower() not in PLACEHOLDERS:
+            if words[0].lower() in GENERIC_NON_PROTEIN:
+                continue
+            tokens.append(words[0])
+            continue
+        for word in words:
+            if word.lower() in PLACEHOLDERS:
+                continue
+            if word.lower() in GENERIC_NON_PROTEIN:
+                continue
+            if len(word) < 2:
+                continue
+            if re.fullmatch(r"[A-Z][A-Z0-9-]{1,11}", word) or word in TOKEN_ALIAS_SUGGESTIONS:
+                tokens.append(word)
+    deduped: list[str] = []
+    seen = set()
+    for token in tokens:
+        key = token.upper()
+        if key not in seen:
+            seen.add(key)
+            deduped.append(token)
+    return deduped
+
+
 def main() -> None:
     OUT_DIR.mkdir(exist_ok=True)
     grouped = read_targets()
     candidates: list[dict[str, str]] = []
     exclusions: list[dict[str, str]] = []
     seed_rows: list[dict[str, str]] = []
+    parsed_rows: list[dict[str, str]] = []
 
     for text, items in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0].lower())):
         decision, reason_or_class, suggested_gene, notes = classify(text)
@@ -158,6 +209,22 @@ def main() -> None:
                     "notes": notes,
                 }
             )
+            if reason_or_class == "multi_target_parse_review":
+                for token in split_target_tokens(text):
+                    token_upper = token.upper()
+                    suggested = TOKEN_ALIAS_SUGGESTIONS.get(token, TOKEN_ALIAS_SUGGESTIONS.get(token_upper, token_upper))
+                    parsed_rows.append(
+                        {
+                            "source_target_text": text,
+                            "parsed_token": token,
+                            "suggested_gene_symbol": suggested,
+                            "parse_status": "needs_review",
+                            "uniprot_id": "",
+                            "mentions": str(len(items)),
+                            "diseases": "|".join(diseases),
+                            "notes": "parsed from multi-target raw text; verify before seed insertion",
+                        }
+                    )
         else:
             exclusions.append({**common, "exclusion_reason": reason_or_class})
 
@@ -207,6 +274,20 @@ def main() -> None:
         ],
         seed_rows,
     )
+    write_csv(
+        OUT_DIR / "target_mapping_parsed_tokens_v1.csv",
+        [
+            "source_target_text",
+            "parsed_token",
+            "suggested_gene_symbol",
+            "parse_status",
+            "uniprot_id",
+            "mentions",
+            "diseases",
+            "notes",
+        ],
+        parsed_rows,
+    )
 
     summary = [
         "# AlphaFold Target Mapping 후보 생성 v1",
@@ -218,6 +299,7 @@ def main() -> None:
         f"mapping candidates: {len(candidates)}",
         f"exclusions: {len(exclusions)}",
         f"protein seed rows: {len(seed_rows)}",
+        f"parsed multi-target token rows: {len(parsed_rows)}",
         "```",
         "",
         "## 산출물",
@@ -225,6 +307,7 @@ def main() -> None:
         "```text",
         "10_alphafold/target_mapping_candidates_v1.csv",
         "10_alphafold/target_mapping_exclusions_v1.csv",
+        "10_alphafold/target_mapping_parsed_tokens_v1.csv",
         "10_alphafold/protein_targets_seed_v1.csv",
         "```",
         "",

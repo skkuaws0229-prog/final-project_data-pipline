@@ -7,6 +7,7 @@ unique raw target/pathway texts: 138
 mapping candidates: 80
 exclusions: 58
 protein seed rows: 80
+parsed multi-target token rows: 181
 ```
 
 ## 산출물
@@ -14,6 +15,7 @@ protein seed rows: 80
 ```text
 10_alphafold/target_mapping_candidates_v1.csv
 10_alphafold/target_mapping_exclusions_v1.csv
+10_alphafold/target_mapping_parsed_tokens_v1.csv
 10_alphafold/protein_targets_seed_v1.csv
 ```
 
