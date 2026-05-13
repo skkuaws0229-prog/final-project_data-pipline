@@ -1,0 +1,265 @@
+# Frontend Handoff: Structure API v1
+
+## 목적
+
+프론트엔드에서 질환별 protein structure 후보 목록과 상세 metadata를 연결하기 위한 API 계약이다.
+
+현재는 3D 구조 파일 자체를 S3에서 렌더링하는 단계가 아니다.
+
+```text
+현재 가능: 목록 조회, 상세 metadata 조회, 약물/근거 context 표시
+아직 아님: S3 .cif/.pdb viewer 렌더링
+```
+
+## Base URL
+
+로컬 개발:
+
+```text
+http://localhost:8010
+```
+
+같은 네트워크에서 다른 컴퓨터가 붙을 때는 백엔드 실행 PC IP를 사용한다.
+
+예:
+
+```text
+http://172.16.0.64:8010
+```
+
+## Endpoint 1: 질환별 구조 후보 목록
+
+```http
+GET /api/structures/targets
+```
+
+Query:
+
+```text
+disease_id optional
+q optional
+limit optional, default 100, max 200
+```
+
+예:
+
+```http
+GET /api/structures/targets?disease_id=RA
+GET /api/structures/targets?q=JAK
+```
+
+응답 예:
+
+```json
+{
+  "targets": [
+    {
+      "protein_id": "protein_p23458",
+      "gene_symbol": "JAK1",
+      "uniprot_id": "P23458",
+      "protein_name": "Tyrosine-protein kinase JAK1",
+      "organism": "Homo sapiens",
+      "source": "uniprot_auto_mapping_v1",
+      "target_texts": ["JAK1"],
+      "mapping_statuses": ["exact"],
+      "diseases": ["IPF", "Psoriasis", "RA"],
+      "structure_status": "pending",
+      "structure_count": 1
+    }
+  ]
+}
+```
+
+UI 권장:
+
+```text
+disease_id 선택
+→ targets list 표시
+→ gene_symbol / protein_name / UniProt ID 표시
+→ structure_status=pending 배지 표시
+→ target 클릭 시 detail endpoint 호출
+```
+
+## Endpoint 2: 구조 상세 metadata
+
+```http
+GET /api/structures/{structure_id}
+```
+
+예:
+
+```http
+GET /api/structures/af_p23458_f1_v6
+```
+
+응답 주요 필드:
+
+```text
+structure_id
+protein_id
+gene_symbol
+uniprot_id
+protein_name
+provider
+provider_accession
+version
+file_format
+structure_uri
+source_url
+pae_uri
+mean_plddt
+license
+status
+structure_status
+target_texts
+mapping_statuses
+diseases
+target_links
+context_links
+```
+
+상세 응답 예:
+
+```json
+{
+  "structure_id": "af_p23458_f1_v6",
+  "protein_id": "protein_p23458",
+  "gene_symbol": "JAK1",
+  "uniprot_id": "P23458",
+  "protein_name": "Tyrosine-protein kinase JAK1",
+  "provider": "alphafold_db",
+  "version": "v6",
+  "file_format": "cif",
+  "structure_uri": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-model_v6.cif",
+  "source_url": "https://alphafold.ebi.ac.uk/entry/AF-P23458-F1",
+  "pae_uri": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-predicted_aligned_error_v6.json",
+  "mean_plddt": 85.56,
+  "license": "CC-BY-4.0",
+  "status": "to_fetch",
+  "structure_status": "pending",
+  "target_texts": ["JAK1"],
+  "diseases": ["IPF", "Psoriasis", "RA"],
+  "context_links": []
+}
+```
+
+실제 응답의 `context_links`에는 후보 약물/이미지 근거 연결이 들어간다.
+
+## context_links 의미
+
+`context_links`는 이 structure가 어떤 질환/약물 후보/이미지 근거와 연결되는지 보여준다.
+
+주요 필드:
+
+```text
+context_id
+disease_id
+candidate_id
+evidence_id
+canonical_drug_id
+drug_name
+target_source
+relation_note
+```
+
+`target_source`:
+
+```text
+candidate_target
+image_evidence
+```
+
+`relation_note`는 JSON string이다. 필요하면 parse해서 아래 값을 표시할 수 있다.
+
+```text
+matched_target_text
+source_target
+target_pathway
+mapping_status
+confidence
+drug_id
+drug_name
+source_file
+```
+
+## 상태값 의미
+
+```text
+structure_status=pending
+```
+
+현재 의미:
+
+```text
+AlphaFold DB metadata는 있음
+실제 구조 파일은 아직 S3에 없음
+structure_uri는 AlphaFold DB 외부 cifUrl
+```
+
+프론트 표시 권장:
+
+```text
+pending: "구조 metadata 확인됨 / 파일 준비 전"
+available: "구조 파일 사용 가능"
+not_loaded: "metadata 없음"
+missing: "AlphaFold DB entry 없음"
+failed: "조회 실패"
+```
+
+현재 v1에서는 대부분 또는 전부 `pending`이다.
+
+## 화면 구성 제안
+
+최소 구성:
+
+```text
+질환 선택 dropdown
+protein structure 후보 table
+protein row 클릭
+우측 drawer 또는 modal에서 상세 metadata 표시
+context_links table 표시
+```
+
+권장 컬럼:
+
+```text
+gene_symbol
+protein_name
+uniprot_id
+target_texts
+mean_plddt
+structure_status
+context link count
+```
+
+상세 패널:
+
+```text
+AlphaFold source_url
+structure_uri
+pae_uri
+license
+target_links
+context_links
+```
+
+## 아직 하지 말 것
+
+```text
+S3 구조 파일이 있다고 가정하지 않기
+3D viewer를 바로 production으로 고정하지 않기
+structure_status=pending을 available처럼 표시하지 않기
+AlphaFold 외부 URL을 장기 운영 파일 저장소로 가정하지 않기
+```
+
+## 다음 단계
+
+프론트에서 목록/상세/context UI 연결이 확인되면:
+
+```text
+1. .cif 파일 1~2개 pilot 다운로드
+2. S3 저장 경로 확정
+3. DB structure_uri를 S3 URI로 업데이트
+4. structure_status=available 전환
+5. 3D viewer modal 연결
+```
