@@ -40,7 +40,17 @@ def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> 
         writer.writerows(rows)
 
 
-def fetch_rows(database_url: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, str]]:
+def normalize_name(value: str | None) -> str:
+    return re.sub(r"\s+", " ", (value or "").strip()).lower()
+
+
+def fetch_rows(database_url: str) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    dict[str, str],
+    dict[str, str],
+]:
     import psycopg
     from psycopg.rows import dict_row
 
@@ -94,11 +104,23 @@ def fetch_rows(database_url: str) -> tuple[list[dict[str, Any]], list[dict[str, 
                 """
             )
             canonical_map = {row["source_drug_id"]: row["canonical_drug_id"] for row in cur.fetchall()}
-    return target_links, candidates, evidence_rows, canonical_map
+            cur.execute(
+                """
+                SELECT primary_drug_name AS drug_name, canonical_drug_id
+                FROM canonical_drugs
+                WHERE primary_drug_name IS NOT NULL
+                UNION
+                SELECT alias_name AS drug_name, canonical_drug_id
+                FROM drug_aliases
+                WHERE alias_name IS NOT NULL
+                """
+            )
+            canonical_name_map = {normalize_name(row["drug_name"]): row["canonical_drug_id"] for row in cur.fetchall()}
+    return target_links, candidates, evidence_rows, canonical_map, canonical_name_map
 
 
 def build_rows(database_url: str) -> list[dict[str, str]]:
-    target_links, candidates, evidence_rows, canonical_map = fetch_rows(database_url)
+    target_links, candidates, evidence_rows, canonical_map, canonical_name_map = fetch_rows(database_url)
     rows: dict[str, dict[str, str]] = {}
 
     for source in candidates:
@@ -121,7 +143,7 @@ def build_rows(database_url: str) -> list[dict[str, str]]:
                 "context_id": context_id,
                 "disease_id": source["disease_id"],
                 "candidate_id": source["candidate_id"],
-                "canonical_drug_id": canonical_map.get(source["drug_id"], ""),
+                "canonical_drug_id": canonical_map.get(source["drug_id"], "") or canonical_name_map.get(normalize_name(source["drug_name"]), ""),
                 "evidence_id": "",
                 "protein_id": link["protein_id"],
                 "structure_id": link["structure_id"],
@@ -162,7 +184,7 @@ def build_rows(database_url: str) -> list[dict[str, str]]:
                 "context_id": context_id,
                 "disease_id": source["disease_id"],
                 "candidate_id": "",
-                "canonical_drug_id": canonical_map.get(source["drug_id"], ""),
+                "canonical_drug_id": canonical_map.get(source["drug_id"], "") or canonical_name_map.get(normalize_name(source["drug_name"]), ""),
                 "evidence_id": source["evidence_id"],
                 "protein_id": link["protein_id"],
                 "structure_id": link["structure_id"],
