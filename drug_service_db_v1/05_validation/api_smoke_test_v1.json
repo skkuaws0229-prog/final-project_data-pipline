@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-05-13T01:46:39.997400+00:00",
+  "health": {
+    "status": "ok",
+    "database": "ok"
+  },
+  "diseases_count": 11,
+  "sample_brca_drugs": [
+    {
+      "candidate_id": "cand_4efd01eeeeee22b0",
+      "disease_id": "BRCA",
+      "drug_id": "1814",
+      "canonical_drug_id": "cdrug_7213242416f41e1a",
+      "drug_name": "Nelarabine",
+      "rank": 1,
+      "tier": "3",
+      "score": "4.939345971377194",
+      "target": null,
+      "target_pathway": null,
+      "evidence_summary": null,
+      "canonical_smiles": "COc1nc(N)nc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O",
+      "safety_score": "33.285",
+      "verdict": "PASS",
+      "admet_status": "PASS",
+      "hard_fail": "0",
+      "hard_fail_reasons": null,
+      "soft_flags": null
+    },
+    {
+      "candidate_id": "cand_cf0cc26c331f4400",
+      "disease_id": "BRCA",
+      "drug_id": "1507",
+      "canonical_drug_id": "cdrug_6c95cca9e9b8fc23",
+      "drug_name": "Ruxolitinib",
+      "rank": 2,
+      "tier": "2",
+      "score": "5.074542883916546",
+      "target": null,
+      "target_pathway": null,
+      "evidence_summary": null,
+      "canonical_smiles": "N#CC[C@H](C1CCCC1)n1cc(-c2ncnc3[nH]ccc23)cn1",
+      "safety_score": "30.776",
+      "verdict": "PASS",
+      "admet_status": "PASS",
+      "hard_fail": "0",
+      "hard_fail_reasons": null,
+      "soft_flags": null
+    }
+  ],
+  "sample_brca_image_modal_evidence": [
+    {
+      "evidence_id": "imev_927a379646c99e28",
+      "disease_id": "BRCA",
+      "cluster_id": "imcluster_7cb8eb52594960af",
+      "cluster_key": "C0",
+      "cluster_label": null,
+      "drug_id": "1375",
+      "canonical_drug_id": "cdrug_625e359eee8fc99b",
+      "match_status": "matched",
+      "drug_name": "Temozolomide",
+      "rank": 5,
+      "tier": null,
+      "target": "DNA alkylating agent",
+      "target_pathway": "DNA replication",
+      "evidence_text": "PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%",
+      "source_file": "BRCA_drug_linkage.csv"
+    },
+    {
+      "evidence_id": "imev_bc04a47d3c7c46af",
+      "disease_id": "BRCA",
+      "cluster_id": "imcluster_f4abf244974b1646",
+      "cluster_key": "C1",
+      "cluster_label": null,
+      "drug_id": "1375",
+      "canonical_drug_id": "cdrug_625e359eee8fc99b",
+      "match_status": "matched",
+      "drug_name": "Temozolomide",
+      "rank": 5,
+      "tier": null,
+      "target": "DNA alkylating agent",
+      "target_pathway": "DNA replication",
+      "evidence_text": "PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%",
+      "source_file": "BRCA_drug_linkage.csv"
+    }
+  ],
+  "sample_pah_reports": [
+    {
+      "report_id": "imrep_f6ee9705d965ddf1",
+      "disease_id": "PAH",
+      "report_kind": "drug_linkage",
+      "title": "PAH CT-CLIP Cluster Drug Stratification Hypothesis",
+      "report_text": "# PAH CT-CLIP Cluster Drug Stratification Hypothesis\n\nThis analysis reuses the OSIC CT-CLIP image-modal clusters generated in the IPF pipeline. The PAH mapping is a mechanism-of-action hypothesis, not a direct drug-response prediction.\n\n## Cluster Mapping\n\n| Cluster | Label | PAH Interpretation | Key Pathway | Drug Candidates |\n|---:|---|---|---|---|\n| 0 | Early Vascular Remodeling | Preserved lung function with rapid decline risk | Endothelin + NO/PDE5 pathway | VARDENAFIL, SILDENAFIL, AMBRISENTAN, MACITENTAN, TADALAFIL, BOSENTAN, unnamed lead (CHEMBL304460) |\n| 1 | Advanced Vascular Disease | Lower lung function with structural remodeling | Prostacyclin + advanced anti-remodeling | EPOPROSTENOL, ILOPROST, SELEXIPAG, ATRASENTAN |\n\n## Limitations\n\n1. OSIC is a pulmonary fibrosis/ILD CT dataset, not a PAH-specific HRCT cohort.\n2. PAH HRCT phenotypes such as pulmonary artery enlargement and mosaic perfusion are not explicitly modeled here.\n3. GEO expression patients and OSIC CT patients are different cohorts, so no patient-level linkage is possible.\n4. Cluster-drug mapping is based on PAH pathway/MoA knowledge and requires clinical validation.\n5. Future work should repeat CT-CLIP clustering on PAH-specific CT data or CT-RATE PAH-filtered cohorts.\n",
+      "source_file": "PAH_drug_linkage.md"
+    },
+    {
+      "report_id": "imrep_3a37846164d20203",
+      "disease_id": "PAH",
+      "report_kind": "report",
+      "title": "PAH CT-CLIP Cluster Drug Stratification Hypothesis",
+      "report_text": "# PAH CT-CLIP Cluster Drug Stratification Hypothesis\n\nThis analysis reuses the OSIC CT-CLIP image-modal clusters generated in the IPF pipeline. The PAH mapping is a mechanism-of-action hypothesis, not a direct drug-response prediction.\n\n## Cluster Mapping\n\n| Cluster | Label | PAH Interpretation | Key Pathway | Drug Candidates |\n|---:|---|---|---|---|\n| 0 | Early Vascular Remodeling | Preserved lung function with rapid decline risk | Endothelin + NO/PDE5 pathway | VARDENAFIL, SILDENAFIL, AMBRISENTAN, MACITENTAN, TADALAFIL, BOSENTAN, unnamed lead (CHEMBL304460) |\n| 1 | Advanced Vascular Disease | Lower lung function with structural remodeling | Prostacyclin + advanced anti-remodeling | EPOPROSTENOL, ILOPROST, SELEXIPAG, ATRASENTAN |\n\n## Limitations\n\n1. OSIC is a pulmonary fibrosis/ILD CT dataset, not a PAH-specific HRCT cohort.\n2. PAH HRCT phenotypes such as pulmonary artery enlargement and mosaic perfusion are not explicitly modeled here.\n3. GEO expression patients and OSIC CT patients are different cohorts, so no patient-level linkage is possible.\n4. Cluster-drug mapping is based on PAH pathway/MoA knowledge and requires clinical validation.\n5. Future work should repeat CT-CLIP clustering on PAH-specific CT data or CT-RATE PAH-filtered cohorts.\n",
+      "source_file": "PAH_report.md"
+    }
+  ]
+}

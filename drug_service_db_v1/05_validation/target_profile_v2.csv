@@ -1,0 +1,3 @@
+source,total_rows,missing_target_rows,long_target_rows
+drug_candidates,255,64,0
+image_modal_drug_evidence,430,28,4

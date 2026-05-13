@@ -1,0 +1,16 @@
+check,status,detail
+Disease count preserved,PASS,11 graph vs 11 source
+Canonical drug count preserved,PASS,170 graph vs 170 source
+Drug alias count preserved,PASS,181 graph vs 181 source
+Disease alias count preserved,PASS,31 graph vs 31 source
+Candidate edge count preserved,PASS,255 graph vs 255 source
+Image evidence count preserved,PASS,430 graph vs 430 source
+Evidence drug edge count preserved,PASS,430 graph vs 430 source matches
+Cluster count preserved,PASS,31 graph vs 31 source
+Candidate ids preserved,PASS,"missing=0, extra=0"
+Evidence ids preserved,PASS,"missing=0, extra=0"
+Evidence match ids preserved,PASS,missing=0
+Cluster ids preserved,PASS,"missing=0, extra=0"
+Drug alias ids preserved,PASS,"missing=0, extra=0"
+Disease alias ids preserved,PASS,"missing=0, extra=0"
+Graph edge endpoint references,PASS,broken_refs=0

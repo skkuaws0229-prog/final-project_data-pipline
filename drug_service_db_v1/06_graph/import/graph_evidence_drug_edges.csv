@@ -1,0 +1,431 @@
+evidence_id,canonical_drug_id,match_status,drug_name,rank,tier
+imev_927a379646c99e28,cdrug_625e359eee8fc99b,matched,Temozolomide,5,
+imev_48cf0175de014061,cdrug_859d8ffb5445e2e7,evidence_only,CZC24832,7,
+imev_19877bb9effdedf1,cdrug_c44992701a33be56,matched,Oxaliplatin,9,
+imev_34503fb489bf6bc0,cdrug_bd7982d23450b140,matched,Fludarabine,10,
+imev_0ca9fafe44a1c573,cdrug_cbcd649f573196df,evidence_only,THR-101,14,
+imev_b5eb1d590e25ddc4,cdrug_7213242416f41e1a,matched,Nelarabine,18,
+imev_f07a950512098d2d,cdrug_6f8eb0b04f84047d,evidence_only,Veliparib,19,
+imev_efe71dae8be941ff,cdrug_d8014f6e4666f0f3,evidence_only,MIRA-1,20,
+imev_bc04a47d3c7c46af,cdrug_625e359eee8fc99b,matched,Temozolomide,5,
+imev_a217b43b5bfddda0,cdrug_859d8ffb5445e2e7,evidence_only,CZC24832,7,
+imev_5f6df7709575e8bb,cdrug_c44992701a33be56,matched,Oxaliplatin,9,
+imev_61bfd5df207795e3,cdrug_bd7982d23450b140,matched,Fludarabine,10,
+imev_9d86c4c6a2d447a1,cdrug_cbcd649f573196df,evidence_only,THR-101,14,
+imev_8eada2ac10833e22,cdrug_7213242416f41e1a,matched,Nelarabine,18,
+imev_b41c87eff0240d13,cdrug_6f8eb0b04f84047d,evidence_only,Veliparib,19,
+imev_9c580004ccc71083,cdrug_d8014f6e4666f0f3,evidence_only,MIRA-1,20,
+imev_b701d70d95cd41d1,cdrug_625e359eee8fc99b,matched,Temozolomide,5,
+imev_92ae2d828b7eec9d,cdrug_859d8ffb5445e2e7,evidence_only,CZC24832,7,
+imev_74a27b6da862ac86,cdrug_c44992701a33be56,matched,Oxaliplatin,9,
+imev_ba70a84083de122c,cdrug_bd7982d23450b140,matched,Fludarabine,10,
+imev_ba2c618df177429b,cdrug_cbcd649f573196df,evidence_only,THR-101,14,
+imev_56c1988c6356b83f,cdrug_7213242416f41e1a,matched,Nelarabine,18,
+imev_5874a5510950845b,cdrug_6f8eb0b04f84047d,evidence_only,Veliparib,19,
+imev_380dbd79c03b15f5,cdrug_d8014f6e4666f0f3,evidence_only,MIRA-1,20,
+imev_050c2c69cb367597,cdrug_625e359eee8fc99b,matched,Temozolomide,5,
+imev_da76f12c68a868ef,cdrug_859d8ffb5445e2e7,evidence_only,CZC24832,7,
+imev_1527b6b8e28af700,cdrug_c44992701a33be56,matched,Oxaliplatin,9,
+imev_39e1842bfa3101d1,cdrug_bd7982d23450b140,matched,Fludarabine,10,
+imev_6ab2727ebf7b06ef,cdrug_c7bcca826492e28a,evidence_only,CCT007093,12,
+imev_d0c1e6d6703c6820,cdrug_cbcd649f573196df,evidence_only,THR-101,14,
+imev_08387e6c2b0cffbd,cdrug_7213242416f41e1a,matched,Nelarabine,18,
+imev_2c1681b23b4ffec3,cdrug_6f8eb0b04f84047d,evidence_only,Veliparib,19,
+imev_24a56cefe10450d5,cdrug_da0375af747f9b98,matched,Irinotecan,24,Tier1
+imev_de0792b63b8cb5cd,cdrug_f8909ca4d8abdc96,matched,Vinblastine,3,Tier2
+imev_38acf875e39fb39e,cdrug_b927e4cdcac90f13,matched,Vinorelbine,4,Tier2
+imev_310ff2beb4e8104c,cdrug_ec25ee06790a07e7,matched,Temsirolimus,7,Tier2
+imev_7f6c98af0fa196cc,cdrug_a286fdd293b9be53,matched,Camptothecin,11,Tier2
+imev_32f6492cd929918d,cdrug_c40413853cfa1088,matched,Topotecan,27,Tier2
+imev_2201397b36ec4b2b,cdrug_20b83add6b9c4f21,matched,Paclitaxel,2,Tier2
+imev_356033c99a7bce52,cdrug_61a5e8e07ce664d1,matched,Docetaxel,5,Tier2
+imev_17b2909c5d9ae248,cdrug_edd483796693a02f,matched,Teniposide,6,Tier2
+imev_6ceebb12905812b4,cdrug_9487650b5625fd2e,matched,Rapamycin,8,Tier2
+imev_b863e52beca8a55c,cdrug_8bfd50149ba3e72c,evidence_only,Refametinib,10,Tier2
+imev_49648c88e28869c5,cdrug_25c95fa72ddae840,evidence_only,LMP744,12,Tier2
+imev_23bfa059bbb87ada,cdrug_18e3cf278c38ce2a,matched,Trametinib,16,Tier2
+imev_ae934e3183df64da,cdrug_6db1bafe8fb867b7,matched,AZD2014,18,Tier2
+imev_2fc027ab590a9c07,cdrug_06622178d9ceb258,matched,AZD6482,19,Tier2
+imev_8ab43b37081d8513,cdrug_437729aca9b5a6f7,evidence_only,PD0325901,22,Tier2
+imev_007f9f3bc34228b6,cdrug_34152dace9ff98c9,matched,Epirubicin,25,Tier2
+imev_11e2e0772cb5f30b,cdrug_5b0d446d35d3790d,matched,Bortezomib,26,Tier2
+imev_f231b8c2bb75acb3,cdrug_da0375af747f9b98,matched,Irinotecan,24,Tier1
+imev_ee1ef03d546cb322,cdrug_f8909ca4d8abdc96,matched,Vinblastine,3,Tier2
+imev_effd1f61dd0bdb8d,cdrug_b927e4cdcac90f13,matched,Vinorelbine,4,Tier2
+imev_c694208b29043c01,cdrug_ec25ee06790a07e7,matched,Temsirolimus,7,Tier2
+imev_61f8834d960ff829,cdrug_a286fdd293b9be53,matched,Camptothecin,11,Tier2
+imev_8c4ba0c6b7898360,cdrug_c40413853cfa1088,matched,Topotecan,27,Tier2
+imev_58224d4a68e82c1e,cdrug_20b83add6b9c4f21,matched,Paclitaxel,2,Tier2
+imev_89bd6e11aabe15e1,cdrug_61a5e8e07ce664d1,matched,Docetaxel,5,Tier2
+imev_e6321c02753feb29,cdrug_edd483796693a02f,matched,Teniposide,6,Tier2
+imev_1074396e456bab7c,cdrug_9487650b5625fd2e,matched,Rapamycin,8,Tier2
+imev_e5c89dc7db5a5cb2,cdrug_8bfd50149ba3e72c,evidence_only,Refametinib,10,Tier2
+imev_87595fc7e0a5cfee,cdrug_25c95fa72ddae840,evidence_only,LMP744,12,Tier2
+imev_8bc198a0c2fb3493,cdrug_18e3cf278c38ce2a,matched,Trametinib,16,Tier2
+imev_ac560f8eafad5f97,cdrug_6db1bafe8fb867b7,matched,AZD2014,18,Tier2
+imev_5a575a609891d060,cdrug_06622178d9ceb258,matched,AZD6482,19,Tier2
+imev_0024bfa5010de968,cdrug_437729aca9b5a6f7,evidence_only,PD0325901,22,Tier2
+imev_c80adb8b0a6613e8,cdrug_34152dace9ff98c9,matched,Epirubicin,25,Tier2
+imev_ebd322906d1b5216,cdrug_5b0d446d35d3790d,matched,Bortezomib,26,Tier2
+imev_54d1da53bda80672,cdrug_da0375af747f9b98,matched,Irinotecan,24,Tier1
+imev_f6545bd62cc43f70,cdrug_f8909ca4d8abdc96,matched,Vinblastine,3,Tier2
+imev_bac95bf5dbc6e2a5,cdrug_b927e4cdcac90f13,matched,Vinorelbine,4,Tier2
+imev_7c2de292b3f5428b,cdrug_ec25ee06790a07e7,matched,Temsirolimus,7,Tier2
+imev_4267274dcd0c4b83,cdrug_e6882f20c467ce5f,matched,Buparlisib,6,
+imev_f71ba6b583e13383,cdrug_da0375af747f9b98,matched,Irinotecan,8,
+imev_0c8c4c28d9a14df2,cdrug_d82e10aee750f670,matched,SN-38,22,
+imev_22faa75af63725e9,cdrug_b211aef3f5543386,matched,Afatinib,1,
+imev_67cb5dc347c64d7c,cdrug_a286fdd293b9be53,matched,Camptothecin,2,
+imev_6e14d6553e264bdc,cdrug_2e9ab8a291ff1bc8,matched,Romidepsin,3,
+imev_00498af7287ffc9c,cdrug_5e43b24a58c005d7,matched,BI-2536,7,
+imev_3b74c7110d3c51e3,cdrug_18e3cf278c38ce2a,matched,Trametinib,9,
+imev_827dcc6794ba282b,cdrug_ec05f6bf5cc73f6e,matched,Talazoparib,12,
+imev_3877ff363303fbdd,cdrug_ef43b4351b3144ee,matched,Foretinib,13,
+imev_98ad9d4de4dc3cb8,cdrug_e642845b7af9f923,matched,Ribociclib,15,
+imev_f2b8fc4ae7bd9b1e,cdrug_d464ce63544cc204,matched,MK-2206,16,
+imev_fe1cc61e9f3bb190,cdrug_52692989966fe3dc,matched,Elesclomol,17,
+imev_832526b784e64e15,cdrug_58450c4db13a14e1,matched,Entinostat,18,
+imev_01798136c5b9fd57,cdrug_d6afb6f031e7fe30,matched,Lapatinib,19,
+imev_f03352bb0df56b75,cdrug_1ac4a2d6c19d68f5,matched,Alisertib,20,
+imev_9cef288b5e49d908,cdrug_a54fa6b388237c1c,matched,Palbociclib,21,
+imev_188579b87c63d5fb,cdrug_371d0df931c65f11,matched,MG-132,23,
+imev_3a9590c06c468fee,cdrug_6a5a5a0a0c643307,matched,Uprosertib,26,
+imev_e5b91bc920aa7944,cdrug_6fae7753ea49d2b0,matched,Gefitinib,30,
+imev_b04d78df7dfd65e1,cdrug_20b83add6b9c4f21,matched,Paclitaxel,11,
+imev_8d105801524bbd92,cdrug_eee02d6dc017f95a,matched,Methotrexate,29,
+imev_1d831b8b094eefdc,cdrug_ec25ee06790a07e7,matched,Temsirolimus,4,
+imev_6a841b84b5e426a4,cdrug_c40413853cfa1088,matched,Topotecan,5,
+imev_dc49ccadb43fa9e4,cdrug_e33512555752f796,matched,Tanespimycin,10,
+imev_626256235633a0cf,cdrug_34152dace9ff98c9,matched,Epirubicin,27,
+imev_8a9173f4d44377a8,cdrug_9e64de7415bb3254,matched,TW 37,14,
+imev_a7e77faa108c1b25,cdrug_5b0d446d35d3790d,matched,Bortezomib,24,
+imev_a86daffaa6b19ee8,cdrug_7d828b8ad8476d1f,matched,Dasatinib,25,
+imev_505714cf62311855,cdrug_a0f92608891f8025,matched,MK-1775,28,
+imev_a438114fc7e20c53,cdrug_e6882f20c467ce5f,matched,Buparlisib,6,
+imev_251fa0970a78b35c,cdrug_da0375af747f9b98,matched,Irinotecan,8,
+imev_cfdbfee0f0f0d3c3,cdrug_d82e10aee750f670,matched,SN-38,22,
+imev_086b7f82cfc23929,cdrug_b211aef3f5543386,matched,Afatinib,1,
+imev_1b31f8e746afc17e,cdrug_a286fdd293b9be53,matched,Camptothecin,2,
+imev_579b60234e36aad2,cdrug_2e9ab8a291ff1bc8,matched,Romidepsin,3,
+imev_5c36301b0590b8f0,cdrug_5e43b24a58c005d7,matched,BI-2536,7,
+imev_1907562418e82ae0,cdrug_18e3cf278c38ce2a,matched,Trametinib,9,
+imev_2d10136ad1a01826,cdrug_ec05f6bf5cc73f6e,matched,Talazoparib,12,
+imev_6655160d077f1d68,cdrug_ef43b4351b3144ee,matched,Foretinib,13,
+imev_147b907572a959b3,cdrug_e642845b7af9f923,matched,Ribociclib,15,
+imev_8f36c7bbcf5a9328,cdrug_d464ce63544cc204,matched,MK-2206,16,
+imev_c60a98851fc5e677,cdrug_52692989966fe3dc,matched,Elesclomol,17,
+imev_51b667a77df0b450,cdrug_58450c4db13a14e1,matched,Entinostat,18,
+imev_361f8ae6acd1504c,cdrug_d6afb6f031e7fe30,matched,Lapatinib,19,
+imev_41bc10aad582beaa,cdrug_1ac4a2d6c19d68f5,matched,Alisertib,20,
+imev_3bf8a622420d680f,cdrug_a54fa6b388237c1c,matched,Palbociclib,21,
+imev_51d5f9f4f321d2ad,cdrug_371d0df931c65f11,matched,MG-132,23,
+imev_0bbbf91b525a9986,cdrug_6a5a5a0a0c643307,matched,Uprosertib,26,
+imev_8be87a87f170cfe0,cdrug_6fae7753ea49d2b0,matched,Gefitinib,30,
+imev_b7f989556c5d834e,cdrug_20b83add6b9c4f21,matched,Paclitaxel,11,
+imev_ae3fdad2705ddde7,cdrug_eee02d6dc017f95a,matched,Methotrexate,29,
+imev_d0f7030d6984cf6e,cdrug_ec25ee06790a07e7,matched,Temsirolimus,4,
+imev_606f630d8218e976,cdrug_c40413853cfa1088,matched,Topotecan,5,
+imev_d623c75564ab88e6,cdrug_e33512555752f796,matched,Tanespimycin,10,
+imev_f2bc36ea51dd96ef,cdrug_34152dace9ff98c9,matched,Epirubicin,27,
+imev_69f31446fe7bec1f,cdrug_9e64de7415bb3254,matched,TW 37,14,
+imev_985c50b34ba609d8,cdrug_5b0d446d35d3790d,matched,Bortezomib,24,
+imev_28cc7a0962ef60c3,cdrug_7d828b8ad8476d1f,matched,Dasatinib,25,
+imev_cd350cd617395a5d,cdrug_a0f92608891f8025,matched,MK-1775,28,
+imev_27405ecc1df989d6,cdrug_6c95cca9e9b8fc23,matched,Ruxolitinib,1,Tier1_2
+imev_3523cce7d37f07ed,cdrug_5a6ce189f111e47c,matched,Tofacitinib,2,Tier1_2
+imev_72f485016846bb67,cdrug_ea451b022f6ed79c,matched,Nintedanib,1,Tier1_2
+imev_db174baa92e8925b,cdrug_fd8b3b58802cb6f2,matched,AT-9283,2,Tier1_2
+imev_f97ebb1277a7bfc2,cdrug_14bc3bba5c9315c4,matched,Pazopanib,3,Tier1_2
+imev_7d35d67f07341179,cdrug_ceaf5c410c5875aa,matched,Sorafenib,4,Tier1_2
+imev_7f6e450aeb220abf,cdrug_a49713e61b9488b9,matched,Ponatinib,5,Tier1_2
+imev_0fee0ec37717699e,cdrug_7d4a9d4ce4a3d480,matched,Sunitinib,6,Tier1_2
+imev_4275259c9c0cc6a1,cdrug_7e79edcdee91cafc,matched,Dactinomycin,,Tier3
+imev_244b08af8afeabe8,cdrug_7e79edcdee91cafc,matched,Dactinomycin,,Tier3
+imev_1f69b40f9892cb3d,cdrug_7e79edcdee91cafc,matched,Dactinomycin,,Tier3
+imev_b4f1c7db93b11e94,cdrug_61a5e8e07ce664d1,matched,Docetaxel,,Tier1
+imev_826b7c15e46a2c62,cdrug_61a5e8e07ce664d1,matched,Docetaxel,,Tier1
+imev_7fbebff7797841f7,cdrug_61a5e8e07ce664d1,matched,Docetaxel,,Tier1
+imev_69a5c7c637835703,cdrug_20b83add6b9c4f21,matched,Paclitaxel,,Tier1
+imev_782ab1a34b957c78,cdrug_20b83add6b9c4f21,matched,Paclitaxel,,Tier1
+imev_9b851be65f7d1794,cdrug_20b83add6b9c4f21,matched,Paclitaxel,,Tier1
+imev_ef7712d5a5a5ad86,cdrug_edd483796693a02f,matched,Teniposide,,Tier3
+imev_9ca60d59ac1fa2f1,cdrug_edd483796693a02f,matched,Teniposide,,Tier3
+imev_6562cf382bc883c0,cdrug_edd483796693a02f,matched,Teniposide,,Tier3
+imev_7404187618480944,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),,Tier4
+imev_fdb9ebf1e6b92bb3,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),,Tier4
+imev_90fcaabe35449a82,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),,Tier4
+imev_1407445467a76855,cdrug_eee02d6dc017f95a,matched,Methotrexate,,Tier3
+imev_7006a44cf16fe0bb,cdrug_eee02d6dc017f95a,matched,Methotrexate,,Tier3
+imev_cfd18d05557bee96,cdrug_eee02d6dc017f95a,matched,Methotrexate,,Tier3
+imev_5e85d7c3083fe7bd,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),,Tier3
+imev_cd470871accd6f94,cdrug_61a5e8e07ce664d1,matched,Docetaxel,,Tier2
+imev_09c3ad489045368d,cdrug_20b83add6b9c4f21,matched,Paclitaxel,,Tier2
+imev_6b9bff8ee5511343,cdrug_34152dace9ff98c9,matched,Epirubicin,,Tier2
+imev_e1c61e8dbabebf2a,cdrug_c40413853cfa1088,matched,Topotecan,,Tier3
+imev_558d263a2ac14487,cdrug_f8909ca4d8abdc96,matched,Vinblastine,,Tier3
+imev_e213e37e32194e7b,cdrug_a286fdd293b9be53,matched,Camptothecin,,Tier3
+imev_e2dd082587c7b42f,cdrug_da0375af747f9b98,matched,Irinotecan,,Tier2
+imev_1c425300bc99ce80,cdrug_32e12f4a864d093b,matched,Tozasertib,,Tier3
+imev_9b6884f5eedf8443,cdrug_b927e4cdcac90f13,matched,Vinorelbine,,Tier3
+imev_ab5c023826473e69,cdrug_8057512843ccee22,matched,VARDENAFIL,1,
+imev_b9acf12a81e71ca1,cdrug_62478e2e0df12fb4,matched,SILDENAFIL,2,
+imev_3c7e22b79fa6b88e,cdrug_dcbd986d79b579e6,matched,AMBRISENTAN,3,
+imev_b6520294c094a48a,cdrug_b033da73883a15bf,matched,MACITENTAN,4,
+imev_75ca0111eb7b5902,cdrug_34b98cc5fbbbb5da,matched,TADALAFIL,5,
+imev_a92c1d4e13af5327,cdrug_3ea906f99daca16c,matched,BOSENTAN,6,
+imev_a7e07f486618b75e,cdrug_b54eff7903acd6dd,evidence_only,unnamed lead (CHEMBL304460),7,
+imev_bc3c7faad33a03e9,cdrug_2ebf6143a4e9c068,matched,EPOPROSTENOL,1,
+imev_b8fb15458907e33b,cdrug_73f3443c4442bcc0,matched,ILOPROST,2,
+imev_f302e93a36e73d6f,cdrug_31e511f6bf320f2c,matched,SELEXIPAG,3,
+imev_1d9c42863cd193dc,cdrug_5e0c687278b12bfc,matched,ATRASENTAN,4,
+imev_4899343e1aad6bf7,cdrug_20b83add6b9c4f21,matched,Paclitaxel,21,Tier 1
+imev_f21cb4f906afc44b,cdrug_c40413853cfa1088,matched,Topotecan,4,Tier 2
+imev_e16264ca597d7ad7,cdrug_f8909ca4d8abdc96,matched,Vinblastine,5,Tier 2
+imev_a6cc5493871617ed,cdrug_b927e4cdcac90f13,matched,Vinorelbine,13,Tier 2
+imev_e1fff999b86a6b14,cdrug_66e7da8131e061dc,matched,Staurosporine,15,Tier 2
+imev_012ab437b4b1cc75,cdrug_a7bbf7d59d42b1d0,matched,Selumetinib,16,Tier 2
+imev_b7d400856fd911a5,cdrug_d82e10aee750f670,matched,SN-38,17,Tier 2
+imev_8c0144273fab3fe3,cdrug_ec25ee06790a07e7,matched,Temsirolimus,19,Tier 2
+imev_101937a0ad6eb1c4,cdrug_a286fdd293b9be53,matched,Camptothecin,22,Tier 2
+imev_1e3dd2847ceadc2f,cdrug_a0f92608891f8025,matched,MK-1775,25,Tier 2
+imev_3e7b99bbcd716613,cdrug_a5becdc6d434f216,matched,Dabrafenib,26,Tier 2
+imev_0c7f6f1a6f2ce419,cdrug_f45eb6a56f3dd23b,matched,Dactolisib,27,Tier 2
+imev_0e5a1e6750d94f92,cdrug_930e9d16bfde574a,matched,Bosutinib,29,Tier 2
+imev_7607bc664a2a5195,cdrug_61a5e8e07ce664d1,matched,Docetaxel,2,Tier 2
+imev_1c27faf184d024de,cdrug_371d0df931c65f11,matched,MG-132,3,Tier 3
+imev_abdd97ec2afbec7e,cdrug_34152dace9ff98c9,matched,Epirubicin,7,Tier 2
+imev_51a9f7e2adc848f6,cdrug_3de95f54a079fa92,matched,Mitoxantrone,8,Tier 2
+imev_091d625162b4e472,cdrug_5d6b2e1a477d01ae,matched,Lestaurtinib,9,Tier 3
+imev_84fe336d6d45f3eb,cdrug_b322f758af23765d,matched,OSI-027,10,Tier 3
+imev_2e10430d428da9a0,cdrug_5b0d446d35d3790d,matched,Bortezomib,11,Tier 2
+imev_fc7dabdee47e9130,cdrug_5e43b24a58c005d7,matched,BI-2536,12,Tier 3
+imev_7adc3af3435c4cc8,cdrug_1f309e1d1aaae0f9,matched,BMS-345541,14,Tier 3
+imev_b3def510d078ee83,cdrug_19bfedb68dfcc6d9,matched,AZD5438,18,Tier 3
+imev_e71878cc46634daa,cdrug_258a26e1e68187f5,matched,AZD8055,20,Tier 3
+imev_c10f8482bf0fe7fd,cdrug_665990480f4d2502,matched,Cytarabine,23,Tier 3
+imev_530a57e5716da8d8,cdrug_209ac767f05cbe80,matched,BMS-536924,24,Tier 3
+imev_68d93c2634e6b3c7,cdrug_67fc3a0622149415,matched,5-azacytidine,28,Tier 3
+imev_1427fee2bf4d0464,cdrug_8edbdc9c5d4a7174,matched,Pictilisib,30,Tier 3
+imev_976eb8431428b65f,cdrug_7e79edcdee91cafc,matched,Dactinomycin,1,Tier 3
+imev_ab4d9a599181e69f,cdrug_edd483796693a02f,matched,Teniposide,6,Tier 4
+imev_2be434da18f3573c,cdrug_20b83add6b9c4f21,matched,Paclitaxel,21,Tier 1
+imev_fd9e11d1fe4f62fe,cdrug_c40413853cfa1088,matched,Topotecan,4,Tier 2
+imev_98ce5b893d3525cf,cdrug_f8909ca4d8abdc96,matched,Vinblastine,5,Tier 2
+imev_adf0183fdb1bf07a,cdrug_b927e4cdcac90f13,matched,Vinorelbine,13,Tier 2
+imev_0c2adec84b690c0b,cdrug_66e7da8131e061dc,matched,Staurosporine,15,Tier 2
+imev_28aa42ba45419210,cdrug_a7bbf7d59d42b1d0,matched,Selumetinib,16,Tier 2
+imev_97280061a1b978fb,cdrug_d82e10aee750f670,matched,SN-38,17,Tier 2
+imev_6304ba9077505ff2,cdrug_ec25ee06790a07e7,matched,Temsirolimus,19,Tier 2
+imev_693d55118d484190,cdrug_a286fdd293b9be53,matched,Camptothecin,22,Tier 2
+imev_6cca6827ce438f03,cdrug_a0f92608891f8025,matched,MK-1775,25,Tier 2
+imev_7638cee30df4b136,cdrug_a5becdc6d434f216,matched,Dabrafenib,26,Tier 2
+imev_fc6b0213d55d4c0d,cdrug_f45eb6a56f3dd23b,matched,Dactolisib,27,Tier 2
+imev_a77917f940fe3388,cdrug_930e9d16bfde574a,matched,Bosutinib,29,Tier 2
+imev_81f21cc36f748599,cdrug_61a5e8e07ce664d1,matched,Docetaxel,2,Tier 2
+imev_13d978a59fb07ba1,cdrug_371d0df931c65f11,matched,MG-132,3,Tier 3
+imev_75ef9b98979ae2c7,cdrug_34152dace9ff98c9,matched,Epirubicin,7,Tier 2
+imev_abf5230138195103,cdrug_3de95f54a079fa92,matched,Mitoxantrone,8,Tier 2
+imev_330ba604834ce5ce,cdrug_5d6b2e1a477d01ae,matched,Lestaurtinib,9,Tier 3
+imev_ead65d2a397e5207,cdrug_b322f758af23765d,matched,OSI-027,10,Tier 3
+imev_b549dd841d0578e8,cdrug_5b0d446d35d3790d,matched,Bortezomib,11,Tier 2
+imev_0662859b5c54d63e,cdrug_5e43b24a58c005d7,matched,BI-2536,12,Tier 3
+imev_d2c76e91891fd107,cdrug_1f309e1d1aaae0f9,matched,BMS-345541,14,Tier 3
+imev_925dfa4b57e76be8,cdrug_19bfedb68dfcc6d9,matched,AZD5438,18,Tier 3
+imev_d08926ace201c282,cdrug_258a26e1e68187f5,matched,AZD8055,20,Tier 3
+imev_ccefbd0cb622f27e,cdrug_665990480f4d2502,matched,Cytarabine,23,Tier 3
+imev_8bac0cc073204226,cdrug_209ac767f05cbe80,matched,BMS-536924,24,Tier 3
+imev_713c14972360a556,cdrug_67fc3a0622149415,matched,5-azacytidine,28,Tier 3
+imev_9154287ba0a5f758,cdrug_8edbdc9c5d4a7174,matched,Pictilisib,30,Tier 3
+imev_df2577b3a92f0012,cdrug_7e79edcdee91cafc,matched,Dactinomycin,1,Tier 3
+imev_2101d77d0c3e6f58,cdrug_edd483796693a02f,matched,Teniposide,6,Tier 4
+imev_f75198b4df20bab3,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,Tier 2
+imev_37915b6ff33c0160,cdrug_9373a673e47eb859,matched,PICLAMILAST,2,Tier 2
+imev_4c3cb2a91f5b0567,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,3,Tier 3
+imev_70e52d27d550c788,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,4,Tier 2
+imev_d46b9835f7895806,cdrug_c3144dbb448019d0,matched,ROFLUMILAST,5,Tier 1
+imev_a1cc75828ad6fce7,cdrug_1b002a0118c221e9,matched,BMS-986202,6,Tier 3
+imev_07416c11ec2f4fbf,cdrug_f80a574bcccb0323,matched,AZD-1480,7,Tier 2
+imev_3cc5e1adb8c09328,cdrug_9d0dd68c5d51cf92,matched,DEUCRAVACITINIB,8,Tier 1
+imev_41c672771f45091f,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,9,Tier 2
+imev_a6f28a7d996cc4e0,cdrug_4a29d26f8861fbe6,matched,NS-018,10,Tier 2
+imev_344d23a7b4e6f8a2,cdrug_b5ca35ac2b9b34ae,matched,RITLECITINIB,11,Tier 2
+imev_5e10492886d7325a,cdrug_68e82574589d0333,matched,UK-500001,12,Tier 3
+imev_9608cc294cbda497,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,13,Tier 2
+imev_1fd0ca30c6d98fec,cdrug_7d39d8c9b73946a3,matched,CERDULATINIB,14,Tier 3
+imev_dd0e4e699c4e756b,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,Tier 2
+imev_fe36d5e2410bd9d5,cdrug_e31f8ab133e9cdba,matched,IBERDOMIDE,16,Tier 3
+imev_4605f538c1970622,cdrug_48c33381342f928d,matched,BARICITINIB,17,Tier 2
+imev_761efb6e29a166b0,cdrug_86683458b87a205d,matched,PEFICITINIB,18,Tier 3
+imev_78c2c0ee013a388a,cdrug_575c6385c524f680,matched,FEDRATINIB,19,Tier 2
+imev_13a796958e41071f,cdrug_5327ddd6a8dfd4ff,matched,UPADACITINIB,20,Tier 2
+imev_c71a7b376a4ca7d7,cdrug_5d6b2e1a477d01ae,matched,LESTAURTINIB,21,Tier 3
+imev_1f55090039a2eaf3,cdrug_93ce5173efc14556,evidence_only,JNJ-7706621,22,Tier 2
+imev_12c784737bb70df5,cdrug_53c80a3c0d50123d,matched,PACRITINIB,23,Tier 2
+imev_1c09804f6b9216d3,cdrug_fd8b3b58802cb6f2,matched,AT-9283,24,Tier 3
+imev_a37a91dcffbe8ea9,cdrug_941e9bd7e38f28d8,matched,REPOTRECTINIB,25,Tier 3
+imev_fba5bb112acce41d,cdrug_fe58aa8064b2e87b,matched,BMS-911543,26,Tier 3
+imev_9603cb50c2ba8163,cdrug_f118c0b3ad3f6604,matched,DECERNOTINIB,27,Tier 2
+imev_262afd768d8d0ce4,cdrug_89d09223375c0b66,matched,CDP840,28,Tier 3
+imev_97f140fd3dcd6747,cdrug_bfd53d5593322ba1,matched,MOMELOTINIB,29,Tier 3
+imev_c7ded020e3426545,cdrug_5a6ce189f111e47c,matched,TOFACITINIB CITRATE,30,Tier 2
+imev_1ba7a99bcec5f613,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,Tier 2
+imev_8b7a54dc4912931b,cdrug_9373a673e47eb859,matched,PICLAMILAST,2,Tier 2
+imev_51f4c5e5269af5a1,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,3,Tier 3
+imev_e0c755b88d2f23d1,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,4,Tier 2
+imev_cff9c2cf4168c6e8,cdrug_c3144dbb448019d0,matched,ROFLUMILAST,5,Tier 1
+imev_2a97d537e8f5a508,cdrug_1b002a0118c221e9,matched,BMS-986202,6,Tier 3
+imev_e1e7b2ee6061ac17,cdrug_f80a574bcccb0323,matched,AZD-1480,7,Tier 2
+imev_37bcc8e2c7906b1c,cdrug_9d0dd68c5d51cf92,matched,DEUCRAVACITINIB,8,Tier 1
+imev_1a43bb4bd8d83e89,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,9,Tier 2
+imev_a27115cca3d8078e,cdrug_4a29d26f8861fbe6,matched,NS-018,10,Tier 2
+imev_d4492d1275a40544,cdrug_b5ca35ac2b9b34ae,matched,RITLECITINIB,11,Tier 2
+imev_778ce0cdfeb45819,cdrug_68e82574589d0333,matched,UK-500001,12,Tier 3
+imev_068818bdf5bd81c0,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,13,Tier 2
+imev_1f9f078cd64a5181,cdrug_7d39d8c9b73946a3,matched,CERDULATINIB,14,Tier 3
+imev_a31428c83c882dfe,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,Tier 2
+imev_ea72f3823392b32c,cdrug_e31f8ab133e9cdba,matched,IBERDOMIDE,16,Tier 3
+imev_d635abf42f7ec982,cdrug_48c33381342f928d,matched,BARICITINIB,17,Tier 2
+imev_71d00cd13afdee80,cdrug_86683458b87a205d,matched,PEFICITINIB,18,Tier 3
+imev_cb080b0809607b3d,cdrug_575c6385c524f680,matched,FEDRATINIB,19,Tier 2
+imev_8be3f91193bd4ae0,cdrug_5327ddd6a8dfd4ff,matched,UPADACITINIB,20,Tier 2
+imev_9dfb4f3930a1e654,cdrug_5d6b2e1a477d01ae,matched,LESTAURTINIB,21,Tier 3
+imev_7ed2f6a915a50c33,cdrug_93ce5173efc14556,evidence_only,JNJ-7706621,22,Tier 2
+imev_231c6a2c6002c976,cdrug_53c80a3c0d50123d,matched,PACRITINIB,23,Tier 2
+imev_b48ff3331dc4c70c,cdrug_fd8b3b58802cb6f2,matched,AT-9283,24,Tier 3
+imev_89be96770c066f09,cdrug_941e9bd7e38f28d8,matched,REPOTRECTINIB,25,Tier 3
+imev_654a774f5032c69f,cdrug_fe58aa8064b2e87b,matched,BMS-911543,26,Tier 3
+imev_7a71c604e1bc6ee5,cdrug_f118c0b3ad3f6604,matched,DECERNOTINIB,27,Tier 2
+imev_2b88a78ea471b02c,cdrug_89d09223375c0b66,matched,CDP840,28,Tier 3
+imev_162bc8186afdbb62,cdrug_bfd53d5593322ba1,matched,MOMELOTINIB,29,Tier 3
+imev_66603ba994dcfa00,cdrug_5a6ce189f111e47c,matched,TOFACITINIB CITRATE,30,Tier 2
+imev_ecb3d246aaa957c5,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,Tier 2
+imev_87eddf40d2428cb6,cdrug_9373a673e47eb859,matched,PICLAMILAST,2,Tier 2
+imev_d9022e430ba73272,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,3,Tier 3
+imev_acce18ca74eefdcc,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,4,Tier 2
+imev_2b8f9d471213f22f,cdrug_c3144dbb448019d0,matched,ROFLUMILAST,5,Tier 1
+imev_898fd8de210e9bef,cdrug_1b002a0118c221e9,matched,BMS-986202,6,Tier 3
+imev_0c616053a1539081,cdrug_f80a574bcccb0323,matched,AZD-1480,7,Tier 2
+imev_43ad7c4dfee75762,cdrug_9d0dd68c5d51cf92,matched,DEUCRAVACITINIB,8,Tier 1
+imev_5094a71f5b6a3aed,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,9,Tier 2
+imev_fa9fad114e37d736,cdrug_4a29d26f8861fbe6,matched,NS-018,10,Tier 2
+imev_a51babb863e85281,cdrug_b5ca35ac2b9b34ae,matched,RITLECITINIB,11,Tier 2
+imev_e315ec8789d7c52d,cdrug_68e82574589d0333,matched,UK-500001,12,Tier 3
+imev_1cf506715b1b1f40,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,13,Tier 2
+imev_a70c3b88ebfb3236,cdrug_7d39d8c9b73946a3,matched,CERDULATINIB,14,Tier 3
+imev_6be768170c6c1bde,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,Tier 2
+imev_5f1450b2cea6eb1e,cdrug_e31f8ab133e9cdba,matched,IBERDOMIDE,16,Tier 3
+imev_ae30d8ccf494b39f,cdrug_48c33381342f928d,matched,BARICITINIB,17,Tier 2
+imev_e2e4fa99bcbb1619,cdrug_86683458b87a205d,matched,PEFICITINIB,18,Tier 3
+imev_1909c8fbc621c519,cdrug_575c6385c524f680,matched,FEDRATINIB,19,Tier 2
+imev_e834fc1ce339bc65,cdrug_5327ddd6a8dfd4ff,matched,UPADACITINIB,20,Tier 2
+imev_e8347e12befe5468,cdrug_5d6b2e1a477d01ae,matched,LESTAURTINIB,21,Tier 3
+imev_7a48676a37fce249,cdrug_93ce5173efc14556,evidence_only,JNJ-7706621,22,Tier 2
+imev_b1583c8fb3f9a8b3,cdrug_53c80a3c0d50123d,matched,PACRITINIB,23,Tier 2
+imev_3147767436c91ef8,cdrug_fd8b3b58802cb6f2,matched,AT-9283,24,Tier 3
+imev_b17102f06f4b84bf,cdrug_941e9bd7e38f28d8,matched,REPOTRECTINIB,25,Tier 3
+imev_6a1e17f3b53a08ce,cdrug_fe58aa8064b2e87b,matched,BMS-911543,26,Tier 3
+imev_97deffb6acbd2d2e,cdrug_f118c0b3ad3f6604,matched,DECERNOTINIB,27,Tier 2
+imev_d9ec8e8ce7d2c4e8,cdrug_89d09223375c0b66,matched,CDP840,28,Tier 3
+imev_0fda70c1f852771f,cdrug_bfd53d5593322ba1,matched,MOMELOTINIB,29,Tier 3
+imev_c1d903dc88036ce6,cdrug_5a6ce189f111e47c,matched,TOFACITINIB CITRATE,30,Tier 2
+imev_beb4c0688f4eacfa,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,Tier 2
+imev_9f423670a388d501,cdrug_9373a673e47eb859,matched,PICLAMILAST,2,Tier 2
+imev_cf0f6f561f3d6124,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,3,Tier 3
+imev_f96bd0bf76a27530,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,4,Tier 2
+imev_ff5457ed01ac0204,cdrug_c3144dbb448019d0,matched,ROFLUMILAST,5,Tier 1
+imev_04a8e65a7d7a13df,cdrug_1b002a0118c221e9,matched,BMS-986202,6,Tier 3
+imev_194a391a3638700f,cdrug_f80a574bcccb0323,matched,AZD-1480,7,Tier 2
+imev_112fc343e4e3a98f,cdrug_9d0dd68c5d51cf92,matched,DEUCRAVACITINIB,8,Tier 1
+imev_42c9a3c09b42c51d,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,9,Tier 2
+imev_43832271998a34d2,cdrug_4a29d26f8861fbe6,matched,NS-018,10,Tier 2
+imev_7e8dbc7c22ddbf58,cdrug_b5ca35ac2b9b34ae,matched,RITLECITINIB,11,Tier 2
+imev_c6899fb9a5be023e,cdrug_68e82574589d0333,matched,UK-500001,12,Tier 3
+imev_1e9a75320544c153,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,13,Tier 2
+imev_f859a8433564e8b7,cdrug_7d39d8c9b73946a3,matched,CERDULATINIB,14,Tier 3
+imev_077837e1e89db3fd,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,Tier 2
+imev_7dbf843599da2903,cdrug_e31f8ab133e9cdba,matched,IBERDOMIDE,16,Tier 3
+imev_7f09ce58fc63f905,cdrug_48c33381342f928d,matched,BARICITINIB,17,Tier 2
+imev_2bf0f07574229a6f,cdrug_86683458b87a205d,matched,PEFICITINIB,18,Tier 3
+imev_da27cb7b8a57ff6e,cdrug_575c6385c524f680,matched,FEDRATINIB,19,Tier 2
+imev_60b4260ebae0a8f2,cdrug_5327ddd6a8dfd4ff,matched,UPADACITINIB,20,Tier 2
+imev_49915b9585997e36,cdrug_5d6b2e1a477d01ae,matched,LESTAURTINIB,21,Tier 3
+imev_b4d3cb2d99c2ab92,cdrug_93ce5173efc14556,evidence_only,JNJ-7706621,22,Tier 2
+imev_0a38319e8d42dba1,cdrug_53c80a3c0d50123d,matched,PACRITINIB,23,Tier 2
+imev_dbbcc55143de5bd2,cdrug_fd8b3b58802cb6f2,matched,AT-9283,24,Tier 3
+imev_3b44ae0fc25c9946,cdrug_941e9bd7e38f28d8,matched,REPOTRECTINIB,25,Tier 3
+imev_d888710839e5d853,cdrug_fe58aa8064b2e87b,matched,BMS-911543,26,Tier 3
+imev_fd2a41864087954e,cdrug_f118c0b3ad3f6604,matched,DECERNOTINIB,27,Tier 2
+imev_ebdc894aa1198db7,cdrug_89d09223375c0b66,matched,CDP840,28,Tier 3
+imev_cb404aab0892d7d2,cdrug_bfd53d5593322ba1,matched,MOMELOTINIB,29,Tier 3
+imev_4d7c83433fd7709a,cdrug_5a6ce189f111e47c,matched,TOFACITINIB CITRATE,30,Tier 2
+imev_d3f9a473bc773547,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,tier1_reference_anchor
+imev_d3fe5166abeeb97e,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,12,tier1_reference_anchor
+imev_e19c103b020e9ddb,cdrug_5171ad46a038c047,matched,IBRUTINIB,2,tier2_cross_model_supported
+imev_fa69b0f84d75d89b,cdrug_d2710deb05a2dc71,matched,BRANEBRUTINIB,3,tier2_cross_model_supported
+imev_ebcac05a3d1894d9,cdrug_c1fbc2e27a32152b,matched,LUXEPTINIB,4,tier2_cross_model_supported
+imev_094027e05126e003,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,4,tier2_cross_model_supported
+imev_271fc6dc53fb186c,cdrug_f80a574bcccb0323,matched,AZD-1480,6,tier2_cross_model_supported
+imev_57e7ec7654c0c4d5,cdrug_4a29d26f8861fbe6,matched,NS-018,7,tier2_cross_model_supported
+imev_352b0a2fbf6e26f8,cdrug_d7c443e54c9eadf0,matched,NEMTABRUTINIB,8,tier2_cross_model_supported
+imev_c82a0f4ec6ceb606,cdrug_63bd67f24b93fc34,matched,ZANUBRUTINIB,8,tier2_cross_model_supported
+imev_816d8c2a79124c15,cdrug_3edfd50510eef142,matched,BMS-986142,9,tier2_cross_model_supported
+imev_2e9c48b5d3d45a6d,cdrug_8f45a22f1db916b3,matched,SOFNOBRUTINIB,9,tier2_cross_model_supported
+imev_fa8ab2096b83b614,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,10,tier2_cross_model_supported
+imev_c1dcc81778168bad,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,12,tier2_cross_model_supported
+imev_7a6cd0098f0a9a57,cdrug_6564ca080d113c11,matched,MILREBRUTINIB,14,tier2_cross_model_supported
+imev_7f1ceee1ef5f56fd,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,tier3_core_axis_supported
+imev_b157d3b85dfd75ce,cdrug_6c95cca9e9b8fc23,matched,RUXOLITINIB,1,tier1_reference_anchor
+imev_4127c51d8e5410b6,cdrug_5a6ce189f111e47c,matched,TOFACITINIB,12,tier1_reference_anchor
+imev_770106159f4a1763,cdrug_5171ad46a038c047,matched,IBRUTINIB,2,tier2_cross_model_supported
+imev_141c5dd7b92ac3cb,cdrug_d2710deb05a2dc71,matched,BRANEBRUTINIB,3,tier2_cross_model_supported
+imev_1395f5b23fdc9056,cdrug_c1fbc2e27a32152b,matched,LUXEPTINIB,4,tier2_cross_model_supported
+imev_dfceb303a0c21f89,cdrug_66e7da8131e061dc,matched,STAUROSPORINE,4,tier2_cross_model_supported
+imev_43d8e0fb2af8c060,cdrug_f80a574bcccb0323,matched,AZD-1480,6,tier2_cross_model_supported
+imev_fcaba34e01260754,cdrug_4a29d26f8861fbe6,matched,NS-018,7,tier2_cross_model_supported
+imev_24ce025a8d2b36ec,cdrug_d7c443e54c9eadf0,matched,NEMTABRUTINIB,8,tier2_cross_model_supported
+imev_8b260ee7241e6d4f,cdrug_63bd67f24b93fc34,matched,ZANUBRUTINIB,8,tier2_cross_model_supported
+imev_7ca07abeee1b9337,cdrug_3edfd50510eef142,matched,BMS-986142,9,tier2_cross_model_supported
+imev_b16675879af70fab,cdrug_8f45a22f1db916b3,matched,SOFNOBRUTINIB,9,tier2_cross_model_supported
+imev_992cbdf20696c02e,cdrug_ada9a241625f20a0,matched,ABIVERTINIB,10,tier2_cross_model_supported
+imev_652abd1d9fd103ce,cdrug_0abcecf22edf1da7,matched,ATINVICITINIB,12,tier2_cross_model_supported
+imev_cd2819f425e434b4,cdrug_6564ca080d113c11,matched,MILREBRUTINIB,14,tier2_cross_model_supported
+imev_5a3bacc4e6d810ce,cdrug_f58fdfe1697da1c9,matched,LONDAMOCITINIB,15,tier3_core_axis_supported
+imev_65de1c90b6d30b11,cdrug_da0375af747f9b98,matched,Irinotecan,19,Tier1
+imev_cce6c12104328869,cdrug_61a5e8e07ce664d1,matched,Docetaxel,3,Tier1
+imev_ba3fb1db69bcc7fd,cdrug_c40413853cfa1088,matched,Topotecan,6,Tier2
+imev_78ac0b0239a39b44,cdrug_20b83add6b9c4f21,matched,Paclitaxel,7,Tier1
+imev_739160077647be5c,cdrug_a286fdd293b9be53,matched,Camptothecin,12,Tier2
+imev_da4206b9f44fcfb2,cdrug_f8909ca4d8abdc96,matched,Vinblastine,15,Tier2
+imev_434f261f165ea5ee,cdrug_b927e4cdcac90f13,matched,Vinorelbine,23,Tier2
+imev_26f8be1d83e88285,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),1,Tier2
+imev_f194b28904727216,cdrug_c8c9b4017be1244b,matched,Bleomycin,2,Tier2
+imev_7428826ed24e7773,cdrug_34152dace9ff98c9,matched,Epirubicin,8,Tier2
+imev_a9b52a48fabbe973,cdrug_32e12f4a864d093b,matched,Tozasertib,28,Tier2
+imev_dd3c8f452bafa368,cdrug_ec25ee06790a07e7,matched,Temsirolimus,5,Tier2
+imev_cc0df289f16aff1f,cdrug_9487650b5625fd2e,matched,Rapamycin,24,Tier2
+imev_af375b00536154ca,cdrug_da0375af747f9b98,matched,Irinotecan,19,Tier1
+imev_2094727079789ac2,cdrug_61a5e8e07ce664d1,matched,Docetaxel,3,Tier1
+imev_0a7ed05d438d3da6,cdrug_ec25ee06790a07e7,matched,Temsirolimus,5,Tier2
+imev_4fae1908a879d1e4,cdrug_c40413853cfa1088,matched,Topotecan,6,Tier2
+imev_4a54b0a4116b9639,cdrug_20b83add6b9c4f21,matched,Paclitaxel,7,Tier1
+imev_d4bcf04c2a31f0e4,cdrug_a286fdd293b9be53,matched,Camptothecin,12,Tier2
+imev_6c698ee9b3810ce5,cdrug_f8909ca4d8abdc96,matched,Vinblastine,15,Tier2
+imev_a1d03d501148c9e3,cdrug_b927e4cdcac90f13,matched,Vinorelbine,23,Tier2
+imev_93d6806203729b1c,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),1,Tier2
+imev_f632516a46e3f23c,cdrug_c8c9b4017be1244b,matched,Bleomycin,2,Tier2
+imev_1c11e61f234caf27,cdrug_34152dace9ff98c9,matched,Epirubicin,8,Tier2
+imev_cf85b4fc5bf7637f,cdrug_9487650b5625fd2e,matched,Rapamycin,24,Tier2
+imev_8d8ebc2e903f1f6e,cdrug_32e12f4a864d093b,matched,Tozasertib,28,Tier2
+imev_cd562a3f49539389,cdrug_da0375af747f9b98,matched,Irinotecan,19,Tier1
+imev_f44978c280b447b1,cdrug_61a5e8e07ce664d1,matched,Docetaxel,3,Tier1
+imev_fbacb3ddf197cd2f,cdrug_ec25ee06790a07e7,matched,Temsirolimus,5,Tier2
+imev_00c68e2f77b70a27,cdrug_c40413853cfa1088,matched,Topotecan,6,Tier2
+imev_d7734775a748fc90,cdrug_20b83add6b9c4f21,matched,Paclitaxel,7,Tier1
+imev_1abe69786b322a7f,cdrug_a286fdd293b9be53,matched,Camptothecin,12,Tier2
+imev_07548e6f3f7fde15,cdrug_f8909ca4d8abdc96,matched,Vinblastine,15,Tier2
+imev_999ae9bb2db9448b,cdrug_b927e4cdcac90f13,matched,Vinorelbine,23,Tier2
+imev_e63bd731ab3f183e,cdrug_c8c9b4017be1244b,matched,Bleomycin (50 uM),1,Tier2
+imev_74f306d5f3dd05d8,cdrug_c8c9b4017be1244b,matched,Bleomycin,2,Tier2
+imev_a7c1ff8d440da4a8,cdrug_34152dace9ff98c9,matched,Epirubicin,8,Tier2
+imev_11d11e6cb917c63f,cdrug_9487650b5625fd2e,matched,Rapamycin,24,Tier2
+imev_977ac9c78d9fa3af,cdrug_32e12f4a864d093b,matched,Tozasertib,28,Tier2

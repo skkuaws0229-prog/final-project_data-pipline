@@ -1,0 +1,256 @@
+candidate_id,canonical_drug_id,disease_id,rank,tier,score,evidence_summary,safety_score,verdict,admet_status,hard_fail,hard_fail_reasons,soft_flags,source_file,source_row_number
+cand_4efd01eeeeee22b0,cdrug_7213242416f41e1a,BRCA,1,3,4.939345971377194,,33.285,PASS,PASS,0,,,BRCA_final_admet.csv,1
+cand_cf0cc26c331f4400,cdrug_6c95cca9e9b8fc23,BRCA,2,2,5.074542883916546,,30.776,PASS,PASS,0,,,BRCA_final_admet.csv,2
+cand_5efda9cf1e51350f,cdrug_bd7982d23450b140,BRCA,3,3,5.1769369815559525,,12.16,PASS,PASS,0,,,BRCA_final_admet.csv,3
+cand_06a62e7db7ec11fd,cdrug_625e359eee8fc99b,BRCA,4,2,6.201372027721784,,6.5760000000000005,PASS,PASS,0,,,BRCA_final_admet.csv,4
+cand_7c56473c8c9f9c28,cdrug_22a8c630c15b10fe,BRCA,5,1,5.1282340258609125,,6.129,PASS,PASS,0,,,BRCA_final_admet.csv,5
+cand_6b929b07d09c6d83,cdrug_9d67b33ca53ba47a,BRCA,6,4,6.37713898102255,,6.0734763324,PASS,PASS,0,,,BRCA_final_admet.csv,6
+cand_3bf81e974e3aa1a5,cdrug_908098e378b46e94,BRCA,7,4,4.846864699827835,,43.506,WARNING,WARNING,0,,PPBR_high,BRCA_final_admet.csv,7
+cand_8dc3238e221df3a3,cdrug_6e74042d9d6c287f,BRCA,8,1,4.882440830674113,,12.868999999999998,WARNING,WARNING,0,,Ames,BRCA_final_admet.csv,8
+cand_00642838f688c8c5,cdrug_e51609b82211809e,BRCA,9,4,7.848305785113417,,7.259,WARNING,WARNING,0,,Ames,BRCA_final_admet.csv,9
+cand_be6cf02cd4214227,cdrug_265b3cb9e72545aa,BRCA,10,4,5.472948052631643,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,10
+cand_79ad4bcc02ccc7a5,cdrug_c44992701a33be56,BRCA,11,2,5.356930068447554,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,11
+cand_12790250464e18dc,cdrug_d7507e18dc17e5bb,BRCA,12,4,5.093175959102917,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,12
+cand_2b054383f33a62c5,cdrug_9fa23c59225eff3c,BRCA,13,4,4.896362151332794,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,13
+cand_98c46e79f2264a42,cdrug_df3eadc8b893ce39,BRCA,14,4,4.860396613451996,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,14
+cand_27703d4a799c7801,cdrug_03bbcc358333fe29,BRCA,15,4,4.8134682066130585,,5.0,WARNING,WARNING,0,,,BRCA_final_admet.csv,15
+cand_29c47a273d7fc85b,cdrug_c40413853cfa1088,Colon,1,2,1.1393122808035585,,7.5,PASS,Candidate,,,,Colon_final_admet.csv,1
+cand_aa8ba498a81a64a9,cdrug_b927e4cdcac90f13,Colon,2,2,-1.6594675574451558,,7.25,PASS,Candidate,,,,Colon_final_admet.csv,2
+cand_5852ac6757ebb84b,cdrug_f8909ca4d8abdc96,Colon,3,3,-1.88130152959283,,7.0,PASS,Candidate,,,,Colon_final_admet.csv,3
+cand_ec7a04d36bd8c90a,cdrug_da0375af747f9b98,Colon,4,1,1.071075002411201,,6.4,PASS,Candidate,,,,Colon_final_admet.csv,4
+cand_13273f2b6da41728,cdrug_a286fdd293b9be53,Colon,5,4,-0.2178194859610918,,6.25,PASS,Candidate,,,,Colon_final_admet.csv,5
+cand_f0d0a8a5fb284504,cdrug_ec25ee06790a07e7,Colon,6,2,-0.9397781208459692,,5.5,WARNING,Caution,,,,Colon_final_admet.csv,6
+cand_1434d5a4a4e3b199,cdrug_9487650b5625fd2e,Colon,7,2,-0.7914829007194344,,5.5,WARNING,Caution,,,,Colon_final_admet.csv,7
+cand_57fbbde58f158643,cdrug_66e7da8131e061dc,Colon,8,4,0.0724530932993555,,5.25,WARNING,Caution,,,,Colon_final_admet.csv,8
+cand_0440432bcfa3c9b0,cdrug_18e3cf278c38ce2a,Colon,9,2,0.669847320967591,,5.15,WARNING,Caution,,,,Colon_final_admet.csv,9
+cand_d9cfcaa669b1cc29,cdrug_06622178d9ceb258,Colon,10,4,0.816394261630078,,5.15,WARNING,Caution,,,,Colon_final_admet.csv,10
+cand_d9197ea8a38ce9ed,cdrug_e33512555752f796,Colon,11,4,-0.0523994677521416,,5.0,WARNING,Caution,,,,Colon_final_admet.csv,11
+cand_76d5ac36968ce718,cdrug_6db1bafe8fb867b7,Colon,12,4,0.768872981781812,,5.0,WARNING,Caution,,,,Colon_final_admet.csv,12
+cand_519186b9001921ad,cdrug_346ad922ccbc1f5b,Colon,13,4,0.8354776507710813,,5.0,WARNING,Caution,,,,Colon_final_admet.csv,13
+cand_61f226728f19f06c,cdrug_9e64de7415bb3254,Colon,14,4,1.1854721249103295,,5.0,WARNING,Caution,,,,Colon_final_admet.csv,14
+cand_d279d4f1944f1e83,cdrug_e2af88ecc84c41e5,Colon,15,4,1.2054507404443413,,5.0,WARNING,Caution,,,,Colon_final_admet.csv,15
+cand_be5b5450b535dc06,cdrug_b211aef3f5543386,HNSC,1,Tier 3,0.7681010435363234,,,KEEP,KEEP,,,,HNSC_final_admet.csv,1
+cand_13b8ed158d4ecc1e,cdrug_a286fdd293b9be53,HNSC,2,Tier 4,0.7347393463682257,화합물/검증추가필요,,KEEP,KEEP,,,,HNSC_final_admet.csv,2
+cand_436145cb1960b376,cdrug_2e9ab8a291ff1bc8,HNSC,3,Tier 3,0.7213138588298558,,,KEEP,KEEP,,,,HNSC_final_admet.csv,3
+cand_1127cb49c8934f90,cdrug_ec25ee06790a07e7,HNSC,4,Tier 2,0.7160059545495128,타암종 승인/적응증확장 연구축,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,4
+cand_d82908e1296a7c0d,cdrug_c40413853cfa1088,HNSC,5,Tier 2,0.708573743732926,타암종 승인/적응증확장 연구축,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,5
+cand_e2663dbca41dcb7c,cdrug_e6882f20c467ce5f,HNSC,6,Tier 3,0.705441488153448,,,KEEP,KEEP,,,,HNSC_final_admet.csv,6
+cand_eb738756479f5969,cdrug_5e43b24a58c005d7,HNSC,7,Tier 3,0.6932597167683705,,,KEEP,KEEP,,,,HNSC_final_admet.csv,7
+cand_6390e1b0d5b6bd2d,cdrug_da0375af747f9b98,HNSC,8,Tier 2,0.6895433647726409,타암종 승인/적응증확장 연구축,,KEEP,KEEP,,,,HNSC_final_admet.csv,8
+cand_59b361da82c38c4f,cdrug_18e3cf278c38ce2a,HNSC,9,Tier 3,0.6815913183372155,,,KEEP,KEEP,,,,HNSC_final_admet.csv,9
+cand_da6ff40203190034,cdrug_e33512555752f796,HNSC,10,Tier 2,0.676088399773446,타암종 승인/적응증확장 연구축,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,10
+cand_cfda4a8a830c0c1d,cdrug_20b83add6b9c4f21,HNSC,11,Tier 1,0.6733754199370664,두경부암 승인/표준치료 축,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,11
+cand_7b2a39969a7f3f5b,cdrug_ec05f6bf5cc73f6e,HNSC,12,Tier 3,0.6655889566967119,,,KEEP,KEEP,,,,HNSC_final_admet.csv,12
+cand_b1a566b0fca154ea,cdrug_ef43b4351b3144ee,HNSC,13,Tier 3,0.6496447226547925,,,KEEP,KEEP,,,,HNSC_final_admet.csv,13
+cand_f5e3e7a883bd2475,cdrug_9e64de7415bb3254,HNSC,14,Tier 3,0.6426407714470768,,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,14
+cand_6567e0cf9b387c0c,cdrug_e642845b7af9f923,HNSC,15,Tier 3,0.6421306901903481,,,KEEP,KEEP,,,,HNSC_final_admet.csv,15
+cand_983ce8d20e0c5afa,cdrug_d464ce63544cc204,HNSC,16,Tier 3,0.6392164506856441,,,KEEP,KEEP,,,,HNSC_final_admet.csv,16
+cand_a3ad2f35f1955bf4,cdrug_52692989966fe3dc,HNSC,17,Tier 3,0.6343061278409595,,,KEEP,KEEP,,,,HNSC_final_admet.csv,17
+cand_6fbc6cf1c9aca0e8,cdrug_58450c4db13a14e1,HNSC,18,Tier 3,0.6266364872791387,,,KEEP,KEEP,,,,HNSC_final_admet.csv,18
+cand_cf77183333a650d8,cdrug_d6afb6f031e7fe30,HNSC,19,Tier 3,0.6242450092097065,,,KEEP,KEEP,,,,HNSC_final_admet.csv,19
+cand_0b55076af9645264,cdrug_1ac4a2d6c19d68f5,HNSC,20,Tier 3,0.6240101161452054,,,KEEP,KEEP,,,,HNSC_final_admet.csv,20
+cand_c3450e28189ae108,cdrug_a54fa6b388237c1c,HNSC,21,Tier 3,0.6219299918335177,,,KEEP,KEEP,,,,HNSC_final_admet.csv,21
+cand_1786836d4bfa929d,cdrug_d82e10aee750f670,HNSC,22,Tier 2,0.6208869503234523,타암종 승인/적응증확장 연구축,,KEEP,KEEP,,,,HNSC_final_admet.csv,22
+cand_f7cdcc318d4e6802,cdrug_371d0df931c65f11,HNSC,23,Tier 4,0.6204331123811518,화합물/검증추가필요,,KEEP,KEEP,,,,HNSC_final_admet.csv,23
+cand_96578dbd8188d679,cdrug_5b0d446d35d3790d,HNSC,24,Tier 3,0.6190900666832192,,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,24
+cand_523ac6901a85a651,cdrug_7d828b8ad8476d1f,HNSC,25,Tier 3,0.6068584254855729,,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,25
+cand_f3e18179d0c09eab,cdrug_6a5a5a0a0c643307,HNSC,26,Tier 3,0.5968872254751129,,,KEEP,KEEP,,,,HNSC_final_admet.csv,26
+cand_57fe03d4e1eb6753,cdrug_34152dace9ff98c9,HNSC,27,Tier 2,0.5887644348165968,타암종 승인/적응증확장 연구축,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,27
+cand_18efcac0f66329fa,cdrug_a0f92608891f8025,HNSC,28,Tier 3,0.5852702708007125,,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,28
+cand_379d66af6bf9e76b,cdrug_eee02d6dc017f95a,HNSC,29,Tier 1,0.5847105685639631,,,EXCLUDE,EXCLUDE,,,,HNSC_final_admet.csv,29
+cand_1976d1af2680a143,cdrug_6fae7753ea49d2b0,HNSC,30,Tier 3,0.5810183841769212,,,KEEP,KEEP,,,,HNSC_final_admet.csv,30
+cand_47e4faa18a305f06,cdrug_ea451b022f6ed79c,IPF,1,Tier1,-1.13900439821085,IPF-approved reference,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,,hERG_prob>0.7 (0.817),DILI_prob>0.5 (0.722); CYP3A4_inhibition_prob>0.5 (0.664); High_hepatocyte_clearance>50 (82.5); High_microsome_clearance>50 (57.9),IPF_final_tiered.csv,1
+cand_d9025f042cb468dc,cdrug_fd8b3b58802cb6f2,IPF,2,Tier2,-3.279430904509071,Approved/clinical drug hitting IPF-relevant target axis,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.775); CYP3A4_inhibition_prob>0.5 (0.524); Low_Caco2_logPapp<-5.15 (-5.73),IPF_final_tiered.csv,2
+cand_aa34e25f060a931d,cdrug_6c95cca9e9b8fc23,IPF,3,Tier2,-2.739619827189386,Approved/clinical drug hitting IPF-relevant target axis,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.669); CYP3A4_inhibition_prob>0.5 (0.518); High_BBB_prob>0.7 (0.762),IPF_final_tiered.csv,3
+cand_c56c68b5c797c808,cdrug_5a6ce189f111e47c,IPF,4,Tier2,-2.464100708535658,Approved/clinical drug hitting IPF-relevant target axis,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.645),IPF_final_tiered.csv,4
+cand_3dc3acfd26ad478b,cdrug_14bc3bba5c9315c4,IPF,5,Tier2,-0.3689907468086709,Approved/clinical drug hitting IPF-relevant target axis,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.794); CYP3A4_inhibition_prob>0.5 (0.606); High_hepatocyte_clearance>50 (93.0); High_microsome_clearance>50 (57.1),IPF_final_tiered.csv,5
+cand_3971b65f92634bf3,cdrug_ceaf5c410c5875aa,IPF,6,Tier2,-0.1196366092660834,Approved/clinical drug hitting IPF-relevant target axis,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.801); CYP3A4_inhibition_prob>0.5 (0.507); PPB>95% (98.0); Low_Caco2_logPapp<-5.15 (-5.31),IPF_final_tiered.csv,6
+cand_0702f9f4f10cf96b,cdrug_a49713e61b9488b9,IPF,7,Tier2,-3.2458617673888663,Approved/clinical drug hitting IPF-relevant target axis,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,,hERG_prob>0.7 (0.844),DILI_prob>0.5 (0.740); CYP3A4_inhibition_prob>0.5 (0.577); Low_Caco2_logPapp<-5.15 (-5.28); High_BBB_prob>0.7 (0.738); High_microsome_clearance>50 (54.2),IPF_final_tiered.csv,7
+cand_410d0612be684cc5,cdrug_7d4a9d4ce4a3d480,IPF,8,Tier2,-0.1375403344708105,Approved/clinical drug hitting IPF-relevant target axis,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,,hERG_prob>0.7 (0.717),DILI_prob>0.5 (0.639); CYP3A4_inhibition_prob>0.5 (0.513),IPF_final_tiered.csv,8
+cand_760b4e46c015dc49,cdrug_764c019441dcdbc1,IPF,9,Tier4,-4.404797301413812,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.587); CYP3A4_inhibition_prob>0.5 (0.502); High_BBB_prob>0.7 (0.748),IPF_final_tiered.csv,9
+cand_b64c65ff2b71e6ba,cdrug_764c019441dcdbc1,IPF,10,Tier4,-4.402420762619502,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.749); CYP3A4_inhibition_prob>0.5 (0.631); High_BBB_prob>0.7 (0.728),IPF_final_tiered.csv,10
+cand_49cd86cf14628e1e,cdrug_764c019441dcdbc1,IPF,11,Tier4,-4.402420762619502,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.743); CYP3A4_inhibition_prob>0.5 (0.722); High_BBB_prob>0.7 (0.718),IPF_final_tiered.csv,11
+cand_8f0dfa8192b88dfd,cdrug_764c019441dcdbc1,IPF,12,Tier4,-4.399579280076667,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.777); CYP3A4_inhibition_prob>0.5 (0.521); Low_Caco2_logPapp<-5.15 (-5.21),IPF_final_tiered.csv,12
+cand_be4080382658e0e3,cdrug_764c019441dcdbc1,IPF,13,Tier4,-4.387690687283208,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.787); CYP3A4_inhibition_prob>0.5 (0.627); Low_Caco2_logPapp<-5.15 (-5.32),IPF_final_tiered.csv,13
+cand_49c0d4ee7b8b87d4,cdrug_764c019441dcdbc1,IPF,14,Tier4,-4.372804416520248,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.767); CYP3A4_inhibition_prob>0.5 (0.640); High_BBB_prob>0.7 (0.702),IPF_final_tiered.csv,14
+cand_a22e1eb9e5fd1faf,cdrug_764c019441dcdbc1,IPF,15,Tier4,-4.372175927193261,High model-ranked JAK1 lead,,Pass_With_Flags,Pass_With_Flags,,,DILI_prob>0.5 (0.604); High_BBB_prob>0.7 (0.720),IPF_final_tiered.csv,15
+cand_db874e99188ec01d,cdrug_61a5e8e07ce664d1,LUNG,1,FDA_APPROVED_LUNG,0.625,,,PASS,PASS,False,,0,LUNG_final_admet.csv,1
+cand_ddea491dbc563cb4,cdrug_20b83add6b9c4f21,LUNG,2,FDA_APPROVED_LUNG,0.5583333333333333,,,PASS,PASS,False,,0,LUNG_final_admet.csv,2
+cand_e8368b388a97be20,cdrug_07e5800d7654ee82,LUNG,3,FDA_APPROVED_LUNG,0.2697973204950822,,,PASS,PASS,False,,0,LUNG_final_admet.csv,3
+cand_21d37d22a594da33,cdrug_58450c4db13a14e1,LUNG,4,RESEARCH_PHASE,0.3650122025985619,,,PASS,PASS,False,,0,LUNG_final_admet.csv,4
+cand_e1d5ba823bb05272,cdrug_e33512555752f796,LUNG,5,RESEARCH_PHASE,0.3269999999999999,,,PASS,PASS,False,,0,LUNG_final_admet.csv,5
+cand_52b421552fa72421,cdrug_5b0d446d35d3790d,LUNG,6,CLINICAL_TRIAL,0.290391304347826,,,PASS,PASS,False,,0,LUNG_final_admet.csv,6
+cand_76d919f8a2b6cc09,cdrug_eee02d6dc017f95a,LUNG,7,CLINICAL_TRIAL,0.257,,,PASS,PASS,False,,0,LUNG_final_admet.csv,7
+cand_6db6e2b973b9c614,cdrug_e6882f20c467ce5f,LUNG,8,CLINICAL_TRIAL,0.2545294117647058,,,PASS,PASS,False,,0,LUNG_final_admet.csv,8
+cand_a42a807f1e5a0101,cdrug_8edbdc9c5d4a7174,LUNG,9,CLINICAL_TRIAL,0.2091428571428571,,,PASS,PASS,False,,0,LUNG_final_admet.csv,9
+cand_5ef9c9f3315e7017,cdrug_7e79edcdee91cafc,LUNG,10,REPURPOSING_CANDIDATE,0.55,,,PASS,PASS,False,,0,LUNG_final_admet.csv,10
+cand_6d8fcacdfc420f04,cdrug_36dba5df8466d8d4,LUNG,11,REPURPOSING_CANDIDATE,0.2668557667323745,,,PASS,PASS,False,,0,LUNG_final_admet.csv,11
+cand_2e1dad8d0f41d9f1,cdrug_edd483796693a02f,LUNG,12,REPURPOSING_CANDIDATE,0.23,,,PASS,PASS,False,,0,LUNG_final_admet.csv,12
+cand_6bd1ca9b010e784a,cdrug_68ee9a79a64bf70a,LUNG,13,REPURPOSING_CANDIDATE,0.2151956230203704,,,PASS,PASS,False,,0,LUNG_final_admet.csv,13
+cand_aa8eee59f218309a,cdrug_5e43b24a58c005d7,LUNG,14,REPURPOSING_CANDIDATE,0.1998677874522688,,,PASS,PASS,False,,0,LUNG_final_admet.csv,14
+cand_c40249dda26708ee,cdrug_09df56fea397fe63,LUNG,15,REPURPOSING_CANDIDATE,0.1826249975016053,,,PASS,PASS,False,,0,LUNG_final_admet.csv,15
+cand_cf47bd6f2250d561,cdrug_c40413853cfa1088,Liver,6,tier2,-0.1583007,ADMET PASS but not HCC-approved,7.5,PASS,PASS,,,,Liver_final_admet.csv,1
+cand_e7025185d554352b,cdrug_b927e4cdcac90f13,Liver,23,tier2,1.4928697,ADMET PASS but not HCC-approved,7.25,PASS,PASS,,,,Liver_final_admet.csv,2
+cand_15d806185b818c41,cdrug_f8909ca4d8abdc96,Liver,15,tier2,1.0201981,ADMET PASS but not HCC-approved,7.0,PASS,PASS,,,,Liver_final_admet.csv,3
+cand_fff60430162e6160,cdrug_da0375af747f9b98,Liver,19,tier2,1.238154,ADMET PASS but not HCC-approved,6.4,PASS,PASS,,,,Liver_final_admet.csv,4
+cand_4c71e6fc1c28fb2d,cdrug_a286fdd293b9be53,Liver,12,tier2,0.6874082,ADMET PASS but not HCC-approved,6.25,PASS,PASS,,,,Liver_final_admet.csv,5
+cand_1e4dec397e3898b1,cdrug_ec25ee06790a07e7,Liver,5,tier3,-0.30921328,ADMET WARNING with multi-source support,5.5,WARNING,WARNING,,,,Liver_final_admet.csv,6
+cand_84b8d16611d5040e,cdrug_9487650b5625fd2e,Liver,24,tier3,1.5069047,ADMET WARNING with multi-source support,5.5,WARNING,WARNING,,,,Liver_final_admet.csv,7
+cand_c161fcbaabc70c57,cdrug_66e7da8131e061dc,Liver,17,tier3,1.1406467,ADMET WARNING with multi-source support,5.25,WARNING,WARNING,,,,Liver_final_admet.csv,8
+cand_ddbeb50f24178654,cdrug_930e9d16bfde574a,Liver,29,tier3,1.900915,ADMET WARNING with multi-source support,5.25,WARNING,WARNING,,,,Liver_final_admet.csv,9
+cand_7c1e4962d281f9ab,cdrug_c8c9b4017be1244b,Liver,2,tier3,-1.1402773,ADMET WARNING with multi-source support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,10
+cand_89f8d534c3483b62,cdrug_52692989966fe3dc,Liver,4,tier3,-0.58910453,ADMET WARNING with multi-source support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,11
+cand_63909d4a5df55873,cdrug_371d0df931c65f11,Liver,11,tier3,0.5785534,ADMET WARNING with multi-source support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,12
+cand_458914af28402bee,cdrug_5d6b2e1a477d01ae,Liver,13,tier3,0.85031027,ADMET WARNING with multi-source support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,13
+cand_640d1b8fa71981b5,cdrug_c8c9b4017be1244b,Liver,1,tier4,-1.2004384,ADMET WARNING with limited support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,14
+cand_d0ceeec64f9d4777,cdrug_948943696293fe3b,Liver,14,tier4,0.95840305,ADMET WARNING with limited support,5.0,WARNING,WARNING,,,,Liver_final_admet.csv,15
+cand_66f2ce42440f2a4b,cdrug_c86910ec6034862f,PAH,1,Tier4,-5.027996513166518,False,,Hard_Fail,Hard_Fail,True,Lipinski_Ro5_violations=3,Low_Caco2_logPapp<-5.15 (-6.65); High_hepatocyte_clearance>50 (51.5); High_microsome_clearance>50 (66.0); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,1
+cand_0b4f405e3bae74d7,cdrug_ce69c6cebcd8dfd2,PAH,2,Tier4,-5.020776503991561,False,,Hard_Fail,Hard_Fail,True,Lipinski_Ro5_violations=3,Low_Caco2_logPapp<-5.15 (-6.67); High_hepatocyte_clearance>50 (51.1); High_microsome_clearance>50 (66.0); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,2
+cand_fc5b6509a6aecdd4,cdrug_671bd3814b35b17c,PAH,3,Tier4,-4.899935859795952,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.568); CYP3A4_inhibition_prob>0.5 (0.550); Low_Caco2_logPapp<-5.15 (-5.35); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,3
+cand_4c36ab9b03c56c85,cdrug_25eaec7308a97eee,PAH,4,Tier4,-4.532604298966646,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.737); CYP3A4_inhibition_prob>0.5 (0.594); Low_Caco2_logPapp<-5.15 (-5.38); High_hepatocyte_clearance>50 (85.5); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,4
+cand_fb0de1147fee041f,cdrug_cf22ebf86bc799b9,PAH,5,Tier4,-4.520093807692293,False,,Hard_Fail,Hard_Fail,True,hERG_prob>0.7 (0.701),DILI_prob>0.5 (0.716); CYP3A4_inhibition_prob>0.5 (0.553); Low_Caco2_logPapp<-5.15 (-5.37); High_hepatocyte_clearance>50 (79.6); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,5
+cand_caabe6bbdda218a7,cdrug_7545fce768975c03,PAH,6,Tier4,-4.478600174065137,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.645); CYP3A4_inhibition_prob>0.5 (0.567); Low_Caco2_logPapp<-5.15 (-5.41); High_hepatocyte_clearance>50 (51.5); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,6
+cand_97fc72b4682490bd,cdrug_deeb078577e471b3,PAH,7,Tier4,-3.970184463231393,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.720); CYP3A4_inhibition_prob>0.5 (0.601); Low_Caco2_logPapp<-5.15 (-5.41); High_hepatocyte_clearance>50 (85.4); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,7
+cand_2617ea18eb2e5fc8,cdrug_5330c9b8ef421a58,PAH,8,Tier4,-3.942495116517097,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.724); CYP3A4_inhibition_prob>0.5 (0.593); Low_Caco2_logPapp<-5.15 (-5.39); High_hepatocyte_clearance>50 (81.5); High_microsome_clearance>50 (55.2); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,8
+cand_98b83109a882f300,cdrug_633891f706d06abd,PAH,9,Tier4,-3.9090298911156713,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.727); CYP3A4_inhibition_prob>0.5 (0.595); Low_Caco2_logPapp<-5.15 (-5.33); High_hepatocyte_clearance>50 (77.6); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,9
+cand_e532f3cb5073baa1,cdrug_652bf5a33b201df2,PAH,10,Tier4,-3.884576892851337,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.783); CYP3A4_inhibition_prob>0.5 (0.715); PPB>95% (96.9); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,10
+cand_3df7e9891cbf9676,cdrug_7a9366e5379eda11,PAH,11,Tier4,-3.865623419733475,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.782); CYP3A4_inhibition_prob>0.5 (0.605); Low_Caco2_logPapp<-5.15 (-5.29); High_microsome_clearance>50 (54.6); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,11
+cand_93ff168e0f4e8c8b,cdrug_0fd545cc40bef19b,PAH,12,Tier4,-3.817480475219406,False,,Hard_Fail,Hard_Fail,True,Lipinski_Ro5_violations=3,Low_Caco2_logPapp<-5.15 (-6.67); High_hepatocyte_clearance>50 (53.2); High_microsome_clearance>50 (68.0); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,12
+cand_0d4ea9e099e944ca,cdrug_b59f08cae9af07cf,PAH,13,Tier4,-3.780566788046847,False,,Hard_Fail,Hard_Fail,True,hERG_prob>0.7 (0.717); Lipinski_Ro5_violations=2,DILI_prob>0.5 (0.684); CYP3A4_inhibition_prob>0.5 (0.619); Low_Caco2_logPapp<-5.15 (-5.38); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,13
+cand_c68139b5c5ebd645,cdrug_4ad83c742144b729,PAH,14,Tier4,-3.7079526547959993,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.761); CYP3A4_inhibition_prob>0.5 (0.505); High_microsome_clearance>50 (60.6); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,14
+cand_8c3f8feb13b49cdd,cdrug_e5fd561d9df3b53b,PAH,15,Tier4,-3.5940270718218192,False,,Hard_Fail,Hard_Fail,True,hERG_prob>0.7 (0.790),DILI_prob>0.5 (0.739); CYP3A4_inhibition_prob>0.5 (0.781); Low_Caco2_logPapp<-5.15 (-5.17); High_microsome_clearance>50 (60.4),PAH_final_admet.csv,15
+cand_629637daf70a15cb,cdrug_a36d9933974f8f30,PAH,16,Tier4,-3.5495597616909342,False,,Hard_Fail,Hard_Fail,True,Lipinski_Ro5_violations=3,Low_Caco2_logPapp<-5.15 (-6.64); High_microsome_clearance>50 (64.8); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,16
+cand_7f2d2dd5d6441df6,cdrug_8057512843ccee22,PAH,17,Tier1,-3.542204948202788,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.740); CYP3A4_inhibition_prob>0.5 (0.582); Low_Caco2_logPapp<-5.15 (-5.16); High_microsome_clearance>50 (54.0),PAH_final_admet.csv,17
+cand_24eabdda0ca79074,cdrug_20a9e92029833ac8,PAH,18,Tier4,-3.4871250774640776,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.758); CYP3A4_inhibition_prob>0.5 (0.741); PPB>95% (97.6); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,18
+cand_38e947d751b036c7,cdrug_403848db34080ce6,PAH,19,Tier4,-3.475195356893083,False,,Hard_Fail,Hard_Fail,True,hERG_prob>0.7 (0.781),DILI_prob>0.5 (0.751); CYP3A4_inhibition_prob>0.5 (0.694); Low_Caco2_logPapp<-5.15 (-5.49); High_hepatocyte_clearance>50 (52.1); High_microsome_clearance>50 (59.2); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,19
+cand_2aacfc293e04d820,cdrug_4fccd7a69505f16f,PAH,20,Tier4,-3.4690393399670403,False,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.742); CYP3A4_inhibition_prob>0.5 (0.731),PAH_final_admet.csv,20
+cand_87a4181d2cf4b88b,cdrug_62478e2e0df12fb4,PAH,21,Tier1,0.0074859069927118,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.711); CYP3A4_inhibition_prob>0.5 (0.505); High_microsome_clearance>50 (84.9),PAH_final_admet.csv,21
+cand_427215bb124795eb,cdrug_34b98cc5fbbbb5da,PAH,22,Tier1,0.1765455660410302,True,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,True,PAINS,DILI_prob>0.5 (0.824); CYP3A4_inhibition_prob>0.5 (0.712); Low_Caco2_logPapp<-5.15 (-5.16); High_BBB_prob>0.7 (0.757),PAH_final_admet.csv,22
+cand_a631a554c3c4ab7b,cdrug_2ebf6143a4e9c068,PAH,23,Tier1,1.711070042631723,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.756); Low_Caco2_logPapp<-5.15 (-5.20); High_microsome_clearance>50 (80.1),PAH_final_admet.csv,23
+cand_f4e69e6a380c76d1,cdrug_73f3443c4442bcc0,PAH,24,Tier1,2.143594088746656,True,,Pass_With_Flags,Pass_With_Flags,False,,Low_Caco2_logPapp<-5.15 (-5.15); High_hepatocyte_clearance>50 (57.0); High_microsome_clearance>50 (54.2),PAH_final_admet.csv,24
+cand_93db4c15a3c55b9c,cdrug_dcbd986d79b579e6,PAH,25,Tier1,2.6240112257321853,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.823); CYP3A4_inhibition_prob>0.5 (0.516); High_BBB_prob>0.7 (0.759),PAH_final_admet.csv,25
+cand_bc58d2a083126304,cdrug_b033da73883a15bf,PAH,26,Tier1,2.646130631846652,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.766); CYP3A4_inhibition_prob>0.5 (0.629),PAH_final_admet.csv,26
+cand_f455dbb8b1b0fdd9,cdrug_3ea906f99daca16c,PAH,27,Tier1,3.066477524156905,True,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,True,hERG_prob>0.7 (0.748),DILI_prob>0.5 (0.794); CYP3A4_inhibition_prob>0.5 (0.671); PPB>95% (97.9); Low_Caco2_logPapp<-5.15 (-5.30),PAH_final_admet.csv,27
+cand_a13e175b922e1e75,cdrug_31e511f6bf320f2c,PAH,28,Tier1,4.119525752351404,True,,Pass_With_Flags,Pass_With_Flags,False,,DILI_prob>0.5 (0.725); CYP3A4_inhibition_prob>0.5 (0.650); Low_Caco2_logPapp<-5.15 (-5.17),PAH_final_admet.csv,28
+cand_1d5474a70e5f3bad,cdrug_5e0c687278b12bfc,PAH,29,Tier2,0.3825911829465538,True,,Clinical_Context_Hard_Fail,Clinical_Context_Hard_Fail,True,hERG_prob>0.7 (0.736),DILI_prob>0.5 (0.703); CYP3A4_inhibition_prob>0.5 (0.729); PPB>95% (97.4); High_hepatocyte_clearance>50 (64.3); High_microsome_clearance>50 (73.8),PAH_final_admet.csv,29
+cand_c0731d573e40a996,cdrug_aaf10765e5ffd5ca,PAH,30,Tier4,-3.456692394947719,False,,Prefilter_Excluded,Prefilter_Excluded,False,,DILI_prob>0.5 (0.782); CYP3A4_inhibition_prob>0.5 (0.722); PPB>95% (97.1); Low_Caco2_logPapp<-5.15 (-5.16); High_microsome_clearance>50 (59.9); Tier4_prefilter:qed_below_0.5,PAH_final_admet.csv,30
+cand_17135ffb2a5028b9,cdrug_7e79edcdee91cafc,PDAC,1,Tier 3,2.5073827268206776,,,CAUTION,CAUTION,,dili,herg,PDAC_final_admet.csv,1
+cand_541a57d2773e8bae,cdrug_61a5e8e07ce664d1,PDAC,2,Tier 2,2.056295596567925,,,CAUTION,CAUTION,,dili,herg,PDAC_final_admet.csv,2
+cand_341110936532ae29,cdrug_371d0df931c65f11,PDAC,3,Tier 3,2.489638923408201,,,KEEP,KEEP,,,dili;herg,PDAC_final_admet.csv,3
+cand_3725a5c6d37fb1ee,cdrug_c40413853cfa1088,PDAC,4,Tier 2,2.775249038838941,,,KEEP,KEEP,,,ames,PDAC_final_admet.csv,4
+cand_2ee502b76485806e,cdrug_f8909ca4d8abdc96,PDAC,5,Tier 2,2.7517834654668225,,,KEEP,KEEP,,,,PDAC_final_admet.csv,5
+cand_cbf2f1327b9ba7c3,cdrug_edd483796693a02f,PDAC,6,Tier 4,2.0408895266111924,,,CAUTION,CAUTION,,ames;dili,herg,PDAC_final_admet.csv,6
+cand_beff3d47a985cbd3,cdrug_34152dace9ff98c9,PDAC,7,Tier 2,2.5561395266111924,,,CAUTION,CAUTION,,ames;dili,,PDAC_final_admet.csv,7
+cand_ec2498b1592d9783,cdrug_3de95f54a079fa92,PDAC,8,Tier 2,2.3963895266111925,,,CAUTION,CAUTION,,ames;dili,,PDAC_final_admet.csv,8
+cand_21413e79edaed528,cdrug_5d6b2e1a477d01ae,PDAC,9,Tier 3,2.2796606267706667,,,KEEP,KEEP,,,ames;dili;herg,PDAC_final_admet.csv,9
+cand_60da86b99f8edf0e,cdrug_b322f758af23765d,PDAC,10,Tier 3,1.847159786766364,,,KEEP,KEEP,,,ames;herg,PDAC_final_admet.csv,10
+cand_ddfb7a69acdd13bd,cdrug_5b0d446d35d3790d,PDAC,11,Tier 2,1.6719096653616663,,,CAUTION,CAUTION,,dili,herg,PDAC_final_admet.csv,11
+cand_55449eb0b2dee91f,cdrug_5e43b24a58c005d7,PDAC,12,Tier 3,2.5399572190485893,,,KEEP,KEEP,,,dili;herg,PDAC_final_admet.csv,12
+cand_9ffc864d0e6cbf44,cdrug_b927e4cdcac90f13,PDAC,13,Tier 2,2.6777496193880177,,,KEEP,KEEP,,,,PDAC_final_admet.csv,13
+cand_1c4ed1992d065969,cdrug_1f309e1d1aaae0f9,PDAC,14,Tier 3,1.0266183076335331,,,KEEP,KEEP,,,ames;herg,PDAC_final_admet.csv,14
+cand_dbb52a10bc3665c2,cdrug_66e7da8131e061dc,PDAC,15,Tier 2,2.985194482467028,,,KEEP,KEEP,,,ames;dili;herg,PDAC_final_admet.csv,15
+cand_3f697c2a0e42be87,cdrug_a7bbf7d59d42b1d0,PDAC,16,Tier 2,1.898124709841636,,,KEEP,KEEP,,,,PDAC_final_admet.csv,16
+cand_aa5ba3d1361bfb3a,cdrug_d82e10aee750f670,PDAC,17,Tier 2,2.474188410888317,,,KEEP,KEEP,,,,PDAC_final_admet.csv,17
+cand_e91a9d049a9e932d,cdrug_19bfedb68dfcc6d9,PDAC,18,Tier 3,1.831692026909837,,,KEEP,KEEP,,,,PDAC_final_admet.csv,18
+cand_4cb9e4b24b533fc2,cdrug_ec25ee06790a07e7,PDAC,19,Tier 2,1.569722379196309,,,KEEP,KEEP,,,,PDAC_final_admet.csv,19
+cand_5aead087fa922e33,cdrug_258a26e1e68187f5,PDAC,20,Tier 3,1.7441719852660769,,,KEEP,KEEP,,,,PDAC_final_admet.csv,20
+cand_04ff7451d1e8c672,cdrug_20b83add6b9c4f21,PDAC,21,Tier 1,2.109905274762445,,,KEEP,KEEP,,,,PDAC_final_admet.csv,21
+cand_34f554699325b22a,cdrug_a286fdd293b9be53,PDAC,22,Tier 2,2.3941884108883174,,,KEEP,KEEP,,,,PDAC_final_admet.csv,22
+cand_7d4de9ef757f2f89,cdrug_665990480f4d2502,PDAC,23,Tier 3,1.2047756435917465,,,KEEP,KEEP,,,,PDAC_final_admet.csv,23
+cand_76812f1af9733086,cdrug_209ac767f05cbe80,PDAC,24,Tier 3,1.4289080052807333,,,KEEP,KEEP,,,,PDAC_final_admet.csv,24
+cand_ccec7674ca525c11,cdrug_a0f92608891f8025,PDAC,25,Tier 2,2.65067304203141,,,KEEP,KEEP,,,,PDAC_final_admet.csv,25
+cand_a09016b26de13d6b,cdrug_a5becdc6d434f216,PDAC,26,Tier 2,1.4112271403344718,,,KEEP,KEEP,,,,PDAC_final_admet.csv,26
+cand_88c11a7e6a1cd05b,cdrug_f45eb6a56f3dd23b,PDAC,27,Tier 2,1.6487709235874772,,,KEEP,KEEP,,,,PDAC_final_admet.csv,27
+cand_3f8f9bf7053996f4,cdrug_67fc3a0622149415,PDAC,28,Tier 3,0.2305,,,KEEP,KEEP,,,,PDAC_final_admet.csv,28
+cand_71d9cd5e0dd11a93,cdrug_930e9d16bfde574a,PDAC,29,Tier 2,1.4471559949599395,,,KEEP,KEEP,,,,PDAC_final_admet.csv,29
+cand_5a9d6f728e5e1fc9,cdrug_8edbdc9c5d4a7174,PDAC,30,Tier 3,1.760378180791869,,,KEEP,KEEP,,,,PDAC_final_admet.csv,30
+cand_042f30c77e77d486,cdrug_6c95cca9e9b8fc23,Psoriasis,1,pass_admet_gate,-9.75698628385317,,10.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,1
+cand_82b69ffb2ebbff13,cdrug_9373a673e47eb859,Psoriasis,2,pass_admet_gate,-9.746818341239395,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,2
+cand_be4c9d1a748030cc,cdrug_66e7da8131e061dc,Psoriasis,3,pass_admet_gate,-9.35178617345144,,10.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,3
+cand_6129002cbfea339b,cdrug_ada9a241625f20a0,Psoriasis,4,pass_admet_gate,-8.989890079673518,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,4
+cand_bba8ed7c3b06e5fc,cdrug_c3144dbb448019d0,Psoriasis,5,pass_admet_gate,-8.607277456179364,,10.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,5
+cand_47c5f272e12ca29a,cdrug_f80a574bcccb0323,Psoriasis,6,pass_admet_gate,-8.497801324213743,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,6
+cand_8bec650e1ca85741,cdrug_9d0dd68c5d51cf92,Psoriasis,7,pass_admet_gate,-8.331825435284337,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,7
+cand_d70effbce57f9281,cdrug_5a6ce189f111e47c,Psoriasis,8,pass_admet_gate,-8.199435798221309,,10.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,8
+cand_45cc8e380ddfdfac,cdrug_1b002a0118c221e9,Psoriasis,9,pass_admet_gate,-8.053739523631148,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,9
+cand_e2cb0f1c6899d81a,cdrug_4a29d26f8861fbe6,Psoriasis,10,pass_admet_gate,-7.913628442467234,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,10
+cand_42b6f02b38d0e2f4,cdrug_b5ca35ac2b9b34ae,Psoriasis,11,pass_admet_gate,-7.88833577060057,,5.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,11
+cand_7a45261f50086e1f,cdrug_68e82574589d0333,Psoriasis,12,pass_admet_gate,-7.841627321865536,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,12
+cand_834753db451ef98c,cdrug_0abcecf22edf1da7,Psoriasis,13,pass_admet_gate,-7.622853000180686,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,13
+cand_ec5d107db631b692,cdrug_48c33381342f928d,Psoriasis,14,pass_admet_gate,-7.43359556519631,,5.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,14
+cand_18edf351fcd252ed,cdrug_86683458b87a205d,Psoriasis,15,pass_admet_gate,-7.344791255321166,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,15
+cand_30ae75f86d1599fb,cdrug_7d39d8c9b73946a3,Psoriasis,16,pass_admet_gate,-7.277410014605959,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,16
+cand_053d19f784c92f94,cdrug_575c6385c524f680,Psoriasis,17,pass_admet_gate,-7.183120361124556,,10.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,17
+cand_9c6914727898034e,cdrug_f58fdfe1697da1c9,Psoriasis,18,pass_admet_gate,-7.150414475637155,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,18
+cand_fbea5cd037ab6e19,cdrug_5d6b2e1a477d01ae,Psoriasis,19,pass_admet_gate,-7.09279055246622,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,19
+cand_289b8a6df06c95e4,cdrug_e31f8ab133e9cdba,Psoriasis,20,pass_admet_gate,-7.080966498810301,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,20
+cand_4a22aa41d3632cb4,cdrug_fd8b3b58802cb6f2,Psoriasis,21,pass_admet_gate,-6.941882932180455,,10.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,21
+cand_3373dcd6c6f8c8fa,cdrug_5327ddd6a8dfd4ff,Psoriasis,22,pass_admet_gate,-6.902101928707991,,5.0,pass_admet_gate,pass_admet_gate,1,,,Psoriasis_final_admet.csv,22
+cand_d344a34f5553ffbd,cdrug_53c80a3c0d50123d,Psoriasis,23,pass_admet_gate,-6.798495973370098,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,23
+cand_5bbdd8158c9f3de7,cdrug_bfd53d5593322ba1,Psoriasis,24,pass_admet_gate,-6.747821589564127,,10.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,24
+cand_c137e5b0a7651f6f,cdrug_941e9bd7e38f28d8,Psoriasis,25,pass_admet_gate,-6.660511690659576,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,25
+cand_6afb0f4fe663a64c,cdrug_c5b9cce13ea878bc,Psoriasis,26,pass_admet_gate,-6.644753261369568,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,26
+cand_32681a57b359f850,cdrug_f118c0b3ad3f6604,Psoriasis,27,pass_admet_gate,-6.574730803711773,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,27
+cand_c6d67525fe8409b1,cdrug_89d09223375c0b66,Psoriasis,28,pass_admet_gate,-6.45265181645204,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,28
+cand_cb8f5e57eb77db0d,cdrug_fe58aa8064b2e87b,Psoriasis,29,pass_admet_gate,-6.450325962307698,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,29
+cand_4ded0e0381695c71,cdrug_f1a64967eeab4b83,Psoriasis,30,pass_admet_gate,-6.307271634086332,,5.0,pass_admet_gate,pass_admet_gate,0,,,Psoriasis_final_admet.csv,30
+cand_c0e7da4f6288af86,cdrug_6c95cca9e9b8fc23,RA,1,pass_admet_gate,-9.861988195577986,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,1
+cand_0a9ee07ea2b3401a,cdrug_5171ad46a038c047,RA,2,pass_admet_gate,-9.29485551731263,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,2
+cand_69cda7fa65ce1cf0,cdrug_d2710deb05a2dc71,RA,3,pass_admet_gate,-9.209569609114649,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,3
+cand_031eb912a19bf2fa,cdrug_66e7da8131e061dc,RA,4,pass_admet_gate,-9.044931925574335,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,4
+cand_a0078892e3b91dc7,cdrug_c1fbc2e27a32152b,RA,5,pass_admet_gate,-8.922088900342484,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,5
+cand_dbfcfe22eb1b74ba,cdrug_f80a574bcccb0323,RA,6,pass_admet_gate,-8.48756408715436,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,6
+cand_05bed53883723414,cdrug_4a29d26f8861fbe6,RA,7,pass_admet_gate,-7.942357828869492,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,7
+cand_ebca523ec4e8d365,cdrug_d7c443e54c9eadf0,RA,8,pass_admet_gate,-7.882552820898787,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,8
+cand_5a57aed2b3cbb112,cdrug_3edfd50510eef142,RA,9,pass_admet_gate,-7.81149632665036,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,9
+cand_83710e132983d725,cdrug_ada9a241625f20a0,RA,10,pass_admet_gate,-7.775656889067772,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,10
+cand_6580dadca794a42b,cdrug_63bd67f24b93fc34,RA,11,pass_admet_gate,-7.768033468485684,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,11
+cand_cbe6a0c2bdd498cc,cdrug_5a6ce189f111e47c,RA,12,pass_admet_gate,-7.681710450531761,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,12
+cand_8a8a5a6b8b113e39,cdrug_7bc294ae598e26bc,RA,13,pass_admet_gate,-7.523324321515245,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,13
+cand_abab6c9bd27f1581,cdrug_6564ca080d113c11,RA,14,pass_admet_gate,-7.462573854058209,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,14
+cand_8cabbd7806e82a63,cdrug_f58fdfe1697da1c9,RA,15,pass_admet_gate,-7.381652938182148,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,15
+cand_7a76ec80025aa1a8,cdrug_48c33381342f928d,RA,16,pass_admet_gate,-7.260097215567057,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,16
+cand_505b964dde35150c,cdrug_0abcecf22edf1da7,RA,17,pass_admet_gate,-7.250288655571843,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,17
+cand_67184a3eae0582ba,cdrug_de6562320c068a28,RA,18,pass_admet_gate,-7.239062861005722,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,18
+cand_d3df9519201d3fba,cdrug_575c6385c524f680,RA,19,pass_admet_gate,-7.214367765708451,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,19
+cand_02bf999967ca8fa4,cdrug_5481b56eb9cd688d,RA,20,pass_admet_gate,-7.189003611105096,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,20
+cand_f8e032f8593c5ebd,cdrug_e31f8ab133e9cdba,RA,21,pass_admet_gate,-7.145921921420366,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,21
+cand_19f1f0871e8dfb70,cdrug_8f45a22f1db916b3,RA,22,pass_admet_gate,-7.072816967800778,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,22
+cand_d946d5180854e1e2,cdrug_bdc8af0e6cb00c24,RA,23,pass_admet_gate,-7.021140734118868,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,23
+cand_fc53ae032feea575,cdrug_fd8b3b58802cb6f2,RA,24,pass_admet_gate,-6.902100268973847,,10.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,24
+cand_c457582c07f814a2,cdrug_941e9bd7e38f28d8,RA,25,pass_admet_gate,-6.898721362446087,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,25
+cand_df31f2130983df55,cdrug_c60565d68183fdce,RA,26,pass_admet_gate,-6.841057634226779,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,26
+cand_6e49173fcc7b8a2d,cdrug_3a9a8e675b94f430,RA,27,pass_admet_gate,-6.833507325716786,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,27
+cand_ed5619482a8b60e4,cdrug_aa3d2c1a9aafcd29,RA,28,pass_admet_gate,-6.780702996178621,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,28
+cand_0f26387bebe8c109,cdrug_97eb6c3b7992ed1f,RA,29,pass_admet_gate,-6.7705640409386065,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,29
+cand_3234b65b64c21a46,cdrug_5d6b2e1a477d01ae,RA,30,pass_admet_gate,-6.740341575150685,,5.0,pass_admet_gate,pass_admet_gate,0,,,RA_final_admet.csv,30
+cand_5eb599d44bf9e220,cdrug_c40413853cfa1088,STAD,6,Tier2,-0.1583007,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",7.5,PASS,PASS,,,,STAD_final_admet.csv,1
+cand_15792dbb12c78bb4,cdrug_b927e4cdcac90f13,STAD,23,Tier2,1.4928697,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",7.25,PASS,PASS,,,,STAD_final_admet.csv,2
+cand_a0b96307ee5dac02,cdrug_f8909ca4d8abdc96,STAD,15,Tier2,1.0201981,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",7.0,PASS,PASS,,,,STAD_final_admet.csv,3
+cand_37a8d024dcb656d4,cdrug_da0375af747f9b98,STAD,19,Tier1,1.238154,Current/reference gastric cancer therapy or biomarker-selected therapy.,6.4,PASS,PASS,,,,STAD_final_admet.csv,4
+cand_28d2ac1e8320a1c6,cdrug_a286fdd293b9be53,STAD,12,Tier2,0.6874082,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",6.25,PASS,PASS,,,,STAD_final_admet.csv,5
+cand_3b343593d1f84b99,cdrug_ec25ee06790a07e7,STAD,5,Tier2,-0.30921328,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",5.5,WARNING,WARNING,,,,STAD_final_admet.csv,6
+cand_860bc9b09f9f0376,cdrug_9487650b5625fd2e,STAD,24,Tier2,1.5069047,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",5.5,WARNING,WARNING,,,,STAD_final_admet.csv,7
+cand_9d203c0f3deeb39a,cdrug_66e7da8131e061dc,STAD,17,Tier3,1.1406467,Repurposing candidate without current gastric cancer status.,5.25,WARNING,WARNING,,,,STAD_final_admet.csv,8
+cand_b84bf501a6045180,cdrug_930e9d16bfde574a,STAD,29,Tier3,1.900915,Repurposing candidate without current gastric cancer status.,5.25,WARNING,WARNING,,,,STAD_final_admet.csv,9
+cand_c839c704a3e99577,cdrug_760c10c9f441bfbc,STAD,20,Tier3,1.2442573,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,10
+cand_25134fb45d4598d1,cdrug_14411daba423616d,STAD,21,Tier3,1.2630359,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,11
+cand_d3a411bdee007c87,cdrug_c8c9b4017be1244b,STAD,1,Tier2,-1.2004384,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",5.0,WARNING,WARNING,,,,STAD_final_admet.csv,12
+cand_bf7578150db16f6f,cdrug_e33512555752f796,STAD,18,Tier3,1.1986375,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,13
+cand_ce7d024cddb15f81,cdrug_5e43b24a58c005d7,STAD,26,Tier3,1.6392425,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,14
+cand_0e6e61397e61856f,cdrug_55e70c4ca380f295,STAD,27,Tier3,1.7072076,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,15
+cand_48164e2f8f6ec288,cdrug_32e12f4a864d093b,STAD,28,Tier2,1.8123553,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",5.0,WARNING,WARNING,,,,STAD_final_admet.csv,16
+cand_a084068c24241d1f,cdrug_e408623f8a2d3a7b,STAD,25,Tier3,1.6032735,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,17
+cand_9a30ed9e3bd86c49,cdrug_9e64de7415bb3254,STAD,30,Tier3,1.9733495,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,18
+cand_f1af7a1f0d64b693,cdrug_c8c9b4017be1244b,STAD,2,Tier2,-1.1402773,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",5.0,WARNING,WARNING,,,,STAD_final_admet.csv,19
+cand_b0c5a4b248c785d0,cdrug_948943696293fe3b,STAD,14,Tier3,0.95840305,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,20
+cand_89b60f7ed073868d,cdrug_5d6b2e1a477d01ae,STAD,13,Tier3,0.85031027,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,21
+cand_2c667f59fc70107d,cdrug_371d0df931c65f11,STAD,11,Tier3,0.5785534,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,22
+cand_4f396c3ae43f8496,cdrug_52692989966fe3dc,STAD,4,Tier3,-0.58910453,Repurposing candidate without current gastric cancer status.,5.0,WARNING,WARNING,,,,STAD_final_admet.csv,23
+cand_af5fd968058d20a0,cdrug_20b83add6b9c4f21,STAD,7,Tier1,-0.115684345,Current/reference gastric cancer therapy or biomarker-selected therapy.,4.25,WARNING,WARNING,,,,STAD_final_admet.csv,24
+cand_69df8f299292ad40,cdrug_61a5e8e07ce664d1,STAD,3,Tier1,-1.1360332,Current/reference gastric cancer therapy or biomarker-selected therapy.,4.25,WARNING,WARNING,,,,STAD_final_admet.csv,25
+cand_1ad567f521796016,cdrug_7e79edcdee91cafc,STAD,10,Tier3,0.28733104,Repurposing candidate without current gastric cancer status.,4.0,WARNING,WARNING,,,,STAD_final_admet.csv,26
+cand_4242ec4afdda4e4a,cdrug_34152dace9ff98c9,STAD,8,Tier2,0.08474465,"Gastric-cancer-relevant pathway, trial signal, or indication-expansion hypothesis.",4.0,WARNING,WARNING,,,,STAD_final_admet.csv,27
+cand_e20e3d57839e7ff5,cdrug_5b0d446d35d3790d,STAD,9,Tier4,0.20067377,Excluded by ADMET/safety or missing actionable drug structure/identity.,3.4,FAIL,FAIL,,,,STAD_final_admet.csv,28
+cand_2cc9a05da63ddfed,cdrug_edd483796693a02f,STAD,16,Tier4,1.0574954,Excluded by ADMET/safety or missing actionable drug structure/identity.,3.15,FAIL,FAIL,,,,STAD_final_admet.csv,29
+cand_ca87cde4279097a2,cdrug_3de95f54a079fa92,STAD,22,Tier4,1.4310782,Excluded by ADMET/safety or missing actionable drug structure/identity.,3.0,FAIL,FAIL,,,,STAD_final_admet.csv,30

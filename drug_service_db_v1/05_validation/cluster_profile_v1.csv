@@ -1,0 +1,12 @@
+disease_id,clusters,missing_cluster_label,missing_n_observations
+BRCA,4,4,4
+Colon,4,4,0
+HNSC,2,0,0
+IPF,2,2,0
+Liver,3,2,0
+LUNG,3,0,0
+PAH,2,2,0
+PDAC,2,0,0
+Psoriasis,4,0,0
+RA,2,0,0
+STAD,3,0,0

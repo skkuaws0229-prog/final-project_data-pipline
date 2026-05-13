@@ -1,0 +1,13 @@
+table_name,count
+admet_results,255
+canonical_drugs,160
+disease_aliases,31
+diseases,11
+drug_aliases,171
+drug_candidates,255
+drugs,171
+image_modal_cluster_members,1694
+image_modal_clusters,31
+image_modal_drug_evidence,371
+image_modal_reports,14
+image_modal_sources,33

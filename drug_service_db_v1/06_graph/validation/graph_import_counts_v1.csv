@@ -1,0 +1,13 @@
+artifact,count
+Disease nodes,11
+Drug nodes,170
+DrugAlias nodes,181
+DiseaseAlias nodes,31
+TargetConcept nodes,133
+ImageCluster nodes,31
+ImageEvidence nodes,430
+CANDIDATE_FOR edges,255
+HAS_TARGET candidate edges,311
+HAS_IMAGE_EVIDENCE edges,430
+SUPPORTS_DRUG edges,430
+MENTIONS_TARGET evidence edges,542
