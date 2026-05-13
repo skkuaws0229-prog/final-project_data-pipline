@@ -32,6 +32,13 @@ GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
 ```
 
+React v2 API 계약과 인수인계 문서는 아래 파일을 기준으로 합니다.
+
+```text
+API_CONTRACT_REACT_V2.md
+FRONTEND_HANDOFF_REACT_V2.md
+```
+
 ## Docker Compose 실행
 
 Repository root에서 실행합니다.
