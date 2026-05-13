@@ -41,6 +41,7 @@ target_texts
 mapping_statuses
 diseases
 target_links
+context_links
 ```
 
 ## 검증 결과
@@ -66,6 +67,7 @@ status: to_fetch
 structure_status: pending
 target_texts: JAK1
 diseases: IPF, Psoriasis, RA
+context_links: 25
 ```
 
 ### 없는 structure_id
@@ -98,6 +100,7 @@ PASS
 ```
 
 프론트엔드는 목록에서 받은 `structure_id`를 기준으로 상세 metadata를 조회할 수 있다.
+상세 metadata에는 structure와 연결된 후보/이미지 evidence context도 `context_links`로 포함된다.
 
 ## 주의
 

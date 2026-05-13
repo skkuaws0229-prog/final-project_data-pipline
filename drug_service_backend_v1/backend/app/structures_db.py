@@ -111,6 +111,29 @@ def get_structure_detail(structure_id: str) -> dict | None:
           FROM target_protein_links tpl
           LEFT JOIN LATERAL regexp_split_to_table(COALESCE(tpl.raw_json->>'diseases', ''), '\\|') AS disease(value) ON true
           GROUP BY tpl.protein_id
+        ),
+        structure_context AS (
+          SELECT
+            cpsl.structure_id,
+            jsonb_agg(
+              jsonb_build_object(
+                'context_id', cpsl.context_id,
+                'disease_id', cpsl.disease_id,
+                'candidate_id', cpsl.candidate_id,
+                'evidence_id', cpsl.evidence_id,
+                'canonical_drug_id', cpsl.canonical_drug_id,
+                'drug_name', COALESCE(cd.primary_drug_name, d.drug_name, ime.drug_name),
+                'target_source', cpsl.target_source,
+                'relation_note', cpsl.relation_note
+              )
+              ORDER BY cpsl.disease_id, cpsl.target_source, cpsl.context_id
+            ) AS context_links
+          FROM candidate_protein_structure_links cpsl
+          LEFT JOIN canonical_drugs cd ON cd.canonical_drug_id = cpsl.canonical_drug_id
+          LEFT JOIN drug_candidates dc ON dc.candidate_id = cpsl.candidate_id
+          LEFT JOIN drugs d ON d.drug_id = dc.drug_id
+          LEFT JOIN image_modal_drug_evidence ime ON ime.evidence_id = cpsl.evidence_id
+          GROUP BY cpsl.structure_id
         )
         SELECT
           afs.structure_id,
@@ -140,10 +163,12 @@ def get_structure_detail(structure_id: str) -> dict | None:
           COALESCE(tc.target_texts, ARRAY[]::text[]) AS target_texts,
           COALESCE(tc.mapping_statuses, ARRAY[]::text[]) AS mapping_statuses,
           COALESCE(tc.diseases, ARRAY[]::text[]) AS diseases,
-          COALESCE(tc.target_links, '[]'::jsonb) AS target_links
+          COALESCE(tc.target_links, '[]'::jsonb) AS target_links,
+          COALESCE(sc.context_links, '[]'::jsonb) AS context_links
         FROM alphafold_structures afs
         JOIN protein_targets pt ON pt.protein_id = afs.protein_id
         LEFT JOIN target_context tc ON tc.protein_id = afs.protein_id
+        LEFT JOIN structure_context sc ON sc.structure_id = afs.structure_id
         WHERE afs.structure_id = %(structure_id)s
         """,
         {"structure_id": structure_id},

@@ -177,6 +177,17 @@ class StructureTargetLink(BaseModel):
     raw_json: dict[str, Any] = Field(default_factory=dict)
 
 
+class StructureContextLink(BaseModel):
+    context_id: str
+    disease_id: str
+    candidate_id: str | None = None
+    evidence_id: str | None = None
+    canonical_drug_id: str | None = None
+    drug_name: str | None = None
+    target_source: str
+    relation_note: str | None = None
+
+
 class StructureDetailResponse(BaseModel):
     structure_id: str
     protein_id: str
@@ -201,6 +212,7 @@ class StructureDetailResponse(BaseModel):
     mapping_statuses: list[str] = Field(default_factory=list)
     diseases: list[str] = Field(default_factory=list)
     target_links: list[StructureTargetLink] = Field(default_factory=list)
+    context_links: list[StructureContextLink] = Field(default_factory=list)
 
 
 class PipelineRunCreateRequest(BaseModel):
