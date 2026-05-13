@@ -1,0 +1,12 @@
+disease_id,score_count,duplicate_canonical_drug_ids,out_of_range_scores,missing_evidence_sources,risk_source_count,top_drug,top_path_score,evidence_source_types
+BRCA,15,0,0,0,12,Nelarabine,0.75,drug_candidate|image_modal_evidence
+Colon,15,0,0,0,10,Vinorelbine,0.8786,drug_candidate|image_modal_evidence|target_overlap
+HNSC,30,0,0,0,30,Afatinib,0.3667,drug_candidate|image_modal_evidence
+IPF,9,0,0,0,12,AT-9283,0.5119,drug_candidate|image_modal_evidence
+LUNG,15,0,0,0,15,Docetaxel,0.85,drug_candidate|image_modal_evidence|target_overlap
+Liver,14,0,0,0,9,Topotecan,0.6797,drug_candidate|image_modal_evidence|target_overlap
+PAH,30,0,0,0,63,VARDENAFIL,0.3678,drug_candidate|image_modal_evidence
+PDAC,30,0,0,0,41,Vinblastine,0.4753,drug_candidate|image_modal_evidence|target_overlap
+Psoriasis,30,0,0,0,6,ABIVERTINIB,0.869,drug_candidate|image_modal_evidence|target_overlap
+RA,30,0,0,0,0,Ruxolitinib,0.6667,drug_candidate|image_modal_evidence
+STAD,29,0,0,0,24,Topotecan,0.8483,drug_candidate|image_modal_evidence|target_overlap

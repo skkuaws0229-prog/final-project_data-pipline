@@ -102,6 +102,34 @@ class GraphRelationsResponse(BaseModel):
     edges: list[GraphEdge]
 
 
+class PathScoreEvidenceSource(BaseModel):
+    source_type: str
+    source_id: str | None = None
+    source_file: str | None = None
+    evidence_role: str
+    summary: str | None = None
+    properties: dict[str, Any] = {}
+
+
+class PathScoreItem(BaseModel):
+    canonical_drug_id: str
+    drug_name: str
+    rank: int | None = None
+    tier: str | None = None
+    path_score: float
+    positive_score: float
+    risk_penalty: float
+    components: dict[str, float]
+    evidence_sources: list[PathScoreEvidenceSource]
+    risk_sources: list[PathScoreEvidenceSource]
+
+
+class PathScoreResponse(BaseModel):
+    disease_id: str
+    scoring_version: str
+    scores: list[PathScoreItem]
+
+
 class SearchHit(BaseModel):
     id: str
     score: float | None = None

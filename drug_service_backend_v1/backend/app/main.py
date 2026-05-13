@@ -14,6 +14,7 @@ from app.schemas import (
     ImageModalCluster,
     ImageModalEvidence,
     ImageModalReport,
+    PathScoreResponse,
     SearchResponse,
 )
 
@@ -131,6 +132,277 @@ def _put_edge(edges: dict[str, dict], edge_id: str, source: str | None, target: 
         "type": edge_type,
         "properties": properties or {},
     }
+
+
+def _to_int(value) -> int | None:
+    if value is None or value == "":
+        return None
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return None
+
+
+def _to_float(value) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _truthy(value) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _is_pass_text(value) -> bool:
+    if value is None:
+        return False
+    text = str(value).strip().lower()
+    return text in {"pass", "pass_admet_gate", "ok"} or text.startswith("pass")
+
+
+def _round_score(value: float) -> float:
+    return round(max(0.0, min(1.0, value)), 4)
+
+
+@app.get("/graph/path-score", response_model=PathScoreResponse)
+def graph_path_score(
+    disease_id: str = Query(..., description="Disease id, e.g. BRCA, RA, STAD"),
+    limit: int = Query(100, ge=1, le=200),
+) -> dict:
+    disease_rows = run_read(
+        """
+        MATCH (d:Disease {disease_id: $disease_id})
+        RETURN d.disease_id AS disease_id
+        """,
+        {"disease_id": disease_id},
+    )
+    if not disease_rows:
+        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+
+    rows = run_read(
+        """
+        MATCH (drug:Drug)-[candidate:CANDIDATE_FOR]->(disease:Disease {disease_id: $disease_id})
+        OPTIONAL MATCH (drug)-[candidate_target_rel:HAS_TARGET {disease_id: $disease_id}]->(candidate_target:TargetConcept)
+        WITH drug, candidate, collect(DISTINCT {
+          target_id: candidate_target.target_id,
+          concept_text: candidate_target.concept_text,
+          concept_type: candidate_target.concept_type,
+          relation_kind: candidate_target_rel.relation_kind,
+          source_id: candidate_target_rel.source_id
+        }) AS candidate_targets
+        OPTIONAL MATCH (disease:Disease {disease_id: $disease_id})-[:HAS_IMAGE_CLUSTER]->(cluster:ImageCluster)-[:HAS_IMAGE_EVIDENCE]->(evidence:ImageEvidence)-[support:SUPPORTS_DRUG]->(drug)
+        OPTIONAL MATCH (evidence)-[evidence_target_rel:MENTIONS_TARGET {disease_id: $disease_id}]->(evidence_target:TargetConcept)
+        RETURN
+          drug.canonical_drug_id AS canonical_drug_id,
+          drug.primary_drug_name AS drug_name,
+          candidate.candidate_id AS candidate_id,
+          candidate.rank AS rank,
+          candidate.tier AS tier,
+          candidate.score AS candidate_score,
+          candidate.evidence_summary AS candidate_evidence_summary,
+          candidate.safety_score AS safety_score,
+          candidate.verdict AS verdict,
+          candidate.admet_status AS admet_status,
+          candidate.hard_fail AS hard_fail,
+          candidate.hard_fail_reasons AS hard_fail_reasons,
+          candidate.soft_flags AS soft_flags,
+          candidate.source_file AS candidate_source_file,
+          candidate_targets AS candidate_targets,
+          collect(DISTINCT {
+            evidence_id: evidence.evidence_id,
+            cluster_id: cluster.cluster_id,
+            cluster_key: cluster.cluster_key,
+            cluster_label: cluster.cluster_label,
+            evidence_text: evidence.evidence_text,
+            rank: evidence.rank,
+            tier: evidence.tier,
+            match_status: support.match_status,
+            source_file: evidence.source_file
+          }) AS image_evidence,
+          collect(DISTINCT {
+            evidence_id: evidence.evidence_id,
+            target_id: evidence_target.target_id,
+            concept_text: evidence_target.concept_text,
+            concept_type: evidence_target.concept_type,
+            relation_kind: evidence_target_rel.relation_kind,
+            source_id: evidence_target_rel.source_id
+          }) AS evidence_targets
+        ORDER BY candidate.rank IS NULL, candidate.rank, drug.primary_drug_name
+        LIMIT $limit
+        """,
+        {"disease_id": disease_id, "limit": limit},
+    )
+
+    max_rank_rows = run_read(
+        """
+        MATCH (:Drug)-[candidate:CANDIDATE_FOR]->(:Disease {disease_id: $disease_id})
+        WHERE candidate.rank IS NOT NULL
+        RETURN max(toInteger(candidate.rank)) AS max_rank
+        """,
+        {"disease_id": disease_id},
+    )
+    max_rank = _to_int(max_rank_rows[0]["max_rank"]) if max_rank_rows else None
+    if max_rank is None or max_rank < 1:
+        max_rank = 1
+    score_items = []
+
+    for row in rows:
+        rank = _to_int(row["rank"])
+        candidate_targets = [target for target in row["candidate_targets"] if target.get("target_id")]
+        image_evidence = [evidence for evidence in row["image_evidence"] if evidence.get("evidence_id")]
+        evidence_targets = [target for target in row["evidence_targets"] if target.get("target_id")]
+
+        rank_component = 0.0
+        if rank is not None:
+            rank_component = 1.0 if max_rank <= 1 else max(0.0, 1.0 - ((rank - 1) / max(max_rank - 1, 1)))
+
+        hard_fail = _truthy(row["hard_fail"])
+        verdict_pass = _is_pass_text(row["verdict"]) or _is_pass_text(row["admet_status"])
+        safety_score = _to_float(row["safety_score"])
+        safety_component = 0.0
+        if verdict_pass and not hard_fail:
+            safety_component = 1.0
+        elif safety_score is not None and not hard_fail:
+            safety_component = min(max(safety_score / 10.0, 0.0), 1.0)
+
+        evidence_component = min(len(image_evidence) / 3.0, 1.0)
+
+        candidate_target_ids = {target["target_id"] for target in candidate_targets}
+        evidence_target_ids = {target["target_id"] for target in evidence_targets}
+        target_overlap_count = len(candidate_target_ids & evidence_target_ids)
+        target_overlap_component = 0.0
+        if candidate_target_ids:
+            target_overlap_component = target_overlap_count / len(candidate_target_ids)
+
+        components = {
+            "candidate_rank": round(rank_component * 0.30, 4),
+            "admet": round(safety_component * 0.20, 4),
+            "image_evidence": round(evidence_component * 0.25, 4),
+            "target_overlap": round(target_overlap_component * 0.15, 4),
+        }
+        positive_score = sum(components.values())
+
+        risk_penalty = 0.0
+        risk_sources = []
+        if hard_fail:
+            risk_penalty += 0.25
+            risk_sources.append(
+                {
+                    "source_type": "admet",
+                    "source_id": row["candidate_id"],
+                    "source_file": row["candidate_source_file"],
+                    "evidence_role": "risk",
+                    "summary": row["hard_fail_reasons"] or "ADMET hard_fail is set",
+                    "properties": {"hard_fail": row["hard_fail"], "hard_fail_reasons": row["hard_fail_reasons"]},
+                }
+            )
+        if not verdict_pass:
+            risk_penalty += 0.10
+            risk_sources.append(
+                {
+                    "source_type": "admet",
+                    "source_id": row["candidate_id"],
+                    "source_file": row["candidate_source_file"],
+                    "evidence_role": "risk",
+                    "summary": f"ADMET verdict/status is not pass: {row['verdict'] or row['admet_status']}",
+                    "properties": {"verdict": row["verdict"], "admet_status": row["admet_status"]},
+                }
+            )
+        if row["soft_flags"]:
+            risk_penalty += 0.05
+            risk_sources.append(
+                {
+                    "source_type": "admet",
+                    "source_id": row["candidate_id"],
+                    "source_file": row["candidate_source_file"],
+                    "evidence_role": "risk",
+                    "summary": row["soft_flags"],
+                    "properties": {"soft_flags": row["soft_flags"]},
+                }
+            )
+
+        evidence_sources = [
+            {
+                "source_type": "drug_candidate",
+                "source_id": row["candidate_id"],
+                "source_file": row["candidate_source_file"],
+                "evidence_role": "support",
+                "summary": row["candidate_evidence_summary"] or f"Candidate rank {rank}, tier {row['tier']}",
+                "properties": {
+                    "rank": rank,
+                    "tier": row["tier"],
+                    "score": row["candidate_score"],
+                    "verdict": row["verdict"],
+                    "admet_status": row["admet_status"],
+                },
+            }
+        ]
+        for evidence in image_evidence[:10]:
+            evidence_sources.append(
+                {
+                    "source_type": "image_modal_evidence",
+                    "source_id": evidence["evidence_id"],
+                    "source_file": evidence["source_file"],
+                    "evidence_role": "support",
+                    "summary": evidence["evidence_text"],
+                    "properties": {
+                        "cluster_id": evidence["cluster_id"],
+                        "cluster_key": evidence["cluster_key"],
+                        "cluster_label": evidence["cluster_label"],
+                        "rank": evidence["rank"],
+                        "tier": evidence["tier"],
+                        "match_status": evidence["match_status"],
+                    },
+                }
+            )
+        if target_overlap_count:
+            evidence_sources.append(
+                {
+                    "source_type": "target_overlap",
+                    "source_id": row["candidate_id"],
+                    "source_file": row["candidate_source_file"],
+                    "evidence_role": "support",
+                    "summary": f"{target_overlap_count} candidate target/pathway concept(s) overlap with image-modal evidence targets.",
+                    "properties": {
+                        "overlap_target_ids": sorted(candidate_target_ids & evidence_target_ids),
+                        "candidate_target_count": len(candidate_target_ids),
+                        "evidence_target_count": len(evidence_target_ids),
+                    },
+                }
+            )
+
+        path_score = _round_score(positive_score - risk_penalty)
+        score_items.append(
+            {
+                "canonical_drug_id": row["canonical_drug_id"],
+                "drug_name": row["drug_name"],
+                "rank": rank,
+                "tier": row["tier"],
+                "path_score": path_score,
+                "positive_score": _round_score(positive_score),
+                "risk_penalty": _round_score(risk_penalty),
+                "components": components,
+                "evidence_sources": evidence_sources,
+                "risk_sources": risk_sources,
+            }
+        )
+
+    score_items.sort(key=lambda item: (-item["path_score"], item["rank"] if item["rank"] is not None else 9999, item["drug_name"]))
+    deduped_score_items = []
+    seen_drug_ids = set()
+    for item in score_items:
+        if item["canonical_drug_id"] in seen_drug_ids:
+            continue
+        seen_drug_ids.add(item["canonical_drug_id"])
+        deduped_score_items.append(item)
+    return {"disease_id": disease_id, "scoring_version": "path_scoring_v1", "scores": deduped_score_items}
 
 
 @app.get("/graph/relations", response_model=GraphRelationsResponse)

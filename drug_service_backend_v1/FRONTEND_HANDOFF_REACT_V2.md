@@ -10,11 +10,12 @@ Neo4j: 연결 완료
 FastAPI: 구현 완료
 Graph API: /graph/relations 검증 완료
 OpenSearch: text search 연결 완료
+Path scoring: /graph/path-score 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
 RAG/LLM: 아직 미연결
 ```
 
-React v2는 PostgreSQL + Neo4j + OpenSearch 기반 화면을 먼저 붙이고, 이후 path scoring, KG embedding, RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
+React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring 기반 화면을 먼저 붙이고, 이후 KG embedding, RAG/LLM을 단계적으로 추가하는 방향이 좋습니다.
 
 ## 실행 방법
 
@@ -86,6 +87,7 @@ GET /drugs?disease_id=RA
 GET /image-modal/evidence?disease_id=RA
 GET /image-modal/clusters?disease_id=RA
 GET /graph/relations?disease_id=RA&limit=50
+GET /graph/path-score?disease_id=RA&limit=100
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 ```
@@ -173,6 +175,42 @@ TargetConcept: target/pathway raw concept node
 
 `CANDIDATE_FOR`와 `SUPPORTS_DRUG`는 의미가 다르므로 색상이나 edge style을 분리하는 것이 좋습니다.
 
+## Path scoring 참고
+
+`/graph/path-score`는 Neo4j graph와 기존 candidate/ADMET/image-modal evidence를 이용해 설명 가능한 기준 점수를 반환합니다.
+
+```json
+{
+  "disease_id": "RA",
+  "scoring_version": "path_scoring_v1",
+  "scores": [
+    {
+      "canonical_drug_id": "cdrug_xxx",
+      "drug_name": "Ruxolitinib",
+      "rank": 1,
+      "tier": "pass_admet_gate",
+      "path_score": 0.6667,
+      "positive_score": 0.6667,
+      "risk_penalty": 0.0,
+      "components": {},
+      "evidence_sources": [],
+      "risk_sources": []
+    }
+  ]
+}
+```
+
+프론트 표시 제안:
+
+```text
+path_score: 정렬/요약 점수
+components: rank, ADMET, image evidence, target overlap 분해 표시
+evidence_sources: 근거 펼침 영역
+risk_sources: 주의/감점 근거 영역
+```
+
+주의: `path_score`는 최종 임상 판단 점수가 아니라 설명 가능한 내부 기준 점수입니다. 점수만 단독 표시하지 말고 source와 risk를 같이 보여주는 것이 좋습니다.
+
 ## 검증 완료 사항
 
 Graph API 검증 결과:
@@ -200,6 +238,17 @@ drug_candidate: 255
 image_evidence: 430
 image_report: 14
 GET /health/search -> {"status":"ok","search":"ok"}
+```
+
+Path scoring v1 검증:
+
+```text
+11개 질병 전체 검증 완료
+Score rows: 247
+Duplicate canonical_drug_id: 0
+Out-of-range score: 0
+Missing evidence_sources: 0
+상세 리포트: drug_service_backend_v1/08_path_scoring/path_score_validation_v1.md
 ```
 
 ## 아직 구현하지 않는 것

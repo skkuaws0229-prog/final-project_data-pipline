@@ -27,13 +27,15 @@ TxGNN은 삭제가 아니라 future optional 후보로만 보관합니다.
 
 학습 없이 Neo4j graph path와 기존 property를 기반으로 점수를 계산합니다.
 
-예정 endpoint:
+구현 endpoint:
 
 ```text
-GET /graph/path-score?disease_id=RA
+GET /graph/path-score?disease_id=RA&limit=100
 ```
 
-예정 Neo4j 관계:
+v1에서는 score를 Neo4j 관계로 저장하지 않고 API에서 계산해 반환합니다. 모든 score row는 `evidence_sources`와 `risk_sources`를 포함합니다.
+
+향후 저장형 관계 후보:
 
 ```text
 (:Drug)-[:PATH_SCORED_FOR]->(:Disease)

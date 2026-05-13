@@ -1,6 +1,6 @@
 # Drug Service FastAPI
 
-이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j와 OpenSearch text search까지 연결되어 있으며, 다음 단계는 Neo4j path scoring, KG embedding baseline, Bedrock RAG/LLM explanation입니다.
+이 API는 PostgreSQL-first canonical load에 연결됩니다. Neo4j, Neo4j path scoring, OpenSearch text search까지 연결되어 있으며, 다음 단계는 KG embedding baseline, Bedrock RAG/LLM explanation입니다.
 
 ## 로컬 실행
 
@@ -24,6 +24,7 @@ GET /image-modal/clusters?disease_id=BRCA
 GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
+GET /graph/path-score?disease_id=RA&limit=100
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 ```
@@ -62,6 +63,14 @@ Graph 관계 조회:
 ```text
 GET /graph/relations?disease_id=RA&limit=50
 ```
+
+Path scoring 조회:
+
+```text
+GET /graph/path-score?disease_id=RA&limit=100
+```
+
+`/graph/path-score`는 candidate rank, ADMET, image-modal evidence, target overlap을 기반으로 `path_score`를 계산합니다. 응답에는 `evidence_sources`와 `risk_sources`가 포함되어 있으므로, 프론트엔드와 RAG/LLM 설명은 점수만 표시하지 말고 근거와 risk를 함께 보여주는 방향이 좋습니다.
 
 응답 형태:
 
@@ -124,6 +133,15 @@ drug_candidate: 255
 image_evidence: 430
 image_report: 14
 GET /health/search -> {"status":"ok","search":"ok"}
+```
+
+Path scoring v1 검증:
+
+```text
+11개 질병 전체 /graph/path-score 응답 검증 완료
+Score row마다 evidence_sources 반환
+path_score / positive_score / risk_penalty 0~1 범위 확인
+Risk penalty는 ADMET hard_fail/verdict/soft_flags 기준으로 분리 반환
 ```
 
 ## Docker/AWS 메모

@@ -397,9 +397,57 @@ ImageEvidence -> TargetConcept
 - 약물 근거가 없는 빈 cluster도 `Disease -> ImageCluster`로 포함됩니다.
 - evidence-only 약물도 `Drug` node로 포함됩니다.
 - `TargetConcept`는 raw text입니다.
-- TxGNN 예측 edge는 v1/v2 구현 범위에서 제외합니다. 다음 graph score layer는 path scoring과 KG embedding입니다.
+- TxGNN 예측 edge는 v1/v2 구현 범위에서 제외합니다. 다음 graph score layer는 KG embedding입니다.
 
-## 9. Text search
+## 9. Path scoring
+
+### GET /graph/path-score
+
+Neo4j graph와 기존 candidate/ADMET/image-modal evidence를 이용해 설명 가능한 약물-질병 기준 점수를 반환합니다.
+
+Query:
+
+```text
+disease_id required string
+limit      optional number, default 100, max 200
+```
+
+응답 예시:
+
+```json
+{
+  "disease_id": "RA",
+  "scoring_version": "path_scoring_v1",
+  "scores": [
+    {
+      "canonical_drug_id": "cdrug_xxx",
+      "drug_name": "Ruxolitinib",
+      "rank": 1,
+      "tier": "pass_admet_gate",
+      "path_score": 0.6667,
+      "positive_score": 0.6667,
+      "risk_penalty": 0.0,
+      "components": {
+        "candidate_rank": 0.3,
+        "admet": 0.2,
+        "image_evidence": 0.1667,
+        "target_overlap": 0.0
+      },
+      "evidence_sources": [],
+      "risk_sources": []
+    }
+  ]
+}
+```
+
+주의사항:
+
+- `limit`은 반환 개수만 제어하며 rank 정규화 기준은 질병 전체 후보군입니다.
+- 같은 `canonical_drug_id`가 여러 candidate row에 있어도 API 응답에서는 가장 높은 `path_score` 1개만 반환합니다.
+- `evidence_sources`는 지원 근거, `risk_sources`는 ADMET 기반 감점/주의 근거입니다.
+- RAG/LLM 설명과 프론트엔드 상세 패널은 점수만 사용하지 말고 source/risk를 함께 사용해야 합니다.
+
+## 10. Text search
 
 ### GET /health/search
 
