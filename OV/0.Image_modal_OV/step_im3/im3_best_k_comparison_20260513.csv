@@ -1,0 +1,3 @@
+version,best_k,silhouette,note
+previous_limited_k_3_6,4,0.172951,previous production output selected k=4 from limited/older search
+updated_full_k_2_8,2,0.19113579392433167,selected after required k=2..8 search with random_seed=42

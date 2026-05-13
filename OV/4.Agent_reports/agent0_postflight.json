@@ -1,0 +1,32 @@
+{
+  "agent": "agent0_supervisor",
+  "phase": "postflight",
+  "disease": "OV",
+  "blocking_failures": [],
+  "pending_steps": [
+    {
+      "step": "im1",
+      "status": "pending"
+    },
+    {
+      "step": "im2",
+      "status": "pending"
+    },
+    {
+      "step": "im3",
+      "status": "pending"
+    },
+    {
+      "step": "im4a",
+      "status": "pending"
+    },
+    {
+      "step": "im4c",
+      "status": "pending"
+    }
+  ],
+  "silhouette": null,
+  "tier1_count": 0,
+  "drug_links": 0,
+  "verdict": "ok_with_pending"
+}

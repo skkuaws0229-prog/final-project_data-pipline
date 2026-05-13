@@ -1,0 +1,9 @@
+{
+  "random_seed": 42,
+  "previous_best_k": 4,
+  "previous_best_silhouette_at_k4": 0.172951,
+  "updated_full_search_best_k": 2,
+  "updated_full_search_best_silhouette": 0.19113579392433167,
+  "best_k_same_as_previous": false,
+  "reason": "best_k changed because required k=2..8 search includes k=2, which has higher silhouette than previous k=4. Seed is fixed at 42."
+}

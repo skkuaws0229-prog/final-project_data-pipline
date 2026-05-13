@@ -1,0 +1,30 @@
+{
+  "step": "step3_admet",
+  "disease": "OV",
+  "total_candidates": 30,
+  "admet_pass": 17,
+  "admet_fail": 13,
+  "top_n_saved": 15,
+  "top5_passed": [
+    {
+      "drug_name": "Camptothecin",
+      "admet_adjusted_score": 0.9789115646258504
+    },
+    {
+      "drug_name": "AZD8186",
+      "admet_adjusted_score": 0.9671768707482992
+    },
+    {
+      "drug_name": "CCT-018159",
+      "admet_adjusted_score": 0.917687074829932
+    },
+    {
+      "drug_name": "GSK2830371",
+      "admet_adjusted_score": 0.9006802721088436
+    },
+    {
+      "drug_name": "SN-38",
+      "admet_adjusted_score": 0.8969387755102042
+    }
+  ]
+}

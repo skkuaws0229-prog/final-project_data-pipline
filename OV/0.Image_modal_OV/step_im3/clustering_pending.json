@@ -1,0 +1,4 @@
+{
+  "status": "pending",
+  "reason": "Missing merged embedding npy: OV_pipeline/outputs/image_modal/step_im2/all_patient_embeddings_ov_merged.npy"
+}

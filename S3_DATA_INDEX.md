@@ -13,6 +13,7 @@
 | `Liver/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/` |
 | `Colon/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Colon/` |
 | `STAD/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/STAD/` |
+| `OV/` | `s3://say2-4team/ov_image_modal_20260511_v1/`, `s3://say2-4team/OV_raw/`, `s3://say2-4team/pipeline_results/ov/` |
 | `PDAC/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/PDAC/` |
 | `HNSC/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/HNSC/` |
 | `IPF/` | `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/IPF/` |

@@ -1,0 +1,8 @@
+{
+  "agent": "agent3_self_healing",
+  "step": "im2",
+  "error": "FileNotFoundError: No embedding parquet files matching all_slide_embeddings_20260430_v1.parquet under OV_pipeline/outputs/image_modal/s3_embedding_cache",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/skku_aws2_14/pipeline/run_disease_pipeline.py\", line 552, in run_step\n    result = module.run(self.config, dry_run=self.dry_run)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/skku_aws2_14/pipeline/steps/im2_embedding.py\", line 83, in run\n    qc = merge_embedding_parquets(root, merged_npy, metadata_csv, patient_level=True)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/skku_aws2_14/pipeline/utils/embedding_utils.py\", line 38, in merge_embedding_parquets\n    raise FileNotFoundError(f\"No embedding parquet files matching {pattern} under {root}\")\nFileNotFoundError: No embedding parquet files matching all_slide_embeddings_20260430_v1.parquet under OV_pipeline/outputs/image_modal/s3_embedding_cache\n",
+  "repairs": [],
+  "retriable": false
+}

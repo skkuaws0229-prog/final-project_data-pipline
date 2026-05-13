@@ -1,0 +1,118 @@
+disease:
+  name: OV
+  label: 난소암
+  type: cancer
+  number: 1
+data:
+  source: GDSC
+  tcga_project: TCGA-OV
+  image_source: TCGA
+  image_type: wsi
+  geo_datasets:
+  - GSE26712
+  - GSE9891
+  - GSE30161
+  chembl_targets:
+  - EGFR
+  - VEGFR2
+  - PARP1
+  - CDK4
+  - CDK6
+model:
+  basic_pipeline: config_a
+  foundation_model: UNI2
+  embedding_dim: 1536
+analysis:
+  driver_genes:
+  - TP53
+  - BRCA1
+  - BRCA2
+  - NF1
+  - RB1
+  - CDK12
+  subtypes:
+  - HGSOC
+  - LGSOC
+  - Endometrioid
+  - Clear cell
+  - Mucinous
+  subtype_column: histologic_subtype
+  clinical_vars:
+  - FIGO_STAGE
+  - TUMOR_GRADE
+  - TUMOR_RESIDUAL_DISEASE
+  continuous_vars: []
+  k_values: &id001
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  clustering_k_range: *id001
+tier_classification:
+  tier1_drugs: &id002
+  - Carboplatin
+  - Paclitaxel
+  - Olaparib
+  - Niraparib
+  - Bevacizumab
+  - Cisplatin
+  - Doxorubicin
+  tier4_exclude: []
+execution:
+  step3_env: aws
+  local_gpu: xpu
+  mode: light
+  model_count: 3
+  wsi_limit: 150
+  wsi_max_limit: 300
+  wsi_shard_size: 30
+  self_heal: true
+  supervisor: true
+  max_step_retries: 2
+  steps:
+  - step1
+  - step2
+  - step3
+  - im1
+  - im2
+  - im3
+  - im4a
+  - im4c
+  - im5
+output:
+  s3_disease_folder: OV/
+image_modal:
+  enabled: true
+  auto_launch: false
+  skip_if_missing: true
+  wsi_limit: 100
+  wsi_max_limit: 300
+  wsi_shard_size: 30
+  embedding_instance_count: 4
+  output_root: ./OV_pipeline/outputs/image_modal
+  s3_prefix: ov_image_modal_20260511_v1
+  s3_raw_wsi_root: s3://say2-4team/ov_image_modal_20260511_v1/wsi_raw/
+  s3_tiles_root: s3://say2-4team/ov_image_modal_20260511_v1/output/wsi_tiles/
+  s3_embedding_root: s3://say2-4team/ov_image_modal_20260511_v1/output/embeddings_mid/
+  s3_logs_root: s3://say2-4team/ov_image_modal_20260511_v1/output/logs/
+drug:
+  top30_csv: ./OV_pipeline/outputs/final_selection/admet_filtered_top15.csv
+project_root: ./OV_pipeline
+s3_raw_root: s3://say2-4team/OV_raw
+raw_template_root: s3://say2-4team/HNSC_raw
+auto_provision_raw: true
+models:
+- lightgbm
+- xgboost
+- catboost
+n_splits: 2
+candidate_limit: 30
+max_crispr_features: 3000
+max_lincs_features: 768
+random_seed: 42
+drugs:
+  tier1: *id002
+  tier4_exclude: []

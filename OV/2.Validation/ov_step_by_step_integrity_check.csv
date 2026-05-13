@@ -1,0 +1,12 @@
+path,exists,size_bytes,shape,nan_count,inf_count,notes
+model_runs/metrics_summary.json,True,3164,json_keys=4,,,
+final_selection/selected_drugs_top_n.csv,True,7080,"(30, 16)",31,0,
+final_selection/admet_filtered_top15.csv,True,15120,"(15, 95)",15,0,
+image_modal/step_im2/all_patient_embeddings_ov_merged.npy,True,307328,"(50, 1536)",0,0,
+image_modal/step_im3/im3_k_search_results.csv,True,352,"(7, 6)",0,0,
+image_modal/step_im3/patient_clusters.csv,True,1732,"(50, 4)",0,0,
+image_modal/step_im4/im4c_cluster_drug_links_scored.csv,True,6692,"(30, 14)",30,0,
+image_modal/step_im5/image_modal_summary.md,True,626,lines=42,,,
+validation/ov_prior_review_20260513.md,True,1775,lines=19,,,
+CONNECTION::im3_old_to_new_best_k,False,,4 -> 2,,,best_k changed after required k=2..8 search; IM4c/IM5 rerun on new k=2 clusters
+CONNECTION::clusters_to_scored_links,True,,2 -> 2,,,scored links regenerated after k change

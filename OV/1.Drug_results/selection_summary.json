@@ -1,0 +1,57 @@
+{
+  "n_pairs": 4490,
+  "n_drugs": 295,
+  "candidate_limit": 30,
+  "top10": [
+    {
+      "final_rank": 1,
+      "drug_name": "Dactinomycin",
+      "final_selection_score": 0.9906462585034014
+    },
+    {
+      "final_rank": 2,
+      "drug_name": "Dactinomycin",
+      "final_selection_score": 0.9892857142857143
+    },
+    {
+      "final_rank": 3,
+      "drug_name": "Docetaxel",
+      "final_selection_score": 0.9879251700680273
+    },
+    {
+      "final_rank": 4,
+      "drug_name": "Epirubicin",
+      "final_selection_score": 0.9865646258503401
+    },
+    {
+      "final_rank": 5,
+      "drug_name": "Temsirolimus",
+      "final_selection_score": 0.9843537414965986
+    },
+    {
+      "final_rank": 6,
+      "drug_name": "Topotecan",
+      "final_selection_score": 0.9812925170068028
+    },
+    {
+      "final_rank": 7,
+      "drug_name": "Camptothecin",
+      "final_selection_score": 0.9789115646258504
+    },
+    {
+      "final_rank": 8,
+      "drug_name": "Vinblastine",
+      "final_selection_score": 0.9761904761904763
+    },
+    {
+      "final_rank": 9,
+      "drug_name": "Tanespimycin",
+      "final_selection_score": 0.9732993197278911
+    },
+    {
+      "final_rank": 10,
+      "drug_name": "AZD8186",
+      "final_selection_score": 0.9671768707482993
+    }
+  ]
+}

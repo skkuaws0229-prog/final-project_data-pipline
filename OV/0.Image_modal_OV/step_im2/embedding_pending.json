@@ -1,0 +1,33 @@
+{
+  "status": "pending",
+  "reason": "tile preprocessing launched or already running",
+  "foundation_model": "UNI2",
+  "raw_wsi_count": 1,
+  "tile_count": 0,
+  "s3_embedding_count": 0,
+  "launch": {
+    "status": "launched",
+    "returncode": 0,
+    "command": [
+      "python3",
+      "run_brca_image_sagemaker_20260430_v1.py",
+      "--mode",
+      "existing-shard-step2",
+      "--run-label",
+      "ov-full-step2-20260512001329",
+      "--raw-uri",
+      "s3://say2-4team/ov_image_modal_20260511_v1/wsi_raw/",
+      "--tiles-uri",
+      "s3://say2-4team/ov_image_modal_20260511_v1/output/wsi_tiles/",
+      "--logs-uri",
+      "s3://say2-4team/ov_image_modal_20260511_v1/output/logs/",
+      "--cpu-instance-type",
+      "ml.m5.4xlarge",
+      "--volume-size-gb",
+      "1024"
+    ],
+    "cwd": "/Users/skku_aws2_14/Documents/New project 2/luad_lihc_wsi_homepc_package_20260502_v1",
+    "stdout_tail": "sagemaker.config INFO - Not applying SDK defaults from location: /Library/Application Support/sagemaker/config.yaml\nsagemaker.config INFO - Not applying SDK defaults from location: /Users/skku_aws2_14/Library/Application Support/sagemaker/config.yaml\n{\n  \"mode\": \"existing-shard-step2\",\n  \"run_label\": \"ov-full-step2-20260512001329\",\n  \"raw_uri\": \"s3://say2-4team/ov_image_modal_20260511_v1/wsi_raw/\",\n  \"tiles_uri\": \"s3://say2-4team/ov_image_modal_20260511_v1/output/wsi_tiles/\",\n  \"embeddings_uri\": \"s3://say2-4team/brca_image_modal_20260430_v1/output/embeddings_mid/ov-full-step2-20260512001329/\",\n  \"logs_base\": \"s3://say2-4team/ov_image_modal_20260511_v1/output/logs/\",\n  \"cpu_instance_type\": \"ml.m5.4xlarge\",\n  \"gpu_instance_type\": \"ml.g5.xlarge\",\n  \"volume_size_gb\": 1024\n}\n",
+    "stderr_tail": "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.6.3) or chardet (7.0.1)/charset_normalizer (3.4.4) doesn't match a supported version!\n  warnings.warn(\n/Users/skku_aws2_14/Documents/New project 2/luad_lihc_wsi_homepc_package_20260502_v1/run_brca_image_sagemaker_20260430_v1.py:438: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n  stamp = datetime.utcnow().strftime(\"%Y%m%d%H%M%S\")\nINFO:sagemaker:Creating processing-job with name brca-image-modal-20260430-v1-ov-full-st-2026-05-12-00-13-30-935\n"
+  }
+}

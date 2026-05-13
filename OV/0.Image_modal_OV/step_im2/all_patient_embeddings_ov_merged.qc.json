@@ -1,0 +1,14 @@
+{
+  "nan_count": 0,
+  "inf_count": 0,
+  "n_rows": 50,
+  "n_dims": 1536,
+  "shape": [
+    50,
+    1536
+  ],
+  "source_files": [
+    "OV_pipeline/outputs/image_modal/s3_embedding_cache/step3-ov-part00-20260504/slide_embeddings/all_slide_embeddings_20260430_v1.parquet",
+    "OV_pipeline/outputs/image_modal/s3_embedding_cache/step3-ov-part01-20260504/slide_embeddings/all_slide_embeddings_20260430_v1.parquet"
+  ]
+}

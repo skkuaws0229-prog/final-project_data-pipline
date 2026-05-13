@@ -1,0 +1,7 @@
+{
+  "n_cluster_drug_links": 30,
+  "n_drugs": 15,
+  "n_clusters": 2,
+  "scored_links_csv": "OV_pipeline/outputs/image_modal/step_im4/im4c_cluster_drug_links_scored.csv",
+  "confidence_method": "fallback_analysis_driver_genes_no_cluster_deg_available"
+}

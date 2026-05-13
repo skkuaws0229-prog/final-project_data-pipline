@@ -1,0 +1,28 @@
+{
+  "agent": "agent0_supervisor",
+  "phase": "preflight",
+  "disease": "OV",
+  "mode": "full",
+  "steps": [
+    "step1",
+    "step2",
+    "step3",
+    "im1",
+    "im2",
+    "im3",
+    "im4a",
+    "im4c",
+    "im5"
+  ],
+  "models": [
+    "lightgbm",
+    "xgboost",
+    "catboost"
+  ],
+  "image_enabled": true,
+  "image_auto_launch": true,
+  "s3_raw_wsi_root": "s3://say2-4team/ov_image_modal_20260511_v1/wsi_raw/",
+  "s3_tiles_root": "s3://say2-4team/ov_image_modal_20260511_v1/output/wsi_tiles/",
+  "s3_embedding_root": "s3://say2-4team/ov_image_modal_20260511_v1/output/embeddings_mid/",
+  "self_heal": true
+}
