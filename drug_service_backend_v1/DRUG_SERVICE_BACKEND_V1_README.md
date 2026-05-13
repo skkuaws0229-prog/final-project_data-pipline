@@ -73,6 +73,8 @@ docs/uniprot_mapping_duplicate_check_v1.md
 docs/reviewed_seed_integrity_v1.md
 docs/reviewed_seed_db_load_validation_v1.md
 docs/structures_targets_api_validation_v1.md
+docs/alphafold_metadata_lookup_policy_v1.md
+docs/alphafold_metadata_lookup_validation_v1.md
 ```
 
 ## Docker Compose 실행
