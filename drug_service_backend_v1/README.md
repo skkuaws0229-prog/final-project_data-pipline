@@ -78,6 +78,7 @@ docs/alphafold_metadata_lookup_policy_v1.md
 docs/alphafold_metadata_lookup_validation_v1.md
 docs/alphafold_metadata_db_load_validation_v1.md
 docs/structures_detail_api_validation_v1.md
+docs/structure_api_integrity_recheck_v1.md
 ```
 
 ## Docker Compose 실행
