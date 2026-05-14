@@ -4,11 +4,11 @@
 
 프론트엔드에서 질환별 protein structure 후보 목록과 상세 metadata를 연결하기 위한 API 계약이다.
 
-현재 JAK1 pilot 구조 파일 1건은 다운로드/S3 저장/API proxy 제공까지 완료됐다.
+현재 AlphaFold 구조 파일 27건은 다운로드/S3 저장/API proxy 제공까지 완료됐다.
 
 ```text
-현재 가능: 목록 조회, 상세 metadata 조회, 약물/근거 context 표시, JAK1 .cif 파일 proxy 조회
-아직 아님: 27개 전체 구조 파일 처리, production viewer 확정
+현재 가능: 목록 조회, 상세 metadata 조회, 약물/근거 context 표시, 27개 .cif 파일 proxy 조회
+아직 아님: production viewer 확정
 ```
 
 ## Base URL
@@ -158,7 +158,7 @@ context_links
 GET /api/structures/{structure_id}/file
 ```
 
-pilot 예:
+예:
 
 ```http
 GET /api/structures/af_p23458_f1_v6/file
@@ -172,7 +172,7 @@ Content-Disposition: attachment; filename="AF-P23458-F1-model_v6.cif"
 Content-Length: 1115383
 ```
 
-프론트 viewer는 S3를 직접 읽지 말고 처음에는 이 endpoint를 사용한다.
+프론트 viewer는 S3를 직접 읽지 말고 이 endpoint를 사용한다.
 
 ```text
 viewer file URL = {BASE_URL}/api/structures/af_p23458_f1_v6/file
@@ -239,7 +239,7 @@ missing: "AlphaFold DB entry 없음"
 failed: "조회 실패"
 ```
 
-현재 v1에서는 JAK1 1건만 `available`이고 나머지 26건은 `pending`이다.
+현재 v1에서는 27건 모두 `available`이다.
 
 ## 화면 구성 제안
 
@@ -283,31 +283,27 @@ file endpoint URL
 ## 아직 하지 말 것
 
 ```text
-전체 구조 파일이 있다고 가정하지 않기
 3D viewer를 바로 production으로 고정하지 않기
 structure_status=pending을 available처럼 표시하지 않기
 AlphaFold 외부 URL을 장기 운영 파일 저장소로 가정하지 않기
 S3 URI를 프론트에서 직접 fetch하지 않기
 ```
 
-## 현재 pilot 검증 상태
+## 현재 전체 구조 파일 검증 상태
 
 ```text
-pilot structure_id: af_p23458_f1_v6
-gene_symbol: JAK1
-uniprot_id: P23458
-status: available
-file_format: cif
-file_size_bytes: 1115383
-checksum_sha256: 7d93bd9305cc8a38d9bd2edc8b127d4e5c2f964b2143bc4de845980662b4680e
-context_links: 25
+structures: 27
+available: 27
+pending: 0
+S3 .cif files: 27
+file proxy checksum 검증: 27/27 PASS
 ```
 
 ## 다음 단계
 
 ```text
-1. 프론트에서 JAK1 pilot .cif viewer 로딩 확인
-2. viewer 라이브러리 확정
-3. 통과하면 27개 전체 구조 파일 처리
-4. file endpoint로 전체 available 구조 제공
+1. 프론트에서 viewer 라이브러리 확정
+2. available row에 구조보기 버튼 활성화
+3. GET /api/structures/{structure_id}/file URL을 viewer에 전달
+4. 주요 질환별 대표 target viewer 렌더링 QA
 ```

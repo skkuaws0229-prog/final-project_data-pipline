@@ -83,6 +83,7 @@ docs/structure_api_integrity_recheck_v1.md
 docs/candidate_structure_links_validation_v1.md
 docs/structure_api_final_validation_v1.md
 docs/alphafold_pilot_file_proxy_validation_v1.md
+docs/alphafold_full_file_proxy_validation_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 
@@ -249,6 +250,15 @@ JAK1 / af_p23458_f1_v6 1건 available
 S3 URI: s3://say2-4team/20260408_new_pre_project_biso/drug_service_build/11_structures/alphafold/P23458/AF-P23458-F1-model_v6.cif
 GET /api/structures/af_p23458_f1_v6/file 정상
 상세: docs/alphafold_pilot_file_proxy_validation_v1.md
+```
+
+AlphaFold structure file 전체 처리 기준:
+
+```text
+27개 구조 파일 전체 available
+S3 .cif 파일 27개 업로드 완료
+GET /api/structures/{structure_id}/file 27개 전체 checksum 검증 완료
+상세: docs/alphafold_full_file_proxy_validation_v1.md
 ```
 
 ## 주의사항
