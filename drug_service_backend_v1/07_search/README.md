@@ -11,6 +11,7 @@ drug_service_text_v1
 ## Indexed document types
 
 ```text
+candidate_pool  : broader candidate pool for view=all
 drug_candidate  : PostgreSQL drug_candidates + drugs + admet_results
 image_evidence  : image_modal_drug_evidence + cluster summary + match status
 image_report    : image_modal_reports
@@ -34,6 +35,7 @@ Text search:
 
 ```text
 GET http://localhost:8010/search?q=JAK&disease_id=RA
+GET http://localhost:8010/search?q=Ruxolitinib&doc_type=candidate_pool
 GET http://localhost:8010/search?q=immune&doc_type=image_evidence
 ```
 

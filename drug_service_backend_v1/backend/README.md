@@ -115,6 +115,7 @@ Text search:
 ```text
 GET /search?q=JAK&disease_id=RA
 GET /search?q=immune&doc_type=image_evidence
+GET /search?q=Ruxolitinib&doc_type=candidate_pool
 ```
 
 지원 `doc_type`:
@@ -140,6 +141,7 @@ OpenSearch text index 검증:
 ```text
 Index: drug_service_text_v1
 Documents: 699
+candidate_pool: 432
 drug_candidate: 255
 image_evidence: 430
 image_report: 14

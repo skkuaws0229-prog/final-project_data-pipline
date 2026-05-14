@@ -322,7 +322,7 @@ def search(
         if not disease:
             raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
 
-    allowed_doc_types = {"drug_candidate", "image_evidence", "image_report"}
+    allowed_doc_types = {"candidate_pool", "drug_candidate", "image_evidence", "image_report"}
     if doc_type and doc_type not in allowed_doc_types:
         raise HTTPException(status_code=400, detail=f"Unknown doc_type: {doc_type}")
 
@@ -353,6 +353,8 @@ def search(
                 "canonical_drug_id": source.get("canonical_drug_id"),
                 "cluster_id": source.get("cluster_id"),
                 "match_status": source.get("match_status"),
+                "candidate_source": source.get("candidate_source"),
+                "is_final_candidate": source.get("is_final_candidate"),
                 "source_file": source.get("source_file"),
                 "snippet": snippet,
                 "highlights": highlights,

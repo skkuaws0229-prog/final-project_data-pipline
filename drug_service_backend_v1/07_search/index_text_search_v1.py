@@ -60,6 +60,28 @@ def build_documents() -> Iterable[tuple[str, dict]]:
     clusters = {row["cluster_id"]: row for row in read_csv("image_modal_clusters.csv")}
     evidence_matches = {row["evidence_id"]: row for row in read_csv("image_modal_evidence_drug_matches.csv")}
 
+    for row in read_csv("candidate_pool.csv"):
+        doc = {
+            "doc_type": "candidate_pool",
+            "document_id": row["candidate_id"],
+            "disease_id": row["disease_id"],
+            "drug_id": clean(row.get("drug_id")),
+            "canonical_drug_id": clean(row.get("canonical_drug_id")),
+            "drug_name": row["drug_name"],
+            "title": f"{row['disease_id']} candidate pool drug: {row['drug_name']}",
+            "rank": clean(row.get("rank")),
+            "tier": clean(row.get("tier")),
+            "score": clean(row.get("score")),
+            "target": clean(row.get("target")),
+            "target_pathway": clean(row.get("target_pathway")),
+            "evidence_text": clean(row.get("evidence_summary")),
+            "canonical_smiles": clean(row.get("canonical_smiles")),
+            "source_file": clean(row.get("source_file")),
+            "candidate_source": "candidate_pool",
+            "is_final_candidate": row.get("is_final_candidate", "").lower() == "true",
+        }
+        yield row["candidate_id"], doc
+
     for row in read_csv("drug_candidates.csv"):
         drug = drugs.get(row["drug_id"], {})
         alias = aliases.get(row["drug_id"], {})
@@ -161,6 +183,8 @@ def create_index() -> None:
                 "canonical_drug_id": {"type": "keyword"},
                 "cluster_id": {"type": "keyword"},
                 "match_status": {"type": "keyword"},
+                "candidate_source": {"type": "keyword"},
+                "is_final_candidate": {"type": "boolean"},
                 "source_file": {"type": "keyword"},
                 "title": {"type": "text", "analyzer": "drug_text_analyzer"},
                 "drug_name": {"type": "text", "fields": {"keyword": {"type": "keyword"}}},

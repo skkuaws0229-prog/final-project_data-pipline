@@ -7,6 +7,7 @@ OpenSearch v1은 vector search가 아니라 text search만 검증했습니다.
 색인 대상:
 
 ```text
+candidate_pool
 drug_candidate
 image_evidence
 image_report
@@ -17,7 +18,8 @@ image_report
 `search-loader` 로그 기준:
 
 ```text
-Indexed 699 documents into drug_service_text_v1:
+Indexed 1131 documents into drug_service_text_v1:
+candidate_pool: 432
 drug_candidate: 255
 image_evidence: 430
 image_report: 14
@@ -44,6 +46,7 @@ api: running
 GET /health/search
 GET /search?q={query}
 GET /search?q={query}&disease_id=RA
+GET /search?q={query}&doc_type=candidate_pool
 GET /search?q={query}&doc_type=image_evidence
 ```
 

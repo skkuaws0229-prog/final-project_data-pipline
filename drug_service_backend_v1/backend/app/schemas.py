@@ -345,6 +345,8 @@ class SearchHit(BaseModel):
     canonical_drug_id: str | None = None
     cluster_id: str | None = None
     match_status: str | None = None
+    candidate_source: str | None = None
+    is_final_candidate: bool | None = None
     source_file: str | None = None
     snippet: str | None = None
     highlights: dict[str, list[str]] = Field(default_factory=dict)
