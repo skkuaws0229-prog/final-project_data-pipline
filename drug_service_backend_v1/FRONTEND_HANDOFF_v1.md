@@ -37,6 +37,9 @@ GET /health
 GET /health/graph
 GET /diseases
 GET /drugs?disease_id=BRCA
+GET /api/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/final-candidates
 GET /drugs/{drug_id}
 GET /image-modal/clusters?disease_id=BRCA
 GET /image-modal/evidence?disease_id=BRCA
@@ -59,6 +62,7 @@ POST /api/pipeline-runs/{run_id}/complete
 ## 프론트엔드 주의사항
 
 - 질병 ID는 `BRCA`, `Colon`, `HNSC`, `IPF`, `LUNG`, `Liver`, `PAH`, `PDAC`, `Psoriasis`, `RA`, `STAD`입니다.
+- 후보 약물 목록은 기존 `GET /drugs?disease_id=RA`와 신규 `GET /api/diseases/RA/candidates`가 같은 응답을 반환합니다. 프론트 canonical endpoint는 `GET /api/diseases/{disease_code}/candidates`를 권장합니다.
 - `OV`, `SKCM`은 의도적으로 제외했습니다.
 - 일반 약물 후보와 image-modal evidence를 연결할 때는 `canonical_drug_id`를 사용합니다.
 - 같은 질병 안의 후보/score/result 목록에서는 같은 `canonical_drug_id`를 중복 표시하지 않습니다.

@@ -110,7 +110,28 @@ candidate_count  number
 
 ## 3. 후보 약물 목록
 
-### GET /drugs
+### 권장: GET /api/diseases/{disease_code}/candidates
+
+프론트엔드 path 기반 후보 약물 목록 endpoint입니다.
+
+아래 endpoint들은 모두 같은 응답을 반환합니다.
+
+```text
+GET /api/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/final-candidates
+GET /drugs?disease_id={disease_code}
+```
+
+프론트 canonical endpoint는 아래를 권장합니다.
+
+```text
+GET /api/diseases/RA/candidates?limit=100
+```
+
+`disease_code`는 대소문자 차이를 허용합니다. 예를 들어 `RA`와 `ra`는 같은 질환으로 해석됩니다.
+
+### 기존 호환: GET /drugs
 
 질병별 후보 약물 목록을 반환합니다.
 

@@ -86,6 +86,9 @@ GET /health
 GET /health/graph
 GET /diseases
 GET /drugs?disease_id=RA
+GET /api/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/candidates
+GET /v1/diseases/{disease_code}/final-candidates
 GET /image-modal/evidence?disease_id=RA
 GET /image-modal/clusters?disease_id=RA
 GET /graph/relations?disease_id=RA&limit=50

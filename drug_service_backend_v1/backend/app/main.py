@@ -934,16 +934,24 @@ def list_diseases() -> list[dict]:
     )
 
 
-@app.get("/drugs", response_model=list[DrugCandidate])
-def list_drugs(
-    disease_id: str = Query(..., description="Disease id, e.g. BRCA, RA, STAD"),
-    limit: int = Query(100, ge=1, le=500),
-    offset: int = Query(0, ge=0),
-) -> list[dict]:
-    disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+def _resolve_disease_id(disease_code: str) -> str:
+    disease = fetch_one(
+        """
+        SELECT disease_id
+        FROM diseases
+        WHERE disease_id = %(disease_code)s
+           OR lower(disease_id) = lower(%(disease_code)s)
+        LIMIT 1
+        """,
+        {"disease_code": disease_code},
+    )
     if not disease:
-        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_code}")
+    return disease["disease_id"]
 
+
+def _list_drug_candidates(disease_code: str, limit: int, offset: int) -> list[dict]:
+    disease_id = _resolve_disease_id(disease_code)
     return fetch_all(
         """
         WITH ranked AS (
@@ -1002,6 +1010,26 @@ def list_drugs(
         """,
         {"disease_id": disease_id, "limit": limit, "offset": offset},
     )
+
+
+@app.get("/drugs", response_model=list[DrugCandidate])
+def list_drugs(
+    disease_id: str = Query(..., description="Disease id, e.g. BRCA, RA, STAD"),
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> list[dict]:
+    return _list_drug_candidates(disease_id, limit, offset)
+
+
+@app.get("/api/diseases/{disease_code}/candidates", response_model=list[DrugCandidate])
+@app.get("/v1/diseases/{disease_code}/candidates", response_model=list[DrugCandidate])
+@app.get("/v1/diseases/{disease_code}/final-candidates", response_model=list[DrugCandidate])
+def list_disease_candidates(
+    disease_code: str,
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> list[dict]:
+    return _list_drug_candidates(disease_code, limit, offset)
 
 
 @app.get("/drugs/{drug_id}", response_model=DrugDetail)
