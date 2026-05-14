@@ -89,6 +89,10 @@ docs/alphafold_pilot_file_proxy_validation_v1.md
 docs/alphafold_full_file_proxy_validation_v1.md
 docs/alphafold_viewer_qa_template_v1.md
 docs/alphafold_context_summary_and_structures_api_v1.md
+docs/api_smoke_and_search_readiness_v1.md
+docs/final_candidates_candidate_pool_split_v1.md
+docs/candidate_layer_integrity_and_search_v1.md
+docs/rag_bedrock_retrieval_contract_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 

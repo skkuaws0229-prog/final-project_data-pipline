@@ -118,6 +118,7 @@ React v2에서 함께 논의할 graph/API 항목:
 - OpenSearch text search v1은 `/search`로 연결했습니다. `candidate_pool`, `drug_candidate`, `image_evidence`, `image_report`를 검색합니다.
 - `candidate_pool` 검색은 기본적으로 dedup/collapse된 화면용 결과를 반환하고, 원천 row는 `include_provenance=true`로 확인합니다.
 - Vector search는 아직 제외이며 CT-CLIP/UNI2 embedding 원본과 차원 정책 확정 뒤 v2로 추가합니다.
+- Bedrock/RAG 설명 기능은 아직 붙이지 않았고, prompt에 넣을 backend retrieval 계약은 `docs/rag_bedrock_retrieval_contract_v1.md`에 정리했습니다.
 - Neo4j path scoring v1은 `/graph/path-score`로 연결했습니다. 프론트는 `path_score`만 보여주지 말고 `components`, `evidence_sources`, `risk_sources`를 함께 표시하는 구성이 좋습니다.
 - DistMult/TransE KG embedding baseline은 `/graph/kg-embedding`으로 연결했습니다. 이 점수는 graph 구조 학습 기반 보조 점수이므로 단독 추천 근거로 쓰지 말고 path score/evidence/risk와 함께 표시해야 합니다.
 - Pipeline run control API는 챗봇/Bedrock/RAG가 나중에 호출할 제어 계층입니다. 현재는 `mock` backend만 실제 동작하며, `local_agent`와 `aws_stepfunctions`는 feature flag 없이는 비용 발생 실행을 하지 않습니다.

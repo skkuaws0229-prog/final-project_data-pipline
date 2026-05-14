@@ -14,7 +14,8 @@ Path scoring: /graph/path-score 검증 완료
 KG embedding: /graph/kg-embedding 검증 완료
 Pipeline run control API: mock backend 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
-RAG/LLM: 아직 미연결
+RAG/Bedrock retrieval 계약: 문서화 완료
+RAG/LLM 실제 호출: 아직 미연결
 ```
 
 React v2는 PostgreSQL + Neo4j + OpenSearch + path scoring + KG embedding 기반 화면을 먼저 붙이고, pipeline run control API는 이후 챗봇/Bedrock/RAG 연결 전 상태조회 패널로 붙이는 방향이 좋습니다.
@@ -104,6 +105,14 @@ GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool
 
 ```text
 GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool&include_provenance=true
+```
+
+Bedrock/LLM 설명 기능을 붙일 때는 프론트가 Bedrock을 직접 호출하더라도, prompt에 넣는 근거 데이터는 백엔드 retrieval 계약을 기준으로 맞추는 것이 좋습니다.
+
+```text
+계약 문서: docs/rag_bedrock_retrieval_contract_v1.md
+설계 endpoint: GET /api/explanation-context
+현재 상태: 문서 계약만 완료, 실제 endpoint/Bedrock 호출 미구현
 ```
 
 ## 권장 화면 구성
