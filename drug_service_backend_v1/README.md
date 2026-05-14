@@ -41,6 +41,7 @@ GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
+GET /api/explanation-context?disease_id=RA&drug_name=Ruxolitinib
 GET /api/structures/targets
 GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
@@ -95,6 +96,7 @@ docs/candidate_layer_integrity_and_search_v1.md
 docs/rag_bedrock_retrieval_contract_v1.md
 docs/rag_bedrock_retrieval_connection_validation_v1.md
 docs/frontend_v1_connection_qa_pass_20260514.md
+docs/explanation_context_api_validation_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 

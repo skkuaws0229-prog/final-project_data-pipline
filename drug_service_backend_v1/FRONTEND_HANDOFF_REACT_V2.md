@@ -15,6 +15,7 @@ KG embedding: /graph/kg-embedding 검증 완료
 Pipeline run control API: mock backend 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
 RAG/Bedrock retrieval 계약: 문서화 완료
+Explanation context API: mock endpoint 구현/검증 완료
 RAG/LLM 실제 호출: 아직 미연결
 ```
 
@@ -111,9 +112,19 @@ Bedrock/LLM 설명 기능을 붙일 때는 프론트가 Bedrock을 직접 호출
 
 ```text
 계약 문서: docs/rag_bedrock_retrieval_contract_v1.md
-설계 endpoint: GET /api/explanation-context
-현재 상태: 문서 계약만 완료, 실제 endpoint/Bedrock 호출 미구현
+검증 문서: docs/explanation_context_api_validation_v1.md
+endpoint: GET /api/explanation-context
+현재 상태: backend mock endpoint 구현 완료, 실제 Bedrock 호출 미구현
 ```
+
+설명 버튼 연결 예:
+
+```text
+GET /api/explanation-context?disease_id=RA&drug_name=Ruxolitinib
+GET /api/explanation-context?disease_id=BRCA&drug_name=Oxaliplatin
+```
+
+프론트는 이 응답의 `retrieval_context_v1` JSON을 Bedrock prompt에 넣으면 됩니다.
 
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 

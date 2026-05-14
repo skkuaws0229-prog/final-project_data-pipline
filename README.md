@@ -36,6 +36,7 @@ S3 원본 위치:
 - `docs/rag_bedrock_retrieval_contract_v1.md`: Bedrock/LLM 호출 전에 프론트가 사용할 retrieval context 백엔드 계약입니다. 실제 Bedrock 호출은 포함하지 않습니다.
 - `docs/rag_bedrock_retrieval_connection_validation_v1.md`: retrieval 계약 작성 후 현재 backend 연결 상태 재검증 결과입니다.
 - `docs/frontend_v1_connection_qa_pass_20260514.md`: 프론트 v1 연결 QA 통과 기록입니다.
+- `docs/explanation_context_api_validation_v1.md`: Bedrock 연결 전 설명용 근거 패키지 API 검증 결과입니다.
 
 ## 포함된 자료
 

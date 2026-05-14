@@ -1,3 +1,6 @@
+import re
+from typing import Any
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -29,6 +32,7 @@ from app.schemas import (
     Disease,
     DrugCandidate,
     DrugDetail,
+    ExplanationContextResponse,
     GraphRelationsResponse,
     HealthResponse,
     ImageModalCluster,
@@ -308,6 +312,501 @@ def complete_pipeline_run(run_id: str) -> dict:
         raise HTTPException(status_code=409, detail=f"Run cannot be completed from status: {run['status']}")
     updated = get_orchestrator(run["execution_backend"]).complete_run(run_id)
     return _serialize_pipeline_row(updated)
+
+
+def _format_search_hits(result: dict) -> list[dict]:
+    hits = []
+    for hit in result.get("hits", {}).get("hits", []):
+        source = hit.get("_source", {})
+        highlights = hit.get("highlight", {})
+        snippet = None
+        for fragments in highlights.values():
+            if fragments:
+                snippet = fragments[0]
+                break
+        if snippet is None:
+            snippet = source.get("evidence_text") or source.get("report_text") or source.get("clinical_summary") or source.get("title")
+        hits.append(
+            {
+                "id": hit.get("_id"),
+                "score": hit.get("_score"),
+                "doc_type": source.get("doc_type"),
+                "disease_id": source.get("disease_id"),
+                "title": source.get("title"),
+                "drug_name": source.get("drug_name"),
+                "canonical_drug_id": source.get("canonical_drug_id"),
+                "cluster_id": source.get("cluster_id"),
+                "match_status": source.get("match_status"),
+                "candidate_source": source.get("candidate_source"),
+                "is_final_candidate": source.get("is_final_candidate"),
+                "source_file": source.get("source_file"),
+                "snippet": snippet,
+                "highlights": highlights,
+                "source": source,
+            }
+        )
+    return hits
+
+
+def _search_context_hits(query: str, disease_id: str, doc_type: str, limit: int) -> dict:
+    result = search_text(query, disease_id=disease_id, doc_type=doc_type, limit=limit, fetch_size=min(limit * 10, 100))
+    total = result.get("hits", {}).get("total", {})
+    raw_total = total.get("value", 0) if isinstance(total, dict) else total
+    hits = _format_search_hits(result)
+    if doc_type == "candidate_pool":
+        hits = _collapse_candidate_pool_search_hits(hits, limit, include_provenance=False)
+    return {"total": len(hits) if doc_type == "candidate_pool" else raw_total, "raw_total": raw_total, "hits": hits[:limit]}
+
+
+def _find_final_candidate_context(disease_id: str, drug_name: str | None, canonical_drug_id: str | None) -> dict | None:
+    filters = ["c.disease_id = %(disease_id)s"]
+    params: dict[str, Any] = {"disease_id": disease_id}
+    if canonical_drug_id:
+        filters.append("COALESCE(da.canonical_drug_id, c.drug_id) = %(canonical_drug_id)s")
+        params["canonical_drug_id"] = canonical_drug_id
+    if drug_name:
+        filters.append("LOWER(d.drug_name) = LOWER(%(drug_name)s)")
+        params["drug_name"] = drug_name
+    if len(filters) == 1:
+        return None
+    return fetch_one(
+        f"""
+        SELECT
+          c.candidate_id,
+          c.disease_id,
+          c.drug_id,
+          COALESCE(da.canonical_drug_id, c.drug_id) AS canonical_drug_id,
+          d.drug_name,
+          c.rank,
+          c.tier,
+          c.score,
+          c.target,
+          c.target_pathway,
+          c.evidence_summary,
+          d.canonical_smiles,
+          a.safety_score,
+          a.verdict,
+          a.admet_status,
+          a.hard_fail,
+          a.hard_fail_reasons,
+          a.soft_flags,
+          c.source_file,
+          true AS is_final_candidate,
+          'final_candidate' AS candidate_source
+        FROM drug_candidates c
+        JOIN drugs d ON d.drug_id = c.drug_id
+        LEFT JOIN drug_aliases da ON da.source_drug_id = d.drug_id
+        LEFT JOIN admet_results a ON a.candidate_id = c.candidate_id
+        WHERE {' AND '.join(filters)}
+        ORDER BY c.rank NULLS LAST, c.candidate_id
+        LIMIT 1
+        """,
+        params,
+    )
+
+
+def _find_candidate_pool_context(disease_id: str, drug_name: str | None, canonical_drug_id: str | None) -> dict | None:
+    filters = ["disease_id = %(disease_id)s"]
+    params: dict[str, Any] = {"disease_id": disease_id}
+    lookup_filters = []
+    if canonical_drug_id:
+        lookup_filters.append("canonical_drug_id = %(canonical_drug_id)s")
+        params["canonical_drug_id"] = canonical_drug_id
+    if drug_name:
+        lookup_filters.append("LOWER(drug_name) = LOWER(%(drug_name)s)")
+        params["drug_name"] = drug_name
+    if not lookup_filters:
+        return None
+    filters.append(f"({' OR '.join(lookup_filters)})")
+    rows = fetch_all(
+        f"""
+        SELECT
+          candidate_id,
+          disease_id,
+          drug_id,
+          canonical_drug_id,
+          drug_name,
+          rank,
+          tier,
+          score,
+          target,
+          target_pathway,
+          evidence_summary,
+          canonical_smiles,
+          source_file,
+          source_row_number,
+          is_final_candidate
+        FROM candidate_pool
+        WHERE {' AND '.join(filters)}
+        ORDER BY rank NULLS LAST, candidate_id
+        """,
+        params,
+    )
+    if not rows:
+        return None
+    representative = dict(rows[0])
+    source_files = sorted({row["source_file"] for row in rows if row.get("source_file")})
+    return {
+        **representative,
+        "provenance_count": len(rows),
+        "provenance_note": f"원천 candidate_pool row {len(rows)}개에서 집계됨",
+        "source_files": source_files,
+        "provenance_ids": [row["candidate_id"] for row in rows],
+        "provenance_rows": [dict(row) for row in rows[:20]],
+    }
+
+
+def _find_image_evidence_context(disease_id: str, drug_name: str | None, canonical_drug_id: str | None, limit: int = 10) -> list[dict]:
+    filters = ["e.disease_id = %(disease_id)s"]
+    params: dict[str, Any] = {"disease_id": disease_id, "limit": limit}
+    lookup_filters = []
+    if canonical_drug_id:
+        lookup_filters.append("m.canonical_drug_id = %(canonical_drug_id)s")
+        params["canonical_drug_id"] = canonical_drug_id
+    if drug_name:
+        lookup_filters.append("LOWER(e.drug_name) = LOWER(%(drug_name)s)")
+        params["drug_name"] = drug_name
+    if not lookup_filters:
+        return []
+    filters.append(f"({' OR '.join(lookup_filters)})")
+    return fetch_all(
+        f"""
+        SELECT
+          e.evidence_id,
+          e.disease_id,
+          e.cluster_id,
+          c.cluster_key,
+          c.cluster_label,
+          e.drug_id,
+          m.canonical_drug_id,
+          COALESCE(m.match_status, 'unmatched') AS match_status,
+          e.drug_name,
+          e.rank,
+          e.tier,
+          e.target,
+          e.target_pathway,
+          e.evidence_text,
+          e.source_file
+        FROM image_modal_drug_evidence e
+        LEFT JOIN image_modal_clusters c ON c.cluster_id = e.cluster_id
+        LEFT JOIN image_modal_evidence_drug_matches m ON m.evidence_id = e.evidence_id
+        WHERE {' AND '.join(filters)}
+        ORDER BY e.rank NULLS LAST, e.drug_name, c.cluster_key
+        LIMIT %(limit)s
+        """,
+        params,
+    )
+
+
+def _find_structure_context(disease_id: str, drug_name: str | None, canonical_drug_id: str | None, limit: int = 10) -> dict:
+    filters = ["cpsl.disease_id = %(disease_id)s"]
+    params: dict[str, Any] = {"disease_id": disease_id, "limit": limit}
+    lookup_filters = []
+    if canonical_drug_id:
+        lookup_filters.append("cpsl.canonical_drug_id = %(canonical_drug_id)s")
+        params["canonical_drug_id"] = canonical_drug_id
+    if drug_name:
+        lookup_filters.extend(
+            [
+                "LOWER(cd.primary_drug_name) = LOWER(%(drug_name)s)",
+                "LOWER(d.drug_name) = LOWER(%(drug_name)s)",
+                "LOWER(ime.drug_name) = LOWER(%(drug_name)s)",
+            ]
+        )
+        params["drug_name"] = drug_name
+    if not lookup_filters:
+        return {
+            "available_structures": [],
+            "target_genes": [],
+            "context_links": [],
+            "resolution_method": "candidate_protein_structure_links",
+            "context_summary": {"total_links": 0, "structure_count": 0, "available_structure_count": 0, "target_gene_count": 0},
+        }
+    filters.append(f"({' OR '.join(lookup_filters)})")
+    rows = fetch_all(
+        f"""
+        SELECT
+          cpsl.context_id,
+          cpsl.disease_id,
+          cpsl.candidate_id,
+          cpsl.evidence_id,
+          cpsl.canonical_drug_id,
+          COALESCE(cd.primary_drug_name, d.drug_name, ime.drug_name) AS drug_name,
+          cpsl.target_source,
+          cpsl.relation_note,
+          pt.protein_id,
+          pt.gene_symbol,
+          pt.uniprot_id,
+          pt.protein_name,
+          afs.structure_id,
+          CASE
+            WHEN afs.status = 'available' THEN 'available'
+            WHEN afs.status = 'to_fetch' THEN 'pending'
+            WHEN afs.status = 'missing' THEN 'missing'
+            ELSE 'failed'
+          END AS structure_status,
+          afs.file_format,
+          afs.file_size_bytes,
+          afs.mean_plddt
+        FROM candidate_protein_structure_links cpsl
+        JOIN protein_targets pt ON pt.protein_id = cpsl.protein_id
+        LEFT JOIN alphafold_structures afs ON afs.structure_id = cpsl.structure_id
+        LEFT JOIN canonical_drugs cd ON cd.canonical_drug_id = cpsl.canonical_drug_id
+        LEFT JOIN drug_candidates dc ON dc.candidate_id = cpsl.candidate_id
+        LEFT JOIN drugs d ON d.drug_id = dc.drug_id
+        LEFT JOIN image_modal_drug_evidence ime ON ime.evidence_id = cpsl.evidence_id
+        WHERE {' AND '.join(filters)}
+        ORDER BY pt.gene_symbol NULLS LAST, cpsl.target_source, cpsl.context_id
+        LIMIT %(limit)s
+        """,
+        params,
+    )
+    target_genes = sorted({row["gene_symbol"] for row in rows if row.get("gene_symbol")})
+    structures = {}
+    for row in rows:
+        if not row.get("structure_id"):
+            continue
+        structures[row["structure_id"]] = {
+            "structure_id": row["structure_id"],
+            "protein_id": row["protein_id"],
+            "gene_symbol": row["gene_symbol"],
+            "uniprot_id": row["uniprot_id"],
+            "protein_name": row["protein_name"],
+            "structure_status": row["structure_status"],
+            "file_format": row["file_format"],
+            "file_size_bytes": row["file_size_bytes"],
+            "mean_plddt": float(row["mean_plddt"]) if row.get("mean_plddt") is not None else None,
+            "file_endpoint": f"/api/structures/{row['structure_id']}/file",
+        }
+    return {
+        "available_structures": list(structures.values()),
+        "target_genes": target_genes,
+        "context_links": [dict(row) for row in rows],
+        "resolution_method": "candidate_protein_structure_links",
+        "context_summary": {
+            "total_links": len(rows),
+            "structure_count": len(structures),
+            "available_structure_count": sum(1 for item in structures.values() if item["structure_status"] == "available"),
+            "target_gene_count": len(target_genes),
+        },
+    }
+
+
+def _extract_target_tokens(*texts: str | None) -> list[str]:
+    tokens: list[str] = []
+    seen = set()
+    stopwords = {"AND", "AXIS", "PATHWAY", "SIGNALING", "INFLAMMATORY", "TARGET", "MECHANISM"}
+    for text in texts:
+        if not text:
+            continue
+        for token in re.findall(r"[A-Za-z][A-Za-z0-9-]{1,12}", text):
+            normalized = token.upper().strip("-")
+            if len(normalized) < 3 or normalized in stopwords or normalized in seen:
+                continue
+            seen.add(normalized)
+            tokens.append(normalized)
+    return tokens
+
+
+def _structure_context_from_target_texts(target_texts: list[str], limit: int = 10) -> dict:
+    structures: dict[str, dict] = {}
+    target_genes = set()
+    matched_tokens = []
+    for token in target_texts:
+        for item in list_structures(q=token, limit=limit):
+            matched_tokens.append(token)
+            if item.get("gene_symbol"):
+                target_genes.add(item["gene_symbol"])
+            structures[item["structure_id"]] = item
+        if len(structures) >= limit:
+            break
+    available_structures = list(structures.values())[:limit]
+    return {
+        "available_structures": available_structures,
+        "target_genes": sorted(target_genes),
+        "context_links": [],
+        "resolution_method": "target_text_fallback",
+        "matched_target_tokens": sorted(set(matched_tokens)),
+        "context_summary": {
+            "total_links": 0,
+            "structure_count": len(available_structures),
+            "available_structure_count": sum(1 for item in available_structures if item.get("structure_status") == "available"),
+            "target_gene_count": len(target_genes),
+        },
+    }
+
+
+def _build_retrieval_sources(
+    final_candidate: dict | None,
+    candidate_pool: dict | None,
+    image_evidence: list[dict],
+    graph_context: dict,
+    structure_context: dict,
+) -> list[dict]:
+    sources = []
+    if final_candidate:
+        sources.append(
+            {
+                "source_type": "final_candidate",
+                "source_id": final_candidate.get("candidate_id"),
+                "source_file": final_candidate.get("source_file"),
+                "evidence_role": "support",
+                "summary": f"Final candidate rank {final_candidate.get('rank')}, tier {final_candidate.get('tier')}",
+                "provenance_count": 1,
+            }
+        )
+    if candidate_pool:
+        sources.append(
+            {
+                "source_type": "candidate_pool",
+                "source_id": candidate_pool.get("candidate_id"),
+                "source_file": ", ".join(candidate_pool.get("source_files") or []),
+                "evidence_role": "support",
+                "summary": candidate_pool.get("provenance_note"),
+                "provenance_count": candidate_pool.get("provenance_count"),
+            }
+        )
+    for evidence in image_evidence:
+        sources.append(
+            {
+                "source_type": "image_evidence",
+                "source_id": evidence.get("evidence_id"),
+                "source_file": evidence.get("source_file"),
+                "evidence_role": "support" if evidence.get("match_status") != "evidence_only" else "supporting_evidence_only",
+                "summary": evidence.get("evidence_text"),
+                "provenance_count": 1,
+            }
+        )
+    for source in graph_context.get("evidence_sources", [])[:10]:
+        sources.append(source)
+    for source in graph_context.get("risk_sources", [])[:10]:
+        sources.append(source)
+    for structure in structure_context.get("available_structures", []):
+        sources.append(
+            {
+                "source_type": "structure",
+                "source_id": structure.get("structure_id"),
+                "source_file": structure.get("file_endpoint"),
+                "evidence_role": "structure_reference",
+                "summary": f"{structure.get('gene_symbol') or structure.get('uniprot_id')} AlphaFold structure reference",
+                "provenance_count": 1,
+            }
+        )
+    return sources
+
+
+@app.get("/api/explanation-context", response_model=ExplanationContextResponse)
+def get_explanation_context(
+    disease_id: str = Query(..., description="Disease id, e.g. RA, BRCA"),
+    drug_name: str | None = Query(None, min_length=1, description="Optional drug name"),
+    canonical_drug_id: str | None = Query(None, min_length=1, description="Optional canonical drug id"),
+    include_search: bool = Query(True),
+    include_graph: bool = Query(True),
+    include_structure: bool = Query(True),
+    search_limit: int = Query(10, ge=1, le=50),
+) -> dict:
+    disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+    if not disease:
+        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+    if not drug_name and not canonical_drug_id:
+        raise HTTPException(status_code=400, detail="Either drug_name or canonical_drug_id is required")
+
+    final_candidate = _find_final_candidate_context(disease_id, drug_name, canonical_drug_id)
+    resolved_drug_name = drug_name or (final_candidate or {}).get("drug_name")
+    resolved_canonical_id = canonical_drug_id or (final_candidate or {}).get("canonical_drug_id")
+    candidate_pool = _find_candidate_pool_context(disease_id, resolved_drug_name, resolved_canonical_id)
+    if not resolved_drug_name and candidate_pool:
+        resolved_drug_name = candidate_pool.get("drug_name")
+    if not resolved_canonical_id and candidate_pool:
+        resolved_canonical_id = candidate_pool.get("canonical_drug_id")
+
+    image_evidence = _find_image_evidence_context(disease_id, resolved_drug_name, resolved_canonical_id, limit=20)
+    admet = None
+    if final_candidate:
+        admet = {
+            "safety_score": final_candidate.get("safety_score"),
+            "verdict": final_candidate.get("verdict"),
+            "admet_status": final_candidate.get("admet_status"),
+            "hard_fail": final_candidate.get("hard_fail"),
+            "hard_fail_reasons": final_candidate.get("hard_fail_reasons"),
+            "soft_flags": final_candidate.get("soft_flags"),
+        }
+
+    search_context = {"candidate_pool_hits": [], "final_candidate_hits": [], "image_evidence_hits": [], "image_report_hits": []}
+    if include_search and resolved_drug_name:
+        try:
+            search_context = {
+                "candidate_pool_hits": _search_context_hits(resolved_drug_name, disease_id, "candidate_pool", search_limit),
+                "final_candidate_hits": _search_context_hits(resolved_drug_name, disease_id, "drug_candidate", search_limit),
+                "image_evidence_hits": _search_context_hits(resolved_drug_name, disease_id, "image_evidence", search_limit),
+                "image_report_hits": _search_context_hits(resolved_drug_name, disease_id, "image_report", search_limit),
+            }
+        except Exception as exc:
+            search_context["error"] = f"OpenSearch query failed: {exc}"
+
+    graph_context = {"path_score": None, "positive_score": None, "risk_penalty": None, "components": {}, "evidence_sources": [], "risk_sources": []}
+    if include_graph:
+        try:
+            path_scores = graph_path_score(disease_id=disease_id, limit=200)["scores"]
+            for item in path_scores:
+                if (resolved_canonical_id and item.get("canonical_drug_id") == resolved_canonical_id) or (
+                    resolved_drug_name and (item.get("drug_name") or "").lower() == resolved_drug_name.lower()
+                ):
+                    graph_context = item
+                    break
+        except Exception as exc:
+            graph_context["error"] = f"Path score query failed: {exc}"
+
+    structure_context = {"available_structures": [], "target_genes": [], "context_summary": {"total_links": 0}}
+    if include_structure:
+        structure_context = _find_structure_context(disease_id, resolved_drug_name, resolved_canonical_id, limit=50)
+        if not structure_context.get("available_structures"):
+            target_tokens = _extract_target_tokens(
+                (final_candidate or {}).get("target"),
+                (final_candidate or {}).get("target_pathway"),
+                *[evidence.get("target") for evidence in image_evidence],
+                *[evidence.get("target_pathway") for evidence in image_evidence],
+            )
+            if target_tokens:
+                fallback_context = _structure_context_from_target_texts(target_tokens, limit=10)
+                if fallback_context.get("available_structures"):
+                    structure_context = fallback_context
+
+    retrieval_sources = _build_retrieval_sources(final_candidate, candidate_pool, image_evidence, graph_context, structure_context)
+    status = "ready" if retrieval_sources else "no_evidence"
+    if search_context.get("error") or graph_context.get("error"):
+        status = "partial"
+    return {
+        "contract_version": "retrieval_context_v1",
+        "disease_id": disease_id,
+        "drug_name": resolved_drug_name,
+        "canonical_drug_id": resolved_canonical_id,
+        "query": {
+            "disease_id": disease_id,
+            "drug_name": drug_name,
+            "canonical_drug_id": canonical_drug_id,
+            "include_search": include_search,
+            "include_graph": include_graph,
+            "include_structure": include_structure,
+            "search_limit": search_limit,
+        },
+        "final_candidate": dict(final_candidate) if final_candidate else None,
+        "candidate_pool": candidate_pool,
+        "admet": admet,
+        "search_context": search_context,
+        "graph_context": graph_context,
+        "structure_context": structure_context,
+        "retrieval_sources": retrieval_sources,
+        "prompt_guardrails": [
+            "Use only the evidence in retrieval_context.",
+            "Do not claim clinical efficacy beyond the provided evidence.",
+            "Mention risk_sources or ADMET risk when present.",
+            "Cite source_file or source_type for key claims.",
+            "AlphaFold structure is a target/protein reference, not proof of drug efficacy.",
+            "Path score and KG score are internal explanatory scores, not clinical scores.",
+        ],
+        "status": status,
+    }
 
 
 @app.get("/search", response_model=SearchResponse)

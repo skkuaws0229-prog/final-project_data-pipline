@@ -363,3 +363,20 @@ class SearchResponse(BaseModel):
     total: int
     raw_total: int | None = None
     hits: list[SearchHit]
+
+
+class ExplanationContextResponse(BaseModel):
+    contract_version: str
+    disease_id: str
+    drug_name: str | None = None
+    canonical_drug_id: str | None = None
+    query: dict[str, Any] = Field(default_factory=dict)
+    final_candidate: dict[str, Any] | None = None
+    candidate_pool: dict[str, Any] | None = None
+    admet: dict[str, Any] | None = None
+    search_context: dict[str, Any] = Field(default_factory=dict)
+    graph_context: dict[str, Any] = Field(default_factory=dict)
+    structure_context: dict[str, Any] = Field(default_factory=dict)
+    retrieval_sources: list[dict[str, Any]] = Field(default_factory=list)
+    prompt_guardrails: list[str] = Field(default_factory=list)
+    status: str
