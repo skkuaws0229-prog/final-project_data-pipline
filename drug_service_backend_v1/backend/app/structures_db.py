@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from app.config import settings
 from app.db import fetch_all, fetch_one
 
 
@@ -148,6 +151,9 @@ def get_structure_detail(structure_id: str) -> dict | None:
           afs.version,
           afs.file_format,
           afs.structure_uri,
+          afs.structure_source_uri,
+          afs.file_size_bytes,
+          afs.checksum_sha256,
           afs.source_url,
           afs.pae_uri,
           afs.mean_plddt,
@@ -174,3 +180,38 @@ def get_structure_detail(structure_id: str) -> dict | None:
         {"structure_id": structure_id},
     )
     return dict(row) if row else None
+
+
+def get_structure_file_metadata(structure_id: str) -> dict | None:
+    row = fetch_one(
+        """
+        SELECT
+          afs.structure_id,
+          afs.protein_id,
+          pt.uniprot_id,
+          pt.gene_symbol,
+          afs.file_format,
+          afs.structure_uri,
+          afs.structure_source_uri,
+          afs.file_size_bytes,
+          afs.checksum_sha256,
+          afs.status
+        FROM alphafold_structures afs
+        JOIN protein_targets pt ON pt.protein_id = afs.protein_id
+        WHERE afs.structure_id = %(structure_id)s
+        """,
+        {"structure_id": structure_id},
+    )
+    return dict(row) if row else None
+
+
+def resolve_structure_cache_path(structure_row: dict) -> Path:
+    uri = structure_row.get("structure_uri") or ""
+    cache_root = Path(settings.alphafold_structure_cache_dir)
+    marker = "/drug_service_build/11_structures/"
+    if uri.startswith("s3://") and marker in uri:
+        return cache_root / uri.split(marker, 1)[1]
+
+    uniprot_id = str(structure_row.get("uniprot_id") or "").upper()
+    filename = Path(uri).name if uri else f"{structure_row['structure_id']}.{structure_row.get('file_format', 'cif')}"
+    return cache_root / "alphafold" / uniprot_id / filename

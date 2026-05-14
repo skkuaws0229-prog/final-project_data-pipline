@@ -4,11 +4,11 @@
 
 프론트엔드에서 질환별 protein structure 후보 목록과 상세 metadata를 연결하기 위한 API 계약이다.
 
-현재는 3D 구조 파일 자체를 S3에서 렌더링하는 단계가 아니다.
+현재 JAK1 pilot 구조 파일 1건은 다운로드/S3 저장/API proxy 제공까지 완료됐다.
 
 ```text
-현재 가능: 목록 조회, 상세 metadata 조회, 약물/근거 context 표시
-아직 아님: S3 .cif/.pdb viewer 렌더링
+현재 가능: 목록 조회, 상세 metadata 조회, 약물/근거 context 표시, JAK1 .cif 파일 proxy 조회
+아직 아님: 27개 전체 구조 파일 처리, production viewer 확정
 ```
 
 ## Base URL
@@ -63,7 +63,7 @@ GET /api/structures/targets?q=JAK
       "target_texts": ["JAK1"],
       "mapping_statuses": ["exact"],
       "diseases": ["IPF", "Psoriasis", "RA"],
-      "structure_status": "pending",
+      "structure_status": "available",
       "structure_count": 1
     }
   ]
@@ -76,8 +76,9 @@ UI 권장:
 disease_id 선택
 → targets list 표시
 → gene_symbol / protein_name / UniProt ID 표시
-→ structure_status=pending 배지 표시
+→ structure_status 배지 표시
 → target 클릭 시 detail endpoint 호출
+→ structure_status=available이면 구조보기 버튼 활성화
 ```
 
 ## Endpoint 2: 구조 상세 metadata
@@ -105,6 +106,9 @@ provider_accession
 version
 file_format
 structure_uri
+structure_source_uri
+file_size_bytes
+checksum_sha256
 source_url
 pae_uri
 mean_plddt
@@ -130,13 +134,16 @@ context_links
   "provider": "alphafold_db",
   "version": "v6",
   "file_format": "cif",
-  "structure_uri": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-model_v6.cif",
+  "structure_uri": "s3://say2-4team/20260408_new_pre_project_biso/drug_service_build/11_structures/alphafold/P23458/AF-P23458-F1-model_v6.cif",
+  "structure_source_uri": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-model_v6.cif",
+  "file_size_bytes": 1115383,
+  "checksum_sha256": "7d93bd9305cc8a38d9bd2edc8b127d4e5c2f964b2143bc4de845980662b4680e",
   "source_url": "https://alphafold.ebi.ac.uk/entry/AF-P23458-F1",
   "pae_uri": "https://alphafold.ebi.ac.uk/files/AF-P23458-F1-predicted_aligned_error_v6.json",
   "mean_plddt": 85.56,
   "license": "CC-BY-4.0",
-  "status": "to_fetch",
-  "structure_status": "pending",
+  "status": "available",
+  "structure_status": "available",
   "target_texts": ["JAK1"],
   "diseases": ["IPF", "Psoriasis", "RA"],
   "context_links": []
@@ -144,6 +151,32 @@ context_links
 ```
 
 실제 응답의 `context_links`에는 후보 약물/이미지 근거 연결이 들어간다.
+
+## Endpoint 3: 구조 파일 proxy
+
+```http
+GET /api/structures/{structure_id}/file
+```
+
+pilot 예:
+
+```http
+GET /api/structures/af_p23458_f1_v6/file
+```
+
+응답:
+
+```text
+Content-Type: chemical/x-cif
+Content-Disposition: attachment; filename="AF-P23458-F1-model_v6.cif"
+Content-Length: 1115383
+```
+
+프론트 viewer는 S3를 직접 읽지 말고 처음에는 이 endpoint를 사용한다.
+
+```text
+viewer file URL = {BASE_URL}/api/structures/af_p23458_f1_v6/file
+```
 
 ## context_links 의미
 
@@ -192,8 +225,8 @@ structure_status=pending
 
 ```text
 AlphaFold DB metadata는 있음
-실제 구조 파일은 아직 S3에 없음
-structure_uri는 AlphaFold DB 외부 cifUrl
+실제 구조 파일은 아직 S3/API cache에 없음
+structure_uri는 AlphaFold DB 외부 cifUrl 또는 S3 URI
 ```
 
 프론트 표시 권장:
@@ -206,7 +239,7 @@ missing: "AlphaFold DB entry 없음"
 failed: "조회 실패"
 ```
 
-현재 v1에서는 대부분 또는 전부 `pending`이다.
+현재 v1에서는 JAK1 1건만 `available`이고 나머지 26건은 `pending`이다.
 
 ## 화면 구성 제안
 
@@ -237,29 +270,44 @@ context link count
 ```text
 AlphaFold source_url
 structure_uri
+structure_source_uri
+file_size_bytes
+checksum_sha256
 pae_uri
 license
 target_links
 context_links
+file endpoint URL
 ```
 
 ## 아직 하지 말 것
 
 ```text
-S3 구조 파일이 있다고 가정하지 않기
+전체 구조 파일이 있다고 가정하지 않기
 3D viewer를 바로 production으로 고정하지 않기
 structure_status=pending을 available처럼 표시하지 않기
 AlphaFold 외부 URL을 장기 운영 파일 저장소로 가정하지 않기
+S3 URI를 프론트에서 직접 fetch하지 않기
+```
+
+## 현재 pilot 검증 상태
+
+```text
+pilot structure_id: af_p23458_f1_v6
+gene_symbol: JAK1
+uniprot_id: P23458
+status: available
+file_format: cif
+file_size_bytes: 1115383
+checksum_sha256: 7d93bd9305cc8a38d9bd2edc8b127d4e5c2f964b2143bc4de845980662b4680e
+context_links: 25
 ```
 
 ## 다음 단계
 
-프론트에서 목록/상세/context UI 연결이 확인되면:
-
 ```text
-1. .cif 파일 1~2개 pilot 다운로드
-2. S3 저장 경로 확정
-3. DB structure_uri를 S3 URI로 업데이트
-4. structure_status=available 전환
-5. 3D viewer modal 연결
+1. 프론트에서 JAK1 pilot .cif viewer 로딩 확인
+2. viewer 라이브러리 확정
+3. 통과하면 27개 전체 구조 파일 처리
+4. file endpoint로 전체 available 구조 제공
 ```

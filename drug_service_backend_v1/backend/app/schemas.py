@@ -201,6 +201,9 @@ class StructureDetailResponse(BaseModel):
     version: str | None = None
     file_format: str
     structure_uri: str
+    structure_source_uri: str | None = None
+    file_size_bytes: int | None = None
+    checksum_sha256: str | None = None
     source_url: str | None = None
     pae_uri: str | None = None
     mean_plddt: float | None = None

@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
 from app.config import settings
 from app.db import fetch_all, fetch_one
@@ -20,7 +21,7 @@ from app.pipeline_db import (
 )
 from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
-from app.structures_db import get_structure_detail, list_structure_targets
+from app.structures_db import get_structure_detail, get_structure_file_metadata, list_structure_targets, resolve_structure_cache_path
 from app.schemas import (
     Disease,
     DrugCandidate,
@@ -124,6 +125,22 @@ def get_structure(structure_id: str) -> dict:
     if not detail:
         raise HTTPException(status_code=404, detail=f"Unknown structure_id: {structure_id}")
     return detail
+
+
+@app.get("/api/structures/{structure_id}/file")
+def get_structure_file(structure_id: str) -> FileResponse:
+    structure = get_structure_file_metadata(structure_id)
+    if not structure:
+        raise HTTPException(status_code=404, detail=f"Unknown structure_id: {structure_id}")
+    if structure["status"] != "available":
+        raise HTTPException(status_code=409, detail=f"Structure file is not available: {structure_id}")
+
+    local_path = resolve_structure_cache_path(structure)
+    if not local_path.exists():
+        raise HTTPException(status_code=404, detail=f"Structure file is not present in API cache: {structure_id}")
+
+    media_type = "chemical/x-cif" if structure["file_format"] in {"cif", "mmcif"} else "chemical/x-pdb"
+    return FileResponse(local_path, media_type=media_type, filename=local_path.name)
 
 
 def _serialize_pipeline_row(row: dict) -> dict:

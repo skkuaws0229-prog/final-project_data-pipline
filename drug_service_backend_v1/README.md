@@ -45,6 +45,7 @@ GET /api/structures/targets
 GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
 GET /api/structures/{structure_id}
+GET /api/structures/{structure_id}/file
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -81,6 +82,7 @@ docs/structures_detail_api_validation_v1.md
 docs/structure_api_integrity_recheck_v1.md
 docs/candidate_structure_links_validation_v1.md
 docs/structure_api_final_validation_v1.md
+docs/alphafold_pilot_file_proxy_validation_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 
@@ -238,6 +240,15 @@ AWS Step Functions backend guardrail blocked 확인
 잘못된 질환명 400 Bad Request 확인
 실제 SageMaker/Step Functions job 미실행
 상세: docs/pipeline_run_validation_v1.md
+```
+
+AlphaFold structure file pilot 기준:
+
+```text
+JAK1 / af_p23458_f1_v6 1건 available
+S3 URI: s3://say2-4team/20260408_new_pre_project_biso/drug_service_build/11_structures/alphafold/P23458/AF-P23458-F1-model_v6.cif
+GET /api/structures/af_p23458_f1_v6/file 정상
+상세: docs/alphafold_pilot_file_proxy_validation_v1.md
 ```
 
 ## 주의사항
