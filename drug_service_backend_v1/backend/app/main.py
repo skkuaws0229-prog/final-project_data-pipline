@@ -314,8 +314,9 @@ def complete_pipeline_run(run_id: str) -> dict:
 def search(
     q: str = Query(..., min_length=1, description="Text query"),
     disease_id: str | None = Query(None, description="Optional disease id filter, e.g. RA"),
-    doc_type: str | None = Query(None, description="Optional doc type: drug_candidate, image_evidence, image_report"),
+    doc_type: str | None = Query(None, description="Optional doc type: candidate_pool, drug_candidate, image_evidence, image_report"),
     limit: int = Query(20, ge=1, le=50),
+    include_provenance: bool = Query(False, description="Include collapsed candidate_pool provenance rows"),
 ) -> dict:
     if disease_id:
         disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
@@ -326,12 +327,14 @@ def search(
     if doc_type and doc_type not in allowed_doc_types:
         raise HTTPException(status_code=400, detail=f"Unknown doc_type: {doc_type}")
 
+    should_collapse_candidate_pool = doc_type == "candidate_pool" and not include_provenance
+    fetch_size = min(limit * 10, 500) if should_collapse_candidate_pool else limit
     try:
-        result = search_text(q, disease_id=disease_id, doc_type=doc_type, limit=limit)
+        result = search_text(q, disease_id=disease_id, doc_type=doc_type, limit=limit, fetch_size=fetch_size)
     except Exception as exc:
         raise HTTPException(status_code=503, detail=f"OpenSearch query failed: {exc}") from exc
 
-    hits = []
+    raw_hits = []
     for hit in result.get("hits", {}).get("hits", []):
         source = hit.get("_source", {})
         highlights = hit.get("highlight", {})
@@ -342,7 +345,7 @@ def search(
                 break
         if snippet is None:
             snippet = source.get("evidence_text") or source.get("report_text") or source.get("clinical_summary") or source.get("title")
-        hits.append(
+        raw_hits.append(
             {
                 "id": hit.get("_id"),
                 "score": hit.get("_score"),
@@ -362,9 +365,47 @@ def search(
             }
         )
 
+    hits = _collapse_candidate_pool_search_hits(raw_hits, limit, include_provenance) if should_collapse_candidate_pool else raw_hits
     total = result.get("hits", {}).get("total", {})
-    total_value = total.get("value", 0) if isinstance(total, dict) else total
-    return {"query": q, "total": total_value, "hits": hits}
+    raw_total = total.get("value", 0) if isinstance(total, dict) else total
+    total_value = len(hits) if should_collapse_candidate_pool else raw_total
+    return {"query": q, "total": total_value, "raw_total": raw_total, "hits": hits}
+
+
+def _collapse_candidate_pool_search_hits(raw_hits: list[dict], limit: int, include_provenance: bool = False) -> list[dict]:
+    grouped: dict[tuple[str, str], dict] = {}
+    for hit in raw_hits:
+        disease = (hit.get("disease_id") or "").strip()
+        drug_name = (hit.get("drug_name") or "").strip()
+        key = (disease.lower(), drug_name.lower())
+        if key not in grouped:
+            grouped[key] = {**hit, "_provenance_hits": []}
+        group = grouped[key]
+        group["_provenance_hits"].append(hit)
+        if (hit.get("score") or 0) > (group.get("score") or 0):
+            for field in ["id", "score", "title", "canonical_drug_id", "source_file", "snippet", "highlights", "source"]:
+                group[field] = hit.get(field)
+        if hit.get("is_final_candidate"):
+            group["is_final_candidate"] = True
+
+    collapsed = []
+    for group in grouped.values():
+        provenance_hits = group.pop("_provenance_hits")
+        provenance_ids = [hit["id"] for hit in provenance_hits if hit.get("id")]
+        source_files = sorted({hit["source_file"] for hit in provenance_hits if hit.get("source_file")})
+        group["provenance_count"] = len(provenance_hits)
+        group["provenance_ids"] = provenance_ids
+        group["provenance_source_files"] = source_files
+        group["provenance_note"] = (
+            f"원천 candidate_pool row {len(provenance_hits)}개에서 집계됨"
+            if len(provenance_hits) > 1
+            else "원천 candidate_pool row 1개에서 집계됨"
+        )
+        group["provenance_hits"] = provenance_hits if include_provenance else []
+        collapsed.append(group)
+
+    collapsed.sort(key=lambda item: (-(item.get("score") or 0), item.get("drug_name") or ""))
+    return collapsed[:limit]
 
 
 def _put_node(nodes: dict[str, dict], node_id: str | None, label: str, name: str | None, properties: dict | None = None) -> None:

@@ -347,6 +347,11 @@ class SearchHit(BaseModel):
     match_status: str | None = None
     candidate_source: str | None = None
     is_final_candidate: bool | None = None
+    provenance_count: int | None = None
+    provenance_note: str | None = None
+    provenance_source_files: list[str] = Field(default_factory=list)
+    provenance_ids: list[str] = Field(default_factory=list)
+    provenance_hits: list[dict[str, Any]] = Field(default_factory=list)
     source_file: str | None = None
     snippet: str | None = None
     highlights: dict[str, list[str]] = Field(default_factory=dict)
@@ -356,4 +361,5 @@ class SearchHit(BaseModel):
 class SearchResponse(BaseModel):
     query: str
     total: int
+    raw_total: int | None = None
     hits: list[SearchHit]

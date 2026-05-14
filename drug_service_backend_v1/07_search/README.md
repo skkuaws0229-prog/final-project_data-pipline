@@ -39,6 +39,9 @@ GET http://localhost:8010/search?q=Ruxolitinib&doc_type=candidate_pool
 GET http://localhost:8010/search?q=immune&doc_type=image_evidence
 ```
 
+`candidate_pool` 검색은 기본적으로 같은 질환 안 같은 `drug_name`을 1개 결과로 collapse합니다.
+원천 row 수는 `raw_total`, `provenance_count`, `provenance_note`로 확인합니다.
+
 ## v1 주의사항
 
 - 이 index에는 embedding/vector field가 없습니다.

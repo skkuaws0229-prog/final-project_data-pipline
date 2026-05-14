@@ -118,6 +118,8 @@ GET /search?q=immune&doc_type=image_evidence
 GET /search?q=Ruxolitinib&doc_type=candidate_pool
 ```
 
+`candidate_pool` 검색은 기본적으로 같은 질환 안 같은 `drug_name`을 dedup해 1개 결과로 반환합니다. 원천 row 수는 `raw_total`, `provenance_count`, `provenance_note`에 남깁니다.
+
 지원 `doc_type`:
 
 ```text

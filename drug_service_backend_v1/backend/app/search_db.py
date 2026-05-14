@@ -27,6 +27,7 @@ def search_text(
     disease_id: str | None = None,
     doc_type: str | None = None,
     limit: int = 20,
+    fetch_size: int | None = None,
 ) -> dict:
     filters: list[dict] = []
     if disease_id:
@@ -35,7 +36,7 @@ def search_text(
         filters.append({"term": {"doc_type": doc_type}})
 
     body = {
-        "size": limit,
+        "size": fetch_size or limit,
         "query": {
             "bool": {
                 "must": [

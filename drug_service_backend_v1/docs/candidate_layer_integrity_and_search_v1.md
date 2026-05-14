@@ -171,12 +171,40 @@ GET /search?q=Ruxolitinib&disease_id=RA&doc_type=drug_candidate&limit=5
 
 | query | total | 의미 |
 |---|---:|---|
-| `q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool` | 2 | BRCA 원천 중복 row 보존 |
-| `q=Fulvestrant&disease_id=BRCA&doc_type=candidate_pool` | 2 | BRCA 원천 중복 row 보존 |
-| `q=JAK1&disease_id=IPF&doc_type=candidate_pool` | 22 | IPF JAK1 관련 provenance row 보존 |
-| `q=Docetaxel&disease_id=LUNG&doc_type=candidate_pool` | 2 | LUNG 원천 중복 row 보존 |
+| `q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool` | 1 | raw_total 2, provenance_count 2 |
+| `q=Fulvestrant&disease_id=BRCA&doc_type=candidate_pool` | 1 | raw_total 2, provenance_count 2 |
+| `q=JAK1&disease_id=IPF&doc_type=candidate_pool` | 3 | raw_total 22, 대표 hit provenance_count 20 |
+| `q=Docetaxel&disease_id=LUNG&doc_type=candidate_pool` | 1 | raw_total 2, provenance_count 2 |
 
-따라서 화면용 후보 목록 API는 dedup된 행을 반환하고, OpenSearch/RAG 검색은 원천 provenance row를 보존한다.
+따라서 화면용 후보 목록 API와 기본 `/search` 응답은 dedup된 행을 반환한다.
+
+기본 `/search` 응답에는 아래 provenance 요약 필드를 포함한다.
+
+```text
+raw_total
+provenance_count
+provenance_note
+provenance_source_files
+provenance_ids
+```
+
+예시:
+
+```json
+{
+  "drug_name": "Oxaliplatin",
+  "total": 1,
+  "raw_total": 2,
+  "provenance_count": 2,
+  "provenance_note": "원천 candidate_pool row 2개에서 집계됨"
+}
+```
+
+원천 row를 그대로 확인해야 할 때는 아래 옵션을 사용한다.
+
+```text
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool&include_provenance=true
+```
 
 ## Frontend 사용 기준
 
