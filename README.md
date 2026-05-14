@@ -38,6 +38,7 @@ S3 원본 위치:
 - `docs/frontend_v1_connection_qa_pass_20260514.md`: 프론트 v1 연결 QA 통과 기록입니다.
 - `docs/explanation_context_api_validation_v1.md`: Bedrock 연결 전 설명용 근거 패키지 API 검증 결과입니다.
 - `docs/backend_db_integrity_frontend_handoff_v1.md`: 백엔드/DB 전체 무결성과 프론트 전달 준비 검증 결과입니다.
+- `docs/frontend_api_handoff_workflow_v1.md`: 프론트에 전달할 API 목록과 전체 워크플로우입니다.
 
 ## 포함된 자료
 

@@ -124,6 +124,14 @@ Explanation context API ready
 
 상세 기록은 `docs/backend_db_integrity_frontend_handoff_v1.md`를 확인합니다.
 
+## 프론트 API 전달 목록과 전체 워크플로우
+
+프론트 담당자에게 전달할 endpoint 목록, 화면 연결 흐름, 전체 데이터 흐름은 아래 문서를 기준으로 합니다.
+
+```text
+docs/frontend_api_handoff_workflow_v1.md
+```
+
 ## React v2 인수인계 메모
 
 나중에 React v2를 전달할 때 아래 맥락을 함께 전달합니다.

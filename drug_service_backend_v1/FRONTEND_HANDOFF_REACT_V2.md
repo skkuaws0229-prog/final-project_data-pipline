@@ -161,6 +161,12 @@ Explanation context API ready
 API 재빌드 또는 DB 재적재 후 candidate_protein_structure_links=261인지 다시 확인해야 합니다.
 ```
 
+프론트에 전달할 전체 API 목록과 워크플로우는 아래 문서를 기준으로 합니다.
+
+```text
+docs/frontend_api_handoff_workflow_v1.md
+```
+
 ## 권장 화면 구성
 
 아래는 요구사항 전달용 제안입니다. 구현 방식은 프론트 담당자가 조정해도 됩니다.

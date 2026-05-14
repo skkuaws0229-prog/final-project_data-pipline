@@ -98,6 +98,7 @@ docs/rag_bedrock_retrieval_connection_validation_v1.md
 docs/frontend_v1_connection_qa_pass_20260514.md
 docs/explanation_context_api_validation_v1.md
 docs/backend_db_integrity_frontend_handoff_v1.md
+docs/frontend_api_handoff_workflow_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 
