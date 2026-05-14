@@ -143,6 +143,24 @@ RA graph: nodes 71, edges 132
 docs/frontend_v1_connection_qa_pass_20260514.md
 ```
 
+백엔드/DB 전체 무결성도 프론트 전달 기준 PASS입니다.
+
+```text
+상세 문서: docs/backend_db_integrity_frontend_handoff_v1.md
+PostgreSQL FK/고아 데이터 문제 없음
+OpenSearch 1131 docs 정상
+Neo4j node/edge/API 정상
+AlphaFold 27 structures available
+candidate_protein_structure_links 261건 확인
+Explanation context API ready
+```
+
+주의:
+
+```text
+API 재빌드 또는 DB 재적재 후 candidate_protein_structure_links=261인지 다시 확인해야 합니다.
+```
+
 ## 권장 화면 구성
 
 아래는 요구사항 전달용 제안입니다. 구현 방식은 프론트 담당자가 조정해도 됩니다.
