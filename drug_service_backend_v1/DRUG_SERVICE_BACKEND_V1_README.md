@@ -159,6 +159,13 @@ aws_stepfunctions
 ```
 
 `local_agent`와 `aws_stepfunctions`는 feature flag 없이 실제 실행되지 않으며, 비용 발생 AWS job은 launch하지 않습니다.
+`execution_backend` 입력은 특수문자 alias도 허용합니다.
+
+```text
+$ -> mock
+@ -> local_agent
+# -> aws_stepfunctions
+```
 
 대표 요청:
 
@@ -176,6 +183,7 @@ aws_stepfunctions
 docs/pipeline_backend_integration_plan.md
 docs/pipeline_run_api_openapi.yaml
 docs/pipeline_run_validation_v1.md
+docs/pipeline_run_backend_alias_validation_v1.md
 ```
 
 ## 검증 상태

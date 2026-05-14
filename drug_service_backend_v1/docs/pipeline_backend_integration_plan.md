@@ -106,6 +106,14 @@ POST /api/pipeline-runs
 
 기본 `execution_backend`는 `mock`이다.
 
+프론트엔드/챗봇 입력에서는 아래 alias도 허용한다. 단, DB와 API 응답에는 canonical 값만 저장/반환한다.
+
+```text
+$ -> mock
+@ -> local_agent
+# -> aws_stepfunctions
+```
+
 ```json
 {
   "disease_name": "난소암",
@@ -127,6 +135,7 @@ GET /api/pipeline-runs?status=completed&execution_backend=mock&limit=50
 ```
 
 프론트엔드와 챗봇이 최근 실행 목록을 볼 수 있도록 `disease_slug`, `status`, `execution_backend`, `limit` 필터를 지원한다.
+`execution_backend` 필터도 `$`, `@`, `#` alias를 허용한다.
 
 ### Run 이벤트 조회
 

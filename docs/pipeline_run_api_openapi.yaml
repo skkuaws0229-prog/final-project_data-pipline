@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Pipeline Run Control API
   version: 0.1.0
-  description: Bedrock/RAG/LLM 연결 전 파이프라인 실행 제어 계층 mock API
+  description: Bedrock/RAG/LLM 연결 전 파이프라인 실행 제어 계층 mock API. execution_backend 입력은 `$=mock`, `@=local_agent`, `#=aws_stepfunctions` alias도 허용한다.
 paths:
   /api/pipeline-runs:
     get:
@@ -21,7 +21,7 @@ paths:
           in: query
           schema:
             type: string
-            enum: [mock, local_agent, aws_stepfunctions]
+            enum: [mock, local_agent, aws_stepfunctions, $, "@", "#"]
         - name: limit
           in: query
           schema:
@@ -51,7 +51,7 @@ paths:
                   default: full
                 execution_backend:
                   type: string
-                  enum: [mock, local_agent, aws_stepfunctions]
+                  enum: [mock, local_agent, aws_stepfunctions, $, "@", "#"]
                   default: mock
                 requested_by:
                   type: string

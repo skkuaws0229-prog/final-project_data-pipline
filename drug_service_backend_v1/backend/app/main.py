@@ -13,6 +13,7 @@ from app.pipeline_db import (
     list_pipeline_events,
     list_pipeline_runs,
     make_config_yaml,
+    normalize_execution_backend,
     normalize_pipeline_request,
     VALID_EXECUTION_BACKENDS,
     VALID_RUN_STATUSES,
@@ -138,7 +139,11 @@ def _serialize_pipeline_row(row: dict) -> dict:
 @app.post("/api/pipeline-runs", response_model=PipelineRunResponse)
 def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
     try:
-        disease_name, disease_slug, mode = normalize_pipeline_request(request.disease_name, request.mode, request.execution_backend)
+        disease_name, disease_slug, mode, execution_backend = normalize_pipeline_request(
+            request.disease_name,
+            request.mode,
+            request.execution_backend,
+        )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
@@ -146,7 +151,8 @@ def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
         "disease_name": disease_name,
         "disease_slug": disease_slug,
         "mode": mode,
-        "execution_backend": request.execution_backend,
+        "execution_backend": execution_backend,
+        "execution_backend_input": request.execution_backend,
         "random_seed": request.random_seed,
         "user_config": request.config_snapshot,
         "secret_policy": "store_secret_ids_only",
@@ -155,14 +161,14 @@ def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
         disease_name=disease_name,
         disease_slug=disease_slug,
         mode=mode,
-        execution_backend=request.execution_backend,
+        execution_backend=execution_backend,
         requested_by=request.requested_by,
         config_snapshot=config_snapshot,
         random_seed=request.random_seed,
     )
-    config_yaml = make_config_yaml(disease_name, disease_slug, mode, request.execution_backend, request.random_seed)
+    config_yaml = make_config_yaml(disease_name, disease_slug, mode, execution_backend, request.random_seed)
     insert_pipeline_config(run["run_id"], disease_name, disease_slug, config_yaml)
-    run = get_orchestrator(request.execution_backend).submit_run(run)
+    run = get_orchestrator(execution_backend).submit_run(run)
     return _serialize_pipeline_row(run)
 
 
@@ -175,8 +181,10 @@ def list_pipeline_run_statuses(
 ) -> dict:
     if status and status not in VALID_RUN_STATUSES:
         raise HTTPException(status_code=400, detail=f"Unsupported status: {status}")
-    if execution_backend and execution_backend not in VALID_EXECUTION_BACKENDS:
-        raise HTTPException(status_code=400, detail=f"Unsupported execution_backend: {execution_backend}")
+    if execution_backend:
+        execution_backend = normalize_execution_backend(execution_backend)
+        if execution_backend not in VALID_EXECUTION_BACKENDS:
+            raise HTTPException(status_code=400, detail=f"Unsupported execution_backend: {execution_backend}")
     runs = [
         _serialize_pipeline_row(row)
         for row in list_pipeline_runs(

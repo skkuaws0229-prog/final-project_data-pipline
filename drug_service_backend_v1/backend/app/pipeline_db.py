@@ -29,6 +29,11 @@ DISEASE_NAME_TO_SLUG = {
 
 VALID_PIPELINE_MODES = {"basic", "image_modal", "full"}
 VALID_EXECUTION_BACKENDS = {"mock", "local_agent", "aws_stepfunctions"}
+EXECUTION_BACKEND_ALIASES = {
+    "$": "mock",
+    "@": "local_agent",
+    "#": "aws_stepfunctions",
+}
 VALID_RUN_STATUSES = {"queued", "preflight", "running", "waiting_external_job", "validating", "completed", "failed", "cancelled", "blocked"}
 
 
@@ -105,16 +110,22 @@ def ensure_pipeline_schema() -> None:
         conn.commit()
 
 
-def normalize_pipeline_request(disease_name: str, mode: str, execution_backend: str) -> tuple[str, str, str]:
+def normalize_execution_backend(execution_backend: str) -> str:
+    value = execution_backend.strip()
+    return EXECUTION_BACKEND_ALIASES.get(value, value)
+
+
+def normalize_pipeline_request(disease_name: str, mode: str, execution_backend: str) -> tuple[str, str, str, str]:
     disease_name = disease_name.strip()
     disease_slug = DISEASE_NAME_TO_SLUG.get(disease_name)
+    execution_backend = normalize_execution_backend(execution_backend)
     if not disease_slug:
         raise ValueError(f"Unsupported disease_name: {disease_name}")
     if mode not in VALID_PIPELINE_MODES:
         raise ValueError(f"Unsupported mode: {mode}")
     if execution_backend not in VALID_EXECUTION_BACKENDS:
         raise ValueError(f"Unsupported execution_backend: {execution_backend}")
-    return disease_name, disease_slug, mode
+    return disease_name, disease_slug, mode, execution_backend
 
 
 def make_config_yaml(disease_name: str, disease_slug: str, mode: str, execution_backend: str, random_seed: int) -> str:

@@ -126,6 +126,29 @@ Response 예시:
 - 생성 성공 시 run_id를 저장한다.
 - 바로 상세 조회 또는 event/artifact 조회를 호출한다.
 - 현재는 mock이므로 생성 직후 running/mock_pipeline 상태가 된다.
+- `execution_backend`는 특수문자 alias도 허용한다.
+```
+
+```text
+$ -> mock
+@ -> local_agent
+# -> aws_stepfunctions
+```
+
+예:
+
+```json
+{
+  "disease_name": "류마티스 관절염",
+  "mode": "full",
+  "execution_backend": "$"
+}
+```
+
+주의:
+
+```text
+DB에는 $, @, #가 저장되지 않고 mock/local_agent/aws_stepfunctions로 정규화되어 저장된다.
 ```
 
 ## 2. Run 목록 조회
@@ -139,7 +162,7 @@ Query:
 ```text
 disease_slug       optional: psoriasis, ra, ov 등
 status             optional: running, completed, cancelled, blocked 등
-execution_backend  optional: mock, local_agent, aws_stepfunctions
+execution_backend  optional: mock, local_agent, aws_stepfunctions 또는 $, @, #
 limit              optional: default 50, max 200
 ```
 
