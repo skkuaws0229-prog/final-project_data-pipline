@@ -92,6 +92,22 @@ RA: 30 candidates, 2 clusters, 32 evidence rows
 Drug row selection: Ruxolitinib 선택 시 image-modal evidence 2개 표시
 ```
 
+## 프론트 v1 연결 QA 통과
+
+프론트 담당자가 2026-05-14 기준 `5174` 프론트에서 6개 QA 항목을 확인했고, 연결 QA는 PASS로 기록합니다.
+
+```text
+BRCA final-candidates: 15개, 중복 없음
+BRCA candidates view=all: 60개, final 15 / non-final 45, 중복 없음
+Oxaliplatin candidate_pool search: total 1, raw_total 2, provenance_count 2
+JAK1/JAK2/JAK3 structure_status=available
+JAK1 file proxy: GET /api/structures/af_p23458_f1_v6/file 정상
+RA graph: nodes 71, edges 132
+/diseases: 11개 질환 확인
+```
+
+상세 기록은 `docs/frontend_v1_connection_qa_pass_20260514.md`를 확인합니다.
+
 ## React v2 인수인계 메모
 
 나중에 React v2를 전달할 때 아래 맥락을 함께 전달합니다.

@@ -48,6 +48,13 @@ GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
 ```
 
+주의:
+
+```text
+target/protein 검색 UI는 GET /api/structures/targets?q=JAK를 사용한다.
+GET /api/structures?q=JAK는 structure 중심 목록 조회용이다.
+```
+
 응답 예:
 
 ```json

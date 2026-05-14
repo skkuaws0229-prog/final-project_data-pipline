@@ -115,6 +115,23 @@ Bedrock/LLM 설명 기능을 붙일 때는 프론트가 Bedrock을 직접 호출
 현재 상태: 문서 계약만 완료, 실제 endpoint/Bedrock 호출 미구현
 ```
 
+프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
+
+```text
+BRCA final-candidates: 15개
+BRCA candidates view=all: 60개, final 15 / non-final 45
+Oxaliplatin search: total 1, raw_total 2, provenance_count 2
+JAK1/JAK2/JAK3: structure_status=available
+RA graph: nodes 71, edges 132
+/diseases: 11개 질환 확인
+```
+
+상세 기록:
+
+```text
+docs/frontend_v1_connection_qa_pass_20260514.md
+```
+
 ## 권장 화면 구성
 
 아래는 요구사항 전달용 제안입니다. 구현 방식은 프론트 담당자가 조정해도 됩니다.
