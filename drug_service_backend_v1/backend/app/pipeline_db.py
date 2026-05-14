@@ -353,6 +353,7 @@ def list_pipeline_runs(
     disease_slug: str | None = None,
     status: str | None = None,
     execution_backend: str | None = None,
+    requested_by: str | None = None,
     limit: int = 50,
 ) -> list[dict[str, Any]]:
     ensure_pipeline_schema()
@@ -367,6 +368,9 @@ def list_pipeline_runs(
     if execution_backend:
         filters.append("execution_backend = %(execution_backend)s")
         params["execution_backend"] = execution_backend
+    if requested_by:
+        filters.append("requested_by = %(requested_by)s")
+        params["requested_by"] = requested_by
 
     where_clause = f"WHERE {' AND '.join(filters)}" if filters else ""
     query = f"""

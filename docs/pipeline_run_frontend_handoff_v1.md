@@ -228,6 +228,7 @@ Query:
 disease_slug       optional: psoriasis, ra, ov 등
 status             optional: running, completed, cancelled, blocked 등
 execution_backend  optional: mock, local_agent, aws_stepfunctions 또는 $, @, #
+requested_by       optional: frontend, chatbot 등
 limit              optional: default 50, max 200
 ```
 

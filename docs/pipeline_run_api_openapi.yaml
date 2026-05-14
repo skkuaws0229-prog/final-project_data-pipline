@@ -48,6 +48,10 @@ paths:
           schema:
             type: string
             enum: [mock, local_agent, aws_stepfunctions, $, "@", "#"]
+        - name: requested_by
+          in: query
+          schema:
+            type: string
         - name: limit
           in: query
           schema:
