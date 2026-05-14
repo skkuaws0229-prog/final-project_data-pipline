@@ -57,6 +57,14 @@ Final 후보가 candidate_pool에 매칭되지 않는 경우:
 
 이 중복은 원천 broader 후보 pool의 provenance row로 보존한다. API 응답은 같은 질환 안에서 같은 `drug_name`을 dedup하여 반환한다.
 
+API 표시 dedup 확인:
+
+| disease_id | API rows | distinct names | duplicate names in API | final marked |
+|---|---:|---:|---:|---:|
+| BRCA | 60 | 60 | 0 | 15 |
+| IPF | 11 | 11 | 0 | 9 |
+| LUNG | 37 | 37 | 0 | 15 |
+
 ## API 검증
 
 BRCA:
@@ -98,6 +106,34 @@ OpenSearch document count:
 1131
 ```
 
+OpenSearch candidate_pool 필수 필드 누락:
+
+| check | count |
+|---|---:|
+| missing document_id | 0 |
+| missing disease_id | 0 |
+| missing drug_name | 0 |
+| missing source_file | 0 |
+| missing is_final_candidate | 0 |
+
+OpenSearch candidate_pool 질환별 count:
+
+| disease_id | count |
+|---|---:|
+| BRCA | 62 |
+| Colon | 50 |
+| HNSC | 50 |
+| IPF | 30 |
+| LUNG | 39 |
+| Liver | 31 |
+| PAH | 30 |
+| PDAC | 50 |
+| Psoriasis | 30 |
+| RA | 30 |
+| STAD | 30 |
+
+OpenSearch의 candidate_pool count는 PostgreSQL `candidate_pool` row와 일치한다.
+
 ## Search API 검증
 
 Candidate pool 검색:
@@ -130,6 +166,17 @@ GET /search?q=Ruxolitinib&disease_id=RA&doc_type=drug_candidate&limit=5
 -> total 1
 -> hits 1
 ```
+
+원천 중복 provenance 검색 확인:
+
+| query | total | 의미 |
+|---|---:|---|
+| `q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool` | 2 | BRCA 원천 중복 row 보존 |
+| `q=Fulvestrant&disease_id=BRCA&doc_type=candidate_pool` | 2 | BRCA 원천 중복 row 보존 |
+| `q=JAK1&disease_id=IPF&doc_type=candidate_pool` | 22 | IPF JAK1 관련 provenance row 보존 |
+| `q=Docetaxel&disease_id=LUNG&doc_type=candidate_pool` | 2 | LUNG 원천 중복 row 보존 |
+
+따라서 화면용 후보 목록 API는 dedup된 행을 반환하고, OpenSearch/RAG 검색은 원천 provenance row를 보존한다.
 
 ## Frontend 사용 기준
 
