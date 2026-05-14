@@ -50,6 +50,8 @@ GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
+GET /search?q=Ruxolitinib&doc_type=candidate_pool
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -65,6 +67,9 @@ POST /api/pipeline-runs/{run_id}/complete
 - 기본 후보 화면은 `GET /v1/diseases/{disease_code}/final-candidates`를 사용합니다.
 - 전체 후보 보기(`view=all`)는 `GET /api/diseases/{disease_code}/candidates`를 사용합니다.
 - 전체 후보 응답의 `is_final_candidate` 값으로 “최종 후보 / 탈락” 표시를 구분합니다.
+- 전체 후보 검색은 `GET /search?q={query}&doc_type=candidate_pool`를 사용합니다.
+- `candidate_pool` 검색은 같은 질환 안 같은 `drug_name`을 기본 collapse해서 1개만 반환합니다.
+- 중복 원천 row 수는 `raw_total`, `provenance_count`, `provenance_note`로 표시합니다.
 - `OV`, `SKCM`은 의도적으로 제외했습니다.
 - 일반 약물 후보와 image-modal evidence를 연결할 때는 `canonical_drug_id`를 사용합니다.
 - 같은 질병 안의 후보/score/result 목록에서는 같은 `canonical_drug_id`를 중복 표시하지 않습니다.
@@ -110,7 +115,8 @@ React v2에서 함께 논의할 graph/API 항목:
 - Graph API v1은 react-force-graph 같은 graph viewer와 맞추기 위해 { nodes: [], edges: [] } 형태로 반환하는 것이 좋습니다.
 - `/graph/relations`는 빈 image cluster도 `Disease -> ImageCluster`로 포함합니다. 약물 근거가 있는 경우에만 `ImageCluster -> ImageEvidence -> Drug`로 이어집니다.
 - Graph edge type은 `CANDIDATE_FOR`, `HAS_IMAGE_CLUSTER`, `HAS_IMAGE_EVIDENCE`, `SUPPORTS_DRUG`, `HAS_TARGET`, `MENTIONS_TARGET`를 예상하면 됩니다.
-- OpenSearch text search v1은 `/search`로 연결했습니다. `drug_candidate`, `image_evidence`, `image_report`를 검색합니다.
+- OpenSearch text search v1은 `/search`로 연결했습니다. `candidate_pool`, `drug_candidate`, `image_evidence`, `image_report`를 검색합니다.
+- `candidate_pool` 검색은 기본적으로 dedup/collapse된 화면용 결과를 반환하고, 원천 row는 `include_provenance=true`로 확인합니다.
 - Vector search는 아직 제외이며 CT-CLIP/UNI2 embedding 원본과 차원 정책 확정 뒤 v2로 추가합니다.
 - Neo4j path scoring v1은 `/graph/path-score`로 연결했습니다. 프론트는 `path_score`만 보여주지 말고 `components`, `evidence_sources`, `risk_sources`를 함께 표시하는 구성이 좋습니다.
 - DistMult/TransE KG embedding baseline은 `/graph/kg-embedding`으로 연결했습니다. 이 점수는 graph 구조 학습 기반 보조 점수이므로 단독 추천 근거로 쓰지 말고 path score/evidence/risk와 함께 표시해야 합니다.

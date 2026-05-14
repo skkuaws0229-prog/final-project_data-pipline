@@ -110,6 +110,23 @@ candidate_count  number
 
 ## 3. 후보 약물 목록
 
+### 화면 기준
+
+```text
+기본 Candidates 화면:
+GET /v1/diseases/{disease_code}/final-candidates
+
+전체 후보 보기 view=all:
+GET /api/diseases/{disease_code}/candidates
+```
+
+`final-candidates`와 `candidates`는 다른 계층입니다.
+
+```text
+final-candidates: step7/ADMET 이후 final artifact 계층
+candidates: top30/top50 등 broader candidate_pool 계층
+```
+
 ### 권장: GET /api/diseases/{disease_code}/candidates
 
 프론트엔드 path 기반 후보 약물 목록 endpoint입니다.
@@ -142,6 +159,16 @@ GET /v1/diseases/{disease_code}/final-candidates
 ```text
 is_final_candidate = true  -> 최종 후보
 is_final_candidate = false -> 후보 pool 단계 또는 탈락
+```
+
+검증 예시:
+
+```text
+BRCA final-candidates -> 15 rows
+BRCA candidates -> 60 rows, is_final_candidate=true 15 rows
+
+LUNG final-candidates -> 15 rows
+LUNG candidates -> 37 rows, is_final_candidate=true 15 rows
 ```
 
 ### 기존 호환: GET /drugs
@@ -580,7 +607,8 @@ Query:
 ```text
 q          required string
 disease_id optional string
-doc_type   optional string: drug_candidate, image_evidence, image_report
+doc_type   optional string: candidate_pool, drug_candidate, image_evidence, image_report
+include_provenance optional boolean, default false
 limit      optional number, default 20, max 50
 ```
 
@@ -588,6 +616,9 @@ limit      optional number, default 20, max 50
 
 ```text
 GET /search?q=JAK&disease_id=RA
+GET /search?q=Ruxolitinib&doc_type=candidate_pool
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool&include_provenance=true
 GET /search?q=immune&doc_type=image_evidence
 ```
 
@@ -596,6 +627,7 @@ GET /search?q=immune&doc_type=image_evidence
 ```text
 query
 total
+raw_total
 hits[]
 hits[].id
 hits[].score
@@ -606,6 +638,13 @@ hits[].drug_name
 hits[].canonical_drug_id
 hits[].cluster_id
 hits[].match_status
+hits[].candidate_source
+hits[].is_final_candidate
+hits[].provenance_count
+hits[].provenance_note
+hits[].provenance_source_files
+hits[].provenance_ids
+hits[].provenance_hits
 hits[].source_file
 hits[].snippet
 hits[].highlights
@@ -615,16 +654,49 @@ hits[].source
 지원 document type:
 
 ```text
+candidate_pool: broader 후보 pool. view=all 후보 검색용
 drug_candidate: PostgreSQL 후보 약물 + ADMET
 image_evidence: image-modal drug evidence + cluster summary
 image_report: image-modal report 본문
+```
+
+`candidate_pool` 검색 규칙:
+
+```text
+기본 응답은 같은 disease_id + 같은 drug_name을 1개 결과로 collapse합니다.
+raw_total은 OpenSearch 원천 hit 수입니다.
+total은 collapse 후 화면에 표시할 hit 수입니다.
+provenance_count는 원천 candidate_pool row 몇 개에서 집계됐는지 나타냅니다.
+provenance_note는 프론트에서 그대로 표시 가능한 설명 문구입니다.
+include_provenance=true를 주면 원천 row를 그대로 확인할 수 있습니다.
+```
+
+예시:
+
+```json
+{
+  "query": "Oxaliplatin",
+  "total": 1,
+  "raw_total": 2,
+  "hits": [
+    {
+      "drug_name": "Oxaliplatin",
+      "doc_type": "candidate_pool",
+      "disease_id": "BRCA",
+      "is_final_candidate": true,
+      "provenance_count": 2,
+      "provenance_note": "원천 candidate_pool row 2개에서 집계됨"
+    }
+  ]
+}
 ```
 
 주의사항:
 
 - 이 endpoint는 text search입니다.
 - vector search는 아직 포함하지 않았습니다.
-- 검색 대상 문서는 총 699개입니다.
+- 검색 대상 문서는 총 1131개입니다.
+- `candidate_pool` 검색은 화면 혼선을 막기 위해 기본 collapse를 적용합니다.
 - `snippet`에는 OpenSearch highlight 첫 fragment 또는 fallback text가 들어갑니다.
 
 ## 13. Pipeline run control API

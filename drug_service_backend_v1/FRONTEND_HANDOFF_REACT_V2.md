@@ -65,6 +65,47 @@ response field
 
 화면 레이아웃, 컴포넌트 분리, 상태관리 방식, graph viewer 라이브러리 선택은 프론트엔드 담당자가 주도하는 것이 좋습니다.
 
+## 2026-05-14 최신 변경 요약
+
+후보 목록과 검색 API가 아래 기준으로 정리되었습니다.
+
+```text
+기본 Candidates 화면:
+GET /v1/diseases/{disease_code}/final-candidates
+
+전체 후보 보기 view=all:
+GET /api/diseases/{disease_code}/candidates
+
+전체 후보 검색:
+GET /search?q={query}&doc_type=candidate_pool
+GET /search?q={query}&disease_id={disease_code}&doc_type=candidate_pool
+```
+
+중복 처리 기준:
+
+```text
+DB/OpenSearch 내부: 원천 candidate_pool row 보존
+후보 목록 API: 같은 질환 안 같은 drug_name dedup
+기본 검색 API: 같은 질환 안 같은 drug_name collapse
+검색 결과: provenance_count / provenance_note로 원천 row 수 표시
+```
+
+예시:
+
+```text
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool
+-> total 1
+-> raw_total 2
+-> provenance_count 2
+-> provenance_note "원천 candidate_pool row 2개에서 집계됨"
+```
+
+원천 row 전체 확인이 필요한 디버그/근거 화면에서는 아래 옵션을 사용합니다.
+
+```text
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool&include_provenance=true
+```
+
 ## 권장 화면 구성
 
 아래는 요구사항 전달용 제안입니다. 구현 방식은 프론트 담당자가 조정해도 됩니다.
@@ -97,6 +138,8 @@ GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
+GET /search?q=Ruxolitinib&doc_type=candidate_pool
+GET /search?q=Ruxolitinib&disease_id=RA&doc_type=candidate_pool
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -112,6 +155,18 @@ Candidates 화면 기준:
 기본 화면: GET /v1/diseases/{disease_code}/final-candidates
 전체 후보 보기: GET /api/diseases/{disease_code}/candidates
 전체 후보 row 표시: is_final_candidate로 “최종 후보 / 탈락” 구분
+```
+
+검증 예시:
+
+```text
+BRCA final-candidates: 15
+BRCA candidates: 60
+BRCA candidates 중 is_final_candidate=true: 15
+
+LUNG final-candidates: 15
+LUNG candidates: 37
+LUNG candidates 중 is_final_candidate=true: 15
 ```
 
 ## 데이터 매칭 규칙
@@ -329,11 +384,22 @@ OpenSearch text search 검증:
 
 ```text
 Index: drug_service_text_v1
-Documents: 699
+Documents: 1131
+candidate_pool: 432
 drug_candidate: 255
 image_evidence: 430
 image_report: 14
 GET /health/search -> {"status":"ok","search":"ok"}
+```
+
+Candidate pool 검색 검증:
+
+```text
+GET /search?q=Ruxolitinib&doc_type=candidate_pool&limit=5
+-> 200, total 4
+
+GET /search?q=Oxaliplatin&disease_id=BRCA&doc_type=candidate_pool
+-> 200, total 1, raw_total 2, provenance_count 2
 ```
 
 Path scoring v1 검증:
