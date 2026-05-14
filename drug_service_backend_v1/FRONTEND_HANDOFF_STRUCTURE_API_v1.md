@@ -83,6 +83,48 @@ disease_id 선택
 
 ## Endpoint 2: 구조 상세 metadata
 
+## Endpoint 2: 구조 중심 목록
+
+```http
+GET /api/structures
+```
+
+Query:
+
+```text
+disease_id optional
+q optional
+limit optional, default 100, max 200
+```
+
+예:
+
+```http
+GET /api/structures?disease_id=RA
+GET /api/structures?q=JAK
+```
+
+응답 주요 필드:
+
+```text
+structure_id
+gene_symbol
+uniprot_id
+protein_name
+file_format
+structure_status
+mean_plddt
+file_size_bytes
+diseases
+target_texts
+context_summary
+file_endpoint
+```
+
+이 endpoint는 구조보기 버튼/테이블을 만들 때 사용한다.
+
+## Endpoint 3: 구조 상세 metadata
+
 ```http
 GET /api/structures/{structure_id}
 ```
@@ -120,6 +162,7 @@ mapping_statuses
 diseases
 target_links
 context_links
+context_summary
 ```
 
 상세 응답 예:
@@ -146,13 +189,27 @@ context_links
   "structure_status": "available",
   "target_texts": ["JAK1"],
   "diseases": ["IPF", "Psoriasis", "RA"],
-  "context_links": []
+  "context_links": [],
+  "context_summary": {
+    "total_links": 25,
+    "diseases": ["IPF", "Psoriasis", "RA"],
+    "disease_count": 3,
+    "drug_count": 17,
+    "evidence_count": 3,
+    "candidate_target_count": 22,
+    "image_evidence_count": 3,
+    "target_source_counts": {
+      "candidate_target": 22,
+      "image_evidence": 3
+    }
+  }
 }
 ```
 
 실제 응답의 `context_links`에는 후보 약물/이미지 근거 연결이 들어간다.
+`context_summary`는 상세 화면에서 구조-질환-약물 연결 규모를 빠르게 보여주기 위한 집계 필드다.
 
-## Endpoint 3: 구조 파일 proxy
+## Endpoint 4: 구조 파일 proxy
 
 ```http
 GET /api/structures/{structure_id}/file
@@ -277,6 +334,7 @@ pae_uri
 license
 target_links
 context_links
+context_summary
 file endpoint URL
 ```
 

@@ -168,6 +168,26 @@ class StructureTargetsResponse(BaseModel):
     targets: list[StructureTarget]
 
 
+class StructureListItem(BaseModel):
+    structure_id: str
+    protein_id: str
+    gene_symbol: str | None = None
+    uniprot_id: str | None = None
+    protein_name: str | None = None
+    file_format: str
+    structure_status: str
+    mean_plddt: float | None = None
+    file_size_bytes: int | None = None
+    diseases: list[str] = Field(default_factory=list)
+    target_texts: list[str] = Field(default_factory=list)
+    context_summary: dict[str, Any] = Field(default_factory=dict)
+    file_endpoint: str
+
+
+class StructureListResponse(BaseModel):
+    structures: list[StructureListItem]
+
+
 class StructureTargetLink(BaseModel):
     target_text: str
     mapping_status: str
@@ -186,6 +206,17 @@ class StructureContextLink(BaseModel):
     drug_name: str | None = None
     target_source: str
     relation_note: str | None = None
+
+
+class StructureContextSummary(BaseModel):
+    total_links: int = 0
+    diseases: list[str] = Field(default_factory=list)
+    disease_count: int = 0
+    drug_count: int = 0
+    evidence_count: int = 0
+    candidate_target_count: int = 0
+    image_evidence_count: int = 0
+    target_source_counts: dict[str, int] = Field(default_factory=dict)
 
 
 class StructureDetailResponse(BaseModel):
@@ -216,6 +247,7 @@ class StructureDetailResponse(BaseModel):
     diseases: list[str] = Field(default_factory=list)
     target_links: list[StructureTargetLink] = Field(default_factory=list)
     context_links: list[StructureContextLink] = Field(default_factory=list)
+    context_summary: StructureContextSummary = Field(default_factory=StructureContextSummary)
 
 
 class PipelineRunCreateRequest(BaseModel):

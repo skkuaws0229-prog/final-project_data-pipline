@@ -44,6 +44,8 @@ GET /search?q=JAK&disease_id=RA
 GET /api/structures/targets
 GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
+GET /api/structures?disease_id=RA
+GET /api/structures?q=JAK
 GET /api/structures/{structure_id}
 GET /api/structures/{structure_id}/file
 POST /api/pipeline-runs/preflight
@@ -85,6 +87,8 @@ docs/candidate_structure_links_validation_v1.md
 docs/structure_api_final_validation_v1.md
 docs/alphafold_pilot_file_proxy_validation_v1.md
 docs/alphafold_full_file_proxy_validation_v1.md
+docs/alphafold_viewer_qa_template_v1.md
+docs/alphafold_context_summary_and_structures_api_v1.md
 FRONTEND_HANDOFF_STRUCTURE_API_v1.md
 ```
 

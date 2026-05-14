@@ -1,0 +1,6 @@
+structure_id,gene_symbol,uniprot_id,diseases,viewer_library,viewer_load_status,load_time_ms,render_status,error_message,tested_by,tested_at,notes
+af_p23458_f1_v6,JAK1,P23458,IPF|Psoriasis|RA,,pass,,visible,,frontend,,pilot loaded
+af_p00533_f1_v6,EGFR,P00533,,,,not_tested,,not_tested,,,,
+af_p04637_f1_v6,TP53,P04637,,,,not_tested,,not_tested,,,,
+af_p42345_f1_v6,MTOR,P42345,,,,not_tested,,not_tested,,,,
+af_p35968_f1_v6,KDR,P35968,,,,not_tested,,not_tested,,,,

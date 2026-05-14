@@ -24,7 +24,7 @@ from app.pipeline_db import (
 )
 from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
-from app.structures_db import get_structure_detail, get_structure_file_metadata, list_structure_targets, resolve_structure_cache_path
+from app.structures_db import get_structure_detail, get_structure_file_metadata, list_structure_targets, list_structures, resolve_structure_cache_path
 from app.schemas import (
     Disease,
     DrugCandidate,
@@ -44,6 +44,7 @@ from app.schemas import (
     PipelineRunsResponse,
     SearchResponse,
     StructureDetailResponse,
+    StructureListResponse,
     StructureTargetsResponse,
 )
 
@@ -121,6 +122,19 @@ def get_structure_targets(
         if not disease:
             raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
     return {"targets": list_structure_targets(disease_id=disease_id, q=q, limit=limit)}
+
+
+@app.get("/api/structures", response_model=StructureListResponse)
+def get_structures(
+    disease_id: str | None = Query(None, description="Optional disease id, e.g. RA, PAH, HNSC"),
+    q: str | None = Query(None, min_length=1, description="Optional gene, UniProt, or protein search"),
+    limit: int = Query(100, ge=1, le=200),
+) -> dict:
+    if disease_id:
+        disease = fetch_one("SELECT disease_id FROM diseases WHERE disease_id = %(disease_id)s", {"disease_id": disease_id})
+        if not disease:
+            raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_id}")
+    return {"structures": list_structures(disease_id=disease_id, q=q, limit=limit)}
 
 
 @app.get("/api/structures/{structure_id}", response_model=StructureDetailResponse)

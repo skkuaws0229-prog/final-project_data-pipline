@@ -4,6 +4,25 @@ from app.config import settings
 from app.db import fetch_all, fetch_one
 
 
+def build_context_summary(context_links: list[dict]) -> dict:
+    diseases = sorted({link["disease_id"] for link in context_links if link.get("disease_id")})
+    drugs = {link.get("canonical_drug_id") or link.get("drug_name") for link in context_links if link.get("canonical_drug_id") or link.get("drug_name")}
+    target_source_counts: dict[str, int] = {}
+    for link in context_links:
+        source = link.get("target_source") or "unknown"
+        target_source_counts[source] = target_source_counts.get(source, 0) + 1
+    return {
+        "total_links": len(context_links),
+        "diseases": diseases,
+        "disease_count": len(diseases),
+        "drug_count": len(drugs),
+        "evidence_count": sum(1 for link in context_links if link.get("evidence_id")),
+        "candidate_target_count": target_source_counts.get("candidate_target", 0),
+        "image_evidence_count": target_source_counts.get("image_evidence", 0),
+        "target_source_counts": target_source_counts,
+    }
+
+
 def list_structure_targets(disease_id: str | None = None, q: str | None = None, limit: int = 100) -> list[dict]:
     filters = []
     params: dict[str, object] = {"limit": limit}
@@ -90,6 +109,103 @@ def list_structure_targets(disease_id: str | None = None, q: str | None = None, 
         params,
     )
     return [dict(row) for row in rows]
+
+
+def list_structures(disease_id: str | None = None, q: str | None = None, limit: int = 100) -> list[dict]:
+    filters = []
+    params: dict[str, object] = {"limit": limit}
+    if disease_id:
+        filters.append(
+            """
+            EXISTS (
+              SELECT 1
+              FROM candidate_protein_structure_links cpsl
+              WHERE cpsl.structure_id = afs.structure_id
+                AND cpsl.disease_id = %(disease_id)s
+            )
+            """
+        )
+        params["disease_id"] = disease_id
+    if q:
+        filters.append(
+            """
+            (
+              pt.gene_symbol ILIKE %(query)s OR
+              pt.uniprot_id ILIKE %(query)s OR
+              pt.protein_name ILIKE %(query)s
+            )
+            """
+        )
+        params["query"] = f"%{q}%"
+    where_sql = f"WHERE {' AND '.join(filters)}" if filters else ""
+    rows = fetch_all(
+        f"""
+        WITH target_context AS (
+          SELECT
+            tpl.protein_id,
+            array_remove(array_agg(DISTINCT tpl.target_text ORDER BY tpl.target_text), NULL) AS target_texts,
+            array_remove(array_agg(DISTINCT NULLIF(disease.value, '') ORDER BY NULLIF(disease.value, '')), NULL) AS diseases
+          FROM target_protein_links tpl
+          LEFT JOIN LATERAL regexp_split_to_table(COALESCE(tpl.raw_json->>'diseases', ''), '\\|') AS disease(value) ON true
+          GROUP BY tpl.protein_id
+        ),
+        structure_context AS (
+          SELECT
+            cpsl.structure_id,
+            jsonb_agg(
+              jsonb_build_object(
+                'disease_id', cpsl.disease_id,
+                'candidate_id', cpsl.candidate_id,
+                'evidence_id', cpsl.evidence_id,
+                'canonical_drug_id', cpsl.canonical_drug_id,
+                'drug_name', COALESCE(cd.primary_drug_name, d.drug_name, ime.drug_name),
+                'target_source', cpsl.target_source
+              )
+              ORDER BY cpsl.disease_id, cpsl.target_source, cpsl.context_id
+            ) AS context_links
+          FROM candidate_protein_structure_links cpsl
+          LEFT JOIN canonical_drugs cd ON cd.canonical_drug_id = cpsl.canonical_drug_id
+          LEFT JOIN drug_candidates dc ON dc.candidate_id = cpsl.candidate_id
+          LEFT JOIN drugs d ON d.drug_id = dc.drug_id
+          LEFT JOIN image_modal_drug_evidence ime ON ime.evidence_id = cpsl.evidence_id
+          GROUP BY cpsl.structure_id
+        )
+        SELECT
+          afs.structure_id,
+          afs.protein_id,
+          pt.gene_symbol,
+          pt.uniprot_id,
+          pt.protein_name,
+          afs.file_format,
+          CASE
+            WHEN afs.status = 'available' THEN 'available'
+            WHEN afs.status = 'to_fetch' THEN 'pending'
+            WHEN afs.status = 'missing' THEN 'missing'
+            ELSE 'failed'
+          END AS structure_status,
+          afs.mean_plddt,
+          afs.file_size_bytes,
+          COALESCE(tc.diseases, ARRAY[]::text[]) AS diseases,
+          COALESCE(tc.target_texts, ARRAY[]::text[]) AS target_texts,
+          COALESCE(sc.context_links, '[]'::jsonb) AS context_links
+        FROM alphafold_structures afs
+        JOIN protein_targets pt ON pt.protein_id = afs.protein_id
+        LEFT JOIN target_context tc ON tc.protein_id = afs.protein_id
+        LEFT JOIN structure_context sc ON sc.structure_id = afs.structure_id
+        {where_sql}
+        ORDER BY pt.gene_symbol NULLS LAST, pt.uniprot_id NULLS LAST
+        LIMIT %(limit)s
+        """,
+        params,
+    )
+    results = []
+    for row in rows:
+        item = dict(row)
+        context_links = item.pop("context_links") or []
+        item["context_summary"] = build_context_summary(context_links)
+        item["file_endpoint"] = f"/api/structures/{item['structure_id']}/file"
+        results.append(item)
+    return results
 
 
 def get_structure_detail(structure_id: str) -> dict | None:
@@ -179,7 +295,12 @@ def get_structure_detail(structure_id: str) -> dict | None:
         """,
         {"structure_id": structure_id},
     )
-    return dict(row) if row else None
+    if not row:
+        return None
+    result = dict(row)
+    context_links = result.get("context_links") or []
+    result["context_summary"] = build_context_summary(context_links)
+    return result
 
 
 def get_structure_file_metadata(structure_id: str) -> dict | None:
