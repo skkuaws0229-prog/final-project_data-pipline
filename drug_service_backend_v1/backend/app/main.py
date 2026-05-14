@@ -9,6 +9,7 @@ from app.kg_embedding_db import get_kg_scores, load_kg_scores
 from app.pipeline_db import (
     get_pipeline_run,
     insert_pipeline_config,
+    insert_pipeline_event,
     insert_pipeline_run,
     list_pipeline_artifacts,
     list_pipeline_events,
@@ -16,6 +17,8 @@ from app.pipeline_db import (
     make_config_yaml,
     normalize_execution_backend,
     normalize_pipeline_request,
+    preflight_pipeline_request,
+    update_pipeline_run,
     VALID_EXECUTION_BACKENDS,
     VALID_RUN_STATUSES,
 )
@@ -36,6 +39,7 @@ from app.schemas import (
     PipelineArtifactsResponse,
     PipelineRunCreateRequest,
     PipelineRunEventsResponse,
+    PipelineRunPreflightResponse,
     PipelineRunResponse,
     PipelineRunsResponse,
     SearchResponse,
@@ -156,7 +160,7 @@ def _serialize_pipeline_row(row: dict) -> dict:
 @app.post("/api/pipeline-runs", response_model=PipelineRunResponse)
 def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
     try:
-        disease_name, disease_slug, mode, execution_backend = normalize_pipeline_request(
+        preflight = preflight_pipeline_request(
             request.disease_name,
             request.mode,
             request.execution_backend,
@@ -164,12 +168,18 @@ def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
 
+    disease_name = preflight["disease_name"]
+    disease_slug = preflight["disease_slug"]
+    mode = preflight["mode"]
+    execution_backend = preflight["execution_backend"]
     config_snapshot = {
         "disease_name": disease_name,
         "disease_slug": disease_slug,
         "mode": mode,
         "execution_backend": execution_backend,
-        "execution_backend_input": request.execution_backend,
+        "execution_backend_input": preflight["execution_backend_alias"] or request.execution_backend,
+        "input_disease_name": request.disease_name,
+        "preflight": preflight,
         "random_seed": request.random_seed,
         "user_config": request.config_snapshot,
         "secret_policy": "store_secret_ids_only",
@@ -185,8 +195,32 @@ def create_pipeline_run(request: PipelineRunCreateRequest) -> dict:
     )
     config_yaml = make_config_yaml(disease_name, disease_slug, mode, execution_backend, request.random_seed)
     insert_pipeline_config(run["run_id"], disease_name, disease_slug, config_yaml)
+    if preflight["preflight_status"] == "needs_registration":
+        insert_pipeline_event(
+            run["run_id"],
+            "warning",
+            "preflight",
+            "신규 질환은 등록과 입력 데이터 검증이 필요합니다",
+            preflight,
+        )
+        blocked = update_pipeline_run(
+            run["run_id"],
+            status="blocked",
+            current_step="preflight",
+            verdict="needs_registration",
+            error_message="disease registration and input data verification required",
+        )
+        return _serialize_pipeline_row(blocked or run)
     run = get_orchestrator(execution_backend).submit_run(run)
     return _serialize_pipeline_row(run)
+
+
+@app.post("/api/pipeline-runs/preflight", response_model=PipelineRunPreflightResponse)
+def preflight_pipeline_run(request: PipelineRunCreateRequest) -> dict:
+    try:
+        return preflight_pipeline_request(request.disease_name, request.mode, request.execution_backend)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
 @app.get("/api/pipeline-runs", response_model=PipelineRunsResponse)

@@ -127,6 +127,7 @@ Response 예시:
 - 바로 상세 조회 또는 event/artifact 조회를 호출한다.
 - 현재는 mock이므로 생성 직후 running/mock_pipeline 상태가 된다.
 - `execution_backend`는 특수문자 alias도 허용한다.
+- `disease_name` 앞에 `$`, `@`, `#`를 붙여도 backend alias로 해석한다.
 ```
 
 ```text
@@ -145,10 +146,74 @@ $ -> mock
 }
 ```
 
+신규 질환 prefix 예:
+
+```json
+{
+  "disease_name": "$알츠하이머",
+  "mode": "full"
+}
+```
+
 주의:
 
 ```text
 DB에는 $, @, #가 저장되지 않고 mock/local_agent/aws_stepfunctions로 정규화되어 저장된다.
+신규 질환은 실제 실행하지 않고 blocked/needs_registration으로 저장된다.
+```
+
+## 1-1. Run preflight
+
+```http
+POST /api/pipeline-runs/preflight
+```
+
+DB run을 만들기 전에 실행 가능 여부만 확인한다.
+
+Request:
+
+```json
+{
+  "disease_name": "$알츠하이머",
+  "mode": "full"
+}
+```
+
+Response:
+
+```json
+{
+  "input_disease_name": "$알츠하이머",
+  "disease_name": "알츠하이머",
+  "disease_slug": "new_e533d1ded4eb",
+  "mode": "full",
+  "execution_backend": "mock",
+  "execution_backend_alias": "$",
+  "is_supported_disease": false,
+  "backend_enabled": true,
+  "preflight_status": "needs_registration",
+  "can_create_run": true,
+  "will_execute": false,
+  "reasons": [
+    "disease_mapping_missing",
+    "s3_input_not_verified",
+    "schema_mapping_not_defined"
+  ],
+  "required_actions": [
+    "register_disease_mapping",
+    "confirm_s3_input_prefix",
+    "define_column_mapping",
+    "run_data_integrity_check"
+  ]
+}
+```
+
+`preflight_status` 의미:
+
+```text
+ready                 기존 질환이며 현재 backend로 실행 가능
+needs_registration    신규 질환이라 disease/input/schema 등록 필요
+backend_disabled      기존 질환이지만 @/# backend feature flag가 꺼짐
 ```
 
 ## 2. Run 목록 조회

@@ -46,6 +46,7 @@ GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
 GET /api/structures/{structure_id}
 GET /api/structures/{structure_id}/file
+POST /api/pipeline-runs/preflight
 POST /api/pipeline-runs
 GET /api/pipeline-runs
 GET /api/pipeline-runs/{run_id}
@@ -187,7 +188,18 @@ docs/pipeline_backend_integration_plan.md
 docs/pipeline_run_api_openapi.yaml
 docs/pipeline_run_validation_v1.md
 docs/pipeline_run_backend_alias_validation_v1.md
+docs/pipeline_run_preflight_v2_validation.md
 ```
+
+`disease_name` 앞에 `$`, `@`, `#`를 붙이는 입력도 허용합니다.
+
+```text
+$알츠하이머 -> mock/preflight
+@류마티스 관절염 -> local_agent
+#폐암 -> aws_stepfunctions
+```
+
+신규 질환은 실제 실행하지 않고 `blocked / needs_registration`으로 저장합니다.
 
 ## 검증 상태
 

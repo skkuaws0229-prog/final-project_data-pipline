@@ -227,6 +227,22 @@ class PipelineRunCreateRequest(BaseModel):
     config_snapshot: dict[str, Any] = Field(default_factory=dict)
 
 
+class PipelineRunPreflightResponse(BaseModel):
+    input_disease_name: str
+    disease_name: str
+    disease_slug: str
+    mode: str
+    execution_backend: str
+    execution_backend_alias: str | None = None
+    is_supported_disease: bool
+    backend_enabled: bool
+    preflight_status: str
+    can_create_run: bool
+    will_execute: bool
+    reasons: list[str] = Field(default_factory=list)
+    required_actions: list[str] = Field(default_factory=list)
+
+
 class PipelineRunResponse(BaseModel):
     run_id: str
     disease_name: str

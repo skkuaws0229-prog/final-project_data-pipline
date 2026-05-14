@@ -4,6 +4,32 @@ info:
   version: 0.1.0
   description: Bedrock/RAG/LLM 연결 전 파이프라인 실행 제어 계층 mock API. execution_backend 입력은 `$=mock`, `@=local_agent`, `#=aws_stepfunctions` alias도 허용한다.
 paths:
+  /api/pipeline-runs/preflight:
+    post:
+      summary: Preflight pipeline run
+      description: DB run 생성 전 `$질환명`, `@질환명`, `#질환명` 입력을 해석하고 실행 가능 여부를 확인한다.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [disease_name]
+              properties:
+                disease_name:
+                  type: string
+                  example: $알츠하이머
+                mode:
+                  type: string
+                  enum: [basic, image_modal, full]
+                  default: full
+                execution_backend:
+                  type: string
+                  enum: [mock, local_agent, aws_stepfunctions, $, "@", "#"]
+                  default: mock
+      responses:
+        "200":
+          description: Preflight result
   /api/pipeline-runs:
     get:
       summary: List pipeline runs

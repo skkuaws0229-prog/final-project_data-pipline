@@ -34,6 +34,7 @@ EXECUTION_BACKEND_ALIASES = {
     "@": "local_agent",
     "#": "aws_stepfunctions",
 }
+EXECUTION_BACKEND_TO_ALIAS = {value: key for key, value in EXECUTION_BACKEND_ALIASES.items()}
 VALID_RUN_STATUSES = {"queued", "preflight", "running", "waiting_external_job", "validating", "completed", "failed", "cancelled", "blocked"}
 
 
@@ -115,17 +116,78 @@ def normalize_execution_backend(execution_backend: str) -> str:
     return EXECUTION_BACKEND_ALIASES.get(value, value)
 
 
-def normalize_pipeline_request(disease_name: str, mode: str, execution_backend: str) -> tuple[str, str, str, str]:
+def split_backend_prefixed_disease(disease_name: str, execution_backend: str) -> tuple[str, str, str | None]:
     disease_name = disease_name.strip()
-    disease_slug = DISEASE_NAME_TO_SLUG.get(disease_name)
-    execution_backend = normalize_execution_backend(execution_backend)
-    if not disease_slug:
-        raise ValueError(f"Unsupported disease_name: {disease_name}")
+    prefix = disease_name[:1]
+    if prefix in EXECUTION_BACKEND_ALIASES:
+        return disease_name[1:].strip(), EXECUTION_BACKEND_ALIASES[prefix], prefix
+    return disease_name, normalize_execution_backend(execution_backend), None
+
+
+def disease_slug_for_unknown(disease_name: str) -> str:
+    digest = hashlib.sha1(disease_name.encode("utf-8")).hexdigest()[:12]
+    return f"new_{digest}"
+
+
+def preflight_pipeline_request(disease_name: str, mode: str, execution_backend: str) -> dict[str, Any]:
+    parsed_disease_name, normalized_backend, backend_prefix = split_backend_prefixed_disease(disease_name, execution_backend)
+    if not parsed_disease_name:
+        raise ValueError("disease_name is required")
     if mode not in VALID_PIPELINE_MODES:
         raise ValueError(f"Unsupported mode: {mode}")
-    if execution_backend not in VALID_EXECUTION_BACKENDS:
-        raise ValueError(f"Unsupported execution_backend: {execution_backend}")
-    return disease_name, disease_slug, mode, execution_backend
+    if normalized_backend not in VALID_EXECUTION_BACKENDS:
+        raise ValueError(f"Unsupported execution_backend: {normalized_backend}")
+
+    disease_slug = DISEASE_NAME_TO_SLUG.get(parsed_disease_name)
+    is_supported = disease_slug is not None
+    reasons: list[str] = []
+    required_actions: list[str] = []
+    preflight_status = "ready"
+    if not is_supported:
+        disease_slug = disease_slug_for_unknown(parsed_disease_name)
+        preflight_status = "needs_registration"
+        reasons.extend(["disease_mapping_missing", "s3_input_not_verified", "schema_mapping_not_defined"])
+        required_actions.extend(
+            [
+                "register_disease_mapping",
+                "confirm_s3_input_prefix",
+                "define_column_mapping",
+                "run_data_integrity_check",
+            ]
+        )
+
+    backend_enabled = (
+        normalized_backend == "mock"
+        or (normalized_backend == "local_agent" and settings.pipeline_enable_local_agent)
+        or (normalized_backend == "aws_stepfunctions" and settings.pipeline_enable_aws_stepfunctions)
+    )
+    if is_supported and not backend_enabled:
+        preflight_status = "backend_disabled"
+        reasons.append(f"{normalized_backend}_disabled")
+        required_actions.append("enable_backend_feature_flag")
+
+    return {
+        "input_disease_name": disease_name,
+        "disease_name": parsed_disease_name,
+        "disease_slug": disease_slug,
+        "mode": mode,
+        "execution_backend": normalized_backend,
+        "execution_backend_alias": backend_prefix or EXECUTION_BACKEND_TO_ALIAS.get(normalized_backend),
+        "is_supported_disease": is_supported,
+        "backend_enabled": backend_enabled,
+        "preflight_status": preflight_status,
+        "can_create_run": True,
+        "will_execute": preflight_status == "ready" and normalized_backend == "mock",
+        "reasons": reasons,
+        "required_actions": required_actions,
+    }
+
+
+def normalize_pipeline_request(disease_name: str, mode: str, execution_backend: str) -> tuple[str, str, str, str]:
+    preflight = preflight_pipeline_request(disease_name, mode, execution_backend)
+    if not preflight["is_supported_disease"]:
+        raise ValueError(f"Unsupported disease_name: {preflight['disease_name']}")
+    return preflight["disease_name"], preflight["disease_slug"], preflight["mode"], preflight["execution_backend"]
 
 
 def make_config_yaml(disease_name: str, disease_slug: str, mode: str, execution_backend: str, random_seed: int) -> str:
