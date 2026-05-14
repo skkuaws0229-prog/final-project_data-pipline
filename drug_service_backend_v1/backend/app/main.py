@@ -950,7 +950,7 @@ def _resolve_disease_id(disease_code: str) -> str:
     return disease["disease_id"]
 
 
-def _list_drug_candidates(disease_code: str, limit: int, offset: int) -> list[dict]:
+def _list_final_drug_candidates(disease_code: str, limit: int, offset: int) -> list[dict]:
     disease_id = _resolve_disease_id(disease_code)
     return fetch_all(
         """
@@ -1002,7 +1002,65 @@ def _list_drug_candidates(disease_code: str, limit: int, offset: int) -> list[di
           admet_status,
           hard_fail,
           hard_fail_reasons,
-          soft_flags
+          soft_flags,
+          true AS is_final_candidate,
+          'final_candidate' AS candidate_source
+        FROM ranked
+        WHERE row_number = 1
+        ORDER BY rank NULLS LAST, drug_name
+        LIMIT %(limit)s OFFSET %(offset)s
+        """,
+        {"disease_id": disease_id, "limit": limit, "offset": offset},
+    )
+
+
+def _list_candidate_pool(disease_code: str, limit: int, offset: int) -> list[dict]:
+    disease_id = _resolve_disease_id(disease_code)
+    return fetch_all(
+        """
+        WITH ranked AS (
+          SELECT
+            candidate_id,
+            disease_id,
+            drug_id,
+            canonical_drug_id,
+            drug_name,
+            rank,
+            tier,
+            score,
+            target,
+            target_pathway,
+            evidence_summary,
+            canonical_smiles,
+            is_final_candidate,
+            ROW_NUMBER() OVER (
+              PARTITION BY disease_id, lower(drug_name)
+              ORDER BY rank NULLS LAST, candidate_id
+            ) AS row_number
+          FROM candidate_pool
+          WHERE disease_id = %(disease_id)s
+        )
+        SELECT
+          candidate_id,
+          disease_id,
+          drug_id,
+          canonical_drug_id,
+          drug_name,
+          rank,
+          tier,
+          score,
+          target,
+          target_pathway,
+          evidence_summary,
+          canonical_smiles,
+          NULL::text AS safety_score,
+          NULL::text AS verdict,
+          NULL::text AS admet_status,
+          NULL::text AS hard_fail,
+          NULL::text AS hard_fail_reasons,
+          NULL::text AS soft_flags,
+          is_final_candidate,
+          'candidate_pool' AS candidate_source
         FROM ranked
         WHERE row_number = 1
         ORDER BY rank NULLS LAST, drug_name
@@ -1018,18 +1076,26 @@ def list_drugs(
     limit: int = Query(100, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> list[dict]:
-    return _list_drug_candidates(disease_id, limit, offset)
+    return _list_final_drug_candidates(disease_id, limit, offset)
 
 
 @app.get("/api/diseases/{disease_code}/candidates", response_model=list[DrugCandidate])
 @app.get("/v1/diseases/{disease_code}/candidates", response_model=list[DrugCandidate])
-@app.get("/v1/diseases/{disease_code}/final-candidates", response_model=list[DrugCandidate])
 def list_disease_candidates(
     disease_code: str,
     limit: int = Query(100, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> list[dict]:
-    return _list_drug_candidates(disease_code, limit, offset)
+    return _list_candidate_pool(disease_code, limit, offset)
+
+
+@app.get("/v1/diseases/{disease_code}/final-candidates", response_model=list[DrugCandidate])
+def list_disease_final_candidates(
+    disease_code: str,
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> list[dict]:
+    return _list_final_drug_candidates(disease_code, limit, offset)
 
 
 @app.get("/drugs/{drug_id}", response_model=DrugDetail)

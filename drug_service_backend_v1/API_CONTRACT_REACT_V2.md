@@ -114,16 +114,14 @@ candidate_count  number
 
 프론트엔드 path 기반 후보 약물 목록 endpoint입니다.
 
-아래 endpoint들은 모두 같은 응답을 반환합니다.
+아래 endpoint들은 같은 후보 pool 응답을 반환합니다.
 
 ```text
 GET /api/diseases/{disease_code}/candidates
 GET /v1/diseases/{disease_code}/candidates
-GET /v1/diseases/{disease_code}/final-candidates
-GET /drugs?disease_id={disease_code}
 ```
 
-프론트 canonical endpoint는 아래를 권장합니다.
+프론트 전체 후보 보기 canonical endpoint는 아래를 권장합니다.
 
 ```text
 GET /api/diseases/RA/candidates?limit=100
@@ -131,9 +129,24 @@ GET /api/diseases/RA/candidates?limit=100
 
 `disease_code`는 대소문자 차이를 허용합니다. 예를 들어 `RA`와 `ra`는 같은 질환으로 해석됩니다.
 
+기본 Candidates 화면은 최종 후보 전용 endpoint를 사용합니다.
+
+```text
+GET /v1/diseases/{disease_code}/final-candidates
+```
+
+`final-candidates`는 `drug_candidates` final/admet artifact 계층을 조회하고, `candidates`는 별도 `candidate_pool` broader 후보 계층을 조회합니다.
+
+전체 후보 응답에는 `is_final_candidate`가 포함됩니다.
+
+```text
+is_final_candidate = true  -> 최종 후보
+is_final_candidate = false -> 후보 pool 단계 또는 탈락
+```
+
 ### 기존 호환: GET /drugs
 
-질병별 후보 약물 목록을 반환합니다.
+질병별 final 후보 약물 목록을 반환합니다.
 
 Query:
 

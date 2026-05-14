@@ -1,0 +1,31 @@
+Rank,ChEMBL_ID,Drug_Name,Model_Rank,drug_level_score,Primary_Target,max_phase,Source,Tier
+1,CHEMBL6059683,Unnamed JAK1 preclinical compound,1,-4.404797301413812,JAK1,,model_top20,Tier4
+2,CHEMBL5945428,Unnamed JAK1 preclinical compound,2,-4.402420762619502,JAK1,,model_top20,Tier4
+3,CHEMBL6020772,Unnamed JAK1 preclinical compound,3,-4.402420762619502,JAK1,,model_top20,Tier4
+4,CHEMBL5956808,Unnamed JAK1 preclinical compound,4,-4.399579280076667,JAK1,,model_top20,Tier4
+5,CHEMBL6021211,Unnamed JAK1 preclinical compound,5,-4.387690687283208,JAK1,,model_top20,Tier4
+6,CHEMBL5777052,Unnamed JAK1 preclinical compound,6,-4.372804416520248,JAK1,,model_top20,Tier4
+7,CHEMBL3652405,Unnamed JAK1 preclinical compound,7,-4.372175927193261,JAK1,,model_top20,Tier4
+8,CHEMBL5885656,Unnamed JAK1 preclinical compound,8,-4.372069936947769,JAK1,,model_top20,Tier4
+9,CHEMBL5883265,Unnamed JAK1 preclinical compound,9,-4.36987363523634,JAK1,,model_top20,Tier4
+10,CHEMBL5784853,Unnamed JAK1 preclinical compound,10,-4.369612369501382,JAK1,,model_top20,Tier4
+11,CHEMBL5749084,Unnamed JAK1 preclinical compound,11,-4.363156678771032,JAK1,,model_top20,Tier4
+12,CHEMBL6064726,Unnamed JAK1 preclinical compound,12,-4.359809607582895,JAK1,,model_top20,Tier4
+13,CHEMBL6031741,Unnamed JAK1 preclinical compound,13,-4.356020368196619,JAK1,,model_top20,Tier4
+14,CHEMBL6017191,Unnamed JAK1 preclinical compound,14,-4.35523455739966,JAK1,,model_top20,Tier4
+15,CHEMBL3652403,Unnamed JAK1 preclinical compound,15,-4.344067383277476,JAK1,,model_top20,Tier4
+16,CHEMBL5931590,Unnamed JAK1 preclinical compound,16,-4.334092272426654,JAK1,,model_top20,Tier4
+17,CHEMBL6065435,Unnamed JAK1 preclinical compound,17,-4.333881007839489,JAK1,,model_top20,Tier4
+18,CHEMBL5950639,Unnamed JAK1 preclinical compound,18,-4.333881007839489,JAK1,,model_top20,Tier4
+19,CHEMBL5890561,Unnamed JAK1 preclinical compound,19,-4.331007231883612,JAK1,,model_top20,Tier4
+20,CHEMBL3652410,Unnamed JAK1 preclinical compound,20,-4.316552930478186,JAK1,,model_top20,Tier4
+21,CHEMBL502835,Nintedanib,8350,-1.13900439821085,PDGFRB,17.828125,clinical_ipf,Tier1
+22,CHEMBL1171837,Ponatinib,887,-3.2458617673888663,PDGFRB,17.828125,clinical_repur,Tier2
+23,CHEMBL495727,AT-9283,835,-3.279430904509071,FGFR2,,clinical_repur,Tier2
+24,CHEMBL1789941,Ruxolitinib,2001,-2.739619827189386,JAK1,17.828125,clinical_repur,Tier2
+25,CHEMBL221959,Tofacitinib,2885,-2.464100708535658,JAK1,17.828125,clinical_repur,Tier2
+26,CHEMBL477772,Pazopanib,12419,-0.3689907468086709,KDR,17.828125,clinical_repur,Tier2
+27,CHEMBL535,Sunitinib,13857,-0.1375403344708105,PDGFRB,17.828125,clinical_repur,Tier2
+28,CHEMBL1336,Sorafenib,14031,-0.1196366092660834,KDR,17.828125,clinical_repur,Tier2
+29,CHEMBL5769608,TGFBR1 lead compound,1015,-3.157977318757388,TGFBR1,,preclinical_lead,Tier4
+30,CHEMBL1784637,PDGFRA lead compound,950,-3.20412907579738,PDGFRA,,preclinical_lead,Tier4

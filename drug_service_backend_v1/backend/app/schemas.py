@@ -33,6 +33,8 @@ class DrugCandidate(BaseModel):
     hard_fail: str | None = None
     hard_fail_reasons: str | None = None
     soft_flags: str | None = None
+    is_final_candidate: bool | None = None
+    candidate_source: str | None = None
 
 
 class DrugDetail(BaseModel):

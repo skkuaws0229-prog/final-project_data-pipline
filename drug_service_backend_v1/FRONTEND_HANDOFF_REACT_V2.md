@@ -106,6 +106,14 @@ POST /api/pipeline-runs/{run_id}/cancel
 POST /api/pipeline-runs/{run_id}/complete
 ```
 
+Candidates 화면 기준:
+
+```text
+기본 화면: GET /v1/diseases/{disease_code}/final-candidates
+전체 후보 보기: GET /api/diseases/{disease_code}/candidates
+전체 후보 row 표시: is_final_candidate로 “최종 후보 / 탈락” 구분
+```
+
 ## 데이터 매칭 규칙
 
 약물 연결 기준:
