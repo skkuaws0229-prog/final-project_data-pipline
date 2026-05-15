@@ -380,3 +380,31 @@ class ExplanationContextResponse(BaseModel):
     retrieval_sources: list[dict[str, Any]] = Field(default_factory=list)
     prompt_guardrails: list[str] = Field(default_factory=list)
     status: str
+
+
+class AssistantSuggestedQuestionsResponse(BaseModel):
+    disease_id: str
+    display_name: str | None = None
+    questions: list[str]
+    items: list[dict[str, Any]] = Field(default_factory=list)
+    source: str = "team_api_static_v1"
+
+
+class AssistantAskRequest(BaseModel):
+    question: str
+    mode: str = "read_only"
+
+
+class AssistantAskResponse(BaseModel):
+    disease_id: str
+    display_name: str | None = None
+    question: str
+    mode: str
+    answer: str
+    answer_type: str
+    used_bedrock: bool = False
+    context: dict[str, Any] = Field(default_factory=dict)
+    sources: list[dict[str, Any]] = Field(default_factory=list)
+    suggested_followups: list[str] = Field(default_factory=list)
+    guardrails: list[str] = Field(default_factory=list)
+    status: str = "ready"

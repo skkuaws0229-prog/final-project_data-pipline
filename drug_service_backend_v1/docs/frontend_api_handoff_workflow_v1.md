@@ -453,7 +453,58 @@ flowchart TD
     Detail --> Path["Path score<br/>/graph/path-score"]
     Detail --> Structure["구조 보기<br/>/api/structures/.../file"]
     Detail --> Explain["설명 버튼<br/>/api/explanation-context"]
+    Disease --> Assistant["챗봇 quick questions<br/>/api/assistant/{disease}/suggested-questions"]
+    Assistant --> Ask["챗봇 질문<br/>/api/assistant/{disease}/ask"]
     Explain --> Bedrock["Bedrock prompt<br/>프론트/챗봇에서 호출"]
+    Ask --> BedrockFallback["Bedrock fallback<br/>team API 실패 시"]
+```
+
+## 13. Assistant/chatbot team API
+
+```text
+GET  /api/assistant/{disease}/suggested-questions
+POST /api/assistant/{disease}/ask
+```
+
+의미:
+
+```text
+프론트 챗봇이 Bedrock fallback으로 바로 가지 않고 team API를 먼저 호출하기 위한 read-only assistant 계층
+현재는 PostgreSQL/Neo4j/OpenSearch/AlphaFold metadata 기반 요약 응답
+Bedrock/LLM 실제 호출 없음
+```
+
+`POST /api/assistant/{disease}/ask` 요청 예:
+
+```json
+{
+  "question": "RA에서 AlphaFold 구조 보기 가능한 target protein은?",
+  "mode": "read_only"
+}
+```
+
+응답에서 확인할 필드:
+
+```text
+answer
+answer_type
+used_bedrock=false
+context
+sources
+suggested_followups
+guardrails
+status=ready
+```
+
+검증:
+
+```text
+BRCA suggested-questions: 200
+RA suggested-questions: 200
+BRCA ask: 200
+RA AlphaFold ask: 200, answer_type=structure_summary
+invalid mode: 400
+unknown disease: 404
 ```
 
 ## 프론트에 꼭 전달할 주의사항
@@ -466,7 +517,8 @@ flowchart TD
 5. AlphaFold는 약물이 아니라 target protein 구조 보기
 6. S3 구조 파일을 직접 fetch하지 말고 backend file proxy 사용
 7. Explanation context는 Bedrock prompt용 근거 JSON이며 Bedrock 호출 자체는 아님
-8. API 재빌드/DB 재적재 후 candidate_protein_structure_links=261 확인 필요
+8. Assistant API도 Bedrock 호출 자체는 아니며, team API 실패 시 프론트 fallback 사용
+9. API 재빌드/DB 재적재 후 candidate_protein_structure_links=261 확인 필요
 ```
 
 ## 현재 남은 일

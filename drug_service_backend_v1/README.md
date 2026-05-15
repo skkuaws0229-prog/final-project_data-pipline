@@ -42,6 +42,8 @@ GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
 GET /health/search
 GET /search?q=JAK&disease_id=RA
 GET /api/explanation-context?disease_id=RA&drug_name=Ruxolitinib
+GET /api/assistant/BRCA/suggested-questions
+POST /api/assistant/BRCA/ask
 GET /api/structures/targets
 GET /api/structures/targets?disease_id=RA
 GET /api/structures/targets?q=JAK
@@ -67,6 +69,7 @@ FRONTEND_HANDOFF_REACT_V2.md
 MODEL_ROADMAP_v2.md
 docs/pipeline_backend_integration_plan.md
 docs/pipeline_run_frontend_handoff_v1.md
+docs/assistant_api_validation_v1.md
 docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md

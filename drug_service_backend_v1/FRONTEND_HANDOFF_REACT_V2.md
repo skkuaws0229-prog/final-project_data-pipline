@@ -16,6 +16,7 @@ Pipeline run control API: mock backend 검증 완료
 TxGNN: v1/v2 구현 범위에서 제외
 RAG/Bedrock retrieval 계약: 문서화 완료
 Explanation context API: mock endpoint 구현/검증 완료
+Assistant/chatbot team API: suggested-questions, ask 구현/검증 완료
 RAG/LLM 실제 호출: 아직 미연결
 ```
 
@@ -125,6 +126,35 @@ GET /api/explanation-context?disease_id=BRCA&drug_name=Oxaliplatin
 ```
 
 프론트는 이 응답의 `retrieval_context_v1` JSON을 Bedrock prompt에 넣으면 됩니다.
+
+## Assistant/chatbot team API
+
+프론트가 요청한 assistant 경로가 맞습니다.
+
+```text
+GET  /api/assistant/{disease}/suggested-questions
+POST /api/assistant/{disease}/ask
+```
+
+검증된 예:
+
+```text
+GET  /api/assistant/BRCA/suggested-questions
+GET  /api/assistant/RA/suggested-questions
+POST /api/assistant/BRCA/ask
+POST /api/assistant/RA/ask
+```
+
+`ask` body:
+
+```json
+{
+  "question": "RA에서 AlphaFold 구조 보기 가능한 target protein은?",
+  "mode": "read_only"
+}
+```
+
+현재 assistant는 백엔드 read-only 요약 계층입니다. Bedrock/LLM을 호출하지 않으며, 응답의 `used_bedrock=false`가 정상입니다. 프론트 Bedrock fallback은 team API 호출 실패 시에만 사용하면 됩니다.
 
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 

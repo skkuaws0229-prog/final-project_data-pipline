@@ -880,6 +880,57 @@ run 결과 artifact 목록을 조회합니다.
 - secret/API key는 DB에 저장하지 않습니다.
 - 이 API는 React v2의 일반 화면 기능이라기보다, 이후 챗봇/Bedrock/RAG 연결 전 단계의 backend 계약입니다.
 
+## 15. Assistant/chatbot team API
+
+프론트 챗봇은 Bedrock fallback으로 바로 가지 않고, 먼저 team API assistant endpoint를 호출합니다.
+
+```text
+GET  /api/assistant/{disease}/suggested-questions
+POST /api/assistant/{disease}/ask
+```
+
+예:
+
+```text
+GET  /api/assistant/BRCA/suggested-questions
+GET  /api/assistant/RA/suggested-questions
+POST /api/assistant/BRCA/ask
+```
+
+`ask` 요청:
+
+```json
+{
+  "question": "BRCA 최종 후보 약물 Top 5는?",
+  "mode": "read_only"
+}
+```
+
+`ask` 응답 주요 필드:
+
+```text
+disease_id
+display_name
+question
+mode
+answer
+answer_type
+used_bedrock
+context
+sources
+suggested_followups
+guardrails
+status
+```
+
+주의사항:
+
+- 현재 `mode=read_only`만 지원합니다.
+- 백엔드는 Bedrock/LLM을 직접 호출하지 않습니다.
+- 정상 응답의 `used_bedrock=false`가 맞습니다.
+- 프론트 Bedrock fallback은 team API 실패 시에만 사용합니다.
+- 상세 검증 문서는 `docs/assistant_api_validation_v1.md`입니다.
+
 ## 공통 에러 처리
 
 존재하지 않는 `disease_id`:

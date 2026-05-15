@@ -29,6 +29,9 @@ from app.pipeline_orchestrator import get_orchestrator
 from app.search_db import search_text, verify_search_connectivity
 from app.structures_db import get_structure_detail, get_structure_file_metadata, list_structure_targets, list_structures, resolve_structure_cache_path
 from app.schemas import (
+    AssistantAskRequest,
+    AssistantAskResponse,
+    AssistantSuggestedQuestionsResponse,
     Disease,
     DrugCandidate,
     DrugDetail,
@@ -163,6 +166,245 @@ def get_structure_file(structure_id: str) -> FileResponse:
 
     media_type = "chemical/x-cif" if structure["file_format"] in {"cif", "mmcif"} else "chemical/x-pdb"
     return FileResponse(local_path, media_type=media_type, filename=local_path.name)
+
+
+def _get_disease_or_404(disease_code: str) -> dict:
+    disease = fetch_one(
+        """
+        SELECT disease_id, display_name
+        FROM diseases
+        WHERE disease_id = %(disease_code)s
+           OR lower(disease_id) = lower(%(disease_code)s)
+        LIMIT 1
+        """,
+        {"disease_code": disease_code},
+    )
+    if not disease:
+        raise HTTPException(status_code=404, detail=f"Unknown disease_id: {disease_code}")
+    return disease
+
+
+def _assistant_questions(disease_id: str, display_name: str | None) -> list[str]:
+    label = display_name or disease_id
+    return [
+        f"{label} 최종 후보 약물 Top 5는 무엇인가요?",
+        f"{label} 후보 중 ADMET 기준으로 주의할 약물은 무엇인가요?",
+        f"{label}에서 이미지 모달 근거가 있는 약물은 무엇인가요?",
+        f"{label} 관계 그래프에서 주요 target/pathway는 무엇인가요?",
+        f"{label}에서 AlphaFold 구조 보기 가능한 target protein은 무엇인가요?",
+    ]
+
+
+def _source(source_type: str, endpoint: str, summary: str) -> dict[str, str]:
+    return {"source_type": source_type, "endpoint": endpoint, "summary": summary}
+
+
+def _top_final_candidates(disease_id: str, limit: int = 5) -> list[dict]:
+    return _list_final_drug_candidates(disease_id, limit=limit, offset=0)
+
+
+def _assistant_candidate_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    rows = _top_final_candidates(disease_id, limit=5)
+    names = [f"{row['rank']}. {row['drug_name']} (tier {row.get('tier')}, ADMET {row.get('admet_status') or row.get('verdict')})" for row in rows]
+    label = display_name or disease_id
+    answer = f"{label}의 현재 final-candidates Top {len(rows)}는 " + "; ".join(names) + " 입니다. 이 결과는 최종 후보 API와 ADMET 요약을 읽은 read-only 응답입니다."
+    return {
+        "answer": answer,
+        "answer_type": "final_candidates_summary",
+        "context": {"final_candidates": rows},
+        "sources": [_source("final_candidates", f"/v1/diseases/{disease_id}/final-candidates", "Final candidate list with ADMET fields")],
+    }
+
+
+def _assistant_admet_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    rows = fetch_all(
+        """
+        SELECT
+          c.candidate_id,
+          d.drug_name,
+          c.rank,
+          c.tier,
+          a.safety_score,
+          a.verdict,
+          a.admet_status,
+          a.hard_fail,
+          a.hard_fail_reasons,
+          a.soft_flags
+        FROM drug_candidates c
+        JOIN drugs d ON d.drug_id = c.drug_id
+        LEFT JOIN admet_results a ON a.candidate_id = c.candidate_id
+        WHERE c.disease_id = %(disease_id)s
+          AND (
+            COALESCE(a.verdict, '') <> 'PASS'
+            OR COALESCE(a.admet_status, '') <> 'PASS'
+            OR COALESCE(a.hard_fail, '') NOT IN ('', '0', 'false', 'False')
+            OR COALESCE(a.soft_flags, '') <> ''
+          )
+        ORDER BY c.rank NULLS LAST, d.drug_name
+        LIMIT 5
+        """,
+        {"disease_id": disease_id},
+    )
+    label = display_name or disease_id
+    if rows:
+        summary = "; ".join(
+            f"{row['drug_name']} (rank {row['rank']}, verdict {row.get('verdict')}, flags {row.get('soft_flags') or 'none'})"
+            for row in rows
+        )
+    else:
+        summary = "현재 final candidate 중 뚜렷한 ADMET warning/hard fail 항목은 상위 5개 기준에서 확인되지 않았습니다"
+    return {
+        "answer": f"{label} ADMET 주의 항목은 {summary}. 이 응답은 처방 판단이 아니라 후보 검토용 요약입니다.",
+        "answer_type": "admet_risk_summary",
+        "context": {"admet_risk_candidates": rows},
+        "sources": [_source("admet", f"/v1/diseases/{disease_id}/final-candidates", "ADMET verdict/status/soft flags from final candidates")],
+    }
+
+
+def _assistant_image_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    rows = fetch_all(
+        """
+        SELECT
+          e.drug_name,
+          e.rank,
+          e.tier,
+          e.target,
+          e.evidence_text,
+          c.cluster_key,
+          c.cluster_label,
+          COALESCE(m.match_status, 'unmatched') AS match_status,
+          e.source_file
+        FROM image_modal_drug_evidence e
+        LEFT JOIN image_modal_clusters c ON c.cluster_id = e.cluster_id
+        LEFT JOIN image_modal_evidence_drug_matches m ON m.evidence_id = e.evidence_id
+        WHERE e.disease_id = %(disease_id)s
+        ORDER BY e.rank NULLS LAST, e.drug_name
+        LIMIT 5
+        """,
+        {"disease_id": disease_id},
+    )
+    label = display_name or disease_id
+    summary = "; ".join(
+        f"{row['drug_name']} ({row.get('cluster_label') or row.get('cluster_key')}, {row.get('match_status')})"
+        for row in rows
+    )
+    return {
+        "answer": f"{label} 이미지 모달 근거 상위 항목은 {summary} 입니다. 여기서 이미지 모달은 원본 이미지가 아니라 cluster 기반 약물 근거 텍스트입니다.",
+        "answer_type": "image_evidence_summary",
+        "context": {"image_evidence": rows},
+        "sources": [_source("image_modal_evidence", f"/image-modal/evidence?disease_id={disease_id}", "Image-modal cluster-drug evidence rows")],
+    }
+
+
+def _assistant_graph_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    graph = graph_relations(disease_id=disease_id, limit=50)
+    labels: dict[str, int] = {}
+    edge_types: dict[str, int] = {}
+    for node in graph["nodes"]:
+        labels[node["label"]] = labels.get(node["label"], 0) + 1
+    for edge in graph["edges"]:
+        edge_types[edge["type"]] = edge_types.get(edge["type"], 0) + 1
+    path = graph_path_score(disease_id=disease_id, limit=5)
+    top_scores = path["scores"][:5]
+    score_summary = "; ".join(f"{row['drug_name']} ({row['path_score']})" for row in top_scores)
+    label = display_name or disease_id
+    return {
+        "answer": f"{label} graph는 nodes {len(graph['nodes'])}, edges {len(graph['edges'])}로 구성되어 있습니다. Path score 상위 후보는 {score_summary} 입니다.",
+        "answer_type": "graph_summary",
+        "context": {"node_labels": labels, "edge_types": edge_types, "top_path_scores": top_scores},
+        "sources": [
+            _source("graph", f"/graph/relations?disease_id={disease_id}", "Neo4j graph nodes and edges"),
+            _source("path_score", f"/graph/path-score?disease_id={disease_id}", "Internal explanatory path scoring"),
+        ],
+    }
+
+
+def _assistant_structure_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    targets = list_structure_targets(disease_id=disease_id, limit=10)
+    available = [target for target in targets if target.get("structure_status") == "available"]
+    genes = [target.get("gene_symbol") or target.get("uniprot_id") for target in available[:8]]
+    label = display_name or disease_id
+    gene_text = ", ".join([gene for gene in genes if gene]) or "현재 표시 가능한 target 없음"
+    return {
+        "answer": f"{label}에서 AlphaFold 구조 보기 가능한 target protein은 {gene_text} 입니다. 구조는 약효 증명이 아니라 target/protein 참고자료입니다.",
+        "answer_type": "structure_summary",
+        "context": {"targets": targets, "available_count": len(available)},
+        "sources": [_source("structure_targets", f"/api/structures/targets?disease_id={disease_id}", "Protein target and AlphaFold structure availability")],
+    }
+
+
+def _assistant_general_answer(disease_id: str, display_name: str | None, question: str) -> dict:
+    final_rows = _top_final_candidates(disease_id, limit=3)
+    search_hits = {"total": 0, "hits": []}
+    try:
+        search_hits = _search_context_hits(question, disease_id, doc_type="image_evidence", limit=3)
+    except Exception:
+        pass
+    label = display_name or disease_id
+    names = ", ".join(row["drug_name"] for row in final_rows)
+    return {
+        "answer": f"{label} 맥락에서 우선 확인할 final 후보는 {names} 입니다. 질문과 직접 맞는 근거는 search_context를 함께 확인하세요. 이 응답은 team API read-only 요약이며 Bedrock을 호출하지 않았습니다.",
+        "answer_type": "general_read_only_summary",
+        "context": {"top_final_candidates": final_rows, "search_hits": search_hits},
+        "sources": [
+            _source("final_candidates", f"/v1/diseases/{disease_id}/final-candidates", "Top final candidate rows"),
+            _source("search", f"/search?q={question}&disease_id={disease_id}", "OpenSearch text evidence search"),
+        ],
+    }
+
+
+@app.get("/api/assistant/{disease_code}/suggested-questions", response_model=AssistantSuggestedQuestionsResponse)
+def assistant_suggested_questions(disease_code: str) -> dict:
+    disease = _get_disease_or_404(disease_code)
+    questions = _assistant_questions(disease["disease_id"], disease.get("display_name"))
+    return {
+        "disease_id": disease["disease_id"],
+        "display_name": disease.get("display_name"),
+        "questions": questions,
+        "items": [{"id": f"q{i + 1}", "question": question} for i, question in enumerate(questions)],
+        "source": "team_api_static_v1",
+    }
+
+
+@app.post("/api/assistant/{disease_code}/ask", response_model=AssistantAskResponse)
+def assistant_ask(disease_code: str, request: AssistantAskRequest) -> dict:
+    disease = _get_disease_or_404(disease_code)
+    if request.mode != "read_only":
+        raise HTTPException(status_code=400, detail="Only read_only mode is supported in team API assistant v1")
+    question = request.question.strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="question is required")
+
+    lowered = question.lower()
+    if any(token in lowered for token in ["admet", "독성", "위험", "주의", "safety"]):
+        payload = _assistant_admet_answer(disease["disease_id"], disease.get("display_name"), question)
+    elif any(token in lowered for token in ["이미지", "image", "cluster", "클러스터", "근거"]):
+        payload = _assistant_image_answer(disease["disease_id"], disease.get("display_name"), question)
+    elif any(token in lowered for token in ["alphafold", "구조", "structure", "protein", "단백질"]):
+        payload = _assistant_structure_answer(disease["disease_id"], disease.get("display_name"), question)
+    elif any(token in lowered for token in ["graph", "그래프", "관계", "path", "target", "pathway", "기전"]):
+        payload = _assistant_graph_answer(disease["disease_id"], disease.get("display_name"), question)
+    elif any(token in lowered for token in ["후보", "추천", "top", "약물", "candidate"]):
+        payload = _assistant_candidate_answer(disease["disease_id"], disease.get("display_name"), question)
+    else:
+        payload = _assistant_general_answer(disease["disease_id"], disease.get("display_name"), question)
+
+    return {
+        "disease_id": disease["disease_id"],
+        "display_name": disease.get("display_name"),
+        "question": question,
+        "mode": request.mode,
+        "used_bedrock": False,
+        "suggested_followups": _assistant_questions(disease["disease_id"], disease.get("display_name"))[:3],
+        "guardrails": [
+            "This team API assistant is read-only.",
+            "No Bedrock/LLM call is made by this endpoint.",
+            "Use evidence sources for UI citations.",
+            "Do not treat internal scores as clinical efficacy claims.",
+        ],
+        "status": "ready",
+        **payload,
+    }
 
 
 def _serialize_pipeline_row(row: dict) -> dict:
