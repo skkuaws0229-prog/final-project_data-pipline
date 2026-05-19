@@ -1270,6 +1270,21 @@ def _ensure_ui_target_node(ui_nodes: dict[str, dict], concept_text: str | None, 
     return node_id
 
 
+_CURATED_DRUG_BACKBONE_FALLBACKS = {
+    "ruxolitinib": {"target": "JAK1/JAK2", "pathway": "JAK/STAT signaling"},
+    "5-fluorouracil": {"target": "Thymidylate synthase / RNA-DNA synthesis", "pathway": "DNA replication"},
+    "alpha-lipoic acid": {"target": "Mitochondrial redox balance", "pathway": "Oxidative stress response"},
+    "azd1208": {"target": "PIM kinase", "pathway": "Kinase signaling"},
+    "cyclophosphamide": {"target": "DNA alkylating agent", "pathway": "DNA damage response"},
+    "n-acetyl cysteine": {"target": "Glutathione / reactive oxygen species", "pathway": "Oxidative stress response"},
+    "ben": {"target": "Benzamidine-like serine protease binding", "pathway": "Protease-mediated signaling"},
+    "a-366": {"target": "G9a/GLP histone methyltransferase", "pathway": "Epigenetic regulation"},
+    "prima-1met": {"target": "Mutant p53 reactivation", "pathway": "p53 pathway"},
+    "pci-34051": {"target": "HDAC8", "pathway": "Epigenetic regulation"},
+    "ml323": {"target": "USP1/UAF1 deubiquitinase complex", "pathway": "DNA damage repair"},
+}
+
+
 def _drug_ui_metadata(disease_id: str) -> dict[str, dict]:
     rows = fetch_all(
         """
@@ -1438,6 +1453,56 @@ def _build_ui_basic_graph(disease_code: str, limit: int = 100) -> dict:
                         "source": "image_modal_evidence_fallback",
                         "evidence_id": row["evidence_id"],
                         "source_file": row["source_file"],
+                    },
+                },
+            )
+
+    drug_ids_with_backbone = {
+        link["source"]
+        for link in ui_links.values()
+        if ui_nodes.get(link["source"], {}).get("type") == "drug"
+        and ui_nodes.get(link["target"], {}).get("type") in {"target", "gene", "protein", "pathway"}
+    }
+    for drug_node in [node for node in ui_nodes.values() if node["type"] == "drug"]:
+        if drug_node["id"] in drug_ids_with_backbone:
+            continue
+        fallback = _CURATED_DRUG_BACKBONE_FALLBACKS.get(str(drug_node["label"]).strip().lower())
+        if not fallback:
+            continue
+        target_id = _ensure_ui_target_node(ui_nodes, fallback.get("target"), "curated_target")
+        pathway_id = _ensure_ui_target_node(ui_nodes, fallback.get("pathway"), "curated_pathway")
+        if target_id:
+            link_id = f"CURATED_BACKBONE_TARGET:{disease_id}:{drug_node['id']}:{target_id}"
+            ui_links.setdefault(
+                link_id,
+                {
+                    "id": link_id,
+                    "source": drug_node["id"],
+                    "target": target_id,
+                    "type": "targets",
+                    "label": _ui_relationship_label("HAS_TARGET", "drug", ui_nodes[target_id]["type"]),
+                    "metadata": {
+                        "disease_id": disease_id,
+                        "source": "curated_mechanism_fallback",
+                        "provenance_note": "Added only for UI backbone coverage when source target/pathway edges are missing.",
+                    },
+                },
+            )
+        if pathway_id:
+            source_id = target_id or drug_node["id"]
+            link_id = f"CURATED_BACKBONE_PATHWAY:{disease_id}:{source_id}:{pathway_id}"
+            ui_links.setdefault(
+                link_id,
+                {
+                    "id": link_id,
+                    "source": source_id,
+                    "target": pathway_id,
+                    "type": "target_pathway" if target_id else "associated_pathway",
+                    "label": "associated pathway",
+                    "metadata": {
+                        "disease_id": disease_id,
+                        "source": "curated_mechanism_fallback",
+                        "provenance_note": "Added only for UI backbone coverage when source target/pathway edges are missing.",
                     },
                 },
             )

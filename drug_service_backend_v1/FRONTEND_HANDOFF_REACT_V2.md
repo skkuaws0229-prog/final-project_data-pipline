@@ -214,6 +214,8 @@ raw `ImageEvidence` 노드는 graph에서 제외하고 `cluster supports candida
 
 BRCA도 `drug -> target`, `target -> pathway` backbone을 반환하도록 보강했습니다. Neo4j `HAS_TARGET`가 비어 있는 경우에는 image-modal evidence의 `canonical_drug_id`, `target`, `target_pathway`를 fallback source로 사용합니다.
 
+추가로 BRCA 20개 drug node 모두 최소 1개 이상 backbone link를 갖도록 보강했습니다. 원천 target/pathway가 비어 있어 curated mechanism으로 채운 edge는 `metadata.source=curated_mechanism_fallback`으로 표시됩니다.
+
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 
 ```text
