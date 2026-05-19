@@ -17,6 +17,7 @@ TxGNN: v1/v2 구현 범위에서 제외
 RAG/Bedrock retrieval 계약: 문서화 완료
 Explanation context API: mock endpoint 구현/검증 완료
 Assistant/chatbot team API: suggested-questions, ask 구현/검증 완료
+Disease summary API: /api/diseases/{disease}/summary 구현/검증 완료
 RAG/LLM 실제 호출: 아직 미연결
 ```
 
@@ -155,6 +156,38 @@ POST /api/assistant/RA/ask
 ```
 
 현재 assistant는 백엔드 read-only 요약 계층입니다. Bedrock/LLM을 호출하지 않으며, 응답의 `used_bedrock=false`가 정상입니다. 프론트 Bedrock fallback은 team API 호출 실패 시에만 사용하면 됩니다.
+
+## Disease summary API
+
+Overview 화면용 live 요약 endpoint입니다.
+
+```text
+GET /api/diseases/{disease}/summary
+GET /v1/diseases/{disease}/summary
+```
+
+예:
+
+```text
+GET /api/diseases/BRCA/summary
+```
+
+포함 내용:
+
+```text
+final_candidate_count
+candidate_pool_count
+image_evidence_count
+image_cluster_count
+graph_node_count
+graph_edge_count
+structure_target_count
+available_structure_target_count
+top_final_candidates
+source_endpoints
+```
+
+5174 프론트에서 호출할 수 있도록 CORS도 추가했습니다.
 
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 

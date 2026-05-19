@@ -931,6 +931,55 @@ status
 - 프론트 Bedrock fallback은 team API 실패 시에만 사용합니다.
 - 상세 검증 문서는 `docs/assistant_api_validation_v1.md`입니다.
 
+## 16. Disease overview summary
+
+프론트 Overview 화면에서 질환별 live 요약을 받을 때 사용합니다.
+
+```text
+GET /api/diseases/{disease_code}/summary
+GET /v1/diseases/{disease_code}/summary
+```
+
+예:
+
+```text
+GET /api/diseases/BRCA/summary
+```
+
+응답 주요 필드:
+
+```text
+disease_id
+display_name
+final_candidate_count
+candidate_pool_count
+image_evidence_count
+image_cluster_count
+graph_node_count
+graph_edge_count
+structure_target_count
+available_structure_target_count
+top_final_candidates
+source_endpoints
+status
+```
+
+검증:
+
+```text
+GET http://172.16.0.64:8010/api/diseases/BRCA/summary
+-> 200
+```
+
+참고:
+
+```text
+5174 프론트용 CORS origin도 허용했습니다.
+http://localhost:5174
+http://127.0.0.1:5174
+http://172.16.0.64:5174
+```
+
 ## 공통 에러 처리
 
 존재하지 않는 `disease_id`:

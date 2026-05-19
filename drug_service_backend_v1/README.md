@@ -30,6 +30,8 @@ docker-compose.backend.yml
 GET /health
 GET /health/graph
 GET /diseases
+GET /api/diseases/BRCA/summary
+GET /v1/diseases/BRCA/summary
 GET /drugs?disease_id=BRCA
 GET /drugs/{drug_id}
 GET /image-modal/clusters?disease_id=BRCA
@@ -70,6 +72,7 @@ MODEL_ROADMAP_v2.md
 docs/pipeline_backend_integration_plan.md
 docs/pipeline_run_frontend_handoff_v1.md
 docs/assistant_api_validation_v1.md
+docs/frontend_timeout_recovery_and_summary_api_20260519.md
 docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md

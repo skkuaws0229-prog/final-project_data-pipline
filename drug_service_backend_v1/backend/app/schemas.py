@@ -45,6 +45,22 @@ class DrugDetail(BaseModel):
     candidates: list[dict[str, Any]]
 
 
+class DiseaseSummary(BaseModel):
+    disease_id: str
+    display_name: str | None = None
+    final_candidate_count: int = 0
+    candidate_pool_count: int = 0
+    image_evidence_count: int = 0
+    image_cluster_count: int = 0
+    graph_node_count: int | None = None
+    graph_edge_count: int | None = None
+    structure_target_count: int = 0
+    available_structure_target_count: int = 0
+    top_final_candidates: list[dict[str, Any]] = Field(default_factory=list)
+    source_endpoints: dict[str, str] = Field(default_factory=dict)
+    status: str = "ready"
+
+
 class ImageModalCluster(BaseModel):
     cluster_id: str
     disease_id: str

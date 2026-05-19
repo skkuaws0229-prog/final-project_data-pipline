@@ -33,6 +33,7 @@ from app.schemas import (
     AssistantAskResponse,
     AssistantSuggestedQuestionsResponse,
     Disease,
+    DiseaseSummary,
     DrugCandidate,
     DrugDetail,
     ExplanationContextResponse,
@@ -1880,6 +1881,52 @@ def list_disease_final_candidates(
     offset: int = Query(0, ge=0),
 ) -> list[dict]:
     return _list_final_drug_candidates(disease_code, limit, offset)
+
+
+@app.get("/api/diseases/{disease_code}/summary", response_model=DiseaseSummary)
+@app.get("/v1/diseases/{disease_code}/summary", response_model=DiseaseSummary)
+def get_disease_summary(disease_code: str) -> dict:
+    disease = _get_disease_or_404(disease_code)
+    disease_id = disease["disease_id"]
+    counts = fetch_one(
+        """
+        SELECT
+          (SELECT count(*) FROM drug_candidates WHERE disease_id = %(disease_id)s) AS final_candidate_count,
+          (SELECT count(DISTINCT lower(drug_name)) FROM candidate_pool WHERE disease_id = %(disease_id)s) AS candidate_pool_count,
+          (SELECT count(*) FROM image_modal_drug_evidence WHERE disease_id = %(disease_id)s) AS image_evidence_count,
+          (SELECT count(*) FROM image_modal_clusters WHERE disease_id = %(disease_id)s) AS image_cluster_count
+        """,
+        {"disease_id": disease_id},
+    )
+    targets = list_structure_targets(disease_id=disease_id, limit=200)
+    graph_node_count = None
+    graph_edge_count = None
+    try:
+        graph = graph_relations(disease_id=disease_id, limit=200, include_evidence=True, include_targets=True)
+        graph_node_count = len(graph["nodes"])
+        graph_edge_count = len(graph["edges"])
+    except Exception:
+        pass
+    return {
+        "disease_id": disease_id,
+        "display_name": disease.get("display_name"),
+        "final_candidate_count": counts["final_candidate_count"] if counts else 0,
+        "candidate_pool_count": counts["candidate_pool_count"] if counts else 0,
+        "image_evidence_count": counts["image_evidence_count"] if counts else 0,
+        "image_cluster_count": counts["image_cluster_count"] if counts else 0,
+        "graph_node_count": graph_node_count,
+        "graph_edge_count": graph_edge_count,
+        "structure_target_count": len(targets),
+        "available_structure_target_count": sum(1 for target in targets if target.get("structure_status") == "available"),
+        "top_final_candidates": _list_final_drug_candidates(disease_id, limit=5, offset=0),
+        "source_endpoints": {
+            "final_candidates": f"/v1/diseases/{disease_id}/final-candidates",
+            "candidates": f"/api/diseases/{disease_id}/candidates",
+            "graph": f"/graph/relations?disease_id={disease_id}",
+            "structures": f"/api/structures/targets?disease_id={disease_id}",
+        },
+        "status": "ready",
+    }
 
 
 @app.get("/drugs/{drug_id}", response_model=DrugDetail)

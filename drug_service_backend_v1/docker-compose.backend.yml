@@ -30,43 +30,6 @@ services:
     command: ["bash", "/load_postgres_compose.sh"]
     restart: "no"
 
-  neo4j:
-    image: neo4j:5.26
-    container_name: drug-service-backend-v1-neo4j
-    environment:
-      NEO4J_AUTH: neo4j/drug_service_neo4j
-      NEO4J_server_memory_heap_initial__size: 512m
-      NEO4J_server_memory_heap_max__size: 1G
-      NEO4J_server_memory_pagecache_size: 512m
-    ports:
-      - "7474:7474"
-      - "7687:7687"
-    volumes:
-      - drug_service_backend_v1_neo4j_data:/data
-      - drug_service_backend_v1_neo4j_logs:/logs
-      - ../drug_service_db_v1/06_graph/import:/var/lib/neo4j/import
-    healthcheck:
-      test: ["CMD-SHELL", "cypher-shell -u neo4j -p drug_service_neo4j 'RETURN 1'"]
-      interval: 10s
-      timeout: 10s
-      retries: 30
-    restart: unless-stopped
-
-  neo4j-loader:
-    image: neo4j:5.26
-    depends_on:
-      neo4j:
-        condition: service_healthy
-    volumes:
-      - ../drug_service_db_v1/06_graph/schema:/schema:ro
-    command:
-      - bash
-      - -lc
-      - |
-        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_constraints.cypher
-        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_load_csv_v1.cypher
-    restart: "no"
-
   api:
     build:
       context: ./backend
@@ -88,7 +51,7 @@ services:
       KG_EMBEDDING_SCORES_PATH: /kg_embedding/kg_embedding_scores_v1.csv
       ALPHAFOLD_STRUCTURE_CACHE_DIR: /structures
       APP_NAME: Drug Service API
-      CORS_ALLOW_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://172.16.0.64:5173
+      CORS_ALLOW_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://172.16.0.64:5173,http://localhost:5174,http://127.0.0.1:5174,http://172.16.0.64:5174
     ports:
       - "8010:8000"
     volumes:
@@ -128,6 +91,43 @@ services:
       - ../drug_service_db_v1/03_normalized:/normalized:ro
       - ./07_search:/search:ro
     command: ["python", "/search/index_text_search_v1.py"]
+    restart: "no"
+
+  neo4j:
+    image: neo4j:5.26
+    container_name: drug-service-backend-v1-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/drug_service_neo4j
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - drug_service_backend_v1_neo4j_data:/data
+      - drug_service_backend_v1_neo4j_logs:/logs
+      - ../drug_service_db_v1/06_graph/import:/var/lib/neo4j/import
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p drug_service_neo4j 'RETURN 1'"]
+      interval: 10s
+      timeout: 10s
+      retries: 30
+    restart: unless-stopped
+
+  neo4j-loader:
+    image: neo4j:5.26
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      - ../drug_service_db_v1/06_graph/schema:/schema:ro
+    command:
+      - bash
+      - -lc
+      - |
+        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_constraints.cypher
+        /var/lib/neo4j/bin/cypher-shell -a neo4j://neo4j:7687 -u neo4j -p drug_service_neo4j -f /schema/neo4j_load_csv_v1.cypher
     restart: "no"
 
 volumes:
