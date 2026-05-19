@@ -1051,6 +1051,15 @@ GET http://172.16.0.64:8010/api/image-modal/RA
 
 ```text
 docs/kg_ui_graph_api_validation_20260519.md
+docs/brca_kg_ui_backbone_fix_20260519.md
+```
+
+BRCA 보강:
+
+```text
+BRCA는 Neo4j HAS_TARGET edge가 비어 있어 target/pathway node가 disconnected로 보였다.
+ui-basic builder에서 image_modal evidence의 canonical_drug_id + target/target_pathway를 fallback backbone으로 사용한다.
+현재 BRCA도 drug -> target, target -> pathway link를 반환한다.
 ```
 
 ## 공통 에러 처리

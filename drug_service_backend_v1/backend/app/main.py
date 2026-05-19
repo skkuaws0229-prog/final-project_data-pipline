@@ -1,3 +1,4 @@
+import hashlib
 import re
 from typing import Any
 
@@ -1245,6 +1246,30 @@ def _ui_relationship_label(edge_type: str, source_type: str | None = None, targe
     return labels.get(edge_type, edge_type.replace("_", " ").lower())
 
 
+def _target_node_id(concept_text: str, concept_type: str) -> str:
+    digest = hashlib.sha1(f"{concept_type.lower()}::{concept_text.lower()}".encode("utf-8")).hexdigest()[:16]
+    return f"target_{digest}"
+
+
+def _ensure_ui_target_node(ui_nodes: dict[str, dict], concept_text: str | None, concept_type: str) -> str | None:
+    if not concept_text:
+        return None
+    text = str(concept_text).strip()
+    if not text:
+        return None
+    node_id = _target_node_id(text, concept_type)
+    node_type = _ui_node_type("TargetConcept", {"concept_type": concept_type})
+    if node_id not in ui_nodes:
+        ui_nodes[node_id] = {
+            "id": node_id,
+            "label": text,
+            "type": node_type,
+            "title": text,
+            "metadata": {"concept_type": concept_type, "source": "ui_fallback_backbone"},
+        }
+    return node_id
+
+
 def _drug_ui_metadata(disease_id: str) -> dict[str, dict]:
     rows = fetch_all(
         """
@@ -1348,6 +1373,75 @@ def _build_ui_basic_graph(disease_code: str, limit: int = 100) -> dict:
                     "metadata": metadata,
                 }
 
+    fallback_rows = fetch_all(
+        """
+        SELECT DISTINCT
+          m.canonical_drug_id,
+          e.drug_name,
+          NULLIF(trim(e.target), '') AS target,
+          NULLIF(trim(e.target_pathway), '') AS target_pathway,
+          e.evidence_id,
+          e.source_file
+        FROM image_modal_drug_evidence e
+        JOIN image_modal_evidence_drug_matches m ON m.evidence_id = e.evidence_id
+        WHERE e.disease_id = %(disease_id)s
+          AND m.canonical_drug_id IS NOT NULL
+          AND (NULLIF(trim(e.target), '') IS NOT NULL OR NULLIF(trim(e.target_pathway), '') IS NOT NULL)
+        ORDER BY m.canonical_drug_id, target, target_pathway
+        """,
+        {"disease_id": disease_id},
+    )
+    for row in fallback_rows:
+        drug_id = row["canonical_drug_id"]
+        if drug_id not in ui_nodes:
+            continue
+        target_id = _ensure_ui_target_node(ui_nodes, row.get("target"), "raw_target")
+        pathway_id = _ensure_ui_target_node(ui_nodes, row.get("target_pathway"), "raw_pathway")
+        if target_id:
+            link_id = f"UI_BACKBONE_TARGET:{disease_id}:{drug_id}:{target_id}"
+            ui_links.setdefault(
+                link_id,
+                {
+                    "id": link_id,
+                    "source": drug_id,
+                    "target": target_id,
+                    "type": "targets",
+                    "label": _ui_relationship_label("HAS_TARGET", "drug", ui_nodes[target_id]["type"]),
+                    "metadata": {
+                        "disease_id": disease_id,
+                        "source": "image_modal_evidence_fallback",
+                        "evidence_id": row["evidence_id"],
+                        "source_file": row["source_file"],
+                    },
+                },
+            )
+        if pathway_id:
+            if target_id:
+                source_id = target_id
+                label = "associated pathway"
+                link_type = "target_pathway"
+            else:
+                source_id = drug_id
+                label = _ui_relationship_label("HAS_TARGET", "drug", "pathway")
+                link_type = "associated_pathway"
+            link_id = f"UI_BACKBONE_PATHWAY:{disease_id}:{source_id}:{pathway_id}"
+            ui_links.setdefault(
+                link_id,
+                {
+                    "id": link_id,
+                    "source": source_id,
+                    "target": pathway_id,
+                    "type": link_type,
+                    "label": label,
+                    "metadata": {
+                        "disease_id": disease_id,
+                        "source": "image_modal_evidence_fallback",
+                        "evidence_id": row["evidence_id"],
+                        "source_file": row["source_file"],
+                    },
+                },
+            )
+
     for link in ui_links.values():
         source_node = ui_nodes.get(link["source"])
         target_node = ui_nodes.get(link["target"])
@@ -1359,6 +1453,27 @@ def _build_ui_basic_graph(disease_code: str, limit: int = 100) -> dict:
         values = source_node["metadata"].setdefault(field_name, [])
         if target_node["label"] not in values:
             values.append(target_node["label"])
+
+    target_to_pathways: dict[str, list[str]] = {}
+    for link in ui_links.values():
+        source_node = ui_nodes.get(link["source"])
+        target_node = ui_nodes.get(link["target"])
+        if not source_node or not target_node:
+            continue
+        if source_node["type"] in {"target", "gene", "protein"} and target_node["type"] == "pathway":
+            target_to_pathways.setdefault(source_node["id"], [])
+            if target_node["label"] not in target_to_pathways[source_node["id"]]:
+                target_to_pathways[source_node["id"]].append(target_node["label"])
+    for link in ui_links.values():
+        source_node = ui_nodes.get(link["source"])
+        target_node = ui_nodes.get(link["target"])
+        if not source_node or not target_node:
+            continue
+        if source_node["type"] == "drug" and target_node["id"] in target_to_pathways:
+            pathways = source_node["metadata"].setdefault("pathways", [])
+            for pathway in target_to_pathways[target_node["id"]]:
+                if pathway not in pathways:
+                    pathways.append(pathway)
 
     return {"disease_id": disease_id, "nodes": list(ui_nodes.values()), "links": list(ui_links.values())}
 

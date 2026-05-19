@@ -80,6 +80,7 @@ docs/pipeline_run_frontend_handoff_v1.md
 docs/assistant_api_validation_v1.md
 docs/frontend_timeout_recovery_and_summary_api_20260519.md
 docs/kg_ui_graph_api_validation_20260519.md
+docs/brca_kg_ui_backbone_fix_20260519.md
 docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md

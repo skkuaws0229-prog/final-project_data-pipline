@@ -212,6 +212,8 @@ GET /api/image-modal/{disease}/{file_name}/url
 
 raw `ImageEvidence` 노드는 graph에서 제외하고 `cluster supports candidate` link로 요약했습니다.
 
+BRCA도 `drug -> target`, `target -> pathway` backbone을 반환하도록 보강했습니다. Neo4j `HAS_TARGET`가 비어 있는 경우에는 image-modal evidence의 `canonical_drug_id`, `target`, `target_pathway`를 fallback source로 사용합니다.
+
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 
 ```text
