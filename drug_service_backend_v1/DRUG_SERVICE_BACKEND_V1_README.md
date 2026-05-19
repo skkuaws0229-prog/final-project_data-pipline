@@ -38,6 +38,12 @@ GET /image-modal/clusters?disease_id=BRCA
 GET /image-modal/evidence?disease_id=BRCA
 GET /image-modal/reports?disease_id=BRCA
 GET /graph/relations?disease_id=RA&limit=50
+GET /api/graph/RA/ui-basic
+GET /api/graph/RA/summary
+GET /api/graph/RA/nodes/cdrug_6c95cca9e9b8fc23
+GET /api/graph/RA/neighbors/cdrug_6c95cca9e9b8fc23
+GET /api/image-modal/RA
+GET /api/image-modal/RA/RA_drug_linkage.csv/url
 GET /graph/path-score?disease_id=RA&limit=100
 GET /health/kg-embedding
 GET /graph/kg-embedding?disease_id=RA&model=ensemble&limit=50
@@ -73,6 +79,7 @@ docs/pipeline_backend_integration_plan.md
 docs/pipeline_run_frontend_handoff_v1.md
 docs/assistant_api_validation_v1.md
 docs/frontend_timeout_recovery_and_summary_api_20260519.md
+docs/kg_ui_graph_api_validation_20260519.md
 docs/pipeline_run_api_openapi.yaml
 docs/alphafold_structure_schema_v1.md
 docs/alphafold_integrity_validation_v1.md

@@ -980,6 +980,79 @@ http://127.0.0.1:5174
 http://172.16.0.64:5174
 ```
 
+## 17. Knowledge Graph 연구자 UI API
+
+연구자 화면은 raw pipeline graph가 아니라 정제된 UI graph를 사용합니다.
+
+```text
+GET /api/graph/{disease}/ui-basic
+GET /api/graph/{disease}/summary
+GET /api/graph/{disease}/nodes/{node_id}
+GET /api/graph/{disease}/neighbors/{node_id}
+```
+
+UI graph 응답은 아래 형태입니다.
+
+```json
+{
+  "disease_id": "RA",
+  "nodes": [],
+  "links": []
+}
+```
+
+node type:
+
+```text
+disease
+drug
+target
+gene
+protein
+pathway
+cluster
+```
+
+raw `ImageEvidence` 노드는 화면 graph에서 제외하고, `cluster -> drug` link로 collapse합니다.
+
+drug node metadata:
+
+```text
+rank
+tier
+score
+verdict
+admet_status
+targets
+pathways
+```
+
+Image modal bundle endpoint:
+
+```text
+GET /api/image-modal/{disease}
+GET /api/image-modal/{disease}/{file_name}/url
+```
+
+검증 예:
+
+```text
+GET http://172.16.0.64:8010/api/graph/RA/summary
+-> 200, node_count=39, edge_count=68
+
+GET http://172.16.0.64:8010/api/graph/RA/ui-basic
+-> 200
+
+GET http://172.16.0.64:8010/api/image-modal/RA
+-> 200
+```
+
+상세 검증 문서:
+
+```text
+docs/kg_ui_graph_api_validation_20260519.md
+```
+
 ## 공통 에러 처리
 
 존재하지 않는 `disease_id`:

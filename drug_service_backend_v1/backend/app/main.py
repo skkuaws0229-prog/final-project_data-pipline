@@ -1208,6 +1208,161 @@ def _round_score(value: float) -> float:
     return round(max(0.0, min(1.0, value)), 4)
 
 
+def _ui_node_type(raw_label: str, properties: dict | None = None) -> str:
+    properties = properties or {}
+    if raw_label == "Disease":
+        return "disease"
+    if raw_label == "Drug":
+        return "drug"
+    if raw_label == "ImageCluster":
+        return "cluster"
+    if raw_label == "TargetConcept":
+        concept_type = str(properties.get("concept_type") or "").lower()
+        if "gene" in concept_type:
+            return "gene"
+        if "protein" in concept_type:
+            return "protein"
+        if "pathway" in concept_type or "mechanism" in concept_type:
+            return "pathway"
+        return "target"
+    return "target"
+
+
+def _ui_relationship_label(edge_type: str, source_type: str | None = None, target_type: str | None = None) -> str:
+    labels = {
+        "CANDIDATE_FOR": "candidate drug for",
+        "HAS_TARGET": "targets",
+        "MENTIONS_TARGET": "mentions target",
+        "HAS_IMAGE_CLUSTER": "has image-modal cluster",
+        "HAS_IMAGE_EVIDENCE": "has image-modal evidence",
+        "SUPPORTS_DRUG": "supports candidate",
+        "CLUSTER_SUPPORTS_DRUG": "cluster supports candidate",
+    }
+    if edge_type == "HAS_TARGET" and target_type == "pathway":
+        return "associated pathway"
+    if edge_type == "HAS_TARGET" and target_type in {"gene", "protein"}:
+        return f"targets {target_type}"
+    return labels.get(edge_type, edge_type.replace("_", " ").lower())
+
+
+def _drug_ui_metadata(disease_id: str) -> dict[str, dict]:
+    rows = fetch_all(
+        """
+        SELECT
+          COALESCE(da.canonical_drug_id, c.drug_id) AS canonical_drug_id,
+          d.drug_name,
+          c.rank,
+          c.tier,
+          c.score,
+          c.target,
+          c.target_pathway,
+          a.verdict,
+          a.admet_status
+        FROM drug_candidates c
+        JOIN drugs d ON d.drug_id = c.drug_id
+        LEFT JOIN drug_aliases da ON da.source_drug_id = c.drug_id
+        LEFT JOIN admet_results a ON a.candidate_id = c.candidate_id
+        WHERE c.disease_id = %(disease_id)s
+        ORDER BY c.rank NULLS LAST, d.drug_name
+        """,
+        {"disease_id": disease_id},
+    )
+    metadata: dict[str, dict] = {}
+    for row in rows:
+        canonical_id = row.get("canonical_drug_id")
+        if not canonical_id or canonical_id in metadata:
+            continue
+        targets = [value for value in [row.get("target")] if value]
+        pathways = [value for value in [row.get("target_pathway")] if value]
+        metadata[canonical_id] = {
+            "rank": row.get("rank"),
+            "tier": row.get("tier"),
+            "score": row.get("score"),
+            "verdict": row.get("verdict"),
+            "admet_status": row.get("admet_status"),
+            "targets": targets,
+            "pathways": pathways,
+        }
+    return metadata
+
+
+def _build_ui_basic_graph(disease_code: str, limit: int = 100) -> dict:
+    disease_id = _resolve_disease_id(disease_code)
+    raw_graph = graph_relations(disease_id=disease_id, limit=limit, include_evidence=True, include_targets=True)
+    raw_nodes = {node["id"]: node for node in raw_graph["nodes"]}
+    drug_metadata = _drug_ui_metadata(disease_id)
+    ui_nodes: dict[str, dict] = {}
+    ui_links: dict[str, dict] = {}
+
+    for node in raw_graph["nodes"]:
+        if node["label"] == "ImageEvidence":
+            continue
+        node_type = _ui_node_type(node["label"], node.get("properties"))
+        properties = dict(node.get("properties") or {})
+        if node_type == "drug":
+            properties.update(drug_metadata.get(node["id"], {}))
+        ui_nodes[node["id"]] = {
+            "id": node["id"],
+            "label": node["name"],
+            "type": node_type,
+            "title": node["name"],
+            "metadata": properties,
+        }
+
+    for edge in raw_graph["edges"]:
+        source = edge["source"]
+        target = edge["target"]
+        if source in ui_nodes and target in ui_nodes:
+            source_type = ui_nodes[source]["type"]
+            target_type = ui_nodes[target]["type"]
+            ui_links[edge["id"]] = {
+                "id": edge["id"],
+                "source": source,
+                "target": target,
+                "type": edge["type"].lower(),
+                "label": _ui_relationship_label(edge["type"], source_type, target_type),
+                "metadata": edge.get("properties") or {},
+            }
+            continue
+
+        if edge["type"] == "SUPPORTS_DRUG":
+            evidence_node = raw_nodes.get(source)
+            if not evidence_node:
+                continue
+            cluster_id = None
+            for candidate_edge in raw_graph["edges"]:
+                if candidate_edge["type"] == "HAS_IMAGE_EVIDENCE" and candidate_edge["target"] == source:
+                    cluster_id = candidate_edge["source"]
+                    break
+            if cluster_id in ui_nodes and target in ui_nodes:
+                link_id = f"CLUSTER_SUPPORTS_DRUG:{cluster_id}:{target}"
+                metadata = dict(edge.get("properties") or {})
+                metadata["evidence_id"] = source
+                metadata["evidence_text"] = (evidence_node.get("properties") or {}).get("evidence_text")
+                ui_links[link_id] = {
+                    "id": link_id,
+                    "source": cluster_id,
+                    "target": target,
+                    "type": "cluster_supports_drug",
+                    "label": _ui_relationship_label("CLUSTER_SUPPORTS_DRUG", "cluster", "drug"),
+                    "metadata": metadata,
+                }
+
+    for link in ui_links.values():
+        source_node = ui_nodes.get(link["source"])
+        target_node = ui_nodes.get(link["target"])
+        if not source_node or not target_node:
+            continue
+        if source_node["type"] != "drug" or target_node["type"] not in {"target", "gene", "protein", "pathway"}:
+            continue
+        field_name = "pathways" if target_node["type"] == "pathway" else "targets"
+        values = source_node["metadata"].setdefault(field_name, [])
+        if target_node["label"] not in values:
+            values.append(target_node["label"])
+
+    return {"disease_id": disease_id, "nodes": list(ui_nodes.values()), "links": list(ui_links.values())}
+
+
 @app.get("/graph/path-score", response_model=PathScoreResponse)
 def graph_path_score(
     disease_id: str = Query(..., description="Disease id, e.g. BRCA, RA, STAD"),
@@ -1701,6 +1856,103 @@ def graph_relations(
     return {"disease_id": disease_id, "nodes": list(nodes.values()), "edges": list(edges.values())}
 
 
+@app.get("/api/graph/{disease_code}/ui-basic")
+def graph_ui_basic(
+    disease_code: str,
+    limit: int = Query(100, ge=1, le=200),
+) -> dict:
+    return _build_ui_basic_graph(disease_code, limit=limit)
+
+
+@app.get("/api/graph/{disease_code}/summary")
+def graph_ui_summary(disease_code: str) -> dict:
+    graph = _build_ui_basic_graph(disease_code, limit=200)
+    node_types = {node["type"] for node in graph["nodes"]}
+    drug_nodes = [node for node in graph["nodes"] if node["type"] == "drug"]
+    has_tier = any((node.get("metadata") or {}).get("tier") for node in drug_nodes)
+    return {
+        "disease_id": graph["disease_id"],
+        "node_count": len(graph["nodes"]),
+        "edge_count": len(graph["links"]),
+        "graph_status": "ready" if graph["nodes"] else "empty",
+        "has_tier": has_tier,
+        "node_types": sorted(node_types),
+        "note": "Research UI graph excludes raw pipeline/internal evidence nodes and collapses image evidence into cluster-drug support links.",
+    }
+
+
+@app.get("/api/graph/{disease_code}/nodes/{node_id}")
+def graph_ui_node_detail(disease_code: str, node_id: str) -> dict:
+    graph = _build_ui_basic_graph(disease_code, limit=200)
+    node = next((item for item in graph["nodes"] if item["id"] == node_id), None)
+    if not node:
+        raise HTTPException(status_code=404, detail=f"Unknown graph node_id for {graph['disease_id']}: {node_id}")
+    fields = dict(node.get("metadata") or {})
+    connected_links = [
+        link for link in graph["links"]
+        if link["source"] == node_id or link["target"] == node_id
+    ]
+    description_parts = [f"type: {node['type']}", f"degree: {len(connected_links)}"]
+    if node["type"] == "drug":
+        if fields.get("rank") is not None:
+            description_parts.append(f"rank: {fields.get('rank')}")
+        if fields.get("tier"):
+            description_parts.append(f"tier: {fields.get('tier')}")
+        if fields.get("admet_status") or fields.get("verdict"):
+            description_parts.append(f"ADMET: {fields.get('admet_status') or fields.get('verdict')}")
+    return {
+        "disease_id": graph["disease_id"],
+        "node_id": node_id,
+        "title": node["title"],
+        "type": node["type"],
+        "description": "; ".join(description_parts),
+        "fields": fields,
+        "relationships": [
+            {
+                "id": link["id"],
+                "label": link["label"],
+                "source": link["source"],
+                "target": link["target"],
+                "metadata": link.get("metadata") or {},
+            }
+            for link in connected_links
+        ],
+    }
+
+
+@app.get("/api/graph/{disease_code}/neighbors/{node_id}")
+def graph_ui_neighbors(disease_code: str, node_id: str) -> dict:
+    graph = _build_ui_basic_graph(disease_code, limit=200)
+    nodes = {node["id"]: node for node in graph["nodes"]}
+    if node_id not in nodes:
+        raise HTTPException(status_code=404, detail=f"Unknown graph node_id for {graph['disease_id']}: {node_id}")
+    neighbors = []
+    for link in graph["links"]:
+        neighbor_id = None
+        direction = None
+        if link["source"] == node_id:
+            neighbor_id = link["target"]
+            direction = "out"
+        elif link["target"] == node_id:
+            neighbor_id = link["source"]
+            direction = "in"
+        if not neighbor_id or neighbor_id not in nodes:
+            continue
+        neighbor = nodes[neighbor_id]
+        neighbors.append(
+            {
+                "id": neighbor["id"],
+                "label": neighbor["label"],
+                "type": neighbor["type"],
+                "relationship": link["label"],
+                "relationship_id": link["id"],
+                "direction": direction,
+                "metadata": link.get("metadata") or {},
+            }
+        )
+    return {"disease_id": graph["disease_id"], "node_id": node_id, "neighbors": neighbors}
+
+
 @app.get("/diseases", response_model=list[Disease])
 def list_diseases() -> list[dict]:
     return fetch_all(
@@ -2068,3 +2320,68 @@ def list_image_modal_reports(
         """,
         {"disease_id": disease_id},
     )
+
+
+@app.get("/api/image-modal/{disease_code}")
+def get_image_modal_bundle(disease_code: str) -> dict:
+    disease_id = _resolve_disease_id(disease_code)
+    clusters = list_image_modal_clusters(disease_id=disease_id)
+    evidence = list_image_modal_evidence(disease_id=disease_id, cluster_id=None, drug_name=None, limit=500)
+    reports = list_image_modal_reports(disease_id=disease_id)
+    source_files = sorted(
+        {
+            item["source_file"]
+            for item in [*clusters, *evidence, *reports]
+            if item.get("source_file")
+        }
+    )
+    return {
+        "disease_id": disease_id,
+        "clusters": clusters,
+        "evidence": evidence,
+        "reports": reports,
+        "source_files": [
+            {
+                "file_name": file_name,
+                "url_endpoint": f"/api/image-modal/{disease_id}/{file_name}/url",
+            }
+            for file_name in source_files
+        ],
+        "status": "ready",
+    }
+
+
+@app.get("/api/image-modal/{disease_code}/{file_name}/url")
+def get_image_modal_file_url(disease_code: str, file_name: str) -> dict:
+    disease_id = _resolve_disease_id(disease_code)
+    rows = fetch_all(
+        """
+        SELECT source_file, 'evidence' AS source_type, count(*)::int AS row_count
+        FROM image_modal_drug_evidence
+        WHERE disease_id = %(disease_id)s AND source_file = %(file_name)s
+        GROUP BY source_file
+        UNION ALL
+        SELECT source_file, 'report' AS source_type, count(*)::int AS row_count
+        FROM image_modal_reports
+        WHERE disease_id = %(disease_id)s AND source_file = %(file_name)s
+        GROUP BY source_file
+        UNION ALL
+        SELECT source_file, 'cluster' AS source_type, count(*)::int AS row_count
+        FROM image_modal_clusters
+        WHERE disease_id = %(disease_id)s AND source_file = %(file_name)s
+        GROUP BY source_file
+        """,
+        {"disease_id": disease_id, "file_name": file_name},
+    )
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Unknown image-modal file for {disease_id}: {file_name}")
+    return {
+        "disease_id": disease_id,
+        "file_name": file_name,
+        "url": f"/api/image-modal/{disease_id}?file_name={file_name}",
+        "download_url": None,
+        "is_direct_file_url": False,
+        "note": "Original source files are represented as loaded DB provenance. Use /api/image-modal/{disease} plus file_name filtering on the frontend if a file-level view is needed.",
+        "sources": rows,
+        "status": "ready",
+    }

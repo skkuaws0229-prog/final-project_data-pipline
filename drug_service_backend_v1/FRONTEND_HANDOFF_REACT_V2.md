@@ -18,6 +18,7 @@ RAG/Bedrock retrieval 계약: 문서화 완료
 Explanation context API: mock endpoint 구현/검증 완료
 Assistant/chatbot team API: suggested-questions, ask 구현/검증 완료
 Disease summary API: /api/diseases/{disease}/summary 구현/검증 완료
+Knowledge Graph UI API: /api/graph/{disease}/ui-basic 등 연구자용 정제 그래프 구현/검증 완료
 RAG/LLM 실제 호출: 아직 미연결
 ```
 
@@ -188,6 +189,28 @@ source_endpoints
 ```
 
 5174 프론트에서 호출할 수 있도록 CORS도 추가했습니다.
+
+## Knowledge Graph 연구자 UI API
+
+프론트 연구자 화면에서는 raw graph 대신 아래 endpoint를 사용하면 됩니다.
+
+```text
+GET /api/graph/{disease}/ui-basic
+GET /api/graph/{disease}/summary
+GET /api/graph/{disease}/nodes/{node_id}
+GET /api/graph/{disease}/neighbors/{node_id}
+```
+
+Image modal 연동:
+
+```text
+GET /api/image-modal/{disease}
+GET /api/image-modal/{disease}/{file_name}/url
+```
+
+`ui-basic`은 `nodes`와 `links`를 반환합니다. node type은 `disease`, `drug`, `target`, `gene`, `protein`, `pathway`, `cluster`로 정규화되어 있습니다.
+
+raw `ImageEvidence` 노드는 graph에서 제외하고 `cluster supports candidate` link로 요약했습니다.
 
 프론트 v1 연결 QA는 6개 기준으로 PASS 처리했습니다.
 
