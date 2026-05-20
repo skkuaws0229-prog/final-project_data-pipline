@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
-import subprocess
 from pathlib import Path
 
+from pipeline.utils import cloud_storage
 from pipeline.utils.image_modal_sagemaker import (
     ensure_image_defaults,
     launch_wsi_download,
@@ -44,19 +44,11 @@ def run(config: dict, dry_run: bool = False) -> dict:
 
     s3_files = []
     if not local_files and s3_embedding_root:
-        result = subprocess.run(
-            ["aws", "s3", "ls", s3_embedding_root.rstrip("/") + "/", "--recursive"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
+        s3_files = cloud_storage.list_objects(
+            s3_embedding_root.rstrip("/") + "/",
+            suffixes=(".parquet",),
+            limit=wsi_limit,
         )
-        if result.returncode == 0:
-            for line in result.stdout.splitlines():
-                key = line.split()[-1] if line.split() else ""
-                if key.endswith(".parquet"):
-                    s3_files.append(key)
-                if len(s3_files) >= wsi_limit:
-                    break
 
     raw_wsi_count = s3_object_count(s3_raw_wsi_root, suffixes=(".svs", ".SVS"), limit=wsi_limit)
     launch = None

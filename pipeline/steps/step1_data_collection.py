@@ -14,13 +14,14 @@ from __future__ import annotations
 
 import json
 import re
-import subprocess
 import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
+
+from pipeline.utils import cloud_storage
 
 RAW_SEED_FILES = [
     "GDSC/GDSC2-dataset.csv",
@@ -73,30 +74,19 @@ def ensure_dirs(paths: PipelinePaths) -> None:
             value.mkdir(parents=True, exist_ok=True)
 
 
-# ── S3 helpers ───────────────────────────────────────────────────────
-def sh(cmd: list[str]) -> None:
-    print("+ " + " ".join(cmd), flush=True)
-    subprocess.run(cmd, check=True)
+# ── Cloud storage helpers ────────────────────────────────────────────
+def cloud_object_exists(uri: str) -> bool:
+    return cloud_storage.object_exists(uri)
 
 
-def s3_object_exists(uri: str) -> bool:
-    result = subprocess.run(
-        ["aws", "s3", "ls", uri],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-    )
-    return result.returncode == 0 and bool(result.stdout.strip())
-
-
-def auto_provision_raw_sources(s3_root: str, template_root: str, tcga_code: str) -> dict[str, Any]:
+def auto_provision_raw_sources(storage_root: str, template_root: str, tcga_code: str) -> dict[str, Any]:
     """Populate a disease raw prefix with reusable common inputs when missing.
 
     Agent 1 creates the disease config, but Step 1 owns the data preflight. The
     common GDSC/DepMap/drug/LINCS/ADMET files are disease-agnostic seeds; GDSC
     is filtered to the requested TCGA code after download.
     """
-    root = s3_root.rstrip("/")
+    root = storage_root.rstrip("/")
     template = template_root.rstrip("/")
     copied: list[str] = []
     already_present: list[str] = []
@@ -109,16 +99,16 @@ def auto_provision_raw_sources(s3_root: str, template_root: str, tcga_code: str)
     )
     for rel_path in RAW_SEED_FILES:
         target_uri = f"{root}/{rel_path}"
-        if s3_object_exists(target_uri):
+        if cloud_object_exists(target_uri):
             already_present.append(rel_path)
             continue
 
         source_uri = f"{template}/{rel_path}"
-        if not s3_object_exists(source_uri):
+        if not cloud_object_exists(source_uri):
             unavailable.append(rel_path)
             continue
 
-        sh(["aws", "s3", "cp", source_uri, target_uri])
+        cloud_storage.cp(source_uri, target_uri)
         copied.append(rel_path)
 
     summary = {
@@ -132,9 +122,9 @@ def auto_provision_raw_sources(s3_root: str, template_root: str, tcga_code: str)
     return summary
 
 
-def download_sources(paths: PipelinePaths, s3_root: str) -> None:
-    """aws s3 sync from the disease-specific raw bucket."""
-    sh(["aws", "s3", "sync", s3_root.rstrip("/") + "/", str(paths.raw_cache)])
+def download_sources(paths: PipelinePaths, storage_root: str) -> None:
+    """Sync from the disease-specific cloud storage root into raw cache."""
+    cloud_storage.sync(storage_root.rstrip("/") + "/", paths.raw_cache)
 
 
 # ── GDSC conversion ─────────────────────────────────────────────────
@@ -267,7 +257,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     Args:
         config: Parsed YAML config with keys:
             - disease / tcga_code: e.g. "SKCM"
-            - s3_raw_root: e.g. "s3://say2-4team/SKCM_raw"
+            - s3_raw_root or raw_storage_root: e.g. "s3://..." or "gs://..."
             - project_root: local working directory
             - skip_download: bool (optional)
     Returns:
@@ -278,7 +268,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
         tcga_code = str(raw.get("code", raw.get("name", "UNKNOWN"))).upper()
     else:
         tcga_code = str(raw).upper()
-    s3_root = config.get("s3_raw_root", f"s3://say2-4team/{tcga_code}_raw")
+    storage_root = config.get("raw_storage_root") or config.get("gcs_raw_root") or config.get("s3_raw_root", f"s3://say2-4team/{tcga_code}_raw")
     execution = config.get("execution", {}) if isinstance(config.get("execution", {}), dict) else {}
     auto_provision_raw = config.get("auto_provision_raw", execution.get("auto_provision_raw", True))
     raw_template_root = config.get("raw_template_root", execution.get("raw_template_root", "s3://say2-4team/HNSC_raw"))
@@ -292,9 +282,9 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     if not skip_download:
         provision_summary = None
         if auto_provision_raw and raw_template_root:
-            provision_summary = auto_provision_raw_sources(s3_root, raw_template_root, tcga_code)
-        print(f"[Step1] Downloading from {s3_root} ...", flush=True)
-        download_sources(paths, s3_root)
+            provision_summary = auto_provision_raw_sources(storage_root, raw_template_root, tcga_code)
+        print(f"[Step1] Downloading from {storage_root} ...", flush=True)
+        download_sources(paths, storage_root)
     else:
         provision_summary = None
         print(f"[Step1] Skipping download (skip_download=True)", flush=True)
@@ -307,7 +297,8 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     summary = {
         "step": "step1_data_collection",
         "disease": tcga_code,
-        "s3_root": s3_root,
+        "storage_root": storage_root,
+        "s3_root": storage_root,
         "auto_provision_raw": bool(auto_provision_raw),
         "raw_template_root": raw_template_root,
         "raw_provision": provision_summary,

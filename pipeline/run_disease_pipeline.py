@@ -38,6 +38,7 @@ if not (PROJECT_ROOT / "pipeline").exists() and (PIPELINE_ROOT / "steps").exists
 
 SM_INPUT_DIR = Path(os.environ.get("SM_INPUT_DIR", "/opt/ml/processing/input/data"))
 SM_OUTPUT_DIR = Path(os.environ.get("SM_OUTPUT_DIR", "/opt/ml/processing/output"))
+DEFAULT_GCS_WORKFLOW_ROOT = "gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso"
 
 
 def is_sagemaker_processing() -> bool:
@@ -59,6 +60,8 @@ def apply_runtime_paths(config: dict[str, Any]) -> dict[str, Any]:
     config["runtime"]["output_dir"] = str(SM_OUTPUT_DIR)
     if os.environ.get("S3_OUTPUT"):
         config.setdefault("output", {})["s3_output_path"] = os.environ["S3_OUTPUT"]
+    if os.environ.get("GCS_OUTPUT") or os.environ.get("CLOUD_OUTPUT"):
+        config.setdefault("output", {})["storage_output_path"] = os.environ.get("GCS_OUTPUT") or os.environ["CLOUD_OUTPUT"]
     if os.environ.get("RANDOM_SEED"):
         config["random_seed"] = int(os.environ["RANDOM_SEED"])
     image = config.setdefault("image_modal", {})
@@ -328,7 +331,12 @@ def normalize_agent_config(config: dict[str, Any]) -> dict[str, Any]:
     disease_code = disease_code_from_config(normalized)
     normalized.setdefault("project_root", f"./{disease_code}_pipeline")
     normalized.setdefault("s3_raw_root", f"s3://say2-4team/{disease_code}_raw")
+    if os.environ.get("RAW_STORAGE_ROOT") or os.environ.get("GCS_RAW_ROOT"):
+        normalized["raw_storage_root"] = os.environ.get("RAW_STORAGE_ROOT") or os.environ["GCS_RAW_ROOT"]
+    normalized.setdefault("gcs_workflow_root", os.environ.get("GCS_WORKFLOW_ROOT", DEFAULT_GCS_WORKFLOW_ROOT))
     normalized.setdefault("raw_template_root", "s3://say2-4team/HNSC_raw")
+    if os.environ.get("RAW_TEMPLATE_ROOT") or os.environ.get("GCS_RAW_TEMPLATE_ROOT"):
+        normalized["raw_template_root"] = os.environ.get("RAW_TEMPLATE_ROOT") or os.environ["GCS_RAW_TEMPLATE_ROOT"]
     normalized.setdefault("auto_provision_raw", True)
 
     analysis = normalized.setdefault("analysis", {})
@@ -370,6 +378,14 @@ def normalize_agent_config(config: dict[str, Any]) -> dict[str, Any]:
         f"s3://say2-4team/{image['s3_prefix']}/output/embeddings_mid/",
     )
     image.setdefault("s3_logs_root", f"s3://say2-4team/{image['s3_prefix']}/output/logs/")
+    for env_name, config_key in (
+        ("GCS_RAW_WSI_ROOT", "s3_raw_wsi_root"),
+        ("GCS_TILES_ROOT", "s3_tiles_root"),
+        ("GCS_EMBEDDING_ROOT", "s3_embedding_root"),
+        ("GCS_LOGS_ROOT", "s3_logs_root"),
+    ):
+        if os.environ.get(env_name):
+            image[config_key] = os.environ[env_name]
     if str(execution.get("mode", "light")).lower() == "full" and image.get("disable_auto_launch") is not True:
         image["auto_launch"] = True
     else:

@@ -8,6 +8,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import unquote
 
+from pipeline.utils import cloud_storage
+
 
 BUCKET = "say2-4team"
 PIPELINE_TAG = "20260430_v1"
@@ -63,19 +65,7 @@ def package_root(config: dict[str, Any]) -> Path:
 
 
 def s3_object_count(uri: str, suffixes: tuple[str, ...] | None = None, limit: int | None = None) -> int:
-    cmd = ["aws", "s3", "ls", uri.rstrip("/") + "/", "--recursive"]
-    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    if result.returncode != 0:
-        return 0
-    count = 0
-    for line in result.stdout.splitlines():
-        parts = line.split()
-        key = parts[-1] if parts else ""
-        if not suffixes or key.endswith(suffixes):
-            count += 1
-            if limit and count >= limit:
-                return count
-    return count
+    return cloud_storage.object_count(uri, suffixes=suffixes, limit=limit)
 
 
 def active_processing_jobs(name_contains: str) -> list[dict[str, Any]]:

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-import subprocess
 
 from pipeline.utils.embedding_utils import merge_embedding_parquets, validate_embedding_matrix
+from pipeline.utils import cloud_storage
 from pipeline.utils.image_modal_sagemaker import (
     ensure_image_defaults,
     launch_embedding,
@@ -47,10 +47,7 @@ def run(config: dict, dry_run: bool = False) -> dict:
             image["s3_embedding_root"] = roots["s3_embedding_root"]
             root = out_root / "s3_embedding_cache"
             root.mkdir(parents=True, exist_ok=True)
-            subprocess.run(
-                ["aws", "s3", "sync", image["s3_embedding_root"].rstrip("/") + "/", str(root)],
-                check=True,
-            )
+            cloud_storage.sync(image["s3_embedding_root"].rstrip("/") + "/", root)
             if not any(Path(root).rglob("all_slide_embeddings_20260430_v1.parquet")):
                 root = None
         if not root:

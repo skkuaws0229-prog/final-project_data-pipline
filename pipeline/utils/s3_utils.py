@@ -2,21 +2,25 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from pipeline.utils import cloud_storage
+
 
 def download_s3_uri(s3_uri: str, local_path: str | Path) -> None:
-    import boto3
-
-    bucket, key = _split_s3(s3_uri)
     local_path = Path(local_path)
     local_path.parent.mkdir(parents=True, exist_ok=True)
-    boto3.client("s3").download_file(bucket, key, str(local_path))
+    cloud_storage.cp(s3_uri, local_path)
 
 
 def upload_file(local_path: str | Path, s3_uri: str) -> None:
-    import boto3
+    cloud_storage.cp(local_path, s3_uri)
 
-    bucket, key = _split_s3(s3_uri)
-    boto3.client("s3").upload_file(str(local_path), bucket, key)
+
+def download_cloud_uri(uri: str, local_path: str | Path) -> None:
+    download_s3_uri(uri, local_path)
+
+
+def upload_file_to_cloud(local_path: str | Path, uri: str) -> None:
+    upload_file(local_path, uri)
 
 
 def _split_s3(s3_uri: str) -> tuple[str, str]:
@@ -25,4 +29,3 @@ def _split_s3(s3_uri: str) -> tuple[str, str]:
     rest = s3_uri[5:]
     bucket, _, key = rest.partition("/")
     return bucket, key
-
