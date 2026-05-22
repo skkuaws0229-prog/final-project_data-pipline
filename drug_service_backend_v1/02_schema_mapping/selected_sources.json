@@ -1,0 +1,239 @@
+{
+  "source_bucket": "say2-4team",
+  "source_root": "20260408_new_pre_project_biso/202604_Final_data",
+  "build_root": "20260408_new_pre_project_biso/drug_service_build",
+  "excluded_diseases": ["OV", "SKCM"],
+  "diseases": {
+    "BRCA": {
+      "display_name": "Breast cancer",
+      "local_file": "BRCA_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/BRCA/20260428_new_BRCA_data/step7_admet_22assay/brca_final15_after_admet.csv",
+      "columns": {
+        "drug_id": ["drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["final_admet_rank", "rank"],
+        "tier": ["tier", "tier_name"],
+        "score": ["drug_level_score"],
+        "target": [],
+        "target_pathway": [],
+        "smiles": ["canonical_smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["verdict"],
+        "hard_fail": ["hard_fail"],
+        "hard_fail_reasons": ["hard_fail_reasons"],
+        "soft_flags": ["soft_flags"],
+        "admet_status": ["verdict"]
+      }
+    },
+    "Colon": {
+      "display_name": "Colorectal cancer",
+      "local_file": "Colon_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/Colon/20260428_colon_v2/20260428_colon_v2_step7_top15_crc_tier1234_admet22assay_choi_protocol.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name", "DRUG_NAME", "drug_name_norm"],
+        "rank": ["step7_final_rank", "rank_admet", "rank"],
+        "tier": ["crc_clinical_tier", "tier_20260428_colon_v2"],
+        "score": ["pred_ic50_mean_admet", "pred_ic50_mean"],
+        "target": ["target", "TARGET"],
+        "target_pathway": ["target_pathway", "TARGET_PATHWAY"],
+        "smiles": ["smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["verdict"],
+        "hard_fail": [],
+        "hard_fail_reasons": [],
+        "soft_flags": [],
+        "admet_status": ["admet_category", "verdict"]
+      }
+    },
+    "HNSC": {
+      "display_name": "Head and neck squamous cell carcinoma",
+      "local_file": "HNSC_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/HNSC/0.Image_modal_HNSC/step_im4c/hnsc_top30_admet_4tier_classification.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["final_rank"],
+        "tier": ["hnsc_4tier", "tier"],
+        "score": ["step6_final_score", "final_selection_score", "mean_pred_score"],
+        "target": ["target", "target_list", "step6_resolved_target_genes"],
+        "target_pathway": ["target_pathway"],
+        "smiles": ["canonical_smiles"],
+        "safety_score": [],
+        "verdict": ["admet_filter"],
+        "hard_fail": [],
+        "hard_fail_reasons": [],
+        "soft_flags": [],
+        "admet_status": ["admet_filter"]
+      }
+    },
+    "IPF": {
+      "display_name": "Idiopathic pulmonary fibrosis",
+      "local_file": "IPF_final_tiered.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/IPF/1.Drug_results/ipf_final_15_tiered.csv",
+      "columns": {
+        "drug_id": ["ChEMBL_ID"],
+        "drug_name": ["Drug_Name"],
+        "rank": ["Final_Rank"],
+        "tier": ["Tier"],
+        "score": ["drug_level_score"],
+        "target": ["Primary_Target"],
+        "target_pathway": [],
+        "smiles": [],
+        "safety_score": [],
+        "verdict": ["ADMET_Status"],
+        "hard_fail": [],
+        "hard_fail_reasons": ["Hard_Fail_Reason"],
+        "soft_flags": ["Soft_Flags"],
+        "admet_status": ["ADMET_Status"]
+      }
+    },
+    "LUNG": {
+      "display_name": "Lung cancer",
+      "local_file": "LUNG_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/LUNG/project_root/results/lung_final_top15.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["recommendation_rank", "final_rank"],
+        "tier": ["usage_category", "priority"],
+        "score": ["multi_objective_score", "prediction_score", "validation_score"],
+        "target": ["target"],
+        "target_pathway": [],
+        "smiles": ["canonical_smiles", "SMILES"],
+        "safety_score": [],
+        "verdict": ["admet_status"],
+        "hard_fail": ["tier1_fail"],
+        "hard_fail_reasons": [],
+        "soft_flags": ["tier2_warn_count"],
+        "admet_status": ["admet_status"]
+      }
+    },
+    "Liver": {
+      "display_name": "Liver cancer",
+      "local_file": "Liver_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/Liver/generated/results/lihc_final_top15.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["rank"],
+        "tier": ["tier", "usage_category"],
+        "score": ["pred_ic50_mean"],
+        "target": ["target"],
+        "target_pathway": ["target_pathway"],
+        "smiles": ["smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["verdict"],
+        "hard_fail": [],
+        "hard_fail_reasons": [],
+        "soft_flags": [],
+        "admet_status": ["verdict"]
+      }
+    },
+    "PAH": {
+      "display_name": "Pulmonary arterial hypertension",
+      "local_file": "PAH_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/PAH/1.Drug_results/pah_admet_classified_top30.csv",
+      "columns": {
+        "drug_id": ["ChEMBL_ID"],
+        "drug_name": ["Drug_Name"],
+        "rank": ["Rank", "Model_Rank"],
+        "tier": ["Tier"],
+        "score": ["drug_level_score"],
+        "target": ["Primary_Target"],
+        "target_pathway": [],
+        "smiles": ["SMILES"],
+        "safety_score": [],
+        "verdict": ["ADMET_Status"],
+        "hard_fail": ["Hard_Fail"],
+        "hard_fail_reasons": ["Hard_Fail_Reason"],
+        "soft_flags": ["Soft_Flags"],
+        "admet_status": ["ADMET_Status"]
+      }
+    },
+    "PDAC": {
+      "display_name": "Pancreatic ductal adenocarcinoma",
+      "local_file": "PDAC_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/PDAC/0.Image_modal_PAAD/step_im4c/pdac_top30_admet_4tier_classification.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["rank"],
+        "tier": ["pdac_4tier", "tier_v2"],
+        "score": ["external_v2_score", "ensemble_score"],
+        "target": ["target_genes", "target_match_genes"],
+        "target_pathway": ["PATHWAY_NAME_NORMALIZED"],
+        "smiles": ["canonical_smiles"],
+        "safety_score": [],
+        "verdict": ["admet_filter", "admet_category"],
+        "hard_fail": [],
+        "hard_fail_reasons": ["toxicity_flags"],
+        "soft_flags": ["low_confidence_toxic_signals"],
+        "admet_status": ["admet_filter", "admet_category"]
+      }
+    },
+    "Psoriasis": {
+      "display_name": "Psoriasis",
+      "local_file": "Psoriasis_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/Psoriasis/admet/model_outputs/phase2a_CatBoost_top30_admet_annotated.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["pred_rank"],
+        "tier": ["step7_decision"],
+        "score": ["pred_label_regression", "safety_score"],
+        "target": ["supported_target_axes"],
+        "target_pathway": [],
+        "smiles": ["smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["step7_decision"],
+        "hard_fail": ["black_box_warning"],
+        "hard_fail_reasons": ["flags"],
+        "soft_flags": ["flags"],
+        "admet_status": ["step7_decision"]
+      }
+    },
+    "RA": {
+      "display_name": "Rheumatoid arthritis",
+      "local_file": "RA_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/RA/admet/model_outputs/phase2a_CatBoost_top30_admet_annotated.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["pred_rank"],
+        "tier": ["step7_decision"],
+        "score": ["pred_label_regression", "safety_score"],
+        "target": ["supported_target_axes"],
+        "target_pathway": [],
+        "smiles": ["smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["step7_decision"],
+        "hard_fail": ["black_box_warning"],
+        "hard_fail_reasons": ["flags"],
+        "soft_flags": ["flags"],
+        "admet_status": ["step7_decision"]
+      }
+    },
+    "STAD": {
+      "display_name": "Stomach adenocarcinoma",
+      "local_file": "STAD_final_admet.csv",
+      "s3_key": "20260408_new_pre_project_biso/202604_Final_data/STAD/0.Image_modal_STAD/step_im4c/stad_top30_admet_4tier_classification.csv",
+      "columns": {
+        "drug_id": ["canonical_drug_id"],
+        "drug_name": ["drug_name"],
+        "rank": ["rank"],
+        "tier": ["stad_4tier"],
+        "score": ["pred_ic50_mean"],
+        "target": ["target"],
+        "target_pathway": ["target_pathway"],
+        "smiles": ["smiles"],
+        "safety_score": ["safety_score"],
+        "verdict": ["verdict"],
+        "hard_fail": [],
+        "hard_fail_reasons": [],
+        "soft_flags": [],
+        "admet_status": ["verdict"]
+      }
+    }
+  }
+}

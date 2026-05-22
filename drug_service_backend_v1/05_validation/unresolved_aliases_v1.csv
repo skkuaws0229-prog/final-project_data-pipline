@@ -1,0 +1,7 @@
+disease_id,drug_name,normalized_drug_name,rows
+BRCA,CZC24832,czc24832,4
+BRCA,THR-101,thr-101,4
+BRCA,Veliparib,veliparib,4
+BRCA,MIRA-1,mira-1,3
+BRCA,CCT007093,cct007093,1
+Psoriasis,JNJ-7706621,jnj-7706621,4

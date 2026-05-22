@@ -1,0 +1,5 @@
+cluster,n_images,label,severity_label
+0,41,psoriasis_lichen_planus_related,unknown
+1,24,psoriasis_lichen_planus_related,unknown
+2,26,psoriasis_lichen_planus_related,unknown
+3,9,psoriasis_lichen_planus_related,unknown

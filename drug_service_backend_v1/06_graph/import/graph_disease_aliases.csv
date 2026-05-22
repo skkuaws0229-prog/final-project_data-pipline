@@ -1,0 +1,32 @@
+alias_id,disease_id,alias,normalized_alias
+disalias_8e0430431940f62f,BRCA,BRCA,brca
+disalias_4eac653ac7be304d,BRCA,breast cancer,breast cancer
+disalias_7fe8c1b08210f3bc,Colon,Colon,colon
+disalias_dffc174cd0b6ad8b,Colon,COAD,coad
+disalias_4c89e7eaa9eae98d,Colon,CRC,crc
+disalias_1af46386611fcdb6,Colon,colorectal cancer,colorectal cancer
+disalias_7d6bd9e19dc73497,Colon,colon cancer,colon cancer
+disalias_51adab65593e03dc,HNSC,HNSC,hnsc
+disalias_65b7b69a03bd833c,HNSC,head and neck squamous cell carcinoma,head and neck squamous cell carcinoma
+disalias_9fe98846000eeb66,IPF,IPF,ipf
+disalias_855cc57bbdc6dcbd,IPF,idiopathic pulmonary fibrosis,idiopathic pulmonary fibrosis
+disalias_da7c91842c341ce5,LUNG,LUNG,lung
+disalias_631674e2c7d3d704,LUNG,LUAD,luad
+disalias_9a0cc8fe6e8ecb43,LUNG,lung cancer,lung cancer
+disalias_60d40e30502cdffc,LUNG,lung adenocarcinoma,lung adenocarcinoma
+disalias_30093e838f789474,Liver,Liver,liver
+disalias_ca6b87aa05ef0673,Liver,LIHC,lihc
+disalias_f214fd1335675cbb,Liver,HCC,hcc
+disalias_1e65ea8c69faf88b,Liver,liver cancer,liver cancer
+disalias_05fee887d78258be,Liver,hepatocellular carcinoma,hepatocellular carcinoma
+disalias_8456474c774dd1e0,PAH,PAH,pah
+disalias_1f05c81fae00cbb7,PAH,pulmonary arterial hypertension,pulmonary arterial hypertension
+disalias_98b59afeb46629e1,PDAC,PDAC,pdac
+disalias_95625b1deb966755,PDAC,PAAD,paad
+disalias_c89bf434be454ead,PDAC,pancreatic ductal adenocarcinoma,pancreatic ductal adenocarcinoma
+disalias_f09f9413dd3ca11f,Psoriasis,Psoriasis,psoriasis
+disalias_258cbe08de128a4a,RA,RA,ra
+disalias_8b30632d5d2d4c7a,RA,rheumatoid arthritis,rheumatoid arthritis
+disalias_5b6645be8d4bd09e,STAD,STAD,stad
+disalias_1de0207e5366736e,STAD,gastric cancer,gastric cancer
+disalias_d4e08dc97b993caf,STAD,stomach adenocarcinoma,stomach adenocarcinoma

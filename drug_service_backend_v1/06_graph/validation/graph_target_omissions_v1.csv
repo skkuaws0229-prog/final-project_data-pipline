@@ -1,0 +1,3 @@
+source,rows_without_target_or_pathway,interpretation
+drug_candidates,62,expected omission from HAS_TARGET edges
+image_modal_drug_evidence,0,expected omission from MENTIONS_TARGET edges

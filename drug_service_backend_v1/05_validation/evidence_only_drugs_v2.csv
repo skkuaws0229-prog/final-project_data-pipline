@@ -1,0 +1,11 @@
+disease_id,drug_name,primary_drug_name,rows
+BRCA,CCT007093,CCT007093,1
+BRCA,CZC24832,CZC24832,4
+BRCA,MIRA-1,MIRA-1,3
+BRCA,THR-101,THR-101,4
+BRCA,Veliparib,Veliparib,4
+Colon,LMP744,LMP744,2
+Colon,PD0325901,PD0325901,2
+Colon,Refametinib,Refametinib,2
+PAH,unnamed lead (CHEMBL304460),unnamed lead (CHEMBL304460),1
+Psoriasis,JNJ-7706621,JNJ-7706621,4

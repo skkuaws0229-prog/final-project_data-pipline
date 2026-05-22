@@ -1,0 +1,4 @@
+check,status,detail
+markdown_linkage_structured,pass,Colon/IPF/PAH now have structured image_modal_drug_evidence rows.
+evidence_drug_canonicalization,pass,All image-modal evidence rows now have canonical_drug_id via matched or evidence_only status.
+target_normalization,deferred,Keep raw target text for React; split gene/pathway/mechanism terms during Neo4j/OpenSearch phase.

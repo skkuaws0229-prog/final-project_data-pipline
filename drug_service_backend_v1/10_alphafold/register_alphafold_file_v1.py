@@ -19,10 +19,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Register a downloaded AlphaFold structure file in PostgreSQL.")
     parser.add_argument("--structure-id", required=True)
     parser.add_argument("--local-file", required=True)
-    parser.add_argument("--s3-uri", required=True)
+    parser.add_argument("--storage-uri")
+    parser.add_argument("--s3-uri")
     parser.add_argument("--source-uri", required=True)
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
+    storage_uri = args.storage_uri or args.s3_uri
+    if not storage_uri:
+        raise SystemExit("--storage-uri is required")
 
     database_url = os.environ.get("DATABASE_URL")
     if not database_url:
@@ -51,7 +55,7 @@ def main() -> None:
                     UPDATE alphafold_structures
                     SET
                       structure_source_uri = COALESCE(structure_source_uri, %(source_uri)s),
-                      structure_uri = %(s3_uri)s,
+                      structure_uri = %(storage_uri)s,
                       file_size_bytes = %(file_size)s,
                       checksum_sha256 = %(checksum)s,
                       status = 'available',
@@ -60,7 +64,7 @@ def main() -> None:
                     """,
                     {
                         "structure_id": args.structure_id,
-                        "s3_uri": args.s3_uri,
+                        "storage_uri": storage_uri,
                         "source_uri": args.source_uri,
                         "file_size": file_size,
                         "checksum": checksum,

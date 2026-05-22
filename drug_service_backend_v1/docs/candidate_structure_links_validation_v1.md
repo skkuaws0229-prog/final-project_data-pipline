@@ -74,23 +74,5 @@ structure_id FK missing: 0
 target_protein_links.target_text가 candidate/evidence target 문자열 안에 token 단위로 등장하는 경우만 연결했다.
 target_protein_links.raw_json.diseases에 현재 disease_id가 포함된 경우만 연결했다.
 복합 target의 모든 구성요소를 임의로 확장하지 않고, reviewed seed에 있는 target 표현만 사용했다.
-canonical_drug_id는 source_drug_id 우선, drug name/alias fallback 순서로 채웠다.
-relation_note에는 원천 drug_id/drug_name을 함께 보존한다.
-```
-
-## Canonical Drug 보강 확인
-
-초기 검증에서 `canonical_drug_id`가 비어 있던 18개 row는 모두 `image_evidence`에서 온 row였다.
-
-원인은 source_drug_id 직접 매핑 누락이었고, drug name/alias로는 이미 canonical drug이 존재했다.
-
-보강 후 아래 6개 source drug이 canonical으로 연결됐다.
-
-```text
-CCT007093 -> cdrug_c7bcca826492e28a
-JNJ-7706621 -> cdrug_93ce5173efc14556
-LMP744 -> cdrug_25c95fa72ddae840
-MIRA-1 -> cdrug_d8014f6e4666f0f3
-PD0325901 -> cdrug_437729aca9b5a6f7
-Refametinib -> cdrug_8bfd50149ba3e72c
+canonical_drug_id가 비어도 relation_note에 drug_id/drug_name을 보존한다.
 ```

@@ -489,7 +489,7 @@ def preflight_pipeline_run(request: PipelineRunCreateRequest) -> dict:
 def list_pipeline_run_statuses(
     disease_slug: str | None = Query(None, description="Optional disease slug, e.g. ra, ov, pah"),
     status: str | None = Query(None, description="Optional run status filter"),
-    execution_backend: str | None = Query(None, description="Optional backend: mock, local_agent, aws_stepfunctions"),
+    execution_backend: str | None = Query(None, description="Optional backend: mock, local_agent, aws_stepfunctions, gcp_workflows"),
     requested_by: str | None = Query(None, description="Optional requester filter, e.g. frontend, chatbot"),
     limit: int = Query(50, ge=1, le=200),
 ) -> dict:

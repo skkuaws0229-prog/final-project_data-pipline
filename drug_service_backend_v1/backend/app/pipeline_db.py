@@ -28,11 +28,12 @@ DISEASE_NAME_TO_SLUG = {
 }
 
 VALID_PIPELINE_MODES = {"basic", "image_modal", "full"}
-VALID_EXECUTION_BACKENDS = {"mock", "local_agent", "aws_stepfunctions"}
+VALID_EXECUTION_BACKENDS = {"mock", "local_agent", "aws_stepfunctions", "gcp_workflows"}
 EXECUTION_BACKEND_ALIASES = {
     "$": "mock",
     "@": "local_agent",
     "#": "aws_stepfunctions",
+    "%": "gcp_workflows",
 }
 EXECUTION_BACKEND_TO_ALIAS = {value: key for key, value in EXECUTION_BACKEND_ALIASES.items()}
 VALID_RUN_STATUSES = {"queued", "preflight", "running", "waiting_external_job", "validating", "completed", "failed", "cancelled", "blocked"}
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
   disease_name TEXT NOT NULL,
   disease_slug TEXT NOT NULL,
   mode TEXT NOT NULL CHECK (mode IN ('basic', 'image_modal', 'full')),
-  execution_backend TEXT NOT NULL CHECK (execution_backend IN ('local_agent', 'aws_stepfunctions', 'mock')),
+  execution_backend TEXT NOT NULL CHECK (execution_backend IN ('local_agent', 'aws_stepfunctions', 'gcp_workflows', 'mock')),
   status TEXT NOT NULL CHECK (status IN ('queued', 'preflight', 'running', 'waiting_external_job', 'validating', 'completed', 'failed', 'cancelled', 'blocked')),
   current_step TEXT,
   requested_by TEXT,
@@ -74,7 +75,7 @@ CREATE INDEX IF NOT EXISTS idx_pipeline_run_events_run_time ON pipeline_run_even
 CREATE TABLE IF NOT EXISTS pipeline_artifacts (
   artifact_id TEXT PRIMARY KEY,
   run_id TEXT NOT NULL REFERENCES pipeline_runs(run_id) ON DELETE CASCADE,
-  artifact_type TEXT NOT NULL CHECK (artifact_type IN ('report', 'csv', 'json', 'plot', 'model_summary', 's3_prefix', 'log', 'validation')),
+  artifact_type TEXT NOT NULL CHECK (artifact_type IN ('report', 'csv', 'json', 'plot', 'model_summary', 's3_prefix', 'gcs_prefix', 'log', 'validation')),
   step TEXT,
   name TEXT NOT NULL,
   uri TEXT NOT NULL,
@@ -95,6 +96,19 @@ CREATE TABLE IF NOT EXISTS pipeline_configs (
 CREATE INDEX IF NOT EXISTS idx_pipeline_configs_run ON pipeline_configs(run_id);
 """
 
+PIPELINE_SCHEMA_MIGRATION_SQL = """
+ALTER TABLE pipeline_runs
+  DROP CONSTRAINT IF EXISTS pipeline_runs_execution_backend_check;
+ALTER TABLE pipeline_runs
+  ADD CONSTRAINT pipeline_runs_execution_backend_check
+  CHECK (execution_backend IN ('local_agent', 'aws_stepfunctions', 'gcp_workflows', 'mock'));
+ALTER TABLE pipeline_artifacts
+  DROP CONSTRAINT IF EXISTS pipeline_artifacts_artifact_type_check;
+ALTER TABLE pipeline_artifacts
+  ADD CONSTRAINT pipeline_artifacts_artifact_type_check
+  CHECK (artifact_type IN ('report', 'csv', 'json', 'plot', 'model_summary', 's3_prefix', 'gcs_prefix', 'log', 'validation'));
+"""
+
 
 def utc_now() -> datetime:
     return datetime.now(UTC)
@@ -108,6 +122,7 @@ def ensure_pipeline_schema() -> None:
     with psycopg.connect(settings.database_url, row_factory=dict_row) as conn:
         with conn.cursor() as cur:
             cur.execute(PIPELINE_SCHEMA_SQL)
+            cur.execute(PIPELINE_SCHEMA_MIGRATION_SQL)
         conn.commit()
 
 
@@ -146,11 +161,11 @@ def preflight_pipeline_request(disease_name: str, mode: str, execution_backend: 
     if not is_supported:
         disease_slug = disease_slug_for_unknown(parsed_disease_name)
         preflight_status = "needs_registration"
-        reasons.extend(["disease_mapping_missing", "s3_input_not_verified", "schema_mapping_not_defined"])
+        reasons.extend(["disease_mapping_missing", "cloud_input_not_verified", "schema_mapping_not_defined"])
         required_actions.extend(
             [
                 "register_disease_mapping",
-                "confirm_s3_input_prefix",
+                "confirm_gcs_input_prefix",
                 "define_column_mapping",
                 "run_data_integrity_check",
             ]
@@ -160,6 +175,7 @@ def preflight_pipeline_request(disease_name: str, mode: str, execution_backend: 
         normalized_backend == "mock"
         or (normalized_backend == "local_agent" and settings.pipeline_enable_local_agent)
         or (normalized_backend == "aws_stepfunctions" and settings.pipeline_enable_aws_stepfunctions)
+        or (normalized_backend == "gcp_workflows" and settings.pipeline_enable_gcp_workflows)
     )
     if is_supported and not backend_enabled:
         preflight_status = "backend_disabled"
@@ -197,6 +213,8 @@ def make_config_yaml(disease_name: str, disease_slug: str, mode: str, execution_
             f"disease_slug: {disease_slug}",
             f"mode: {mode}",
             f"execution_backend: {execution_backend}",
+            f"workflow_data_gcs_root: {settings.workflow_data_gcs_root}",
+            f"output_gcs_prefix: {settings.pipeline_default_gcs_prefix.rstrip('/')}/{disease_slug}/",
             f"random_seed: {random_seed}",
             "secret_policy: store_secret_ids_only",
             "",
@@ -222,7 +240,11 @@ def insert_pipeline_run(
     ensure_pipeline_schema()
     run_id = new_id("run")
     now = utc_now()
-    s3_output_prefix = f"{settings.pipeline_default_s3_prefix.rstrip('/')}/{disease_slug}/"
+    storage_output_prefix = (
+        f"{settings.pipeline_default_gcs_prefix.rstrip('/')}/{disease_slug}/"
+        if execution_backend == "gcp_workflows"
+        else f"{settings.pipeline_default_s3_prefix.rstrip('/')}/{disease_slug}/"
+    )
     with psycopg.connect(settings.database_url, row_factory=dict_row) as conn:
         with conn.cursor() as cur:
             cur.execute(
@@ -246,7 +268,7 @@ def insert_pipeline_run(
                     "mode": mode,
                     "execution_backend": execution_backend,
                     "requested_by": requested_by,
-                    "s3_output_prefix": s3_output_prefix,
+                    "s3_output_prefix": storage_output_prefix,
                     "config_snapshot": json.dumps(config_snapshot),
                     "random_seed": random_seed,
                     "now": now,

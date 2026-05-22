@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: drug-service-postgres
+    environment:
+      POSTGRES_DB: drug_service
+      POSTGRES_USER: drug_service
+      POSTGRES_PASSWORD: drug_service_local
+    ports:
+      - "5433:5432"
+    volumes:
+      - drug_service_pgdata:/var/lib/postgresql/data
+      - ../03_normalized:/normalized:ro
+      - ./postgres_schema.sql:/schema/postgres_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U drug_service -d drug_service"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  drug_service_pgdata:

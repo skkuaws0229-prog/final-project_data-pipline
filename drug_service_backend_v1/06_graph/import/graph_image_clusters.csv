@@ -1,0 +1,32 @@
+cluster_id,disease_id,cluster_key,cluster_label,n_observations,clinical_summary,pathway_summary,source_file
+imcluster_7cb8eb52594960af,BRCA,C0,,,,DNA replication,BRCA_drug_linkage.csv
+imcluster_f4abf244974b1646,BRCA,C1,,,,DNA replication,BRCA_drug_linkage.csv
+imcluster_c8239e0289f45dff,BRCA,C2,,,,DNA replication,BRCA_drug_linkage.csv
+imcluster_a23ed182f842b36b,BRCA,C3,,,,DNA replication,BRCA_drug_linkage.csv
+imcluster_51dd70c5fbc6ec1a,Colon,0,MSI/MMR-enriched CRC-like cluster,9,,DNA replication,Colon_drug_linkage.md
+imcluster_5ec220e124a50080,Colon,1,MSI/MMR-enriched CRC-like cluster,121,,DNA replication,Colon_drug_linkage.md
+imcluster_fca36e499f1d09d1,Colon,2,MSI/MMR-enriched CRC-like cluster,88,,DNA replication,Colon_drug_linkage.md
+imcluster_520dc35d971cf547,Colon,3,,7,,,Colon_clinical_cluster.csv
+imcluster_93baab94defd2986,HNSC,0,Tier 3,209,,,HNSC_drug_linkage.csv
+imcluster_6893ea6ac1e4cef6,HNSC,1,Tier 3,16,,,HNSC_drug_linkage.csv
+imcluster_e42c1c61aafe2268,IPF,0,Preserved-FVC Rapid-Risk Phenotype,99,,Inflammatory-fibrotic transition,IPF_drug_linkage.md
+imcluster_c90733dce2ac04ff,IPF,1,Lower-FVC Fibrotic Phenotype,77,,ECM remodeling and angiogenesis,IPF_drug_linkage.md
+imcluster_80109e833c9a6d00,LUNG,0,PI/TP53-Proliferative-like WSI Cluster,15,,TP53/cell-cycle/proliferative injury biology,LUNG_drug_linkage.csv
+imcluster_6d2f7c0f3eab8f12,LUNG,1,PI/TP53-Proliferative-like WSI Cluster,89,,TP53/cell-cycle/proliferative injury biology,LUNG_drug_linkage.csv
+imcluster_5baab8a67cdd0fdf,LUNG,2,PI/TP53-Proliferative-like WSI Cluster,146,,TP53/cell-cycle/proliferative injury biology,LUNG_drug_linkage.csv
+imcluster_6515ba94f529f557,Liver,1,TP53-Proliferative-like WSI Cluster,21,,TP53/cell-cycle/proliferative injury biology,Liver_drug_linkage.csv
+imcluster_54974ce9487529ee,Liver,0,,108,,,Liver_clinical_cluster.csv
+imcluster_59171b1ad08e7c81,Liver,2,,94,,,Liver_clinical_cluster.csv
+imcluster_fb27ef85fb186089,PAH,0,Early Vascular Remodeling,99,,Endothelin + NO/PDE5 pathway,PAH_drug_linkage.md
+imcluster_35d740581854a27b,PAH,1,Advanced Vascular Disease,77,,Prostacyclin + advanced anti-remodeling,PAH_drug_linkage.md
+imcluster_ea1b0c9372d83f8b,PDAC,0,Tier 1,168,,Mitosis,PDAC_drug_linkage.csv
+imcluster_6f021bb02f82e334,PDAC,1,Tier 1,10,,Mitosis,PDAC_drug_linkage.csv
+imcluster_840ab0c63832388c,Psoriasis,0,psoriasis_lichen_planus_related,1,,,Psoriasis_drug_linkage.csv
+imcluster_d7ef8b159f54dbab,Psoriasis,1,psoriasis_lichen_planus_related,1,,,Psoriasis_drug_linkage.csv
+imcluster_db20d78e4ea7ee7d,Psoriasis,2,psoriasis_lichen_planus_related,1,,,Psoriasis_drug_linkage.csv
+imcluster_e3a11e1a6c3719d7,Psoriasis,3,psoriasis_lichen_planus_related,1,,,Psoriasis_drug_linkage.csv
+imcluster_bf3b193dd6b7d10a,RA,0,highest erosion burden,1,,,RA_drug_linkage.csv
+imcluster_7ae414dfb8488ade,RA,1,lowest erosion burden,1,,,RA_drug_linkage.csv
+imcluster_7b8f770c5e0a8cce,STAD,0,CIN/TP53-ERBB2 axis STAD cluster,159,,DNA replication,STAD_drug_linkage.csv
+imcluster_e09d33f00be65bdd,STAD,1,immune-enriched EBV/MSI-like STAD cluster,53,,DNA replication,STAD_drug_linkage.csv
+imcluster_181fb1acaf1fef83,STAD,2,immune-enriched EBV/MSI-like STAD cluster,13,,DNA replication,STAD_drug_linkage.csv

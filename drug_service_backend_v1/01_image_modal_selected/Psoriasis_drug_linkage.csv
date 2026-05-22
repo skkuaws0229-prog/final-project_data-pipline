@@ -1,0 +1,121 @@
+cluster,cluster_n_images,drug_rank,drug_name,canonical_drug_id,target_axis,psoriasis_4tier,linkage_hypothesis
+0,41,1,RUXOLITINIB,CHEMBL1789941,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,2,PICLAMILAST,CHEMBL42126,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,3,STAUROSPORINE,CHEMBL388978,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,4,ABIVERTINIB,CHEMBL4297865,JAK1,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+0,41,5,ROFLUMILAST,CHEMBL193240,nan,Tier 1,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,6,BMS-986202,CHEMBL4789639,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,7,AZD-1480,CHEMBL1231124,JAK2,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+0,41,8,DEUCRAVACITINIB,CHEMBL4435170,JAK2,Tier 1,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+0,41,9,TOFACITINIB,CHEMBL221959,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,10,NS-018,CHEMBL4303389,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,11,RITLECITINIB,CHEMBL4085457,JAK1,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+0,41,12,UK-500001,CHEMBL3113734,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,13,ATINVICITINIB,CHEMBL4066193,JAK3,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+0,41,14,CERDULATINIB,CHEMBL4116008,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,15,LONDAMOCITINIB,CHEMBL4447181,JAK2,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+0,41,16,IBERDOMIDE,CHEMBL3989927,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,17,BARICITINIB,CHEMBL2105759,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,18,PEFICITINIB,CHEMBL3137308,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,19,FEDRATINIB,CHEMBL1287853,JAK3,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+0,41,20,UPADACITINIB,CHEMBL3622821,TYK2,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+0,41,21,LESTAURTINIB,CHEMBL603469,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,22,JNJ-7706621,CHEMBL191003,JAK2,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+0,41,23,PACRITINIB,CHEMBL2035187,JAK1,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+0,41,24,AT-9283,CHEMBL495727,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,25,REPOTRECTINIB,CHEMBL4298138,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,26,BMS-911543,CHEMBL3545215,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,27,DECERNOTINIB,CHEMBL3039513,TYK2,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+0,41,28,CDP840,CHEMBL32442,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,29,MOMELOTINIB,CHEMBL1078178,nan,Tier 3,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+0,41,30,TOFACITINIB CITRATE,CHEMBL2103743,nan,Tier 2,Cluster 0 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,1,RUXOLITINIB,CHEMBL1789941,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,2,PICLAMILAST,CHEMBL42126,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,3,STAUROSPORINE,CHEMBL388978,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,4,ABIVERTINIB,CHEMBL4297865,JAK1,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+1,24,5,ROFLUMILAST,CHEMBL193240,nan,Tier 1,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,6,BMS-986202,CHEMBL4789639,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,7,AZD-1480,CHEMBL1231124,JAK2,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+1,24,8,DEUCRAVACITINIB,CHEMBL4435170,JAK2,Tier 1,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+1,24,9,TOFACITINIB,CHEMBL221959,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,10,NS-018,CHEMBL4303389,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,11,RITLECITINIB,CHEMBL4085457,JAK1,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+1,24,12,UK-500001,CHEMBL3113734,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,13,ATINVICITINIB,CHEMBL4066193,JAK3,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+1,24,14,CERDULATINIB,CHEMBL4116008,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,15,LONDAMOCITINIB,CHEMBL4447181,JAK2,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+1,24,16,IBERDOMIDE,CHEMBL3989927,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,17,BARICITINIB,CHEMBL2105759,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,18,PEFICITINIB,CHEMBL3137308,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,19,FEDRATINIB,CHEMBL1287853,JAK3,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+1,24,20,UPADACITINIB,CHEMBL3622821,TYK2,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+1,24,21,LESTAURTINIB,CHEMBL603469,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,22,JNJ-7706621,CHEMBL191003,JAK2,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+1,24,23,PACRITINIB,CHEMBL2035187,JAK1,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+1,24,24,AT-9283,CHEMBL495727,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,25,REPOTRECTINIB,CHEMBL4298138,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,26,BMS-911543,CHEMBL3545215,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,27,DECERNOTINIB,CHEMBL3039513,TYK2,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+1,24,28,CDP840,CHEMBL32442,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,29,MOMELOTINIB,CHEMBL1078178,nan,Tier 3,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+1,24,30,TOFACITINIB CITRATE,CHEMBL2103743,nan,Tier 2,Cluster 1 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,1,RUXOLITINIB,CHEMBL1789941,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,2,PICLAMILAST,CHEMBL42126,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,3,STAUROSPORINE,CHEMBL388978,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,4,ABIVERTINIB,CHEMBL4297865,JAK1,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+2,26,5,ROFLUMILAST,CHEMBL193240,nan,Tier 1,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,6,BMS-986202,CHEMBL4789639,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,7,AZD-1480,CHEMBL1231124,JAK2,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+2,26,8,DEUCRAVACITINIB,CHEMBL4435170,JAK2,Tier 1,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+2,26,9,TOFACITINIB,CHEMBL221959,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,10,NS-018,CHEMBL4303389,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,11,RITLECITINIB,CHEMBL4085457,JAK1,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+2,26,12,UK-500001,CHEMBL3113734,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,13,ATINVICITINIB,CHEMBL4066193,JAK3,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+2,26,14,CERDULATINIB,CHEMBL4116008,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,15,LONDAMOCITINIB,CHEMBL4447181,JAK2,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+2,26,16,IBERDOMIDE,CHEMBL3989927,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,17,BARICITINIB,CHEMBL2105759,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,18,PEFICITINIB,CHEMBL3137308,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,19,FEDRATINIB,CHEMBL1287853,JAK3,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+2,26,20,UPADACITINIB,CHEMBL3622821,TYK2,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+2,26,21,LESTAURTINIB,CHEMBL603469,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,22,JNJ-7706621,CHEMBL191003,JAK2,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+2,26,23,PACRITINIB,CHEMBL2035187,JAK1,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+2,26,24,AT-9283,CHEMBL495727,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,25,REPOTRECTINIB,CHEMBL4298138,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,26,BMS-911543,CHEMBL3545215,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,27,DECERNOTINIB,CHEMBL3039513,TYK2,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+2,26,28,CDP840,CHEMBL32442,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,29,MOMELOTINIB,CHEMBL1078178,nan,Tier 3,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+2,26,30,TOFACITINIB CITRATE,CHEMBL2103743,nan,Tier 2,Cluster 2 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,1,RUXOLITINIB,CHEMBL1789941,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,2,PICLAMILAST,CHEMBL42126,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,3,STAUROSPORINE,CHEMBL388978,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,4,ABIVERTINIB,CHEMBL4297865,JAK1,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+3,9,5,ROFLUMILAST,CHEMBL193240,nan,Tier 1,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,6,BMS-986202,CHEMBL4789639,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,7,AZD-1480,CHEMBL1231124,JAK2,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+3,9,8,DEUCRAVACITINIB,CHEMBL4435170,JAK2,Tier 1,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+3,9,9,TOFACITINIB,CHEMBL221959,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,10,NS-018,CHEMBL4303389,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,11,RITLECITINIB,CHEMBL4085457,JAK1,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+3,9,12,UK-500001,CHEMBL3113734,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,13,ATINVICITINIB,CHEMBL4066193,JAK3,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+3,9,14,CERDULATINIB,CHEMBL4116008,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,15,LONDAMOCITINIB,CHEMBL4447181,JAK2,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+3,9,16,IBERDOMIDE,CHEMBL3989927,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,17,BARICITINIB,CHEMBL2105759,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,18,PEFICITINIB,CHEMBL3137308,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,19,FEDRATINIB,CHEMBL1287853,JAK3,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK3 axis.
+3,9,20,UPADACITINIB,CHEMBL3622821,TYK2,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+3,9,21,LESTAURTINIB,CHEMBL603469,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,22,JNJ-7706621,CHEMBL191003,JAK2,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK2 axis.
+3,9,23,PACRITINIB,CHEMBL2035187,JAK1,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and JAK1 axis.
+3,9,24,AT-9283,CHEMBL495727,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,25,REPOTRECTINIB,CHEMBL4298138,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,26,BMS-911543,CHEMBL3545215,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,27,DECERNOTINIB,CHEMBL3039513,TYK2,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline and TYK2 axis.
+3,9,28,CDP840,CHEMBL32442,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,29,MOMELOTINIB,CHEMBL1078178,nan,Tier 3,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.
+3,9,30,TOFACITINIB CITRATE,CHEMBL2103743,nan,Tier 2,Cluster 3 is an image-defined psoriasis morphology group; candidate prioritized through baseline psoriasis pipeline.

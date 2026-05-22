@@ -1,0 +1,134 @@
+target_id,concept_text,normalized_text,concept_type
+target_61261ffa91098329,Apoptosis regulation,apoptosis regulation,raw_pathway
+target_b63bea6e1ab9da68,Cell cycle,cell cycle,raw_pathway
+target_a3933d5f1ea77812,Chromatin histone acetylation,chromatin histone acetylation,raw_pathway
+target_1416fc3e3932fc67,DNA replication,dna replication,raw_pathway
+target_b53067a638268f0a,ECM remodeling and angiogenesis,ecm remodeling and angiogenesis,raw_pathway
+target_a9e1d6c6f85a7eb5,EGFR signaling,egfr signaling,raw_pathway
+target_172eca46c60c0de5,Endothelin + NO/PDE5 pathway,endothelin + no/pde5 pathway,raw_pathway
+target_e263148716931e9d,ERK MAPK signaling,erk mapk signaling,raw_pathway
+target_cdbf468a18ff1319,Genome integrity,genome integrity,raw_pathway
+target_3fa0fe291796719b,IGF1R signaling,igf1r signaling,raw_pathway
+target_ca35ffcff698a02e,Inflammatory-fibrotic transition,inflammatory-fibrotic transition,raw_pathway
+target_6ef4c54890d49550,Mitosis,mitosis,raw_pathway
+target_f47fa3a1dc526599,Other,other,raw_pathway
+target_19a7895319ed3f55,Other kinases,other kinases,raw_pathway
+target_9b02185c016f1190,"Other, kinases","other, kinases",raw_pathway
+target_c389f9af0d520319,p53 pathway,p53 pathway,raw_pathway
+target_a24e74dbaef2efa5,PI3K/MTOR signaling,pi3k/mtor signaling,raw_pathway
+target_d1669b8935fdc124,Prostacyclin + advanced anti-remodeling,prostacyclin + advanced anti-remodeling,raw_pathway
+target_867a91bd59261288,Protein stability and degradation,protein stability and degradation,raw_pathway
+target_8bc6d0feb1bd165c,RTK signaling,rtk signaling,raw_pathway
+target_c9006683c7bd4d69,"ABL, SRC, Ephrins, PDGFR, KIT","abl, src, ephrins, pdgfr, kit",raw_target
+target_389799d00ddf6d9b,ABL;ABL1;CAMK2G;FGR;HCK;LYN;MAP2K1;MAP2K2;MAP3K2;SLK;SRC;TEC,abl;abl1;camk2g;fgr;hck;lyn;map2k1;map2k2;map3k2;slk;src;tec,raw_target
+target_059b04ea77c01357,"ABL|EPHRINS|KIT|PDGFR|SRC ABL, SRC, Ephrins, PDGFR, KIT Other, kinases ABL|EPHRINS|KIT|PDGFR|SRC","abl|ephrins|kit|pdgfr|src abl, src, ephrins, pdgfr, kit other, kinases abl|ephrins|kit|pdgfr|src",raw_target
+target_0297190270d31246,"AKT1, AKT2","akt1, akt2",raw_target
+target_64f428574bac0e50,"AKT1, AKT2, AKT3","akt1, akt2, akt3",raw_target
+target_3d5652d932f7d106,"AKT1|AKT2 AKT1, AKT2 PI3K/MTOR signaling AKT1|AKT2","akt1|akt2 akt1, akt2 pi3k/mtor signaling akt1|akt2",raw_target
+target_b64a249006a43077,"AKT1|AKT2|AKT3 AKT1, AKT2, AKT3 PI3K/MTOR signaling AKT1|AKT2|AKT3","akt1|akt2|akt3 akt1, akt2, akt3 pi3k/mtor signaling akt1|akt2|akt3",raw_target
+target_3165b529a3f7ff92,Anthracycline,anthracycline,raw_target
+target_18147689bd709a77,ANTHRACYCLINE Anthracycline DNA replication ANTHRACYCLINE,anthracycline anthracycline dna replication anthracycline,raw_target
+target_abfb990be3c10c39,ANTHRACYCLINE;TOP2A;TOP2B,anthracycline;top2a;top2b,raw_target
+target_6355eb4ba9085d0e,Antimetabolite,antimetabolite,raw_target
+target_e8f3ce9c535a12b7,ANTIMETABOLITE Antimetabolite DNA replication ANTIMETABOLITE,antimetabolite antimetabolite dna replication antimetabolite,raw_target
+target_c6cdac9b1fbe77db,ANTIMETABOLITE;POLB,antimetabolite;polb,raw_target
+target_753d6824f3645fbb,AURKA,aurka,raw_target
+target_af771bfd5af592c6,AURKA AURKA Mitosis AURKA,aurka aurka mitosis aurka,raw_target
+target_ece5e0315f5669e9,"AURKA, AURKB, AURKC, others","aurka, aurkb, aurkc, others",raw_target
+target_264cedc9a71e25c4,AURKA|AURKB|AURKC|OTHERS,aurka|aurkb|aurkc|others,raw_target
+target_24378d99aedadc5b,B-cell / BTK axis,b-cell / btk axis,raw_target
+target_7353bb53beac9bd7,"BCL-XL|BCL2|MCL1 BCL2, BCL-XL, MCL1 Apoptosis regulation BCL2|BCL2L1|MCL1","bcl-xl|bcl2|mcl1 bcl2, bcl-xl, mcl1 apoptosis regulation bcl2|bcl2l1|mcl1",raw_target
+target_742041ca41f1ed28,"BCL2, BCL-XL, BCL-W","bcl2, bcl-xl, bcl-w",raw_target
+target_3a49a7c56b5e591c,"BCL2,  BCL-XL,  BFL1, MCL1","bcl2, bcl-xl, bfl1, mcl1",raw_target
+target_529ed25254e1067c,"BCL2, BCL-XL, MCL1","bcl2, bcl-xl, mcl1",raw_target
+target_df32c29d2b9d2eaa,BCL2;MAP4;MAPK1;TUBB,bcl2;map4;mapk1;tubb,raw_target
+target_3f1603650d00fafa,BCL2;NR1I2;TUBB1,bcl2;nr1i2;tubb1,raw_target
+target_f2aeec824b5e6914,BRAF;LIMK1;NEK11;RAF1;SIK1,braf;limk1;nek11;raf1;sik1,raw_target
+target_aa5ad685d3689ba4,broad kinase; research-only signal,broad kinase; research-only signal,raw_target
+target_aa86d3072aaad900,Broad spectrum kinase inhibitor,broad spectrum kinase inhibitor,raw_target
+target_eee76d73112201fd,CAPN1;PROTEASOME,capn1;proteasome,raw_target
+target_ec0a71ecc9d4cbe1,"CAPN1|PROTEASOME Proteasome, CAPN1 Protein stability and degradation CAPN1|PROTEASOME","capn1|proteasome proteasome, capn1 protein stability and degradation capn1|proteasome",raw_target
+target_85a96ceaa9caa238,CDK2,cdk2,raw_target
+target_b138c1ad1488adbe,CDK2;CHRM1;CSK;GSK3B;IKBKB;ITK;LCK;MAPKAPK2;PDPK1;PIK3CG;PIM1;PRKCA;PRKCQ;SYK;ZAP70,cdk2;chrm1;csk;gsk3b;ikbkb;itk;lck;mapkapk2;pdpk1;pik3cg;pim1;prkca;prkcq;syk;zap70,raw_target
+target_6b28bb441ed990b9,"CDK4, CDK6","cdk4, cdk6",raw_target
+target_ff1c6e32cedda763,"CDK4|CDK6 CDK4, CDK6 Cell cycle CDK4|CDK6","cdk4|cdk6 cdk4, cdk6 cell cycle cdk4|cdk6",raw_target
+target_5a8445efa82985c0,DNA alkylating agent,dna alkylating agent,raw_target
+target_5fbf718a49ad126a,DOT1L,dot1l,raw_target
+target_4e1d9dd16741fc6d,dsDNA break induction,dsdna break induction,raw_target
+target_67f31c00ac510a67,EGFR,egfr,raw_target
+target_5414bd313ab61b6e,EGFR EGFR EGFR signaling EGFR,egfr egfr egfr signaling egfr,raw_target
+target_0c1336074c0cdc46,"EGFR, ERBB2","egfr, erbb2",raw_target
+target_b4c0e75a3b44ac3c,"EGFR|ERBB2 EGFR, ERBB2 EGFR signaling EGFR|ERBB2","egfr|erbb2 egfr, erbb2 egfr signaling egfr|erbb2",raw_target
+target_2085ad01034ea0db,"EGFR|FGFR1|FLT4|KDR|MET|PDGFR|RON|TIE2|VEGFR3 MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR RTK signaling EGFR|FGFR1|FLT4|KDR|MET|PDGFR|RON|TIE2|VEGFR3","egfr|fgfr1|flt4|kdr|met|pdgfr|ron|tie2|vegfr3 met, kdr, tie2, vegfr3/flt4, ron, pdgfr, fgfr1, egfr rtk signaling egfr|fgfr1|flt4|kdr|met|pdgfr|ron|tie2|vegfr3",raw_target
+target_0a6cd5cdb67aface,EGLN1,egln1,raw_target
+target_f4a5984e957f985d,ETA,eta,raw_target
+target_def75609dc2d99a3,ETB,etb,raw_target
+target_c5006dfd2a3851c5,FGFR2,fgfr2,raw_target
+target_a872e0e7fa286154,"FLT3, JAK2, NTRK1, NTRK2, NTRK3","flt3, jak2, ntrk1, ntrk2, ntrk3",raw_target
+target_249528dc0ad8fc8b,FLT3;JAK2;NTRK1;NTRK2;NTRK3,flt3;jak2;ntrk1;ntrk2;ntrk3,raw_target
+target_8424b9e9c2f6fe8a,"HDAC1, HDAC2, HDAC3, HDAC8","hdac1, hdac2, hdac3, hdac8",raw_target
+target_7537aaaa55db6c10,"HDAC1, HDAC3","hdac1, hdac3",raw_target
+target_d73e151337f960d4,"HDAC1|HDAC2|HDAC3|HDAC8 HDAC1, HDAC2, HDAC3, HDAC8 Chromatin histone acetylation HDAC1|HDAC2|HDAC3|HDAC8","hdac1|hdac2|hdac3|hdac8 hdac1, hdac2, hdac3, hdac8 chromatin histone acetylation hdac1|hdac2|hdac3|hdac8",raw_target
+target_db2305afbd0ca4a1,"HDAC1|HDAC3 HDAC1, HDAC3 Chromatin histone acetylation HDAC1|HDAC3","hdac1|hdac3 hdac1, hdac3 chromatin histone acetylation hdac1|hdac3",raw_target
+target_8a8e25b0186f2975,HSP90,hsp90,raw_target
+target_d41043e4cd663f11,HSP90 HSP90 Protein stability and degradation HSP90AA1,hsp90 hsp90 protein stability and degradation hsp90aa1,raw_target
+target_75abdbb6513e23b3,IGF1R;IR,igf1r;ir,raw_target
+target_9a555e4632a3d4ae,IKK-1;IKK-2,ikk-1;ikk-2,raw_target
+target_c0e591ae68b4abce,IP_receptor,ip_receptor,raw_target
+target_ba1270f649c3b0cf,JAK/STAT inflammatory axis,jak/stat inflammatory axis,raw_target
+target_f55ce7d8fc3f30eb,JAK1,jak1,raw_target
+target_732eb9f1201d711c,JAK2,jak2,raw_target
+target_d6a184a5cf154427,JAK3,jak3,raw_target
+target_249c6c567b423bf7,JUN;TUBA1A;TUBB;TUBB2A;TUBD1;TUBE1;TUBG1,jun;tuba1a;tubb;tubb2a;tubd1;tube1;tubg1,raw_target
+target_7851f608df687a5c,KDR,kdr,raw_target
+target_dadd7de463e29390,MAP2K1;MAP2K2,map2k1;map2k2,raw_target
+target_93049e2d40ef1c6f,"MEK1, MEK2","mek1, mek2",raw_target
+target_d246a26128cf4480,"MEK1|MEK2 MEK1, MEK2 ERK MAPK signaling MAP2K1|MAP2K2","mek1|mek2 mek1, mek2 erk mapk signaling map2k1|map2k2",raw_target
+target_d7a52bcc0f63cf47,MET,met,raw_target
+target_0ad55ebb8e0dd8b0,"MET, KDR, TIE2, VEGFR3/FLT4, RON, PDGFR, FGFR1, EGFR","met, kdr, tie2, vegfr3/flt4, ron, pdgfr, fgfr1, egfr",raw_target
+target_dddfbff9eee87717,Microtubule destabiliser,microtubule destabiliser,raw_target
+target_2ad7080e730d06a4,Microtubule stabiliser,microtubule stabiliser,raw_target
+target_d49c1116c959c4f4,MICROTUBULE STABILISER Microtubule stabiliser Mitosis MICROTUBULESTABILISER,microtubule stabiliser microtubule stabiliser mitosis microtubulestabiliser,raw_target
+target_e5c04c41e91bed69,MTOR,mtor,raw_target
+target_d415db933555f69a,MTOR MTOR PI3K/MTOR signaling MTOR,mtor mtor pi3k/mtor signaling mtor,raw_target
+target_4aefc3df8bc855d6,MTOR;PIK3CG,mtor;pik3cg,raw_target
+target_3c06827e22a17060,MTORC1,mtorc1,raw_target
+target_219ee0622960f2fb,"mTORC1, mTORC2","mtorc1, mtorc2",raw_target
+target_45f4e6c305448e84,Mutant RAS,mutant ras,raw_target
+target_0f9c1cc45f3dbd77,NAE,nae,raw_target
+target_d6498fa8a8e74e6f,"PARP1, PARP2","parp1, parp2",raw_target
+target_f0f7917e52d8420d,"PARP1|PARP2 PARP1, PARP2 Genome integrity PARP1|PARP2","parp1|parp2 parp1, parp2 genome integrity parp1|parp2",raw_target
+target_ac0dcc1822651579,PDE5,pde5,raw_target
+target_43e4f4969e2da494,PDGFRB,pdgfrb,raw_target
+target_3b409dac757b3fb5,PI3K (class 1),pi3k (class 1),raw_target
+target_574ced2531f02721,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma","pi3kalpha, pi3kdelta, pi3kbeta, pi3kgamma",raw_target
+target_a45e4e169569cecd,"PI3KALPHA|PI3KBETA|PI3KDELTA|PI3KGAMMA PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma PI3K/MTOR signaling PIK3CA|PIK3CB|PIK3CD|PIK3CG","pi3kalpha|pi3kbeta|pi3kdelta|pi3kgamma pi3kalpha, pi3kdelta, pi3kbeta, pi3kgamma pi3k/mtor signaling pik3ca|pik3cb|pik3cd|pik3cg",raw_target
+target_2e4df6ee9cd208b2,PI3Kbeta,pi3kbeta,raw_target
+target_a7c4d88967ee9ca6,PI3Kgamma,pi3kgamma,raw_target
+target_bf3b0d816ded6c76,PIK3CG,pik3cg,raw_target
+target_976d5cbc9160f606,"PLK1, PLK2, PLK3","plk1, plk2, plk3",raw_target
+target_180feb77b13d949e,PLK1;PLK2;PLK3,plk1;plk2;plk3,raw_target
+target_9d2c08b78ed8ee69,PLK1;WEE1,plk1;wee1,raw_target
+target_26b1aac505a6a6dd,"PLK1|PLK2|PLK3 PLK1, PLK2, PLK3 Cell cycle PLK1|PLK2|PLK3","plk1|plk2|plk3 plk1, plk2, plk3 cell cycle plk1|plk2|plk3",raw_target
+target_b84f915a2dc7686a,"PLK1|WEE1 WEE1, PLK1 Cell cycle PLK1|WEE1","plk1|wee1 wee1, plk1 cell cycle plk1|wee1",raw_target
+target_65632ef7bf5e8960,PPM1D,ppm1d,raw_target
+target_0955c704608a674f,Proteasome,proteasome,raw_target
+target_fab5ae3aba4c9c36,PROTEASOME Proteasome Protein stability and degradation PROTEASOME,proteasome proteasome protein stability and degradation proteasome,raw_target
+target_a0be3631b6f58171,"Proteasome, CAPN1","proteasome, capn1",raw_target
+target_b3e1ba8e61134e35,PROTEASOME;PRSS1;PSMB1;PSMB5,proteasome;prss1;psmb1;psmb5,raw_target
+target_45e8c3f7d7e28649,RA inflammatory kinase axis,ra inflammatory kinase axis,raw_target
+target_fe823fbeac3a923f,RNA polymerase,rna polymerase,raw_target
+target_733099850c4ec108,"RSK, AURKB, PIM1, PIM3","rsk, aurkb, pim1, pim3",raw_target
+target_e665ea95ee92c7ba,"SRC, ABL, TEC","src, abl, tec",raw_target
+target_f5e9d5d78379f07f,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC","tbk1, pdk1 (pdpk1), ikk, aurkb, aurkc",raw_target
+target_5d3f94ef07cbc00a,TOP1,top1,raw_target
+target_69f35394aba7bc4d,TOP1 TOP1 DNA replication TOP1,top1 top1 dna replication top1,raw_target
+target_c089c2c6bacd8a2e,TOP1;TOP1MT,top1;top1mt,raw_target
+target_bb2a5ae6c472a792,TOP1;TOP2A,top1;top2a,raw_target
+target_cb4531f26096f3da,TOP2,top2,raw_target
+target_e30fbcb0a894f4ec,TOP2;TOP2A;TOP2B,top2;top2a;top2b,raw_target
+target_7f3e9370e6b9c92e,TOP2A;TOP2B,top2a;top2b,raw_target
+target_22627dc3eae9340f,TP53,tp53,raw_target
+target_e77acb2bb25663da,TYK2,tyk2,raw_target
+target_712176acd7571669,"WEE1, PLK1","wee1, plk1",raw_target
+target_0b8d9f70803e44d1,"XIAP, cIAP","xiap, ciap",raw_target

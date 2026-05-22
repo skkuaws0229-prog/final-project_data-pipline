@@ -1,0 +1,12 @@
+# Step IM-4C Cluster-Drug Stratification Hypothesis
+
+|   Cluster | Label                              | FVC_Profile                   | Key_Pathway                      | Tier1_2_Drug_Candidates                                         | Rationale                                                                                               |
+|----------:|:-----------------------------------|:------------------------------|:---------------------------------|:----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
+|         0 | Preserved-FVC Rapid-Risk Phenotype | mean FVC=2825.6, rapid=26.26% | Inflammatory-fibrotic transition | Ruxolitinib; Tofacitinib                                        | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+|         1 | Lower-FVC Fibrotic Phenotype       | mean FVC=2702.5, rapid=23.38% | ECM remodeling and angiogenesis  | Nintedanib; AT-9283; Pazopanib; Sorafenib; Ponatinib; Sunitinib | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+
+## Limitations
+
+- GEO patients and OSIC patients are not the same individuals.
+- No direct drug response labels exist for OSIC.
+- Mapping is MoA/pathway based and requires clinical validation.

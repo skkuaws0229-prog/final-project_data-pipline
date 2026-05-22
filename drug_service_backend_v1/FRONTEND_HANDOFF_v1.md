@@ -232,6 +232,42 @@ Broken edge endpoint: 0
 Neo4j import CSV 대비 candidate/support/cluster/target edge count mismatch: 0
 ```
 
+## Assistant/chatbot team API
+
+프론트가 요청한 assistant 경로는 아래가 맞습니다.
+
+```text
+GET  /api/assistant/{disease}/suggested-questions
+POST /api/assistant/{disease}/ask
+```
+
+예:
+
+```text
+GET  /api/assistant/BRCA/suggested-questions
+GET  /api/assistant/RA/suggested-questions
+POST /api/assistant/BRCA/ask
+```
+
+`ask` 요청 body:
+
+```json
+{
+  "question": "BRCA 최종 후보 약물 Top 5는?",
+  "mode": "read_only"
+}
+```
+
+주의사항:
+
+```text
+- 현재 backend assistant는 read_only만 지원합니다.
+- Bedrock/LLM을 호출하지 않습니다.
+- 응답의 used_bedrock=false가 정상입니다.
+- 프론트 Bedrock fallback은 team API 실패 시에만 사용하면 됩니다.
+- 자세한 검증 결과는 docs/assistant_api_validation_v1.md를 확인합니다.
+```
+
 ## 원본 데이터와 빌드 위치
 
 원본 S3 데이터는 수정하지 않습니다.

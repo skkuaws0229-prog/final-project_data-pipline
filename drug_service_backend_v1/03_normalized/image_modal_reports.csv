@@ -1,0 +1,639 @@
+report_id,disease_id,source_id,report_kind,title,report_text,source_file
+imrep_86f48be9a2b05129,BRCA,imsrc_86f48be9a2b05129,report,BRCA Image Cluster Clinical/Mutation Analysis,"# BRCA Image Cluster Clinical/Mutation Analysis
+
+## Downloads
+
+- GDC clinical cases: 281/281
+- cBioPortal PanCancer clinical matched cases: 279
+- cBioPortal legacy receptor matched cases: 281
+- cBioPortal mutation rows: 207
+
+## Case Coverage
+
+- Clustered TCGA cases: 281
+- Cases with OS months: 279
+- Cases with subtype: 248
+
+## Stage Distribution (%)
+
+| majority_cluster   |    0 |     I |   IA |   IIA |   IIB |   IIIA |   IIIB |   IIIC |    IV |   Unknown |    X |
+|:-------------------|-----:|------:|-----:|------:|------:|-------:|-------:|-------:|------:|----------:|-----:|
+| C0                 | 0.78 | 10.85 | 9.3  | 28.68 | 20.16 |  10.85 |   3.1  |   7.75 |  1.55 |      6.98 | 0    |
+| C1                 | 0    |  4.55 | 0    | 27.27 | 22.73 |   9.09 |   9.09 |   0    |  9.09 |     13.64 | 4.55 |
+| C2                 | 1.65 |  4.96 | 8.26 | 35.54 | 19.83 |  13.22 |   1.65 |   4.13 |  1.65 |      9.09 | 0    |
+| C3                 | 0    |  0    | 0    | 33.33 | 22.22 |  11.11 |  22.22 |   0    | 11.11 |      0    | 0    |
+
+## Molecular Subtype Distribution (%)
+
+| majority_cluster   |   BRCA_Basal |   BRCA_Her2 |   BRCA_LumA |   BRCA_LumB |   BRCA_Normal |   Unknown |
+|:-------------------|-------------:|------------:|------------:|------------:|--------------:|----------:|
+| C0                 |        10.85 |        5.43 |       47.29 |       19.38 |          1.55 |     15.5  |
+| C1                 |         0    |        9.09 |       54.55 |       22.73 |          0    |     13.64 |
+| C2                 |        19.01 |        7.44 |       40.5  |       19.83 |          4.96 |      8.26 |
+| C3                 |        44.44 |        0    |       33.33 |       22.22 |          0    |      0    |
+
+## Mutation Frequency
+
+| majority_cluster   |   n_cases |   TP53_mut_pct |   TP53_mut_n |   PIK3CA_mut_pct |   PIK3CA_mut_n |   BRCA1_mut_pct |   BRCA1_mut_n |   BRCA2_mut_pct |   BRCA2_mut_n |
+|:-------------------|----------:|---------------:|-------------:|-----------------:|---------------:|----------------:|--------------:|----------------:|--------------:|
+| C0                 |       129 |          25.58 |           33 |            39.53 |             51 |            1.55 |             2 |            1.55 |             2 |
+| C1                 |        22 |          31.82 |            7 |            31.82 |              7 |            0    |             0 |            4.55 |             1 |
+| C2                 |       121 |          39.67 |           48 |            28.1  |             34 |            2.48 |             3 |            1.65 |             2 |
+| C3                 |         9 |          44.44 |            4 |            33.33 |              3 |           11.11 |             1 |            0    |             0 |
+
+## Association Tests
+
+| feature          | test   |     p_value |   dof |
+|:-----------------|:-------|------------:|------:|
+| HER2_FISH_STATUS | chi2   | 1.58786e-08 |     9 |
+| ER_STATUS_BY_IHC | chi2   | 3.80242e-06 |     9 |
+| IHC_HER2         | chi2   | 4.44422e-06 |    12 |
+| PR_STATUS_BY_IHC | chi2   | 7.99208e-06 |     6 |
+| stage_clean      | chi2   | 0.0341292   |    30 |
+| TP53_mut         | chi2   | 0.101883    |     3 |
+| SUBTYPE          | chi2   | 0.113524    |    15 |
+| BRCA1_mut        | chi2   | 0.237707    |     3 |
+| PIK3CA_mut       | chi2   | 0.296623    |     3 |
+| BRCA2_mut        | chi2   | 0.758776    |     3 |
+
+## Top30 Drug Hypotheses by Cluster
+
+| majority_cluster   |   cluster_n_cases |   drug_rank | drug_name    |   canonical_drug_id | target               | pathway             | rationale                                                                                                              |
+|:-------------------|------------------:|------------:|:-------------|--------------------:|:---------------------|:--------------------|:-----------------------------------------------------------------------------------------------------------------------|
+| C0                 |               129 |           5 | Temozolomide |                1375 | DNA alkylating agent | DNA replication     | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |           7 | CZC24832     |                1615 | PI3Kgamma            | PI3K/MTOR signaling | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |           9 | Oxaliplatin  |                1089 | DNA alkylating agent | DNA replication     | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |          10 | Fludarabine  |                1813 | Antimetabolite       | DNA replication     | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |          14 | THR-101      |                2360 | Mutant RAS           | PI3K/MTOR signaling | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |          18 | Nelarabine   |                1814 | <NA>                 | DNA replication     | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |          19 | Veliparib    |                1018 | PARP1, PARP2         | Genome integrity    | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C0                 |               129 |          20 | MIRA-1       |                1931 | TP53                 | p53 pathway         | PIK3CA mutation 40%; TP53 mutation 26%; BRCA1/2 mutation 3%                                                            |
+| C1                 |                22 |           5 | Temozolomide |                1375 | DNA alkylating agent | DNA replication     | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |           7 | CZC24832     |                1615 | PI3Kgamma            | PI3K/MTOR signaling | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |           9 | Oxaliplatin  |                1089 | DNA alkylating agent | DNA replication     | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |          10 | Fludarabine  |                1813 | Antimetabolite       | DNA replication     | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |          14 | THR-101      |                2360 | Mutant RAS           | PI3K/MTOR signaling | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |          18 | Nelarabine   |                1814 | <NA>                 | DNA replication     | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |          19 | Veliparib    |                1018 | PARP1, PARP2         | Genome integrity    | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C1                 |                22 |          20 | MIRA-1       |                1931 | TP53                 | p53 pathway         | PIK3CA mutation 32%; TP53 mutation 32%; BRCA1/2 mutation 5%                                                            |
+| C2                 |               121 |           5 | Temozolomide |                1375 | DNA alkylating agent | DNA replication     | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |           7 | CZC24832     |                1615 | PI3Kgamma            | PI3K/MTOR signaling | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |           9 | Oxaliplatin  |                1089 | DNA alkylating agent | DNA replication     | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |          10 | Fludarabine  |                1813 | Antimetabolite       | DNA replication     | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |          14 | THR-101      |                2360 | Mutant RAS           | PI3K/MTOR signaling | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |          18 | Nelarabine   |                1814 | <NA>                 | DNA replication     | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |          19 | Veliparib    |                1018 | PARP1, PARP2         | Genome integrity    | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C2                 |               121 |          20 | MIRA-1       |                1931 | TP53                 | p53 pathway         | PIK3CA mutation 28%; TP53 mutation 40%; BRCA1/2 mutation 4%                                                            |
+| C3                 |                 9 |           5 | Temozolomide |                1375 | DNA alkylating agent | DNA replication     | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+| C3                 |                 9 |           7 | CZC24832     |                1615 | PI3Kgamma            | PI3K/MTOR signaling | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+| C3                 |                 9 |           9 | Oxaliplatin  |                1089 | DNA alkylating agent | DNA replication     | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+| C3                 |                 9 |          10 | Fludarabine  |                1813 | Antimetabolite       | DNA replication     | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+| C3                 |                 9 |          12 | CCT007093    |                1067 | PPM1D                | Cell cycle          | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+| C3                 |                 9 |          14 | THR-101      |                2360 | Mutant RAS           | PI3K/MTOR signaling | PIK3CA mutation 33%; TP53 mutation 44%; BRCA1/2 mutation 11%; Basal-enriched subtype {'BRCA_Basal': 4, 'BRCA_LumA': 3} |
+
+## Note
+
+Drug links are hypothesis-generating only. They map cluster-enriched subtype/mutation patterns to Top30 drug target/pathway annotations; they are not patient-level response predictions.
+",BRCA_report.md
+imrep_93d1890583032e58,Colon,imsrc_93d1890583032e58,drug_linkage,COAD Drug-Cluster Recommendation Summary,"# COAD Drug-Cluster Recommendation Summary
+
+- Top30 drugs: 30
+- Cluster-drug links: 72
+- Tier counts: {'Tier2': 17, 'Tier3': 12, 'Tier1': 1}
+- ADMET verdict counts: {'WARNING': 23, 'PASS': 5, 'FAIL': 2}
+
+## Cluster Profiles
+cluster,n_patients,cluster_label,dominant_drivers,biology_hypothesis,candidate_keywords,MSI_H_proxy_rate,MMR_any_mut_rate
+
+0,9,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1111111111111111,0.1111111111111111
+
+1,121,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1322314049586777,0.0991735537190082
+
+2,88,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0568181818181818,0.1022727272727272
+
+3,7,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0,0.1428571428571428
+
+
+
+## Top Recommendations
+cluster,cluster_label,dominant_drivers,biology_hypothesis,canonical_drug_id,drug_name,rank,crc_4tier,target,target_pathway,admet_verdict,safety_score,match_score,matched_keywords,hypothesis
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1003,Camptothecin,11,Tier2,TOP1,DNA replication,PASS,6.25,2,tier/admet/context,Camptothecin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1808,Topotecan,27,Tier2,TOP1,DNA replication,PASS,7.5,2,tier/admet/context,Topotecan may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1080,Paclitaxel,2,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Paclitaxel may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1007,Docetaxel,5,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Docetaxel may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1809,Teniposide,6,Tier2,,DNA replication,FAIL,3.15,1,tier/admet/context,Teniposide may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1084,Rapamycin,8,Tier2,MTORC1,PI3K/MTOR signaling,WARNING,5.5,1,tier/admet/context,Rapamycin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1014,Refametinib,10,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,Refametinib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1843,LMP744,12,Tier2,TOP1,DNA replication,WARNING,5.0,1,tier/admet/context,LMP744 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1372,Trametinib,16,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.15,1,tier/admet/context,Trametinib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1441,AZD2014,18,Tier2,""mTORC1, mTORC2"",PI3K/MTOR signaling,WARNING,5.0,1,tier/admet/context,AZD2014 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2169,AZD6482,19,Tier2,PI3Kbeta,PI3K/MTOR signaling,WARNING,5.15,1,tier/admet/context,AZD6482 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1060,PD0325901,22,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,PD0325901 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1511,Epirubicin,25,Tier2,Anthracycline,DNA replication,WARNING,4.0,1,tier/admet/context,Epirubicin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1191,Bortezomib,26,Tier2,Proteasome,Protein stability and degradation,FAIL,3.4,1,tier/admet/context,Bortezomib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1003,Camptothecin,11,Tier2,TOP1,DNA replication,PASS,6.25,2,tier/admet/context,Camptothecin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1808,Topotecan,27,Tier2,TOP1,DNA replication,PASS,7.5,2,tier/admet/context,Topotecan may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1080,Paclitaxel,2,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Paclitaxel may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1007,Docetaxel,5,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Docetaxel may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1809,Teniposide,6,Tier2,,DNA replication,FAIL,3.15,1,tier/admet/context,Teniposide may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1084,Rapamycin,8,Tier2,MTORC1,PI3K/MTOR signaling,WARNING,5.5,1,tier/admet/context,Rapamycin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1014,Refametinib,10,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,Refametinib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1843,LMP744,12,Tier2,TOP1,DNA replication,WARNING,5.0,1,tier/admet/context,LMP744 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1372,Trametinib,16,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.15,1,tier/admet/context,Trametinib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1441,AZD2014,18,Tier2,""mTORC1, mTORC2"",PI3K/MTOR signaling,WARNING,5.0,1,tier/admet/context,AZD2014 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2169,AZD6482,19,Tier2,PI3Kbeta,PI3K/MTOR signaling,WARNING,5.15,1,tier/admet/context,AZD6482 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1060,PD0325901,22,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,PD0325901 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1511,Epirubicin,25,Tier2,Anthracycline,DNA replication,WARNING,4.0,1,tier/admet/context,Epirubicin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1191,Bortezomib,26,Tier2,Proteasome,Protein stability and degradation,FAIL,3.4,1,tier/admet/context,Bortezomib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+",Colon_drug_linkage.md
+imrep_9a2d984b76ab65f6,Colon,imsrc_9a2d984b76ab65f6,report,COAD Drug-Cluster Recommendation Summary,"# COAD Drug-Cluster Recommendation Summary
+
+- Top30 drugs: 30
+- Cluster-drug links: 72
+- Tier counts: {'Tier2': 17, 'Tier3': 12, 'Tier1': 1}
+- ADMET verdict counts: {'WARNING': 23, 'PASS': 5, 'FAIL': 2}
+
+## Cluster Profiles
+cluster,n_patients,cluster_label,dominant_drivers,biology_hypothesis,candidate_keywords,MSI_H_proxy_rate,MMR_any_mut_rate
+
+0,9,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1111111111111111,0.1111111111111111
+
+1,121,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.1322314049586777,0.0991735537190082
+
+2,88,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0568181818181818,0.1022727272727272
+
+3,7,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",PD-1;PD1;PDL1;CTLA;IMMUNE;MSI;MMR,0.0,0.1428571428571428
+
+
+
+## Top Recommendations
+cluster,cluster_label,dominant_drivers,biology_hypothesis,canonical_drug_id,drug_name,rank,crc_4tier,target,target_pathway,admet_verdict,safety_score,match_score,matched_keywords,hypothesis
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1003,Camptothecin,11,Tier2,TOP1,DNA replication,PASS,6.25,2,tier/admet/context,Camptothecin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1808,Topotecan,27,Tier2,TOP1,DNA replication,PASS,7.5,2,tier/admet/context,Topotecan may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1080,Paclitaxel,2,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Paclitaxel may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1007,Docetaxel,5,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Docetaxel may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1809,Teniposide,6,Tier2,,DNA replication,FAIL,3.15,1,tier/admet/context,Teniposide may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1084,Rapamycin,8,Tier2,MTORC1,PI3K/MTOR signaling,WARNING,5.5,1,tier/admet/context,Rapamycin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1014,Refametinib,10,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,Refametinib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1843,LMP744,12,Tier2,TOP1,DNA replication,WARNING,5.0,1,tier/admet/context,LMP744 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1372,Trametinib,16,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.15,1,tier/admet/context,Trametinib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1441,AZD2014,18,Tier2,""mTORC1, mTORC2"",PI3K/MTOR signaling,WARNING,5.0,1,tier/admet/context,AZD2014 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2169,AZD6482,19,Tier2,PI3Kbeta,PI3K/MTOR signaling,WARNING,5.15,1,tier/admet/context,AZD6482 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1060,PD0325901,22,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,PD0325901 may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1511,Epirubicin,25,Tier2,Anthracycline,DNA replication,WARNING,4.0,1,tier/admet/context,Epirubicin may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+0,MSI/MMR-enriched CRC-like cluster,TP53;APC;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1191,Bortezomib,26,Tier2,Proteasome,Protein stability and degradation,FAIL,3.4,1,tier/admet/context,Bortezomib may fit cluster 0 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1003,Camptothecin,11,Tier2,TOP1,DNA replication,PASS,6.25,2,tier/admet/context,Camptothecin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1808,Topotecan,27,Tier2,TOP1,DNA replication,PASS,7.5,2,tier/admet/context,Topotecan may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1080,Paclitaxel,2,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Paclitaxel may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1007,Docetaxel,5,Tier2,Microtubule stabiliser,Mitosis,WARNING,4.25,1,tier/admet/context,Docetaxel may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1809,Teniposide,6,Tier2,,DNA replication,FAIL,3.15,1,tier/admet/context,Teniposide may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1084,Rapamycin,8,Tier2,MTORC1,PI3K/MTOR signaling,WARNING,5.5,1,tier/admet/context,Rapamycin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1014,Refametinib,10,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,Refametinib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1843,LMP744,12,Tier2,TOP1,DNA replication,WARNING,5.0,1,tier/admet/context,LMP744 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1372,Trametinib,16,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.15,1,tier/admet/context,Trametinib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1441,AZD2014,18,Tier2,""mTORC1, mTORC2"",PI3K/MTOR signaling,WARNING,5.0,1,tier/admet/context,AZD2014 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2169,AZD6482,19,Tier2,PI3Kbeta,PI3K/MTOR signaling,WARNING,5.15,1,tier/admet/context,AZD6482 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1060,PD0325901,22,Tier2,""MEK1, MEK2"",ERK MAPK signaling,WARNING,5.0,1,tier/admet/context,PD0325901 may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1511,Epirubicin,25,Tier2,Anthracycline,DNA replication,WARNING,4.0,1,tier/admet/context,Epirubicin may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+1,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS;PIK3CA,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1191,Bortezomib,26,Tier2,Proteasome,Protein stability and degradation,FAIL,3.4,1,tier/admet/context,Bortezomib may fit cluster 1 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1088,Irinotecan,24,Tier1,TOP1,DNA replication,PASS,6.4,3,tier/admet/context,Irinotecan may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1004,Vinblastine,3,Tier2,Microtubule destabiliser,Mitosis,PASS,7.0,2,tier/admet/context,Vinblastine may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",2048,Vinorelbine,4,Tier2,Microtubule destabiliser,Mitosis,PASS,7.25,2,tier/admet/context,Vinorelbine may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via tier/admet/context.
+
+2,MSI/MMR-enriched CRC-like cluster,APC;TP53;KRAS,""MSI/MMR, immune-checkpoint relevance, hypermutated subtype proxy"",1016,Temsirolimus,7,Tier2,MTOR,PI3K/MTOR signaling,WARNING,5.5,2,MSI,Temsirolimus may fit cluster 2 (MSI/MMR-enriched CRC-like cluster) via MSI.
+
+",Colon_report.md
+imrep_af90503bc232e590,HNSC,imsrc_af90503bc232e590,report,HNSC Image Modal Step4 Summary,"# HNSC Image Modal Step4 Summary
+
+## Embedding merge
+- Slide embeddings: 225 x 1536
+- Source counts: {'step3-hnsc-part00-20260504': 50, 'step3-hnsc-part01-20260504': 50, 'step3-hnsc-part02-20260504': 50, 'step3-hnsc-part03-20260504': 50, 'step3-hnsc-part04-20260504': 25}
+- NaN: 0, Inf: 0
+
+## Clustering
+- Patient count: 225
+- Best k: 2
+- Silhouette: 0.2201
+- Cluster counts: {'0': 209, '1': 16}
+
+## Clinical and mutation
+- Survival log-rank p-value: 0.38187242511143815
+- Driver genes: TP53, CDKN2A, PIK3CA, NOTCH1, FAT1, CASP8
+- HPV status: derived from p16/ISH testing in TCGA Xena clinical matrix.
+- Requested HNSC four molecular subtype labels were not available; PanCancer RNA subtype was exported as a surrogate.
+
+## Drug connection
+- Top30 drugs: 30
+- ADMET counts: {'KEEP': 20, 'EXCLUDE': 10}
+- 4-Tier counts: {'Tier 1': 2, 'Tier 2': 6, 'Tier 3': 20, 'Tier 4': 2}
+- Cluster-drug links: 60
+",HNSC_report.md
+imrep_59125cdc3b04f861,IPF,imsrc_59125cdc3b04f861,drug_linkage,Step IM-4C Cluster-Drug Stratification Hypothesis,"# Step IM-4C Cluster-Drug Stratification Hypothesis
+
+|   Cluster | Label                              | FVC_Profile                   | Key_Pathway                      | Tier1_2_Drug_Candidates                                         | Rationale                                                                                               |
+|----------:|:-----------------------------------|:------------------------------|:---------------------------------|:----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
+|         0 | Preserved-FVC Rapid-Risk Phenotype | mean FVC=2825.6, rapid=26.26% | Inflammatory-fibrotic transition | Ruxolitinib; Tofacitinib                                        | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+|         1 | Lower-FVC Fibrotic Phenotype       | mean FVC=2702.5, rapid=23.38% | ECM remodeling and angiogenesis  | Nintedanib; AT-9283; Pazopanib; Sorafenib; Ponatinib; Sunitinib | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+
+## Limitations
+
+- GEO patients and OSIC patients are not the same individuals.
+- No direct drug response labels exist for OSIC.
+- Mapping is MoA/pathway based and requires clinical validation.
+",IPF_drug_linkage.md
+imrep_5dd9cd476033918d,IPF,imsrc_5dd9cd476033918d,report,Step IM-4C Cluster-Drug Stratification Hypothesis,"# Step IM-4C Cluster-Drug Stratification Hypothesis
+
+|   Cluster | Label                              | FVC_Profile                   | Key_Pathway                      | Tier1_2_Drug_Candidates                                         | Rationale                                                                                               |
+|----------:|:-----------------------------------|:------------------------------|:---------------------------------|:----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
+|         0 | Preserved-FVC Rapid-Risk Phenotype | mean FVC=2825.6, rapid=26.26% | Inflammatory-fibrotic transition | Ruxolitinib; Tofacitinib                                        | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+|         1 | Lower-FVC Fibrotic Phenotype       | mean FVC=2702.5, rapid=23.38% | ECM remodeling and angiogenesis  | Nintedanib; AT-9283; Pazopanib; Sorafenib; Ponatinib; Sunitinib | MoA/pathway hypothesis only; GEO drug model patients and OSIC CT patients are not the same individuals. |
+
+## Limitations
+
+- GEO patients and OSIC patients are not the same individuals.
+- No direct drug response labels exist for OSIC.
+- Mapping is MoA/pathway based and requires clinical validation.
+",IPF_report.md
+imrep_e7e229782eac49a4,LUNG,imsrc_e7e229782eac49a4,report,LUAD Step IM-3 Clustering,"# LUAD Step IM-3 Clustering
+
+- Slide embeddings: 250
+- Embedding dimension: 1536
+- Unique TCGA patients: 250
+- Candidate K: 3, 4, 5
+- Best K by silhouette: 3
+- Best silhouette: 0.1163
+",LUNG_report.md
+imrep_fd032c3eb55bbf3a,Liver,imsrc_fd032c3eb55bbf3a,report,LIHC Step IM-3 Clustering,"# LIHC Step IM-3 Clustering
+
+- Slide embeddings: 223
+- Embedding dimension: 1536
+- Unique TCGA patients: 223
+- Candidate K: 3, 4, 5
+- Best K by silhouette: 3
+- Best silhouette: 0.1047
+",Liver_report.md
+imrep_f6ee9705d965ddf1,PAH,imsrc_f6ee9705d965ddf1,drug_linkage,PAH CT-CLIP Cluster Drug Stratification Hypothesis,"# PAH CT-CLIP Cluster Drug Stratification Hypothesis
+
+This analysis reuses the OSIC CT-CLIP image-modal clusters generated in the IPF pipeline. The PAH mapping is a mechanism-of-action hypothesis, not a direct drug-response prediction.
+
+## Cluster Mapping
+
+| Cluster | Label | PAH Interpretation | Key Pathway | Drug Candidates |
+|---:|---|---|---|---|
+| 0 | Early Vascular Remodeling | Preserved lung function with rapid decline risk | Endothelin + NO/PDE5 pathway | VARDENAFIL, SILDENAFIL, AMBRISENTAN, MACITENTAN, TADALAFIL, BOSENTAN, unnamed lead (CHEMBL304460) |
+| 1 | Advanced Vascular Disease | Lower lung function with structural remodeling | Prostacyclin + advanced anti-remodeling | EPOPROSTENOL, ILOPROST, SELEXIPAG, ATRASENTAN |
+
+## Limitations
+
+1. OSIC is a pulmonary fibrosis/ILD CT dataset, not a PAH-specific HRCT cohort.
+2. PAH HRCT phenotypes such as pulmonary artery enlargement and mosaic perfusion are not explicitly modeled here.
+3. GEO expression patients and OSIC CT patients are different cohorts, so no patient-level linkage is possible.
+4. Cluster-drug mapping is based on PAH pathway/MoA knowledge and requires clinical validation.
+5. Future work should repeat CT-CLIP clustering on PAH-specific CT data or CT-RATE PAH-filtered cohorts.
+",PAH_drug_linkage.md
+imrep_3a37846164d20203,PAH,imsrc_3a37846164d20203,report,PAH CT-CLIP Cluster Drug Stratification Hypothesis,"# PAH CT-CLIP Cluster Drug Stratification Hypothesis
+
+This analysis reuses the OSIC CT-CLIP image-modal clusters generated in the IPF pipeline. The PAH mapping is a mechanism-of-action hypothesis, not a direct drug-response prediction.
+
+## Cluster Mapping
+
+| Cluster | Label | PAH Interpretation | Key Pathway | Drug Candidates |
+|---:|---|---|---|---|
+| 0 | Early Vascular Remodeling | Preserved lung function with rapid decline risk | Endothelin + NO/PDE5 pathway | VARDENAFIL, SILDENAFIL, AMBRISENTAN, MACITENTAN, TADALAFIL, BOSENTAN, unnamed lead (CHEMBL304460) |
+| 1 | Advanced Vascular Disease | Lower lung function with structural remodeling | Prostacyclin + advanced anti-remodeling | EPOPROSTENOL, ILOPROST, SELEXIPAG, ATRASENTAN |
+
+## Limitations
+
+1. OSIC is a pulmonary fibrosis/ILD CT dataset, not a PAH-specific HRCT cohort.
+2. PAH HRCT phenotypes such as pulmonary artery enlargement and mosaic perfusion are not explicitly modeled here.
+3. GEO expression patients and OSIC CT patients are different cohorts, so no patient-level linkage is possible.
+4. Cluster-drug mapping is based on PAH pathway/MoA knowledge and requires clinical validation.
+5. Future work should repeat CT-CLIP clustering on PAH-specific CT data or CT-RATE PAH-filtered cohorts.
+",PAH_report.md
+imrep_192909d10379dda4,PDAC,imsrc_192909d10379dda4,report,PDAC/PAAD Image Modal Step4 Summary,"# PDAC/PAAD Image Modal Step4 Summary
+
+## Embedding merge
+- Slide embeddings: 178 x 1536
+- Source counts: {'embeddings_done': 77, 'part01': 51, 'part00': 50}
+- NaN: 0, Inf: 0
+
+## Clustering
+- Patient count: 178
+- Best k: 2
+- Silhouette: 0.2964
+- Cluster counts: {'0': 168, '1': 10}
+
+## Clinical and mutation
+- Survival log-rank p-value: 0.1184927043763069
+- Driver genes: KRAS, TP53, CDKN2A, SMAD4
+- Basal-like/classical subtype labels were not present in the downloaded cBioPortal clinical tables.
+
+## Drug connection
+- Top30 drugs: 30
+- ADMET counts: {'KEEP': 24, 'CAUTION': 6}
+- 4-Tier counts: {'Tier 1': 1, 'Tier 2': 16, 'Tier 3': 12, 'Tier 4': 1}
+- Cluster-drug links: 60
+
+## Re-ranking
+- Delta Spearman: 0.0
+- Image feature importance: 0.0
+",PDAC_report.md
+imrep_e866d166f2fc2c7c,Psoriasis,imsrc_e866d166f2fc2c7c,report,Psoriasis Clinical Photo Image-Modal Summary,"# Psoriasis Clinical Photo Image-Modal Summary
+
+- Source: Kaggle Skin Diseases Dataset, psoriasis/lichen-planus-related class (100 selected images).
+- BiomedCLIP embeddings: 100 x 512, NaN/Inf: False.
+- Best k: 4, silhouette: 0.1179.
+- PASI severity labels were not available in the selected Kaggle class; severity association is therefore not_applicable.
+
+## Cluster Statistical Tests
+| variable       | test           |   p_value | note                                                                  |
+|:---------------|:---------------|----------:|:----------------------------------------------------------------------|
+| label          | not_applicable |       nan | Only one observed category; statistical association cannot be tested. |
+| severity_label | not_applicable |       nan | Only one observed category; statistical association cannot be tested. |
+
+## Psoriasis 4-Tier Counts
+| tier   |   n_drugs |
+|:-------|----------:|
+| Tier 2 |        16 |
+| Tier 3 |        12 |
+| Tier 1 |         2 |
+
+Cluster-drug linkage rows: 120",Psoriasis_report.md
+imrep_6383196af6d8b987,RA,imsrc_6383196af6d8b987,report,RA X-ray Image-Modal Data Access Status,"# RA X-ray Image-Modal Data Access Status
+
+Date: 2026-05-07
+
+## Objective
+
+Run RA image-modal analysis with joint X-ray images because public RA synovial
+H&E WSI data were not available.
+
+Target S3 output:
+
+`s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/RA/0.Image_modal_RA/`
+
+## Priority Dataset: Taiwan Medical AI Portal D07
+
+Dataset page:
+
+`https://data.dmc.nycu.edu.tw/dataset/d07-x-ray`
+
+Title:
+
+`X-Ray Images of the Hands and Feet for Rheumatoid Arthritis`
+
+Portal description:
+
+- DICOM X-ray images of bilateral hands and feet for RA.
+- Corresponding scoring files are described as Excel format.
+- Tags: Foot, Hand, Rheumatoid Arthritis, X-ray.
+- Organization: Taipei Veterans General Hospital.
+
+Downloaded public resources:
+
+- `D07.csv`
+- `1-1_x-ray_2020-12-22.pdf`
+
+Local check:
+
+- `D07.csv` rows: 4,639 DICOM index rows.
+- Unique patients: 408.
+- Unique accession numbers: 1,854.
+- Modality: CR 2,004 rows; DX 2,635 rows.
+- Study descriptions include bilateral hand and foot studies.
+
+Important blocker:
+
+- `D07.csv` contains WADO retrieve URLs, but they point to private IP addresses
+  (`10.221.x.x`) and timed out from the local machine.
+- The portal cloud-drive API returned an empty file list for the dataset root in
+  the unauthenticated/current session.
+- Therefore, the visible CSV/PDF are accessible, but the actual DICOM payload
+  still requires portal cloud-drive access or a download task from an authenticated
+  session.
+
+## Alternative Dataset: RAM-W1K
+
+Paper/dataset summary found:
+
+- 1,048 wrist conventional radiographs.
+- 388 patients.
+- Four medical centers.
+- 618 images with wrist bone instance segmentation.
+- 800 images with Sharp/van der Heijde bone erosion score.
+
+Current status:
+
+- Public descriptive pages were found.
+- A direct bulk download URL has not yet been confirmed.
+- Use as fallback if Taiwan D07 DICOM access cannot be completed.
+
+## Model Environment
+
+Preferred model:
+
+`microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224`
+
+Reason:
+
+- Biomedical vision-language model.
+- Model card includes radiography examples.
+- Official usage requires `open_clip_torch` and `transformers`.
+
+Local environment prepared:
+
+`C:\Users\biso8\20260503_final_project\IPF\.venv_img`
+
+Installed/available:
+
+- torch
+- torchvision
+- pydicom
+- pillow
+- pandas
+- scikit-learn
+- open_clip_torch==2.23.0
+- transformers==4.35.2
+
+Model weights are not downloaded yet. The main model file is roughly 784 MB and
+should be downloaded when X-ray images are available.
+
+## RA Baseline S3 Status
+
+Base S3:
+
+`s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/RA/`
+
+The RA baseline pipeline is present with:
+
+- model inputs
+- ML model results
+- external validation
+- ADMET
+- final reports
+
+Selected baseline results:
+
+- Branch: `ra_v3_named_drug_baseline`
+- Phases: phase2a, phase2b
+- Models: RandomForest, ExtraTrees, LightGBM, XGBoost, CatBoost
+- External validation phase: phase2a
+- Synovium validation mean same-direction fraction: 0.8525
+- Synovium validation mean signed Spearman: 0.7894
+- ADMET gate: all five models kept 30/30 top30 candidates
+- Toxicity flagged count: 0
+- Unique final candidates after union: 17
+- Recommended final candidates: 16
+
+Highlighted RA candidate tiers:
+
+- tier1_reference_anchor: 2
+- tier2_cross_model_supported: 13
+- tier3_core_axis_supported: 1
+- tier5_single_model_admet_pass: 1
+
+Key tier1 reference anchors:
+
+- Ruxolitinib
+- Tofacitinib
+
+## Next Actions
+
+1. Complete Taiwan D07 portal access for actual DICOM download.
+2. If DICOM access opens, download the image files plus Sharp/van der Heijde
+   score file.
+3. Convert DICOM to PNG in `step_im1`.
+4. Extract BiomedCLIP embeddings in `step_im2`.
+5. Run K-means k=2/3/4/5 and PCA in `step_im3`.
+6. Test cluster association with Sharp/van der Heijde score in `step_im4a`.
+7. Connect clusters to RA baseline Top30/ADMET candidates in `step_im4c`.
+8. Package and upload final report in `step_im5`.
+",RA_report.md
+imrep_77dd6611a3fc9414,STAD,imsrc_77dd6611a3fc9414,report,STAD Image Modal Step4 Summary,"# STAD Image Modal Step4 Summary
+
+- Slide embedding shape: [225, 1536]
+- Patient embedding shape: [225, 1536]
+- NaN/Inf: 0 / 0
+- Best k: 3
+- Silhouette: 0.1515
+- Top30 4-tier counts: {'Tier3': 14, 'Tier2': 10, 'Tier1': 3, 'Tier4': 3}
+- Cluster-drug linkage rows: 39
+
+## Statistical Tests
+
+| variable                 | test        |       p_value |       chi2 |   dof |
+|:-------------------------|:------------|--------------:|-----------:|------:|
+| ajcc_stage               | chi_squared |   1.07045e-06 |  65.2354   |    20 |
+| path_t_stage             | chi_squared |   9.2036e-05  |  55.7768   |    22 |
+| path_n_stage             | chi_squared |   0.0016741   |  34.6176   |    14 |
+| path_m_stage             | chi_squared |   0.0194351   |  15.1077   |     6 |
+| grade                    | chi_squared |   0.0732453   |  14.3433   |     8 |
+| molecular_subtype_4class | chi_squared |   0.0989648   |  16.0234   |    10 |
+| lauren_classification    | chi_squared | nan           | nan        |   nan |
+| TP53_mut                 | chi_squared |   0.855983    |   0.31101  |     2 |
+| CDH1_mut                 | chi_squared |   0.177794    |   3.45426  |     2 |
+| ARID1A_mut               | chi_squared |   0.628212    |   0.929755 |     2 |
+| PIK3CA_mut               | chi_squared |   0.733657    |   0.619428 |     2 |
+| ERBB2_mut                | chi_squared |   0.863459    |   0.293617 |     2 |
+| KRAS_mut                 | chi_squared |   0.274091    |   2.58859  |     2 |
+| overall_survival         | logrank     |   0.500295    |   1.38511  |     2 |",STAD_report.md

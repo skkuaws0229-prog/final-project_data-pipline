@@ -102,6 +102,30 @@ class AwsStepFunctionsOrchestrator(PipelineOrchestrator):
         return update_pipeline_run(run_id, status="blocked", current_step="guardrail", error_message="aws_stepfunctions manual complete disabled") or {}
 
 
+class GcpWorkflowsOrchestrator(PipelineOrchestrator):
+    def submit_run(self, run: dict) -> dict:
+        if not settings.pipeline_enable_gcp_workflows:
+            insert_pipeline_event(run["run_id"], "warning", "guardrail", "gcp_workflows backend is disabled by feature flag")
+            return update_pipeline_run(run["run_id"], status="blocked", current_step="guardrail", error_message="gcp_workflows backend disabled") or run
+        raise NotImplementedError("gcp_workflows execution is intentionally not implemented in this phase")
+
+    def get_status(self, run_id: str) -> dict:
+        return {
+            "run_id": run_id,
+            "execution_backend": "gcp_workflows",
+            "enabled": settings.pipeline_enable_gcp_workflows,
+            "workflow_data_gcs_root": settings.workflow_data_gcs_root,
+            "output_gcs_prefix": settings.pipeline_default_gcs_prefix,
+        }
+
+    def cancel_run(self, run_id: str) -> dict:
+        return update_pipeline_run(run_id, status="cancelled", current_step="cancelled", ended_at=datetime.now(UTC)) or {}
+
+    def complete_run(self, run_id: str) -> dict:
+        insert_pipeline_event(run_id, "warning", "guardrail", "gcp_workflows manual complete is disabled")
+        return update_pipeline_run(run_id, status="blocked", current_step="guardrail", error_message="gcp_workflows manual complete disabled") or {}
+
+
 def get_orchestrator(execution_backend: str) -> PipelineOrchestrator:
     if execution_backend == "mock":
         return MockPipelineOrchestrator()
@@ -109,4 +133,6 @@ def get_orchestrator(execution_backend: str) -> PipelineOrchestrator:
         return LocalAgentPipelineOrchestrator()
     if execution_backend == "aws_stepfunctions":
         return AwsStepFunctionsOrchestrator()
+    if execution_backend == "gcp_workflows":
+        return GcpWorkflowsOrchestrator()
     raise ValueError(f"Unsupported execution_backend: {execution_backend}")

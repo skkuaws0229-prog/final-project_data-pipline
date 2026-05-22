@@ -13,7 +13,7 @@ from psycopg.rows import dict_row
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE_ROOT = ROOT / "11_structures" / "alphafold"
 MANIFEST = ROOT / "10_alphafold" / "alphafold_file_manifest_v1.csv"
-S3_BASE = "s3://say2-4team/20260408_new_pre_project_biso/drug_service_build/11_structures/alphafold"
+DEFAULT_STORAGE_BASE = "gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/drug_service_build/11_structures/alphafold"
 
 
 def sha256_file(path: Path) -> str:
@@ -78,7 +78,7 @@ def update_db(database_url: str, manifest_rows: list[dict], apply: bool) -> None
                         UPDATE alphafold_structures
                         SET
                           structure_source_uri = COALESCE(structure_source_uri, %(source_uri)s),
-                          structure_uri = %(s3_uri)s,
+                          structure_uri = %(storage_uri)s,
                           file_size_bytes = %(file_size_bytes)s,
                           checksum_sha256 = %(checksum_sha256)s,
                           status = 'available',
@@ -99,7 +99,7 @@ def write_manifest(rows: list[dict]) -> None:
         "uniprot_id",
         "source_uri",
         "local_path",
-        "s3_uri",
+        "storage_uri",
         "file_size_bytes",
         "checksum_sha256",
     ]
@@ -110,11 +110,12 @@ def write_manifest(rows: list[dict]) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Download AlphaFold structure files and register S3 metadata.")
+    parser = argparse.ArgumentParser(description="Download AlphaFold structure files and register cloud storage metadata.")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--include-available", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--storage-base", default=os.environ.get("ALPHAFOLD_STORAGE_BASE", DEFAULT_STORAGE_BASE))
     args = parser.parse_args()
 
     database_url = os.environ.get("DATABASE_URL")
@@ -140,7 +141,7 @@ def main() -> None:
                     "uniprot_id": uniprot_id,
                     "source_uri": source_uri,
                     "local_path": str(local_path.relative_to(ROOT)),
-                    "s3_uri": f"{S3_BASE}/{uniprot_id}/{filename}",
+                    "storage_uri": f"{args.storage_base.rstrip('/')}/{uniprot_id}/{filename}",
                     "file_size_bytes": local_path.stat().st_size,
                     "checksum_sha256": sha256_file(local_path),
                 }

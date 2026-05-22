@@ -1,0 +1,12 @@
+disease_id,evidence_rows
+BRCA,32
+Colon,40
+HNSC,60
+IPF,8
+Liver,10
+LUNG,18
+PAH,11
+PDAC,60
+Psoriasis,120
+RA,32
+STAD,39

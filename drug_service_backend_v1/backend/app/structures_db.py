@@ -330,7 +330,7 @@ def resolve_structure_cache_path(structure_row: dict) -> Path:
     uri = structure_row.get("structure_uri") or ""
     cache_root = Path(settings.alphafold_structure_cache_dir)
     marker = "/drug_service_build/11_structures/"
-    if uri.startswith("s3://") and marker in uri:
+    if (uri.startswith("s3://") or uri.startswith("gs://")) and marker in uri:
         return cache_root / uri.split(marker, 1)[1]
 
     uniprot_id = str(structure_row.get("uniprot_id") or "").upper()
