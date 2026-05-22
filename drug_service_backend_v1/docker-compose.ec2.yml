@@ -71,7 +71,7 @@ services:
     volumes:
       - drug_service_neo4j_data:/data
       - drug_service_neo4j_logs:/logs
-      - ./06_graph/import:/var/lib/neo4j/import:ro
+      - ./06_graph/import:/var/lib/neo4j/import
     healthcheck:
       test: ["CMD-SHELL", "cypher-shell -u neo4j -p ${NEO4J_PASSWORD:-drug_service_neo4j} 'RETURN 1'"]
       interval: 10s
