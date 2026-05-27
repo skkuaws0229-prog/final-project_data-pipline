@@ -17,6 +17,7 @@ import math
 import random
 import re
 import warnings
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -583,7 +584,7 @@ MODEL_REGISTRY = {
 }
 
 
-def train_models(paths, model_names, n_splits=3, random_state=42):
+def train_models(paths, model_names, n_splits=3, random_state=42, model_parallel_jobs: int = 1):
     random_state = set_step_seed(random_state)
     train = pd.read_parquet(paths.slim_inputs / "train_table.parquet")
     feature_names = json.loads((paths.slim_inputs / "feature_names.json").read_text())
@@ -602,10 +603,10 @@ def train_models(paths, model_names, n_splits=3, random_state=42):
         else:
             splits = list(KFold(n_splits=n, shuffle=True, random_state=random_state).split(X, y))
 
-        for model_name in model_names:
+        def train_one_model(model_name: str):
             if model_name not in MODEL_REGISTRY:
                 print(f"[Step2] Unknown model: {model_name}, skipping")
-                continue
+                return model_name, None, None
             print(f"[Step2] Training {model_name} / {split_type}", flush=True)
             fit_fn = MODEL_REGISTRY[model_name]
             oof = np.zeros(len(y), dtype=np.float32)
@@ -619,6 +620,18 @@ def train_models(paths, model_names, n_splits=3, random_state=42):
                 folds.append({"fold": fold_idx, "spearman": spearman(y[va], preds), "rmse": rmse(y[va], preds)})
             metrics = {"spearman": spearman(y, oof), "rmse": rmse(y, oof), "fold_metrics": folds,
                        "split_type": split_type, "model": model_name}
+            return model_name, metrics, oof
+
+        if model_parallel_jobs > 1 and len(model_names) > 1:
+            with ThreadPoolExecutor(max_workers=min(model_parallel_jobs, len(model_names))) as executor:
+                futures = [executor.submit(train_one_model, model_name) for model_name in model_names]
+                model_results = [future.result() for future in as_completed(futures)]
+        else:
+            model_results = [train_one_model(model_name) for model_name in model_names]
+
+        for model_name, metrics, oof in model_results:
+            if metrics is None or oof is None:
+                continue
             all_metrics["models"][f"{split_type}__{model_name}"] = metrics
             all_oof[(split_type, model_name)] = oof
             pd.DataFrame({
@@ -766,6 +779,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     candidate_limit = config.get("candidate_limit", 30)
     max_crispr = config.get("max_crispr_features", 3000)
     max_lincs = config.get("max_lincs_features", 768)
+    model_parallel_jobs = int(config.get("model_parallel_jobs", 1) or 1)
 
     paths = make_paths(project_root)
     ensure_dirs(paths)
@@ -778,6 +792,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
             "models": model_names,
             "n_splits": n_splits,
             "candidate_limit": candidate_limit,
+            "model_parallel_jobs": model_parallel_jobs,
         }
 
     # ── FE ──
@@ -819,7 +834,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     # ── Train ──
     print(f"[Step2] Training {len(model_names)} models ...", flush=True)
     random_state = int(config.get("random_seed", 42) or 42)
-    metrics = train_models(paths, model_names, n_splits, random_state=random_state)
+    metrics = train_models(paths, model_names, n_splits, random_state=random_state, model_parallel_jobs=model_parallel_jobs)
 
     # ── Rank ──
     print(f"[Step2] Ranking and selecting top {candidate_limit} ...", flush=True)

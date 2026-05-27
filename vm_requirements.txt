@@ -4,3 +4,8 @@ pandas>=2.2
 scikit-learn>=1.4
 matplotlib>=3.8
 pyarrow
+rdkit
+torch
+lightgbm
+xgboost
+catboost
