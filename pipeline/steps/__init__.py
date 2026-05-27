@@ -1,9 +1,18 @@
-"""Pipeline steps package — generic disease-agnostic modules."""
-from . import step1_data_collection
-from . import step2_basic_pipeline
-from . import step3_admet
-from . import im2_embedding
-from . import im3_clustering
-from . import im4a_clinical
-from . import im4c_cluster_drug
-from . import im5_report
+"""Pipeline steps package.
+
+Step modules are imported lazily by ``pipeline.run_disease_pipeline``. Keeping
+this package init lightweight lets dry-run and preflight commands avoid optional
+runtime dependencies such as torch unless the selected step actually needs them.
+"""
+
+__all__ = [
+    "step1_data_collection",
+    "step2_basic_pipeline",
+    "step3_admet",
+    "im1_image_collection",
+    "im2_embedding",
+    "im3_clustering",
+    "im4a_clinical",
+    "im4c_cluster_drug",
+    "im5_report",
+]

@@ -1,0 +1,48 @@
+disease:
+  name: COAD
+tcga_code: COAD
+project_root: /home/skku_aws2_14/sobi2026/runtime/coad_gcs_test
+gcs_workflow_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso
+raw_storage_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/shared_inputs/curated_data
+raw_template_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/shared_inputs/curated_data
+auto_provision_raw: false
+skip_download: true
+model:
+  foundation_model: UNI2
+execution:
+  step3_env: local
+  local_gpu: cpu
+  mode: light
+  model_count: 3
+  wsi_limit: 10
+  wsi_max_limit: 10
+  wsi_smoke_count: 1
+  wsi_parallel_downloads: 2
+  embedding_parallel_parts: 1
+  self_heal: false
+  supervisor: true
+  max_step_retries: 0
+  steps: [im1, im2, im3, im4a, im4c, im5]
+image_modal:
+  enabled: true
+  auto_launch: false
+  disable_auto_launch: true
+  skip_if_missing: true
+  output_root: /home/skku_aws2_14/sobi2026/runtime/coad_gcs_test/outputs/image_modal
+  s3_prefix: coad_image_modal_gcs_vm_test
+  s3_raw_wsi_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/0.Image_modal_COAD/_raw_downloads/
+  s3_tiles_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/0.Image_modal_COAD/step_im2/
+  s3_embedding_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/0.Image_modal_COAD/step_im2/
+  s3_logs_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/Colon/0.Image_modal_COAD/
+  merged_npy: /home/skku_aws2_14/sobi2026/runtime/coad_gcs_test/outputs/image_modal/step_im2/all_patient_embeddings_coad_merged.npy
+  embedding_metadata_csv: /home/skku_aws2_14/sobi2026/runtime/coad_gcs_test/outputs/image_modal/step_im2/all_patient_embeddings_coad_metadata.csv
+analysis:
+  k_values: [2, 3, 4, 5]
+  driver_genes: [APC, TP53, KRAS, PIK3CA, SMAD4, BRAF]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, MSI_class, CMS_or_SUBTYPE]
+  continuous_vars: [AGE, OS_MONTHS]
+  clinical_id_column: patient_id
+  survival:
+    time_col: OS_MONTHS
+    event_col: os_event
+drug: {}
