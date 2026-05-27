@@ -3,14 +3,14 @@
   "disease": "COAD",
   "sdk": "pdrp_sdk.v0.2",
   "status": "completed",
-  "started_at": "2026-05-27T05:46:24+00:00",
-  "completed_at": "2026-05-27T05:46:25+00:00",
+  "started_at": "2026-05-27T05:58:19+00:00",
+  "completed_at": "2026-05-27T05:58:21+00:00",
   "agents": [
     {
       "agent": "preflight_qa_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:46:24+00:00",
-      "completed_at": "2026-05-27T05:46:24+00:00",
+      "started_at": "2026-05-27T05:58:19+00:00",
+      "completed_at": "2026-05-27T05:58:20+00:00",
       "checks": {
         "repo_root": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline",
         "git_repo": true,
@@ -62,8 +62,8 @@
     {
       "agent": "pipeline_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:46:24+00:00",
-      "completed_at": "2026-05-27T05:46:24+00:00",
+      "started_at": "2026-05-27T05:58:20+00:00",
+      "completed_at": "2026-05-27T05:58:20+00:00",
       "checks": {
         "expected_outputs_before": {
           "selected_top_n": {
@@ -139,8 +139,8 @@
     {
       "agent": "image_modal_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:46:24+00:00",
-      "completed_at": "2026-05-27T05:46:25+00:00",
+      "started_at": "2026-05-27T05:58:20+00:00",
+      "completed_at": "2026-05-27T05:58:20+00:00",
       "checks": {
         "summary": {
           "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_summary.json",
@@ -172,8 +172,8 @@
     {
       "agent": "evidence_report_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:46:25+00:00",
-      "completed_at": "2026-05-27T05:46:25+00:00",
+      "started_at": "2026-05-27T05:58:20+00:00",
+      "completed_at": "2026-05-27T05:58:21+00:00",
       "checks": {
         "verified_tiers": {
           "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",

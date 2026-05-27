@@ -1,0 +1,25 @@
+{
+  "step": "luad_gcs_basic_prepare_top15",
+  "input_csv": "LUNG/workspace_reports/lung_step6_current_package/lung_final_drug_ranking_dedup.csv",
+  "output_csv": "LUNG/workspace_reports/lung_step6_current_package/luad_gcs_basic_admet_filtered_top15.csv",
+  "input_rows": 30,
+  "output_rows": 15,
+  "duplicate_name_rows_in_input": 0,
+  "drugs": [
+    "Docetaxel",
+    "Paclitaxel",
+    "Dactinomycin",
+    "Entinostat",
+    "Venetoclax",
+    "Tanespimycin",
+    "Bortezomib",
+    "Savolitinib",
+    "EPZ004777",
+    "Methotrexate",
+    "Buparlisib",
+    "Teniposide",
+    "IOX2",
+    "Pictilisib",
+    "BI-2536"
+  ]
+}

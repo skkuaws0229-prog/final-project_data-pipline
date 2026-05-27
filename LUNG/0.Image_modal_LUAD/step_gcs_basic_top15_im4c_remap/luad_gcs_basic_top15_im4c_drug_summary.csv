@@ -1,0 +1,16 @@
+canonical_drug_id,drug_name,admet_filtered_rank,crc_4tier,luad_4tier,best_match_score,mean_match_score,matched_cluster_count,best_clusters,matched_keywords,target,target_pathway,admet_verdict,admet_adjusted_score,classification_status
+1819,Docetaxel,1,Tier1,Tier1,5,5.0,3,PI/TP53-Proliferative-like WSI Cluster,tier1/target_context/ranking_score,Microtubule stabiliser,Mitosis,PASS,0.625,lung_manual_tiering_20260429
+1080,Paclitaxel,2,Tier1,Tier1,5,5.0,3,PI/TP53-Proliferative-like WSI Cluster,tier1/target_context/ranking_score,Microtubule stabiliser,Mitosis,PASS,0.5583333333333333,lung_manual_tiering_20260429
+1936,Savolitinib,8,Tier1,Tier1,3,3.0,3,PI/TP53-Proliferative-like WSI Cluster,tier1,MET,RTK signaling,PASS,0.2697973204950822,lung_manual_tiering_20260429
+1811,Dactinomycin,3,Tier3,Tier3,2,2.0,3,PI/TP53-Proliferative-like WSI Cluster,tier3/ranking_score,RNA polymerase,Other,PASS,0.55,lung_manual_tiering_20260429
+1593,Entinostat,4,Tier2,Tier2,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier2,"HDAC1, HDAC3",Chromatin histone acetylation,PASS,0.3650122025985619,lung_manual_tiering_20260429
+1909,Venetoclax,5,Tier2,Tier2,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier2,BCL2,Apoptosis regulation,PASS,0.3296907437737568,lung_manual_tiering_20260429
+1026,Tanespimycin,6,Tier2,Tier2,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier2,HSP90,Protein stability and degradation,PASS,0.3269999999999999,lung_manual_tiering_20260429
+1191,Bortezomib,7,Tier2,Tier2,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier2,Proteasome,Protein stability and degradation,PASS,0.290391304347826,lung_manual_tiering_20260429
+1008,Methotrexate,10,Tier3,Tier3,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier3,Antimetabolite,DNA replication,PASS,0.257,lung_manual_tiering_20260429
+1809,Teniposide,12,Tier3,Tier3,1,1.0,3,PI/TP53-Proliferative-like WSI Cluster,tier3,,DNA replication,PASS,0.23,lung_manual_tiering_20260429
+1237,EPZ004777,9,Tier4,Tier4,0,0.0,3,PI/TP53-Proliferative-like WSI Cluster,review,DOT1L,Chromatin histone methylation,PASS,0.2668557667323745,lung_manual_tiering_20260429
+1873,Buparlisib,11,Tier4,Tier4,0,0.0,3,PI/TP53-Proliferative-like WSI Cluster,review,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3K/MTOR signaling,PASS,0.2545294117647058,lung_manual_tiering_20260429
+2174,IOX2,13,Tier4,Tier4,0,0.0,3,PI/TP53-Proliferative-like WSI Cluster,review,EGLN1,Other,PASS,0.2151956230203704,lung_manual_tiering_20260429
+1058,Pictilisib,14,Tier4,Tier4,0,0.0,3,PI/TP53-Proliferative-like WSI Cluster,review,PI3K (class 1),PI3K/MTOR signaling,PASS,0.2091428571428571,lung_manual_tiering_20260429
+1086,BI-2536,15,Tier4,Tier4,0,0.0,3,PI/TP53-Proliferative-like WSI Cluster,review,"PLK1, PLK2, PLK3",Cell cycle,PASS,0.1998677874522688,lung_manual_tiering_20260429
