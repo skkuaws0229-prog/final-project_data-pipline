@@ -4,6 +4,7 @@ from dataclasses import asdict
 from typing import Any
 
 from .agents import EvidenceReportAgent, ImageModalAgent, PipelineAgent, PreflightQAAgent
+from . import compute
 from .config import WorkflowConfig
 from .db import db_status
 from .storage import upload_auto_loop_outputs
@@ -22,36 +23,75 @@ class FourAgentWorkflow:
         run_heavy: bool = False,
         upload_gcs: bool = False,
         vm_status_override: str | None = None,
+        manage_vm: bool = False,
     ) -> dict[str, Any]:
         output_dir = self.config.auto_loop_output_dir
         output_dir.mkdir(parents=True, exist_ok=True)
         started = now_iso()
         results = []
+        vm_lifecycle: list[dict[str, Any]] = []
+        status = "failed"
 
-        preflight = PreflightQAAgent().run(self.config, vm_status_override)
-        results.append(preflight)
-        if preflight.status != "completed":
-            return self._write_master(started, results, "failed", upload_gcs=False)
+        try:
+            if manage_vm:
+                vm_lifecycle.append(compute.start_vm(self.config))
+                vm_status_override = "RUNNING"
 
-        pipeline = PipelineAgent().run(self.config, run_heavy)
-        results.append(pipeline)
-        if pipeline.status != "completed":
-            return self._write_master(started, results, "failed", upload_gcs=False)
+            preflight = PreflightQAAgent().run(self.config, vm_status_override)
+            results.append(preflight)
+            if preflight.status != "completed":
+                upload_gcs = False
+                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
 
-        image = ImageModalAgent().run(self.config)
-        results.append(image)
-        if image.status != "completed":
-            return self._write_master(started, results, "failed", upload_gcs=False)
+            pipeline = PipelineAgent().run(self.config, run_heavy)
+            results.append(pipeline)
+            if pipeline.status != "completed":
+                upload_gcs = False
+                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
 
-        vm_status = str(preflight.checks.get("vm_status", "unknown"))
-        evidence = EvidenceReportAgent().run(self.config, vm_status)
-        results.append(evidence)
-        if evidence.status != "completed":
-            return self._write_master(started, results, "failed", upload_gcs=False)
+            image = ImageModalAgent().run(self.config)
+            results.append(image)
+            if image.status != "completed":
+                upload_gcs = False
+                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
 
-        return self._write_master(started, results, "completed", upload_gcs=upload_gcs)
+            vm_status = str(preflight.checks.get("vm_status", "unknown"))
+            evidence = EvidenceReportAgent().run(self.config, vm_status)
+            results.append(evidence)
+            if evidence.status != "completed":
+                upload_gcs = False
+                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
 
-    def _write_master(self, started: str, results: list[Any], status: str, *, upload_gcs: bool) -> dict[str, Any]:
+            status = "completed"
+            return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+        except Exception:
+            if manage_vm:
+                vm_lifecycle.append(compute.stop_vm(self.config))
+            raise
+
+    def _finalize(
+        self,
+        started: str,
+        results: list[Any],
+        status: str,
+        *,
+        upload_gcs: bool,
+        vm_lifecycle: list[dict[str, Any]],
+        manage_vm: bool,
+    ) -> dict[str, Any]:
+        if manage_vm:
+            vm_lifecycle.append(compute.stop_vm(self.config))
+        return self._write_master(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle)
+
+    def _write_master(
+        self,
+        started: str,
+        results: list[Any],
+        status: str,
+        *,
+        upload_gcs: bool,
+        vm_lifecycle: list[dict[str, Any]] | None = None,
+    ) -> dict[str, Any]:
         output_dir = self.config.auto_loop_output_dir
         payload = {
             "workflow": f"{self.config.disease.lower()}_gcs_4agent_auto_loop",
@@ -62,6 +102,7 @@ class FourAgentWorkflow:
             "completed_at": now_iso(),
             "agents": [asdict(result) for result in results],
             "db_status": db_status(),
+            "vm_lifecycle": vm_lifecycle or [],
         }
         if upload_gcs:
             payload["gcs_upload"] = upload_auto_loop_outputs(self.config, output_dir)
@@ -79,9 +120,24 @@ class FourAgentWorkflow:
             f"- Started: {payload['started_at']}",
             f"- Completed: {payload['completed_at']}",
             "",
-            "## Agents",
+            "## VM Lifecycle",
             "",
         ]
+        if payload.get("vm_lifecycle"):
+            for event in payload["vm_lifecycle"]:
+                lines.append(
+                    f"- {event.get('action')}: {event.get('status')} "
+                    f"({event.get('vm_status_after', 'unknown')})"
+                )
+        else:
+            lines.append("- not managed by this run")
+        lines.extend(
+            [
+                "",
+                "## Agents",
+                "",
+            ]
+        )
         for agent in payload["agents"]:
             lines.append(f"### {agent['agent']}")
             lines.append("")

@@ -29,6 +29,7 @@ result = workflow.run(vm_status_override="TERMINATED")
 - Other diseases can use the same SDK by registering a `DiseaseProfile` with paths/scripts/output names.
 - Resume-safe default mode.
 - Optional heavy rerun via CLI `--run-heavy`.
+- Optional VM lifecycle control via CLI `--manage-vm`.
 - DB loading is intentionally left for a later DB Load Agent.
 
 ## LUAD Smoke Test
@@ -44,6 +45,16 @@ Run the 4-agent loop without heavy recompute:
 ```bash
 python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease LUAD --vm-status-override TERMINATED
 ```
+
+Run the 4-agent loop on the GCP VM while automatically starting and stopping
+the VM from the local controller:
+
+```bash
+python3 vm_scripts/run_gcp_4agent_orchestration_with_vm_lifecycle.py --disease LUAD --upload-gcs
+```
+
+The controller always attempts to stop the VM in a `finally` block unless
+`--no-stop` is passed for debugging.
 
 The current LUAD evidence agent is a scaffold. It preserves the existing LUAD
 4-tier labels and marks rows for refreshed source retrieval plus human

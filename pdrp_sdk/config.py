@@ -88,6 +88,7 @@ class WorkflowConfig:
     local_step3_fallback: Path | None = None
     vm_name: str = "sobi2026-gcs-api-test-vm"
     vm_zone: str = "asia-northeast3-a"
+    vm_project: str = "project-b2fa1551-26f6-4422-8f0"
     gcs_base: str = (
         "gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/"
         "20260408_new_pre_project_biso/migration-artifacts/20260527/"

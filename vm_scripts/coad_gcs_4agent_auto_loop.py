@@ -23,6 +23,7 @@ def main() -> None:
     parser.add_argument("--run-heavy", action="store_true", help="Actually run Step1/Step2/Step3 scripts instead of resume verification.")
     parser.add_argument("--upload-gcs", action="store_true", help="Upload auto-loop report/code to GCS after completion.")
     parser.add_argument("--vm-status-override", choices=["TERMINATED", "RUNNING", "STOPPING", "UNKNOWN"], help="Use a known VM status when local gcloud checks are sandbox-limited.")
+    parser.add_argument("--manage-vm", action="store_true", help="Start the configured VM before the workflow and stop it in a finally block.")
     args = parser.parse_args()
     config = WorkflowConfig.from_repo_root(
         REPO_ROOT,
@@ -35,6 +36,7 @@ def main() -> None:
         run_heavy=args.run_heavy,
         upload_gcs=args.upload_gcs,
         vm_status_override=args.vm_status_override,
+        manage_vm=args.manage_vm,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
