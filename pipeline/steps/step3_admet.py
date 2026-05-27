@@ -84,6 +84,25 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False, default=_default), encoding="utf-8")
 
 
+def dedupe_candidates(candidates: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, Any]]:
+    """Keep one candidate per canonical id and normalized drug name."""
+    out = candidates.copy()
+    before = int(len(out))
+    if "canonical_drug_id" in out.columns:
+        out["canonical_drug_id"] = out["canonical_drug_id"].astype(str)
+        out = out.drop_duplicates("canonical_drug_id", keep="first")
+    if "drug_name" in out.columns:
+        out["drug_name_normalized"] = out["drug_name"].fillna("").astype(str).str.lower().str.strip()
+        out = out.drop_duplicates("drug_name_normalized", keep="first")
+    summary = {
+        "input_rows": before,
+        "deduped_rows": int(len(out)),
+        "removed_rows": before - int(len(out)),
+        "dedupe_rule": "canonical_drug_id first, then normalized drug_name",
+    }
+    return out.reset_index(drop=True), summary
+
+
 # ── RDKit Descriptors ────────────────────────────────────────────────
 
 def compute_candidate_rdkit(drug_id: str, smiles: str, mol, pains) -> dict[str, Any]:
@@ -267,6 +286,7 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
             raise FileNotFoundError(f"No candidates found. Run Step 2 first. Tried {paths.final_selection}")
     else:
         candidates = pd.read_csv(candidates_path)
+    candidates, dedupe_summary = dedupe_candidates(candidates)
 
     print(f"[Step3] Applying ADMET gate to {len(candidates)} candidates ...", flush=True)
 
@@ -295,6 +315,8 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
         "admet_pass": int(passed["admet_strict_pass"].sum()) if "admet_strict_pass" in passed.columns else int(len(passed)),
         "admet_fail": int(len(result)) - int(len(passed)),
         "top_n_saved": min(admet_top_n, len(passed)),
+        "candidate_dedupe": dedupe_summary,
+        "admet_assay_count": len(ADMET_ASSAYS),
         "top5_passed": passed.head(5)[["drug_name", "admet_adjusted_score"]].to_dict("records") if not passed.empty else [],
     }
     write_json(paths.final_selection / "admet_summary.json", summary)

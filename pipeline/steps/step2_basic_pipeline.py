@@ -732,6 +732,9 @@ def rank_and_filter(paths, candidate_limit=30):
         ["final_selection_score", "pred_top20_rate", "mean_y_pred"],
         ascending=[False, False, True],
     ).reset_index(drop=True)
+    before_dedupe = int(len(drug_scores))
+    drug_scores["drug_name_normalized"] = drug_scores["drug_name"].fillna("").astype(str).str.lower().str.strip()
+    drug_scores = drug_scores.drop_duplicates("drug_name_normalized", keep="first").reset_index(drop=True)
     drug_scores["final_rank"] = np.arange(1, len(drug_scores) + 1)
 
     # Save
@@ -743,6 +746,8 @@ def rank_and_filter(paths, candidate_limit=30):
     write_json(paths.final_selection / "selection_summary.json", {
         "n_pairs": int(pair.shape[0]),
         "n_drugs": int(drug_scores.shape[0]),
+        "n_drugs_before_name_dedupe": before_dedupe,
+        "dedupe_rule": "keep highest-ranked row per normalized drug_name",
         "candidate_limit": candidate_limit,
         "top10": selected.head(10)[["final_rank", "drug_name", "final_selection_score"]].to_dict("records"),
     })

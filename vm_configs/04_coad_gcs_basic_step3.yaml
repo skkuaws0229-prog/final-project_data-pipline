@@ -1,0 +1,20 @@
+disease:
+  name: COAD
+  label: Colon adenocarcinoma
+  type: cancer
+  number: 4
+tcga_code: COAD
+project_root: /home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1
+admet_top_n: 15
+random_seed: 42
+execution:
+  step3_env: local
+  local_gpu: cpu
+  mode: light
+  self_heal: false
+  supervisor: true
+  max_step_retries: 0
+  steps: [step3]
+analysis:
+  driver_genes: [APC, TP53, KRAS, PIK3CA, SMAD4, BRAF]
+drug: {}
