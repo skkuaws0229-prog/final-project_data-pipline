@@ -13,6 +13,9 @@ from .config import WorkflowConfig
 from .utils import file_status, now_iso, run_cmd
 
 
+IMAGE_MODAL_MODES = ("reuse-existing", "smoke-1", "smoke-3", "full")
+
+
 @dataclass
 class AgentResult:
     agent: str
@@ -124,10 +127,51 @@ class PipelineAgent:
 class ImageModalAgent:
     name = "image_modal_agent"
 
-    def run(self, config: WorkflowConfig) -> AgentResult:
+    def run(self, config: WorkflowConfig, image_mode: str = "reuse-existing", allow_image_full: bool = False) -> AgentResult:
         started = now_iso()
         checks: dict[str, Any] = {}
         actions: list[str] = []
+        warnings: list[str] = []
+        checks["image_mode"] = image_mode
+        if image_mode not in IMAGE_MODAL_MODES:
+            return AgentResult(
+                self.name,
+                "failed",
+                started,
+                now_iso(),
+                checks,
+                warnings=[f"Unsupported image mode: {image_mode}. Choose one of {IMAGE_MODAL_MODES}."],
+            )
+        if image_mode == "full" and not allow_image_full:
+            return AgentResult(
+                self.name,
+                "failed",
+                started,
+                now_iso(),
+                checks,
+                warnings=["Full image-modal recompute is blocked unless --allow-image-full is explicitly set."],
+            )
+        if image_mode == "full":
+            return AgentResult(
+                self.name,
+                "failed",
+                started,
+                now_iso(),
+                checks,
+                warnings=[
+                    "Full image-modal recompute is not wired into SDK v0.3 yet. "
+                    "Use smoke modes for validated GCP UNI2 checks, or keep reuse-existing."
+                ],
+            )
+        if image_mode.startswith("smoke-"):
+            smoke = self._verify_smoke_artifacts(config, image_mode)
+            checks["smoke_artifacts"] = smoke
+            actions.append(f"verified {image_mode} UNI2 smoke artifacts")
+            if smoke["status"] != "completed":
+                return AgentResult(self.name, "failed", started, now_iso(), checks, actions, warnings=smoke.get("warnings", []))
+        else:
+            actions.append("reused_existing_image_embeddings")
+
         admet_top15 = resolve_admet_top15(config)
         script = config.repo_root / config.disease_profile.im4c_remap_script
         cp = run_cmd(
@@ -162,7 +206,33 @@ class ImageModalAgent:
             checks,
             actions,
             outputs={"im4c_drug_summary": str(drug_summary), "im4c_summary": str(summary_path)},
+            warnings=warnings,
         )
+
+    def _verify_smoke_artifacts(self, config: WorkflowConfig, image_mode: str) -> dict[str, Any]:
+        prefixes = config.disease_profile.image_smoke_gcs_prefixes or {}
+        prefix = prefixes.get(image_mode)
+        if not prefix:
+            return {
+                "status": "failed",
+                "mode": image_mode,
+                "warnings": [f"No GCS smoke artifact prefix is configured for {config.disease.upper()} {image_mode}."],
+            }
+        required = {
+            "embedding_metadata": f"{prefix}/slide_embeddings/embedding_metadata_20260430_v1.json",
+            "slide_embeddings": f"{prefix}/slide_embeddings/all_slide_embeddings_20260430_v1.parquet",
+        }
+        checks: dict[str, Any] = {"status": "completed", "mode": image_mode, "prefix": prefix, "required": {}}
+        for key, uri in required.items():
+            cp = run_cmd(["gcloud", "storage", "ls", uri], cwd=config.repo_root, check=False)
+            checks["required"][key] = {"uri": uri, "exists": cp.returncode == 0}
+            if cp.returncode != 0:
+                checks["status"] = "failed"
+        expected_slides = {"smoke-1": 1, "smoke-3": 3}.get(image_mode)
+        checks["expected_slides"] = expected_slides
+        if checks["status"] != "completed":
+            checks["warnings"] = [f"Missing required GCS smoke artifacts for {image_mode}: {prefix}"]
+        return checks
 
 
 class EvidenceReportAgent:

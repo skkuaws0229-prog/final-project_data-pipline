@@ -30,6 +30,7 @@ class DiseaseProfile:
     auto_loop_summary_filename: str = "coad_gcs_4agent_auto_loop_summary.json"
     auto_loop_report_filename: str = "coad_gcs_4agent_auto_loop_report.md"
     image_modal_required_file_overrides: dict[str, str] | None = None
+    image_smoke_gcs_prefixes: dict[str, str] | None = None
 
     @property
     def image_modal_required_files(self) -> dict[str, Path]:
@@ -74,6 +75,20 @@ DISEASE_PROFILES: dict[str, DiseaseProfile] = {
         auto_loop_report_filename="luad_gcs_4agent_auto_loop_report.md",
         image_modal_required_file_overrides={
             "im2_embedding_qc": "LUNG/0.Image_modal_LUAD/step_im2/embedding_merge_qc.json",
+        },
+        image_smoke_gcs_prefixes={
+            "smoke-1": (
+                "gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/"
+                "20260408_new_pre_project_biso/migration-artifacts/20260527/"
+                "basic_pipeline_step14_luad_gcp_uni2_smoke_success/"
+                "embeddings_uni2_valid"
+            ),
+            "smoke-3": (
+                "gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/"
+                "20260408_new_pre_project_biso/migration-artifacts/20260527/"
+                "basic_pipeline_step15_luad_gcp_uni2_3slide_smoke_success/"
+                "luad_gcp_im_smoke_3slides_20260527/embeddings_uni2_3slides"
+            ),
         },
     ),
 }

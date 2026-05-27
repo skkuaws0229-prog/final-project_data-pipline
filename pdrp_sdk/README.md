@@ -30,6 +30,8 @@ result = workflow.run(vm_status_override="TERMINATED")
 - Resume-safe default mode.
 - Optional heavy rerun via CLI `--run-heavy`.
 - Optional VM lifecycle control via CLI `--manage-vm`.
+- Image-modal mode control via CLI `--image-mode`:
+  `reuse-existing`, `smoke-1`, `smoke-3`, or guarded `full`.
 - DB loading is intentionally left for a later DB Load Agent.
 
 ## LUAD Smoke Test
@@ -55,6 +57,22 @@ python3 vm_scripts/run_gcp_4agent_orchestration_with_vm_lifecycle.py --disease L
 
 The controller always attempts to stop the VM in a `finally` block unless
 `--no-stop` is passed for debugging.
+
+Image-modal defaults to the conservative reuse path:
+
+```bash
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease LUAD --image-mode reuse-existing
+```
+
+Verified LUAD GCP UNI2 smoke artifacts can be required before remapping:
+
+```bash
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease LUAD --image-mode smoke-3
+```
+
+Full image-modal recompute remains guarded. `--image-mode full` fails unless
+`--allow-image-full` is passed, and the SDK currently records it as not wired
+for automatic full recompute yet.
 
 The current LUAD evidence agent is a scaffold. It preserves the existing LUAD
 4-tier labels and marks rows for refreshed source retrieval plus human

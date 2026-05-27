@@ -24,6 +24,13 @@ def main() -> None:
     parser.add_argument("--upload-gcs", action="store_true", help="Upload auto-loop report/code to GCS after completion.")
     parser.add_argument("--vm-status-override", choices=["TERMINATED", "RUNNING", "STOPPING", "UNKNOWN"], help="Use a known VM status when local gcloud checks are sandbox-limited.")
     parser.add_argument("--manage-vm", action="store_true", help="Start the configured VM before the workflow and stop it in a finally block.")
+    parser.add_argument(
+        "--image-mode",
+        choices=["reuse-existing", "smoke-1", "smoke-3", "full"],
+        default="reuse-existing",
+        help="Image-modal handling: reuse existing embeddings, verify UNI2 smoke artifacts, or request full recompute.",
+    )
+    parser.add_argument("--allow-image-full", action="store_true", help="Explicitly allow full image-modal recompute mode.")
     args = parser.parse_args()
     config = WorkflowConfig.from_repo_root(
         REPO_ROOT,
@@ -37,6 +44,8 @@ def main() -> None:
         upload_gcs=args.upload_gcs,
         vm_status_override=args.vm_status_override,
         manage_vm=args.manage_vm,
+        image_mode=args.image_mode,
+        allow_image_full=args.allow_image_full,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
 

@@ -88,6 +88,12 @@ def main() -> int:
     parser.add_argument("--run-heavy", action="store_true")
     parser.add_argument("--upload-gcs", action="store_true")
     parser.add_argument("--pull", action="store_true", help="Run git pull --ff-only in the VM repo before orchestration.")
+    parser.add_argument(
+        "--image-mode",
+        choices=["reuse-existing", "smoke-1", "smoke-3", "full"],
+        default="reuse-existing",
+    )
+    parser.add_argument("--allow-image-full", action="store_true")
     parser.add_argument("--ssh-timeout-seconds", type=int, default=180)
     parser.add_argument("--no-stop", action="store_true", help="Debug only: leave the VM running after the workflow.")
     args = parser.parse_args()
@@ -105,11 +111,14 @@ def main() -> int:
             '"${PDRP_PYTHON}" vm_scripts/coad_gcs_4agent_auto_loop.py',
             f"--disease {shell_quote(args.disease)}",
             "--vm-status-override RUNNING",
+            f"--image-mode {shell_quote(args.image_mode)}",
         ]
         if args.run_heavy:
             workflow_parts.append("--run-heavy")
         if args.upload_gcs:
             workflow_parts.append("--upload-gcs")
+        if args.allow_image_full:
+            workflow_parts.append("--allow-image-full")
         pull_part = "&& git pull --ff-only " if args.pull else ""
         remote_command = (
             f"cd {shell_quote(args.vm_repo)} "

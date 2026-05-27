@@ -24,6 +24,8 @@ class FourAgentWorkflow:
         upload_gcs: bool = False,
         vm_status_override: str | None = None,
         manage_vm: bool = False,
+        image_mode: str = "reuse-existing",
+        allow_image_full: bool = False,
     ) -> dict[str, Any]:
         output_dir = self.config.auto_loop_output_dir
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -41,29 +43,69 @@ class FourAgentWorkflow:
             results.append(preflight)
             if preflight.status != "completed":
                 upload_gcs = False
-                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+                return self._finalize(
+                    started,
+                    results,
+                    status,
+                    upload_gcs=upload_gcs,
+                    vm_lifecycle=vm_lifecycle,
+                    manage_vm=manage_vm,
+                    image_mode=image_mode,
+                )
 
             pipeline = PipelineAgent().run(self.config, run_heavy)
             results.append(pipeline)
             if pipeline.status != "completed":
                 upload_gcs = False
-                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+                return self._finalize(
+                    started,
+                    results,
+                    status,
+                    upload_gcs=upload_gcs,
+                    vm_lifecycle=vm_lifecycle,
+                    manage_vm=manage_vm,
+                    image_mode=image_mode,
+                )
 
-            image = ImageModalAgent().run(self.config)
+            image = ImageModalAgent().run(self.config, image_mode=image_mode, allow_image_full=allow_image_full)
             results.append(image)
             if image.status != "completed":
                 upload_gcs = False
-                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+                return self._finalize(
+                    started,
+                    results,
+                    status,
+                    upload_gcs=upload_gcs,
+                    vm_lifecycle=vm_lifecycle,
+                    manage_vm=manage_vm,
+                    image_mode=image_mode,
+                )
 
             vm_status = str(preflight.checks.get("vm_status", "unknown"))
             evidence = EvidenceReportAgent().run(self.config, vm_status)
             results.append(evidence)
             if evidence.status != "completed":
                 upload_gcs = False
-                return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+                return self._finalize(
+                    started,
+                    results,
+                    status,
+                    upload_gcs=upload_gcs,
+                    vm_lifecycle=vm_lifecycle,
+                    manage_vm=manage_vm,
+                    image_mode=image_mode,
+                )
 
             status = "completed"
-            return self._finalize(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle, manage_vm=manage_vm)
+            return self._finalize(
+                started,
+                results,
+                status,
+                upload_gcs=upload_gcs,
+                vm_lifecycle=vm_lifecycle,
+                manage_vm=manage_vm,
+                image_mode=image_mode,
+            )
         except Exception:
             if manage_vm:
                 vm_lifecycle.append(compute.stop_vm(self.config))
@@ -78,10 +120,18 @@ class FourAgentWorkflow:
         upload_gcs: bool,
         vm_lifecycle: list[dict[str, Any]],
         manage_vm: bool,
+        image_mode: str,
     ) -> dict[str, Any]:
         if manage_vm:
             vm_lifecycle.append(compute.stop_vm(self.config))
-        return self._write_master(started, results, status, upload_gcs=upload_gcs, vm_lifecycle=vm_lifecycle)
+        return self._write_master(
+            started,
+            results,
+            status,
+            upload_gcs=upload_gcs,
+            vm_lifecycle=vm_lifecycle,
+            image_mode=image_mode,
+        )
 
     def _write_master(
         self,
@@ -91,6 +141,7 @@ class FourAgentWorkflow:
         *,
         upload_gcs: bool,
         vm_lifecycle: list[dict[str, Any]] | None = None,
+        image_mode: str = "reuse-existing",
     ) -> dict[str, Any]:
         output_dir = self.config.auto_loop_output_dir
         payload = {
@@ -103,6 +154,7 @@ class FourAgentWorkflow:
             "agents": [asdict(result) for result in results],
             "db_status": db_status(),
             "vm_lifecycle": vm_lifecycle or [],
+            "image_modal_mode": image_mode,
         }
         if upload_gcs:
             payload["gcs_upload"] = upload_auto_loop_outputs(self.config, output_dir)
@@ -119,6 +171,7 @@ class FourAgentWorkflow:
             f"- Status: {payload['status']}",
             f"- Started: {payload['started_at']}",
             f"- Completed: {payload['completed_at']}",
+            f"- Image mode: {payload['image_modal_mode']}",
             "",
             "## VM Lifecycle",
             "",
