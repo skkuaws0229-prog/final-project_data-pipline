@@ -1,0 +1,30 @@
+{
+  "step": "evidence_agent_tier_verification",
+  "disease": "COAD",
+  "vm_status_at_start": "TERMINATED",
+  "input_im4c_summary": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_drug_summary.csv",
+  "n_drugs": 15,
+  "final_tier_counts": {
+    "Tier1": 1,
+    "Tier2": 2,
+    "Tier3": 6,
+    "Tier4": 6
+  },
+  "changed_from_im4c_protocol_tier": [
+    {
+      "drug_name": "PD0325901",
+      "tier_change": "Tier2 -> Tier3"
+    },
+    {
+      "drug_name": "Gemcitabine",
+      "tier_change": "Tier3 -> Tier2"
+    }
+  ],
+  "outputs": {
+    "verified_tiers_csv": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
+    "sources_csv": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_sources.csv",
+    "summary_json": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_summary.json",
+    "report_md": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_report.md"
+  },
+  "review_scope": "Evidence-agent synthesis only; requires human clinical/scientific signoff before final use."
+}
