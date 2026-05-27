@@ -21,10 +21,10 @@
     }
   ],
   "outputs": {
-    "verified_tiers_csv": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
-    "sources_csv": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_sources.csv",
-    "summary_json": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_summary.json",
-    "report_md": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_report.md"
+    "verified_tiers_csv": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
+    "sources_csv": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_sources.csv",
+    "summary_json": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_summary.json",
+    "report_md": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_report.md"
   },
   "review_scope": "Evidence-agent synthesis only; requires human clinical/scientific signoff before final use."
 }

@@ -1,0 +1,223 @@
+{
+  "workflow": "coad_gcs_4agent_auto_loop",
+  "status": "completed",
+  "started_at": "2026-05-27T05:32:18+00:00",
+  "completed_at": "2026-05-27T05:32:19+00:00",
+  "agents": [
+    {
+      "agent": "preflight_qa_agent",
+      "status": "completed",
+      "started_at": "2026-05-27T05:32:18+00:00",
+      "completed_at": "2026-05-27T05:32:18+00:00",
+      "checks": {
+        "repo_root": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline",
+        "git_repo": true,
+        "gcloud_available": true,
+        "vm_status_source": "override",
+        "vm_status": "TERMINATED",
+        "required_files": {
+          "im2_embedding_qc": {
+            "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_im2/embedding_qc.json",
+            "exists": true,
+            "size_bytes": 84
+          },
+          "im3_patient_clusters": {
+            "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_im3/patient_clusters.csv",
+            "exists": true,
+            "size_bytes": 8068
+          },
+          "im4b_cluster_profiles": {
+            "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_im4b/coad_cluster_pathway_profiles.csv",
+            "exists": true,
+            "size_bytes": 888
+          },
+          "im4c_remap_script": {
+            "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/vm_scripts/coad_gcs_basic_top15_im4c_remap.py",
+            "exists": true,
+            "size_bytes": 14051
+          },
+          "evidence_agent_script": {
+            "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/vm_scripts/coad_gcs_basic_top15_evidence_agent.py",
+            "exists": true,
+            "size_bytes": 15159
+          }
+        },
+        "admet_top15": {
+          "path": "/private/tmp/coad_step3_outputs/final_selection/admet_filtered_top15.csv",
+          "exists": true,
+          "size_bytes": 15299
+        },
+        "top15_rows": 15,
+        "top15_unique_names": 15,
+        "top15_duplicate_name_rows": 0
+      },
+      "actions": [
+        "verified_inputs_and_cost_state"
+      ],
+      "outputs": {},
+      "warnings": []
+    },
+    {
+      "agent": "pipeline_agent",
+      "status": "completed",
+      "started_at": "2026-05-27T05:32:18+00:00",
+      "completed_at": "2026-05-27T05:32:19+00:00",
+      "checks": {
+        "expected_outputs_before": {
+          "selected_top_n": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/selected_drugs_top_n.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_candidate_gate": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_candidate_gate.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_top15": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_filtered_top15.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_summary": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_summary.json",
+            "exists": false,
+            "size_bytes": null
+          }
+        },
+        "expected_outputs_after": {
+          "selected_top_n": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/selected_drugs_top_n.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_candidate_gate": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_candidate_gate.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_top15": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_filtered_top15.csv",
+            "exists": false,
+            "size_bytes": null
+          },
+          "admet_summary": {
+            "path": "/home/skku_aws2_14/sobi2026/runtime/coad_gcs_basic_step1/outputs/final_selection/admet_summary.json",
+            "exists": false,
+            "size_bytes": null
+          }
+        },
+        "admet_top15_rows": 15,
+        "admet_top15_drugs": [
+          "MG-132",
+          "PD0325901",
+          "Irinotecan",
+          "BI-2536",
+          "CCT-018159",
+          "YK-4-279",
+          "Avagacestat",
+          "Trametinib",
+          "Fulvestrant",
+          "Schweinfurthin A",
+          "Mycophenolic acid",
+          "Gemcitabine",
+          "Elesclomol",
+          "AZD8055",
+          "Ulixertinib"
+        ]
+      },
+      "actions": [
+        "resume_mode_verified_existing_admet_top15"
+      ],
+      "outputs": {
+        "admet_top15": "/private/tmp/coad_step3_outputs/final_selection/admet_filtered_top15.csv"
+      },
+      "warnings": []
+    },
+    {
+      "agent": "image_modal_agent",
+      "status": "completed",
+      "started_at": "2026-05-27T05:32:19+00:00",
+      "completed_at": "2026-05-27T05:32:19+00:00",
+      "checks": {
+        "summary": {
+          "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_summary.json",
+          "exists": true,
+          "size_bytes": 10413
+        },
+        "drug_summary": {
+          "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_drug_summary.csv",
+          "exists": true,
+          "size_bytes": 3345
+        },
+        "drug_summary_rows": 15,
+        "tier_counts": {
+          "Tier1": 1,
+          "Tier2": 2,
+          "Tier3": 6,
+          "Tier4": 6
+        }
+      },
+      "actions": [
+        "ran image remap exit=0"
+      ],
+      "outputs": {
+        "im4c_drug_summary": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_drug_summary.csv",
+        "im4c_summary": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_summary.json"
+      },
+      "warnings": []
+    },
+    {
+      "agent": "evidence_report_agent",
+      "status": "completed",
+      "started_at": "2026-05-27T05:32:19+00:00",
+      "completed_at": "2026-05-27T05:32:19+00:00",
+      "checks": {
+        "verified_tiers": {
+          "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
+          "exists": true,
+          "size_bytes": 6764
+        },
+        "report": {
+          "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_report.md",
+          "exists": true,
+          "size_bytes": 3854
+        },
+        "summary": {
+          "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_summary.json",
+          "exists": true,
+          "size_bytes": 1483
+        },
+        "final_tier_counts": {
+          "Tier1": 1,
+          "Tier2": 2,
+          "Tier3": 6,
+          "Tier4": 6
+        },
+        "tier_changes": [
+          {
+            "drug_name": "PD0325901",
+            "tier_change": "Tier2 -> Tier3"
+          },
+          {
+            "drug_name": "Gemcitabine",
+            "tier_change": "Tier3 -> Tier2"
+          }
+        ]
+      },
+      "actions": [
+        "ran evidence agent exit=0"
+      ],
+      "outputs": {
+        "verified_tiers": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
+        "report": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_report.md",
+        "summary": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_summary.json"
+      },
+      "warnings": []
+    }
+  ],
+  "db_status": {
+    "loaded_to_postgres": false,
+    "note": "This loop writes CSV/JSON/Markdown artifacts only. DB loading is intentionally left as a separate db_load agent/stage."
+  }
+}
