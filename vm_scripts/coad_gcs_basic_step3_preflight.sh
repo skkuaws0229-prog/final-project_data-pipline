@@ -24,7 +24,22 @@ if missing:
     raise SystemExit(2)
 selected = pd.read_csv(root / "outputs/final_selection/selected_drugs_top_n.csv")
 name_key = selected["drug_name"].fillna("").astype(str).str.lower().str.strip()
-print({"selected_rows": len(selected), "unique_names": name_key.nunique(), "duplicate_name_rows": int(name_key.duplicated().sum())})
+id_key = selected["canonical_drug_id"].astype(str) if "canonical_drug_id" in selected.columns else pd.Series([], dtype=str)
+duplicate_name_rows = int(name_key.duplicated().sum())
+duplicate_id_rows = int(id_key.duplicated().sum()) if len(id_key) else 0
+summary = {
+    "selected_rows": len(selected),
+    "unique_ids": int(id_key.nunique()) if len(id_key) else None,
+    "unique_names": int(name_key.nunique()),
+    "duplicate_id_rows": duplicate_id_rows,
+    "duplicate_name_rows": duplicate_name_rows,
+}
+print(summary)
+if duplicate_id_rows or duplicate_name_rows:
+    duplicated = selected[name_key.duplicated(keep=False)].copy()
+    if not duplicated.empty:
+        print(duplicated[["canonical_drug_id", "drug_name", "final_rank"]].to_string(index=False))
+    raise SystemExit("Duplicate candidates found before ADMET gate")
 PY
 
 echo "[2/4] Step3 dry-run"
