@@ -35,7 +35,10 @@ def build_evidence(im4c_summary: Path) -> pd.DataFrame:
     im4c = pd.read_csv(im4c_summary)
     rows: list[dict[str, Any]] = []
     for _, row in im4c.sort_values("admet_filtered_rank").iterrows():
-        tier = str(row.get("luad_4tier") or row.get("crc_4tier") or "Tier4")
+        raw_tier = row.get("luad_4tier")
+        if pd.isna(raw_tier) or not str(raw_tier).strip():
+            raw_tier = row.get("crc_4tier")
+        tier = "Tier4" if pd.isna(raw_tier) or not str(raw_tier).strip() else str(raw_tier)
         rows.append(
             {
                 "admet_filtered_rank": int(row["admet_filtered_rank"]),

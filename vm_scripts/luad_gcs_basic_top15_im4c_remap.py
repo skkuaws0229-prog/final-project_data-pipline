@@ -89,7 +89,14 @@ def build_recommendations(top15: pd.DataFrame, clusters: pd.DataFrame, prior: pd
     rows: list[dict[str, Any]] = []
     for _, cluster in clusters.sort_values("cluster").iterrows():
         for _, drug in merged.sort_values("admet_filtered_rank").iterrows():
-            tier = str(drug.get("luad_4tier") or "Tier4")
+            raw_tier = drug.get("luad_4tier")
+            tier = "Tier4" if pd.isna(raw_tier) or not str(raw_tier).strip() else str(raw_tier)
+            raw_rationale = drug.get("luad_4tier_rationale")
+            tier_rationale = (
+                "No existing LUAD 4-tier protocol match for this new GCP top15 drug; defaulted to Tier4/review."
+                if pd.isna(raw_rationale) or not str(raw_rationale).strip()
+                else str(raw_rationale)
+            )
             driver_overlap = cluster_driver_hits(cluster, drug.get("target") or drug.get("TARGET"), drug.get("TARGET_PATHWAY"))
             match_score, matched_keywords = score_match(
                 tier,
@@ -110,7 +117,7 @@ def build_recommendations(top15: pd.DataFrame, clusters: pd.DataFrame, prior: pd
                     "admet_filtered_rank": int(drug.get("admet_filtered_rank")),
                     "crc_4tier": tier,
                     "luad_4tier": tier,
-                    "crc_4tier_rationale": drug.get("luad_4tier_rationale"),
+                    "crc_4tier_rationale": tier_rationale,
                     "target": drug.get("target") or drug.get("TARGET"),
                     "target_pathway": drug.get("TARGET_PATHWAY") or drug.get("target"),
                     "admet_verdict": "PASS" if bool(drug.get("admet_strict_pass", True)) else "REVIEW",
@@ -122,7 +129,11 @@ def build_recommendations(top15: pd.DataFrame, clusters: pd.DataFrame, prior: pd
                     "matched_keywords": matched_keywords,
                     "driver_overlap": driver_overlap,
                     "hypothesis": f"{drug.get('drug_name')} may fit LUAD cluster {cluster_id} via {matched_keywords}.",
-                    "classification_status": drug.get("classification_status", "luad_gcs_im4c_remap_needs_evidence_agent_review"),
+                    "classification_status": (
+                        drug.get("classification_status")
+                        if pd.notna(drug.get("classification_status"))
+                        else "luad_gcs_im4c_remap_unmatched_needs_evidence_agent_review"
+                    ),
                 }
             )
     return pd.DataFrame(rows)
