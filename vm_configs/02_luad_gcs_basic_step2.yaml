@@ -1,0 +1,28 @@
+disease:
+  name: LUAD
+  label: Lung adenocarcinoma
+  type: cancer
+  number: 2
+tcga_code: LUAD
+gdsc_tcga_desc: LUAD
+project_root: /home/skku_aws2_14/sobi2026/runtime/luad_gcs_basic_step1
+random_seed: 42
+models: [lightgbm, xgboost, catboost, residual_mlp]
+model_parallel_jobs: 2
+n_splits: 3
+candidate_limit: 30
+max_crispr_features: 1000
+max_lincs_features: 256
+execution:
+  step3_env: local
+  local_gpu: cpu
+  mode: light
+  self_heal: false
+  supervisor: true
+  max_step_retries: 0
+  steps: [step2]
+analysis:
+  driver_genes: [EGFR, KRAS, ALK, STK11, KEAP1, TP53]
+  clinical_vars: []
+  continuous_vars: []
+drug: {}

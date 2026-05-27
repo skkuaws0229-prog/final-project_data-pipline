@@ -1,0 +1,52 @@
+disease:
+  name: LUAD
+  label: Lung adenocarcinoma
+  type: cancer
+  number: 2
+tcga_code: LUAD
+gdsc_tcga_desc: LUAD
+project_root: /private/tmp/luad_gcs_basic_step1_dryrun
+raw_storage_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/LUNG/raw_source_snapshot/Lung_raw
+seed_storage_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/HNSC/raw/HNSC_raw
+download_seed_files_only: true
+raw_template_root: gs://sobi2026-myfirst-gcs-backup-20260518/workflow-data/20260408_new_pre_project_biso/202604_Final_data/HNSC/raw/HNSC_raw
+auto_provision_raw: false
+skip_download: false
+random_seed: 42
+models: [lightgbm, xgboost, catboost, residual_mlp]
+model_parallel_jobs: 2
+n_splits: 3
+candidate_limit: 30
+max_crispr_features: 1000
+max_lincs_features: 256
+admet_top_n: 15
+execution:
+  step3_env: local
+  local_gpu: cpu
+  mode: full
+  self_heal: false
+  supervisor: true
+  max_step_retries: 0
+  steps: [step1, step2, step3, im1, im2, im3, im4a, im4c, im5]
+analysis:
+  driver_genes: [EGFR, KRAS, ALK, STK11, KEAP1, TP53]
+  clinical_vars: [AJCC_PATHOLOGIC_TUMOR_STAGE, PATH_T_STAGE, PATH_N_STAGE, PATH_M_STAGE, SUBTYPE]
+  continuous_vars: [AGE, OS_MONTHS]
+  k_values: [2, 3, 4, 5]
+  clustering_k_range: [2, 3, 4, 5]
+model:
+  foundation_model: UNI2
+image_modal:
+  enabled: true
+  auto_launch: false
+  disable_auto_launch: true
+  skip_if_missing: true
+  output_root: /private/tmp/luad_gcs_basic_step1_dryrun/outputs/image_modal
+  merged_npy: /private/tmp/luad_gcs_basic_step1_dryrun/outputs/image_modal/step_im2/all_patient_embeddings_luad_merged.npy
+  embedding_metadata_csv: /private/tmp/luad_gcs_basic_step1_dryrun/outputs/image_modal/step_im2/all_patient_embeddings_luad_metadata.csv
+  wsi_limit: 100
+  wsi_max_limit: 200
+  wsi_smoke_count: 1
+  embedding_parallel_parts: 4
+drug:
+  top30_csv: /private/tmp/luad_gcs_basic_step1_dryrun/outputs/final_selection/admet_filtered_top15.csv
