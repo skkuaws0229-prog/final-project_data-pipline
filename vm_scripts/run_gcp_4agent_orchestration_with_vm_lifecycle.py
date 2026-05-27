@@ -87,6 +87,7 @@ def main() -> int:
     parser.add_argument("--vm-repo", default="/home/skku_aws2_14/sobi2026/final-project_data-pipline-gcp-run")
     parser.add_argument("--run-heavy", action="store_true")
     parser.add_argument("--upload-gcs", action="store_true")
+    parser.add_argument("--pull", action="store_true", help="Run git pull --ff-only in the VM repo before orchestration.")
     parser.add_argument("--ssh-timeout-seconds", type=int, default=180)
     parser.add_argument("--no-stop", action="store_true", help="Debug only: leave the VM running after the workflow.")
     args = parser.parse_args()
@@ -101,7 +102,7 @@ def main() -> int:
         wait_for_ssh(args.vm_name, args.project, args.zone, args.ssh_timeout_seconds)
 
         workflow_parts = [
-            "python3 vm_scripts/coad_gcs_4agent_auto_loop.py",
+            '"${PDRP_PYTHON}" vm_scripts/coad_gcs_4agent_auto_loop.py',
             f"--disease {shell_quote(args.disease)}",
             "--vm-status-override RUNNING",
         ]
@@ -109,9 +110,12 @@ def main() -> int:
             workflow_parts.append("--run-heavy")
         if args.upload_gcs:
             workflow_parts.append("--upload-gcs")
+        pull_part = "&& git pull --ff-only " if args.pull else ""
         remote_command = (
             f"cd {shell_quote(args.vm_repo)} "
-            "&& (git pull --ff-only || true) "
+            '&& PDRP_PYTHON=python3 '
+            '&& if [ -x .venv/bin/python ]; then PDRP_PYTHON=.venv/bin/python; fi '
+            f"{pull_part}"
             f"&& {' '.join(workflow_parts)}"
         )
         cp = run(
