@@ -15,6 +15,7 @@ def upload_auto_loop_outputs(config: WorkflowConfig, output_dir: Path) -> dict[s
         (output_dir, f"{config.gcs_base}/results/{output_dir.name}/"),
         (config.repo_root / "vm_scripts" / "coad_gcs_4agent_auto_loop.py", f"{config.gcs_base}/code/"),
         (config.repo_root / "vm_scripts" / "COAD_GCS_4AGENT_AUTO_LOOP.md", f"{config.gcs_base}/code/"),
+        (config.repo_root / "pdrp_sdk", f"{config.gcs_base}/code/pdrp_sdk/"),
     ]
     uploaded: list[str] = []
     for src, dst in targets:

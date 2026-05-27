@@ -26,17 +26,18 @@ class AgentResult:
 
 
 def resolve_admet_top15(config: WorkflowConfig) -> Path:
-    target = config.runtime_root / "outputs" / "final_selection" / "admet_filtered_top15.csv"
+    target = config.effective_runtime_root / "outputs" / "final_selection" / "admet_filtered_top15.csv"
     if target.exists():
         return target
-    if config.local_step3_fallback.exists():
+    fallback = config.effective_local_step3_fallback
+    if fallback.exists():
         try:
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(config.local_step3_fallback, target)
+            shutil.copy2(fallback, target)
             return target
         except OSError:
-            return config.local_step3_fallback
-    raise FileNotFoundError(f"Missing ADMET top15: {target} and {config.local_step3_fallback}")
+            return fallback
+    raise FileNotFoundError(f"Missing ADMET top15: {target} and {fallback}")
 
 
 class PreflightQAAgent:
@@ -57,12 +58,11 @@ class PreflightQAAgent:
             warnings.append("VM is not confirmed TERMINATED; verify cost controls before heavy reruns.")
 
         required = {
-            "im2_embedding_qc": config.coad_root / "step_im2" / "embedding_qc.json",
-            "im3_patient_clusters": config.coad_root / "step_im3" / "patient_clusters.csv",
-            "im4b_cluster_profiles": config.coad_root / "step_im4b" / "coad_cluster_pathway_profiles.csv",
-            "im4c_remap_script": config.repo_root / "vm_scripts" / "coad_gcs_basic_top15_im4c_remap.py",
-            "evidence_agent_script": config.repo_root / "vm_scripts" / "coad_gcs_basic_top15_evidence_agent.py",
+            key: config.repo_root / rel_path
+            for key, rel_path in config.disease_profile.image_modal_required_files.items()
         }
+        required["im4c_remap_script"] = config.repo_root / config.disease_profile.im4c_remap_script
+        required["evidence_agent_script"] = config.repo_root / config.disease_profile.evidence_agent_script
         checks["required_files"] = {key: file_status(path) for key, path in required.items()}
         missing = [key for key, meta in checks["required_files"].items() if not meta["exists"]]
         if missing:
@@ -93,7 +93,7 @@ class PipelineAgent:
         actions: list[str] = []
         warnings: list[str] = []
 
-        final_selection = config.runtime_root / "outputs" / "final_selection"
+        final_selection = config.effective_runtime_root / "outputs" / "final_selection"
         expected = {
             "selected_top_n": final_selection / "selected_drugs_top_n.csv",
             "admet_candidate_gate": final_selection / "admet_candidate_gate.csv",
@@ -106,11 +106,7 @@ class PipelineAgent:
             resolve_admet_top15(config)
             actions.append("resume_mode_verified_existing_admet_top15")
         else:
-            for script in [
-                "vm_scripts/coad_gcs_basic_step1_preflight.sh",
-                "vm_scripts/coad_gcs_basic_step2_preflight.sh",
-                "vm_scripts/coad_gcs_basic_step3_preflight.sh",
-            ]:
+            for script in config.disease_profile.step_scripts:
                 cp = run_cmd(["bash", script], cwd=config.repo_root, check=False)
                 actions.append(f"ran {script} exit={cp.returncode}")
                 if cp.returncode != 0:
@@ -133,7 +129,7 @@ class ImageModalAgent:
         checks: dict[str, Any] = {}
         actions: list[str] = []
         admet_top15 = resolve_admet_top15(config)
-        script = config.repo_root / "vm_scripts" / "coad_gcs_basic_top15_im4c_remap.py"
+        script = config.repo_root / config.disease_profile.im4c_remap_script
         cp = run_cmd(
             [
                 sys.executable,
@@ -150,8 +146,8 @@ class ImageModalAgent:
         if cp.returncode != 0:
             return AgentResult(self.name, "failed", started, now_iso(), checks, actions, warnings=[cp.stderr[-1000:]])
 
-        summary_path = config.im4c_output_dir / "coad_gcs_basic_top15_im4c_summary.json"
-        drug_summary = config.im4c_output_dir / "coad_gcs_basic_top15_im4c_drug_summary.csv"
+        summary_path = config.im4c_output_dir / config.disease_profile.im4c_summary_filename
+        drug_summary = config.im4c_output_dir / config.disease_profile.im4c_drug_summary_filename
         checks["summary"] = file_status(summary_path)
         checks["drug_summary"] = file_status(drug_summary)
         if drug_summary.exists():
@@ -176,7 +172,7 @@ class EvidenceReportAgent:
         started = now_iso()
         checks: dict[str, Any] = {}
         actions: list[str] = []
-        script = config.repo_root / "vm_scripts" / "coad_gcs_basic_top15_evidence_agent.py"
+        script = config.repo_root / config.disease_profile.evidence_agent_script
         cp = run_cmd(
             [
                 sys.executable,
@@ -193,9 +189,9 @@ class EvidenceReportAgent:
         if cp.returncode != 0:
             return AgentResult(self.name, "failed", started, now_iso(), checks, actions, warnings=[cp.stderr[-1000:]])
 
-        verified = config.evidence_output_dir / "coad_gcs_basic_top15_evidence_verified_tiers.csv"
-        report = config.evidence_output_dir / "coad_gcs_basic_top15_evidence_report.md"
-        summary = config.evidence_output_dir / "coad_gcs_basic_top15_evidence_summary.json"
+        verified = config.evidence_output_dir / config.disease_profile.evidence_verified_filename
+        report = config.evidence_output_dir / config.disease_profile.evidence_report_filename
+        summary = config.evidence_output_dir / config.disease_profile.evidence_summary_filename
         checks["verified_tiers"] = file_status(verified)
         checks["report"] = file_status(report)
         checks["summary"] = file_status(summary)

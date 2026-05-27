@@ -1,15 +1,16 @@
 {
   "workflow": "coad_gcs_4agent_auto_loop",
-  "sdk": "pdrp_sdk.v0.1",
+  "disease": "COAD",
+  "sdk": "pdrp_sdk.v0.2",
   "status": "completed",
-  "started_at": "2026-05-27T05:40:26+00:00",
-  "completed_at": "2026-05-27T05:40:27+00:00",
+  "started_at": "2026-05-27T05:46:24+00:00",
+  "completed_at": "2026-05-27T05:46:25+00:00",
   "agents": [
     {
       "agent": "preflight_qa_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:40:26+00:00",
-      "completed_at": "2026-05-27T05:40:26+00:00",
+      "started_at": "2026-05-27T05:46:24+00:00",
+      "completed_at": "2026-05-27T05:46:24+00:00",
       "checks": {
         "repo_root": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline",
         "git_repo": true,
@@ -61,8 +62,8 @@
     {
       "agent": "pipeline_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:40:26+00:00",
-      "completed_at": "2026-05-27T05:40:26+00:00",
+      "started_at": "2026-05-27T05:46:24+00:00",
+      "completed_at": "2026-05-27T05:46:24+00:00",
       "checks": {
         "expected_outputs_before": {
           "selected_top_n": {
@@ -138,8 +139,8 @@
     {
       "agent": "image_modal_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:40:26+00:00",
-      "completed_at": "2026-05-27T05:40:27+00:00",
+      "started_at": "2026-05-27T05:46:24+00:00",
+      "completed_at": "2026-05-27T05:46:25+00:00",
       "checks": {
         "summary": {
           "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_im4c_remap/coad_gcs_basic_top15_im4c_summary.json",
@@ -171,8 +172,8 @@
     {
       "agent": "evidence_report_agent",
       "status": "completed",
-      "started_at": "2026-05-27T05:40:27+00:00",
-      "completed_at": "2026-05-27T05:40:27+00:00",
+      "started_at": "2026-05-27T05:46:25+00:00",
+      "completed_at": "2026-05-27T05:46:25+00:00",
       "checks": {
         "verified_tiers": {
           "path": "/Users/skku_aws2_14/Documents/New project 2/final-project_data-pipline/Colon/0.Image_modal_COAD/step_gcs_basic_top15_evidence_agent/coad_gcs_basic_top15_evidence_verified_tiers.csv",
@@ -219,6 +220,6 @@
   ],
   "db_status": {
     "loaded_to_postgres": false,
-    "note": "This SDK v0.1 writes CSV/JSON/Markdown artifacts only. DB loading is intentionally left as a separate db_load agent/stage."
+    "note": "This SDK v0.2 writes CSV/JSON/Markdown artifacts only. DB loading is intentionally left as a separate db_load agent/stage."
   }
 }

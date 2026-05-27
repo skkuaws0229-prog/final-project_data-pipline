@@ -11,7 +11,7 @@ from .utils import now_iso, write_json
 
 
 class FourAgentWorkflow:
-    """Small internal SDK wrapper around the COAD 4-agent loop."""
+    """Small internal SDK wrapper around a disease 4-agent loop."""
 
     def __init__(self, config: WorkflowConfig):
         self.config = config
@@ -54,8 +54,9 @@ class FourAgentWorkflow:
     def _write_master(self, started: str, results: list[Any], status: str, *, upload_gcs: bool) -> dict[str, Any]:
         output_dir = self.config.auto_loop_output_dir
         payload = {
-            "workflow": "coad_gcs_4agent_auto_loop",
-            "sdk": "pdrp_sdk.v0.1",
+            "workflow": f"{self.config.disease.lower()}_gcs_4agent_auto_loop",
+            "disease": self.config.disease.upper(),
+            "sdk": "pdrp_sdk.v0.2",
             "status": status,
             "started_at": started,
             "completed_at": now_iso(),
@@ -64,13 +65,14 @@ class FourAgentWorkflow:
         }
         if upload_gcs:
             payload["gcs_upload"] = upload_auto_loop_outputs(self.config, output_dir)
-        write_json(output_dir / "coad_gcs_4agent_auto_loop_summary.json", payload)
-        self._write_report(output_dir / "coad_gcs_4agent_auto_loop_report.md", payload)
+        profile = self.config.disease_profile
+        write_json(output_dir / profile.auto_loop_summary_filename, payload)
+        self._write_report(output_dir / profile.auto_loop_report_filename, payload)
         return payload
 
     def _write_report(self, path, payload: dict[str, Any]) -> None:
         lines = [
-            "# COAD GCS 4-Agent Auto Loop",
+            f"# {payload['disease']} GCS 4-Agent Auto Loop",
             "",
             f"- SDK: {payload['sdk']}",
             f"- Status: {payload['status']}",

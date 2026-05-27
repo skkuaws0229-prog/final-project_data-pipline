@@ -1,4 +1,4 @@
-# COAD GCS 4-Agent Auto Loop
+# GCS 4-Agent Auto Loop
 
 Agents:
 
@@ -11,25 +11,25 @@ Agents:
 Safe resume run:
 
 ```bash
-python3 vm_scripts/coad_gcs_4agent_auto_loop.py
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease COAD
 ```
 
 Safe resume run when VM status was already checked externally:
 
 ```bash
-python3 vm_scripts/coad_gcs_4agent_auto_loop.py --vm-status-override TERMINATED
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease COAD --vm-status-override TERMINATED
 ```
 
 Heavy rerun:
 
 ```bash
-python3 vm_scripts/coad_gcs_4agent_auto_loop.py --run-heavy
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease COAD --run-heavy
 ```
 
 GCS upload:
 
 ```bash
-python3 vm_scripts/coad_gcs_4agent_auto_loop.py --upload-gcs
+python3 vm_scripts/coad_gcs_4agent_auto_loop.py --disease COAD --upload-gcs
 ```
 
 Outputs:
@@ -47,3 +47,5 @@ DB status:
 - Postgres/service DB load: not yet done
 
 Add a separate DB Load Agent after the backend target schema and canonical import path are finalized.
+
+SDK v0.2 keeps COAD as the default profile and supports adding more diseases by registering a `DiseaseProfile` in `pdrp_sdk/config.py`.

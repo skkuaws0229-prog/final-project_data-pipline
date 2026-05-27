@@ -1,9 +1,9 @@
 # COAD GCS 4-Agent Auto Loop
 
-- SDK: pdrp_sdk.v0.1
+- SDK: pdrp_sdk.v0.2
 - Status: completed
-- Started: 2026-05-27T05:40:26+00:00
-- Completed: 2026-05-27T05:40:27+00:00
+- Started: 2026-05-27T05:46:24+00:00
+- Completed: 2026-05-27T05:46:25+00:00
 
 ## Agents
 
