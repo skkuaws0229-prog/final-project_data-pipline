@@ -1,0 +1,37 @@
+{
+  "step": "step4_image_tier_finalize",
+  "disease": "COAD",
+  "admet_top15_source": "/private/tmp/coad_step3_outputs/final_selection/admet_filtered_top15.csv",
+  "image_tier_source": "Colon/0.Image_modal_COAD/step_im4c/coad_top30_admet_4tier_classification.csv",
+  "cluster_recommendation_source": "Colon/0.Image_modal_COAD/step_im4c/coad_final_drug_cluster_recommendations.csv",
+  "output_csv": "Colon/0.Image_modal_COAD/step_gcs_basic_top15_image_tier/coad_gcs_basic_top15_admet_image_4tier_classification.csv",
+  "admet_top15_rows": 15,
+  "image_modal_matched_rows": 3,
+  "image_modal_unmatched_rows": 12,
+  "cluster_evidence_matched_rows": 3,
+  "matched_drugs": [
+    "PD0325901",
+    "Irinotecan",
+    "Trametinib"
+  ],
+  "unmatched_drugs": [
+    "MG-132",
+    "BI-2536",
+    "CCT-018159",
+    "YK-4-279",
+    "Avagacestat",
+    "Fulvestrant",
+    "Schweinfurthin A",
+    "Mycophenolic acid",
+    "Gemcitabine",
+    "Elesclomol",
+    "AZD8055",
+    "Ulixertinib"
+  ],
+  "tier_counts": {
+    "Needs image-modal remapping": 12,
+    "Tier2": 2,
+    "Tier1": 1
+  },
+  "classification_scope": "Existing image-modal protocol prior only; current regulatory/trial verification is not performed in this script."
+}
