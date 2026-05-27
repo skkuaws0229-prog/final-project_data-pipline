@@ -127,8 +127,23 @@ def download_sources(paths: PipelinePaths, storage_root: str) -> None:
     cloud_storage.sync(storage_root.rstrip("/") + "/", paths.raw_cache)
 
 
+def download_seed_files(paths: PipelinePaths, seed_root: str) -> list[str]:
+    """Download only the standard seed files from a reusable cloud root."""
+    copied: list[str] = []
+    root = seed_root.rstrip("/")
+    for rel_path in RAW_SEED_FILES:
+        source_uri = f"{root}/{rel_path}"
+        if not cloud_object_exists(source_uri):
+            raise FileNotFoundError(f"Required seed file missing: {source_uri}")
+        target = paths.raw_cache / rel_path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        cloud_storage.cp(source_uri, target)
+        copied.append(rel_path)
+    return copied
+
+
 # ── GDSC conversion ─────────────────────────────────────────────────
-def copy_or_convert_gdsc(paths: PipelinePaths, tcga_code: str) -> None:
+def copy_or_convert_gdsc(paths: PipelinePaths, tcga_code: str, gdsc_tcga_desc: str | None = None) -> None:
     """Convert CSV GDSC data into parquet, filtering by TCGA code.
 
     Supports two layouts:
@@ -140,6 +155,7 @@ def copy_or_convert_gdsc(paths: PipelinePaths, tcga_code: str) -> None:
         return
 
     code_upper = tcga_code.upper()
+    gdsc_code_upper = str(gdsc_tcga_desc or tcga_code).upper()
     code_lower = tcga_code.lower()
 
     # Try derived subset first
@@ -163,8 +179,8 @@ def copy_or_convert_gdsc(paths: PipelinePaths, tcga_code: str) -> None:
 
     # Filter by TCGA code if full dataset
     if "TCGA_DESC" in gdsc.columns and not subset.exists():
-        gdsc = gdsc[gdsc["TCGA_DESC"].astype(str).str.upper().eq(code_upper)].copy()
-        print(f"[Step1] Filtered GDSC to {code_upper}: {len(gdsc)} rows", flush=True)
+        gdsc = gdsc[gdsc["TCGA_DESC"].astype(str).str.upper().eq(gdsc_code_upper)].copy()
+        print(f"[Step1] Filtered GDSC to {gdsc_code_upper} for {code_upper}: {len(gdsc)} rows", flush=True)
 
     rename = {
         "CELL_LINE_NAME": "cell_line_name",
@@ -187,9 +203,9 @@ def copy_or_convert_gdsc(paths: PipelinePaths, tcga_code: str) -> None:
 
 
 # ── Raw cache aliases ────────────────────────────────────────────────
-def prepare_raw_cache_aliases(paths: PipelinePaths, tcga_code: str) -> None:
+def prepare_raw_cache_aliases(paths: PipelinePaths, tcga_code: str, gdsc_tcga_desc: str | None = None) -> None:
     """Create flat aliases expected by downstream code from the raw layout."""
-    copy_or_convert_gdsc(paths, tcga_code)
+    copy_or_convert_gdsc(paths, tcga_code, gdsc_tcga_desc=gdsc_tcga_desc)
 
     code_upper = tcga_code.upper()
     alias_map = {
@@ -274,24 +290,53 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
     raw_template_root = config.get("raw_template_root", execution.get("raw_template_root", "s3://say2-4team/HNSC_raw"))
     project_root = Path(config.get("project_root", f"./{tcga_code}_pipeline"))
     skip_download = config.get("skip_download", False)
+    gdsc_tcga_desc = config.get("gdsc_tcga_desc") or execution.get("gdsc_tcga_desc")
+    download_seed_files_only = bool(config.get("download_seed_files_only", execution.get("download_seed_files_only", False)))
+    seed_storage_root = config.get("seed_storage_root") or execution.get("seed_storage_root") or raw_template_root
 
     paths = make_paths(project_root)
     ensure_dirs(paths)
 
+    if dry_run:
+        summary = {
+            "status": "dry_run",
+            "step": "step1_data_collection",
+            "disease": tcga_code,
+            "storage_root": storage_root,
+            "auto_provision_raw": bool(auto_provision_raw),
+            "raw_template_root": raw_template_root,
+            "gdsc_tcga_desc": gdsc_tcga_desc or tcga_code,
+            "project_root": str(project_root),
+            "download_seed_files_only": download_seed_files_only,
+            "seed_storage_root": seed_storage_root,
+            "raw_seed_files": RAW_SEED_FILES,
+        }
+        print(f"[Step1] Dry-run summary: {json.dumps(summary, indent=2)}", flush=True)
+        return summary
+
     # Download
     if not skip_download:
         provision_summary = None
-        if auto_provision_raw and raw_template_root:
-            provision_summary = auto_provision_raw_sources(storage_root, raw_template_root, tcga_code)
-        print(f"[Step1] Downloading from {storage_root} ...", flush=True)
-        download_sources(paths, storage_root)
+        if download_seed_files_only:
+            print(f"[Step1] Downloading seed files only from {seed_storage_root} ...", flush=True)
+            copied = download_seed_files(paths, seed_storage_root)
+            provision_summary = {
+                "mode": "download_seed_files_only",
+                "seed_storage_root": seed_storage_root,
+                "downloaded": copied,
+            }
+        else:
+            if auto_provision_raw and raw_template_root:
+                provision_summary = auto_provision_raw_sources(storage_root, raw_template_root, tcga_code)
+            print(f"[Step1] Downloading from {storage_root} ...", flush=True)
+            download_sources(paths, storage_root)
     else:
         provision_summary = None
         print(f"[Step1] Skipping download (skip_download=True)", flush=True)
 
     # Aliases & GDSC conversion
     print(f"[Step1] Preparing raw cache aliases for {tcga_code} ...", flush=True)
-    prepare_raw_cache_aliases(paths, tcga_code)
+    prepare_raw_cache_aliases(paths, tcga_code, gdsc_tcga_desc=gdsc_tcga_desc)
 
     # Summary
     summary = {
@@ -301,6 +346,9 @@ def run(config: dict[str, Any], dry_run: bool = False) -> dict[str, Any]:
         "s3_root": storage_root,
         "auto_provision_raw": bool(auto_provision_raw),
         "raw_template_root": raw_template_root,
+        "gdsc_tcga_desc": gdsc_tcga_desc or tcga_code,
+        "download_seed_files_only": download_seed_files_only,
+        "seed_storage_root": seed_storage_root,
         "raw_provision": provision_summary,
         "project_root": str(project_root),
         "gdsc_parquet_exists": (paths.raw_cache / "gdsc_ic50.parquet").exists(),
