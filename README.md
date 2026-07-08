@@ -76,6 +76,12 @@ git clone https://github.com/skkuaws0229-prog/final-project_data-pipline.git
 cd final-project_data-pipline
 ```
 
+Open the final result dashboard:
+
+```powershell
+Start-Process .\final_results_dashboard.html
+```
+
 Run a dry-run pipeline check for one disease:
 
 ```powershell

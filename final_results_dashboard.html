@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Results Dashboard</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --panel: #ffffff;
+      --text: #1f2933;
+      --muted: #64748b;
+      --line: #d9e0e8;
+      --blue: #2563eb;
+      --green: #16865a;
+      --red: #b42318;
+      --amber: #b7791f;
+      --ink: #0f172a;
+      --chip: #eef2f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .wrap {
+      width: min(1240px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      color: var(--ink);
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+      background: #fff;
+    }
+
+    main {
+      padding: 20px 0 36px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 88px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .metric-value {
+      margin-top: 8px;
+      font-size: 28px;
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    .metric-note {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .search {
+      width: 100%;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .tabs {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .tab {
+      min-height: 38px;
+      border: 0;
+      border-right: 1px solid var(--line);
+      padding: 0 12px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .tab:last-child {
+      border-right: 0;
+    }
+
+    .tab.active {
+      background: #e9f0ff;
+      color: var(--blue);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .disease-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .disease {
+      font-size: 18px;
+      font-weight: 750;
+      color: var(--ink);
+    }
+
+    .area {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: #e9f8f1;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .counts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .count-box {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 8px;
+      background: #fbfcfe;
+      min-width: 0;
+    }
+
+    .count-value {
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .count-label {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .file-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .file-link.primary {
+      border-color: #b8cdfb;
+      color: var(--blue);
+      background: #f5f8ff;
+    }
+
+    .section-title {
+      margin: 18px 0 10px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .table-shell {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: #f3f6fa;
+      color: #344054;
+      font-size: 12px;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: #344054;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .empty {
+      display: none;
+      padding: 24px;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 1040px) {
+      .summary-grid,
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar,
+      .toolbar {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .summary-grid,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .tabs {
+        width: 100%;
+      }
+
+      .tab {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div>
+        <h1>Final Results Dashboard</h1>
+        <div class="subtitle">11 disease tracks · final ADMET candidates · candidate pools · image-modal evidence</div>
+      </div>
+      <a class="repo-link" href="README.md">README</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="summary-grid" aria-label="Summary metrics">
+      <div class="metric">
+        <div class="metric-label">Disease Tracks</div>
+        <div class="metric-value" id="metricDiseases">11</div>
+        <div class="metric-note">Final result packages</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Final Candidates</div>
+        <div class="metric-value" id="metricFinal">0</div>
+        <div class="metric-note">ADMET/tiered rows</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Candidate Pool</div>
+        <div class="metric-value" id="metricPool">0</div>
+        <div class="metric-note">Pre-final candidates</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Evidence Files</div>
+        <div class="metric-value" id="metricEvidence">0</div>
+        <div class="metric-note">Reports, clusters, links</div>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Dashboard filters">
+      <input id="search" class="search" type="search" placeholder="Search disease, folder, or file">
+      <div class="tabs" role="tablist" aria-label="View mode">
+        <button class="tab active" type="button" data-view="cards">Cards</button>
+        <button class="tab" type="button" data-view="table">Table</button>
+      </div>
+    </section>
+
+    <section id="cards" class="grid" aria-label="Disease result cards"></section>
+    <section id="empty" class="empty">No matching final result package</section>
+
+    <section id="tableView" hidden>
+      <div class="section-title">Final Result Inventory</div>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Disease</th>
+              <th>Area</th>
+              <th>Final Rows</th>
+              <th>Pool Rows</th>
+              <th>Final ADMET</th>
+              <th>Candidate Pool</th>
+              <th>Report</th>
+              <th>Clinical Cluster</th>
+              <th>Drug Linkage</th>
+            </tr>
+          </thead>
+          <tbody id="resultRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      Source folders: drug_service_backend_v1/01_raw_selected, 01_candidate_pool_selected, 01_image_modal_selected.
+    </footer>
+  </main>
+
+  <script>
+    const base = {
+      final: "drug_service_backend_v1/01_raw_selected/",
+      pool: "drug_service_backend_v1/01_candidate_pool_selected/",
+      image: "drug_service_backend_v1/01_image_modal_selected/"
+    };
+
+    const results = [
+      {
+        disease: "BRCA",
+        area: "Breast cancer",
+        finalRows: 15,
+        poolRows: 60,
+        final: "BRCA_final_admet.csv",
+        pool: "BRCA_candidates_pool.csv",
+        report: "BRCA_report.md",
+        clinical: "BRCA_clinical_cluster.csv",
+        linkage: "BRCA_drug_linkage.csv"
+      },
+      {
+        disease: "Colon",
+        area: "Colorectal cancer / COAD",
+        finalRows: 15,
+        poolRows: 50,
+        final: "Colon_final_admet.csv",
+        pool: "Colon_candidates_pool.csv",
+        report: "Colon_report.md",
+        clinical: "Colon_clinical_cluster.csv",
+        linkage: "Colon_drug_linkage.md"
+      },
+      {
+        disease: "HNSC",
+        area: "Head and neck cancer",
+        finalRows: 30,
+        poolRows: 50,
+        final: "HNSC_final_admet.csv",
+        pool: "HNSC_candidates_pool.csv",
+        report: "HNSC_report.md",
+        clinical: "HNSC_clinical_cluster.csv",
+        linkage: "HNSC_drug_linkage.csv"
+      },
+      {
+        disease: "IPF",
+        area: "Idiopathic pulmonary fibrosis",
+        finalRows: 15,
+        poolRows: 30,
+        final: "IPF_final_tiered.csv",
+        pool: "IPF_candidates_pool.csv",
+        report: "IPF_report.md",
+        clinical: "IPF_clinical_cluster.csv",
+        linkage: "IPF_drug_linkage.md"
+      },
+      {
+        disease: "Liver",
+        area: "Liver cancer / LIHC",
+        finalRows: 15,
+        poolRows: 30,
+        final: "Liver_final_admet.csv",
+        pool: "Liver_candidates_pool.csv",
+        report: "Liver_report.md",
+        clinical: "Liver_clinical_cluster.csv",
+        linkage: "Liver_drug_linkage.csv"
+      },
+      {
+        disease: "LUNG",
+        area: "Lung adenocarcinoma / LUAD",
+        finalRows: 15,
+        poolRows: 30,
+        final: "LUNG_final_admet.csv",
+        pool: "LUNG_candidates_pool.csv",
+        report: "LUNG_report.md",
+        clinical: "LUNG_clinical_cluster.csv",
+        linkage: "LUNG_drug_linkage.csv"
+      },
+      {
+        disease: "PAH",
+        area: "Pulmonary arterial hypertension",
+        finalRows: 30,
+        poolRows: 30,
+        final: "PAH_final_admet.csv",
+        pool: "PAH_candidates_pool.csv",
+        report: "PAH_report.md",
+        clinical: "PAH_clinical_cluster.csv",
+        linkage: "PAH_drug_linkage.md"
+      },
+      {
+        disease: "PDAC",
+        area: "Pancreatic cancer / PAAD",
+        finalRows: 30,
+        poolRows: 50,
+        final: "PDAC_final_admet.csv",
+        pool: "PDAC_candidates_pool.csv",
+        report: "PDAC_report.md",
+        clinical: "PDAC_clinical_cluster.csv",
+        linkage: "PDAC_drug_linkage.csv"
+      },
+      {
+        disease: "Psoriasis",
+        area: "Psoriasis",
+        finalRows: 30,
+        poolRows: 30,
+        final: "Psoriasis_final_admet.csv",
+        pool: "Psoriasis_candidates_pool.csv",
+        report: "Psoriasis_report.md",
+        clinical: "Psoriasis_clinical_cluster.csv",
+        linkage: "Psoriasis_drug_linkage.csv"
+      },
+      {
+        disease: "RA",
+        area: "Rheumatoid arthritis",
+        finalRows: 30,
+        poolRows: 30,
+        final: "RA_final_admet.csv",
+        pool: "RA_candidates_pool.csv",
+        report: "RA_report.md",
+        clinical: "RA_clinical_cluster.csv",
+        linkage: "RA_drug_linkage.csv"
+      },
+      {
+        disease: "STAD",
+        area: "Stomach adenocarcinoma",
+        finalRows: 30,
+        poolRows: 30,
+        final: "STAD_final_admet.csv",
+        pool: "STAD_candidates_pool.csv",
+        report: "STAD_report.md",
+        clinical: "STAD_clinical_cluster.csv",
+        linkage: "STAD_drug_linkage.csv"
+      }
+    ];
+
+    const state = {
+      query: "",
+      view: "cards"
+    };
+
+    const cards = document.querySelector("#cards");
+    const rows = document.querySelector("#resultRows");
+    const empty = document.querySelector("#empty");
+    const tableView = document.querySelector("#tableView");
+    const search = document.querySelector("#search");
+
+    function fileUrl(kind, file) {
+      const prefix = kind === "final" ? base.final : kind === "pool" ? base.pool : base.image;
+      return prefix + file;
+    }
+
+    function link(label, kind, file, primary = false) {
+      return `<a class="file-link${primary ? " primary" : ""}" href="${fileUrl(kind, file)}">${label}</a>`;
+    }
+
+    function matches(item) {
+      const haystack = [
+        item.disease,
+        item.area,
+        item.final,
+        item.pool,
+        item.report,
+        item.clinical,
+        item.linkage
+      ].join(" ").toLowerCase();
+      return haystack.includes(state.query.toLowerCase());
+    }
+
+    function renderCards(data) {
+      cards.innerHTML = data.map((item) => `
+        <article class="disease-card">
+          <div class="card-head">
+            <div>
+              <div class="disease">${item.disease}</div>
+              <div class="area">${item.area}</div>
+            </div>
+            <span class="status">READY</span>
+          </div>
+          <div class="counts">
+            <div class="count-box">
+              <div class="count-value">${item.finalRows}</div>
+              <div class="count-label">Final</div>
+            </div>
+            <div class="count-box">
+              <div class="count-value">${item.poolRows}</div>
+              <div class="count-label">Pool</div>
+            </div>
+            <div class="count-box">
+              <div class="count-value">3</div>
+              <div class="count-label">Evidence</div>
+            </div>
+          </div>
+          <div class="links">
+            ${link("Final ADMET", "final", item.final, true)}
+            ${link("Pool", "pool", item.pool)}
+            ${link("Report", "image", item.report)}
+            ${link("Clinical", "image", item.clinical)}
+            ${link("Drug Linkage", "image", item.linkage)}
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderRows(data) {
+      rows.innerHTML = data.map((item) => `
+        <tr>
+          <td><strong>${item.disease}</strong></td>
+          <td>${item.area}</td>
+          <td><span class="chip">${item.finalRows}</span></td>
+          <td><span class="chip">${item.poolRows}</span></td>
+          <td>${link(item.final, "final", item.final, true)}</td>
+          <td>${link(item.pool, "pool", item.pool)}</td>
+          <td>${link(item.report, "image", item.report)}</td>
+          <td>${link(item.clinical, "image", item.clinical)}</td>
+          <td>${link(item.linkage, "image", item.linkage)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function updateMetrics(data) {
+      const finalTotal = data.reduce((sum, item) => sum + item.finalRows, 0);
+      const poolTotal = data.reduce((sum, item) => sum + item.poolRows, 0);
+      const evidenceTotal = data.length * 3;
+      document.querySelector("#metricDiseases").textContent = data.length;
+      document.querySelector("#metricFinal").textContent = finalTotal;
+      document.querySelector("#metricPool").textContent = poolTotal;
+      document.querySelector("#metricEvidence").textContent = evidenceTotal;
+    }
+
+    function render() {
+      const filtered = results.filter(matches);
+      renderCards(filtered);
+      renderRows(filtered);
+      updateMetrics(filtered);
+      empty.style.display = filtered.length === 0 ? "block" : "none";
+      cards.hidden = state.view !== "cards";
+      tableView.hidden = state.view !== "table";
+    }
+
+    search.addEventListener("input", (event) => {
+      state.query = event.target.value.trim();
+      render();
+    });
+
+    document.querySelectorAll(".tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        state.view = tab.dataset.view;
+        document.querySelectorAll(".tab").forEach((item) => item.classList.toggle("active", item === tab));
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
